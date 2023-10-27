@@ -16,12 +16,15 @@ int main(){
                 for(i=0;i<currentWord.Length;i++){
                     printf("%c", currentWord.TabWord[i]);
                 }
+                if (currentChar != MARK){
+                    printf(" ");
+                }
                 ADVWORD();
             }
-            // printf("\n");
+            printf("\n");
             break;
         case 2:
-            /* caesar cipher digeser sebanyak jumalah kata*/
+            /* caesar cipher digeser sebanyak jumlah kata*/
             while(!EndWord){
                 for(i=0;i<currentWord.Length;i++){
                     printf("%c", ((currentWord.TabWord[i] - 'A' + currentWord.Length) % ('z' - 'A' + 1)) + 'A');
@@ -31,7 +34,7 @@ int main(){
                 }
                 ADVWORD();
             }
-            // printf("\n");
+            printf("\n");
             break;
 
     }
