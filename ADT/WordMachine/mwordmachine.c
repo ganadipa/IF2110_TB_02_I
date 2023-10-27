@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "wordmachine.h"
+#include "wordmachine.c"
 #include "boolean.h"
 
 int main(){
@@ -18,7 +18,10 @@ int main(){
                 }
                 ADVWORD();
             }
+            break;
         case 2:
+            printf("n");
+            break;
     }
 
 }
