@@ -1,15 +1,14 @@
 CC = gcc
-CFLAGS = 
-SRC = mwordmachine.c
-
+CFLAGS = -Wall -Werror -std=c11
+SRC = tests/
 driver: mwordmachine.o wordmachine.o
-	$(CC) mwordmachine.o wordmachine.o -o driver
+	$(CC) -o $@ $(CFLAGS)  $^
 
 wordmachine.o: wordmachine.c
-	$(CC) -c wordmachine.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-mwordmachine.o: mwordmachine.c 
-	$(CC) -c $(SRC) 
-
+mwordmachine.o: $(SRC)mwordmachine.c
+	$(CC) $(CFLAGS) -c $< -o $@
+.PHONY = clean
 clean:
-	rm mwordmachine.o wordmachine.o driver
+	rm -f *.o driver

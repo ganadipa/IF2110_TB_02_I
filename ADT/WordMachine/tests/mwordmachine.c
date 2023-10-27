@@ -1,14 +1,13 @@
 #include <stdio.h>
-#include "../wordmachine.c"
+#include "../wordmachine.h"
 #include "../boolean.h"
 
 int main(){
-    Word word;
-    int i=0, N;
+    int i=0, temp;
     int test;
     printf("Masukkan no: ");
     scanf("%d", &test);
-    scanf("%c");
+    scanf("%u", &temp);
     STARTWORD();
     switch (test){
         case 1:
@@ -28,8 +27,6 @@ int main(){
                 }
                 if (currentChar != MARK){
                     printf(" ");
-                } else{
-                    printf("");
                 }
                 ADVWORD();
             }
