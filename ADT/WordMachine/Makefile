@@ -18,11 +18,6 @@ clean:
 	rm -f main_program mword $(OBJ_MAIN) $(OBJ_WORD) $(OBJ_TEST) $(TEST_RESULTS)
 
 
-
-
-
-
-
 # UNIT TESTS
 
 SRC_WORD = wordmachine.c
