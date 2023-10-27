@@ -62,15 +62,3 @@ void CopyWord(){
         ADV();
     }  
 }
-// int main(){
-//     int i=0;
-//     STARTWORD();
-//     while(!EndWord){
-//         for(i=0;i<currentWord.Length;i++){
-//             printf("%c\n", currentWord.TabWord[i]);
-//         }
-//         // printf("\n");
-//         ADVWORD();
-//     }
-
-// }
