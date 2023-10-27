@@ -1,6 +1,6 @@
+
+
 #include "stack.h"
-
-
 void CreateEmpty(Stack *S){
 /* I.S. sembarang; */
 /* F.S. Membuat sebuah stack S yang kosong berkapasitas MaxEl */
