@@ -18,6 +18,7 @@ int main(){
                 }
                 ADVWORD();
             }
+            printf("\n");
             break;
         case 2:
             /* caesar cipher digeser sebanyak jumalah kata*/
@@ -30,6 +31,7 @@ int main(){
                 }
                 ADVWORD();
             }
+            printf("\n");
             break;
 
     }
