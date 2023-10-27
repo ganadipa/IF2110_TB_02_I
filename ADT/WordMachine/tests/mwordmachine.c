@@ -1,14 +1,13 @@
 #include <stdio.h>
-#include "../wordmachine.c"
+#include "../wordmachine.h"
 #include "../boolean.h"
 
 int main(){
-    Word word;
-    int i=0, N;
+    int i=0, temp;
     int test;
     printf("Masukkan no: ");
     scanf("%d", &test);
-    scanf("%c");
+    scanf("%u", &temp);
     STARTWORD();
     switch (test){
         case 1:
@@ -17,22 +16,25 @@ int main(){
                 for(i=0;i<currentWord.Length;i++){
                     printf("%c", currentWord.TabWord[i]);
                 }
+                if (currentChar != MARK){
+                    printf(" ");
+                }
                 ADVWORD();
             }
+            printf("\n");
             break;
         case 2:
-            /* caesar cipher digeser sebanyak jumalah kata*/
+            /* caesar cipher digeser sebanyak jumlah kata*/
             while(!EndWord){
                 for(i=0;i<currentWord.Length;i++){
                     printf("%c", ((currentWord.TabWord[i] - 'A' + currentWord.Length) % ('z' - 'A' + 1)) + 'A');
                 }
                 if (currentChar != MARK){
                     printf(" ");
-                } else{
-                    printf("");
                 }
                 ADVWORD();
             }
+            printf("\n");
             break;
 
     }
