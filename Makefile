@@ -1,14 +1,24 @@
+include makefile.que #unit test for queue
+include makefile.sta #unit test for stack
+
 CC = gcc
 CFLAGS = -Wall -Werror -std=c11
 
+#SRC ADT 
+src_queue = ADT/Queue/queue.c
+src_stack = ADT/Stack/stack.c
+
 SRC_MAIN = main.c
+
 OBJ_MAIN = $(SRC_MAIN:.c=.o)
+queue = $(src_queue:.c=.o)
+stack = $(src_stack:.c=.o)
 
 .PHONY: all clean test
 
-all: main_program mfoo
+all: main_program
 
-main_program: $(OBJ_MAIN) $(OBJ_FOO)
+main_program: $(OBJ_MAIN) $(OBJ_FOO) $(queue) $(stack) 
 	$(CC) $(CFLAGS) -o $@ $^
 
 %.o: %.c
@@ -17,12 +27,11 @@ main_program: $(OBJ_MAIN) $(OBJ_FOO)
 clean:
 	rm -f main_program mfoo $(OBJ_MAIN) $(OBJ_FOO) $(OBJ_TEST) $(TEST_RESULTS)
 
+que: #command for testing queue unit test` 
+	$(MAKE) -f  makefile.que test_queue 
 
-
-
-
-
-
+sta: #command for testing stack unit test
+	$(MAKE) -f makefile.sta test_stack
 # UNIT TESTS
 
 SRC_FOO = ADT/Foo/foo.c
@@ -47,4 +56,3 @@ $(TEST_RESULTS): $(TESTS_DIR)/%.result: $(TESTS_DIR)/%.in $(TESTS_DIR)/%.out mfo
 	else \
 		echo "$< $(word 2,$^): WRONG"; \
 	fi > $@
-

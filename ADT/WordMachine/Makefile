@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+CC = gcc
+CFLAGS = 
+SRC = mwordmachine.c
+
+driver: mwordmachine.o wordmachine.o
+	$(CC) mwordmachine.o wordmachine.o -o driver
+
+wordmachine.o: wordmachine.c
+	$(CC) -c wordmachine.c
+
+mwordmachine.o: mwordmachine.c 
+	$(CC) -c $(SRC) 
+
+clean:
+	rm mwordmachine.o wordmachine.o driver
+=======
 CC = gcc
 CFLAGS = -Wall -Werror -std=c11
 
@@ -43,3 +60,4 @@ $(TEST_RESULTS): $(TESTS_DIR)/%.result: $(TESTS_DIR)/%.in $(TESTS_DIR)/%.out mwo
 		echo "$< $(word 2,$^): WRONG"; \
 	fi > $@
 
+>>>>>>> develop
