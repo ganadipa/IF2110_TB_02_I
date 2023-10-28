@@ -1,5 +1,3 @@
-
-
 #include "stack.h"
 void CreateEmpty(Stack *S){
 /* I.S. sembarang; */

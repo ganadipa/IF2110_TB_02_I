@@ -1,4 +1,6 @@
-include que
+include makefile.que
+include makefile.sta
+
 CC = gcc
 CFLAGS = -Wall -Werror -std=c11
 
@@ -26,7 +28,10 @@ clean:
 	rm -f main_program mfoo $(OBJ_MAIN) $(OBJ_FOO) $(OBJ_TEST) $(TEST_RESULTS)
 
 que: 
-	$(MAKE) -f makefile.que test_queue
+	$(MAKE) -f  makefile.que test_queue 
+
+sta: 
+	$(MAKE) -f ./makefile.sta test_stack
 # UNIT TESTS
 
 SRC_FOO = ADT/Foo/foo.c
