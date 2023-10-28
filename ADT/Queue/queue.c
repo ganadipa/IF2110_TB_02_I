@@ -82,7 +82,7 @@ void displayQueue(Queue q){
 /* Contoh : jika ada tiga elemen bernilai 1, 20, 30 akan dicetak: [1,20,30] */
 /* Jika Queue kosong : menulis [] */
         if(isEmpty(q)){
-                printf("[]\n");
+                printf("[]\r\n");
         }
         else{
                 int len = length(q);
@@ -99,7 +99,7 @@ void displayQueue(Queue q){
                                 printf(",");
                         }
                 }
-                printf("]\n");
+                printf("]\r\n");
                 IDX_HEAD(q) = temp_head;
         }
 }
