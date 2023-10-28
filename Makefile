@@ -1,14 +1,21 @@
+include makefile.word
 CC = gcc
 CFLAGS = -Wall -Werror -std=c11
 
+#SRC ADT 
+src_queue = ADT/Queue/queue.c
+src_stack = ADT/Stack/stack.c
+src_word = ADT/WordMachine/wordmachine.c
+
 SRC_MAIN = main.c
 OBJ_MAIN = $(SRC_MAIN:.c=.o)
+word = $(src_word:.c=.o)
 
 .PHONY: all clean test
 
 all: main_program mfoo
 
-main_program: $(OBJ_MAIN) $(OBJ_FOO)
+main_program: $(OBJ_MAIN) $(OBJ_FOO) $(word)
 	$(CC) $(CFLAGS) -o $@ $^
 
 %.o: %.c
@@ -17,7 +24,8 @@ main_program: $(OBJ_MAIN) $(OBJ_FOO)
 clean:
 	rm -f main_program mfoo $(OBJ_MAIN) $(OBJ_FOO) $(OBJ_TEST) $(TEST_RESULTS)
 
-
+word:
+	$(MAKE) -f makefile.word test_word
 
 
 

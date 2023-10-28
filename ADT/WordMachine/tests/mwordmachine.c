@@ -7,11 +7,11 @@ int main(){
     int test;
     printf("Masukkan no: ");
     scanf("%d", &test);
-    scanf("%u", &temp);
-    STARTWORD();
     switch (test){
         case 1:
             /* print ulang kata yang dimasukkan tanpa spasi*/
+            scanf("%u", &temp);
+            STARTWORD();
             while(!EndWord){
                 for(i=0;i<currentWord.Length;i++){
                     printf("%c", currentWord.TabWord[i]);
@@ -21,10 +21,11 @@ int main(){
                 }
                 ADVWORD();
             }
-            printf("\n");
             break;
         case 2:
             /* caesar cipher digeser sebanyak jumlah kata*/
+            scanf("%u", &temp);
+            STARTWORD();
             while(!EndWord){
                 for(i=0;i<currentWord.Length;i++){
                     printf("%c", ((currentWord.TabWord[i] - 'A' + currentWord.Length) % ('z' - 'A' + 1)) + 'A');
@@ -34,7 +35,9 @@ int main(){
                 }
                 ADVWORD();
             }
-            printf("\n");
+            break;
+        case 3: 
+            printf("%d", test);
             break;
 
     }
