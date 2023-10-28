@@ -1,3 +1,4 @@
+include Makefile.din
 CC = gcc
 CFLAGS = -Wall -Werror -std=c11
 
@@ -17,7 +18,8 @@ main_program: $(OBJ_MAIN) $(OBJ_FOO)
 clean:
 	rm -f main_program mfoo $(OBJ_MAIN) $(OBJ_FOO) $(OBJ_TEST) $(TEST_RESULTS)
 
-
+din :
+	$(MAKE) -f Makefile.din test_listdin
 
 
 

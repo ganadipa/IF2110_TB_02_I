@@ -1,0 +1,22 @@
+SRC_LISTDIN = ADT/ListDinamik/listdin.c
+SRC_TEST = ADT/ListDinamik/tests/mlistdin.c
+OBJ_LISTDIN = $(SRC_LISTDIN:.c=.o)
+OBJ_TEST = $(SRC_TEST:.c=.o)
+
+TESTS_DIR = ADT/ListDinamik/tests
+TEST_CASES = $(wildcard $(TESTS_DIR)/*.in)
+TEST_OUTPUTS = $(TEST_CASES:.in=.out)
+TEST_RESULTS = $(TEST_CASES:.in=.result)
+
+mlistdin: $(OBJ_LISTDIN) $(OBJ_TEST)
+	$(CC) $(CFLAGS) -o $@ $^
+
+test_listdin: mlistdin $(TEST_RESULTS)
+	@cat $(TEST_RESULTS)
+
+$(TEST_RESULTS): $(TESTS_DIR)/%.result: $(TESTS_DIR)/%.in $(TESTS_DIR)/%.out mlistdin
+	@if ./mlistdin < $< | diff - $(word 2,$^) > /dev/null; then \
+		echo "$< $(word 2,$^): TRUE"; \
+	else \
+		echo "$< $(word 2,$^): WRONG"; \
+	fi > $@
