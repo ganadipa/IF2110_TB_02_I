@@ -1,5 +1,5 @@
-include makefile.que
-include makefile.sta
+include makefile.que #unit test for queue
+include makefile.sta #unit test for stack
 
 CC = gcc
 CFLAGS = -Wall -Werror -std=c11
@@ -27,19 +27,17 @@ main_program: $(OBJ_MAIN) $(OBJ_FOO) $(queue) $(stack)
 clean:
 	rm -f main_program mfoo $(OBJ_MAIN) $(OBJ_FOO) $(OBJ_TEST) $(TEST_RESULTS)
 
-que: 
+que: #command for testing queue unit test` 
 	$(MAKE) -f  makefile.que test_queue 
 
-sta: 
-	$(MAKE) -f ./makefile.sta test_stack
+sta: #command for testing stack unit test
+	$(MAKE) -f makefile.sta test_stack
 # UNIT TESTS
 
 SRC_FOO = ADT/Foo/foo.c
 SRC_TEST = ADT/Foo/tests/mfoo.c
 OBJ_FOO = $(SRC_FOO:.c=.o)
 OBJ_TEST = $(SRC_TEST:.c=.o)
-
-
 
 TESTS_DIR = ADT/Foo/tests
 TEST_CASES = $(wildcard $(TESTS_DIR)/*.in)
@@ -58,4 +56,3 @@ $(TEST_RESULTS): $(TESTS_DIR)/%.result: $(TESTS_DIR)/%.in $(TESTS_DIR)/%.out mfo
 	else \
 		echo "$< $(word 2,$^): WRONG"; \
 	fi > $@
-

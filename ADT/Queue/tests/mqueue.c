@@ -3,10 +3,11 @@
 
 int main(){
     int type; 
-    ElType input, temp; 
-    Queue ares; 
+    ElType input, input2; //
+    int temp;
+    Queue queue; 
 
-    CreateQueue(&ares); 
+    CreateQueue(&queue); 
     scanf("%d", &type);
     switch (type)
     {
@@ -15,31 +16,29 @@ int main(){
         printf("%d", input); 
         break;
     case 2: 
-        printf("%d", isEmpty(ares));
+        printf("%d", isEmpty(queue));
         break;
     case 3: 
-        printf("%d", isFull(ares));
+        printf("%d", isFull(queue));
         break;
     case 4: 
         scanf("%d", &input);
-        enqueue(&ares, input);
-
-        printf("%d\n", length(ares)); 
-        scanf("%d", &input); 
-
-        enqueue(&ares, input); 
-        printf("%d", length(ares)); 
+        enqueue(&queue, input);
+        printf("%d", length(queue)); 
+        scanf("\n%d", &input2);
+        enqueue(&queue, input2); 
+        printf("%d", length(queue)); 
         break;
     case 5:
-        displayQueue(ares);
+        displayQueue(queue);
         scanf("%d", &input);  
-        enqueue(&ares, scanf("%d", &input));
-        displayQueue(ares); 
+        enqueue(&queue, scanf("%d", &input));
+        displayQueue(queue); 
         break;
     case 6: 
         scanf("%d", &input); 
-        enqueue(&ares, input); 
-        dequeue(&ares, &temp); 
+        enqueue(&queue, input); 
+        dequeue(&queue, &temp); 
         printf("%d", temp); 
         break; 
     case 7: 

@@ -1,40 +1,42 @@
-#include "../stack.h"
 #include <stdio.h>
+#include "../stack.h"
+#include <stdlib.h>
 
 int main(){
     int type; 
-    infotype input; 
-    Stack ares; 
-    CreateEmpty(&ares);
+    Stack stack; 
+    CreateEmpty(&stack);
+    infotype ingfo; 
     scanf("%d", &type);
     switch(type){
         //cek isEmpty 
         case 1: 
-           printf("%d", IsEmpty(ares)); 
+           printf("%d", IsEmpty(stack)); 
            break;
         case 2: 
-            scanf("%d", &input); 
-            Push(&ares, input); 
-            printf("%d", IsEmpty(ares)); 
+            scanf("%d", &ingfo); 
+            Push(&stack, ingfo); 
+            printf("%d", IsEmpty(stack)); 
             break;
         //cek isFull
         case 3: 
-            printf("%d", IsFull(ares)); 
+            printf("%d", IsFull(stack)); 
             break;
         case 4: 
         
             break; 
         //case cek push  
         case 5: 
-            scanf("%d", &input); 
-            Push(&ares, input); 
-            printf("%d", InfoTop(ares)); 
+            scanf("%d", &ingfo); 
+            Push(&stack, ingfo); 
+            printf("%d", InfoTop(stack)); 
+            break;
         //case cek pop 
         case 6:
-            int temp; 
-            scanf("%d", &input); 
-            Push(&ares, input); 
-            Pop(&ares, &temp); 
+            infotype temp; 
+            scanf("%d", &ingfo); 
+            Push(&stack, ingfo); 
+            Pop(&stack, &temp); 
             printf("%d", temp); 
             break; 
     } 
