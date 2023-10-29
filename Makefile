@@ -1,57 +1,83 @@
-include makefile.que #unit test for queue
-include makefile.sta #unit test for stack
+
+# ************************Architecture Programme Setup*************************************
+# ************************Architecture Programme Setup*************************************
+# ************************Architecture Programme Setup*************************************
+BINARY = .bin
+BINDIR = .bin
+CODEDIRS = app lib/ADT/*
+INCDIRS = app lib/ADT lib/ADT/*
 
 CC = gcc
-CFLAGS = -Wall -Werror -std=c11
+CFLAGS = -Wall -Werror -Wextra -std=c11 $(DEPFLAGS) $(foreach D, $(INCDIRS), -I$(D)) -Wno-unused-variable -Wno-unused-parameter -Wno-unused-value -Wno-unused-but-set-variable
+DEPFLAGS = -MP -MD
 
-#SRC ADT 
-src_queue = ADT/Queue/queue.c
-src_stack = ADT/Stack/stack.c
+CFILES = $(foreach D, $(CODEDIRS), $(wildcard $(D)/*.c))
+OBJECTS = $(patsubst %.c,$(BINARY)/%.o,$(CFILES))
+DEPFILES = $(patsubst %.c,$(BINARY)/%.d,$(CFILES))
+PROGRAM = $(BINDIR)/program
 
-SRC_MAIN = main.c
+all: $(BINARY)
 
-OBJ_MAIN = $(SRC_MAIN:.c=.o)
-queue = $(src_queue:.c=.o)
-stack = $(src_stack:.c=.o)
+$(BINARY): $(OBJECTS)
 
-.PHONY: all clean test
+$(BINDIR)/%.o:%.c
+	@mkdir -p $(@D)
+	@$(CC) $(CFLAGS) -c -o $@ $<
 
-all: main_program
+$(PROGRAM): $(OBJECTS)
+	$(CC) -o $@ $^
 
-main_program: $(OBJ_MAIN) $(OBJ_FOO) $(queue) $(stack) 
+clean: 
+	rm -rf $(BINDIR)
+
+# Target to run the application
+run: $(PROGRAM)
+	./$(PROGRAM)
+
+
+-include $(DEPFILES)
+.PHONY: all clean distribute
+
+#************************************************************************************************
+#************************************************************************************************
+#************************************************************************************************
+
+
+
+
+
+
+# UNIT TESTS 
+
+# ************************LinkedList UNIT TEST*************************************
+# ************************LinkedList UNIT TEST*************************************
+# ************************LinkedList UNIT TEST*************************************
+LINKEDLIST_SRC = lib/ADT/LinkedList/listlinier.c
+LINKEDLIST_SRC_TEST = lib/ADT/LinkedList/tests/mlistlinier.c
+LINKEDLIST_OBJ = $(BINARY)/$(LINKEDLIST_SRC:.c=.o)
+LINKEDLIST_OBJ_TEST = $(BINARY)/$(LINKEDLIST_SRC_TEST:.c=.o)
+
+LINKEDLIST_TESTS_DIR = lib/ADT/LinkedList/tests
+LINKEDLIST_TEST_CASES = $(wildcard $(LINKEDLIST_TESTS_DIR)/*.in)
+LINKEDLIST_TEST_OUTPUTS = $(LINKEDLIST_TEST_CASES:.in=.out)
+LINKEDLIST_TEST_RESULTS = $(LINKEDLIST_TEST_CASES:.in=.result)
+
+mlistlinier: $(LINKEDLIST_OBJ) $(LINKEDLIST_OBJ_TEST)
 	$(CC) $(CFLAGS) -o $@ $^
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+test_listlinier: mlistlinier $(LINKEDLIST_TEST_RESULTS)
+	@cat $(LINKEDLIST_TEST_RESULTS)
 
-clean:
-	rm -f main_program mfoo $(OBJ_MAIN) $(OBJ_FOO) $(OBJ_TEST) $(TEST_RESULTS)
-
-que: #command for testing queue unit test` 
-	$(MAKE) -f  makefile.que test_queue 
-
-sta: #command for testing stack unit test
-	$(MAKE) -f makefile.sta test_stack
-# UNIT TESTS
-SRC_FOO = ADT/Foo/foo.c
-SRC_TEST = ADT/Foo/tests/mfoo.c
-OBJ_FOO = $(SRC_FOO:.c=.o)
-OBJ_TEST = $(SRC_TEST:.c=.o)
-
-TESTS_DIR = ADT/Foo/tests
-TEST_CASES = $(wildcard $(TESTS_DIR)/*.in)
-TEST_OUTPUTS = $(TEST_CASES:.in=.out)
-TEST_RESULTS = $(TEST_CASES:.in=.result)
-
-mfoo: $(OBJ_FOO) $(OBJ_TEST)
-	$(CC) $(CFLAGS) -o $@ $^
-
-test_foo: mfoo $(TEST_RESULTS)
-	@cat $(TEST_RESULTS)
-
-$(TEST_RESULTS): $(TESTS_DIR)/%.result: $(TESTS_DIR)/%.in $(TESTS_DIR)/%.out mfoo
-	@if ./mfoo < $< | diff - $(word 2,$^) > /dev/null; then \
-		echo "$< $(word 2,$^): TRUE"; \
+$(LINKEDLIST_TEST_RESULTS): $(LINKEDLIST_TESTS_DIR)/%.result: $(LINKEDLIST_TESTS_DIR)/%.in $(LINKEDLIST_TESTS_DIR)/%.out mlistlinier
+	@if ./mlistlinier < $< | diff - $(word 2,$^) > /dev/null; then \
+		echo "$< $(word 2,$^): PASSED!"; \
 	else \
-		echo "$< $(word 2,$^): WRONG"; \
+		echo "$< $(word 2,$^): FAILED!"; \
 	fi > $@
+#************************************************************************************
+#************************************************************************************
+#************************************************************************************
+
+
+
+

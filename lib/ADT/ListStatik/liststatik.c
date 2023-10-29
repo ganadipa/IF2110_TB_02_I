@@ -1,13 +1,16 @@
+    /* MODUL LIST INTEGER STATIK DENGAN ELEMEN POSITIF */
+/* Berisi definisi dan semua primitif pemrosesan list integer statik dengan elemen positif */
+/* Penempatan elemen selalu rapat kiri */
+/* Banyaknya elemen didefinisikan secara implisit, memori list statik */
 #include <stdio.h>
-#include "./liststatik.h"
-/* ********** SELEKTOR ********** */
-#define ELMT(l, i) (l).contents[(i)]
-
+#include "liststatik.h"
 /* ********** KONSTRUKTOR ********** */
 /* Konstruktor : create List kosong  */
 void CreateListStatik(ListStatik *l){
-    int i = CAPACITY;
-    while (i--) ELMT(*l, i) = MARK;
+    int i;
+    for (i = IDX_MIN; i < CAPACITY;i++){
+        ELMT(*l , i) = MARK;
+    }
 }
 /* I.S. l sembarang */
 /* F.S. Terbentuk List l kosong dengan kapasitas CAPACITY */
@@ -15,103 +18,72 @@ void CreateListStatik(ListStatik *l){
 
 /* ********** SELEKTOR (TAMBAHAN) ********** */
 /* *** Banyaknya elemen *** */
-int listLength(ListStatik l) {
-    // get element first non mark
-    int i = 0;
-    while (ELMT(l, i) == MARK)
-    {
+int listStatikLength(ListStatik l){
+    int i=IDX_MIN;
+    while ((ELMT(l,i)!=MARK) && i<CAPACITY){
         i++;
-        if (i == CAPACITY) return 0;
     }
-    
-    // then get the first MARK
-    int j = i;
-    while (ELMT(l, j) != MARK) 
-    {
-        j ++;
-        if (j == CAPACITY) break;
-    }
-    return j-i;
-
-
+    return i;
 }
 /* Mengirimkan banyaknya elemen efektif List */
 /* Mengirimkan nol jika List kosong */  
 
 /* *** Selektor INDEKS *** */
-IdxType getFirstIdx(ListStatik l) {
-    int i = 0;
-    while (ELMT(l, i) == MARK)
-    {
-        i++;
-        if (i == CAPACITY) return 0;
-    }
-
-    return i;
+IdxType getFirstIdxStatik(ListStatik l){
+    return IDX_MIN;
 }
 /* Prekondisi : List l tidak kosong */
 /* Mengirimkan indeks elemen l pertama */
-IdxType getLastIdx(ListStatik l){
-    // get element first non mark
-    int i = 0;
-    while (ELMT(l, i) == MARK)
-    {
-        i++;
-        if (i == CAPACITY) return 0;
-    }
-    
-    // then get the first MARK
-    int j = i;
-    while (ELMT(l,j) != MARK) 
-    {
-        j ++ ;
-        if (j == CAPACITY) break;
-    }
-
-    return j-1;
+IdxType getLastIdxStatik(ListStatik l){
+    return listStatikLength(l)-1;
 }
 /* Prekondisi : List l tidak kosong */
 /* Mengirimkan indeks elemen l terakhir */
 
 /* ********** Test Indeks yang valid ********** */
-boolean isIdxValid(ListStatik l, IdxType i) {
-    return ( 0 <= i && i< CAPACITY );
+boolean isIdxValidStatik(ListStatik l, IdxType i){
+    return (i >= IDX_MIN && i < CAPACITY);
 }
 /* Mengirimkan true jika i adalah indeks yang valid utk kapasitas List l */
 /* yaitu antara indeks yang terdefinisi utk container*/
-boolean isIdxEff(ListStatik l, IdxType i) {
-    return (getFirstIdx(l)<= i && i<= getFirstIdx(l)+ listLength(l)-1);
+boolean isIdxEffStatik(ListStatik l, IdxType i){
+    return (i>=IDX_MIN && i<listStatikLength(l));
 }
 /* Mengirimkan true jika i adalah indeks yang terdefinisi utk List l */
 /* yaitu antara 0..length(l)-1 */
 
 /* ********** TEST KOSONG/PENUH ********** */
 /* *** Test List kosong *** */
-boolean isEmpty(ListStatik l) {
-    return (listLength(l) == 0);
+boolean isEmptyStatik(ListStatik l){
+    return (listStatikLength(l) == 0);
 }
 /* Mengirimkan true jika List l kosong, mengirimkan false jika tidak */
 /* *** Test List penuh *** */
-boolean isFull(ListStatik l) {
-return (listLength(l) == CAPACITY);}
+boolean isFullStatik(ListStatik l){
+    return (listStatikLength(l) == CAPACITY);
+}
 /* Mengirimkan true jika List l penuh, mengirimkan false jika tidak */
 
 /* ********** BACA dan TULIS dengan INPUT/OUTPUT device ********** */
 /* *** Mendefinisikan isi List dari pembacaan *** */
-void readList(ListStatik *l) {
-    CreateListStatik(l);
-    int n;
-    int i;
-
-    while (true)
-    {
-        scanf("%i", &n);
-        if (0<= n && n<= CAPACITY) break;
+void readListStatik(ListStatik *l){
+    int n, i;
+    scanf("%d", &n);
+    while (!(n>=0 && n<= CAPACITY)){
+        scanf("%d", &n);
     }
-
-    for (int i = 0; i < n; i++) scanf("%i", &ELMT(*l, i));
+    if (n==0){
+        CreateListStatik(l);
+    }
+    else{
+        CreateListStatik(l);
+        for (i = 0; i < n;i++){
+            scanf("%d",&ELMT(*l,i));
+        }
+    }
 }
-
+/* I.S. l sembarang */
+/* F.S. List l terdefinisi */
 /* Proses: membaca banyaknya elemen l dan mengisi nilainya */
 /* 1. Baca banyaknya elemen diakhiri enter, misalnya n */
 /*    Pembacaan diulangi sampai didapat n yang benar yaitu 0 <= n <= CAPACITY */
@@ -119,19 +91,22 @@ void readList(ListStatik *l) {
 /* 2. Jika 0 < n <= CAPACITY; Lakukan n kali: 
           Baca elemen mulai dari indeks 0 satu per satu diakhiri enter */
 /*    Jika n = 0; hanya terbentuk List kosong */
-void printList(ListStatik l){
-
-    int sz = listLength(l);
-    if (sz == 0) {printf("[]");return;}
-
-    int i = getFirstIdx(l);
-    printf("[");
-    while (sz-- >1)
-    {   
-        printf("%i,", ELMT(l, i));
-        i++;
+void printListStatik(ListStatik l){
+    if (isEmptyStatik(l)){
+        printf("[]");
     }
-    printf("%i]", ELMT(l,i));
+    else{
+        int i;
+        printf("[");
+        for (i = IDX_MIN; i <= getLastIdxStatik(l);i++){
+            if (i!=IDX_MIN){
+                printf(",");
+            }
+            printf("%d", ELMT(l, i));
+            
+        }
+        printf("]");
+    }
 }
 /* Proses : Menuliskan isi List dengan traversal, List ditulis di antara kurung 
    siku; antara dua elemen dipisahkan dengan separator "koma", tanpa tambahan 
@@ -143,18 +118,19 @@ void printList(ListStatik l){
 
 /* ********** OPERATOR ARITMATIKA ********** */
 /* *** Aritmatika List : Penjumlahan, pengurangan, perkalian, ... *** */
-ListStatik plusMinusList(ListStatik l1, ListStatik l2, boolean plus) {
-    int i = getFirstIdx(l1);
-    int j = getFirstIdx(l2);
-    int k = 0;
-
-    int length = listLength(l1);
-    ListStatik res;
-    CreateListStatik(&res);
-    for (k = 0; k < length; k++) ELMT(res, k) = ELMT(l1, k) - ELMT(l2, k) + 2*(plus)*(ELMT(l2, k));
-
-    return res;
-
+ListStatik plusMinusListStatik(ListStatik l1, ListStatik l2, boolean plus){
+    int i;
+    if (plus){
+        for (i = IDX_MIN; i < listStatikLength(l1);i++){
+            ELMT(l1, i) += ELMT(l2, i);
+        }
+    }
+    else{
+        for (i = IDX_MIN; i < listStatikLength(l1);i++){
+            ELMT(l1, i) -= ELMT(l2, i);
+        }
+    }
+    return (l1);
 }
 /* Prekondisi : l1 dan l2 berukuran sama dan tidak kosong */
 /* Jika plus = true, mengirimkan  l1+l2, yaitu setiap elemen l1 dan l2 pada 
@@ -164,35 +140,31 @@ ListStatik plusMinusList(ListStatik l1, ListStatik l2, boolean plus) {
 
 /* ********** OPERATOR RELASIONAL ********** */
 /* *** Operasi pembandingan List: *** */
-boolean isListEqual(ListStatik l1, ListStatik l2) {
-    if (listLength(l1) != listLength(l2)) return false;
-
-    int i = 0;
-    for (i = 0; i < CAPACITY; i++) 
-    {
-        if (ELMT(l1, i) != ELMT(l2, i)) return false;
+boolean isListStatikEqual(ListStatik l1, ListStatik l2){
+    if (listStatikLength(l1)!= listStatikLength(l2)){
+        return false;
     }
-
+    int i;
+    for (i = IDX_MIN; i < listStatikLength(l1);i++){
+        if (ELMT(l1,i)!=ELMT(l2,i)){
+            return false;
+        }
+    }
     return true;
-
-
 }
 /* Mengirimkan true jika l1 sama dengan l2 yaitu jika ukuran l1 = l2 dan semua 
    elemennya sama */
 
 /* ********** SEARCHING ********** */
 /* ***  Perhatian : List boleh kosong!! *** */
-int indexOf(ListStatik l, ElType val) {
-    int length = listLength(l);
-    int fi = getFirstIdx(l);
-    int i;
-    for (i = fi; i<fi+length; i++)
-    {
-        if (ELMT(l,i) == val) return i;
+int indexOfListStatik(ListStatik l, ElType val){
+    int i = IDX_MIN;
+    for (i; i < listStatikLength(l); i++){
+        if (ELMT(l,i)==val){
+            return i;
+        }
     }
-
     return IDX_UNDEF;
-
 }
 /* Search apakah ada elemen List l yang bernilai val */
 /* Jika ada, menghasilkan indeks i terkecil, dengan ELMT(l,i) = val */
@@ -200,22 +172,21 @@ int indexOf(ListStatik l, ElType val) {
 /* Skema Searching yang digunakan bebas */
 
 /* ********** NILAI EKSTREM ********** */
-void extremeValues(ListStatik l, ElType *max, ElType *min){
-    int bestMax = ELMT(l, getFirstIdx(l));
-    int bestMin = ELMT(l, getFirstIdx(l));
-
-    int length = listLength(l);
-    int i1 = getFirstIdx(l);
-    int i;
-    for ( i = i1; i < i1 + length; i++ )
-    {
-        if (bestMax < ELMT(l, i)) bestMax = ELMT(l, i);
-        if (bestMin > ELMT(l, i)) bestMin = ELMT(l, i);
+void extremeValuesStatik(ListStatik l, ElType *max, ElType *min){
+    int terbesar, terkecil;
+    int i = IDX_MIN;
+    terbesar = ELMT(l,0);
+    terkecil = ELMT(l,0);
+    for (i; i < listStatikLength(l);i++){
+        if (ELMT(l,i)>terbesar){
+            terbesar = ELMT(l, i);
+        }
+        if (ELMT(l,i)<terkecil){
+            terkecil = ELMT(l, i);
+        }
     }
-
-    *max = bestMax;
-    *min = bestMin;
-
+    *max = terbesar;
+    *min = terkecil;
 }
 /* I.S. List l tidak kosong */
 /* F.S. Max berisi nilai terbesar dalam l;
@@ -223,37 +194,31 @@ void extremeValues(ListStatik l, ElType *max, ElType *min){
 
 /* ********** MENAMBAH ELEMEN ********** */
 /* *** Menambahkan elemen terakhir *** */
-void insertFirst(ListStatik *l, ElType val){
-    int length = listLength(*l);
-    int i1 = getFirstIdx(*l);
-
-    while (length--)
-    {
-        ELMT(*l, i1 + length + 1) = ELMT(*l, i1 + length + 0);
+void insertFirstStatik(ListStatik *l, ElType val){
+    int i = listStatikLength(*l) - 1;
+    for (i; i >= IDX_MIN;i--){
+        ELMT(*l, i + 1) = ELMT(*l, i);
     }
-    ELMT(*l, i1) = val;
+    ELMT(*l, 0) = val;
 }
 /* Proses: Menambahkan val sebagai elemen pertama List */
 /* I.S. List l boleh kosong, tetapi tidak penuh */
 /* F.S. val adalah elemen pertama l yang baru */
 /* *** Menambahkan elemen pada index tertentu *** */
-void insertAt(ListStatik *l, ElType val, IdxType idx){
-    int length = listLength(*l);
-    int ilast = getLastIdx(*l);
-    int i;
-    for ( i = 0; i < length; i++)
-    {
-        if (ilast -i +1 == idx) break;
-        ELMT(*l, ilast-i+1)  = ELMT(*l, ilast-i);
+void insertAtStatik(ListStatik *l, ElType val, IdxType idx){
+    int i = listStatikLength(*l) - 1;
+    for (i; i >= idx;i--){
+        ELMT(*l, i + 1) = ELMT(*l, i);
     }
-    ELMT(*l, ilast-i+1) = val;
+    ELMT(*l, idx) = val;
 }
+
 /* Proses: Menambahkan val sebagai elemen pada index idx List */
 /* I.S. List l tidak kosong dan tidak penuh, idx merupakan index yang valid di l */
 /* F.S. val adalah elemen yang disisipkan pada index idx l */
 /* *** Menambahkan elemen terakhir *** */
-void insertLast(ListStatik *l, ElType val){
-    ELMT(*l, getFirstIdx(*l) + listLength(*l)) = val;
+void insertLastStatik(ListStatik *l, ElType val){
+    ELMT(*l, listStatikLength(*l)) = val;
 }
 /* Proses: Menambahkan val sebagai elemen terakhir List */
 /* I.S. List l boleh kosong, tetapi tidak penuh */
@@ -261,26 +226,13 @@ void insertLast(ListStatik *l, ElType val){
 
 /* ********** MENGHAPUS ELEMEN ********** */
 /* *** Menghapus elemen pertama *** */
-
-void deleteAt(ListStatik *l, ElType *val, IdxType idx) {
-    *val = ELMT(*l, idx);
-    while (true)
-    {
-        if (idx == CAPACITY-1) {ELMT(*l, idx) = MARK; break;}
-        if (ELMT(*l, idx) == MARK) break;
-        ELMT(*l, idx) = ELMT(*l, idx+1);
-        idx ++;
+void deleteFirstStatik(ListStatik *l, ElType *val){
+    *val = ELMT(*l, IDX_MIN);
+    int i = IDX_MIN;
+    for (i; i < getLastIdxStatik(*l);i++){
+        ELMT(*l, i) = ELMT(*l, i + 1);
     }
-}
-/* Proses : Menghapus elemen pada index idx List */
-/* I.S. List tidak kosong, idx adalah index yang valid di l */
-/* F.S. val adalah nilai elemen pada index idx l sebelum penghapusan, */
-/*      Banyaknya elemen List berkurang satu */
-/*      List l mungkin menjadi kosong */
-/* *** Menghapus elemen terakhir *** */
-
-void deleteFirst(ListStatik *l, ElType *val) {
-    deleteAt(l, val, getFirstIdx(*l));
+    ELMT(*l, getLastIdxStatik(*l)) = MARK;
 }
 /* Proses : Menghapus elemen pertama List */
 /* I.S. List tidak kosong */
@@ -288,9 +240,22 @@ void deleteFirst(ListStatik *l, ElType *val) {
 /*      Banyaknya elemen List berkurang satu */
 /*      List l mungkin menjadi kosong */
 /* *** Menghapus elemen pada index tertentu *** */
-
-void deleteLast(ListStatik *l, ElType *val){
-    deleteAt(l, val, getLastIdx(*l));
+void deleteAtStatik(ListStatik *l, ElType *val, IdxType idx){
+    *val = ELMT(*l, idx);
+    int i = idx;
+    for (i; i < getLastIdxStatik(*l);i++){
+        ELMT(*l, i) = ELMT(*l, i + 1);
+    }
+    ELMT(*l, getLastIdxStatik(*l)) = MARK;
+}
+/* Proses : Menghapus elemen pada index idx List */
+/* I.S. List tidak kosong, idx adalah index yang valid di l */
+/* F.S. val adalah nilai elemen pada index idx l sebelum penghapusan, */
+/*      Banyaknya elemen List berkurang satu */
+/*      List l mungkin menjadi kosong */
+/* *** Menghapus elemen terakhir *** */
+void deleteLastStatik(ListStatik *l, ElType *val){
+    deleteAtStatik(l, val, getLastIdxStatik(*l));
 }
 /* Proses : Menghapus elemen terakhir List */
 /* I.S. List tidak kosong */
@@ -299,40 +264,25 @@ void deleteLast(ListStatik *l, ElType *val){
 /*      List l mungkin menjadi kosong */
 
 /* ********** SORTING ********** */
-void sortList(ListStatik *l, boolean asc){
-    int p1 = getFirstIdx(*l);
-    int p2 = getLastIdx(*l);
-    while (p1 < p2)
-    {
-        int best = ELMT(*l, p1);
-        int tmp_i = p1;
-        int i;
-        for (i = p1; i<=p2; i++)
-        {
-
-            if (ELMT(*l, i) == best) continue;
-            if (ELMT(*l, i) < best && asc)
-            {
-                best = ELMT(*l, i);
-                tmp_i = i;
-            }
-            if (ELMT(*l, i) > best && !asc)
-            {
-                best = ELMT(*l, i);
-                tmp_i = i;
-            }
+void sortListStatik(ListStatik *l, boolean asc) {
+    int i, temp;
+    i = IDX_MIN;
+    if (!isEmptyStatik(*l)) {
+        while (i != getLastIdxStatik(*l)) {
+            if ((asc && (ELMT(*l, i) > ELMT(*l, i + 1))) || (!asc && (ELMT(*l, i) < ELMT(*l, i + 1)))) {
+                temp = ELMT(*l, i + 1);
+                ELMT(*l, i + 1) = ELMT(*l, i);
+                ELMT(*l, i) = temp;
+                i = IDX_MIN;
+            }else{
+                i += 1;
         }
-        int _;
-        
-        deleteAt(l, &_, tmp_i);
-        insertAt(l, best, p1);
-
-        p1++;
     }
-   
-}
+}}
 /* I.S. l boleh kosong */
 /* F.S. Jika asc = true, l terurut membesar */
 /*      Jika asc = false, l terurut mengecil */
 /* Proses : Mengurutkan l dengan salah satu algoritma sorting,
    algoritma bebas */
+
+

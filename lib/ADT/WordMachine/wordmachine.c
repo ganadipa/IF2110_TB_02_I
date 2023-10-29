@@ -1,49 +1,64 @@
-/* File: wordmachine.h */
-/* Definisi Mesin Word: Model Akuisisi Versi I */
-
-#ifndef __WORDMACHINE_H__
-#define __WORDMACHINE_H__
-
-#include "boolean.h"
+#include <stdio.h>
+#include "wordmachine.h"
 #include "charmachine.h"
 
-#define NMax 50
-#define BLANK ' '
+boolean EndWord;
+Word currentWord;
 
-typedef struct
-{
-   char TabWord[NMax]; /* container penyimpan kata, indeks yang dipakai [0..NMax-1] */
-   int Length;
-} Word;
 
-/* State Mesin Word */
-extern boolean EndWord;
-extern Word currentWord;
-
-void IgnoreBlanks();
+void IgnoreBlanks(){
 /* Mengabaikan satu atau beberapa BLANK
    I.S. : currentChar sembarang
    F.S. : currentChar ≠ BLANK atau currentChar = MARK */
+    while (currentChar_WordMachine == BLANK){
+        ADV();
+    }
+}
 
-void STARTWORD();
+void STARTWORD(){
 /* I.S. : currentChar sembarang
    F.S. : EndWord = true, dan currentChar = MARK;
           atau EndWord = false, currentWord adalah kata yang sudah diakuisisi,
           currentChar karakter pertama sesudah karakter terakhir kata */
+    START();
+    IgnoreBlanks();
+    if(currentChar_WordMachine == MARK_WordMachine){
+        EndWord = true;
+    } else {
+        EndWord = false;
+        CopyWord();
+        IgnoreBlanks();
+    }
+}
 
-void ADVWORD();
+void ADVWORD(){
 /* I.S. : currentChar adalah karakter pertama kata yang akan diakuisisi
    F.S. : currentWord adalah kata terakhir yang sudah diakuisisi,
           currentChar adalah karakter pertama dari kata berikutnya, mungkin MARK
           Jika currentChar = MARK, EndWord = true.
    Proses : Akuisisi kata menggunakan procedure SalinWord */
+    if (currentChar_WordMachine == MARK_WordMachine){
+        EndWord = true;
+    } else {
+        CopyWord();
+        IgnoreBlanks();
+    }
+}
 
-void CopyWord();
+void CopyWord(){
 /* Mengakuisisi kata, menyimpan dalam currentWord
    I.S. : currentChar adalah karakter pertama dari kata
    F.S. : currentWord berisi kata yang sudah diakuisisi;
           currentChar = BLANK atau currentChar = MARK;
           currentChar adalah karakter sesudah karakter terakhir yang diakuisisi.
           Jika panjang kata melebihi NMax, maka sisa kata "dipotong" */
-
-#endif
+    int i = 0;
+    while (currentChar_WordMachine != BLANK && currentChar_WordMachine != MARK_WordMachine){
+        if (i < NMax){
+            currentWord.TabWord[i] = currentChar_WordMachine;
+            currentWord.Length = i + 1;
+        }
+        i++;
+        ADV();
+    }  
+}
