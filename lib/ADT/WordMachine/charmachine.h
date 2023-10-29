@@ -4,7 +4,7 @@
 #ifndef __CHAR_MACHINE_H__
 #define __CHAR_MACHINE_H__
 
-#include "boolean.h"
+#include "../../boolean.h"
 
 #define MARK_WordMachine ';'
 /* State Mesin */
@@ -26,4 +26,9 @@ void ADV();
           currentChar mungkin = MARK
           Jika  currentChar = MARK maka EOP akan menyala (true) */
 
+void CLOSE();
+/**
+ * I.S. Pita terbuka
+ * F.S. Pita tertutup
+*/
 #endif

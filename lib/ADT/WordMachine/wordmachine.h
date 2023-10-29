@@ -4,7 +4,7 @@
 #ifndef __WORDMACHINE_H__
 #define __WORDMACHINE_H__
 
-#include "boolean.h"
+#include "../../boolean.h"
 #include "charmachine.h"
 
 #define NMax 50
@@ -19,6 +19,13 @@ typedef struct
 /* State Mesin Word */
 extern boolean EndWord;
 extern Word currentWord;
+
+void IgnoreNewLinesAndNull();
+/* Mengabaikan satu atau beberapa BLANK
+   I.S. : currentChar sembarang
+   F.S. : currentChar ≠ '\n'*/
+
+
 
 void IgnoreBlanks();
 /* Mengabaikan satu atau beberapa BLANK

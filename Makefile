@@ -4,8 +4,8 @@
 # ************************Architecture Programme Setup*************************************
 BINARY = .bin
 BINDIR = .bin
-CODEDIRS = app lib/ADT/*
-INCDIRS = app lib/ADT lib/ADT/*
+CODEDIRS = app lib/ADT/* lib/Types
+INCDIRS = app lib/ADT lib/ADT/* lib/Types
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -std=c11 $(DEPFLAGS) $(foreach D, $(INCDIRS), -I$(D)) -Wno-unused-variable -Wno-unused-parameter -Wno-unused-value -Wno-unused-but-set-variable

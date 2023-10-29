@@ -15,12 +15,10 @@ void START()
        /* Mesin siap dioperasikan. Pita disiapkan untuk dibaca.
           Karakter pertama yang ada pada pita posisinya adalah pada jendela.
           I.S. : sembarang
-          F.S. : currentChar adalah karakter pertama pada pita. Jika currentChar != MARK maka EOP akan padam (false).
-                 Jika currentChar = MARK maka EOP akan menyala (true) */
+          F.S. : pita terbuka*/
 
        /* Algoritma */
        pita = stdin;
-       ADV();
 }
 
 void ADV()
@@ -35,8 +33,8 @@ void ADV()
        /* Algoritma */
        retval = fscanf(pita, "%c", &currentChar_WordMachine);
        EOP_WordMachine = (currentChar_WordMachine == MARK_WordMachine);
-       if (EOP_WordMachine)
-       {
-              fclose(pita);
-       }
+}
+
+void CLOSE() {
+       fclose(pita);
 }

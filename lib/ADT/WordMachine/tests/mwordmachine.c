@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "../wordmachine.h"
-#include "../boolean.h"
+#include "../../boolean.h"
 
 int main(){
     int i=0, temp;
@@ -16,7 +16,7 @@ int main(){
                 for(i=0;i<currentWord.Length;i++){
                     printf("%c", currentWord.TabWord[i]);
                 }
-                if (currentChar != MARK_WordMachine){
+                if (currentChar_WordMachine != MARK_WordMachine){
                     printf(" ");
                 }
                 ADVWORD();
@@ -29,7 +29,7 @@ int main(){
                 for(i=0;i<currentWord.Length;i++){
                     printf("%c", ((currentWord.TabWord[i] - 'A' + currentWord.Length) % ('z' - 'A' + 1)) + 'A');
                 }
-                if (currentChar != MARK_WordMachine){
+                if (currentChar_WordMachine != MARK_WordMachine){
                     printf(" ");
                 }
                 ADVWORD();

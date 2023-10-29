@@ -5,11 +5,22 @@
 boolean EndWord;
 Word currentWord;
 
+void IgnoreNewLinesAndNull()
+/* Mengabaikan satu atau beberapa BLANK
+   I.S. : currentChar sembarang
+   F.S. : currentChar ≠ '\n' atau currentChar = MARK*/
+{
+    START();
+    while (currentChar_WordMachine == '\n' || currentChar_WordMachine == '\0'){
+        ADV();
+    }
+}
 
 void IgnoreBlanks(){
 /* Mengabaikan satu atau beberapa BLANK
    I.S. : currentChar sembarang
    F.S. : currentChar ≠ BLANK atau currentChar = MARK */
+   START();
     while (currentChar_WordMachine == BLANK){
         ADV();
     }
@@ -43,6 +54,7 @@ void ADVWORD(){
         CopyWord();
         IgnoreBlanks();
     }
+
 }
 
 void CopyWord(){
@@ -61,4 +73,5 @@ void CopyWord(){
         i++;
         ADV();
     }  
+
 }
