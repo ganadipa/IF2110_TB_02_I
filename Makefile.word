@@ -1,10 +1,10 @@
 
-SRC_WORD = ADT/WordMachine/wordmachine.c
-SRC_TEST = ADT/WordMachine/tests/mwordmachine.c
+SRC_WORD = lib/ADT/WordMachine/wordmachine.c
+SRC_TEST = lib/ADT/WordMachine/tests/mwordmachine.c
 OBJ_WORD = $(SRC_WORD:.c=.o)
 OBJ_TEST = $(SRC_TEST:.c=.o)
 
-TESTS_DIR = ADT/WordMachine/tests
+TESTS_DIR = lib/ADT/WordMachine/tests
 TEST_CASES = $(wildcard $(TESTS_DIR)/*.in)
 TEST_OUTPUTS = $(TEST_CASES:.in=.out)
 TEST_RESULTS = $(TEST_CASES:.in=.result)
