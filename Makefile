@@ -1,5 +1,6 @@
 include makefile.que #unit test for queue
 include makefile.sta #unit test for stack
+include makefile.word #unit test for wordmachine
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -std=c11 $(DEPFLAGS) $(foreach D, $(INCDIRS), -I$(D)) -Wno-unused-variable -Wno-unused-parameter -Wno-unused-value -Wno-unused-but-set-variable
