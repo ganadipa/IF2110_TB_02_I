@@ -1,5 +1,4 @@
-.bin/lib/ADT/LinkedList/tests/mlistlinier.o: \
- lib/ADT/LinkedList/tests/mlistlinier.c /usr/include/stdc-predef.h \
+.bin/lib/Types/Photo.o: lib/Types/Photo.c /usr/include/stdc-predef.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -22,9 +21,15 @@
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- lib/ADT/LinkedList/tests/../listlinier.h \
- lib/ADT/LinkedList/tests/../../../boolean.h
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h lib/Types/Photo.h \
+ lib/Types/../boolean.h lib/Types/../ADT/String/string.h \
+ lib/Types/../ADT/String/../../boolean.h \
+ lib/Types/../ADT/String/../WordMachine/wordmachine.h \
+ lib/Types/../ADT/String/../WordMachine/../../boolean.h \
+ lib/Types/../ADT/String/../WordMachine/charmachine.h \
+ lib/Types/../ADT/Matriks/charMatriks.h \
+ lib/Types/../ADT/Matriks/../../boolean.h \
+ lib/Types/../ADT/PColor/pcolor.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -50,5 +55,13 @@
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-lib/ADT/LinkedList/tests/../listlinier.h:
-lib/ADT/LinkedList/tests/../../../boolean.h:
+lib/Types/Photo.h:
+lib/Types/../boolean.h:
+lib/Types/../ADT/String/string.h:
+lib/Types/../ADT/String/../../boolean.h:
+lib/Types/../ADT/String/../WordMachine/wordmachine.h:
+lib/Types/../ADT/String/../WordMachine/../../boolean.h:
+lib/Types/../ADT/String/../WordMachine/charmachine.h:
+lib/Types/../ADT/Matriks/charMatriks.h:
+lib/Types/../ADT/Matriks/../../boolean.h:
+lib/Types/../ADT/PColor/pcolor.h:

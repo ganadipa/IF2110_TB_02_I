@@ -85,6 +85,7 @@ void insertLast_ListUser(ListUser *l, User val)
 /* F.S. val adalah elemen terakhir l yang baru */
 {
     ELMT_LISTUSER(*l, LENGTH_LISTUSER(*l)) = val;
+    LENGTH_LISTUSER(*l) += 1;
 }
 
 /* ********** MENGHAPUS ELEMEN ********** */

@@ -11,6 +11,7 @@
 #include "./ADT/Queue/queue.h"
 #include "./ADT/Stack/stack.h"
 #include "./ADT/Tree/tree.h"
+#include "./ADT/PColor/pcolor.h"
 #include "./boolean.h"
 #include "./Types/Application.h"
 #include "./Types/User.h"

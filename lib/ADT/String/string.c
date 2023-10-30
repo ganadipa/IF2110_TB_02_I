@@ -79,6 +79,8 @@ void readString(String *s, int maxLength)
     // now current char is '\n'
 }
 
+
+
 boolean isStringEqual(String s1, String s2)
 
 {
@@ -93,6 +95,52 @@ boolean isStringEqual(String s1, String s2)
     }
 
     return check;
+}
+
+boolean isStringInsensitivelyEqual(String s1, String s2)
+
+{
+    int len1 = stringLength(s1);
+    int len2 = stringLength(s2);
+    if (len1 != len2) return false;
+
+
+
+    int i = 0;
+    boolean check = true;
+    while (i < len1 && check) {
+        int num1 = s1.buffer[i] - 'A';
+        int num2 = s2.buffer[i] - 'A';
+
+
+        if (isAlphabet(s1.buffer[i])) {
+            if (isAlphabetLowerCase(s1.buffer[i])) {
+                if (num2 != num1 && num2 != num1-32) check = false;
+            } else {
+                if (num2 != num1 && num2 != num1+32) check = false;
+            }
+        } else {
+            if (s1.buffer[i] != s2.buffer[i]) check = false;
+        }
+        
+        i++;
+    }
+
+    return check;
+}
+
+boolean isAlphabet(char c) 
+
+{
+    int num = (int) c;
+    return (65 <= num && num <= 90) || (97 <= num && num <= 122);
+}
+
+boolean isAlphabetLowerCase(char c) 
+
+{
+    int i = c - 'a';
+    return i >= 0 && i <= 25;
 }
 
 boolean compareString(String s, char* cptr)
@@ -117,10 +165,120 @@ boolean compareString(String s, char* cptr)
     return check;
 }
 
+boolean compareStringInsensitively(String s, char* cptr)
+{
+    int i = 0;
+    boolean finish = false;
+    boolean check = true;
+    while (!finish && check) {
+        int num1 = *cptr - 'A';
+        int num2 = s.buffer[i] - 'A';
+
+
+        if (isAlphabet(s.buffer[i])) {
+            if (isAlphabetLowerCase(s.buffer[i])) {
+                if (num1 != num2 && num1 != num2 - 32) check = false;
+            } else {
+                if (num1 != num2 && num1 != num2 + 32) check = false;
+            }
+        } else {
+            if (num1 != num2) check = false;
+        }
+
+        if (check) {
+            cptr++;
+            i++;
+        } else {
+            finish = true;
+        }
+
+        if (*cptr == '\0' && s.buffer[i] == '\0') finish = true;
+
+    }
+
+    return check;
+}
+
 void displayString(String s) {
     int len = stringLength(s);
-
-    for (int i = 0; i < len; i++) {
+    int i;
+    for (i = 0; i < len; i++) {
         printf("%c", s.buffer[i]);
     }
+}
+
+boolean isAllNumber(String s) {
+    int len = stringLength(s);
+    boolean check = true;
+
+    int i = 0;
+    while (i < len && check) {
+        int num = s.buffer[i] - '0';
+        if (num > 10 || num < 0) check = false;
+        i++;
+    }
+
+    return check;
+}
+
+String getWordAt(String s, int i) 
+/**
+ * Mulanya, string s terdefinisi, i < n di mana n adalah jumlah kata dalam string s.
+ * Mendapatkan string yang berisi kata ke-i (0-indexed).
+*/
+
+{
+    String oneWord;
+    createEmptyString(&oneWord, 350);
+
+    int length = stringLength(s);
+    int k = 0, ptr = 0;;
+    boolean done = false;
+
+    while (k < i) {
+        if (s.buffer[ptr] != ' ') {
+            ptr++;
+            }
+        else 
+         {
+            k++;
+            while (s.buffer[ptr] == ' ') {
+                ptr++;
+            }
+         }
+    }
+
+    while (s.buffer[ptr] != ' ' && s.buffer[ptr] != '\0') {
+        addChar(&oneWord, s.buffer[ptr]);
+        ptr++;
+    }
+
+    return oneWord;
+}
+
+int countWord(String s)
+
+/**
+ * 
+*/
+
+{
+    int k= 0, ptr = 0;
+    if (s.buffer[0] == '\0') return 0;
+
+    while (s.buffer[ptr] != '\0') {
+        if (s.buffer[ptr] != ' ') {
+            ptr++;
+        }
+        else 
+         {
+            k++;
+            while (s.buffer[ptr] == ' ') {
+                ptr++;
+            }
+         }
+    }
+
+    return k+1;
+
 }

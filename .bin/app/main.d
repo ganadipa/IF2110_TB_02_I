@@ -39,11 +39,16 @@
  app/../lib/./ADT/WordMachine/wordmachine.h \
  app/../lib/./ADT/Queue/queue.h app/../lib/./ADT/Queue/../../boolean.h \
  app/../lib/./ADT/Stack/stack.h app/../lib/./ADT/Stack/../../boolean.h \
- app/../lib/./ADT/Tree/tree.h app/../lib/./boolean.h \
- app/../lib/./Types/Application.h app/../lib/./Types/../boolean.h \
- app/../lib/./Types/./ListUser.h app/../lib/./Types/./../boolean.h \
- app/../lib/./Types/././User.h app/../lib/./Types/././../boolean.h \
- app/../lib/./Types/././../ADT/String/string.h app/../lib/./Types/User.h
+ app/../lib/./ADT/Tree/tree.h app/../lib/./ADT/PColor/pcolor.h \
+ app/../lib/./boolean.h app/../lib/./Types/Application.h \
+ app/../lib/./Types/../boolean.h app/../lib/./Types/./ListUser.h \
+ app/../lib/./Types/./../boolean.h app/../lib/./Types/././User.h \
+ app/../lib/./Types/././../boolean.h \
+ app/../lib/./Types/././../ADT/String/string.h \
+ app/../lib/./Types/././Profile.h app/../lib/./Types/././Photo.h \
+ app/../lib/./Types/././../ADT/Matriks/charMatriks.h \
+ app/../lib/./Types/././../ADT/Matriks/../../boolean.h \
+ app/../lib/./Types/User.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -92,6 +97,7 @@ app/../lib/./ADT/Queue/../../boolean.h:
 app/../lib/./ADT/Stack/stack.h:
 app/../lib/./ADT/Stack/../../boolean.h:
 app/../lib/./ADT/Tree/tree.h:
+app/../lib/./ADT/PColor/pcolor.h:
 app/../lib/./boolean.h:
 app/../lib/./Types/Application.h:
 app/../lib/./Types/../boolean.h:
@@ -100,4 +106,8 @@ app/../lib/./Types/./../boolean.h:
 app/../lib/./Types/././User.h:
 app/../lib/./Types/././../boolean.h:
 app/../lib/./Types/././../ADT/String/string.h:
+app/../lib/./Types/././Profile.h:
+app/../lib/./Types/././Photo.h:
+app/../lib/./Types/././../ADT/Matriks/charMatriks.h:
+app/../lib/./Types/././../ADT/Matriks/../../boolean.h:
 app/../lib/./Types/User.h:

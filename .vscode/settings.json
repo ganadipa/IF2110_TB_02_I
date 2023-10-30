@@ -12,6 +12,11 @@
     "string.h": "c",
     "stdio.h": "c",
     "wordmachine.h": "c",
-    "boolean.h": "c"
+    "boolean.h": "c",
+    "matriks.h": "c",
+    "charmatriks.h": "c",
+    "profile.h": "c",
+    "photo.h": "c",
+    "pcolor.h": "c"
   }
 }

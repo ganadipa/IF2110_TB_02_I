@@ -1,15 +1,15 @@
 #include "../string.h"
 #include <stdio.h>
-
+// gcc -o driver driverstring.c ../string.c ../../WordMachine/wordmachine.c ../../WordMachine/charmachine.c
 int main(int argc, char const *argv[])
 {
     String s;
     createEmptyString(&s, 350);
-    stringAdd(&s, 'h');
-    stringAdd(&s, 'e');
-    stringAdd(&s, 'y');
+    addChar(&s, 'h');
+    addChar(&s, 'e');
+    addChar(&s, 'y');
 
     displayString(s);
-    printf("%d", compareString(s, "hey"));
+    printf("%d", compareStringInsensitively(s, "heY"));
     return 0;
 }
