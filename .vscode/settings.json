@@ -1,7 +1,22 @@
 {
-    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
-    "C_Cpp.default.compilerPath": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
-    "files.associations": {
-        "wordmachine.h": "c"
-    }
+  "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+  "C_Cpp.default.compilerPath": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+  "files.associations": {
+    "liststatik.h": "c",
+    "graf.h": "c",
+    "charmachine.h": "c",
+    "adt.h": "c",
+    "application.h": "c",
+    "lib.h": "c",
+    "user.h": "c",
+    "string.h": "c",
+    "stdio.h": "c",
+    "wordmachine.h": "c",
+    "boolean.h": "c",
+    "matriks.h": "c",
+    "charmatriks.h": "c",
+    "profile.h": "c",
+    "photo.h": "c",
+    "pcolor.h": "c"
+  }
 }
