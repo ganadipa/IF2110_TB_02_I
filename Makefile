@@ -1,6 +1,7 @@
 include makefile.que #unit test for queue
 include makefile.sta #unit test for stack
 
+include Makefile.din
 CC = gcc
 CFLAGS = -Wall -Werror -std=c11
 
@@ -27,7 +28,8 @@ main_program: $(OBJ_MAIN) $(OBJ_FOO) $(queue) $(stack)
 clean:
 	rm -f main_program mfoo $(OBJ_MAIN) $(OBJ_FOO) $(OBJ_TEST) $(TEST_RESULTS)
 
-que: #command for testing queue unit test` 
+din :
+	$(MAKE) -f Makefile.din test_listdinque: #command for testing queue unit test` 
 	$(MAKE) -f  makefile.que test_queue 
 
 sta: #command for testing stack unit test
