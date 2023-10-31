@@ -62,7 +62,11 @@ void addWord(String *s, Word w);
  * 
 */
 
-void addString(String *s, String s2);
+String concatString(String *sOut, String s1, String s2);
+/**
+ * 
+*/
+
 
 boolean compareString(String s, char* cptr);
 /**

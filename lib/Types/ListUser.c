@@ -143,3 +143,11 @@ IdxType searchByName(ListUser l, String name)
     if (found) return i;
     else return IDX_UNDEF;
 }
+
+void displayName(ListUser l, int i) 
+/**
+ * I.S. i dan l terdefinisi sertva valid.
+*/
+{  
+    displayString(NAME(ELMT_LISTUSER(l, i)));
+}
