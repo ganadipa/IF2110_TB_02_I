@@ -113,4 +113,6 @@ IdxType searchByName(ListUser l, String name);
  * Mengembalikan indeks di mana nama 'name' berada di l.
 */
 
+void displayName(ListUser l, int i);
+
 #endif

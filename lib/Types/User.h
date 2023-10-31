@@ -11,9 +11,11 @@
 
 typedef struct user {
     int ID;
+    int friendCount;
     String name;
     String password;
     Profile profile;
+
 } User;
 
 
@@ -21,6 +23,7 @@ typedef struct user {
 #define NAME(u) (u).name
 #define PW(u) (u).password
 #define PROFILE(u) (u).profile
+#define FRIEND_COUNT(u) (u).friendCount
 
 void initializeUser(User *u, String name, String password, int ID);
 /**
