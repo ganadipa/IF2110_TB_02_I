@@ -82,5 +82,14 @@ $(LINKEDLIST_TEST_RESULTS): $(LINKEDLIST_TESTS_DIR)/%.result: $(LINKEDLIST_TESTS
 #************************************************************************************
 
 
+que: #command for testing queue unit test` 
+	$(MAKE) -f  Makefile.que test_queue 
+
+sta: #command for testing stack unit test
+	$(MAKE) -f Makefile.sta test_stack
+
+din:
+	$(MAKE) -f Makefile.din test_listdin
+
 
 
