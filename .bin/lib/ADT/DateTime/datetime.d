@@ -1,4 +1,4 @@
-.bin/lib/ADT/DateTime/datetime.o: lib/ADT/DateTime/datetime.c \
+.bin/lib/ADT/DateTime/Datetime.o: lib/ADT/DateTime/Datetime.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -21,10 +21,15 @@
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/stdlib.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- lib/ADT/DateTime/datetime.h lib/ADT/DateTime/../../boolean.h \
- lib/ADT/DateTime/time.h
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ lib/ADT/DateTime/Datetime.h lib/ADT/DateTime/../../boolean.h \
+ /usr/include/time.h /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endianness.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -50,8 +55,13 @@
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-/usr/include/stdlib.h:
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-lib/ADT/DateTime/datetime.h:
+lib/ADT/DateTime/Datetime.h:
 lib/ADT/DateTime/../../boolean.h:
-lib/ADT/DateTime/time.h:
+/usr/include/time.h:
+/usr/include/x86_64-linux-gnu/bits/time.h:
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
