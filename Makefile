@@ -1,5 +1,6 @@
 include makefile.que #unit test for queue
 include makefile.sta #unit test for stack
+include makefile.word #unit test for wordmachine
 include makefile.din #unit test for list dinamik
 
 CC = gcc
