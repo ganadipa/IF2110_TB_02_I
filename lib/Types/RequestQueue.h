@@ -4,7 +4,7 @@
 #include "./User.h"
 
 typedef struct {
-
+   
 } RequestQueue;
 
 #endif

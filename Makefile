@@ -29,7 +29,8 @@ $(PROGRAM): $(OBJECTS)
 	@$(CC) -o $@ $^
 
 clean: 
-	rm -rf $(BINDIR)
+	@rm -rf $(BINDIR)
+	@echo "Cleaning upp files..."
 
 # Target to run the application
 run: $(PROGRAM)
