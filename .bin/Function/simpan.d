@@ -36,6 +36,8 @@
  Function/../lib/./ADT/Graf/../../boolean.h \
  Function/../lib/./ADT/Graf/../ListStatik/liststatik.h \
  Function/../lib/./ADT/Graf/../ListStatik/../../boolean.h \
+ Function/../lib/./ADT/Graf/../Matriks/boolMatriks.h \
+ Function/../lib/./ADT/Graf/../Matriks/../../boolean.h \
  Function/../lib/./ADT/LinkedList/listlinier.h \
  Function/../lib/./ADT/LinkedList/../../boolean.h \
  Function/../lib/./ADT/ListDinamik/listdinamik.h \
@@ -66,6 +68,7 @@
  Function/../lib/./Types/././Photo.h \
  Function/../lib/./Types/././../ADT/Matriks/charMatriks.h \
  Function/../lib/./Types/././../ADT/Matriks/../../boolean.h \
+ Function/../lib/./Types/../ADT/Graf/graf.h \
  Function/../lib/./Types/User.h Function/../lib/./Types/Profile.h \
  Function/../lib/./Types/Photo.h
 /usr/include/stdc-predef.h:
@@ -110,6 +113,8 @@ Function/../lib/./ADT/Graf/graf.h:
 Function/../lib/./ADT/Graf/../../boolean.h:
 Function/../lib/./ADT/Graf/../ListStatik/liststatik.h:
 Function/../lib/./ADT/Graf/../ListStatik/../../boolean.h:
+Function/../lib/./ADT/Graf/../Matriks/boolMatriks.h:
+Function/../lib/./ADT/Graf/../Matriks/../../boolean.h:
 Function/../lib/./ADT/LinkedList/listlinier.h:
 Function/../lib/./ADT/LinkedList/../../boolean.h:
 Function/../lib/./ADT/ListDinamik/listdinamik.h:
@@ -142,6 +147,7 @@ Function/../lib/./Types/././Profile.h:
 Function/../lib/./Types/././Photo.h:
 Function/../lib/./Types/././../ADT/Matriks/charMatriks.h:
 Function/../lib/./Types/././../ADT/Matriks/../../boolean.h:
+Function/../lib/./Types/../ADT/Graf/graf.h:
 Function/../lib/./Types/User.h:
 Function/../lib/./Types/Profile.h:
 Function/../lib/./Types/Photo.h:

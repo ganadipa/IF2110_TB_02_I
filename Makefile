@@ -22,15 +22,17 @@ all: $(BINARY)
 
 $(BINARY): $(OBJECTS)
 
-$(BINDIR)/%.o : %.c
+$(BINDIR)/%.o:%.c
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
 $(PROGRAM): $(OBJECTS)
-	$(CC) -o $@ $^
+	@echo "Running the code..."
+	@$(CC) -o $@ $^
 
 clean: 
-	rm -rf $(BINDIR)
+	@rm -rf $(BINDIR)
+	@echo "Cleaning upp files..."
 
 # Target to run the application
 run: $(PROGRAM)
@@ -91,3 +93,4 @@ $(LINKEDLIST_TEST_RESULTS): $(LINKEDLIST_TESTS_DIR)/%.result: $(LINKEDLIST_TESTS
 #************************************************************************************
 #************************************************************************************
 #************************************************************************************
+

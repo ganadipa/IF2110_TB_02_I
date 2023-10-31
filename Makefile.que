@@ -21,3 +21,4 @@ $(TEST_RESULTS): $(TESTS_DIR)/%.result: $(TESTS_DIR)/%.in $(TESTS_DIR)/%.out mqu
 	else \
 		echo "$< $(word 2,$^): WRONG"; \
 	fi > $@
+

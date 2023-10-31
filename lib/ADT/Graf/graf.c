@@ -4,8 +4,7 @@
 /* ElType adalah integer */
 
 #include <stdio.h>
-#include "../boolean.h"
-#include "../ListStatik/liststatik.h"
+#include "../../boolean.h"
 #include "./graf.h"
 /* PROTOTYPE */
 /****************** PEMBUATAN LIST KOSONG ******************/
@@ -13,44 +12,30 @@ void CreateGraph(Graf *g)
 /* I.S. sembarang             */
 /* F.S. Terbentuk graf kosong */
 {
-    g->numEdges = 0;
-    g->numVertices = 0;
+    NUMEDGE(*g) = 0;
+    NUMVERTICES(*g) = 0;
     int i, j;
     for (i = 0; i < CAP; i++) {
         for (j = 0; j < CAP; j++) {
-            g->adjMatrix[i][j] = -1;
+            CONNECTED(*g, i, j) = false;
         }
     }
 }
 
 
 /****************** TEST LIST KOSONG ******************/
-boolean isEmpty_Graf(Graf g)
-/* Mengirim true jika graf kosong */
+boolean isFull_Graf(Graf g)
+/* Mengirim true jika graf full */
 {
-    return g.numEdges == 0;
+    return  NUMVERTICES(g) = CAP;
 }
 
-boolean isFull_Graf(Graf  g)
-/* Mengirim true jika graf full (numEdge == 0)*/
+boolean isEmpty_Graf(Graf  g)
+/* Mengirim true jika graf kosong*/
 {
-    return g.numEdges == 0;
+    return NUMVERTICES(g) = 0;
 }
 
-/****************** GETTER SETTER ******************/
-ListStatik getAdjacencyList_Graf(Graf g, int idx)
-/* I.S. l terdefinisi, idx indeks yang valid dalam l, yaitu 0..length(l) */
-/* F.S. Mengembalikan nilai elemen l pada indeks idx */
-{
-    ListStatik l;
-    CreateListStatik(&l);
-    int i = 0;
-    for (i = 0; i < CAP; i++) {
-        if (g.adjMatrix[idx][i] == 1) insertLastStatik(&l, i);
-    }
-
-    return l;
-}
 
 void printGraph(Graf g)
 /*
@@ -59,13 +44,14 @@ void printGraph(Graf g)
 */
 {
     int i, j;
-    for (i = 0; i < g.numVertices; i++) {
+    for (i = 0; i < NUMVERTICES(g); i++) {
         printf("[");
-        for (j = 0; j < g.numVertices; j++) {
-            printf("%d", g.adjMatrix[i][j]);
-            if (j == g.numVertices -1) printf("]");
+        for (j = 0; j < NUMVERTICES(g); j++) {
+            printf("%d", CONNECTED(g, i , j));
+            if (j == NUMVERTICES(g) -1) printf("]");
             else printf(" ");
         }
+        printf("\n");
     }
 }
 
@@ -74,9 +60,50 @@ boolean isDirectlyConnected_Graf(Graf g, int i, int j)
  * g adalah graf tak berarah
 */
 {
-    return g.adjMatrix[i][j] == 1;
+    return CONNECTED(g, i , j) == true;
 }
 
+void addEdge(Graf *g, int i, int j) 
+/**
+ * I.S. i dan j kurang dari NUMVERTICES(*g)
+*/
+{
+    NUMEDGE(*g) += 1;
+    CONNECTED(*g, i, j) = true;
+    CONNECTED(*g, j, i) = true;
+}
+
+
+int countConnections(Graf g, int i) {
+    int k, count = 0;;
+    for (k = 0; k < NUMEDGE(g); k++) {
+        if (CONNECTED(g, i, k) == true) count++;
+    }
+
+    return count;
+    
+}
+
+void removeEdge(Graf *g, int i, int j) 
+/**
+ * I.S. i dan j kurang dari NUMVERTICES(*g)
+*/
+{
+    NUMEDGE(*g) -= 1;
+    CONNECTED(*g, i, j) = false;
+    CONNECTED(*g, j, i) = false;
+}
+
+void addVertices(Graf *g)
+
+{
+    NUMVERTICES(*g) += 1;
+    int i, j;
+    for (i = 0; i < NUMVERTICES(*g); i++) {
+        CONNECTED(*g, NUMVERTICES(*g)-1, i) = false;
+        CONNECTED(*g, i, NUMVERTICES(*g)-1) = false;
+    }
+}
 
 
 
