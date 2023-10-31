@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream:Makefile.que
 
 SRC_QUE = lib/ADT/Queue/queue.c
 SRC_TEST = lib/ADT/Queue/tests/mqueue.c

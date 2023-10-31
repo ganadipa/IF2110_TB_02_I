@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../listdin.h"
+#include "../listdinamik.h"
 
 int main()
 {
