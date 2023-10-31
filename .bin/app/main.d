@@ -50,8 +50,8 @@
  app/../lib/./Types/././Profile.h app/../lib/./Types/././Photo.h \
  app/../lib/./Types/././../ADT/Matriks/charMatriks.h \
  app/../lib/./Types/././../ADT/Matriks/../../boolean.h \
-<<<<<<< HEAD
- app/../lib/./Types/User.h app/../function/simpan.h /usr/include/dirent.h \
+ app/../lib/./Types/../ADT/Graf/graf.h app/../lib/./Types/User.h \
+ app/../function/simpan.h /usr/include/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
@@ -63,9 +63,6 @@
  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  app/../function/../lib/lib.h
-=======
- app/../lib/./Types/../ADT/Graf/graf.h app/../lib/./Types/User.h
->>>>>>> main
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
