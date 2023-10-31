@@ -1,1 +1,1 @@
-ADT/Stack/tests/5.in ADT/Stack/tests/5.out: WRONG
+lib/ADT/Stack/tests/5.in lib/ADT/Stack/tests/5.out: TRUE

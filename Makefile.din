@@ -1,9 +1,9 @@
-SRC_LISTDIN = ADT/ListDinamik/listdin.c
-SRC_TEST = ADT/ListDinamik/tests/mlistdin.c
+SRC_LISTDIN = lib/ADT/ListDinamik/listdin.c
+SRC_TEST = lib/ADT/ListDinamik/tests/mlistdin.c
 OBJ_LISTDIN = $(SRC_LISTDIN:.c=.o)
 OBJ_TEST = $(SRC_TEST:.c=.o)
 
-TESTS_DIR = ADT/ListDinamik/tests
+TESTS_DIR = lib/ADT/ListDinamik/tests
 TEST_CASES = $(wildcard $(TESTS_DIR)/*.in)
 TEST_OUTPUTS = $(TEST_CASES:.in=.out)
 TEST_RESULTS = $(TEST_CASES:.in=.result)
