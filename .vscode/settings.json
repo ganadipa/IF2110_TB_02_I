@@ -18,6 +18,7 @@
     "profile.h": "c",
     "photo.h": "c",
     "pcolor.h": "c",
-    "simpan.h": "c"
+    "simpan.h": "c",
+    "listdinamik.h": "c"
   }
 }

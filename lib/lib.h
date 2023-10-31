@@ -15,5 +15,7 @@
 #include "./boolean.h"
 #include "./Types/Application.h"
 #include "./Types/User.h"
+#include "./Types/Profile.h"
+#include "./Types/Photo.h"
 
 #endif

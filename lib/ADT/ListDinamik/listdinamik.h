@@ -1,13 +1,12 @@
 /* MODUL INTEGER DYNAMIC LIST */
 /* Berisi definisi dan semua primitif pemrosesan list integer */
 /* Penempatan elemen selalu rapat kiri */
-/* Versi II : dengan banyaknya elemen didefinisikan secara eksplisit,
-   memori list dinamik */
+/* Versi II : dengan banyaknya elemen didefinisikan secara eksplisit, */
 
-#ifndef LISTDIN_H
-#define LISTDIN_H
+#ifndef LISTDINAMIK_H
+#define LISTDINAMIk_H
 
-#include "../boolean.h"
+#include "../../boolean.h"
 
 /*  Kamus Umum */
 #define IDX_MIN 0

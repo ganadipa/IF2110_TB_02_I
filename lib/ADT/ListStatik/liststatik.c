@@ -8,19 +8,19 @@
 /* Konstruktor : create List kosong  */
 void CreateListStatik(ListStatik *l){
     int i;
-    for (i = IDX_MIN; i < CAPACITY;i++){
-        ELMT(*l , i) = MARK;
+    for (i = IDX_MIN; i < CAPACITY_STATIK;i++){
+        ELMT_STATIK(*l , i) = MARK;
     }
 }
 /* I.S. l sembarang */
-/* F.S. Terbentuk List l kosong dengan kapasitas CAPACITY */
+/* F.S. Terbentuk List l kosong dengan kapasitas CAPACITY_STATIK */
 /* Proses: Inisialisasi semua elemen List l dengan MARK */
 
 /* ********** SELEKTOR (TAMBAHAN) ********** */
 /* *** Banyaknya elemen *** */
 int listStatikLength(ListStatik l){
     int i=IDX_MIN;
-    while ((ELMT(l,i)!=MARK) && i<CAPACITY){
+    while ((ELMT_STATIK(l,i)!=MARK) && i<CAPACITY_STATIK){
         i++;
     }
     return i;
@@ -42,7 +42,7 @@ IdxType getLastIdxStatik(ListStatik l){
 
 /* ********** Test Indeks yang valid ********** */
 boolean isIdxValidStatik(ListStatik l, IdxType i){
-    return (i >= IDX_MIN && i < CAPACITY);
+    return (i >= IDX_MIN && i < CAPACITY_STATIK);
 }
 /* Mengirimkan true jika i adalah indeks yang valid utk kapasitas List l */
 /* yaitu antara indeks yang terdefinisi utk container*/
@@ -60,7 +60,7 @@ boolean isEmptyStatik(ListStatik l){
 /* Mengirimkan true jika List l kosong, mengirimkan false jika tidak */
 /* *** Test List penuh *** */
 boolean isFullStatik(ListStatik l){
-    return (listStatikLength(l) == CAPACITY);
+    return (listStatikLength(l) == CAPACITY_STATIK);
 }
 /* Mengirimkan true jika List l penuh, mengirimkan false jika tidak */
 
@@ -69,7 +69,7 @@ boolean isFullStatik(ListStatik l){
 void readListStatik(ListStatik *l){
     int n, i;
     scanf("%d", &n);
-    while (!(n>=0 && n<= CAPACITY)){
+    while (!(n>=0 && n<= CAPACITY_STATIK)){
         scanf("%d", &n);
     }
     if (n==0){
@@ -78,7 +78,7 @@ void readListStatik(ListStatik *l){
     else{
         CreateListStatik(l);
         for (i = 0; i < n;i++){
-            scanf("%d",&ELMT(*l,i));
+            scanf("%d",&ELMT_STATIK(*l,i));
         }
     }
 }
@@ -86,9 +86,9 @@ void readListStatik(ListStatik *l){
 /* F.S. List l terdefinisi */
 /* Proses: membaca banyaknya elemen l dan mengisi nilainya */
 /* 1. Baca banyaknya elemen diakhiri enter, misalnya n */
-/*    Pembacaan diulangi sampai didapat n yang benar yaitu 0 <= n <= CAPACITY */
+/*    Pembacaan diulangi sampai didapat n yang benar yaitu 0 <= n <= CAPACITY_STATIK */
 /*    Jika n tidak valid, tidak diberikan pesan kesalahan */
-/* 2. Jika 0 < n <= CAPACITY; Lakukan n kali: 
+/* 2. Jika 0 < n <= CAPACITY_STATIK; Lakukan n kali: 
           Baca elemen mulai dari indeks 0 satu per satu diakhiri enter */
 /*    Jika n = 0; hanya terbentuk List kosong */
 void printListStatik(ListStatik l){
@@ -102,7 +102,7 @@ void printListStatik(ListStatik l){
             if (i!=IDX_MIN){
                 printf(",");
             }
-            printf("%d", ELMT(l, i));
+            printf("%d", ELMT_STATIK(l, i));
             
         }
         printf("]");
@@ -122,12 +122,12 @@ ListStatik plusMinusListStatik(ListStatik l1, ListStatik l2, boolean plus){
     int i;
     if (plus){
         for (i = IDX_MIN; i < listStatikLength(l1);i++){
-            ELMT(l1, i) += ELMT(l2, i);
+            ELMT_STATIK(l1, i) += ELMT_STATIK(l2, i);
         }
     }
     else{
         for (i = IDX_MIN; i < listStatikLength(l1);i++){
-            ELMT(l1, i) -= ELMT(l2, i);
+            ELMT_STATIK(l1, i) -= ELMT_STATIK(l2, i);
         }
     }
     return (l1);
@@ -146,7 +146,7 @@ boolean isListStatikEqual(ListStatik l1, ListStatik l2){
     }
     int i;
     for (i = IDX_MIN; i < listStatikLength(l1);i++){
-        if (ELMT(l1,i)!=ELMT(l2,i)){
+        if (ELMT_STATIK(l1,i)!=ELMT_STATIK(l2,i)){
             return false;
         }
     }
@@ -160,14 +160,14 @@ boolean isListStatikEqual(ListStatik l1, ListStatik l2){
 int indexOfListStatik(ListStatik l, ElType val){
     int i = IDX_MIN;
     for (i; i < listStatikLength(l); i++){
-        if (ELMT(l,i)==val){
+        if (ELMT_STATIK(l,i)==val){
             return i;
         }
     }
     return IDX_UNDEF;
 }
 /* Search apakah ada elemen List l yang bernilai val */
-/* Jika ada, menghasilkan indeks i terkecil, dengan ELMT(l,i) = val */
+/* Jika ada, menghasilkan indeks i terkecil, dengan ELMT_STATIK(l,i) = val */
 /* Jika tidak ada atau jika l kosong, mengirimkan IDX_UNDEF */
 /* Skema Searching yang digunakan bebas */
 
@@ -175,14 +175,14 @@ int indexOfListStatik(ListStatik l, ElType val){
 void extremeValuesStatik(ListStatik l, ElType *max, ElType *min){
     int terbesar, terkecil;
     int i = IDX_MIN;
-    terbesar = ELMT(l,0);
-    terkecil = ELMT(l,0);
+    terbesar = ELMT_STATIK(l,0);
+    terkecil = ELMT_STATIK(l,0);
     for (i; i < listStatikLength(l);i++){
-        if (ELMT(l,i)>terbesar){
-            terbesar = ELMT(l, i);
+        if (ELMT_STATIK(l,i)>terbesar){
+            terbesar = ELMT_STATIK(l, i);
         }
-        if (ELMT(l,i)<terkecil){
-            terkecil = ELMT(l, i);
+        if (ELMT_STATIK(l,i)<terkecil){
+            terkecil = ELMT_STATIK(l, i);
         }
     }
     *max = terbesar;
@@ -197,9 +197,9 @@ void extremeValuesStatik(ListStatik l, ElType *max, ElType *min){
 void insertFirstStatik(ListStatik *l, ElType val){
     int i = listStatikLength(*l) - 1;
     for (i; i >= IDX_MIN;i--){
-        ELMT(*l, i + 1) = ELMT(*l, i);
+        ELMT_STATIK(*l, i + 1) = ELMT_STATIK(*l, i);
     }
-    ELMT(*l, 0) = val;
+    ELMT_STATIK(*l, 0) = val;
 }
 /* Proses: Menambahkan val sebagai elemen pertama List */
 /* I.S. List l boleh kosong, tetapi tidak penuh */
@@ -208,9 +208,9 @@ void insertFirstStatik(ListStatik *l, ElType val){
 void insertAtStatik(ListStatik *l, ElType val, IdxType idx){
     int i = listStatikLength(*l) - 1;
     for (i; i >= idx;i--){
-        ELMT(*l, i + 1) = ELMT(*l, i);
+        ELMT_STATIK(*l, i + 1) = ELMT_STATIK(*l, i);
     }
-    ELMT(*l, idx) = val;
+    ELMT_STATIK(*l, idx) = val;
 }
 
 /* Proses: Menambahkan val sebagai elemen pada index idx List */
@@ -218,7 +218,7 @@ void insertAtStatik(ListStatik *l, ElType val, IdxType idx){
 /* F.S. val adalah elemen yang disisipkan pada index idx l */
 /* *** Menambahkan elemen terakhir *** */
 void insertLastStatik(ListStatik *l, ElType val){
-    ELMT(*l, listStatikLength(*l)) = val;
+    ELMT_STATIK(*l, listStatikLength(*l)) = val;
 }
 /* Proses: Menambahkan val sebagai elemen terakhir List */
 /* I.S. List l boleh kosong, tetapi tidak penuh */
@@ -227,12 +227,12 @@ void insertLastStatik(ListStatik *l, ElType val){
 /* ********** MENGHAPUS ELEMEN ********** */
 /* *** Menghapus elemen pertama *** */
 void deleteFirstStatik(ListStatik *l, ElType *val){
-    *val = ELMT(*l, IDX_MIN);
+    *val = ELMT_STATIK(*l, IDX_MIN);
     int i = IDX_MIN;
     for (i; i < getLastIdxStatik(*l);i++){
-        ELMT(*l, i) = ELMT(*l, i + 1);
+        ELMT_STATIK(*l, i) = ELMT_STATIK(*l, i + 1);
     }
-    ELMT(*l, getLastIdxStatik(*l)) = MARK;
+    ELMT_STATIK(*l, getLastIdxStatik(*l)) = MARK;
 }
 /* Proses : Menghapus elemen pertama List */
 /* I.S. List tidak kosong */
@@ -241,12 +241,12 @@ void deleteFirstStatik(ListStatik *l, ElType *val){
 /*      List l mungkin menjadi kosong */
 /* *** Menghapus elemen pada index tertentu *** */
 void deleteAtStatik(ListStatik *l, ElType *val, IdxType idx){
-    *val = ELMT(*l, idx);
+    *val = ELMT_STATIK(*l, idx);
     int i = idx;
     for (i; i < getLastIdxStatik(*l);i++){
-        ELMT(*l, i) = ELMT(*l, i + 1);
+        ELMT_STATIK(*l, i) = ELMT_STATIK(*l, i + 1);
     }
-    ELMT(*l, getLastIdxStatik(*l)) = MARK;
+    ELMT_STATIK(*l, getLastIdxStatik(*l)) = MARK;
 }
 /* Proses : Menghapus elemen pada index idx List */
 /* I.S. List tidak kosong, idx adalah index yang valid di l */
@@ -269,10 +269,10 @@ void sortListStatik(ListStatik *l, boolean asc) {
     i = IDX_MIN;
     if (!isEmptyStatik(*l)) {
         while (i != getLastIdxStatik(*l)) {
-            if ((asc && (ELMT(*l, i) > ELMT(*l, i + 1))) || (!asc && (ELMT(*l, i) < ELMT(*l, i + 1)))) {
-                temp = ELMT(*l, i + 1);
-                ELMT(*l, i + 1) = ELMT(*l, i);
-                ELMT(*l, i) = temp;
+            if ((asc && (ELMT_STATIK(*l, i) > ELMT_STATIK(*l, i + 1))) || (!asc && (ELMT_STATIK(*l, i) < ELMT_STATIK(*l, i + 1)))) {
+                temp = ELMT_STATIK(*l, i + 1);
+                ELMT_STATIK(*l, i + 1) = ELMT_STATIK(*l, i);
+                ELMT_STATIK(*l, i) = temp;
                 i = IDX_MIN;
             }else{
                 i += 1;
