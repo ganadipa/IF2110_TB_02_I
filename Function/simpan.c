@@ -1,5 +1,5 @@
-
 #include "simpan.h"
+
 
 boolean isExist(String *path){
     DIR* dir = opendir(path->buffer); 
@@ -38,7 +38,6 @@ void SavingFile(String* path){
     }
 
     snprintf(parentDir.buffer, 1000, "%s/%s", path->buffer, pengguna);
-
     FILE *filePengguna = fopen(parentDir.buffer, "w");
     if (filePengguna != NULL) {
         fprintf(filePengguna, "pengguna.config.\n");
@@ -67,14 +66,16 @@ void SavingFolder(String *path) {
     createEmptyString(&folderPath, 100); 
     snprintf(folderPath.buffer, 1000, "%s%s", parentPath, path->buffer);
     if(isExist(&folderPath)){
-        printf("Folder sudah ada\n");
+        printf("Folder sudah ada\n"); 
         SavingFile(&folderPath); 
     }
     else{
-        printf("Folder belum ada\n"); 
+        printf("Belum terdapat %s. Akan dilakukan pemuatan %s terlebih dahulu\n", path->buffer, path->buffer); 
+        printf("Mohon tunggu...\n1...\n2...\n3...\n");
+        printf("%s berhasil dibuat\n", path->buffer);
         int result = mkdir(folderPath.buffer, 0777);
         if (!result) {
-            printf("Folder sudah dibuat\n");
+            printf("%s sudah dibuat\n", path->buffer);
             SavingFile(&folderPath);
         } else {
             perror("Error");
@@ -87,6 +88,5 @@ void SaveFolder(){
     printf("Masukkan nama folder: ");
     readString(&path, 100);
     SavingFolder(&path);
-
 }
 

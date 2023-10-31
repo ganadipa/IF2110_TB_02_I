@@ -8,9 +8,9 @@
 #include "../lib/lib.h"
 
 
-boolean isExist(String *path);
+boolean isExist(String* path);
 void SavingFile(String* path);
-void SavingFolder(String *path);
+void SavingFolder(String* path);
 void SaveFolder();
 
 #endif
