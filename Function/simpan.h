@@ -7,7 +7,6 @@
 #include <sys/types.h>
 #include "../lib/lib.h"
 
-
 boolean isExist(String* path);
 void SavingFile(String* path);
 void SavingFolder(String* path);
