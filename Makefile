@@ -112,14 +112,17 @@ $(BINDIR)/%.o:%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
 $(PROGRAM): $(OBJECTS)
-	$(CC) -o $@ $^
+	@echo "Running the code..."
+	@$(CC) -o $@ $^
 
 clean: 
-	rm -rf $(BINDIR)
+	@rm -rf $(BINDIR)
+	@echo "Cleaning upp files..."
 
 # Target to run the application
 run: $(PROGRAM)
-	./$(PROGRAM)
+	@echo "Starting the app..."
+	@./$(PROGRAM)
 
 word: 
 	$(MAKE) -f makefile.word test_word
@@ -168,6 +171,15 @@ $(LINKEDLIST_TEST_RESULTS): $(LINKEDLIST_TESTS_DIR)/%.result: $(LINKEDLIST_TESTS
 #************************************************************************************
 #************************************************************************************
 
+
+que: #command for testing queue unit test` 
+	$(MAKE) -f  Makefile.que test_queue 
+
+sta: #command for testing stack unit test
+	$(MAKE) -f Makefile.sta test_stack
+
+din:
+	$(MAKE) -f Makefile.din test_listdin
 
 
 

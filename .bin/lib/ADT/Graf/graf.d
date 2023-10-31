@@ -21,11 +21,12 @@
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h lib/ADT/../boolean.h \
- lib/ADT/Graf/../ListStatik/liststatik.h \
- lib/ADT/Graf/../ListStatik/../../boolean.h lib/ADT/Graf/./graf.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ lib/ADT/Graf/../../boolean.h lib/ADT/Graf/./graf.h \
  lib/ADT/Graf/./../../boolean.h lib/ADT/Graf/./../ListStatik/liststatik.h \
- lib/ADT/Graf/./../ListStatik/../../boolean.h
+ lib/ADT/Graf/./../ListStatik/../../boolean.h \
+ lib/ADT/Graf/./../Matriks/boolMatriks.h \
+ lib/ADT/Graf/./../Matriks/../../boolean.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -51,10 +52,10 @@
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-lib/ADT/../boolean.h:
-lib/ADT/Graf/../ListStatik/liststatik.h:
-lib/ADT/Graf/../ListStatik/../../boolean.h:
+lib/ADT/Graf/../../boolean.h:
 lib/ADT/Graf/./graf.h:
 lib/ADT/Graf/./../../boolean.h:
 lib/ADT/Graf/./../ListStatik/liststatik.h:
 lib/ADT/Graf/./../ListStatik/../../boolean.h:
+lib/ADT/Graf/./../Matriks/boolMatriks.h:
+lib/ADT/Graf/./../Matriks/../../boolean.h:

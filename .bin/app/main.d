@@ -25,6 +25,8 @@
  app/../lib/./ADT/Graf/graf.h app/../lib/./ADT/Graf/../../boolean.h \
  app/../lib/./ADT/Graf/../ListStatik/liststatik.h \
  app/../lib/./ADT/Graf/../ListStatik/../../boolean.h \
+ app/../lib/./ADT/Graf/../Matriks/boolMatriks.h \
+ app/../lib/./ADT/Graf/../Matriks/../../boolean.h \
  app/../lib/./ADT/LinkedList/listlinier.h \
  app/../lib/./ADT/LinkedList/../../boolean.h \
  app/../lib/./ADT/ListDinamik/listdinamik.h \
@@ -48,6 +50,7 @@
  app/../lib/./Types/././Profile.h app/../lib/./Types/././Photo.h \
  app/../lib/./Types/././../ADT/Matriks/charMatriks.h \
  app/../lib/./Types/././../ADT/Matriks/../../boolean.h \
+<<<<<<< HEAD
  app/../lib/./Types/User.h app/../function/simpan.h /usr/include/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
@@ -60,6 +63,9 @@
  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  app/../function/../lib/lib.h
+=======
+ app/../lib/./Types/../ADT/Graf/graf.h app/../lib/./Types/User.h
+>>>>>>> main
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -90,6 +96,8 @@ app/../lib/./ADT/Graf/graf.h:
 app/../lib/./ADT/Graf/../../boolean.h:
 app/../lib/./ADT/Graf/../ListStatik/liststatik.h:
 app/../lib/./ADT/Graf/../ListStatik/../../boolean.h:
+app/../lib/./ADT/Graf/../Matriks/boolMatriks.h:
+app/../lib/./ADT/Graf/../Matriks/../../boolean.h:
 app/../lib/./ADT/LinkedList/listlinier.h:
 app/../lib/./ADT/LinkedList/../../boolean.h:
 app/../lib/./ADT/ListDinamik/listdinamik.h:
@@ -121,6 +129,7 @@ app/../lib/./Types/././Profile.h:
 app/../lib/./Types/././Photo.h:
 app/../lib/./Types/././../ADT/Matriks/charMatriks.h:
 app/../lib/./Types/././../ADT/Matriks/../../boolean.h:
+app/../lib/./Types/../ADT/Graf/graf.h:
 app/../lib/./Types/User.h:
 app/../function/simpan.h:
 /usr/include/dirent.h:

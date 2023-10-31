@@ -1,11 +1,11 @@
 <<<<<<< Updated upstream:Makefile.que
 
-SRC_QUE = ADT/Queue/queue.c
-SRC_TEST = ADT/Queue/tests/mqueue.c
+SRC_QUE = lib/ADT/Queue/queue.c
+SRC_TEST = lib/ADT/Queue/tests/mqueue.c
 OBJ_QUE = $(SRC_QUE:.c=.o)
 OBJ_TEST = $(SRC_TEST:.c=.o)
 
-TESTS_DIR = ADT/Queue/tests
+TESTS_DIR = lib/ADT/Queue/tests
 TEST_CASES = $(wildcard $(TESTS_DIR)/*.in)
 TEST_OUTPUTS = $(TEST_CASES:.in=.out)
 TEST_RESULTS = $(TEST_CASES:.in=.result)
