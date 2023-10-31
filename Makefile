@@ -31,7 +31,13 @@ run: $(PROGRAM)
 	./$(PROGRAM)
 
 din: #command for testing list dinamik unit test` 
- 	$(MAKE) -f  Makefile.din test_list
+	$(MAKE) -f  Makefile.din test_list
+
+que: #command for testing list dinamik unit test` 
+	$(MAKE) -f  Makefile.din test_list
+
+sta: #command for testing list dinamik unit test` 
+	$(MAKE) -f  Makefile.din test_list
 
 
 -include $(DEPFILES)
