@@ -1,13 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <dirent.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include "../ADT/WordMachine/wordmachine.h"
-#include "../ADT/boolean.h"
 
-boolean isExist(const char *path){
-    DIR* dir = opendir(path); 
+#include "simpan.h"
+
+boolean isExist(String *path){
+    DIR* dir = opendir(path->buffer); 
     if(dir){
         closedir(dir); 
         return 1; 
@@ -17,46 +12,81 @@ boolean isExist(const char *path){
     }
 }
 
-void createDirectory(const char *path) {
-    char command[200];
-    char folderDir[100]; 
-    snprintf(folderDir, sizeof(folderDir), "../config/%s", path);
-    snprintf(command, sizeof(command), "mkdir %s", folderDir);
-    if(isExist(folderDir)){
-        printf("Folder sudah ada\n"); 
+void SavingFile(String* path){
+    const char *pengguna = "pengguna.config";
+    const char *kicauan = "kicauan.config";
+    const char *balasan = "balasan.config";
+    const char *draf = "draf.config";
+    const char *utas = "utas.config";
+
+    String parentDir; 
+    createEmptyString(&parentDir, 100);
+
+    snprintf(parentDir.buffer, 1000, "%s/%s", path->buffer, kicauan);
+    FILE *fileKicauan = fopen(parentDir.buffer, "w");
+    // Write to the file
+    if (fileKicauan != NULL) {
+        fprintf(fileKicauan, "kicauan.config.\n");
+        fclose(fileKicauan);
+    }
+
+    snprintf(parentDir.buffer, 1000, "%s/%s", path->buffer, draf);
+    FILE *fileDraf = fopen(parentDir.buffer, "w");
+    if (fileDraf != NULL) {
+        fprintf(fileDraf, "draf.config.\n");
+        fclose(fileDraf);
+    }
+
+    snprintf(parentDir.buffer, 1000, "%s/%s", path->buffer, pengguna);
+
+    FILE *filePengguna = fopen(parentDir.buffer, "w");
+    if (filePengguna != NULL) {
+        fprintf(filePengguna, "pengguna.config.\n");
+        fclose(filePengguna);
+    }
+
+    snprintf(parentDir.buffer, 1000, "%s/%s", path->buffer, utas);
+    FILE *fileUtas = fopen(parentDir.buffer, "w");
+    if (fileUtas != NULL) {
+        fprintf(fileUtas, "utas.config.\n");
+        fclose(fileUtas);
+    }
+
+    snprintf(parentDir.buffer, 1000, "%s/%s", path->buffer, balasan);
+    FILE *fileBalasan = fopen(parentDir.buffer, "w");
+    if (fileBalasan != NULL) {
+        fprintf(fileBalasan, "balasan.config.\n");
+        fclose(fileBalasan);
+    }
+}
+
+void SavingFolder(String *path) {
+
+    const char *parentPath = "./config/";
+    String folderPath; 
+    createEmptyString(&folderPath, 100); 
+    snprintf(folderPath.buffer, 1000, "%s%s", parentPath, path->buffer);
+    if(isExist(&folderPath)){
+        printf("Folder sudah ada\n");
+        SavingFile(&folderPath); 
     }
     else{
         printf("Folder belum ada\n"); 
-        system(command);
-        printf("Folder berhasil dibuat\n");
+        int result = mkdir(folderPath.buffer, 0777);
+        if (!result) {
+            printf("Folder sudah dibuat\n");
+            SavingFile(&folderPath);
+        } else {
+            perror("Error");
+        }
     }
 }
-
 
 void SaveFolder(){
+    String path; 
     printf("Masukkan nama folder: ");
-    char path[100];  
-    scanf("%s", path);
-    createDirectory(path);
+    readString(&path, 100);
+    SavingFolder(&path);
+
 }
-
-
-void SavingFile(const char *path){
-    FILE *file = fopen(path, "w"); 
-    if(file == NULL){
-        perror("file tidak bisa dibuka"); 
-        return; 
-    }
-    fprintf(file, "Ini contoh nyimpan file");
-    fclose(file); 
-    printf("File berhasil disimpan"); 
-}
-
-
-
-int main(){
-    SaveFolder(); 
-    return 0; 
-}
-
 

@@ -62,6 +62,8 @@ void addWord(String *s, Word w);
  * 
 */
 
+void addString(String *s, String s2);
+
 boolean compareString(String s, char* cptr);
 /**
  * 
