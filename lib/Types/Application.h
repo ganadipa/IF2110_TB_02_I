@@ -74,6 +74,13 @@ void DaftarTeman(Application app);
  * 
 */
 
+void UbahFotoProfil(Application *app);
+/**
+ * 
+*/
+
+void HapusTeman(Application *app);
+
 
 void DevTools(Application app);
 /**

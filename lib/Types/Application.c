@@ -36,7 +36,7 @@ void AppInitialization(Application *app)
     LOGGEDIN(*app) = false;
     LOGINID(*app) = ID_UNDEF;
     CreateListUser(&LISTUSER(*app)); 
-    CreateGraph(&FRIENDSHIPS(*app), 20);
+    CreateGraph(&FRIENDSHIPS(*app));
 
 
 
@@ -101,6 +101,7 @@ void Daftar(Application *app)
     User u;
     initializeUser(&u, name, password, LENGTH_LISTUSER(LISTUSER(*app)));
     insertLast_ListUser(&LISTUSER(*app), u);
+    addVertices(&FRIENDSHIPS(*app));
 
     printf("\nPengguna telah berhasil terdaftar. Masuk untuk menikmati fitur-fitur BurBir.\n\n");
 }
@@ -137,7 +138,10 @@ void Masuk(Application *app)
         printf("\nMasukkan nama:\n");
         readString(&name, 350);
 
-        int i = searchByName(LISTUSER(*app), name);
+        displayString(name);
+        printf("\nwith length: %d", stringLength(name));
+
+        i = searchByName(LISTUSER(*app), name);
     }
 
     // Read user input password.
@@ -344,11 +348,32 @@ void HapusTeman(Application *app) {
     } 
     
     // Pemotongan hubungan pertemanan antara current user dengan "name".
-    cutEdge(&FRIENDSHIPS(*app), LOGINID(*app), i); 
+    removeEdge(&FRIENDSHIPS(*app), LOGINID(*app), i); 
 }
 
 void DevTools(Application app) 
 
 {
-    printf("\nOops fitur ini belum dibuat.\n");
+    printf("\nisLoggedIn : ");
+    if (LOGGEDIN(app)) {
+        printf("TRUE");
+        printf("\nLogged in as ");
+        displayName(LISTUSER(app), LOGINID(app));
+        printf("  (ID : %d)\n", LOGINID(app));
+    }
+    else printf("FALSE");
+
+    printf("\n\nGraph pertemanan: \n");
+    printGraph(FRIENDSHIPS(app));
+
+
+    printf("\n\nisi ListUser:\n\n");
+    int i;
+    for (i = 0; i < LENGTH_LISTUSER(LISTUSER(app)); i++) 
+    {
+        printf("ID : %d", i);
+        displayProfile(ELMT_LISTUSER(LISTUSER(app), i));
+        displayPhoto(FOTO(PROFILE(ELMT_LISTUSER(LISTUSER(app), i))));
+        printf("\n\n");
+    }
 }

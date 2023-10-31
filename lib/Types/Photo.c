@@ -21,15 +21,18 @@ void initializePhoto(Photo *p)
 }
 
 void readPhoto(Photo *p) {
-    char color;
-    char symbol;
+    String photoString;
+    readString(&photoString, 100);
     int i = 0;
     int j = 0;
+    int ptr = 0;
     for (i = 0; i< 5; i++) {
         for (j = 0; j < 5; j++) {
-            scanf("%c %c", &color, &symbol);
-            ELMT_CharMatriks(SYMMATRIX(*p), i, j) = symbol;
-            ELMT_CharMatriks(COLORMATRIX(*p), i, j) = color;
+            ELMT_CharMatriks(COLORMATRIX(*p), i, j) = photoString.buffer[ptr];
+            ptr+=2;
+
+            ELMT_CharMatriks(SYMMATRIX(*p), i, j) = photoString.buffer[ptr];
+            ptr+=2;
         }
     }
 }

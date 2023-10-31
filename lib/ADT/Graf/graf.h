@@ -65,8 +65,10 @@ boolean isDirectlyConnected_Graf(Graf g, int i, int j);
 
 void addEdge(Graf *g, int i, int j);
 
-void cutEdge(Graf *g, int i, int j);
+void removeEdge(Graf *g, int i, int j);
 
 int countConnections(Graf g, int t);
+
+void addVertices(Graf *g);
 
 #endif

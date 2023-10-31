@@ -17,21 +17,21 @@ void CreateGraph(Graf *g)
     int i, j;
     for (i = 0; i < CAP; i++) {
         for (j = 0; j < CAP; j++) {
-            CONNECTED(*g, i, j) = BOOL_UNDEF;
+            CONNECTED(*g, i, j) = false;
         }
     }
 }
 
 
 /****************** TEST LIST KOSONG ******************/
-boolean isEmpty_Graf(Graf g)
-/* Mengirim true jika graf kosong */
+boolean isFull_Graf(Graf g)
+/* Mengirim true jika graf full */
 {
-    return  NUMEDGE(g) = 0;
+    return  NUMVERTICES(g) = CAP;
 }
 
-boolean isFull_Graf(Graf  g)
-/* Mengirim true jika graf full (numEdge == 0)*/
+boolean isEmpty_Graf(Graf  g)
+/* Mengirim true jika graf kosong*/
 {
     return NUMVERTICES(g) = 0;
 }
@@ -64,8 +64,11 @@ boolean isDirectlyConnected_Graf(Graf g, int i, int j)
 }
 
 void addEdge(Graf *g, int i, int j) 
-
+/**
+ * I.S. i dan j kurang dari NUMVERTICES(*g)
+*/
 {
+    NUMEDGE(*g) += 1;
     CONNECTED(*g, i, j) = true;
     CONNECTED(*g, j, i) = true;
 }
@@ -82,16 +85,24 @@ int countConnections(Graf g, int i) {
 }
 
 void removeEdge(Graf *g, int i, int j) 
-
+/**
+ * I.S. i dan j kurang dari NUMVERTICES(*g)
+*/
 {
+    NUMEDGE(*g) -= 1;
     CONNECTED(*g, i, j) = false;
     CONNECTED(*g, j, i) = false;
 }
 
-void addVertices(Graf *g) 
+void addVertices(Graf *g)
 
 {
     NUMVERTICES(*g) += 1;
+    int i, j;
+    for (i = 0; i < NUMVERTICES(*g); i++) {
+        CONNECTED(*g, NUMVERTICES(*g)-1, i) = false;
+        CONNECTED(*g, i, NUMVERTICES(*g)-1) = false;
+    }
 }
 
 
