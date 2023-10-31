@@ -32,6 +32,14 @@ void AppInitialization(Application *app)
 
 
 
+    // Inisialisasi app
+    LOGGEDIN(*app) = false;
+    LOGINID(*app) = ID_UNDEF;
+    CreateListUser(&LISTUSER(*app)); 
+    CreateGraph(&FRIENDSHIPS(*app), 20);
+
+
+
 
 }
 
@@ -48,7 +56,7 @@ void Daftar(Application *app)
     createEmptyString(&password, 20);
 
     // Check whether if ListUser is full or not
-    if (isFull_ListUser(ListUser(*app))) {
+    if (isFull_ListUser(LISTUSER(*app))) {
         printf("\nOops... Jumlah pengguna sudah mencapai 20. Tidak bisa melakukan pendaftaran lagi.\n");
         return;
     }
@@ -64,7 +72,7 @@ void Daftar(Application *app)
 
 
     // Handle retry when the name is taken
-    int i = searchByName(ListUser(*app), name);
+    int i = searchByName(LISTUSER(*app), name);
     while (i != -1) {
         printf("\nWah, sayang sekali nama tersebut telah diambil.\n");
 
@@ -77,7 +85,7 @@ void Daftar(Application *app)
             readString(&name, 350);
         }
 
-        i = searchByName(ListUser(*app), name);
+        i = searchByName(LISTUSER(*app), name);
     }
 
     // Get password with handle maximum length.
@@ -91,8 +99,8 @@ void Daftar(Application *app)
 
     // Initialize user with the given name and password, insert it to database.
     User u;
-    initializeUser(&u, name, password, LENGTH_LISTUSER(ListUser(*app)));
-    insertLast_ListUser(&ListUser(*app), u);
+    initializeUser(&u, name, password, LENGTH_LISTUSER(LISTUSER(*app)));
+    insertLast_ListUser(&LISTUSER(*app), u);
 
     printf("\nPengguna telah berhasil terdaftar. Masuk untuk menikmati fitur-fitur BurBir.\n\n");
 }
@@ -105,7 +113,7 @@ void Masuk(Application *app)
  *      Jika sudah login, tampilkan pesan bahwa sudah login. 
 */
 {
-    if (isLoggedIn(*app)) {
+    if (LOGGEDIN(*app)) {
         printf("\nWah Anda sudah masuk. Keluar dulu yuk!\n");
         return;
     }
@@ -121,7 +129,7 @@ void Masuk(Application *app)
     readString(&name, 350);
 
     // Handle reinput name
-    int i = searchByName(ListUser(*app), name);
+    int i = searchByName(LISTUSER(*app), name);
     while (i == -1) {
         printf("\nWah, nama yang Anda cari tidak ada. Masukkan nama lain!\n");
 
@@ -129,7 +137,7 @@ void Masuk(Application *app)
         printf("\nMasukkan nama:\n");
         readString(&name, 350);
 
-        int i = searchByName(ListUser(*app), name);
+        int i = searchByName(LISTUSER(*app), name);
     }
 
     // Read user input password.
@@ -137,7 +145,7 @@ void Masuk(Application *app)
     readString(&password, 350);
 
     // Handle reinput password
-    String passwordReference = PW(ELMT_LISTUSER(ListUser(*app), i));
+    String passwordReference = PW(ELMT_LISTUSER(LISTUSER(*app), i));
     while (!isStringEqual(password, passwordReference)) {
         printf("\nWah, kata sandi yang Anda masukkan belum tepat. Periksa kembali kata sandi Anda!\n");
 
@@ -148,27 +156,27 @@ void Masuk(Application *app)
 
 
     // Handle successfully logged in.
-    isLoggedIn(*app) = true;
-    loginID(*app) = i;
+    LOGGEDIN(*app) = true;
+    LOGINID(*app) = i;
 
 
 
     printf("\nAnda telah berhasil masuk dengan nama pengguna ");
-    displayString(ELMT_LISTUSER(ListUser(*app), i).name);
+    displayString(ELMT_LISTUSER(LISTUSER(*app), i).name);
     printf(". Mari menjelajahi BurBir bersama Ande-Ande Lumut!\n");
 }
 
 void Keluar(Application *app) 
 
 {
-    if (!isLoggedIn(*app)) {
+    if (!LOGGEDIN(*app)) {
         printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
         return;
     }
 
     printf("\nAnda berhasil logout. Sampai jumpa di pertemuan berikutnya!\n");
-    isLoggedIn(*app) = false;
-    loginID(*app) = ID_UNDEF;
+    LOGGEDIN(*app) = false;
+    LOGINID(*app) = ID_UNDEF;
 }
 
 void TutupProgram(Application *app, boolean  *finish)
@@ -181,11 +189,11 @@ void TutupProgram(Application *app, boolean  *finish)
 void GantiProfil(Application *app)
 
 {
-    if (!isLoggedIn(*app)) {
+    if (!LOGGEDIN(*app)) {
         printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
         return;
     }
-    User* u = &ELMT_LISTUSER(ListUser(*app), loginID(*app));
+    User* u = &ELMT_LISTUSER(LISTUSER(*app), LOGINID(*app));
     displayProfile(*u);
 
     printf("\nMasukkan Bio Akun: \n");
@@ -201,8 +209,13 @@ void GantiProfil(Application *app)
 }
 
 void LihatProfil(Application *app, String name) {
-    int ID = searchByName(ListUser(*app), name);
-    User u = ELMT_LISTUSER(ListUser(*app), ID);
+    if (!LOGGEDIN(*app)) {
+        printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
+        return;
+    }
+
+    int ID = searchByName(LISTUSER(*app), name);
+    User u = ELMT_LISTUSER(LISTUSER(*app), ID);
 
     if (ISPRIVATE(PROFILE(u))) {
         printf("\nWah, akun ");
@@ -215,6 +228,123 @@ void LihatProfil(Application *app, String name) {
         displayPhoto(FOTO(PROFILE(u)));
         printf("\n");
     }
+}
+
+void AturJenisAkun(Application *app)
+
+{
+
+    if (!LOGGEDIN(*app)) {
+        printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
+        return;
+    }
+
+
+    User* u = &ELMT_LISTUSER(LISTUSER(*app), LOGINID(*app));
+    boolean *isPrivate = &ISPRIVATE(PROFILE(*u));
+
+
+    printf("Saat ini, akun Anda adalah akun ");
+    if (!*isPrivate) printf("publik");
+    else printf("privat");
+    printf(". Ingin mengubah ke akun ");
+    if (*isPrivate) printf("publik");
+    else printf("privat");
+    printf("? (YA/TIDAK)");
+
+    String ans;
+    readString(&ans, 10);
+
+    if (compareString(ans, "YA")) {
+        *isPrivate = !*isPrivate;
+    } else if (compareString(ans, "TIDAK")) {
+        // do nothing
+    } else {
+        printf("Masukkan Anda bukan berupa \"YA\" atau \"TIDAK\". Perintah dibatalkan.");
+    }
+    
+}
+
+void UbahFotoProfil(Application *app) {
+    if (!LOGGEDIN(*app)) {
+        printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
+        return;
+    }
+
+    User* u = &ELMT_LISTUSER(LISTUSER(*app), LOGINID(*app));
+    Photo* p = &FOTO(PROFILE(*u));
+
+    printf("Foto profil Anda saat ini adalah: \n");
+    displayPhoto(*p);
+
+    printf("Masukkan foto profil yang baru: \n");
+    readPhoto(p);
+
+    printf("Foto profil Anda sudah berhasil diganti!.");
+
+
+}
+
+void DaftarTeman(Application app) {
+    if (!LOGGEDIN(app)) {
+        printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
+        return;
+    }
+    ListUser l = LISTUSER(app);
+    int length = LENGTH_LISTUSER(LISTUSER(app));
+    int k = 0;
+
+    int numFriends =  countConnections(FRIENDSHIPS(app), LOGINID(app));
+    if (numFriends == 0) {
+        printf("\n");
+        displayName(l, LOGINID(app));
+        printf("belum memiliki teman.\n");
+    } else {
+
+        displayName(l, LOGINID(app));
+        printf("memiliki %d teman:\n", numFriends);
+        for (k = 0; k < length; k++) {
+            if (CONNECTED(FRIENDSHIPS(app), k, LOGINID(app)) == true) {
+                printf(" | ");
+                displayName(l, k);
+                printf("\n");
+            }
+        }
+    }
+}
+
+void HapusTeman(Application *app) {
+    if (!LOGGEDIN(*app)) {
+        printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
+        return;
+    }
+
+    String name;
+    createEmptyString(&name, 350);
+    printf("Masukkan nama pengguna: \n");
+    readString(&name, 350);
+
+    int i = searchByName(LISTUSER(*app),name);
+    if (i == IDX_UNDEF) {
+        printf("\n");
+        displayString(name);
+        printf(" bukan teman Anda.");
+        return ;
+    }
+     
+    String ans;
+    printf("\nApakah anda yakin ingin menghapus ");
+    displayString(name);
+    printf(" dari daftar teman Anda? (YA/TIDAK)");
+    readString(&ans, 10);
+
+    if (compareString(ans, "TIDAK")) {
+        printf("\nPenghapusan teman dibatalkan\n");
+        return;
+    } 
+    
+    // Pemotongan hubungan pertemanan antara current user dengan "name".
+    cutEdge(&FRIENDSHIPS(*app), LOGINID(*app), i); 
 }
 
 void DevTools(Application app) 

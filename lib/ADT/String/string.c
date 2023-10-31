@@ -148,6 +148,8 @@ boolean compareString(String s, char* cptr)
     int i = 0;
     boolean finish = false;
     boolean check = true;
+    if (*cptr == '\0' && s.buffer[i] == '\0') finish = true;
+
     while (!finish) {
         if (*cptr != s.buffer[i]) {
             finish = true;
@@ -170,6 +172,8 @@ boolean compareStringInsensitively(String s, char* cptr)
     int i = 0;
     boolean finish = false;
     boolean check = true;
+    if (*cptr == '\0' && s.buffer[i] == '\0') return true;
+
     while (!finish && check) {
         int num1 = *cptr - 'A';
         int num2 = s.buffer[i] - 'A';

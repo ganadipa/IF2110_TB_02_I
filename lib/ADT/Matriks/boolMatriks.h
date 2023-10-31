@@ -8,6 +8,7 @@
 /* Ukuran maksimum baris dan kolom */
 #define ROW_CAP_BoolMatriks 100
 #define COL_CAP_BoolMatriks 100
+#define BOOL_UNDEF 2
 
 typedef struct
 {

@@ -36,16 +36,14 @@ void handleCommand(Application* app, String command, boolean *finish)
         GantiProfil(app);
     } else if (compareString(firstWord, "LIHAT_PROFIL")) {
         LihatProfil(app, secondWord);
+    } else if (compareString(firstWord, "ATUR_JENIS_AKUN")) {
+        AturJenisAkun(app);
     }
     
     else {
         printf("\nTidak ada perintah ");
         displayString(command);
-        printf(". Berikut full list dari perintah peintah yang disediakan.\n");
-        printf("1. DAFTAR\n");
-        printf("2. MASUK\n");
-        printf("3. KELUAR\n");
-        printf("4. TUTUP_PROGRAM\n");
+        printf(". Baca dokumentasi (Spesifikasi) untuk melihat seluruh perintah.\n");  
     }
 
 }

@@ -25,14 +25,16 @@ $(BINDIR)/%.o:%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
 $(PROGRAM): $(OBJECTS)
-	$(CC) -o $@ $^
+	@echo "Running the code..."
+	@$(CC) -o $@ $^
 
 clean: 
 	rm -rf $(BINDIR)
 
 # Target to run the application
 run: $(PROGRAM)
-	./$(PROGRAM)
+	@echo "Starting the app..."
+	@./$(PROGRAM)
 
 
 -include $(DEPFILES)
