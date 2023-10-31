@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:Makefile.que
 
 SRC_QUE = ADT/Queue/queue.c
 SRC_TEST = ADT/Queue/tests/mqueue.c
@@ -22,3 +23,28 @@ $(TEST_RESULTS): $(TESTS_DIR)/%.result: $(TESTS_DIR)/%.in $(TESTS_DIR)/%.out mqu
 		echo "$< $(word 2,$^): WRONG"; \
 	fi > $@
 
+=======
+
+SRC_WORD = lib/ADT/WordMachine/wordmachine.c
+SRC_TEST = lib/ADT/WordMachine/tests/mwordmachine.c
+OBJ_WORD = $(SRC_WORD:.c=.o)
+OBJ_TEST = $(SRC_TEST:.c=.o)
+
+TESTS_DIR = lib/ADT/WordMachine/tests
+TEST_CASES = $(wildcard $(TESTS_DIR)/*.in)
+TEST_OUTPUTS = $(TEST_CASES:.in=.out)
+TEST_RESULTS = $(TEST_CASES:.in=.result)
+
+mword: $(OBJ_WORD) $(OBJ_TEST)
+	$(CC) $(CFLAGS) -o $@ $^
+
+test_word: mword $(TEST_RESULTS)
+	@cat $(TEST_RESULTS)
+
+$(TEST_RESULTS): $(TESTS_DIR)/%.result: $(TESTS_DIR)/%.in $(TESTS_DIR)/%.out mword
+	@if ./mword < $< | diff - $(word 2,$^) > /dev/null; then \
+		echo "$< $(word 2,$^): TRUE"; \
+	else \
+		echo "$< $(word 2,$^): WRONG"; \
+	fi > $@
+>>>>>>> Stashed changes:Makefile.word
