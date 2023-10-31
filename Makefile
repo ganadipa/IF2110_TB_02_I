@@ -1,8 +1,11 @@
-include makefile.que #unit test for queue
-include makefile.sta #unit test for stack
-include makefile.word #unit test for wordmachine
-include makefile.din #unit test for list dinamik
+include Makefile.que #unit test for queue
+include Makefile.sta #unit test for stack
+include Makefile.word #unit test for wordmachine
+include Makefile.din #unit test for list dinamik
 
+
+BINARY = .bin
+BINDIR = .bin
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -std=c11 $(DEPFLAGS) $(foreach D, $(INCDIRS), -I$(D)) -Wno-unused-variable -Wno-unused-parameter -Wno-unused-value -Wno-unused-but-set-variable
 DEPFLAGS = -MP -MD
