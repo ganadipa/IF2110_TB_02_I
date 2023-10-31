@@ -19,7 +19,7 @@ all: $(BINARY)
 
 $(BINARY): $(OBJECTS)
 
-$(BINDIR)/%.o:%.c
+$(BINDIR)/%.o : %.c
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) -c -o $@ $<
 

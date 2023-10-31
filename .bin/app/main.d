@@ -27,7 +27,7 @@
  app/../lib/./ADT/Graf/../ListStatik/../../boolean.h \
  app/../lib/./ADT/LinkedList/listlinier.h \
  app/../lib/./ADT/LinkedList/../../boolean.h \
- app/../lib/./ADT/ListDinamik/listdinamik.h \
+ app/../lib/./ADT/ListDinamik/listdinamik.h lib/ADT/../boolean.h \
  app/../lib/./ADT/ListStatik/liststatik.h \
  app/../lib/./ADT/ListStatik/../../boolean.h \
  app/../lib/./ADT/Matriks/matriks.h \
@@ -93,6 +93,7 @@ app/../lib/./ADT/Graf/../ListStatik/../../boolean.h:
 app/../lib/./ADT/LinkedList/listlinier.h:
 app/../lib/./ADT/LinkedList/../../boolean.h:
 app/../lib/./ADT/ListDinamik/listdinamik.h:
+lib/ADT/../boolean.h:
 app/../lib/./ADT/ListStatik/liststatik.h:
 app/../lib/./ADT/ListStatik/../../boolean.h:
 app/../lib/./ADT/Matriks/matriks.h:
