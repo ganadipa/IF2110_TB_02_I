@@ -17,6 +17,7 @@
     "charmatriks.h": "c",
     "profile.h": "c",
     "photo.h": "c",
-    "pcolor.h": "c"
+    "pcolor.h": "c",
+    "simpan.h": "c"
   }
 }

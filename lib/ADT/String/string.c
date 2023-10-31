@@ -55,6 +55,15 @@ void addWord(String *s, Word w)
     }
 }
 
+
+void addString(String *s, String s2){
+    int length = stringLength(s2);
+    int i = 0; 
+    for(i = 0; i < length; i++){
+        addChar(s, s2.buffer[i]);
+    }
+}
+
 void readString(String *s, int maxLength)
 /**
  * I.S. s sembarang, pita terbuka
@@ -231,10 +240,7 @@ String getWordAt(String s, int i)
     String oneWord;
     createEmptyString(&oneWord, 350);
 
-    int length = stringLength(s);
     int k = 0, ptr = 0;;
-    boolean done = false;
-
     while (k < i) {
         if (s.buffer[ptr] != ' ') {
             ptr++;

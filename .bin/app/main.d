@@ -27,7 +27,7 @@
  app/../lib/./ADT/Graf/../ListStatik/../../boolean.h \
  app/../lib/./ADT/LinkedList/listlinier.h \
  app/../lib/./ADT/LinkedList/../../boolean.h \
- app/../lib/./ADT/ListDinamik/listdinamik.h \
+ app/../lib/./ADT/ListDinamik/listdinamik.h lib/ADT/../boolean.h \
  app/../lib/./ADT/ListStatik/liststatik.h \
  app/../lib/./ADT/ListStatik/../../boolean.h \
  app/../lib/./ADT/Matriks/matriks.h \
@@ -48,7 +48,18 @@
  app/../lib/./Types/././Profile.h app/../lib/./Types/././Photo.h \
  app/../lib/./Types/././../ADT/Matriks/charMatriks.h \
  app/../lib/./Types/././../ADT/Matriks/../../boolean.h \
- app/../lib/./Types/User.h
+ app/../lib/./Types/User.h app/../function/simpan.h /usr/include/dirent.h \
+ /usr/include/x86_64-linux-gnu/bits/dirent.h \
+ /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
+ /usr/include/x86_64-linux-gnu/sys/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+ app/../function/../lib/lib.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -82,6 +93,7 @@ app/../lib/./ADT/Graf/../ListStatik/../../boolean.h:
 app/../lib/./ADT/LinkedList/listlinier.h:
 app/../lib/./ADT/LinkedList/../../boolean.h:
 app/../lib/./ADT/ListDinamik/listdinamik.h:
+lib/ADT/../boolean.h:
 app/../lib/./ADT/ListStatik/liststatik.h:
 app/../lib/./ADT/ListStatik/../../boolean.h:
 app/../lib/./ADT/Matriks/matriks.h:
@@ -111,3 +123,16 @@ app/../lib/./Types/././Photo.h:
 app/../lib/./Types/././../ADT/Matriks/charMatriks.h:
 app/../lib/./Types/././../ADT/Matriks/../../boolean.h:
 app/../lib/./Types/User.h:
+app/../function/simpan.h:
+/usr/include/dirent.h:
+/usr/include/x86_64-linux-gnu/bits/dirent.h:
+/usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
+/usr/include/x86_64-linux-gnu/sys/stat.h:
+/usr/include/x86_64-linux-gnu/bits/stat.h:
+/usr/include/x86_64-linux-gnu/bits/struct_stat.h:
+/usr/include/x86_64-linux-gnu/sys/types.h:
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
+app/../function/../lib/lib.h:

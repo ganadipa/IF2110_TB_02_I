@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "../lib/lib.h"
+#include "../function/simpan.h"
 
 void handleCommand(Application* app, String command, boolean *finish) 
 /**
@@ -36,8 +37,10 @@ void handleCommand(Application* app, String command, boolean *finish)
         GantiProfil(app);
     } else if (compareString(firstWord, "LIHAT_PROFIL")) {
         LihatProfil(app, secondWord);
+    } else if(compareString(firstWord, "SIMPAN")){
+        SaveFolder();
     }
-    
+
     else {
         printf("\nTidak ada perintah ");
         displayString(command);

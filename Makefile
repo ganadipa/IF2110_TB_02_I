@@ -1,11 +1,14 @@
-include Makefile.que #unit test for queue
-include Makefile.sta #unit test for stack
-include Makefile.word #unit test for wordmachine
-include Makefile.din #unit test for list dinamik
+include makefile.que #unit test for queue
+include makefile.sta #unit test for stack
+include makefile.word #unit test for wordmachine
+include makefile.din #unit test for list dinamik
 
 
 BINARY = .bin
 BINDIR = .bin
+CODEDIRS = app lib/ADT/* lib/Types function
+INCDIRS = app lib/ADT lib/ADT/* lib/Types function
+
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -std=c11 $(DEPFLAGS) $(foreach D, $(INCDIRS), -I$(D)) -Wno-unused-variable -Wno-unused-parameter -Wno-unused-value -Wno-unused-but-set-variable
 DEPFLAGS = -MP -MD
@@ -19,7 +22,7 @@ all: $(BINARY)
 
 $(BINARY): $(OBJECTS)
 
-$(BINDIR)/%.o:%.c
+$(BINDIR)/%.o : %.c
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
@@ -33,8 +36,17 @@ clean:
 run: $(PROGRAM)
 	./$(PROGRAM)
 
-din: #command for testing list dinamik unit test` 
-	$(MAKE) -f  Makefile.din test_list
+word: 
+	$(MAKE) -f makefile.word test_word
+
+que: 
+	$(MAKE) -f makefile.que test_queue
+
+sta:
+	$(MAKE) -f makefile.sta test_stack
+
+din: 
+	$(MAKE) -f makefile.din test_listdin
 
 que: #command for testing list dinamik unit test` 
 	$(MAKE) -f  Makefile.din test_list
@@ -49,8 +61,6 @@ sta: #command for testing list dinamik unit test`
 #************************************************************************************************
 #************************************************************************************************
 #************************************************************************************************
-
-
 
 
 
@@ -85,7 +95,3 @@ $(LINKEDLIST_TEST_RESULTS): $(LINKEDLIST_TESTS_DIR)/%.result: $(LINKEDLIST_TESTS
 #************************************************************************************
 #************************************************************************************
 #************************************************************************************
-
-
-
-
