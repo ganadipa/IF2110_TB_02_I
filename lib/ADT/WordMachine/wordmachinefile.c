@@ -6,10 +6,13 @@ String currentWordFile;
 
 void IgnoreNewLinesFile()
 {
-    
+    int counter = 0;
     while (currentCharFile == '\n'){
         ADVCHARFILE();
-        // printf("%c", currentCharFile);
+        counter += 1;
+        if (counter > 50){
+            break;
+        }
     }
 }
 /* Mengabaikan satu atau beberapa BLANK
@@ -35,19 +38,12 @@ void STARTWORDFILE(){
     OPENFILE();
     IgnoreBlanksFile();
     IgnoreNullFile();
-    printf("1");
     if(currentCharFile == MARK_LAST_FILE){
-        printf("2");
         EndWordFile = true;
-        printf("3");
     } else{
-        printf("4");
         EndWordFile = false;
-        printf("5");
         CopyWordFILE();
-        printf("6");
         IgnoreNewLinesFile();
-        printf("7");
 
     }
 }

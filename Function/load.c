@@ -3,13 +3,11 @@
 #include <stdio.h>
 int main(){
    STARTWORDFILE();
-   printf("/");
    while (!EndWordFile){
-    printf("/");
         for (int i = 0 ; i < currentWordFile.maxLength; i++){
             printf("%c", currentWordFile.buffer[i]);
         }
-        printf(" ");
+        printf("\n");
         ADVWORDFILE();
    }
 

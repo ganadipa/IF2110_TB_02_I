@@ -6,7 +6,7 @@
 #include "../../lib.h"
 #include "../../boolean.h"
 
-#define MARK_LAST_FILE '\0'
+#define MARK_LAST_FILE '\n'
 /* State Mesin */
 extern char currentCharFile;
 extern boolean EOP_FILE;
