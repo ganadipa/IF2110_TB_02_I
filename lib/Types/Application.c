@@ -348,22 +348,56 @@ void HapusTeman(Application *app) {
     removeEdge(&FRIENDSHIPS(*app), LOGINID(*app), i); 
 }
 
-void Kicau(Application *app);
+void Kicau(Application *app){
+    String teks;
+    createEmptyString(&teks, 280);
+    printf("Masukkan Kicauan : ");
+    readString(&teks, 280);
+
+    int IDUSER = LOGINID(*app);
+
+    KicauanType value;
+    InisialisasiKicau(&value, IDUSER);
+    setKicauID(&value, NEFF(KICAUAN(*app))+1);
+    // setKicauDateTime(&value);  TUNGGU DATETIME SELESAI
+    setText(&value, teks);
+    insertLastListKicau( &KICAUAN(*app),value);
+
+    printKicauan(value, ELMT_LISTUSER(LISTUSER(*app), IDUSER).name);
+}
 /**
  * Untuk Add kicauan
 */
 
-void TampilinKicauan(Application *app);
+boolean isFriend ( Application *app, int CurrentID, int friendID){
+    return FRIENDSHIPS(*app).adjacencyMatrix.mem[CurrentID][friendID] == true;
+}
+
+void TampilinKicauan(Application *app){
+    int i;
+    int CurUser = LOGINID(*app);
+    for (i = NEFF(KICAUAN(*app)); i >= 0; i--){
+        if ( KICAUAN(*app).buffer[i].IDuser == CurUser || isFriend(app, CurUser, KICAUAN(*app).buffer[i].IDuser)){
+            printKicauan( KICAUAN(*app).buffer[i], ELMT_LISTUSER(LISTUSER(*app), i).name);
+        }
+    }
+}
 /**
  * Untuk Menampilkan kicauan berdasarkan Pertemanan dari user
-*/
+ */
 
-void SukaKicauan(Application *app, int ID);
+void SukaKicauan(Application *app, int ID){
+    addLike( &ELMT(KICAUAN(*app) , ID - 1) );
+}
 /**
  * Untuk Menambah jumlah like pada Kicauan dengan id "ID"
 */
 
-void UbahKicauan(Application *app, int ID);
+void UbahKicauan(Application *app, int ID){
+    String teksBaru;
+    createEmptyString(&teksBaru, 280);
+    readString(&teksBaru, 280);
+}
 /**
  * Untuk mengUpdate teks kicauan menjadi yang baru pada Kicauan dengan id "ID"
 */

@@ -2,9 +2,8 @@
 #include "./Kicauan.h"
 
 /* ********** KONSTRUKTOR ********** */
-void InisialisasiKicau(Kicauan *k, int ID, String user){
-    IDKicau(*k) = ID;
-    userKicau(*k) = user;
+void InisialisasiKicau(Kicauan *k,int IDuser){
+    userKicau(*k) = IDuser;
     likeKicau(*k) = 0;
 }
 /**
@@ -12,6 +11,9 @@ void InisialisasiKicau(Kicauan *k, int ID, String user){
  * F.S. user memiliki name "user" dan ID "ID", dan properti sisanya default.
 */
 
+void setKicauID (Kicauan *k, int IDKicau){
+    IDKicau(*k) = IDKicau;
+}
 
 void setKicauDateTime(Kicauan *k){
     // dateTimeKicau(*k) = createDatetime();
@@ -37,11 +39,12 @@ void addLike(Kicauan *k){
 */
 
 
-void printKicauan(Kicauan k){
-    printf("Detail Kicauan :");
+void printKicauan(Kicauan k, String nama ){
+    printf(" Detail Kicauan :");
     printf("\n| ID = %d", IDKicau(k));
     printf("\n| ");
-    displayString(userKicau(k));
+//  ELMT_LISTUSER(LISTUSER(*app), IDUSER).name
+    displayString( nama);
     printf("\n| ");
     displayString(dateTimeKicau(k));
     printf("\n| ");

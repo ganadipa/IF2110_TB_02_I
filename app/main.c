@@ -44,6 +44,17 @@ void handleCommand(Application* app, String command, boolean *finish)
         DaftarTeman(*app);
     } else if (compareString(firstWord, "HAPUS_TEMAN")) {
         HapusTeman(app);
+    } else if (compareString(firstWord, "KICAU")) {
+        Kicau(app);
+    } else if (compareString(firstWord, "KICAUAN")) {
+        
+        TampilinKicauan(app);
+    } else if (compareString(firstWord, "SUKA_KICAUAN")) {
+        //Convert second word ke integer biar dimasukkin ke function
+        SukaKicauan(app,1);
+    } else if (compareString(firstWord, "UBAH_KICAUAN")) {
+        //Convert second word ke integer biar dimasukkin ke function
+        UbahKicauan(app,1);
     } else if(compareString(firstWord, "SIMPAN")){
         SaveFolder();
     }
