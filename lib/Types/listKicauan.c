@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "listKicauan.h"
+
+
 /* ********** KONSTRUKTOR ********** */
 /* Konstruktor : create list kosong  */
 void CreateListKicau(ListKicau *l, int capacity)
@@ -38,14 +40,7 @@ boolean isFullListKicau(ListKicau l)
 
 
 // PRINT LINST KICAU INI MASIH SEMENTARA
-void printListKicau(ListKicau l)
-/* Proses : Menuliskan isi list dengan traversal, list ditulis di antara kurung siku;
-   antara dua elemen dipisahkan dengan separator "koma", tanpa tambahan karakter di depan,
-   di tengah, atau di belakang, termasuk spasi dan enter */
-/* I.S. l boleh kosong */
-/* F.S. Jika l tidak kosong: [e1,e2,...,en] */
-/* Contoh : jika ada tiga elemen bernilai 1, 20, 30 akan dicetak: [1,20,30] */
-/* Jika list kosong : menulis [] */
+void printListKicau(ListKicau l, ListUser user)
 {
     int i;
     if (isEmptyListKicau(l))
@@ -55,7 +50,7 @@ void printListKicau(ListKicau l)
     {
         for (i = 0; i < NEFF(l); i++)
         {
-            printKicauan(ELMT(l, i));
+            printKicauan(ELMT(l, i), (ELMT_LISTUSER(user, userKicau(ELMT(l,i)))).name  );
         }
     }
 }

@@ -83,6 +83,11 @@ void UbahFotoProfil(Application *app);
 
 void HapusTeman(Application *app);
 
+boolean isFriend(Application *app, int ID_yang_ingin_dicek, int friendID);
+/**
+ * Untuk Mengecek apakah ID yang ingin dicek berteman dengan id friend satu lagi
+*/
+
 void Kicau(Application *app);
 /**
  * Untuk Add kicauan

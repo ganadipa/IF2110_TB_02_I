@@ -8,22 +8,28 @@
 
 typedef struct {
     int IDKicau;
-    String user;
+    int  IDuser;
     String dateTime;
     String text;
     int like;
 } Kicauan;
 
 #define IDKicau(u) (u).IDKicau
-#define userKicau(u) (u).user
+#define userKicau(u) (u).IDuser
 #define dateTimeKicau(u) (u).dateTime
 #define teksKicau(u) (u).text
 #define likeKicau(u) (u).like
 
-void InisialisasiKicau(Kicauan *k, int ID, String user);
+void InisialisasiKicau(Kicauan *k, int IDuser);
 /**
  * I.S. u sembarang
  * F.S. user memiliki name "user" dan ID "ID", dan properti sisanya default.
+*/
+
+void setKicauID(Kicauan *k, int ID);
+/**
+ * I.S. k sudah diinisilisasi
+ * F.S. Mengeset id menjadi id sekarang
 */
 
 void setKicauDateTime(Kicauan *k);
@@ -43,7 +49,7 @@ void addLike(Kicauan *k);
  * F.S. Mengincrement like 
 */
 
-void printKicauan(Kicauan k);
+void printKicauan(Kicauan k, String nama);
 /**
  * Print Kicauan 
 */

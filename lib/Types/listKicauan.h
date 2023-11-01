@@ -8,6 +8,8 @@
 
 #include "../boolean.h"
 #include "./Kicauan.h"
+#include "./ListUser.h"
+
 
 /*  Kamus Umum */
 #define IDX_MIN 0
@@ -62,7 +64,7 @@ boolean isEmptyListKicau (ListKicau  l);
 boolean isFullListKicau (ListKicau  l);
 /* Mengirimkan true jika list l penuh, mengirimkan false jika tidak */
 
-void printListKicau (ListKicau  l);
+void printListKicau (ListKicau  l , ListUser user);
 /* Proses : Menuliskan isi list dengan traversal, list ditulis di antara kurung siku;
    antara dua elemen dipisahkan dengan separator "koma", tanpa tambahan karakter di depan,
    di tengah, atau di belakang, termasuk spasi dan enter */
