@@ -45,6 +45,8 @@ void handleCommand(Application* app, String command, boolean *finish)
         DaftarTeman(*app);
     } else if (compareString(firstWord, "HAPUS_TEMAN")) {
         HapusTeman(app);
+    } else if(compareString(firstWord, "SIMPAN")){
+        SaveFolder();
     }
 
     else {

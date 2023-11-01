@@ -36,7 +36,7 @@ clean:
 
 # Target to run the application
 run: $(PROGRAM)
-	./$(PROGRAM)
+	@./$(PROGRAM)
 
 word: 
 	$(MAKE) -f Makefile.word test_word
