@@ -48,7 +48,7 @@ sta:
 	$(MAKE) -f Makefile.sta test_stack
 
 din:
-	$(MAKE) -f Makefile.sta test_din
+	$(MAKE) -f Makefile.din test_listdin
 
 
 
