@@ -19,6 +19,7 @@
     "photo.h": "c",
     "pcolor.h": "c",
     "simpan.h": "c",
-    "listdinamik.h": "c"
+    "listdinamik.h": "c",
+    "types.h": "c"
   }
 }

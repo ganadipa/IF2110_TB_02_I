@@ -32,7 +32,7 @@ $(PROGRAM): $(OBJECTS)
 
 clean: 
 	@rm -rf $(BINDIR)
-	@echo "Cleaning upp files..."
+	@echo "Cleaning up files..."
 
 # Target to run the application
 run: $(PROGRAM)
@@ -48,7 +48,7 @@ sta:
 	$(MAKE) -f Makefile.sta test_stack
 
 din:
-	$(MAKE) -f Makefile.sta test_din
+	$(MAKE) -f Makefile.sta test_listdin
 
 
 
