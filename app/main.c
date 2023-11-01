@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "../lib/lib.h"
 #include "../Function/simpan.h"
+#include "../Function/load.h"
 
 void handleCommand(Application* app, String command, boolean *finish) 
 /**
@@ -9,8 +10,6 @@ void handleCommand(Application* app, String command, boolean *finish)
 {
     int numword = countWord(command);
     if (numword == 0) return;
-
-
     String firstWord = getWordAt(command, 0);
     String secondWord;
     String thirdWord;

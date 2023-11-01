@@ -2,14 +2,8 @@
 
 
 boolean isExist(String *path){
-    DIR* dir = opendir(path->buffer); 
-    if(dir){
-        closedir(dir); 
-        return 1; 
-    }
-    else{
-        return 0;
-    }
+    struct stat buffer;
+    return (stat(path->buffer, &buffer) == 0);
 }
 
 void SavingFile(String* path){
