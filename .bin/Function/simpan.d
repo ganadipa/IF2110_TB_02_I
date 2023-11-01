@@ -68,9 +68,11 @@
  Function/../lib/./Types/././Photo.h \
  Function/../lib/./Types/././../ADT/Matriks/charMatriks.h \
  Function/../lib/./Types/././../ADT/Matriks/../../boolean.h \
+ Function/../lib/./Types/././RequestQueue.h \
  Function/../lib/./Types/../ADT/Graf/graf.h \
  Function/../lib/./Types/User.h Function/../lib/./Types/Profile.h \
- Function/../lib/./Types/Photo.h
+ Function/../lib/./Types/Photo.h Function/../lib/./Types/ListUser.h \
+ Function/../lib/./Types/RequestQueue.h
 /usr/include/stdc-predef.h:
 Function/simpan.h:
 /usr/include/stdio.h:
@@ -147,7 +149,10 @@ Function/../lib/./Types/././Profile.h:
 Function/../lib/./Types/././Photo.h:
 Function/../lib/./Types/././../ADT/Matriks/charMatriks.h:
 Function/../lib/./Types/././../ADT/Matriks/../../boolean.h:
+Function/../lib/./Types/././RequestQueue.h:
 Function/../lib/./Types/../ADT/Graf/graf.h:
 Function/../lib/./Types/User.h:
 Function/../lib/./Types/Profile.h:
 Function/../lib/./Types/Photo.h:
+Function/../lib/./Types/ListUser.h:
+Function/../lib/./Types/RequestQueue.h:

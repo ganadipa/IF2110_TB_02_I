@@ -77,7 +77,7 @@ void addEdge(Graf *g, int i, int j)
 int countConnections(Graf g, int i) {
     int k, count = 0;;
     for (k = 0; k < NUMEDGE(g); k++) {
-        if (CONNECTED(g, i, k) == true) count++;
+        if (CONNECTED(g, i, k) == true && i != k) count++;
     }
 
     return count;
@@ -98,11 +98,7 @@ void addVertices(Graf *g)
 
 {
     NUMVERTICES(*g) += 1;
-    int i, j;
-    for (i = 0; i < NUMVERTICES(*g); i++) {
-        CONNECTED(*g, NUMVERTICES(*g)-1, i) = false;
-        CONNECTED(*g, i, NUMVERTICES(*g)-1) = false;
-    }
+    addEdge(g, NUMVERTICES(*g)-1, NUMVERTICES(*g)-1);
 }
 
 

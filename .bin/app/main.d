@@ -51,8 +51,10 @@
  app/../lib/./Types/././Profile.h app/../lib/./Types/././Photo.h \
  app/../lib/./Types/././../ADT/Matriks/charMatriks.h \
  app/../lib/./Types/././../ADT/Matriks/../../boolean.h \
+ app/../lib/./Types/././RequestQueue.h \
  app/../lib/./Types/../ADT/Graf/graf.h app/../lib/./Types/User.h \
  app/../lib/./Types/Profile.h app/../lib/./Types/Photo.h \
+ app/../lib/./Types/ListUser.h app/../lib/./Types/RequestQueue.h \
  app/../Function/simpan.h /usr/include/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
@@ -129,10 +131,13 @@ app/../lib/./Types/././Profile.h:
 app/../lib/./Types/././Photo.h:
 app/../lib/./Types/././../ADT/Matriks/charMatriks.h:
 app/../lib/./Types/././../ADT/Matriks/../../boolean.h:
+app/../lib/./Types/././RequestQueue.h:
 app/../lib/./Types/../ADT/Graf/graf.h:
 app/../lib/./Types/User.h:
 app/../lib/./Types/Profile.h:
 app/../lib/./Types/Photo.h:
+app/../lib/./Types/ListUser.h:
+app/../lib/./Types/RequestQueue.h:
 app/../Function/simpan.h:
 /usr/include/dirent.h:
 /usr/include/x86_64-linux-gnu/bits/dirent.h:

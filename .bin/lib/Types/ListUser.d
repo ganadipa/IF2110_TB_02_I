@@ -30,7 +30,8 @@
  lib/Types/././../ADT/String/../WordMachine/charmachine.h \
  lib/Types/././Profile.h lib/Types/././Photo.h \
  lib/Types/././../ADT/Matriks/charMatriks.h \
- lib/Types/././../ADT/Matriks/../../boolean.h
+ lib/Types/././../ADT/Matriks/../../boolean.h \
+ lib/Types/././RequestQueue.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -69,3 +70,4 @@ lib/Types/././Profile.h:
 lib/Types/././Photo.h:
 lib/Types/././../ADT/Matriks/charMatriks.h:
 lib/Types/././../ADT/Matriks/../../boolean.h:
+lib/Types/././RequestQueue.h:

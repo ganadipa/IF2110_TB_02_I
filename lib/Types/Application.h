@@ -80,6 +80,27 @@ void UbahFotoProfil(Application *app);
 */
 
 void HapusTeman(Application *app);
+/**
+ * 
+*/
+
+void TambahTeman(Application *app);
+/**
+ * 
+*/
+
+void BatalTambahTeman(Application *app);
+/**
+ * 
+*/
+
+void DaftarPermintaanPertemanan(Application app);
+/**
+ * 
+*/
+
+void SetujuiPertemanan(Application *app);
+
 
 
 void DevTools(Application app);

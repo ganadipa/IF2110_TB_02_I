@@ -41,10 +41,18 @@ void handleCommand(Application* app, String command, boolean *finish)
         AturJenisAkun(app);
     } else if (compareString(firstWord, "UBAH_FOTO_PROFIL")) {
         UbahFotoProfil(app);
-    } else if (compareString(firstWord, "DAFTAR_TEMAN;")) {
+    } else if (compareString(firstWord, "DAFTAR_TEMAN")) {
         DaftarTeman(*app);
     } else if (compareString(firstWord, "HAPUS_TEMAN")) {
         HapusTeman(app);
+    } else if (compareString(firstWord, "TAMBAH_TEMAN")) {
+        TambahTeman(app);
+    } else if (compareString(firstWord, "BATAL_TAMBAH_TEMAN")) {
+        BatalTambahTeman(app);
+    } else if (compareString(firstWord, "DAFTAR_PERMINTAAN_PERTEMANAN")) {
+        DaftarPermintaanPertemanan(*app);
+    } else if (compareString(firstWord, "SETUJUI_PERTEMANAN")) {
+        SetujuiPertemanan(app);
     }
 
     else {

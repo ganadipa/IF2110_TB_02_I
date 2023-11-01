@@ -70,6 +70,8 @@ void readString(String *s, int maxLength)
  * F.S. s terbentuk sebagai hasil input dari stdin, currentChar bernilai '\n'.
 */
 {
+
+
     createEmptyString(s, maxLength);
 
     if (currentChar_WordMachine == '\0' || currentChar_WordMachine == '\n')
@@ -85,6 +87,7 @@ void readString(String *s, int maxLength)
     }
 
     ADV();
+
     // now current char is '\n'
 }
 

@@ -17,5 +17,7 @@
 #include "./Types/User.h"
 #include "./Types/Profile.h"
 #include "./Types/Photo.h"
+#include "./Types/ListUser.h"
+#include "./Types/RequestQueue.h"
 
 #endif

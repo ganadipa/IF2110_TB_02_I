@@ -302,13 +302,13 @@ void DaftarTeman(Application app) {
     if (numFriends == 0) {
         printf("\n");
         displayName(l, LOGINID(app));
-        printf("belum memiliki teman.\n");
+        printf(" belum memiliki teman.\n");
     } else {
 
         displayName(l, LOGINID(app));
-        printf("memiliki %d teman:\n", numFriends);
+        printf(" memiliki %d teman:\n", numFriends);
         for (k = 0; k < length; k++) {
-            if (CONNECTED(FRIENDSHIPS(app), k, LOGINID(app)) == true) {
+            if (CONNECTED(FRIENDSHIPS(app), k, LOGINID(app)) == true && k != LOGINID(app)) {
                 printf(" | ");
                 displayName(l, k);
                 printf("\n");
@@ -351,9 +351,170 @@ void HapusTeman(Application *app) {
     removeEdge(&FRIENDSHIPS(*app), LOGINID(*app), i); 
 }
 
+void TambahTeman(Application *app)
+
+{
+
+    if (!LOGGEDIN(*app)) {
+        printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
+        return;
+    }
+
+
+
+    String name;
+    ListUser *l = &LISTUSER(*app);
+
+    int numFriendRequest = FRIEND_COUNT(ELMT_LISTUSER(*l, LOGINID(*app)));
+    if (numFriendRequest > 0) {
+        printf("Terdapat permintaan pertemanan yang belum Anda setujui. Silakan kosongkan daftar permintaan pertemanan untuk Anda terlebih dahulu.");
+        return;
+    }
+
+
+    
+    printf("\nMasukkan nama pengguna:\n");
+    readString(&name, 350);
+
+    int idTarget = searchByName(*l, name);
+    if (idTarget == -1) {
+        printf("\nPengguna bernama ");
+        displayString(name);
+        printf(" tidak ditemukan.\n");
+        return;
+    } else if (idTarget == LOGINID(*app))  {
+        printf("\nTidak bisa meminta pertemanan kepada diri sendiri.\n");
+        return;
+    }
+
+
+    User* targetUser = &ELMT_LISTUSER(LISTUSER(*app), idTarget);
+
+    int i = getIndex_RequestQueue(FRIEND_REQUEST(*targetUser), LOGINID(*app));
+    
+    if (i != -1)
+    {
+        printf("Anda sudah mengirimkan permintaan pertemanan kepada ");
+        displayString(name);
+        printf(" Silakan tunggu hingga permintaan Anda disetujui.");
+        return;
+    }
+    
+    UserID current;
+    current.userID = LOGINID(*app);
+    current.friendCount = FRIEND_COUNT(ELMT_LISTUSER(*l, LOGGEDIN(*app)));
+
+    RequestQueue *q = &FRIEND_REQUEST(*targetUser);
+    enqueue_RequestQueue(q, current);
+
+    printf("\nPermintaan pertemanan kepada ");
+    displayString(name);
+    printf(" telah dikirim. Tunggu beberapa saat hingga permintaan Anda disetujui.");
+    
+    
+
+}
+
+
+void BatalTambahTeman(Application *app)
+
+{
+    if (!LOGGEDIN(*app)) {
+        printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
+        return;
+    }
+
+
+    String name;
+    printf("\nMasukkan nama pengguna: \n");
+    readString(&name, 350);
+
+    ListUser *l = &LISTUSER(*app);
+    int idTarget = searchByName(*l, name);
+    User *targetUser = &ELMT_LISTUSER(*l, idTarget);
+
+    int idx = getIndex_RequestQueue(FRIEND_REQUEST(*targetUser), LOGINID(*app));
+    if (idx == NIL) {
+        printf(
+            "Anda belum mengirimkan permintaan pertemanan kepada "
+        );
+        displayString(name);
+        return;
+    }
+
+    removeElmt_RequestQueue(&FRIEND_REQUEST(*targetUser), idx);
+    printf("Permintaan pertemanan kepada ");
+    displayString(name);
+    printf(" telah dibatalkan.");
+}
+
+void DaftarPermintaanPertemanan(Application app)
+
+{
+    ListUser l = LISTUSER(app);
+    RequestQueue q = FRIEND_REQUEST(ELMT_LISTUSER(l, LOGINID(app)));
+    displayRequestQueue(q, LISTUSER(app));
+}
+
+void SetujuiPertemanan(Application *app)
+{
+
+    if (!LOGGEDIN(*app)) {
+        printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
+        return;
+    }
+
+
+    ListUser *l = &LISTUSER(*app);
+    RequestQueue *q = &FRIEND_REQUEST(ELMT_LISTUSER(*l, LOGINID(*app)));
+
+    if (!nbElmt_RequestQueue(*q)) {
+        printf("Belum ada yang mengajak Anda berteman.");
+        return;
+    }
+
+    UserID uid;
+    dequeque_RequestQueue(q, &uid);
+
+    int idTarget = ID_REQQUEUE(uid);
+    User *u = &ELMT_LISTUSER(*l, idTarget);
+
+    printf("\nPermintaan pertemanan teratas dari ");
+    displayString(NAME(*u));
+    printf("\n");
+
+    printf("\n | Nama: ");
+    displayString(NAME(*u));
+    printf("\n | Jumlah teman: %d\n", FRIEND_COUNT(*u));
+
+    printf("Apakah Anda ingin menyetujui permintaan pertemanan ini? (YA/TIDAK) ");
+
+    String ans;
+    readString(&ans, 10);
+
+    if (compareString(ans, "TIDAK")) {
+        printf("\nPermintaan pertemanan dari ");
+        printf(" telah ditolak.\n");
+    } else if (compareString(ans, "YA")) {
+        addEdge(&FRIENDSHIPS(*app), idTarget, LOGINID(*app));
+        printf("Permintaan pertemanan dari ");
+        displayString(NAME(*u));
+        printf(" telah disetujui. Selamat! Anda telah berteman dengan ");
+        displayString(NAME(*u));
+        printf(".\n");
+    } else {
+        printf("Input tidak diketahui, gagal menyetujui pertemanan.");
+    }
+}
+
+
+
 void DevTools(Application app) 
 
 {
+
+
+
     printf("\nisLoggedIn : ");
     if (LOGGEDIN(app)) {
         printf("TRUE");
@@ -374,6 +535,7 @@ void DevTools(Application app)
         printf("ID : %d", i);
         displayProfile(ELMT_LISTUSER(LISTUSER(app), i));
         displayPhoto(FOTO(PROFILE(ELMT_LISTUSER(LISTUSER(app), i))));
+        displayRequestQueue(FRIEND_REQUEST(ELMT_LISTUSER(LISTUSER(app), i)), LISTUSER(app));
         printf("\n\n");
     }
 }
