@@ -72,6 +72,7 @@
  Function/../lib/./Types/./../ADT/String/string.h \
  Function/../lib/./Types/./../ADT/DateTime/datetime.h \
  Function/../lib/./Types/./../ADT/DateTime/../../boolean.h \
+ Function/../lib/./Types/DrafKicauan.h Function/../lib/./Types/Kicauan.h \
  Function/../lib/./Types/User.h Function/../lib/./Types/Profile.h \
  Function/../lib/./Types/Photo.h
 /usr/include/stdc-predef.h:
@@ -153,6 +154,8 @@ Function/../lib/./Types/./Kicauan.h:
 Function/../lib/./Types/./../ADT/String/string.h:
 Function/../lib/./Types/./../ADT/DateTime/datetime.h:
 Function/../lib/./Types/./../ADT/DateTime/../../boolean.h:
+Function/../lib/./Types/DrafKicauan.h:
+Function/../lib/./Types/Kicauan.h:
 Function/../lib/./Types/User.h:
 Function/../lib/./Types/Profile.h:
 Function/../lib/./Types/Photo.h:

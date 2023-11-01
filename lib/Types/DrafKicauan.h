@@ -10,25 +10,28 @@
 #define MaxEl 100
 /* Nil adalah stack dengan elemen kosong . */
 
-typedef Kicauan infotype;
+typedef Kicauan infodraf;
 typedef int address;   /* indeks tabel */
 
 /* Contoh deklarasi variabel bertype stack dengan ciri TOP : */
 /* Versi I : dengan menyimpan tabel dan alamat top secara eksplisit*/
 typedef struct { 
-  infotype T[MaxEl]; /* tabel penyimpan elemen */
+  Kicauan T[MaxEl]; /* tabel penyimpan elemen */
   address TOP;  /* alamat TOP: elemen puncak */
-} Draf;
+} DrafKicau;
 
+#define TopDraf(S) (S).TOP
+#define InfoTopDraf(S) (S).T[(S).TOP]
 
-void InisialisasiDrafKicau(Kicauan *k, int ID, String user, String teks); 
+void CreateDraf(DrafKicau *draf);
 
-void SimpanDraf(); 
+boolean isDrafEmpty(DrafKicau draf);
 
-void TerbitkanDraf(); 
+void InisialisasiDrafKicau(Kicauan *k, int IDUser); 
 
+void PushDraf(DrafKicau *S, Kicauan k);
 
-
+void PopDraf(DrafKicau *S, Kicauan *k);
 
 #endif
 

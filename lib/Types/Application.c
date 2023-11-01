@@ -38,6 +38,7 @@ void AppInitialization(Application *app)
     CreateListUser(&LISTUSER(*app)); 
     CreateGraph(&FRIENDSHIPS(*app));
     CreateListKicau(&KICAUAN(*app),1000); //Inisialisasi awal untuk ListKicauan 1000
+    CreateDraf(&DRAFKICAU(*app)); //
 }
 
 void Daftar(Application *app)
@@ -401,6 +402,82 @@ void UbahKicauan(Application *app, int ID){
 /**
  * Untuk mengUpdate teks kicauan menjadi yang baru pada Kicauan dengan id "ID"
 */
+
+void drafQuestion(){
+    printf("Apakah anda ingin menghapus, menyimpan, atau menerbitkan draf ini?");
+}
+
+void SimpanDraf(Application *app, Kicauan kicau){
+    PushDraf(&DRAFKICAU(*app), kicau);
+}
+
+void HapusDraf(Application *app, Kicauan *sampahKicau){
+    PopDraf(&DRAFKICAU(*app), sampahKicau);
+}
+
+void TerbitkanDraf(Application *app, Kicauan kicau, int IDUSER){
+    printKicauan(kicau, ELMT_LISTUSER(LISTUSER(*app), IDUSER).name);
+    insertLastListKicau( &KICAUAN(*app), kicau);
+}
+
+void LihatDraf(Application *app){
+    Kicauan temp; 
+    if(isDrafEmpty(DRAFKICAU(*app))){
+        printf("Yah, anda belum memiilki draf apapun! Buat dulu dong");
+    }
+    else{
+        int IDUSER = LOGINID(*app);
+        PopDraf(&DRAFKICAU(*app), &temp);
+        printf("Ini draf terakhir anda\n"); 
+        printf("|"); 
+        displayString(dateTimeKicau(temp));
+        printf("\n|"); 
+        displayString(teksKicau(temp));
+
+        printf("\nApakah anda ingin mengubah, menghapus, atau menerbitkan draf ini?");
+        String choose; 
+
+        readString(&choose, 20);
+        if(compareString(choose, "SIMPAN")){
+            SimpanDraf(app, temp);
+        } else if(compareString(choose, "HAPUS")){
+            if(!isDrafEmpty(DRAFKICAU(*app))){
+                printf("Draft berhasil dihapus");
+            }
+        } else if(compareString(choose, "TERBIT")){
+            TerbitkanDraf(app, temp, IDUSER);
+        }
+    }
+
+}
+
+
+void BuatDraf(Application *app){
+    String teks;
+    createEmptyString(&teks, 280);
+    printf("Masukkan Kicauan : ");
+    readString(&teks, 280);
+
+    int IDUSER = LOGINID(*app);
+    KicauanType value;
+    InisialisasiDrafKicau(&value, IDUSER);
+    setText(&value, teks); 
+    setKicauID(&value, NEFF(KICAUAN(*app))+1);
+
+    drafQuestion(); 
+    String choose;
+    readString(&choose, 20);
+    if(compareString(choose, "SIMPAN")){
+        SimpanDraf(app, value);
+    } else if(compareString(choose, "HAPUS")){
+        if(!isDrafEmpty(DRAFKICAU(*app))){
+            printf("Draft berhasil dihapus");
+        }
+    } else if(compareString(choose, "TERBIT")){
+        TerbitkanDraf(app, value, IDUSER);
+    }
+    // setKicauDateTime(&value);  TUNGGU DATETIME SELESAI
+}
 
 void DevTools(Application app) 
 

@@ -6,6 +6,7 @@
 #include "./ListUser.h"
 #include "../ADT/Graf/graf.h"
 #include "listKicauan.h"
+#include "DrafKicauan.h"
 
 
 
@@ -15,6 +16,7 @@ typedef struct application {
     ListUser users; // Used list dengan array statik
     Graf friendships;
     ListKicau listKicauan; 
+    DrafKicau drafKicau;
 } Application;
 
 #define LOGGEDIN(a) (a).isLoggedIn
@@ -22,6 +24,7 @@ typedef struct application {
 #define LOGINID(a) (a).loginID
 #define FRIENDSHIPS(a) (a).friendships
 #define KICAUAN(a)  (a).listKicauan
+#define DRAFKICAU(a) (a).drafKicau
 
 void AppInitialization(Application *app);
 /**
@@ -107,6 +110,18 @@ void UbahKicauan(Application *app, int ID);
 /**
  * Untuk mengUpdate teks kicauan menjadi yang baru pada Kicauan dengan id "ID"
 */
+
+void BuatDraf(Application *app); 
+
+void SimpanDraf(Application *app, Kicauan kicau);
+
+void HapusDraf(Application *app, Kicauan *sampahKicau); 
+
+void TerbitkanDraf(Application *app, Kicauan kicau, int IDuser); 
+
+void LihatDraf(Application *app); 
+
+void UbahDraf(Application *app);
 
 void DevTools(Application app);
 /**

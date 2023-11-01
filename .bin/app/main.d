@@ -56,6 +56,7 @@
  app/../lib/./Types/./../ADT/String/string.h \
  app/../lib/./Types/./../ADT/DateTime/datetime.h \
  app/../lib/./Types/./../ADT/DateTime/../../boolean.h \
+ app/../lib/./Types/DrafKicauan.h app/../lib/./Types/Kicauan.h \
  app/../lib/./Types/User.h app/../lib/./Types/Profile.h \
  app/../lib/./Types/Photo.h app/../Function/simpan.h \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
@@ -143,6 +144,8 @@ app/../lib/./Types/./Kicauan.h:
 app/../lib/./Types/./../ADT/String/string.h:
 app/../lib/./Types/./../ADT/DateTime/datetime.h:
 app/../lib/./Types/./../ADT/DateTime/../../boolean.h:
+app/../lib/./Types/DrafKicauan.h:
+app/../lib/./Types/Kicauan.h:
 app/../lib/./Types/User.h:
 app/../lib/./Types/Profile.h:
 app/../lib/./Types/Photo.h:
