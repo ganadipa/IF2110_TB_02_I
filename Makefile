@@ -1,6 +1,13 @@
-include makefile.que #unit test for queue
-include makefile.sta #unit test for stack
-include makefile.word #unit test for wordmachine
+include Makefile.que #unit test for queue
+include Makefile.sta #unit test for stack
+include Makefile.word #unit test for wordmachine
+include Makefile.din #unit test for list dinamik
+
+
+BINARY = .bin
+BINDIR = .bin
+CODEDIRS = app lib/ADT/* lib/Types Function
+INCDIRS = app lib/ADT lib/ADT/* lib/Types Function
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -std=c11 $(DEPFLAGS) $(foreach D, $(INCDIRS), -I$(D)) -Wno-unused-variable -Wno-unused-parameter -Wno-unused-value -Wno-unused-but-set-variable
@@ -20,14 +27,30 @@ $(BINDIR)/%.o:%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
 $(PROGRAM): $(OBJECTS)
-	$(CC) -o $@ $^
+	@echo "Running the code..."
+	@$(CC) -o $@ $^
 
 clean: 
-	rm -rf $(BINDIR)
+	@rm -rf $(BINDIR)
+	@echo "Cleaning upp files..."
 
 # Target to run the application
 run: $(PROGRAM)
 	./$(PROGRAM)
+
+word: 
+	$(MAKE) -f Makefile.word test_word
+
+que: 
+	$(MAKE) -f Makefile.que test_queue
+
+sta:
+	$(MAKE) -f Makefile.sta test_stack
+
+din:
+	$(MAKE) -f Makefile.sta test_din
+
+
 
 
 -include $(DEPFILES)
@@ -36,8 +59,6 @@ run: $(PROGRAM)
 #************************************************************************************************
 #************************************************************************************************
 #************************************************************************************************
-
-
 
 
 
@@ -72,7 +93,4 @@ $(LINKEDLIST_TEST_RESULTS): $(LINKEDLIST_TESTS_DIR)/%.result: $(LINKEDLIST_TESTS
 #************************************************************************************
 #************************************************************************************
 #************************************************************************************
-
-
-
 

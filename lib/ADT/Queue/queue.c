@@ -20,7 +20,7 @@ boolean isEmpty(Queue q){
 boolean isFull(Queue q){
 /* Mengirim true jika tabel penampung elemen q sudah penuh */
 /* yaitu IDX_TAIL akan selalu di belakang IDX_HEAD dalam buffer melingkar*/
-        return (length(q) == CAPACITY);
+        return (length(q) == CAPACITY_QUEUE);
 }
 
 int length(Queue q){
@@ -33,7 +33,7 @@ int length(Queue q){
                         return IDX_TAIL(q) - IDX_HEAD(q) + 1; 
                 }
                 else{
-                        return CAPACITY - (IDX_HEAD(q) - (IDX_TAIL(q) + 1));
+                        return CAPACITY_QUEUE - (IDX_HEAD(q) - (IDX_TAIL(q) + 1));
                 }
         }
 }
@@ -49,7 +49,7 @@ void enqueue(Queue *q, ElType val){
                 TAIL(*q) = val;
         }
         else{
-                IDX_TAIL(*q) = (IDX_TAIL(*q) + 1) % (CAPACITY);
+                IDX_TAIL(*q) = (IDX_TAIL(*q) + 1) % (CAPACITY_QUEUE);
                 TAIL(*q) = val;
 
         }
@@ -68,7 +68,7 @@ void dequeue(Queue *q, ElType *val){
         }
         else{
                 *val = HEAD(*q);
-                IDX_HEAD(*q) = (IDX_HEAD(*q) + 1) % CAPACITY; 
+                IDX_HEAD(*q) = (IDX_HEAD(*q) + 1) % CAPACITY_QUEUE; 
         }
 }
 
@@ -93,7 +93,7 @@ void displayQueue(Queue q){
                 for(i = 0; i < len; i++){
                         temp = HEAD(q);
                         printf("%d", temp);
-                        IDX_HEAD(q) = (IDX_HEAD(q) + 1) % (CAPACITY);
+                        IDX_HEAD(q) = (IDX_HEAD(q) + 1) % (CAPACITY_QUEUE);
                         if (i != len - 1)
                         {
                                 printf(",");

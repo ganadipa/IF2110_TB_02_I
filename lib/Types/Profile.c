@@ -55,7 +55,15 @@ void readWeton(Profile *p)
     readString(&weton, 10);
     
 
-    while (!compareStringInsensitively(weton, "Pahing") && !compareStringInsensitively(weton, "Kliwon") && !compareStringInsensitively(weton, "Wage") && !compareStringInsensitively(weton, "Pon") && !compareStringInsensitively(weton, "Legi") && !compareStringInsensitively(weton, "")) {
+    while 
+    (!compareStringInsensitively(weton, "Pahing") 
+    && !compareStringInsensitively(weton, "Kliwon") 
+    && !compareStringInsensitively(weton, "Wage") 
+    && !compareStringInsensitively(weton, "Pon") 
+    && !compareStringInsensitively(weton, "Legi") 
+    && !compareStringInsensitively(weton, "")) 
+    
+    {
         printf("\nWeton Anda tidak valid. Ulangi.\n");
         printf("\nMasukkan Weton: \n");
         readString(&weton, 10);

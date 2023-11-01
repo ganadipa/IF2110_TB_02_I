@@ -4,19 +4,22 @@
 
 #include "../boolean.h"
 #include "./ListUser.h"
+#include "../ADT/Graf/graf.h"
 
 
 
 
 typedef struct application {
     boolean isLoggedIn;
-    ListUser users;
     int loginID;
+    ListUser users; // Used list dengan array statik
+    Graf friendships;
 } Application;
 
-#define isLoggedIn(a) (a).isLoggedIn
-#define ListUser(a) (a).users
-#define loginID(a) (a).loginID
+#define LOGGEDIN(a) (a).isLoggedIn
+#define LISTUSER(a) (a).users
+#define LOGINID(a) (a).loginID
+#define FRIENDSHIPS(a) (a).friendships
 
 void AppInitialization(Application *app);
 /**
@@ -60,6 +63,24 @@ void LihatProfil(Application *app, String name);
  * I.S. app sudah terinisialisasi. isLoggedIn belum tentu true;
  * F.S. Menampilkan full profile dari name.
 */
+void AturJenisAkun(Application *app);
+/**
+ * I.S. app sudah terinisialisasi. IsLoggedIn belum tentu true
+ * F.S. Mengubah isPrivate User dengan ID == loginID sesuai input.
+*/
+
+void DaftarTeman(Application app);
+/**
+ * 
+*/
+
+void UbahFotoProfil(Application *app);
+/**
+ * 
+*/
+
+void HapusTeman(Application *app);
+
 
 void DevTools(Application app);
 /**

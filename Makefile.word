@@ -1,15 +1,18 @@
 
 SRC_WORD = lib/ADT/WordMachine/wordmachine.c
 SRC_TEST = lib/ADT/WordMachine/tests/mwordmachine.c
+SRC_CHAR = lib/ADT/WordMachine/charmachine.c
+
 OBJ_WORD = $(SRC_WORD:.c=.o)
 OBJ_TEST = $(SRC_TEST:.c=.o)
+OBJ_CHAR = $(SRC_CHAR:.c=.o)
 
 TESTS_DIR = lib/ADT/WordMachine/tests
 TEST_CASES = $(wildcard $(TESTS_DIR)/*.in)
 TEST_OUTPUTS = $(TEST_CASES:.in=.out)
 TEST_RESULTS = $(TEST_CASES:.in=.result)
 
-mword: $(OBJ_WORD) $(OBJ_TEST)
+mword: $(OBJ_WORD) $(OBJ_TEST) $(OBJ_CHAR)
 	$(CC) $(CFLAGS) -o $@ $^
 
 test_word: mword $(TEST_RESULTS)

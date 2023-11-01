@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "../wordmachine.h"
-#include "../../boolean.h"
+#include "../../../boolean.h"
 
 int main(){
     int i=0, temp;

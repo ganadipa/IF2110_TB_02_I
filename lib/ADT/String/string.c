@@ -55,6 +55,15 @@ void addWord(String *s, Word w)
     }
 }
 
+
+void addString(String *s, String s2){
+    int length = stringLength(s2);
+    int i = 0; 
+    for(i = 0; i < length; i++){
+        addChar(s, s2.buffer[i]);
+    }
+}
+
 void readString(String *s, int maxLength)
 /**
  * I.S. s sembarang, pita terbuka
@@ -148,6 +157,8 @@ boolean compareString(String s, char* cptr)
     int i = 0;
     boolean finish = false;
     boolean check = true;
+    if (*cptr == '\0' && s.buffer[i] == '\0') finish = true;
+
     while (!finish) {
         if (*cptr != s.buffer[i]) {
             finish = true;
@@ -170,6 +181,8 @@ boolean compareStringInsensitively(String s, char* cptr)
     int i = 0;
     boolean finish = false;
     boolean check = true;
+    if (*cptr == '\0' && s.buffer[i] == '\0') return true;
+
     while (!finish && check) {
         int num1 = *cptr - 'A';
         int num2 = s.buffer[i] - 'A';
@@ -231,10 +244,7 @@ String getWordAt(String s, int i)
     String oneWord;
     createEmptyString(&oneWord, 350);
 
-    int length = stringLength(s);
     int k = 0, ptr = 0;;
-    boolean done = false;
-
     while (k < i) {
         if (s.buffer[ptr] != ' ') {
             ptr++;
