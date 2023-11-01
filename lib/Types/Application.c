@@ -37,10 +37,7 @@ void AppInitialization(Application *app)
     LOGINID(*app) = ID_UNDEF;
     CreateListUser(&LISTUSER(*app)); 
     CreateGraph(&FRIENDSHIPS(*app));
-
-
-
-
+    CreateListKicau(&KICAUAN(*app),1000); //Inisialisasi awal untuk ListKicauan 1000
 }
 
 void Daftar(Application *app)
@@ -350,6 +347,26 @@ void HapusTeman(Application *app) {
     // Pemotongan hubungan pertemanan antara current user dengan "name".
     removeEdge(&FRIENDSHIPS(*app), LOGINID(*app), i); 
 }
+
+void Kicau(Application *app);
+/**
+ * Untuk Add kicauan
+*/
+
+void TampilinKicauan(Application *app);
+/**
+ * Untuk Menampilkan kicauan berdasarkan Pertemanan dari user
+*/
+
+void SukaKicauan(Application *app, int ID);
+/**
+ * Untuk Menambah jumlah like pada Kicauan dengan id "ID"
+*/
+
+void UbahKicauan(Application *app, int ID);
+/**
+ * Untuk mengUpdate teks kicauan menjadi yang baru pada Kicauan dengan id "ID"
+*/
 
 void DevTools(Application app) 
 
