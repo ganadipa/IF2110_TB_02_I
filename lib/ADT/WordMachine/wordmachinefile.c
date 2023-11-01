@@ -9,7 +9,7 @@ void IgnoreNewLinesFile()
     
     while (currentCharFile == '\n'){
         ADVCHARFILE();
-        printf("%c", currentCharFile);
+        // printf("%c", currentCharFile);
     }
 }
 /* Mengabaikan satu atau beberapa BLANK
