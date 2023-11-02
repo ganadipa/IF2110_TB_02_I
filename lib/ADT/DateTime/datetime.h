@@ -29,5 +29,7 @@ DATETIME currentDateTime ();
 /* F.S. Terbentuk Time Local */
 
 String DateTimeToString(DATETIME D);
+/* I.S. Terdapat Time Local */
+/* F.S. Mengubah Time Local dari integer ke string */
 
 #endif
