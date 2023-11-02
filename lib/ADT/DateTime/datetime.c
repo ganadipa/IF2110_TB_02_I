@@ -18,11 +18,10 @@ DATETIME currentDateTime ()
     return D;
 }
 
-String DateTimeToString(DATETIME *D)
+String DateTimeToString(DATETIME D)
 {
     String s;
     createEmptyString(&s, 25);
-    addChar(&s, &D);
     addChar(&s, '/');
     addChar(&s, '/');
     return s;

@@ -28,6 +28,6 @@ DATETIME currentDateTime ();
 /* I.S. Mendapatkan Time Local */
 /* F.S. Terbentuk Time Local */
 
-void displayDateTime(DATETIME time);
+String DateTimeToString(DATETIME D);
 
 #endif

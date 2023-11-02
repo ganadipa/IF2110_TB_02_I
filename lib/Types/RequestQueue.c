@@ -1,102 +1,75 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "RequestQueue.h"
-#include "User.h"
 
 /* ********* Prototype ********* */
-boolean isEmptyRequestQueue (RequestQueue Q)
-/* Mengirim true jika Q kosong: lihat definisi di atas */
-{
-    return (Head(Q) == Nil && Tail(Q) == Nil);
-}
-
-boolean isFullRequestQueue  (RequestQueue Q)
-/* Mengirim true jika tabel penampung elemen Q sudah penuh */
-/* yaitu mengandung elemen sebanyak MaxEl */
-{
-    return(NBElmtRequestQueue(Q) == MaxEl(Q));
-}
-
-int NBElmtRequestQueue (RequestQueue Q)
-/* Mengirimkan banyaknya elemen queue. Mengirimkan 0 jika Q kosong. */
-{
-    if (isEmptyRequestQueue(Q)){
-        return 0 ;
-    }else{
-        if((Tail(Q) - Head(Q)) >= 0){
-            return Tail(Q) - Head(Q) + 1; 
-        }else{
-            return MaxEl(Q) - (Head(Q) - (Tail(Q) + 1));
-        }
-    }
-}
-
 /* *** Kreator *** */
-void MakeEmptyRequestQueue (RequestQueue *Q, int Max)
+void CreateQueue(RequestQueue *Q)
 /* I.S. sembarang */
-/* F.S. Terbentuk Queue dinamis Q kosong dengan kapasitas Max */
+/* F.S. Sebuah q kosong terbentuk dengan kondisi sbb: */
+/* - Index head bernilai IDX_UNDEF */
+/* - Index tail bernilai IDX_UNDEF */
+/* Proses : Melakukan alokasi, membuat sebuah q kosong */
 {
-    (*Q).T = (infotype*) malloc ((Max) * sizeof(infotype));
-    MaxEl(*Q) = Max;
-    Head(*Q) = Nil;
-    Tail(*Q) = Nil;
+    Head_ReqQue(*Q) = IDX_UNDEF;
+    Tail_ReqQue(*Q) = IDX_UNDEF;
 }
 
+/* ********* Prototype ********* */
+boolean isEmptyRequestQueue(RequestQueue Q)
+/* Mengirim true jika q kosong: lihat definisi di atas */
+{
+    return (Head_ReqQue(Q) == IDX_UNDEF && Tail_ReqQue(Q) == IDX_UNDEF);
+}
+boolean isFullRequestQueue(RequestQueue Q)
+/* Mengirim true jika tabel penampung elemen q sudah penuh */
+/* yaitu IDX_TAIL akan selalu di belakang IDX_HEAD dalam buffer melingkar*/
+{
+    return (lengthRequestQueue(Q) == CAPACITY_REQQUEUE);
+}
+
+int lengthRequestQueue(RequestQueue Q)
+/* Mengirimkan banyaknya elemen queue. Mengirimkan 0 jika q kosong. */
+{
+    if(isEmptyRequestQueue(Q)){
+        return 0;
+    } else {
+        if (Tail_ReqQue(Q) >= Head_ReqQue(Q)){ 
+            return Tail_ReqQue(Q) - Head_ReqQue(Q) +1;
+        }else{
+            return Tail_ReqQue(Q) - Head_ReqQue(Q) + 1 + CAPACITY_REQQUEUE;
+        }
+    }
+}
 /* *** Primitif Add/Delete *** */
-void EnqueueRequestQueue (RequestQueue *Q, infotype X)
-/* Proses: Menambahkan X pada Q dengan aturan priority queue, terurut membesar berdasarkan prio */
-/* I.S. Q mungkin kosong, tabel penampung elemen Q TIDAK penuh */
-/* F.S. X disisipkan pada posisi yang tepat sesuai dengan prioritas,
-        TAIL "maju" dengan mekanisme circular buffer; */
+void enqueueRequestQueue(RequestQueue *Q, Friend F)
+/* Proses: Menambahkan val pada q dengan aturan FIFO */
+/* I.S. q mungkin kosong, tabel penampung elemen q TIDAK penuh */
+/* F.S. val menjadi TAIL yang baru, IDX_TAIL "mundur" dalam buffer melingkar. */
 {
-    int i;
-    int j;
     int idx;
-    int prevIdx;
+    int previdx;
 
-    
     if (isEmptyRequestQueue(*Q)){
-        Head(*Q) = 0;
-        Tail(*Q) = 0;
-        Elmt(*Q, Head(*Q)) = X;
-
+        Head_ReqQue(*Q) = 0;
+        Tail_ReqQue(*Q) = 0;
+        ELMT_ReqQue(*Q, Head(*Q)) = F;
     } else {
-        Tail(*Q) += 1;
-        Elmt(*Q,Tail(*Q)) = X;
     }
-    idx = Tail(*Q);
 
-    while (idx != Head(*Q)){
-        if (idx == 0){
-            prevIdx = MaxEl(*Q) - 1;
-        } else {
-            prevIdx = idx - 1;
+    idx = Tail_ReqQue(*Q);
+    while (idx != Head_ReqQue(*Q)){
+        if (FRIENDCOUNT_REQQUEUE(ELMT_ReqQue(*Q, idx)) < FRIENDCOUNT_REQQUEUE(F))
+        {
+            ELMT_ReqQue(*Q, (idx + 1) % CAPACITY_REQQUEUE) = ELMT_ReqQue(*Q, F); 
+        } else 
+        {
+            ELMT_ReqQue(*Q, (idx+1) % CAPACITY_REQQUEUE) = F;
         }
-
-        if (FRIEND_COUNT(Friend1(Elmt(*Q, idx))) < FRIEND_COUNT(Friend1(Elmt(*Q, prevIdx)))){
-            infotype temp = Elmt(*Q, prevIdx);
-            Elmt(*Q, prevIdx) = Elmt(*Q, idx);
-            Elmt(*Q, idx) = temp;
-        }
-        idx = prevIdx;
     }
-
-    
-}
-
-void DequeueRequestQueue (RequestQueue *Q, infotype *X)
-/* Proses: Menghapus X pada Q dengan aturan FIFO */
-/* I.S. Q tidak mungkin kosong */
-/* F.S. X = nilai elemen HEAD pd I.S., HEAD "maju" dengan mekanisme circular buffer;
-        Q mungkin kosong */
-{
-    int i;
-    *X = Elmt(*Q, Head(*Q));
-
-    if (Head(*Q) == Tail(*Q)){
-        Head(*Q) = Nil;
-        Tail(*Q) = Nil;
-    } else {
-        Head(*Q) = (Head(*Q) + 1) % MaxEl(*Q); 
     }
-}
+void dequeueRequestQueue(RequestQueue *Q, int *val);
+/* Proses: Menghapus val pada q dengan aturan FIFO */
+/* I.S. q tidak mungkin kosong */
+/* F.S. val = nilai elemen HEAD pd I.S., IDX_HEAD "mundur";
+        q mungkin kosong */
