@@ -357,8 +357,8 @@ void Kicau(Application *app){
     createEmptyString(&teks, 280);
     printf("Masukkan Kicauan : ");
     readString(&teks, 280);
-    if (teks > 280){
-        printf("Kicauan yang dimasukkan terpotong secara otomatis dengan jumlah karakter maksimum 280.")
+    if (&teks > 280){
+        printf("Kicauan yang dimasukkan terpotong secara otomatis dengan jumlah karakter maksimum 280.");
     }
 
     int IDUSER = LOGINID(*app);
@@ -408,18 +408,25 @@ void SukaKicauan(Application *app, int ID){
         printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
         return;
     }
-    // printf("\n%d  %d\n",LOGINID(*app), ELMT(KICAUAN(*app), ID - 1).IDuser);
 
-    if (isFriend ( app,  LOGINID(*app) ,ELMT( KICAUAN(*app), ID - 1).IDuser ||  LOGINID(*app) == ELMT(KICAUAN(*app), ID - 1).IDuser)){
-        // printf("INI JALAN");
+    if (LOGINID(*app) == ELMT(KICAUAN(*app), ID - 1).IDuser){
         addLike( &ELMT(KICAUAN(*app) , ID - 1) );
         printKicauan( KICAUAN(*app).buffer[ ID-1 ], returnUsername(*app, KICAUAN(*app).buffer[ID-1].IDuser));
-    } 
-        printf("Kamu hanya bisa mengubah kicauan milikmu sendiri");
-    
-    
-
+    } else {
+        // lagi mikir kasus private
+    //     if (ISPRIVATE){
+    //         if (isFriend (app, LOGINID(*app), ELMT(KICAUAN(*app), ID - 1).IDuser)){
+    //             addLike( &ELMT(KICAUAN(*app) , ID - 1) );
+    //             printKicauan( KICAUAN(*app).buffer[ ID-1 ], returnUsername(*app, KICAUAN(*app).buffer[ID-1].IDuser));
+    //         } else {
+    //             printf("Wah, kicauan tersebut dibuat oleh akun privat! Ikuti akun itu dulu ya");
+    //         }
+    //     }
+    // }
+    }
 }
+
+
 /**
  * Untuk Menambah jumlah like pada Kicauan dengan id "ID"
 */

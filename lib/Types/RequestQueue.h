@@ -23,12 +23,14 @@ typedef struct {
 
 /* ********* AKSES (Selektor) ********* */
 /* Jika q adalah Queue, maka akses elemen : */
-#define Head_ReqQue(q) (q).Head
-#define Tail_ReqQue(q) (q).Tail
+#define Head_ReqQue(Q) (Q).Head
+#define Tail_ReqQue(Q) (Q).Tail
 #define ELMT_ReqQue(Q,i) (Q).F[i]
+#define ID_REQQUEUE(u) (u).userID
+#define FRIENDCOUNT_REQQUEUE(u) (u).friendCount
 
 /* *** Kreator *** */
-void CreateQueue(RequestQueue *q);
+void createRequestQueue(RequestQueue *Q);
 /* I.S. sembarang */
 /* F.S. Sebuah q kosong terbentuk dengan kondisi sbb: */
 /* - Index head bernilai IDX_UNDEF */
@@ -36,26 +38,29 @@ void CreateQueue(RequestQueue *q);
 /* Proses : Melakukan alokasi, membuat sebuah q kosong */
 
 /* ********* Prototype ********* */
-boolean isEmpty(RequestQueue q);
+boolean isEmptyRequestQueue(RequestQueue Q);
 
 /* Mengirim true jika q kosong: lihat definisi di atas */
-boolean isFull(RequestQueue q);
+boolean isFullRequestQueue(RequestQueue Q);
 /* Mengirim true jika tabel penampung elemen q sudah penuh */
 /* yaitu IDX_TAIL akan selalu di belakang IDX_HEAD dalam buffer melingkar*/
 
-int length(RequestQueue q);
+int lengthRequestQueue(RequestQueue Q);
 /* Mengirimkan banyaknya elemen queue. Mengirimkan 0 jika q kosong. */
 
 /* *** Primitif Add/Delete *** */
-void enqueue(RequestQueue *q, int val);
+void enqueueRequestQueue(RequestQueue *Q, Friend F);
 /* Proses: Menambahkan val pada q dengan aturan FIFO */
 /* I.S. q mungkin kosong, tabel penampung elemen q TIDAK penuh */
 /* F.S. val menjadi TAIL yang baru, IDX_TAIL "mundur" dalam buffer melingkar. */
 
-void dequeue(RequestQueue *q, int *val);
+void dequeueRequestQueue(RequestQueue *Q, Friend *F);
 /* Proses: Menghapus val pada q dengan aturan FIFO */
 /* I.S. q tidak mungkin kosong */
 /* F.S. val = nilai elemen HEAD pd I.S., IDX_HEAD "mundur";
         q mungkin kosong */
 
+void removeElmt_RequestQueue(RequestQueue *Q, int idx);
+
+int getIndex_RequestQueue(RequestQueue Q, int ID)
 #endif

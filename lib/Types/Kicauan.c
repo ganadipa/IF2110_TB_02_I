@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../Kicauan.h"
+#include "Kicauan.h"
 
 /* ********** KONSTRUKTOR ********** */
 void InisialisasiKicau(Kicauan *k,int IDuser){
