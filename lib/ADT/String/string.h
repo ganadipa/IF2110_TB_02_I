@@ -92,6 +92,10 @@ void displayString(String s);
 
 boolean isAllNumber(String s);
 
+String intToString(int i, int numlength);
+
+void addString(String *s, String s2);
+
 String getWordAt(String s, int i) ;
 /**
  * Mulanya, string s terdefinisi, i < n di mana n adalah jumlah kata dalam string s.
