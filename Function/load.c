@@ -9,6 +9,7 @@ int main(){
     readString(&s, 351);
     STARTWORDFILE(s);
     while (!EndFile){
+            
             for (int i = 0 ; i < currentWordFile.maxLength; i++){
                 printf("%c", currentWordFile.buffer[i]);
             }

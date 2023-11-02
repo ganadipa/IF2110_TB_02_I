@@ -6,13 +6,8 @@ String currentWordFile;
 
 void IgnoreNewLinesFile()
 {
-    int counter = 0;
-    while (currentCharFile == '\n'){
+    while (currentCharFile == '\n' && retvalfile!=-1){
         ADVCHARFILE();
-        counter += 1;
-        if (counter > 50){
-            break;
-        }
     }
 }
 /* Mengabaikan satu atau beberapa BLANK

@@ -5,11 +5,11 @@
 #include "../../lib.h"
 
 static FILE *pitafile;
-static int retvalfile;
+int retvalfile;
 static char file[50] = "pengguna.config";
 char currentCharFile;
 boolean EOP_FILE;
-boolean EndFile;
+boolean EndFile = false;
 const char source[50] = "../config/folder1/";
 void OPENFILE(String filename)
 {   
@@ -35,6 +35,7 @@ void CLOSEFILE() {
 void ADVCHARFILE()
 {
     retvalfile = fscanf(pitafile, "%c", &currentCharFile);
+    // printf("1.");
     EOP_FILE = (currentCharFile == MARK_LAST_FILE);
 }
 

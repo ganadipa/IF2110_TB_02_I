@@ -11,6 +11,7 @@
 extern char currentCharFile;
 extern boolean EOP_FILE;
 extern boolean EndFile;
+extern int retvalfile;
 
 void OPENFILE();
 void CLOSEFILE();
