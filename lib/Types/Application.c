@@ -428,6 +428,8 @@ void LihatDraf(Application *app){
     else{
         int IDUSER = LOGINID(*app);
         PopDraf(&DRAFKICAU(*app), &temp);
+        setKicauID(&temp, NEFF(KICAUAN(*app)) + 1);
+        
         printf("Ini draf terakhir anda\n"); 
         printf("|"); 
         displayString(dateTimeKicau(temp));
