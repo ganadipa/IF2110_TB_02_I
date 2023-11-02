@@ -8,7 +8,7 @@ int main(){
     String s;
     readString(&s, 351);
     STARTWORDFILE(s);
-    while (!EndFile){
+    while (!EndFile){ /* Mark = \n */
             
             for (int i = 0 ; i < currentWordFile.maxLength; i++){
                 printf("%c", currentWordFile.buffer[i]);

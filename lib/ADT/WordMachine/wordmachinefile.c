@@ -5,8 +5,9 @@ boolean EndFile;
 String currentWordFile;
 
 void IgnoreNewLinesFile()
-{
-    while (currentCharFile == '\n' && retvalfile!=-1){
+{   /* kalo file udh abis IgnoreNewLinesFile bakal selesai*/
+    /* jadinya bakal masuk ke EndFile = true */
+    while (currentCharFile == '\n' && retvalfile!=-1){ 
         ADVCHARFILE();
     }
 }
@@ -15,7 +16,7 @@ void IgnoreNewLinesFile()
    F.S. : currentChar ≠ '\n'*/
 
 void IgnoreNullFile(){
-    while (currentCharFile == '\0'){
+    while (currentCharFile == '\0' && retvalfile != -1){
         ADVCHARFILE();
     }
 }
