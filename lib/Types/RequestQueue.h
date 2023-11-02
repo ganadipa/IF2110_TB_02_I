@@ -28,7 +28,6 @@ typedef struct {
 /* ********* AKSES (Selektor) ********* */
 /* Jika e adalah infotype dan Q adalah RequestQueue, maka akses elemen : */
 #define Friend1(e)     (e).friend1
-#define Info(e)     (e).info
 #define Head(Q)     (Q).HEAD
 #define Tail(Q)     (Q).TAIL
 #define InfoHead(Q) (Q).T[(Q).HEAD]

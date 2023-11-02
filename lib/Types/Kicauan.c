@@ -16,7 +16,7 @@ void setKicauID (Kicauan *k, int IDKicau){
 }
 
 void setKicauDateTime(Kicauan *k){
-    // dateTimeKicau(*k) = createDatetime();
+    //dateTimeKicau(*k) = createDatetime();
 }
 /**
  * I.S. k sudah diinisilisasi
