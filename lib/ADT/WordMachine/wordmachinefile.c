@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "wordmachinefile.h"
 
-boolean EndWordFile;
+boolean EndFile;
 String currentWordFile;
 
 void IgnoreNewLinesFile()
@@ -34,17 +34,19 @@ void IgnoreBlanksFile(){
    I.S. : currentChar sembarang
    F.S. : currentChar ≠ BLANK atau currentChar = MARK */
 
-void STARTWORDFILE(){
-    OPENFILE();
-    IgnoreBlanksFile();
-    IgnoreNullFile();
-    if(currentCharFile == MARK_LAST_FILE){
-        EndWordFile = true;
-    } else{
-        EndWordFile = false;
-        CopyWordFILE();
-        IgnoreNewLinesFile();
+void STARTWORDFILE(String filename){
+    OPENFILE(filename);
+    if (!EndFile){
+        IgnoreBlanksFile();
+        IgnoreNullFile();
+        if(currentCharFile == MARK_LAST_FILE){
+            EndFile = true;
+        } else{
+            EndFile = false;
+            CopyWordFILE();
+            IgnoreNewLinesFile();
 
+        }
     }
 }
 /* I.S. : currentChar sembarang
@@ -54,7 +56,7 @@ void STARTWORDFILE(){
 
 void ADVWORDFILE(){
     if (currentCharFile == MARK_LAST_FILE){
-        EndWordFile = true;
+        EndFile = true;
     } else{
         CopyWordFILE();
         IgnoreNewLinesFile();

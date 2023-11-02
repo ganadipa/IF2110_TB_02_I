@@ -10,6 +10,7 @@
 /* State Mesin */
 extern char currentCharFile;
 extern boolean EOP_FILE;
+extern boolean EndFile;
 
 void OPENFILE();
 void CLOSEFILE();

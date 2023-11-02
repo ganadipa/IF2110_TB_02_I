@@ -63,7 +63,18 @@ void addString(String *s, String s2){
         addChar(s, s2.buffer[i]);
     }
 }
-
+char *addChartoChar(char *destination, const char *source){
+    if (destination == NULL){
+        return NULL;
+    }
+    int i = 0;
+    while (source[i] != '\0'){
+        destination[i] = source[i];
+        i++;
+    }
+    destination[i] = '\0';
+    return destination;
+}
 void readString(String *s, int maxLength)
 /**
  * I.S. s sembarang, pita terbuka
