@@ -35,7 +35,6 @@ void CLOSEFILE() {
 void ADVCHARFILE()
 {
     retvalfile = fscanf(pitafile, "%c", &currentCharFile);
-    // printf("1.");
     EOP_FILE = (currentCharFile == MARK_LAST_FILE);
 }
 

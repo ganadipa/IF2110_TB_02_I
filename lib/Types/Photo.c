@@ -38,7 +38,6 @@ void readPhoto(Photo *p) {
 }
 
 void readPhotoFile(Photo *p, String photoString) {
-    String photoString;
     int i = 0;
     int j = 0;
     int ptr = 0;

@@ -3,11 +3,15 @@
 #include "../lib/ADT/WordMachine/wordmachine.c"
 #include "../lib/ADT/WordMachine/charmachine.c"
 #include "../lib/ADT/String/string.c"
+#include "../lib/ADT/PColor/pcolor.c"
+#include "../lib/Types/Photo.c"
+#include "../lib/ADT/Matriks/charMatriks.c"
 #include <stdio.h>
 // int main(){
 //     String s;
 //     readString(&s, 351);
 //     STARTWORDFILE(s);
+//     printf("tanda");
 //     // printf("%c", currentWordFile.buffer[1]);
 //     while (!EndFile){ /* Mark = \n */
             
@@ -25,7 +29,7 @@ void LoadPengguna(){
     int i,j;
     char temp[20] = "pengguna.config";
     String photoString;
-    photoString.maxLength = 100;
+    createEmptyString(&photoString, 100);
     addChartoChar(filename.buffer, temp);
     filename.maxLength = STRCAP;
     STARTWORDFILE(filename);
@@ -34,15 +38,17 @@ void LoadPengguna(){
         
     }
     if(app.users.length > 0){
-        ADVWORDFILE();
         for (i=0; i < app.users.length; i++){
+            ADVWORDFILE();
             app.users.contents[i].ID = i;
             app.users.contents[i].name.maxLength = 20;
             addString(&app.users.contents[i].name, currentWordFile);
             ADVWORDFILE();
             app.users.contents[i].password.maxLength = 20;
             addString(&app.users.contents[i].password, currentWordFile);
+            
             ADVWORDFILE();
+            printf("%c",  currentWordFile.buffer[0]);
             app.users.contents[i].profile.bio.maxLength = 135;
             addString(&app.users.contents[i].profile.bio, currentWordFile);
             ADVWORDFILE();
@@ -54,26 +60,37 @@ void LoadPengguna(){
             ADVWORDFILE();
             app.users.contents[i].profile.isPrivate = (currentWordFile.buffer[1] == 'r');
             for (j=0; j<5; j++){
-                ADVWORDFILE();
+                ADVFILEPHOTO();
                 addString(&photoString, currentWordFile);
+                // displayString(currentWordFile);
+                // printf("\n");
             }
+            // displayString(photoString);/
+            // printf("\n");
+            // createEmptyString(&photoString, 100);
         }
+        ADVWORDFILE();
+        ADVWORDFILE();
+        ADVWORDFILE();
+        ADVWORDFILE();
+        ADVWORDFILE();
     }
         
 }
 
 int main(){
     LoadPengguna();
-    displayString(app.users.contents[0].name);
-    printf("\n");
-    displayString(app.users.contents[0].password);
-    printf("\n");
-    displayString(app.users.contents[0].profile.bio);
-    printf("\n");
-    displayString(app.users.contents[0].profile.phoneNumber);
-    printf("\n");
-    displayString(app.users.contents[0].profile.weton);
-    printf("\n");
+    
+    // displayString(app.users.contents[0].name);
+    // printf("\n");
+    // displayString(app.users.contents[1].password);
+    // printf("\n");
+    // displayString(app.users.contents[1].profile.bio);
+    // printf("\n");
+    // displayString(app.users.contents[1].profile.phoneNumber);
+    // printf("\n");
+    // displayString(app.users.contents[1].profile.weton);
+    // printf("\n");
     // displayPhoto(app.users.contents[0].profile.photo);
     // printf("%u", app.users.contents[0].profile.isPrivate);
 }
