@@ -2,7 +2,7 @@
 #include "datetime.h"
 #include <time.h>
 
-char *createDatetime ()
+int createDatetime ()
 {
     struct tm* info_time;
     time_t t;

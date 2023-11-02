@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "RequestQueue.h"
 #include "User.h"
 
@@ -13,16 +14,20 @@ boolean isFullRequestQueue  (RequestQueue Q)
 /* Mengirim true jika tabel penampung elemen Q sudah penuh */
 /* yaitu mengandung elemen sebanyak MaxEl */
 {
-    return(NBElmt(Q) == MaxEl(Q));
+    return(NBElmtRequestQueue(Q) == MaxEl(Q));
 }
 
 int NBElmtRequestQueue (RequestQueue Q)
 /* Mengirimkan banyaknya elemen queue. Mengirimkan 0 jika Q kosong. */
 {
-    if (IsEmpty(Q)){
+    if (isEmptyRequestQueue(Q)){
         return 0 ;
     }else{
-        return Tail(Q) - Head(Q);
+        if((Tail(Q) - Head(Q)) >= 0){
+            return Tail(Q) - Head(Q) + 1; 
+        }else{
+            return MaxEl(Q) - (Head(Q) - (Tail(Q) + 1));
+        }
     }
 }
 
@@ -50,7 +55,7 @@ void EnqueueRequestQueue (RequestQueue *Q, infotype X)
     int prevIdx;
 
     
-    if (IsEmpty(*Q)){
+    if (isEmptyRequestQueue(*Q)){
         Head(*Q) = 0;
         Tail(*Q) = 0;
         Elmt(*Q, Head(*Q)) = X;
@@ -61,7 +66,13 @@ void EnqueueRequestQueue (RequestQueue *Q, infotype X)
     }
     idx = Tail(*Q);
 
-    for (i = 0; i <= NBElmt(*Q); i++){
+    while (idx != Head(*Q)){
+        if (idx == 0){
+            prevIdx = MaxEl(*Q) - 1;
+        } else {
+            prevIdx = idx - 1;
+        }
+
         if (FRIEND_COUNT(Friend1(Elmt(*Q, idx))) < FRIEND_COUNT(Friend1(Elmt(*Q, prevIdx)))){
             infotype temp = Elmt(*Q, prevIdx);
             Elmt(*Q, prevIdx) = Elmt(*Q, idx);
@@ -69,6 +80,8 @@ void EnqueueRequestQueue (RequestQueue *Q, infotype X)
         }
         idx = prevIdx;
     }
+
+    
 }
 
 void DequeueRequestQueue (RequestQueue *Q, infotype *X)
@@ -77,17 +90,13 @@ void DequeueRequestQueue (RequestQueue *Q, infotype *X)
 /* F.S. X = nilai elemen HEAD pd I.S., HEAD "maju" dengan mekanisme circular buffer;
         Q mungkin kosong */
 {
+    int i;
     *X = Elmt(*Q, Head(*Q));
 
     if (Head(*Q) == Tail(*Q)){
         Head(*Q) = Nil;
         Tail(*Q) = Nil;
-
-    }else{
-        if (Head(*Q) == MaxEl(*Q)-1){
-            Head(*Q) = 0;
-        } else{
-            Head(*Q) ++;
-        }
+    } else {
+        Head(*Q) = (Head(*Q) + 1) % MaxEl(*Q); 
     }
 }

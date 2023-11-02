@@ -6,7 +6,7 @@
 
 #include "../../boolean.h"
 
-char *createDatetime ();
+int createDatetime ();
 /* I.S. Mendapatkan Time Local */
 /* F.S. Terbentuk Time pada Layar dengan Format DD/MM/YYYY HH:MM:SS */
 
