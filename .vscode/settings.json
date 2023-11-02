@@ -20,6 +20,7 @@
     "pcolor.h": "c",
     "simpan.h": "c",
     "listdinamik.h": "c",
-    "types.h": "c"
+    "types.h": "c",
+    "listuser.h": "c"
   }
 }
