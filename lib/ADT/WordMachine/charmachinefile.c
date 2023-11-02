@@ -19,7 +19,7 @@ void OPENFILE(String filename)
     addString(&s, filename);
     pitafile = fopen(s.buffer, "r");
     if (pitafile == NULL){
-        printf("File %s gagal dibuka\n", filename);
+        printf("File %s gagal dibuka\n", filename.buffer);
         EndFile = true;
     }
     
