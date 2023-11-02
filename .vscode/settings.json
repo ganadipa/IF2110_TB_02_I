@@ -20,6 +20,8 @@
     "pcolor.h": "c",
     "simpan.h": "c",
     "listdinamik.h": "c",
-    "types.h": "c"
+    "types.h": "c",
+    "typeinfo": "c",
+    "datetime.h": "c"
   }
 }

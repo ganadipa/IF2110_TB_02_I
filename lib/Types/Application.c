@@ -357,16 +357,18 @@ void Kicau(Application *app){
     createEmptyString(&teks, 280);
     printf("Masukkan Kicauan : ");
     readString(&teks, 280);
+    if (teks > 280){
+        printf("Kicauan yang dimasukkan terpotong secara otomatis dengan jumlah karakter maksimum 280.")
+    }
 
     int IDUSER = LOGINID(*app);
 
     KicauanType value;
     InisialisasiKicau(&value, IDUSER);
     setKicauID(&value, NEFF(KICAUAN(*app))+1);
-    // setKicauDateTime(&value);  TUNGGU DATETIME SELESAI
+    setKicauDateTime(&value);
     setText(&value, teks);
     insertLastListKicau( &KICAUAN(*app),value);
-
     printKicauan(value, ELMT_LISTUSER(LISTUSER(*app), IDUSER).name);
 }
 /**
