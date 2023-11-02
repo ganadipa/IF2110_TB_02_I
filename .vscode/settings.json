@@ -21,6 +21,7 @@
     "simpan.h": "c",
     "listdinamik.h": "c",
     "types.h": "c",
-    "listuser.h": "c"
+    "typeinfo": "c",
+    "datetime.h": "c"
   }
 }

@@ -357,16 +357,18 @@ void Kicau(Application *app){
     createEmptyString(&teks, 280);
     printf("Masukkan Kicauan : ");
     readString(&teks, 280);
+    if (&teks > 280){
+        printf("Kicauan yang dimasukkan terpotong secara otomatis dengan jumlah karakter maksimum 280.");
+    }
 
     int IDUSER = LOGINID(*app);
 
     KicauanType value;
     InisialisasiKicau(&value, IDUSER);
     setKicauID(&value, NEFF(KICAUAN(*app))+1);
-    // setKicauDateTime(&value);  TUNGGU DATETIME SELESAI
+    setKicauDateTime(&value);
     setText(&value, teks);
     insertLastListKicau( &KICAUAN(*app),value);
-
     printKicauan(value, ELMT_LISTUSER(LISTUSER(*app), IDUSER).name);
 }
 /**
@@ -406,18 +408,27 @@ void SukaKicauan(Application *app, int ID){
         printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
         return;
     }
-    // printf("\n%d  %d\n",LOGINID(*app), ELMT(KICAUAN(*app), ID - 1).IDuser);
 
-    if (isFriend ( app,  LOGINID(*app) ,ELMT( KICAUAN(*app), ID - 1).IDuser ||  LOGINID(*app) == ELMT(KICAUAN(*app), ID - 1).IDuser)){
-        // printf("INI JALAN");
+    if (LOGINID(*app) == ELMT(KICAUAN(*app), ID - 1).IDuser){
         addLike( &ELMT(KICAUAN(*app) , ID - 1) );
         printKicauan( KICAUAN(*app).buffer[ ID-1 ], returnUsername(*app, KICAUAN(*app).buffer[ID-1].IDuser));
-    } 
-        printf("Kamu hanya bisa mengubah kicauan milikmu sendiri");
-    
-    
-
+    } else {
+        User u = ELMT_LISTUSER(LISTUSER(*app), ELMT(KICAUAN(*app), ID - 1).IDuser);
+        if (ISPRIVATE(PROFILE(u))){
+            if (isFriend (app, LOGINID(*app), ELMT(KICAUAN(*app), ID - 1).IDuser)){
+                addLike( &ELMT(KICAUAN(*app) , ID - 1) );
+                printKicauan( KICAUAN(*app).buffer[ ID-1 ], returnUsername(*app, KICAUAN(*app).buffer[ID-1].IDuser));
+            } else {
+                printf("Wah, kicauan tersebut dibuat oleh akun privat! Ikuti akun itu dulu ya");
+            }
+        } else {
+            addLike( &ELMT(KICAUAN(*app) , ID - 1) );
+            printKicauan( KICAUAN(*app).buffer[ ID-1 ], returnUsername(*app, KICAUAN(*app).buffer[ID-1].IDuser));
+        }
+    }
 }
+
+
 /**
  * Untuk Menambah jumlah like pada Kicauan dengan id "ID"
 */
@@ -430,6 +441,9 @@ void UbahKicauan(Application *app, int ID){
     String teksBaru;
     createEmptyString(&teksBaru, 280);
     readString(&teksBaru, 280);
+    if (&teksBaru > 280){
+        printf("Kicauan yang dimasukkan terpotong secara otomatis dengan jumlah karakter maksimum 280.");
+    }
 
     if (LOGINID(*app) ==ELMT( KICAUAN(*app), ID - 1).IDuser  ){
         setText(&ELMT(KICAUAN(*app), ID - 1), teksBaru);

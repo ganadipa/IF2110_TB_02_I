@@ -4,7 +4,7 @@
 /* Versi II : dengan banyaknya elemen didefinisikan secara eksplisit, */
 
 #ifndef LISTDINAMIK_H
-#define LISTDINAMIk_H
+#define LISTDINAMIK_H
 
 #include "../../boolean.h"
 

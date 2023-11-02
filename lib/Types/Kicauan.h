@@ -1,14 +1,14 @@
 #ifndef KICAUAN_H
 #define KICAUAN_H
 #include "../boolean.h"
-#include "./User.h"
+#include "User.h"
 #include "../ADT/String/string.h" 
 #include "../ADT/DateTime/datetime.h"  
 
 
 typedef struct {
     int IDKicau;
-    int  IDuser;
+    int IDuser;
     String dateTime;
     String text;
     int like;
