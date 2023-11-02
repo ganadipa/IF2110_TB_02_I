@@ -61,7 +61,14 @@ void addWord(String *s, Word w);
 /**
  * 
 */
-
+void addString(String *s, String s2);
+/**
+ * 
+*/
+char *addChartoChar(char *destination, const char *source);
+/**
+ * 
+*/
 String concatString(String *sOut, String s1, String s2);
 /**
  * 

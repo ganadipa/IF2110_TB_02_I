@@ -1,18 +1,14 @@
 #include <stdio.h>
 #include "wordmachinefile.h"
 
-boolean EndWordFile;
+boolean EndFile;
 String currentWordFile;
 
 void IgnoreNewLinesFile()
-{
-    int counter = 0;
-    while (currentCharFile == '\n'){
+{   /* kalo file udh abis IgnoreNewLinesFile bakal selesai*/
+    /* jadinya bakal masuk ke EndFile = true */
+    while (currentCharFile == '\n' && retvalfile!=-1){ 
         ADVCHARFILE();
-        counter += 1;
-        if (counter > 50){
-            break;
-        }
     }
 }
 /* Mengabaikan satu atau beberapa BLANK
@@ -20,7 +16,7 @@ void IgnoreNewLinesFile()
    F.S. : currentChar ≠ '\n'*/
 
 void IgnoreNullFile(){
-    while (currentCharFile == '\0'){
+    while (currentCharFile == '\0' && retvalfile != -1){
         ADVCHARFILE();
     }
 }
@@ -34,17 +30,19 @@ void IgnoreBlanksFile(){
    I.S. : currentChar sembarang
    F.S. : currentChar ≠ BLANK atau currentChar = MARK */
 
-void STARTWORDFILE(){
-    OPENFILE();
-    IgnoreBlanksFile();
-    IgnoreNullFile();
-    if(currentCharFile == MARK_LAST_FILE){
-        EndWordFile = true;
-    } else{
-        EndWordFile = false;
-        CopyWordFILE();
-        IgnoreNewLinesFile();
+void STARTWORDFILE(String filename){
+    OPENFILE(filename);
+    if (!EndFile){
+        IgnoreBlanksFile();
+        IgnoreNullFile();
+        if(currentCharFile == MARK_LAST_FILE){
+            EndFile = true;
+        } else{
+            EndFile = false;
+            CopyWordFILE();
+            IgnoreNewLinesFile();
 
+        }
     }
 }
 /* I.S. : currentChar sembarang
@@ -54,7 +52,7 @@ void STARTWORDFILE(){
 
 void ADVWORDFILE(){
     if (currentCharFile == MARK_LAST_FILE){
-        EndWordFile = true;
+        EndFile = true;
     } else{
         CopyWordFILE();
         IgnoreNewLinesFile();

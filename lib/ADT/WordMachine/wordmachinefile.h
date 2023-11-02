@@ -9,7 +9,6 @@
 #include "../String/string.h"
 
 /* State Mesin Word */
-extern boolean EndWordFile;
 extern String currentWordFile;
 
 void IgnoreNewLinesFile();

@@ -52,6 +52,7 @@ void handleCommand(Application* app, String command, boolean *finish)
         TampilinKicauan(app);
     } else if (compareString(firstWord, "SUKA_KICAUAN")) {
         //Convert second word ke integer biar dimasukkin ke function
+        // printf("INI JLAAN");
         SukaKicauan(app,1);
     } else if (compareString(firstWord, "UBAH_KICAUAN")) {
         //Convert second word ke integer biar dimasukkin ke function

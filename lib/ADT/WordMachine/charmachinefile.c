@@ -4,18 +4,23 @@
 #include "charmachinefile.h"
 #include "../../lib.h"
 
-static FILE *pitafile[5];
-static int retvalfile;
-static char file[50][50] = {"pengguna.config", "kicauan.config", "balasan.config", "draf.config", "utas.config"};
+static FILE *pitafile;
+int retvalfile;
+static char file[50] = "pengguna.config";
 char currentCharFile;
 boolean EOP_FILE;
-
-void OPENFILE()
+boolean EndFile = false;
+const char source[50] = "../config/folder1/";
+void OPENFILE(String filename)
 {   
-    
-    pitafile[0] = fopen("../config/folder1/pengguna.config", "r");
-    if (pitafile[0] == NULL){
-        printf("File %s gagal dibuka\n", file[0]);
+    String s;
+    addChartoChar(s.buffer, source);
+    s.maxLength = STRCAP;
+    addString(&s, filename);
+    pitafile = fopen(s.buffer, "r");
+    if (pitafile == NULL){
+        printf("File %s gagal dibuka\n", filename);
+        EndFile = true;
     }
     
     
@@ -23,13 +28,14 @@ void OPENFILE()
 
 void CLOSEFILE() {
     for (int i = 0; i < 5 ; i++){
-        fclose(pitafile[i]);
+        fclose(pitafile);
     }
 }
 
 void ADVCHARFILE()
 {
-    retvalfile = fscanf(pitafile[0], "%c", &currentCharFile);
+    retvalfile = fscanf(pitafile, "%c", &currentCharFile);
+    // printf("1.");
     EOP_FILE = (currentCharFile == MARK_LAST_FILE);
 }
 
