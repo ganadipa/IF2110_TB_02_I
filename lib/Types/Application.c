@@ -411,6 +411,15 @@ void SimpanDraf(Application *app, Kicauan kicau){
     PushDraf(&DRAFKICAU(*app), kicau);
 }
 
+void UbahDraf(Application *app, Kicauan tempKicau){
+    String teks;
+    printf("Masukkan Perubahan: ");
+    readString(&teks, 280);
+    setText(&tempKicau, teks); 
+    setKicauID(&tempKicau, NEFF(KICAUAN(*app))+1);
+    SimpanDraf(app, tempKicau);
+}
+
 void HapusDraf(Application *app, Kicauan *sampahKicau){
     PopDraf(&DRAFKICAU(*app), sampahKicau);
 }
@@ -423,7 +432,7 @@ void TerbitkanDraf(Application *app, Kicauan kicau, int IDUSER){
 void LihatDraf(Application *app){
     Kicauan temp; 
     if(isDrafEmpty(DRAFKICAU(*app))){
-        printf("Yah, anda belum memiilki draf apapun! Buat dulu dong");
+        printf("Yah, anda belum memiliki draf apapun! Buat dulu dong");
     }
     else{
         int IDUSER = LOGINID(*app);
@@ -440,14 +449,16 @@ void LihatDraf(Application *app){
         String choose; 
 
         readString(&choose, 20);
-        if(compareString(choose, "SIMPAN")){
-            SimpanDraf(app, temp);
+        if(compareString(choose, "UBAH")){
+            UbahDraf(app, temp);
         } else if(compareString(choose, "HAPUS")){
             if(!isDrafEmpty(DRAFKICAU(*app))){
                 printf("Draft berhasil dihapus");
             }
         } else if(compareString(choose, "TERBIT")){
             TerbitkanDraf(app, temp, IDUSER);
+        } else if(compareString(choose, "KEMBALI")){
+            SimpanDraf(app, temp);
         }
     }
 
@@ -473,13 +484,14 @@ void BuatDraf(Application *app){
         SimpanDraf(app, value);
     } else if(compareString(choose, "HAPUS")){
         if(!isDrafEmpty(DRAFKICAU(*app))){
-            printf("Draft berhasil dihapus");
+            printf("Draft berhasil dihapus\n");
         }
     } else if(compareString(choose, "TERBIT")){
         TerbitkanDraf(app, value, IDUSER);
     }
     // setKicauDateTime(&value);  TUNGGU DATETIME SELESAI
 }
+
 
 void DevTools(Application app) 
 

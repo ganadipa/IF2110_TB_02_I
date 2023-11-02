@@ -112,16 +112,17 @@ void UbahKicauan(Application *app, int ID);
 */
 
 void BuatDraf(Application *app); 
-
+/* membuat draf baru untuk Draf kicauan*/
 void SimpanDraf(Application *app, Kicauan kicau);
-
+/*Menyimpan draf ke dalam stack*/
 void HapusDraf(Application *app, Kicauan *sampahKicau); 
-
+/*Menghapus draf cuitan dari stack*/
 void TerbitkanDraf(Application *app, Kicauan kicau, int IDuser); 
-
+/*menerbitkan draf menjadi cuitan*/
 void LihatDraf(Application *app); 
-
-void UbahDraf(Application *app);
+/*Melihat draf paling terakhir dari stack*/
+void UbahDraf(Application *app, Kicauan temp);
+/*Mengubah draf dari paling terakhir*/
 
 void DevTools(Application app);
 /**
