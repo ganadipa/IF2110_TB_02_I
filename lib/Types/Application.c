@@ -357,9 +357,9 @@ void Kicau(Application *app){
     createEmptyString(&teks, 280);
     printf("Masukkan Kicauan : ");
     readString(&teks, 280);
-    if (&teks > 280){
-        printf("Kicauan yang dimasukkan terpotong secara otomatis dengan jumlah karakter maksimum 280.");
-    }
+    // if (&teks > 280){
+    //     printf("Kicauan yang dimasukkan terpotong secara otomatis dengan jumlah karakter maksimum 280.");
+    // }
 
     int IDUSER = LOGINID(*app);
 
