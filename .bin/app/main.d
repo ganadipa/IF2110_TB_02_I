@@ -52,13 +52,16 @@
  app/../lib/./Types/././../ADT/Matriks/charMatriks.h \
  app/../lib/./Types/././../ADT/Matriks/../../boolean.h \
  app/../lib/./Types/../ADT/Graf/graf.h app/../lib/./Types/listKicauan.h \
- app/../lib/./Types/./Kicauan.h \
+ app/../lib/./Types/./Kicauan.h app/../lib/./Types/./User.h \
  app/../lib/./Types/./../ADT/String/string.h \
  app/../lib/./Types/./../ADT/DateTime/datetime.h \
  app/../lib/./Types/./../ADT/DateTime/../../boolean.h \
+ app/../lib/./Types/./../ADT/DateTime/../String/string.h \
  app/../lib/./Types/DrafKicauan.h app/../lib/./Types/Kicauan.h \
  app/../lib/./Types/User.h app/../lib/./Types/Profile.h \
  app/../lib/./Types/Photo.h app/../Function/simpan.h \
+ /usr/include/dirent.h /usr/include/x86_64-linux-gnu/bits/dirent.h \
+ /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
  /usr/include/x86_64-linux-gnu/bits/stat.h \
  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
@@ -141,15 +144,20 @@ app/../lib/./Types/././../ADT/Matriks/../../boolean.h:
 app/../lib/./Types/../ADT/Graf/graf.h:
 app/../lib/./Types/listKicauan.h:
 app/../lib/./Types/./Kicauan.h:
+app/../lib/./Types/./User.h:
 app/../lib/./Types/./../ADT/String/string.h:
 app/../lib/./Types/./../ADT/DateTime/datetime.h:
 app/../lib/./Types/./../ADT/DateTime/../../boolean.h:
+app/../lib/./Types/./../ADT/DateTime/../String/string.h:
 app/../lib/./Types/DrafKicauan.h:
 app/../lib/./Types/Kicauan.h:
 app/../lib/./Types/User.h:
 app/../lib/./Types/Profile.h:
 app/../lib/./Types/Photo.h:
 app/../Function/simpan.h:
+/usr/include/dirent.h:
+/usr/include/x86_64-linux-gnu/bits/dirent.h:
+/usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
 /usr/include/x86_64-linux-gnu/sys/stat.h:
 /usr/include/x86_64-linux-gnu/bits/stat.h:
 /usr/include/x86_64-linux-gnu/bits/struct_stat.h:

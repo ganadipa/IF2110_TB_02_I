@@ -38,11 +38,12 @@
  lib/Types/./../ADT/Graf/../ListStatik/../../boolean.h \
  lib/Types/./../ADT/Graf/../Matriks/boolMatriks.h \
  lib/Types/./../ADT/Graf/../Matriks/../../boolean.h \
- lib/Types/./listKicauan.h lib/Types/././Kicauan.h \
+ lib/Types/./listKicauan.h lib/Types/././Kicauan.h lib/Types/././User.h \
  lib/Types/././../ADT/String/string.h \
  lib/Types/././../ADT/DateTime/datetime.h \
- lib/Types/././../ADT/DateTime/../../boolean.h lib/Types/./DrafKicauan.h \
- lib/Types/./Kicauan.h
+ lib/Types/././../ADT/DateTime/../../boolean.h \
+ lib/Types/././../ADT/DateTime/../String/string.h \
+ lib/Types/./DrafKicauan.h lib/Types/./Kicauan.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -91,8 +92,10 @@ lib/Types/./../ADT/Graf/../Matriks/boolMatriks.h:
 lib/Types/./../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/./listKicauan.h:
 lib/Types/././Kicauan.h:
+lib/Types/././User.h:
 lib/Types/././../ADT/String/string.h:
 lib/Types/././../ADT/DateTime/datetime.h:
 lib/Types/././../ADT/DateTime/../../boolean.h:
+lib/Types/././../ADT/DateTime/../String/string.h:
 lib/Types/./DrafKicauan.h:
 lib/Types/./Kicauan.h:

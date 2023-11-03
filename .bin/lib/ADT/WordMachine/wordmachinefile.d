@@ -67,9 +67,11 @@
  lib/ADT/WordMachine/../.././Types/../ADT/Graf/graf.h \
  lib/ADT/WordMachine/../.././Types/listKicauan.h \
  lib/ADT/WordMachine/../.././Types/./Kicauan.h \
+ lib/ADT/WordMachine/../.././Types/./User.h \
  lib/ADT/WordMachine/../.././Types/./../ADT/String/string.h \
  lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/datetime.h \
  lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../../boolean.h \
+ lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../String/string.h \
  lib/ADT/WordMachine/../.././Types/DrafKicauan.h \
  lib/ADT/WordMachine/../.././Types/Kicauan.h \
  lib/ADT/WordMachine/../.././Types/User.h \
@@ -146,9 +148,11 @@ lib/ADT/WordMachine/../.././Types/././../ADT/Matriks/../../boolean.h:
 lib/ADT/WordMachine/../.././Types/../ADT/Graf/graf.h:
 lib/ADT/WordMachine/../.././Types/listKicauan.h:
 lib/ADT/WordMachine/../.././Types/./Kicauan.h:
+lib/ADT/WordMachine/../.././Types/./User.h:
 lib/ADT/WordMachine/../.././Types/./../ADT/String/string.h:
 lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/datetime.h:
 lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../../boolean.h:
+lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../String/string.h:
 lib/ADT/WordMachine/../.././Types/DrafKicauan.h:
 lib/ADT/WordMachine/../.././Types/Kicauan.h:
 lib/ADT/WordMachine/../.././Types/User.h:
