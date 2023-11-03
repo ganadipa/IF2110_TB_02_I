@@ -1,5 +1,7 @@
-.bin/app/main.o: app/main.c /usr/include/stdc-predef.h \
- /usr/include/stdio.h \
+.bin/lib/Types/Application/simpan-dan-muat/simpan.o: \
+ lib/Types/Application/simpan-dan-muat/simpan.c \
+ /usr/include/stdc-predef.h \
+ lib/Types/Application/simpan-dan-muat/simpan.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -21,7 +23,17 @@
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h app/../lib/lib.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/dirent.h \
+ /usr/include/x86_64-linux-gnu/bits/dirent.h \
+ /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
+ /usr/include/x86_64-linux-gnu/sys/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h app/../lib/lib.h \
  app/../lib/./ADT/Graf/graf.h app/../lib/./ADT/Graf/../../boolean.h \
  app/../lib/./ADT/Graf/../ListStatik/liststatik.h \
  app/../lib/./ADT/Graf/../ListStatik/../../boolean.h \
@@ -86,25 +98,16 @@
  app/../lib/./Types/Application/perintah/../pengguna/pengguna.h \
  app/../lib/./Types/Application/perintah/../profil/profil.h \
  app/../lib/./Types/Application/perintah/../simpan-dan-muat/simpan.h \
- /usr/include/dirent.h /usr/include/x86_64-linux-gnu/bits/dirent.h \
- /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
- /usr/include/x86_64-linux-gnu/sys/stat.h \
- /usr/include/x86_64-linux-gnu/bits/stat.h \
- /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
- /usr/include/x86_64-linux-gnu/sys/types.h \
- /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-intn.h app/../lib/lib.h \
- app/../lib/./Types/Application/perintah/../simpan-dan-muat/../Application.h \
  app/../lib/./Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h \
  app/../lib/./Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h \
  app/../lib/./Types/Application/perintah/../teman/teman.h \
  app/../lib/./Types/Application/perintah/../utas/utas.h \
  app/../lib/./Types/Application/perintah/../Devtools.h \
  app/../lib/./Types/Application/perintah/../Application.h \
- app/../lib/./Types/Application/Devtools.h
+ app/../lib/./Types/Application/Devtools.h \
+ lib/Types/Application/simpan-dan-muat/../Application.h
 /usr/include/stdc-predef.h:
+lib/Types/Application/simpan-dan-muat/simpan.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 /usr/include/features.h:
@@ -129,6 +132,17 @@
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+/usr/include/dirent.h:
+/usr/include/x86_64-linux-gnu/bits/dirent.h:
+/usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
+/usr/include/x86_64-linux-gnu/sys/stat.h:
+/usr/include/x86_64-linux-gnu/bits/stat.h:
+/usr/include/x86_64-linux-gnu/bits/struct_stat.h:
+/usr/include/x86_64-linux-gnu/sys/types.h:
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 app/../lib/lib.h:
 app/../lib/./ADT/Graf/graf.h:
 app/../lib/./ADT/Graf/../../boolean.h:
@@ -211,19 +225,6 @@ app/../lib/./Types/Application/perintah/../kicauan/kicauan.h:
 app/../lib/./Types/Application/perintah/../pengguna/pengguna.h:
 app/../lib/./Types/Application/perintah/../profil/profil.h:
 app/../lib/./Types/Application/perintah/../simpan-dan-muat/simpan.h:
-/usr/include/dirent.h:
-/usr/include/x86_64-linux-gnu/bits/dirent.h:
-/usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
-/usr/include/x86_64-linux-gnu/sys/stat.h:
-/usr/include/x86_64-linux-gnu/bits/stat.h:
-/usr/include/x86_64-linux-gnu/bits/struct_stat.h:
-/usr/include/x86_64-linux-gnu/sys/types.h:
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
-/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
-/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-app/../lib/lib.h:
-app/../lib/./Types/Application/perintah/../simpan-dan-muat/../Application.h:
 app/../lib/./Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h:
 app/../lib/./Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h:
 app/../lib/./Types/Application/perintah/../teman/teman.h:
@@ -231,3 +232,4 @@ app/../lib/./Types/Application/perintah/../utas/utas.h:
 app/../lib/./Types/Application/perintah/../Devtools.h:
 app/../lib/./Types/Application/perintah/../Application.h:
 app/../lib/./Types/Application/Devtools.h:
+lib/Types/Application/simpan-dan-muat/../Application.h:

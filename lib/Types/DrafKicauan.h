@@ -27,6 +27,7 @@ void CreateDraf(DrafKicau *draf);
 
 boolean isDrafEmpty(DrafKicau draf);
 
+
 void InisialisasiDrafKicau(Kicauan *k, int IDUser); 
 
 void PushDraf(DrafKicau *S, Kicauan k);

@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "../lib/lib.h"
-#include "../Function/simpan.h"
 
 int main()
 {

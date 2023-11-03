@@ -5,7 +5,6 @@
 
 #define IDX_UNDEF -1
 #define CAPACITY_REQQUEUE 20
-#define infotype User
 /* Konstanta untuk mendefinisikan address tak terdefinisi */
 
 /* Definisi elemen dan address */
@@ -18,6 +17,7 @@ typedef struct {
     int Head;
     int Tail;     /* Max elemen queue */
 } RequestQueue;
+
 /* Definisi RequestQueue kosong: HEAD=Nil; TAIL=Nil. */
 /* Catatan implementasi: T[0] tidak pernah dipakai */
 
