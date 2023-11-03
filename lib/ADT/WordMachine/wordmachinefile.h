@@ -9,7 +9,6 @@
 #include "../String/string.h"
 
 /* State Mesin Word */
-extern boolean EndWordFile;
 extern String currentWordFile;
 
 void IgnoreNewLinesFile();
@@ -36,7 +35,7 @@ void ADVWORDFILE();
           currentChar adalah karakter pertama dari kata berikutnya, mungkin MARK
           Jika currentChar = MARK, EndWord = true.
    Proses : Akuisisi kata menggunakan procedure SalinWord */
-
+void ADVFILEPHOTO();
 void CopyWordFILE();
 /* Mengakuisisi kata, menyimpan dalam currentWord
    I.S. : currentChar adalah karakter pertama dari kata
@@ -44,5 +43,5 @@ void CopyWordFILE();
           currentChar = BLANK atau currentChar = MARK;
           currentChar adalah karakter sesudah karakter terakhir yang diakuisisi.
           Jika panjang kata melebihi NMax, maka sisa kata "dipotong" */
-
+void CopyFILEPhoto();
 #endif

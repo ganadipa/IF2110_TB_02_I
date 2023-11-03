@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "./Kicauan.h"
+#include "Kicauan.h"
 
 /* ********** KONSTRUKTOR ********** */
 void InisialisasiKicau(Kicauan *k,int IDuser){
@@ -16,7 +16,9 @@ void setKicauID (Kicauan *k, int IDKicau){
 }
 
 void setKicauDateTime(Kicauan *k){
-    // dateTimeKicau(*k) = createDatetime();
+    DATETIME D;
+    D = currentDateTime ();
+    dateTimeKicau(*k) = DateTimeToString(D);
 }
 /**
  * I.S. k sudah diinisilisasi

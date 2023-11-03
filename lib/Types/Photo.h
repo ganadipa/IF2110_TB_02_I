@@ -24,7 +24,7 @@ void readPhoto(Photo *p);
 /**
  * 
 */
-
+void readPhotoFile(Photo *p, String photoString);
 void displayPhoto(Photo p);
 /**
  * 
