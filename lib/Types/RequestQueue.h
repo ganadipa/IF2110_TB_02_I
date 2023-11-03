@@ -2,6 +2,8 @@
 #define REQQUEUE_H
 #include "../boolean.h"
 #include "./User.h"
+#include "ListUser.h"
+#include "User.h"
 
 #define IDX_UNDEF -1
 #define infotype User
@@ -63,6 +65,8 @@ void dequeueRequestQueue(RequestQueue *Q, Friend *F);
 void removeElmt_RequestQueue(RequestQueue *Q, int idx);
 
 int getIndex_RequestQueue(RequestQueue Q, int ID);
+
+void displayRequestQueue(RequestQueue Q, ListUser l);
 
 
 #endif

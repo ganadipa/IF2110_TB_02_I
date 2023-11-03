@@ -57,7 +57,10 @@
  app/../lib/./Types/./../ADT/DateTime/datetime.h \
  app/../lib/./Types/./../ADT/DateTime/../../boolean.h \
  app/../lib/./Types/./../ADT/DateTime/../String/string.h \
+<<<<<<< HEAD
  app/../lib/./Types/DrafKicauan.h app/../lib/./Types/Kicauan.h \
+=======
+>>>>>>> develop
  app/../lib/./Types/User.h app/../lib/./Types/Profile.h \
  app/../lib/./Types/Photo.h app/../Function/simpan.h \
  /usr/include/dirent.h /usr/include/x86_64-linux-gnu/bits/dirent.h \
@@ -70,6 +73,7 @@
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+<<<<<<< HEAD
  app/../Function/../lib/lib.h app/../Function/load.h \
  app/../Function/../lib/ADT/WordMachine/charmachinefile.h \
  app/../Function/../lib/ADT/WordMachine/../../lib.h \
@@ -77,6 +81,9 @@
  app/../Function/../lib/ADT/WordMachine/wordmachinefile.h \
  app/../Function/../lib/ADT/WordMachine/charmachinefile.h \
  app/../Function/../lib/ADT/WordMachine/../String/string.h
+=======
+ app/../Function/../lib/lib.h
+>>>>>>> develop
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -149,8 +156,11 @@ app/../lib/./Types/./../ADT/String/string.h:
 app/../lib/./Types/./../ADT/DateTime/datetime.h:
 app/../lib/./Types/./../ADT/DateTime/../../boolean.h:
 app/../lib/./Types/./../ADT/DateTime/../String/string.h:
+<<<<<<< HEAD
 app/../lib/./Types/DrafKicauan.h:
 app/../lib/./Types/Kicauan.h:
+=======
+>>>>>>> develop
 app/../lib/./Types/User.h:
 app/../lib/./Types/Profile.h:
 app/../lib/./Types/Photo.h:
@@ -167,6 +177,7 @@ app/../Function/simpan.h:
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 app/../Function/../lib/lib.h:
+<<<<<<< HEAD
 app/../Function/load.h:
 app/../Function/../lib/ADT/WordMachine/charmachinefile.h:
 app/../Function/../lib/ADT/WordMachine/../../lib.h:
@@ -174,3 +185,5 @@ app/../Function/../lib/ADT/WordMachine/../../boolean.h:
 app/../Function/../lib/ADT/WordMachine/wordmachinefile.h:
 app/../Function/../lib/ADT/WordMachine/charmachinefile.h:
 app/../Function/../lib/ADT/WordMachine/../String/string.h:
+=======
+>>>>>>> develop

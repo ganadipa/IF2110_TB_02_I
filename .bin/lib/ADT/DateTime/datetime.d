@@ -23,6 +23,14 @@
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  lib/ADT/DateTime/datetime.h lib/ADT/DateTime/../../boolean.h \
+<<<<<<< HEAD
+=======
+ lib/ADT/DateTime/../String/string.h \
+ lib/ADT/DateTime/../String/../../boolean.h \
+ lib/ADT/DateTime/../String/../WordMachine/wordmachine.h \
+ lib/ADT/DateTime/../String/../WordMachine/../../boolean.h \
+ lib/ADT/DateTime/../String/../WordMachine/charmachine.h \
+>>>>>>> develop
  /usr/include/time.h /usr/include/x86_64-linux-gnu/bits/time.h \
  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
@@ -57,6 +65,14 @@
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 lib/ADT/DateTime/datetime.h:
 lib/ADT/DateTime/../../boolean.h:
+<<<<<<< HEAD
+=======
+lib/ADT/DateTime/../String/string.h:
+lib/ADT/DateTime/../String/../../boolean.h:
+lib/ADT/DateTime/../String/../WordMachine/wordmachine.h:
+lib/ADT/DateTime/../String/../WordMachine/../../boolean.h:
+lib/ADT/DateTime/../String/../WordMachine/charmachine.h:
+>>>>>>> develop
 /usr/include/time.h:
 /usr/include/x86_64-linux-gnu/bits/time.h:
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:

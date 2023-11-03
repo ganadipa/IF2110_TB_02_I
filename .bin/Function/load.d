@@ -42,11 +42,30 @@
  Function/../lib/ADT/WordMachine/../.././Types/../ADT/Graf/graf.h \
  Function/../lib/ADT/WordMachine/../.././Types/listKicauan.h \
  Function/../lib/ADT/WordMachine/../.././Types/./Kicauan.h \
+<<<<<<< HEAD
  Function/../lib/ADT/WordMachine/../.././Types/./../ADT/String/string.h \
  Function/../lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/datetime.h \
  Function/../lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../../boolean.h \
  Function/../lib/ADT/WordMachine/../.././Types/DrafKicauan.h \
  Function/../lib/ADT/WordMachine/../.././Types/Kicauan.h \
+=======
+ Function/../lib/ADT/WordMachine/../.././Types/./User.h \
+ Function/../lib/ADT/WordMachine/../.././Types/./../ADT/String/string.h \
+ Function/../lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/datetime.h \
+ Function/../lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../../boolean.h \
+ Function/../lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../String/string.h \
+ Function/../lib/ADT/WordMachine/../.././Types/User.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Profile.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Photo.h \
+ Function/../lib/ADT/WordMachine/../../boolean.h \
+ Function/../lib/ADT/WordMachine/wordmachinefile.h \
+ Function/../lib/ADT/WordMachine/charmachinefile.h \
+ Function/../lib/ADT/WordMachine/../String/string.h \
+ Function/../lib/ADT/WordMachine/wordmachine.h \
+ Function/../lib/ADT/WordMachine/charmachine.h \
+ Function/../lib/ADT/String/string.h Function/../lib/ADT/PColor/pcolor.h \
+ Function/../lib/Types/Photo.h Function/../lib/ADT/Matriks/charMatriks.h \
+>>>>>>> develop
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -69,6 +88,7 @@
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+<<<<<<< HEAD
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  Function/../lib/ADT/WordMachine/../.././Types/User.h \
  Function/../lib/ADT/WordMachine/../.././Types/Profile.h \
@@ -77,6 +97,9 @@
  Function/../lib/ADT/WordMachine/wordmachinefile.h \
  Function/../lib/ADT/WordMachine/charmachinefile.h \
  Function/../lib/ADT/WordMachine/../String/string.h
+=======
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h
+>>>>>>> develop
 /usr/include/stdc-predef.h:
 Function/../lib/ADT/WordMachine/charmachinefile.h:
 Function/../lib/ADT/WordMachine/../../lib.h:
@@ -121,11 +144,32 @@ Function/../lib/ADT/WordMachine/../.././Types/././../ADT/Matriks/../../boolean.h
 Function/../lib/ADT/WordMachine/../.././Types/../ADT/Graf/graf.h:
 Function/../lib/ADT/WordMachine/../.././Types/listKicauan.h:
 Function/../lib/ADT/WordMachine/../.././Types/./Kicauan.h:
+<<<<<<< HEAD
 Function/../lib/ADT/WordMachine/../.././Types/./../ADT/String/string.h:
 Function/../lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/datetime.h:
 Function/../lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../../boolean.h:
 Function/../lib/ADT/WordMachine/../.././Types/DrafKicauan.h:
 Function/../lib/ADT/WordMachine/../.././Types/Kicauan.h:
+=======
+Function/../lib/ADT/WordMachine/../.././Types/./User.h:
+Function/../lib/ADT/WordMachine/../.././Types/./../ADT/String/string.h:
+Function/../lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/datetime.h:
+Function/../lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../../boolean.h:
+Function/../lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../String/string.h:
+Function/../lib/ADT/WordMachine/../.././Types/User.h:
+Function/../lib/ADT/WordMachine/../.././Types/Profile.h:
+Function/../lib/ADT/WordMachine/../.././Types/Photo.h:
+Function/../lib/ADT/WordMachine/../../boolean.h:
+Function/../lib/ADT/WordMachine/wordmachinefile.h:
+Function/../lib/ADT/WordMachine/charmachinefile.h:
+Function/../lib/ADT/WordMachine/../String/string.h:
+Function/../lib/ADT/WordMachine/wordmachine.h:
+Function/../lib/ADT/WordMachine/charmachine.h:
+Function/../lib/ADT/String/string.h:
+Function/../lib/ADT/PColor/pcolor.h:
+Function/../lib/Types/Photo.h:
+Function/../lib/ADT/Matriks/charMatriks.h:
+>>>>>>> develop
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 /usr/include/features.h:
@@ -150,6 +194,7 @@ Function/../lib/ADT/WordMachine/../.././Types/Kicauan.h:
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+<<<<<<< HEAD
 Function/../lib/ADT/WordMachine/../.././Types/User.h:
 Function/../lib/ADT/WordMachine/../.././Types/Profile.h:
 Function/../lib/ADT/WordMachine/../.././Types/Photo.h:
@@ -157,3 +202,5 @@ Function/../lib/ADT/WordMachine/../../boolean.h:
 Function/../lib/ADT/WordMachine/wordmachinefile.h:
 Function/../lib/ADT/WordMachine/charmachinefile.h:
 Function/../lib/ADT/WordMachine/../String/string.h:
+=======
+>>>>>>> develop

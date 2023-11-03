@@ -21,7 +21,13 @@
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+<<<<<<< HEAD
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+=======
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/dirent.h \
+ /usr/include/x86_64-linux-gnu/bits/dirent.h \
+ /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
+>>>>>>> develop
  /usr/include/x86_64-linux-gnu/sys/stat.h \
  /usr/include/x86_64-linux-gnu/bits/stat.h \
  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
@@ -68,11 +74,19 @@
  Function/../lib/./Types/././../ADT/Matriks/../../boolean.h \
  Function/../lib/./Types/../ADT/Graf/graf.h \
  Function/../lib/./Types/listKicauan.h \
+<<<<<<< HEAD
  Function/../lib/./Types/./Kicauan.h \
  Function/../lib/./Types/./../ADT/String/string.h \
  Function/../lib/./Types/./../ADT/DateTime/datetime.h \
  Function/../lib/./Types/./../ADT/DateTime/../../boolean.h \
  Function/../lib/./Types/DrafKicauan.h Function/../lib/./Types/Kicauan.h \
+=======
+ Function/../lib/./Types/./Kicauan.h Function/../lib/./Types/./User.h \
+ Function/../lib/./Types/./../ADT/String/string.h \
+ Function/../lib/./Types/./../ADT/DateTime/datetime.h \
+ Function/../lib/./Types/./../ADT/DateTime/../../boolean.h \
+ Function/../lib/./Types/./../ADT/DateTime/../String/string.h \
+>>>>>>> develop
  Function/../lib/./Types/User.h Function/../lib/./Types/Profile.h \
  Function/../lib/./Types/Photo.h
 /usr/include/stdc-predef.h:
@@ -101,6 +115,12 @@ Function/simpan.h:
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+<<<<<<< HEAD
+=======
+/usr/include/dirent.h:
+/usr/include/x86_64-linux-gnu/bits/dirent.h:
+/usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
+>>>>>>> develop
 /usr/include/x86_64-linux-gnu/sys/stat.h:
 /usr/include/x86_64-linux-gnu/bits/stat.h:
 /usr/include/x86_64-linux-gnu/bits/struct_stat.h:
@@ -151,11 +171,19 @@ Function/../lib/./Types/././../ADT/Matriks/../../boolean.h:
 Function/../lib/./Types/../ADT/Graf/graf.h:
 Function/../lib/./Types/listKicauan.h:
 Function/../lib/./Types/./Kicauan.h:
+<<<<<<< HEAD
 Function/../lib/./Types/./../ADT/String/string.h:
 Function/../lib/./Types/./../ADT/DateTime/datetime.h:
 Function/../lib/./Types/./../ADT/DateTime/../../boolean.h:
 Function/../lib/./Types/DrafKicauan.h:
 Function/../lib/./Types/Kicauan.h:
+=======
+Function/../lib/./Types/./User.h:
+Function/../lib/./Types/./../ADT/String/string.h:
+Function/../lib/./Types/./../ADT/DateTime/datetime.h:
+Function/../lib/./Types/./../ADT/DateTime/../../boolean.h:
+Function/../lib/./Types/./../ADT/DateTime/../String/string.h:
+>>>>>>> develop
 Function/../lib/./Types/User.h:
 Function/../lib/./Types/Profile.h:
 Function/../lib/./Types/Photo.h:

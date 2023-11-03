@@ -70,8 +70,11 @@
  lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/datetime.h \
  lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../../boolean.h \
  lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../String/string.h \
+<<<<<<< HEAD
  lib/ADT/WordMachine/../.././Types/DrafKicauan.h \
  lib/ADT/WordMachine/../.././Types/Kicauan.h \
+=======
+>>>>>>> develop
  lib/ADT/WordMachine/../.././Types/User.h \
  lib/ADT/WordMachine/../.././Types/Profile.h \
  lib/ADT/WordMachine/../.././Types/Photo.h \
@@ -149,8 +152,11 @@ lib/ADT/WordMachine/../.././Types/./../ADT/String/string.h:
 lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/datetime.h:
 lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../../boolean.h:
 lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../String/string.h:
+<<<<<<< HEAD
 lib/ADT/WordMachine/../.././Types/DrafKicauan.h:
 lib/ADT/WordMachine/../.././Types/Kicauan.h:
+=======
+>>>>>>> develop
 lib/ADT/WordMachine/../.././Types/User.h:
 lib/ADT/WordMachine/../.././Types/Profile.h:
 lib/ADT/WordMachine/../.././Types/Photo.h:

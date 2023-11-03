@@ -22,8 +22,7 @@ boolean isEmptyRequestQueue(RequestQueue Q)
     return (Head_ReqQue(Q) == IDX_UNDEF && Tail_ReqQue(Q) == IDX_UNDEF);
 }
 boolean isFullRequestQueue(RequestQueue Q)
-/* Mengirim true jika tabel penampung elemen q sudah penuh */
-/* yaitu IDX_TAIL akan selalu di belakang IDX_HEAD dalam buffer melingkar*/
+
 {
     return (lengthRequestQueue(Q) == CAPACITY_REQQUEUE);
 }
@@ -41,11 +40,10 @@ int lengthRequestQueue(RequestQueue Q)
         }
     }
 }
+
 /* *** Primitif Add/Delete *** */
 void enqueueRequestQueue(RequestQueue *Q, Friend F)
-/* Proses: Menambahkan val pada q dengan aturan FIFO */
-/* I.S. q mungkin kosong, tabel penampung elemen q TIDAK penuh */
-/* F.S. val menjadi TAIL yang baru, IDX_TAIL "mundur" dalam buffer melingkar. */
+
 {
     int idx;
     int previdx;
@@ -53,7 +51,7 @@ void enqueueRequestQueue(RequestQueue *Q, Friend F)
     if (isEmptyRequestQueue(*Q)){
         Head_ReqQue(*Q) = 0;
         Tail_ReqQue(*Q) = 0;
-        ELMT_ReqQue(*Q, Head(*Q)) = F;
+        ELMT_ReqQue(*Q, 0) = F;
     }
 
     idx = Tail_ReqQue(*Q);
@@ -68,8 +66,7 @@ void enqueueRequestQueue(RequestQueue *Q, Friend F)
     }
 
     if(Head_ReqQue(*Q) == Tail_ReqQue(*Q)){
-        if (FRIENDCOUNT_REQQUEUE(ELMT_ReqQue(*Q, Tail_ReqQue(*Q))) < FRIENDCOUNT_REQQUEUE(F))
-        {
+        if (FRIENDCOUNT_REQQUEUE(ELMT_ReqQue(*Q, Tail_ReqQue(*Q))) < FRIENDCOUNT_REQQUEUE(F)){
             ELMT_ReqQue(*Q, ((Tail_ReqQue(*Q) + 1) % CAPACITY_REQQUEUE)) = ELMT_ReqQue(*Q, Tail_ReqQue(*Q));
             ELMT_ReqQue(*Q, Tail_ReqQue(*Q)) =  F;
         } else {
@@ -80,10 +77,7 @@ void enqueueRequestQueue(RequestQueue *Q, Friend F)
 }   
 
 void dequeueRequestQueue(RequestQueue *Q, Friend *F)
-/* Proses: Menghapus val pada q dengan aturan FIFO */
-/* I.S. q tidak mungkin kosong */
-/* F.S. val = nilai elemen HEAD pd I.S., IDX_HEAD "mundur";
-        q mungkin kosong */
+
 {
     *F = ELMT_ReqQue(*Q, Head_ReqQue(*Q));
 
@@ -99,37 +93,37 @@ void removeElmt_RequestQueue(RequestQueue *Q, int idx)
 {
     int i = 0;
     RequestQueue QTemp;
-    cre(&QTemp);
+    createRequestQueue(&QTemp);
 
-    while (!isEmpty_RequestQueue(*Q))
+    while (!isEmptyRequestQueue(*Q))
     {
         Friend F;
-        dequeque_RequestQueue(Q, &F);
+        dequeueRequestQueue(Q, &F);
 
         if (i == idx){
             continue;
         }
         ++i;
-        enqueue_RequestQueue(&QTemp, F);
+        enqueueRequestQueue(&QTemp, F);
     }
 
-    while (!isEmpty_RequestQueue(QTemp))
+    while (!isEmptyRequestQueue(QTemp))
     {
         Friend F;
-        dequeque_RequestQueue(&QTemp, &F);
-        enqueue_RequestQueue(Q, F);
+        dequeueRequestQueue(&QTemp, &F);
+        enqueueRequestQueue(Q, F);
     }
 }
 
 int getIndex_RequestQueue(RequestQueue Q, int ID)
 {
-    if (isEmpty_RequestQueue(Q)){
+    if (isEmptyRequestQueue(Q)){
         return IDX_UNDEF;
     }
 
-    int i = HEAD_REQQUEUE(Q);
+    int i = Head_ReqQue(Q);
     boolean found = false;
-    while (!isEmpty_RequestQueue(Q) && !found) 
+    while (!isEmptyRequestQueue(Q) && !found) 
     {
         if (ID_REQQUEUE(ELMT_ReqQue(Q, i)) == ID)
         {
@@ -138,6 +132,29 @@ int getIndex_RequestQueue(RequestQueue Q, int ID)
         } 
         i = (i+1) % CAPACITY_REQQUEUE;
         Friend F;
-        dequeque_RequestQueue(&Q, &F);
+        dequeueRequestQueue(&Q, &F);
+    }
+
+    if (found) {
+        return i;
+    }else{ 
+        return IDX_UNDEF;
+    }
+}
+
+void displayRequestQueue(RequestQueue Q, ListUser l)
+
+{
+    int nb = lengthRequestQueue(Q);
+    printf("\nTerdapat %d permintaan pertemanan untuk Anda.\n", nb);
+
+    while (!isEmptyRequestQueue(Q))
+    {
+        Friend F;
+        dequeueRequestQueue(&Q, &F);
+        User u = ELMT_LISTUSER(l, ID_REQQUEUE(F));
+        printf("\n | Nama: ");
+        displayString(NAME(u));
+        printf("\n | Jumlah teman: %d\n", FRIEND_COUNT(u));
     }
 }

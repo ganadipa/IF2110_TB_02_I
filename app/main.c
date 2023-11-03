@@ -55,6 +55,7 @@ void handleCommand(Application* app, String command, boolean *finish)
     } else if (compareString(firstWord, "UBAH_KICAUAN")) {
         //Convert second word ke integer biar dimasukkin ke function
         UbahKicauan(app,1);
+<<<<<<< HEAD
     } else if(compareString(firstWord, "BUAT_DRAF")){
         if(LOGGEDIN(*app)){
             BuatDraf(app);
@@ -71,7 +72,18 @@ void handleCommand(Application* app, String command, boolean *finish)
         }
     }else if(compareString(firstWord, "SIMPAN")){
         SaveFolder();
+=======
+    } else if (compareString(firstWord, "TAMBAH_TEMAN")) {
+        TambahTeman(app);
+    } else if (compareString(firstWord, "BATAL_TAMBAH_TEMAN")) {
+        BatalTambahTeman(app);
+    } else if (compareString(firstWord, "DAFTAR_PERMINTAAN_PERTEMANAN")) {
+        DaftarPermintaanPertemanan(*app);
+    } else if (compareString(firstWord, "SETUJUI_PERTEMANAN")) {
+        SetujuiPertemanan(app);
+>>>>>>> develop
     }
+
 
     else {
         printf("\nTidak ada perintah ");
