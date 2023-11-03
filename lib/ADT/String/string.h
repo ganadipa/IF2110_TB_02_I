@@ -74,6 +74,10 @@ String concatString(String *sOut, String s1, String s2);
  * 
 */
 
+int stringToInt(String s);
+/**
+ * 
+*/
 
 boolean compareString(String s, char* cptr);
 /**
