@@ -28,6 +28,17 @@ int stringLength(String s)
     return i;
 }
 
+int stringToInt(String s){
+    int i;
+    int j = 1;
+    int k = 0;
+    for (i = stringLength(s); i > 0; i++){
+        k += (s.buffer[i] - '0') * j;
+        j *= 10;
+    }
+    return k;
+}
+
 String intToString(int i, int numlength)
 {
     String s;
