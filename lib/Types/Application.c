@@ -441,9 +441,9 @@ void UbahKicauan(Application *app, int ID){
     String teksBaru;
     createEmptyString(&teksBaru, 280);
     readString(&teksBaru, 280);
-    if (&teksBaru > 280){
-        printf("Kicauan yang dimasukkan terpotong secara otomatis dengan jumlah karakter maksimum 280.");
-    }
+    // if (stringLength(teksBaru) > 280){
+    //     printf("Kicauan yang dimasukkan terpotong secara otomatis dengan jumlah karakter maksimum 280.");
+    // }
 
     if (LOGINID(*app) ==ELMT( KICAUAN(*app), ID - 1).IDuser  ){
         setText(&ELMT(KICAUAN(*app), ID - 1), teksBaru);
