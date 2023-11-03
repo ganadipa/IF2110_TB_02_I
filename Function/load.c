@@ -1,11 +1,11 @@
-#include "../lib/ADT/WordMachine/charmachinefile.c"
-#include "../lib/ADT/WordMachine/wordmachinefile.c"
-#include "../lib/ADT/WordMachine/wordmachine.c"
-#include "../lib/ADT/WordMachine/charmachine.c"
-#include "../lib/ADT/String/string.c"
-#include "../lib/ADT/PColor/pcolor.c"
-#include "../lib/Types/Photo.c"
-#include "../lib/ADT/Matriks/charMatriks.c"
+#include "../lib/ADT/WordMachine/charmachinefile.h"
+#include "../lib/ADT/WordMachine/wordmachinefile.h"
+#include "../lib/ADT/WordMachine/wordmachine.h"
+#include "../lib/ADT/WordMachine/charmachine.h"
+#include "../lib/ADT/String/string.h"
+#include "../lib/ADT/PColor/pcolor.h"
+#include "../lib/Types/Photo.h"
+#include "../lib/ADT/Matriks/charMatriks.h"
 #include <stdio.h>
 // int main(){
 //     String s;
@@ -78,19 +78,19 @@ void LoadPengguna(){
         
 }
 
-int main(){
-    LoadPengguna();
+// int main(){
+//     LoadPengguna();
     
-    // displayString(app.users.contents[0].name);
-    // printf("\n");
-    // displayString(app.users.contents[1].password);
-    // printf("\n");
-    // displayString(app.users.contents[1].profile.bio);
-    // printf("\n");
-    // displayString(app.users.contents[1].profile.phoneNumber);
-    // printf("\n");
-    // displayString(app.users.contents[1].profile.weton);
-    // printf("\n");
-    // displayPhoto(app.users.contents[0].profile.photo);
-    // printf("%u", app.users.contents[0].profile.isPrivate);
-}
+//     // displayString(app.users.contents[0].name);
+//     // printf("\n");
+//     // displayString(app.users.contents[1].password);
+//     // printf("\n");
+//     // displayString(app.users.contents[1].profile.bio);
+//     // printf("\n");
+//     // displayString(app.users.contents[1].profile.phoneNumber);
+//     // printf("\n");
+//     // displayString(app.users.contents[1].profile.weton);
+//     // printf("\n");
+//     // displayPhoto(app.users.contents[0].profile.photo);
+//     // printf("%u", app.users.contents[0].profile.isPrivate);
+// }
