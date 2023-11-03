@@ -461,14 +461,15 @@ void LihatDraf(Application *app){
             SimpanDraf(app, temp);
         }
     }
-
+    
 }
 
 
 void BuatDraf(Application *app){
+
     String teks;
     createEmptyString(&teks, 280);
-    printf("Masukkan Kicauan : ");
+    printf("Masukkan Draf: ");
     readString(&teks, 280);
 
     int IDUSER = LOGINID(*app);
@@ -482,13 +483,16 @@ void BuatDraf(Application *app){
     readString(&choose, 20);
     if(compareString(choose, "SIMPAN")){
         SimpanDraf(app, value);
+        printf("Draft berhasil disimpan\n");
     } else if(compareString(choose, "HAPUS")){
         if(!isDrafEmpty(DRAFKICAU(*app))){
             printf("Draft berhasil dihapus\n");
         }
     } else if(compareString(choose, "TERBIT")){
         TerbitkanDraf(app, value, IDUSER);
+        printf("Selamat! draf Kicauan telah diterbitkan.\n");
     }
+    
     // setKicauDateTime(&value);  TUNGGU DATETIME SELESAI
 }
 

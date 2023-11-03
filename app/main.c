@@ -55,9 +55,19 @@ void handleCommand(Application* app, String command, boolean *finish)
         //Convert second word ke integer biar dimasukkin ke function
         UbahKicauan(app,1);
     } else if(compareString(firstWord, "BUAT_DRAF")){
-        BuatDraf(app);
+        if(LOGGEDIN(*app)){
+            BuatDraf(app);
+        }
+        else{
+            printf("Anda belum login.\n");
+        }
     } else if(compareString(firstWord, "LIHAT_DRAF")){
-        LihatDraf(app);
+        if(LOGGEDIN(*app)){
+            LihatDraf(app);
+        }
+        else{
+            printf("Anda belum login. \n");
+        }
     }else if(compareString(firstWord, "SIMPAN")){
         SaveFolder();
     }
