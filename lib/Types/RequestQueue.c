@@ -53,7 +53,7 @@ void enqueueRequestQueue(RequestQueue *Q, Friend F)
     if (isEmptyRequestQueue(*Q)){
         Head_ReqQue(*Q) = 0;
         Tail_ReqQue(*Q) = 0;
-        ELMT_ReqQue(*Q, Head(*Q)) = F;
+        ELMT_ReqQue(*Q, 0) = F;
     }
 
     idx = Tail_ReqQue(*Q);
@@ -99,25 +99,25 @@ void removeElmt_RequestQueue(RequestQueue *Q, int idx)
 {
     int i = 0;
     RequestQueue QTemp;
-    cre(&QTemp);
+    createRequestQueue(&QTemp);
 
-    while (!isEmpty_RequestQueue(*Q))
+    while (!isEmptyRequestQueue(*Q))
     {
         Friend F;
-        dequeque_RequestQueue(Q, &F);
+        dequeueRequestQueue(Q, &F);
 
         if (i == idx){
             continue;
         }
         ++i;
-        enqueue_RequestQueue(&QTemp, F);
+        enqueueRequestQueue(&QTemp, F);
     }
 
-    while (!isEmpty_RequestQueue(QTemp))
+    while (!isEmptyRequestQueue(QTemp))
     {
         Friend F;
-        dequeque_RequestQueue(&QTemp, &F);
-        enqueue_RequestQueue(Q, F);
+        dequeueRequestQueue(&QTemp, &F);
+        enqueueRequestQueue(Q, F);
     }
 }
 
@@ -127,7 +127,7 @@ int getIndex_RequestQueue(RequestQueue Q, int ID)
         return IDX_UNDEF;
     }
 
-    int i = HEAD_REQQUEUE(Q);
+    int i = Head_ReqQue(Q);
     boolean found = false;
     while (!isEmpty_RequestQueue(Q) && !found) 
     {
@@ -138,6 +138,11 @@ int getIndex_RequestQueue(RequestQueue Q, int ID)
         } 
         i = (i+1) % CAPACITY_REQQUEUE;
         Friend F;
-        dequeque_RequestQueue(&Q, &F);
+        dequeueRequestQueue(&Q, &F);
+    }
+    if (found) {
+        return i;
+    }else{ 
+        return IDX_UNDEF;
     }
 }
