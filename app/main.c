@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "../lib/lib.h"
 #include "../Function/simpan.h"
-#include "../Function/load.h"
 
 void handleCommand(Application* app, String command, boolean *finish) 
 {
@@ -60,7 +59,7 @@ void handleCommand(Application* app, String command, boolean *finish)
     } else if(compareString(firstWord, "LIHAT_DRAF")){
         LihatDraf(app);
     }else if(compareString(firstWord, "SIMPAN")){
-        SaveFolder();
+        SaveFolder(app);
     } else if (compareString(firstWord, "TAMBAH_TEMAN")) {
         TambahTeman(app);
     } else if (compareString(firstWord, "BATAL_TAMBAH_TEMAN")) {
@@ -81,7 +80,6 @@ void handleCommand(Application* app, String command, boolean *finish)
 }
 
 
-
 int main()
 {
     String command;
@@ -89,7 +87,6 @@ int main()
 
     Application app;
     START();
-
 
     // 1. Inisialisasi
     AppInitialization(&app);

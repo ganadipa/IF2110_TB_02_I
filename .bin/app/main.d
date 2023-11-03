@@ -50,7 +50,7 @@
  app/../lib/./Types/./Profile.h app/../lib/./Types/./Photo.h \
  app/../lib/./Types/./../ADT/Matriks/charMatriks.h \
  app/../lib/./Types/./../ADT/Matriks/../../boolean.h \
- app/../lib/./Types/./RequestQueue.h app/../lib/./Types/./ListUser.h \
+ app/../lib/./Types/./RequestQueue.h \
  app/../lib/./Types/../ADT/Graf/graf.h app/../lib/./Types/listKicauan.h \
  app/../lib/./Types/./Kicauan.h \
  app/../lib/./Types/./../ADT/DateTime/datetime.h \
@@ -70,13 +70,7 @@
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
- app/../Function/../lib/lib.h app/../Function/load.h \
- app/../Function/../lib/ADT/WordMachine/charmachinefile.h \
- app/../Function/../lib/ADT/WordMachine/../../lib.h \
- app/../Function/../lib/ADT/WordMachine/../../boolean.h \
- app/../Function/../lib/ADT/WordMachine/wordmachinefile.h \
- app/../Function/../lib/ADT/WordMachine/charmachinefile.h \
- app/../Function/../lib/ADT/WordMachine/../String/string.h
+ app/../Function/../lib/lib.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -141,7 +135,6 @@ app/../lib/./Types/./Photo.h:
 app/../lib/./Types/./../ADT/Matriks/charMatriks.h:
 app/../lib/./Types/./../ADT/Matriks/../../boolean.h:
 app/../lib/./Types/./RequestQueue.h:
-app/../lib/./Types/./ListUser.h:
 app/../lib/./Types/../ADT/Graf/graf.h:
 app/../lib/./Types/listKicauan.h:
 app/../lib/./Types/./Kicauan.h:
@@ -167,10 +160,3 @@ app/../Function/simpan.h:
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 app/../Function/../lib/lib.h:
-app/../Function/load.h:
-app/../Function/../lib/ADT/WordMachine/charmachinefile.h:
-app/../Function/../lib/ADT/WordMachine/../../lib.h:
-app/../Function/../lib/ADT/WordMachine/../../boolean.h:
-app/../Function/../lib/ADT/WordMachine/wordmachinefile.h:
-app/../Function/../lib/ADT/WordMachine/charmachinefile.h:
-app/../Function/../lib/ADT/WordMachine/../String/string.h:

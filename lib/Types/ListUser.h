@@ -115,4 +115,6 @@ IdxType searchByName(ListUser l, String name);
 
 void displayName(ListUser l, int i);
 
+void displayRequestQueue(RequestQueue Q, ListUser l);
+
 #endif

@@ -64,7 +64,6 @@
  lib/ADT/WordMachine/../.././Types/./../ADT/Matriks/charMatriks.h \
  lib/ADT/WordMachine/../.././Types/./../ADT/Matriks/../../boolean.h \
  lib/ADT/WordMachine/../.././Types/./RequestQueue.h \
- lib/ADT/WordMachine/../.././Types/./ListUser.h \
  lib/ADT/WordMachine/../.././Types/../ADT/Graf/graf.h \
  lib/ADT/WordMachine/../.././Types/listKicauan.h \
  lib/ADT/WordMachine/../.././Types/./Kicauan.h \
@@ -145,7 +144,6 @@ lib/ADT/WordMachine/../.././Types/./Photo.h:
 lib/ADT/WordMachine/../.././Types/./../ADT/Matriks/charMatriks.h:
 lib/ADT/WordMachine/../.././Types/./../ADT/Matriks/../../boolean.h:
 lib/ADT/WordMachine/../.././Types/./RequestQueue.h:
-lib/ADT/WordMachine/../.././Types/./ListUser.h:
 lib/ADT/WordMachine/../.././Types/../ADT/Graf/graf.h:
 lib/ADT/WordMachine/../.././Types/listKicauan.h:
 lib/ADT/WordMachine/../.././Types/./Kicauan.h:
