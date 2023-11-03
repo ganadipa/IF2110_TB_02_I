@@ -22,6 +22,15 @@
     "listdinamik.h": "c",
     "types.h": "c",
     "typeinfo": "c",
-    "datetime.h": "c"
+    "datetime.h": "c",
+    "__config": "c",
+    "__locale": "c",
+    "bitset": "c",
+    "locale": "c",
+    "ostream": "c",
+    "string": "c",
+    "string_view": "c",
+    "tuple": "c",
+    "__string": "c"
   }
 }
