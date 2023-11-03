@@ -42,44 +42,43 @@ int lengthRequestQueue(RequestQueue Q)
 }
 
 /* *** Primitif Add/Delete *** */
-void enqueueRequestQueue(RequestQueue *Q, Friend F)
+void enqueueRequestQueue(RequestQueue *Q, Friend u)
 
 {
-    int idx;
-    int previdx;
-
-    if (isEmptyRequestQueue(*Q)){
+    if (isEmptyRequestQueue(*Q)) {
         Head_ReqQue(*Q) = 0;
         Tail_ReqQue(*Q) = 0;
-        ELMT_ReqQue(*Q, 0) = F;
+        ELMT_ReqQue(*Q, 0) = u;
+        return;
     }
 
-    idx = Tail_ReqQue(*Q);
-    while (idx != Head_ReqQue(*Q)){
-        if (FRIENDCOUNT_REQQUEUE(ELMT_ReqQue(*Q, idx)) < FRIENDCOUNT_REQQUEUE(F))
+    int ptr;
+    for (ptr = Tail_ReqQue(*Q); ptr != Head_ReqQue(*Q); ptr = (ptr -1 +CAPACITY_REQQUEUE) % CAPACITY_REQQUEUE)
+    {
+        if (FRIENDCOUNT_REQQUEUE(ELMT_ReqQue(*Q, ptr)) < FRIENDCOUNT_REQQUEUE(u))
         {
-            ELMT_ReqQue(*Q, (idx + 1) % CAPACITY_REQQUEUE) = ELMT_ReqQue(*Q, idx); 
-        } else {
-            ELMT_ReqQue(*Q, (idx  +1) % CAPACITY_REQQUEUE) = F;
+            ELMT_ReqQue(*Q, (ptr + 1) % CAPACITY_REQQUEUE) = ELMT_ReqQue(*Q, ptr); 
+        } else 
+        {
+            ELMT_ReqQue(*Q, (ptr+1) % CAPACITY_REQQUEUE) = u;
         }
-        idx = (idx + CAPACITY_REQQUEUE - 1) % CAPACITY_REQQUEUE;
     }
 
-    if(Head_ReqQue(*Q) == Tail_ReqQue(*Q)){
-        if (FRIENDCOUNT_REQQUEUE(ELMT_ReqQue(*Q, Tail_ReqQue(*Q))) < FRIENDCOUNT_REQQUEUE(F)){
-            ELMT_ReqQue(*Q, ((Tail_ReqQue(*Q) + 1) % CAPACITY_REQQUEUE)) = ELMT_ReqQue(*Q, Tail_ReqQue(*Q));
-            ELMT_ReqQue(*Q, Tail_ReqQue(*Q)) =  F;
-        } else {
-            ELMT_ReqQue(*Q, (Tail_ReqQue(*Q)+1) % CAPACITY_REQQUEUE) = F;
-        }
-        Tail_ReqQue(*Q) = (Tail_ReqQue(*Q) + 1) % CAPACITY_REQQUEUE;
+    if (FRIENDCOUNT_REQQUEUE(ELMT_ReqQue(*Q, ptr)) < FRIENDCOUNT_REQQUEUE(u))
+    {
+        ELMT_ReqQue(*Q, (ptr + 1) % CAPACITY_REQQUEUE) = ELMT_ReqQue(*Q, ptr);
+        ELMT_ReqQue(*Q, ptr) =  u;
+    } else 
+    {
+        ELMT_ReqQue(*Q, (ptr+1) % CAPACITY_REQQUEUE) = u;
     }
-}   
 
-void dequeueRequestQueue(RequestQueue *Q, Friend *F)
+    Tail_ReqQue(*Q) = (Tail_ReqQue(*Q) + 1) % CAPACITY_REQQUEUE;
+}
 
+void dequeueRequestQueue(RequestQueue *Q, Friend *u)
 {
-    *F = ELMT_ReqQue(*Q, Head_ReqQue(*Q));
+    *u = ELMT_ReqQue(*Q, Head_ReqQue(*Q));
 
     if (Head_ReqQue(*Q) == Tail_ReqQue(*Q)) {
         Head_ReqQue(*Q) = IDX_UNDEF;
@@ -141,3 +140,4 @@ int getIndex_RequestQueue(RequestQueue Q, int ID)
         return IDX_UNDEF;
     }
 }
+
