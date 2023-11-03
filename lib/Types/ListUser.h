@@ -2,10 +2,10 @@
 /* Berisi definisi dan semua primitif pemrosesan list integer statik dengan elemen positif */
 /* Penempatan elemen selalu rapat kiri */
 /* Banyaknya elemen didefinisikan secara implisit, memori list statik */
-#include "../boolean.h"
-#include "User.h"
 #ifndef LISTUSER_H
 #define LISTUSER_H
+#include "../boolean.h"
+#include "User.h"
 
 
 

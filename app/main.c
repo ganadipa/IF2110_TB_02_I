@@ -4,10 +4,10 @@
 #include "../Function/load.h"
 
 void handleCommand(Application* app, String command, boolean *finish) 
+{
 /**
  * 
 */
-{
     int numword = countWord(command);
     if (numword == 0) return;
     String firstWord = getWordAt(command, 0);
@@ -57,19 +57,9 @@ void handleCommand(Application* app, String command, boolean *finish)
         UbahKicauan(app,1);
 
     } else if(compareString(firstWord, "BUAT_DRAF")){
-        if(LOGGEDIN(*app)){
             BuatDraf(app);
-        }
-        else{
-            printf("Anda belum login.\n");
-        }
     } else if(compareString(firstWord, "LIHAT_DRAF")){
-        if(LOGGEDIN(*app)){
-            LihatDraf(app);
-        }
-        else{
-            printf("Anda belum login. \n");
-        }
+        LihatDraf(app);
     }else if(compareString(firstWord, "SIMPAN")){
         SaveFolder();
     } else if (compareString(firstWord, "TAMBAH_TEMAN")) {
@@ -77,7 +67,7 @@ void handleCommand(Application* app, String command, boolean *finish)
     } else if (compareString(firstWord, "BATAL_TAMBAH_TEMAN")) {
         BatalTambahTeman(app);
     } else if (compareString(firstWord, "DAFTAR_PERMINTAAN_PERTEMANAN")) {
-        DaftarPermintaanPertemanan(*app);
+        DaftarPermintaanPertemanan(app);
     } else if (compareString(firstWord, "SETUJUI_PERTEMANAN")) {
         SetujuiPertemanan(app);
     }

@@ -1,9 +1,8 @@
 #ifndef REQQUEUE_H
 #define REQQUEUE_H
+
 #include "../boolean.h"
-#include "./User.h"
 #include "ListUser.h"
-#include "User.h"
 
 #define IDX_UNDEF -1
 #define infotype User

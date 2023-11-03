@@ -22,6 +22,7 @@
     "listdinamik.h": "c",
     "types.h": "c",
     "typeinfo": "c",
-    "datetime.h": "c"
+    "datetime.h": "c",
+    "listuser.h": "c"
   }
 }

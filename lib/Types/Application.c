@@ -639,16 +639,13 @@ void BatalTambahTeman(Application *app)
     printf(" telah dibatalkan.");
 }
 
-void DaftarPermintaanPertemanan(Application app)
-
-{
+void DaftarPermintaanPertemanan(Application app){
     ListUser l = LISTUSER(app);
     RequestQueue q = FRIEND_REQUEST(ELMT_LISTUSER(l, LOGINID(app)));
     displayRequestQueue(q, LISTUSER(app));
 }
 
-void SetujuiPertemanan(Application *app)
-{
+void SetujuiPertemanan(Application *app){
 
     if (!LOGGEDIN(*app)) {
         printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
@@ -698,9 +695,7 @@ void SetujuiPertemanan(Application *app)
     }
 }
 
-void DevTools(Application app) 
-
-{
+void DevTools(Application app) {
     printf("\nisLoggedIn : ");
     if (LOGGEDIN(app)) {
         printf("TRUE");
