@@ -1,7 +1,7 @@
 #ifndef KICAU_H
 #define KICAU_H
 
-#include "../ADT/String/string.h"
+#include "../../../ADT/String/string.h"
 #include "../Application.h"
 #include "../../Kicauan.h"
 

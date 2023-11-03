@@ -6,7 +6,6 @@
 
 static FILE *pitafile;
 int retvalfile;
-static char file[50] = "pengguna.config";
 char currentCharFile;
 boolean EOP_FILE;
 boolean EndFile = false;

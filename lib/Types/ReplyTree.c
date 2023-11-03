@@ -18,19 +18,30 @@ ReplyAddress newReply(String body, boolean isMain)
 void createReplyTree(ReplyTree *rt, int capacity)
 
 {
-    rt -> adjlists = (ListDin *) malloc(sizeof(ListDin));
-    rt -> listreply->buffer = (ReplyAddress *) malloc(sizeof(ReplyAddress)*capacity);
-    USED(*rt).buffer = (int *) malloc(sizeof(int)*capacity);
+    rt -> adjlists = (ListDin *) malloc(sizeof(int)*capacity*capacity);
+    
+    (rt -> listreply).buffer = (ReplyAddress *) malloc(sizeof(ReplyAddress)*capacity);
+    (rt -> listreply).neff = 0;
+    (rt -> listreply).capacity = capacity;
+
+    
+    CreateListDin(&(rt->used), capacity);
+
+    CreateListDin(&(rt->parent), capacity);
+
+    int i;
+    for (i = 0; i < capacity; i++) {
+        CreateListDin(&LISTDIN(*rt, i), capacity);
+
+    }
+    
     NUMREP(*rt) = 0;
-    MAXREP(*rt) = 0;
+    MAXREP(*rt) = capacity;
     rt -> availableID = 0;
     rt -> availableIDX = 0;
 }
 
 void extendReplyTree(ReplyTree *rt) 
-/**
- * I.S. Compressed rt.
-*/
 {
     ReplyTree tmp;
     createReplyTree(&tmp, 2*(rt -> maxReply));
@@ -38,7 +49,7 @@ void extendReplyTree(ReplyTree *rt)
     tmp.numReplyEff = rt -> numReplyEff;
     tmp.availableID = rt -> availableID;
     tmp.availableIDX = rt -> availableIDX;
-    tmp.maxReply = rt -> maxReply;
+    tmp.maxReply = 2*(rt -> maxReply);
     LISTREP(tmp).neff = LISTREP(*rt).neff;
 
     int len = tmp.numReplyEff;
@@ -47,31 +58,12 @@ void extendReplyTree(ReplyTree *rt)
         LISTDIN(tmp, i) = LISTDIN(*rt, i);
         ADDR(LISTREP(tmp), i) = ADDR(LISTREP(*rt), i);
         ISUSED(tmp, i) = ISUSED(*rt, i);
+        PARENT(tmp, i) = PARENT(*rt, i);
     }
 
     *rt = tmp;
 }
 
-void compressReplyTree(ReplyTree *rt)
-// jadiin rata kiri
-{
-    int i, j;
-    for (i = 0; i < rt -> availableID; i++ )
-    {
-        if (ISUSED(*rt, i)) continue;
-
-        for (j = i+1; j < rt -> availableID; j++)
-        {
-            if (ISUSED(*rt, j) > ISUSED(*rt, i))
-            {
-                swapIndexTree(rt, i , j);
-                break;
-            }
-        }
-    }
-
-    rt -> availableIDX = rt -> numReplyEff;
-}
 
 int getIdxInReplyTree(ReplyTree rt, ReplyAddress addr)
 {
@@ -82,6 +74,19 @@ int getIdxInReplyTree(ReplyTree rt, ReplyAddress addr)
     }
 
     return i;
+}
+
+ReplyAddress getReplyAddress(ReplyTree rt, int replyID)
+/**
+ * replyID sudah pasti ada.
+*/
+{
+    int lo = 0;
+    int hi = rt.maxReply;
+    int mid;
+
+    ListReply l = LISTREP(rt);
+    return ADDR(l, replyID);
 }
 
 void swapIndexTree(ReplyTree *rt, int i, int j)
@@ -115,12 +120,14 @@ void addReply(ReplyTree *rt)
 {
     if (rt -> availableIDX == rt -> maxReply)
     {
-        compressReplyTree(rt);
+        extendReplyTree(rt);
     }
 
+     
     NUMREP(*rt) += 1;
     rt -> availableID += 1;
     rt -> availableIDX += 1;
+    LISTREP(*rt).neff += 1;
 }
 
 void addChildToReply(ReplyTree *rt, ReplyAddress parent, ReplyAddress child)
@@ -129,22 +136,40 @@ void addChildToReply(ReplyTree *rt, ReplyAddress parent, ReplyAddress child)
 */
 {
     int idxParent = getIdxInReplyTree(*rt, parent);
-    int idxChild = getIdxInReplyTree(*rt, child);
+    ListReply *lr = &LISTREP(*rt);
 
-    insertLastListDin(&LISTDIN(*rt, idxParent), idxChild);
+
+    insertLastListDin(&LISTDIN(*rt, idxParent), child->id);
+
+
+
+    lr -> buffer[child->id] = child;
+    ISUSED(*rt, child->id) = 1;
+    insertLastListDin(&(rt->parent), idxParent);
+    
+}
+
+void addMainReply(ReplyTree *rt, ReplyAddress addr) {
+    ListReply *lr = &LISTREP(*rt);
+    lr -> buffer[addr->id] = addr;
+    ISUSED(*rt, addr->id) = 1;
+    insertLastListDin(&(rt->parent), -1);
 }
 
 
 void printSpace(int num) {
     while (num > 0){
-        printf(" ");
+        printf("   ");
         num--;
     }
 }
 
-void displayReply(ReplyAddress addr, ListUser l, int depth)
-
+void displayReply(ReplyTree rt, ReplyAddress addr, ListUser l, int depth)
 {
+    int i = getIdxInReplyTree(rt, addr);
+    if (!ISUSED(rt, i)) return;
+
+
     Reply rep = *addr;
 
     printSpace(depth);
@@ -181,19 +206,21 @@ void displayReply(ReplyAddress addr, ListUser l, int depth)
         displayString(BODY(rep));
         printf("\n");
     }
+    printf("\n");
 }
 
 void displayAllReply(ReplyTree rt, ListUser l)
 // I.S. compressed rt
 {
-    int length = rt.numReplyEff;
+    int length = LISTREP(rt).neff;
     int i;
     for (i = 0; i < length; i++) {
         Reply r = (*ADDR(LISTREP(rt), i));
-        if (ISMAIN(r)) {
+        if (ISMAIN(r) && ISUSED(rt, i)) {
             displayAllReply_helper(rt, l, 0, i);
         }
     }
+
 }
 
 void displayAllReply_helper(ReplyTree rt, ListUser l, int currDepth, int idx)
@@ -202,8 +229,46 @@ void displayAllReply_helper(ReplyTree rt, ListUser l, int currDepth, int idx)
     ReplyAddress ra = ADDR(LISTREP(rt), idx);
     int neff = NEFF(adjlist);
     int i;
-    displayReply(ra, l, currDepth);
+
+    displayReply(rt, ra, l, currDepth);
+
     for (i = 0; i < neff; i++) {
         displayAllReply_helper(rt, l, currDepth+1, adjlist.buffer[i]);
     }
+}
+
+int getIdxFromReplyId(ReplyTree rt, int replyID)
+// compressed rt
+{
+    int i;
+    
+    for (i =0; i < rt.numReplyEff; i++) {
+        if (REPLYID(*ADDR(LISTREP(rt), i)) == replyID) return i;
+    }
+
+    return -1;
+}
+
+void deleteReply(ReplyTree *rt, int replyID)
+
+{
+    int parent = PARENT(*rt, replyID);
+    if (parent == -1) {
+        ISMAIN(*ADDR(LISTREP(*rt), replyID)) = false;
+    } else {
+        // remove from parent
+        removeElmt(&LISTDIN(*rt, PARENT(*rt, replyID)), replyID);
+    }
+
+    
+    ISUSED(*rt, replyID) = 0;
+    rt -> numReplyEff -=1;
+
+    // remove the children.
+    int neff = LISTDIN(*rt, replyID).nEff;
+    int i;
+    for (i = 0; i < neff; i++) {
+        deleteReply(rt, LISTDIN(*rt, replyID).buffer[i]);
+    }
+    
 }
