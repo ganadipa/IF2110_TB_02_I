@@ -16,7 +16,7 @@ typedef struct user {
     String name;
     String password;
     Profile profile;
-    RequestQueue friendRequest
+    RequestQueue friendRequest;
 } User;
 
 
