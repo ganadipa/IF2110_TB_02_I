@@ -5,11 +5,26 @@
 void InisialisasiKicau(Kicauan *k,int IDuser){
     userKicau(*k) = IDuser;
     likeKicau(*k) = 0;
+    isUtas(*k) = false;
+    LinkUtas(*k) = NULL;
+    lenUtas(*k) = 0;
 }
 /**
  * I.S. u sembarang
  * F.S. user memiliki name "user" dan ID "ID", dan properti sisanya default.
 */
+
+void  nambahlenUtas(Kicauan *k){
+    lenUtas(*k)++;
+}
+
+void  kuranglenUtas(Kicauan *k){
+    lenUtas(*k)--;
+}
+
+void setIsUtasTrue ( Kicauan *k){
+    isUtas(*k) = true;
+}
 
 void setKicauID (Kicauan *k, int IDKicau){
     IDKicau(*k) = IDKicau;

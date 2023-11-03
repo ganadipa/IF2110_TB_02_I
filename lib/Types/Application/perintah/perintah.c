@@ -49,9 +49,10 @@ void handleCommand(Application* app, String command, boolean *finish)
     } else if (compareString(firstWord, "KICAUAN")) {
         TampilinKicauan(app);
     } else if (compareString(firstWord, "SUKA_KICAUAN")) {
-        SukaKicauan(app,1);
+        int ID = stringToInt(secondWord);
+        SukaKicauan(app,ID);
     } else if (compareString(firstWord, "UBAH_KICAUAN")) {
-        //Convert second word ke integer biar dimasukkin ke function
+        int ID = stringToInt(secondWord);
         UbahKicauan(app,1);
     } else if (compareString(firstWord, "TAMBAH_TEMAN")) {
         TambahTeman(app);

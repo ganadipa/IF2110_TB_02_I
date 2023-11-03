@@ -34,6 +34,10 @@ void SukaKicauan(Application *app, int ID){
         printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
         return;
     }
+    if ( KICAUAN(*app).nEff < ID ){
+        printf("Tidak ditemukan kicauan dengan ID = %d\n;", ID);
+        return;
+    }
 
 
     if (LOGINID(*app) == ELMT(KICAUAN(*app), ID - 1).IDuser){
@@ -46,7 +50,7 @@ void SukaKicauan(Application *app, int ID){
                 addLike( &ELMT(KICAUAN(*app) , ID - 1) );
                 printKicauan( KICAUAN(*app).buffer[ ID-1 ], returnUsername(*app, KICAUAN(*app).buffer[ID-1].IDuser));
             } else {
-                printf("Wah, kicauan tersebut dibuat oleh akun privat! Ikuti akun itu dulu ya");
+                printf("Wah, kicauan tersebut dibuat oleh akun privat! Ikuti akun itu dulu ya\n");
             }
         } else {
             addLike( &ELMT(KICAUAN(*app) , ID - 1) );
@@ -65,17 +69,20 @@ void UbahKicauan(Application *app, int ID){
         printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
         return;
     }
+    if ( KICAUAN(*app).nEff < ID ){
+        printf("Tidak ditemukan kicauan dengan ID = %d\n;", ID);
+        return;
+    }
     String teksBaru;
     createEmptyString(&teksBaru, 280);
+    printf("Kicauan yang dimasukkan terpotong secara otomatis apabila jumlah karakter lebih dari 280.\n");
     readString(&teksBaru, 280);
-
-    printf("Kicauan yang dimasukkan terpotong secara otomatis apabila jumlah karakter lebih dari 280.");
 
 
     if (LOGINID(*app) ==ELMT( KICAUAN(*app), ID - 1).IDuser  ){
         setText(&ELMT(KICAUAN(*app), ID - 1), teksBaru);
     }else{
-        printf("Kamu hanya bisa mengubah kicauan milikmu sendiri");
+        printf("Kamu hanya bisa mengubah kicauan milikmu sendiri\n");
     }
 }
 
@@ -85,7 +92,7 @@ void Kicau(Application *app) {
         return;
     }
     String teks;
-    printf("Kicauan yang dimasukkan terpotong secara otomatis apabila jumlah karakter lebih dari 280.");
+    printf("Kicauan yang dimasukkan terpotong secara otomatis apabila jumlah karakter lebih dari 280.\n");
     createEmptyString(&teks, 280);
     printf("Masukkan Kicauan : ");
     readString(&teks, 280);
