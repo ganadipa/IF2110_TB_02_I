@@ -1,0 +1,10 @@
+displayString(app.users.contents[1].name);
+    printf("\n");
+    displayString(app.users.contents[1].password);
+    printf("\n");
+    displayString(app.users.contents[1].profile.bio);
+    printf("\n");
+    displayString(app.users.contents[1].profile.phoneNumber);
+    printf("\n");
+    displayString(app.users.contents[1].profile.weton);
+    printf("\n");

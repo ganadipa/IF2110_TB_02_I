@@ -32,7 +32,7 @@ $(PROGRAM): $(OBJECTS)
 
 clean: 
 	@rm -rf $(BINDIR)
-	@echo "Cleaning upp files..."
+	@echo "Cleaning up files..."
 
 # Target to run the application
 run: $(PROGRAM)
