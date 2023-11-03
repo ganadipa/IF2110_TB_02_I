@@ -43,11 +43,11 @@
  lib/Types/./../ADT/DateTime/datetime.h \
  lib/Types/./../ADT/DateTime/../../boolean.h \
  lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ListUser.h \
- lib/Types/RequestQueue.h lib/Types/DrafKicauan.h lib/Types/Kicauan.h \
+ lib/Types/RequestQueue.h lib/Types/DrafKicauan.h \
+ lib/Types/../ADT/String/string.h lib/Types/Kicauan.h \
  lib/Types/Application/perintah/../balasan/balasan.h \
  lib/Types/Application/perintah/../draf-kicauan/draf-kicauan.h \
- lib/Types/Application/perintah/../draf-kicauan/../Application.h \
- lib/ADT/../ADT/String/string.h \
+ lib/Types/Application/Application.h lib/ADT/../ADT/String/string.h \
  lib/Types/Application/perintah/../draf-kicauan/../../DrafKicauan.h \
  lib/Types/Application/perintah/../inisialisasi/inisialisasi.h \
  lib/Types/Application/perintah/../inisialisasi/../Application.h \
@@ -163,10 +163,11 @@ lib/Types/./../ADT/DateTime/../String/string.h:
 lib/Types/./ListUser.h:
 lib/Types/RequestQueue.h:
 lib/Types/DrafKicauan.h:
+lib/Types/../ADT/String/string.h:
 lib/Types/Kicauan.h:
 lib/Types/Application/perintah/../balasan/balasan.h:
 lib/Types/Application/perintah/../draf-kicauan/draf-kicauan.h:
-lib/Types/Application/perintah/../draf-kicauan/../Application.h:
+lib/Types/Application/Application.h:
 lib/ADT/../ADT/String/string.h:
 lib/Types/Application/perintah/../draf-kicauan/../../DrafKicauan.h:
 lib/Types/Application/perintah/../inisialisasi/inisialisasi.h:

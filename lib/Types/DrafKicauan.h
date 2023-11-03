@@ -1,10 +1,11 @@
 
-#ifndef _KICAUAN_H
-#define _KICAUAN_H
+#ifndef DRAFKICAUAN_H
+#define DRAFKICAUAN_H
 
-#include "Kicauan.h"
 #include <stdio.h> 
 #include "../boolean.h"
+#include "../ADT/String/string.h"
+#include "Kicauan.h"
 
 #define Nil -1
 #define MaxEl 100
@@ -16,7 +17,7 @@ typedef int address;   /* indeks tabel */
 /* Contoh deklarasi variabel bertype stack dengan ciri TOP : */
 /* Versi I : dengan menyimpan tabel dan alamat top secara eksplisit*/
 typedef struct { 
-  Kicauan T[MaxEl]; /* tabel penyimpan elemen */
+  infodraf T[MaxEl]; /* tabel penyimpan elemen */
   address TOP;  /* alamat TOP: elemen puncak */
 } DrafKicau;
 
@@ -26,7 +27,6 @@ typedef struct {
 void CreateDraf(DrafKicau *draf);
 
 boolean isDrafEmpty(DrafKicau draf);
-
 
 void InisialisasiDrafKicau(Kicauan *k, int IDUser); 
 

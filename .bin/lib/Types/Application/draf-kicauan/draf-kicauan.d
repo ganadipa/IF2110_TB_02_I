@@ -1,5 +1,5 @@
-.bin/lib/Types/Application/inisialisasi/inisialisasi.o: \
- lib/Types/Application/inisialisasi/inisialisasi.c \
+.bin/lib/Types/Application/draf-kicauan/draf-kicauan.o: \
+ lib/Types/Application/draf-kicauan/draf-kicauan.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -23,8 +23,8 @@
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- lib/Types/Application/inisialisasi/inisialisasi.h \
- lib/Types/Application/inisialisasi/../Application.h lib/ADT/../boolean.h \
+ lib/Types/Application/draf-kicauan/draf-kicauan.h \
+ lib/Types/Application/Application.h lib/ADT/../boolean.h \
  lib/Types/./ListUser.h lib/Types/./../boolean.h lib/Types/./User.h \
  lib/Types/./../ADT/String/string.h \
  lib/Types/./../ADT/String/../../boolean.h \
@@ -44,7 +44,9 @@
  lib/Types/./../ADT/DateTime/../../boolean.h \
  lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ListUser.h \
  lib/Types/RequestQueue.h lib/Types/DrafKicauan.h \
- lib/Types/../ADT/String/string.h lib/Types/Kicauan.h
+ lib/Types/../ADT/String/string.h lib/Types/Kicauan.h \
+ lib/ADT/../ADT/String/string.h \
+ lib/Types/Application/draf-kicauan/../../DrafKicauan.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -70,8 +72,8 @@
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-lib/Types/Application/inisialisasi/inisialisasi.h:
-lib/Types/Application/inisialisasi/../Application.h:
+lib/Types/Application/draf-kicauan/draf-kicauan.h:
+lib/Types/Application/Application.h:
 lib/ADT/../boolean.h:
 lib/Types/./ListUser.h:
 lib/Types/./../boolean.h:
@@ -103,3 +105,5 @@ lib/Types/RequestQueue.h:
 lib/Types/DrafKicauan.h:
 lib/Types/../ADT/String/string.h:
 lib/Types/Kicauan.h:
+lib/ADT/../ADT/String/string.h:
+lib/Types/Application/draf-kicauan/../../DrafKicauan.h:

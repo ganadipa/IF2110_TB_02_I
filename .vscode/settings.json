@@ -30,6 +30,8 @@
     "listlinier.h": "c",
     "balasan.h": "c",
     "devtools.h": "c",
-    "draf-kicauan.h": "c"
+    "draf-kicauan.h": "c",
+    "requestqueue.h": "c",
+    "drafkicauan.h": "c"
   }
 }

@@ -1,5 +1,4 @@
-#include <stdio.h> 
-#include "./DrafKicauan.h"
+#include "DrafKicauan.h"
 
 void CreateDraf(DrafKicau *S){
     TopDraf(*S) = Nil; 
@@ -19,15 +18,22 @@ void setDrafIDKicau(Kicauan *k, int IDKicau){
 }
 
 void PushDraf(DrafKicau *S, Kicauan k){
-    TopDraf(*S)++; 
-    InfoTopDraf(*S) = k; 
+    if(isDrafEmpty(*S)){
+        TopDraf(*S) = 0;
+        InfoTopDraf(*S) = k;
+    }
+    else{
+        TopDraf(*S) += 1; 
+        InfoTopDraf(*S) = k; 
+    }
 }
-
-Kicauan ToDatabase(Kicauan k){
-    return k;
-} 
 
 void PopDraf(DrafKicau *S, Kicauan *k){
     *k = InfoTopDraf(*S); 
-    TopDraf(*S)--;
+    if(TopDraf(*S) == 0){
+        TopDraf(*S) = Nil;
+    }
+    else{
+        TopDraf(*S) -= 1;
+    }
 }
