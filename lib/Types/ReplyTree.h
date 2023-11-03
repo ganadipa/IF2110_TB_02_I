@@ -1,64 +1,83 @@
-// #ifndef replyTREE_H
-// #define replyTREE_H
+#ifndef REPLYTREE_H
+#define REPLYTREE_H
 
-// #include "../ADT/ListDinamik/listdinamik.h"
-// #include "../ADT/DateTime/datetime.h"
-
-// typedef Reply *ReplyAddress; 
-
-// typedef struct reply {
-//     int id;
-//     String body;
-//     int authorID;
-//     DATETIME time;
-// } Reply;
-
-// #define REPLYID(r) (r).id
-// #define BODY(r) (r).body
-// #define AUTHORID(r) (r).authorID
-// #define DTIME(r) (r).time
-
-// typedef struct replytree {
-//     ListDin *adjlists; // pointer to first list dinamis
-//     ListReply *listreply; 
-//     ListDin* used;
-//     int numReply;
-//     int maxReply;
-// } ReplyTree;
-
-// #define LISTDIN(rt, i) (rt).adjlists[i]
-// #define USED(rt) (rt).used[i]
-// #define NUMREP(rt) (rt).numReply
-// #define MAXREP(rt) (rt).maxReply
+#include "../ADT/ListDinamik/listdinamik.h"
+#include "../ADT/DateTime/datetime.h"
+#include "ListUser.h"
 
 
-// typedef struct listreply{
-//     ReplyAddress *buffer;
-//     int neff;
-//     int capacity;
-// } ListReply;
 
-// #define CAPLR(lr) (lr).capacity
-// #define NEFFLR(lr) (lr).neff
-// #define ADDR(lr, i) (lr).buffer[i]
+typedef struct reply {
+    int id;
+    String body;
+    int authorID;
+    DATETIME time;
+    boolean mainReply; // artinya dia attached to root atau ngga
+} Reply;
 
-// int generateReplyID(ReplyTree *rt);
+typedef struct reply *ReplyAddress; 
 
-// void createReplyTree(ReplyTree *rt, int capacity);
 
-// void extendReplyTree(ReplyTree *rt);
+#define REPLYID(r) (r).id
+#define BODY(r) (r).body
+#define AUTHORID(r) (r).authorID
+#define DTIME(r) (r).time
+#define ISMAIN(r) (r).mainReply
 
-// void compressReplyTree(ReplyTree *rt);
+typedef struct listreply{
+    ReplyAddress *buffer;
+    int neff;
+    int capacity;
+} ListReply;
 
-// void addReply(ReplyTree *rt);
+#define CAPLR(lr) (lr).capacity
+#define NEFFLR(lr) (lr).neff
+#define ADDR(lr, i) (lr).buffer[i]
 
-// void addChildToReply(ReplyTree *rt, ReplyAddress parent, ReplyAddress child);
+typedef struct replytree {
+    ListDin *adjlists; // pointer to first list dinamis
+    ListReply *listreply; 
+    ListDin* used;
+    ListDin* parent;
+    int numReplyEff;
+    int availableID;
+    int maxReply;
+    int availableIDX;
 
-// void displayReply(ReplyTree *rt, ReplyAddress addr);
+} ReplyTree;
 
-// void displayAllReply(ReplyTree *rt, int maxDepth, int maxSibling);
+#define LISTDIN(rt, i) (rt).adjlists[i]
+#define USED(rt) (*((rt).used))
+#define ISUSED(rt, i) (*(rt).used).buffer[i]
+#define MAXREP(rt) (rt).maxReply
+#define LISTREP(rt) (*((rt).listreply))
+#define NUMREP(rt) (rt).numReplyEff
 
 
 
 
-// #endif
+int generateReplyID(ReplyTree rt);
+
+void createReplyTree(ReplyTree *rt, int capacity);
+
+void extendReplyTree(ReplyTree *rt);
+
+void compressReplyTree(ReplyTree *rt);
+
+void addReply(ReplyTree *rt);
+
+void addChildToReply(ReplyTree *rt, ReplyAddress parent, ReplyAddress child);
+
+void swapIndexTree(ReplyTree *rt, int i, int j);
+
+void displayReply(ReplyAddress addr, ListUser l, int depth);
+
+void displayAllReply(ReplyTree rt, ListUser l);
+
+void displayAllReply_helper(ReplyTree rt, ListUser l, int currDepth, int idx);
+
+ReplyAddress newReply(String body, boolean isMain);
+
+
+
+#endif

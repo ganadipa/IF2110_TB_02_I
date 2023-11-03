@@ -5,6 +5,7 @@
 void InisialisasiKicau(Kicauan *k,int IDuser){
     userKicau(*k) = IDuser;
     likeKicau(*k) = 0;
+    createReplyTree(&BALASAN(*k), 100);
 }
 /**
  * I.S. u sembarang

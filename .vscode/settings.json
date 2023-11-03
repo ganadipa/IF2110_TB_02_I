@@ -29,6 +29,7 @@
     "kicauan.h": "c",
     "listlinier.h": "c",
     "balasan.h": "c",
-    "devtools.h": "c"
+    "devtools.h": "c",
+    "requestqueue.h": "c"
   }
 }

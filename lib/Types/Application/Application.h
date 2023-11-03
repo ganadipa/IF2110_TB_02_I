@@ -13,7 +13,7 @@
 typedef struct application {
     boolean isLoggedIn;
     int loginID;
-    ListUser users; // Used list dengan array statik
+    ListUser users; // User list dengan array statik
     Graf friendships;
     ListKicau listKicauan; 
 } Application;
