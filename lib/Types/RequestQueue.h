@@ -62,5 +62,6 @@ void dequeueRequestQueue(RequestQueue *Q, Friend *F);
 
 void removeElmt_RequestQueue(RequestQueue *Q, int idx);
 
-int getIndex_RequestQueue(RequestQueue Q, int ID)
+int getIndex_RequestQueue(RequestQueue Q, int ID);
+
 #endif
