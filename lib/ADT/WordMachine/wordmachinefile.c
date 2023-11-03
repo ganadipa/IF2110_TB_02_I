@@ -56,8 +56,8 @@ void ADVWORDFILE(){
         EndFile = true;
     } else{
         CopyWordFILE();
-        IgnoreNewLinesFile();
-        // IgnoreNullFile();
+        ADVCHARFILE();
+        IgnoreNullFile();
     }
 }
 
