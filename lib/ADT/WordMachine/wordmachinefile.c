@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "wordmachinefile.h"
 
-boolean EndFile;
 String currentWordFile;
 
 void IgnoreNewLinesFile()

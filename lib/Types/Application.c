@@ -354,12 +354,10 @@ void Kicau(Application *app){
         return;
     }
     String teks;
+    printf("Kicauan yang dimasukkan terpotong secara otomatis apabila jumlah karakter lebih dari 280.");
     createEmptyString(&teks, 280);
     printf("Masukkan Kicauan : ");
     readString(&teks, 280);
-    // if (&teks > 280){
-    //     printf("Kicauan yang dimasukkan terpotong secara otomatis dengan jumlah karakter maksimum 280.");
-    // }
 
     int IDUSER = LOGINID(*app);
 
@@ -441,9 +439,9 @@ void UbahKicauan(Application *app, int ID){
     String teksBaru;
     createEmptyString(&teksBaru, 280);
     readString(&teksBaru, 280);
-    if (&teksBaru > 280){
-        printf("Kicauan yang dimasukkan terpotong secara otomatis dengan jumlah karakter maksimum 280.");
-    }
+
+    printf("Kicauan yang dimasukkan terpotong secara otomatis apabila jumlah karakter lebih dari 280.");
+
 
     if (LOGINID(*app) ==ELMT( KICAUAN(*app), ID - 1).IDuser  ){
         setText(&ELMT(KICAUAN(*app), ID - 1), teksBaru);
