@@ -28,28 +28,52 @@
  Function/../lib/ADT/WordMachine/../.././ADT/Tree/tree.h \
  Function/../lib/ADT/WordMachine/../.././ADT/PColor/pcolor.h \
  Function/../lib/ADT/WordMachine/../.././boolean.h \
- Function/../lib/ADT/WordMachine/../.././Types/Application.h \
- Function/../lib/ADT/WordMachine/../.././Types/../boolean.h \
- Function/../lib/ADT/WordMachine/../.././Types/./ListUser.h \
- Function/../lib/ADT/WordMachine/../.././Types/./../boolean.h \
- Function/../lib/ADT/WordMachine/../.././Types/././User.h \
- Function/../lib/ADT/WordMachine/../.././Types/././../boolean.h \
- Function/../lib/ADT/WordMachine/../.././Types/././../ADT/String/string.h \
- Function/../lib/ADT/WordMachine/../.././Types/././Profile.h \
- Function/../lib/ADT/WordMachine/../.././Types/././Photo.h \
- Function/../lib/ADT/WordMachine/../.././Types/././../ADT/Matriks/charMatriks.h \
- Function/../lib/ADT/WordMachine/../.././Types/././../ADT/Matriks/../../boolean.h \
- Function/../lib/ADT/WordMachine/../.././Types/../ADT/Graf/graf.h \
- Function/../lib/ADT/WordMachine/../.././Types/listKicauan.h \
- Function/../lib/ADT/WordMachine/../.././Types/./Kicauan.h \
- Function/../lib/ADT/WordMachine/../.././Types/./User.h \
- Function/../lib/ADT/WordMachine/../.././Types/./../ADT/String/string.h \
- Function/../lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/datetime.h \
- Function/../lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../../boolean.h \
- Function/../lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../String/string.h \
- Function/../lib/ADT/WordMachine/../.././Types/User.h \
- Function/../lib/ADT/WordMachine/../.././Types/Profile.h \
- Function/../lib/ADT/WordMachine/../.././Types/Photo.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/Application.h \
+ lib/ADT/../boolean.h lib/Types/./ListUser.h lib/Types/./../boolean.h \
+ lib/Types/./User.h lib/Types/./../ADT/String/string.h \
+ lib/Types/./Profile.h lib/Types/./Photo.h \
+ lib/Types/./../ADT/Matriks/charMatriks.h \
+ lib/Types/./../ADT/Matriks/../../boolean.h lib/Types/./RequestQueue.h \
+ lib/ADT/../ADT/Graf/graf.h lib/Types/listKicauan.h \
+ lib/Types/../boolean.h lib/Types/./Kicauan.h \
+ lib/Types/./../ADT/DateTime/datetime.h \
+ lib/Types/./../ADT/DateTime/../../boolean.h \
+ lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ListUser.h \
+ lib/Types/RequestQueue.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/balasan/balasan.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/draf-kicauan.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/inisialisasi/inisialisasi.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/inisialisasi/../Application.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/kicauan/kicauan.h \
+ lib/ADT/../ADT/String/string.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/kicauan/../Application.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/kicauan/../../Kicauan.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/pengguna/pengguna.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/pengguna/../Application.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/profil/profil.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/profil/../Application.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/simpan-dan-muat/simpan-dan-muat.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/permintaan-pertemanan/permintaan-pertemanan.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/permintaan-pertemanan/../Application.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/permintaan-pertemanan/../../../ADT/String/string.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/teman/teman.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/teman/../Application.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/utas/utas.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/perintah.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../Application.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../balasan/balasan.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../draf-kicauan/draf-kicauan.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../inisialisasi/inisialisasi.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../kicauan/kicauan.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../pengguna/pengguna.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../profil/profil.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../teman/teman.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../utas/utas.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../Devtools.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../Application.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/Devtools.h \
  Function/../lib/ADT/WordMachine/../../boolean.h \
  Function/../lib/ADT/WordMachine/wordmachinefile.h \
  Function/../lib/ADT/WordMachine/charmachinefile.h \
@@ -111,28 +135,60 @@ Function/../lib/ADT/WordMachine/../.././ADT/Stack/../../boolean.h:
 Function/../lib/ADT/WordMachine/../.././ADT/Tree/tree.h:
 Function/../lib/ADT/WordMachine/../.././ADT/PColor/pcolor.h:
 Function/../lib/ADT/WordMachine/../.././boolean.h:
-Function/../lib/ADT/WordMachine/../.././Types/Application.h:
-Function/../lib/ADT/WordMachine/../.././Types/../boolean.h:
-Function/../lib/ADT/WordMachine/../.././Types/./ListUser.h:
-Function/../lib/ADT/WordMachine/../.././Types/./../boolean.h:
-Function/../lib/ADT/WordMachine/../.././Types/././User.h:
-Function/../lib/ADT/WordMachine/../.././Types/././../boolean.h:
-Function/../lib/ADT/WordMachine/../.././Types/././../ADT/String/string.h:
-Function/../lib/ADT/WordMachine/../.././Types/././Profile.h:
-Function/../lib/ADT/WordMachine/../.././Types/././Photo.h:
-Function/../lib/ADT/WordMachine/../.././Types/././../ADT/Matriks/charMatriks.h:
-Function/../lib/ADT/WordMachine/../.././Types/././../ADT/Matriks/../../boolean.h:
-Function/../lib/ADT/WordMachine/../.././Types/../ADT/Graf/graf.h:
-Function/../lib/ADT/WordMachine/../.././Types/listKicauan.h:
-Function/../lib/ADT/WordMachine/../.././Types/./Kicauan.h:
-Function/../lib/ADT/WordMachine/../.././Types/./User.h:
-Function/../lib/ADT/WordMachine/../.././Types/./../ADT/String/string.h:
-Function/../lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/datetime.h:
-Function/../lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../../boolean.h:
-Function/../lib/ADT/WordMachine/../.././Types/./../ADT/DateTime/../String/string.h:
-Function/../lib/ADT/WordMachine/../.././Types/User.h:
-Function/../lib/ADT/WordMachine/../.././Types/Profile.h:
-Function/../lib/ADT/WordMachine/../.././Types/Photo.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/Application.h:
+lib/ADT/../boolean.h:
+lib/Types/./ListUser.h:
+lib/Types/./../boolean.h:
+lib/Types/./User.h:
+lib/Types/./../ADT/String/string.h:
+lib/Types/./Profile.h:
+lib/Types/./Photo.h:
+lib/Types/./../ADT/Matriks/charMatriks.h:
+lib/Types/./../ADT/Matriks/../../boolean.h:
+lib/Types/./RequestQueue.h:
+lib/ADT/../ADT/Graf/graf.h:
+lib/Types/listKicauan.h:
+lib/Types/../boolean.h:
+lib/Types/./Kicauan.h:
+lib/Types/./../ADT/DateTime/datetime.h:
+lib/Types/./../ADT/DateTime/../../boolean.h:
+lib/Types/./../ADT/DateTime/../String/string.h:
+lib/Types/./ListUser.h:
+lib/Types/RequestQueue.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/balasan/balasan.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/draf-kicauan.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/inisialisasi/inisialisasi.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/inisialisasi/../Application.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/kicauan/kicauan.h:
+lib/ADT/../ADT/String/string.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/kicauan/../Application.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/kicauan/../../Kicauan.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/pengguna/pengguna.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/pengguna/../Application.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/profil/profil.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/profil/../Application.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/simpan-dan-muat/simpan-dan-muat.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/permintaan-pertemanan/permintaan-pertemanan.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/permintaan-pertemanan/../Application.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/permintaan-pertemanan/../../../ADT/String/string.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/teman/teman.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/teman/../Application.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/utas/utas.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/perintah.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../Application.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../balasan/balasan.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../draf-kicauan/draf-kicauan.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../inisialisasi/inisialisasi.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../kicauan/kicauan.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../pengguna/pengguna.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../profil/profil.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../teman/teman.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../utas/utas.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../Devtools.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../Application.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/Devtools.h:
 Function/../lib/ADT/WordMachine/../../boolean.h:
 Function/../lib/ADT/WordMachine/wordmachinefile.h:
 Function/../lib/ADT/WordMachine/charmachinefile.h:

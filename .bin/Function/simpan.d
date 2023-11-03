@@ -57,26 +57,52 @@
  Function/../lib/./ADT/Stack/stack.h \
  Function/../lib/./ADT/Stack/../../boolean.h \
  Function/../lib/./ADT/Tree/tree.h Function/../lib/./ADT/PColor/pcolor.h \
- Function/../lib/./boolean.h Function/../lib/./Types/Application.h \
- Function/../lib/./Types/../boolean.h \
- Function/../lib/./Types/./ListUser.h \
- Function/../lib/./Types/./../boolean.h \
- Function/../lib/./Types/././User.h \
- Function/../lib/./Types/././../boolean.h \
- Function/../lib/./Types/././../ADT/String/string.h \
- Function/../lib/./Types/././Profile.h \
- Function/../lib/./Types/././Photo.h \
- Function/../lib/./Types/././../ADT/Matriks/charMatriks.h \
- Function/../lib/./Types/././../ADT/Matriks/../../boolean.h \
- Function/../lib/./Types/../ADT/Graf/graf.h \
- Function/../lib/./Types/listKicauan.h \
- Function/../lib/./Types/./Kicauan.h Function/../lib/./Types/./User.h \
- Function/../lib/./Types/./../ADT/String/string.h \
- Function/../lib/./Types/./../ADT/DateTime/datetime.h \
- Function/../lib/./Types/./../ADT/DateTime/../../boolean.h \
- Function/../lib/./Types/./../ADT/DateTime/../String/string.h \
- Function/../lib/./Types/User.h Function/../lib/./Types/Profile.h \
- Function/../lib/./Types/Photo.h
+ Function/../lib/./boolean.h \
+ Function/../lib/./Types/Application/Application.h lib/ADT/../boolean.h \
+ lib/Types/./ListUser.h lib/Types/./../boolean.h lib/Types/./User.h \
+ lib/Types/./../ADT/String/string.h lib/Types/./Profile.h \
+ lib/Types/./Photo.h lib/Types/./../ADT/Matriks/charMatriks.h \
+ lib/Types/./../ADT/Matriks/../../boolean.h lib/Types/./RequestQueue.h \
+ lib/ADT/../ADT/Graf/graf.h lib/Types/listKicauan.h \
+ lib/Types/../boolean.h lib/Types/./Kicauan.h \
+ lib/Types/./../ADT/DateTime/datetime.h \
+ lib/Types/./../ADT/DateTime/../../boolean.h \
+ lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ListUser.h \
+ lib/Types/RequestQueue.h \
+ Function/../lib/./Types/Application/balasan/balasan.h \
+ Function/../lib/./Types/Application/draf-kicauan/draf-kicauan.h \
+ Function/../lib/./Types/Application/inisialisasi/inisialisasi.h \
+ Function/../lib/./Types/Application/inisialisasi/../Application.h \
+ Function/../lib/./Types/Application/kicauan/kicauan.h \
+ lib/ADT/../ADT/String/string.h \
+ Function/../lib/./Types/Application/kicauan/../Application.h \
+ Function/../lib/./Types/Application/kicauan/../../Kicauan.h \
+ Function/../lib/./Types/Application/pengguna/pengguna.h \
+ Function/../lib/./Types/Application/pengguna/../Application.h \
+ Function/../lib/./Types/Application/profil/profil.h \
+ Function/../lib/./Types/Application/profil/../Application.h \
+ Function/../lib/./Types/Application/simpan-dan-muat/simpan-dan-muat.h \
+ Function/../lib/./Types/Application/permintaan-pertemanan/permintaan-pertemanan.h \
+ Function/../lib/./Types/Application/permintaan-pertemanan/../Application.h \
+ Function/../lib/./Types/Application/permintaan-pertemanan/../../../ADT/String/string.h \
+ Function/../lib/./Types/Application/teman/teman.h \
+ Function/../lib/./Types/Application/teman/../Application.h \
+ Function/../lib/./Types/Application/utas/utas.h \
+ Function/../lib/./Types/Application/perintah/perintah.h \
+ Function/../lib/./Types/Application/perintah/../Application.h \
+ Function/../lib/./Types/Application/perintah/../balasan/balasan.h \
+ Function/../lib/./Types/Application/perintah/../draf-kicauan/draf-kicauan.h \
+ Function/../lib/./Types/Application/perintah/../inisialisasi/inisialisasi.h \
+ Function/../lib/./Types/Application/perintah/../kicauan/kicauan.h \
+ Function/../lib/./Types/Application/perintah/../pengguna/pengguna.h \
+ Function/../lib/./Types/Application/perintah/../profil/profil.h \
+ Function/../lib/./Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h \
+ Function/../lib/./Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h \
+ Function/../lib/./Types/Application/perintah/../teman/teman.h \
+ Function/../lib/./Types/Application/perintah/../utas/utas.h \
+ Function/../lib/./Types/Application/perintah/../Devtools.h \
+ Function/../lib/./Types/Application/perintah/../Application.h \
+ Function/../lib/./Types/Application/Devtools.h
 /usr/include/stdc-predef.h:
 Function/simpan.h:
 /usr/include/stdio.h:
@@ -142,25 +168,57 @@ Function/../lib/./ADT/Stack/../../boolean.h:
 Function/../lib/./ADT/Tree/tree.h:
 Function/../lib/./ADT/PColor/pcolor.h:
 Function/../lib/./boolean.h:
-Function/../lib/./Types/Application.h:
-Function/../lib/./Types/../boolean.h:
-Function/../lib/./Types/./ListUser.h:
-Function/../lib/./Types/./../boolean.h:
-Function/../lib/./Types/././User.h:
-Function/../lib/./Types/././../boolean.h:
-Function/../lib/./Types/././../ADT/String/string.h:
-Function/../lib/./Types/././Profile.h:
-Function/../lib/./Types/././Photo.h:
-Function/../lib/./Types/././../ADT/Matriks/charMatriks.h:
-Function/../lib/./Types/././../ADT/Matriks/../../boolean.h:
-Function/../lib/./Types/../ADT/Graf/graf.h:
-Function/../lib/./Types/listKicauan.h:
-Function/../lib/./Types/./Kicauan.h:
-Function/../lib/./Types/./User.h:
-Function/../lib/./Types/./../ADT/String/string.h:
-Function/../lib/./Types/./../ADT/DateTime/datetime.h:
-Function/../lib/./Types/./../ADT/DateTime/../../boolean.h:
-Function/../lib/./Types/./../ADT/DateTime/../String/string.h:
-Function/../lib/./Types/User.h:
-Function/../lib/./Types/Profile.h:
-Function/../lib/./Types/Photo.h:
+Function/../lib/./Types/Application/Application.h:
+lib/ADT/../boolean.h:
+lib/Types/./ListUser.h:
+lib/Types/./../boolean.h:
+lib/Types/./User.h:
+lib/Types/./../ADT/String/string.h:
+lib/Types/./Profile.h:
+lib/Types/./Photo.h:
+lib/Types/./../ADT/Matriks/charMatriks.h:
+lib/Types/./../ADT/Matriks/../../boolean.h:
+lib/Types/./RequestQueue.h:
+lib/ADT/../ADT/Graf/graf.h:
+lib/Types/listKicauan.h:
+lib/Types/../boolean.h:
+lib/Types/./Kicauan.h:
+lib/Types/./../ADT/DateTime/datetime.h:
+lib/Types/./../ADT/DateTime/../../boolean.h:
+lib/Types/./../ADT/DateTime/../String/string.h:
+lib/Types/./ListUser.h:
+lib/Types/RequestQueue.h:
+Function/../lib/./Types/Application/balasan/balasan.h:
+Function/../lib/./Types/Application/draf-kicauan/draf-kicauan.h:
+Function/../lib/./Types/Application/inisialisasi/inisialisasi.h:
+Function/../lib/./Types/Application/inisialisasi/../Application.h:
+Function/../lib/./Types/Application/kicauan/kicauan.h:
+lib/ADT/../ADT/String/string.h:
+Function/../lib/./Types/Application/kicauan/../Application.h:
+Function/../lib/./Types/Application/kicauan/../../Kicauan.h:
+Function/../lib/./Types/Application/pengguna/pengguna.h:
+Function/../lib/./Types/Application/pengguna/../Application.h:
+Function/../lib/./Types/Application/profil/profil.h:
+Function/../lib/./Types/Application/profil/../Application.h:
+Function/../lib/./Types/Application/simpan-dan-muat/simpan-dan-muat.h:
+Function/../lib/./Types/Application/permintaan-pertemanan/permintaan-pertemanan.h:
+Function/../lib/./Types/Application/permintaan-pertemanan/../Application.h:
+Function/../lib/./Types/Application/permintaan-pertemanan/../../../ADT/String/string.h:
+Function/../lib/./Types/Application/teman/teman.h:
+Function/../lib/./Types/Application/teman/../Application.h:
+Function/../lib/./Types/Application/utas/utas.h:
+Function/../lib/./Types/Application/perintah/perintah.h:
+Function/../lib/./Types/Application/perintah/../Application.h:
+Function/../lib/./Types/Application/perintah/../balasan/balasan.h:
+Function/../lib/./Types/Application/perintah/../draf-kicauan/draf-kicauan.h:
+Function/../lib/./Types/Application/perintah/../inisialisasi/inisialisasi.h:
+Function/../lib/./Types/Application/perintah/../kicauan/kicauan.h:
+Function/../lib/./Types/Application/perintah/../pengguna/pengguna.h:
+Function/../lib/./Types/Application/perintah/../profil/profil.h:
+Function/../lib/./Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h:
+Function/../lib/./Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h:
+Function/../lib/./Types/Application/perintah/../teman/teman.h:
+Function/../lib/./Types/Application/perintah/../utas/utas.h:
+Function/../lib/./Types/Application/perintah/../Devtools.h:
+Function/../lib/./Types/Application/perintah/../Application.h:
+Function/../lib/./Types/Application/Devtools.h:

@@ -22,6 +22,13 @@
     "listdinamik.h": "c",
     "types.h": "c",
     "typeinfo": "c",
-    "datetime.h": "c"
+    "datetime.h": "c",
+    "permintaan-pertemanan.h": "c",
+    "perintah.h": "c",
+    "pengguna.h": "c",
+    "kicauan.h": "c",
+    "listlinier.h": "c",
+    "balasan.h": "c",
+    "devtools.h": "c"
   }
 }
