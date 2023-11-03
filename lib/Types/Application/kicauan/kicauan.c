@@ -16,7 +16,7 @@ void TampilinKicauan(Application *app){
     }
     int i;
     int CurUser = LOGINID(*app);
-    for (i = NEFF(KICAUAN(*app)); i >= 0; i--){
+    for (i = NEFF(KICAUAN(*app))-1 ; i >=  0; i--){
         if ( KICAUAN(*app).buffer[i].IDuser == CurUser || isFriend(app, CurUser, KICAUAN(*app).buffer[i].IDuser)){
             printKicauan( KICAUAN(*app).buffer[i], returnUsername(*app,KICAUAN(*app).buffer[i].IDuser ));
         }
@@ -35,7 +35,7 @@ void SukaKicauan(Application *app, int ID){
         return;
     }
     if ( KICAUAN(*app).nEff < ID ){
-        printf("Tidak ditemukan kicauan dengan ID = %d\n;", ID);
+        printf("Tidak ditemukan kicauan dengan ID = %d\n", ID);
         return;
     }
 
@@ -46,7 +46,7 @@ void SukaKicauan(Application *app, int ID){
     } else {
         User u = ELMT_LISTUSER(LISTUSER(*app), ELMT(KICAUAN(*app), ID - 1).IDuser);
         if (ISPRIVATE(PROFILE(u))){
-            if (isFriend (app, LOGINID(*app), ELMT(KICAUAN(*app), ID - 1).IDuser)){
+            if (isFriend (app, LOGINID(*app), ELMT(KICAUAN(*app), ID - 1).IDuser)){  
                 addLike( &ELMT(KICAUAN(*app) , ID - 1) );
                 printKicauan( KICAUAN(*app).buffer[ ID-1 ], returnUsername(*app, KICAUAN(*app).buffer[ID-1].IDuser));
             } else {
@@ -69,13 +69,15 @@ void UbahKicauan(Application *app, int ID){
         printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
         return;
     }
-    if ( KICAUAN(*app).nEff < ID ){
-        printf("Tidak ditemukan kicauan dengan ID = %d\n;", ID);
+    // printf("%d %d\n", KICAUAN(*app).nEff,ID); //DEBUGGING
+    if ( (KICAUAN(*app).nEff) < ID ){
+        printf("Tidak ditemukan kicauan dengan ID = %d\n", ID);
         return;
     }
     String teksBaru;
     createEmptyString(&teksBaru, 280);
     printf("Kicauan yang dimasukkan terpotong secara otomatis apabila jumlah karakter lebih dari 280.\n");
+    printf("Masukkan Kicauan : ");
     readString(&teksBaru, 280);
 
 

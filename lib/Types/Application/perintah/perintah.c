@@ -53,7 +53,7 @@ void handleCommand(Application* app, String command, boolean *finish)
         SukaKicauan(app,ID);
     } else if (compareString(firstWord, "UBAH_KICAUAN")) {
         int ID = stringToInt(secondWord);
-        UbahKicauan(app,1);
+        UbahKicauan(app,ID);
     } else if (compareString(firstWord, "TAMBAH_TEMAN")) {
         TambahTeman(app);
     } else if (compareString(firstWord, "BATAL_TAMBAH_TEMAN")) {

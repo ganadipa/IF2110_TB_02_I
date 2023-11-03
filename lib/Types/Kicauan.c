@@ -57,16 +57,18 @@ void addLike(Kicauan *k){
 
 
 void printKicauan(Kicauan k, String nama ){
+    printf("\n");
     printf(" Detail Kicauan :");
     printf("\n| ID = %d", IDKicau(k));
+    printf("\n| ID = %d", userKicau(k));
     printf("\n| ");
-//  ELMT_LISTUSER(LISTUSER(*app), IDUSER).name
     displayString( nama);
     printf("\n| ");
     displayString(dateTimeKicau(k));
     printf("\n| ");
     displayString(teksKicau(k));
     printf("\n| Disukai : %d\n", likeKicau(k));
+    printf("\n");
 }
 
  
