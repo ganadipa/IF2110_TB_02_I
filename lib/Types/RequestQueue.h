@@ -65,7 +65,6 @@ void removeElmt_RequestQueue(RequestQueue *Q, int idx);
 
 int getIndex_RequestQueue(RequestQueue Q, int ID);
 
-void displayRequestQueue(RequestQueue Q, ListUser l);
 
 
 #endif

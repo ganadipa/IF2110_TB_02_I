@@ -141,20 +141,3 @@ int getIndex_RequestQueue(RequestQueue Q, int ID)
         return IDX_UNDEF;
     }
 }
-
-void displayRequestQueue(RequestQueue Q, ListUser l)
-
-{
-    int nb = lengthRequestQueue(Q);
-    printf("\nTerdapat %d permintaan pertemanan untuk Anda.\n", nb);
-
-    while (!isEmptyRequestQueue(Q))
-    {
-        Friend F;
-        dequeueRequestQueue(&Q, &F);
-        User u = ELMT_LISTUSER(l, ID_REQQUEUE(F));
-        printf("\n | Nama: ");
-        displayString(NAME(u));
-        printf("\n | Jumlah teman: %d\n", FRIEND_COUNT(u));
-    }
-}

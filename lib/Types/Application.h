@@ -112,6 +112,15 @@ void UbahKicauan(Application *app, int ID);
  * Untuk mengUpdate teks kicauan menjadi yang baru pada Kicauan dengan id "ID"
 */
 
+void TambahTeman(Application *app);
+
+void BatalTambahTeman(Application *app);
+
+void DaftarPermintaanPertemanan(Application app);
+
+void SetujuiPertemanan(Application *app);
+
+
 void BuatDraf(Application *app); 
 /* membuat draf baru untuk Draf kicauan*/
 void SimpanDraf(Application *app, Kicauan kicau);

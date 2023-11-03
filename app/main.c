@@ -55,7 +55,6 @@ void handleCommand(Application* app, String command, boolean *finish)
     } else if (compareString(firstWord, "UBAH_KICAUAN")) {
         //Convert second word ke integer biar dimasukkin ke function
         UbahKicauan(app,1);
-
     } else if(compareString(firstWord, "BUAT_DRAF")){
             BuatDraf(app);
     } else if(compareString(firstWord, "LIHAT_DRAF")){
@@ -67,7 +66,7 @@ void handleCommand(Application* app, String command, boolean *finish)
     } else if (compareString(firstWord, "BATAL_TAMBAH_TEMAN")) {
         BatalTambahTeman(app);
     } else if (compareString(firstWord, "DAFTAR_PERMINTAAN_PERTEMANAN")) {
-        DaftarPermintaanPertemanan(app);
+        DaftarPermintaanPertemanan(*app);
     } else if (compareString(firstWord, "SETUJUI_PERTEMANAN")) {
         SetujuiPertemanan(app);
     }
