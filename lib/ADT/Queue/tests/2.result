@@ -1,1 +1,1 @@
-lib/ADT/Queue/tests/2.in lib/ADT/Queue/tests/2.out: WRONG
+lib/ADT/Queue/tests/2.in lib/ADT/Queue/tests/2.out: TRUE

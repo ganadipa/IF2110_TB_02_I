@@ -1,4 +1,4 @@
-SRC_LISTDIN = lib/ADT/ListDinamik/listdin.c
+SRC_LISTDIN = lib/ADT/ListDinamik/listdinamik.c
 SRC_TEST = lib/ADT/ListDinamik/tests/mlistdin.c
 OBJ_LISTDIN = $(SRC_LISTDIN:.c=.o)
 OBJ_TEST = $(SRC_TEST:.c=.o)

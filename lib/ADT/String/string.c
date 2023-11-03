@@ -28,6 +28,61 @@ int stringLength(String s)
     return i;
 }
 
+int stringToInt(String s){
+    int i;
+    int j = 1;
+    int k = 0;
+    for (i = stringLength(s); i > 0; i++){
+        k += (s.buffer[i] - '0') * j;
+        j *= 10;
+    }
+    return k;
+}
+
+String intToString(int i, int numlength)
+{
+    String s;
+    createEmptyString(&s, 350);
+
+    int j = i;
+    int length = 0;
+    while (i > 0)
+    {
+        length++;
+        i/= 10;
+    }
+
+    if (numlength < length) {
+        return s;
+    }
+
+    int padZero = numlength - length;
+    while(padZero--) {
+        addChar(&s, '0');
+    }
+
+    int k = 0;
+    for (k =0; k < length; k++) {
+        int l = 1;
+        int div = 1;
+        for (l = 0; l < length -1-k; l++)
+        {
+            div *= 10;
+        }
+
+
+        int mod = div*10;
+        int n = (j % mod)/div;
+         
+
+        addChar(&s, n + '0');
+    }
+
+    return s;
+
+    
+}
+
 boolean isStringFull (String s) {
     return s.maxLength == stringLength(s);
 }
@@ -55,6 +110,26 @@ void addWord(String *s, Word w)
     }
 }
 
+
+void addString(String *s, String s2){
+    int length = stringLength(s2);
+    int i = 0; 
+    for(i = 0; i < length; i++){
+        addChar(s, s2.buffer[i]);
+    }
+}
+char *addChartoChar(char *destination, const char *source){
+    if (destination == NULL){
+        return NULL;
+    }
+    int i = 0;
+    while (source[i] != '\0'){
+        destination[i] = source[i];
+        i++;
+    }
+    destination[i] = '\0';
+    return destination;
+}
 void readString(String *s, int maxLength)
 /**
  * I.S. s sembarang, pita terbuka
@@ -235,10 +310,7 @@ String getWordAt(String s, int i)
     String oneWord;
     createEmptyString(&oneWord, 350);
 
-    int length = stringLength(s);
     int k = 0, ptr = 0;;
-    boolean done = false;
-
     while (k < i) {
         if (s.buffer[ptr] != ' ') {
             ptr++;

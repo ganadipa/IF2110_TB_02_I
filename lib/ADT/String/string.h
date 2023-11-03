@@ -61,11 +61,19 @@ void addWord(String *s, Word w);
 /**
  * 
 */
-
+void addString(String *s, String s2);
+/**
+ * 
+*/
+char *addChartoChar(char *destination, const char *source);
+/**
+ * 
+*/
 String concatString(String *sOut, String s1, String s2);
 /**
  * 
 */
+
 
 boolean compareString(String s, char* cptr);
 /**
@@ -83,6 +91,10 @@ void displayString(String s);
 */
 
 boolean isAllNumber(String s);
+
+String intToString(int i, int numlength);
+
+void addString(String *s, String s2);
 
 String getWordAt(String s, int i) ;
 /**

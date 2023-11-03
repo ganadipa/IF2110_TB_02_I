@@ -3,7 +3,7 @@
 /* Penempatan elemen selalu rapat kiri */
 /* Banyaknya elemen didefinisikan secara implisit, memori list statik */
 #include "../boolean.h"
-#include "./User.h"
+#include "User.h"
 #ifndef LISTUSER_H
 #define LISTUSER_H
 
@@ -114,5 +114,7 @@ IdxType searchByName(ListUser l, String name);
 */
 
 void displayName(ListUser l, int i);
+
+void displayRequestQueue(RequestQueue Q, ListUser l);
 
 #endif

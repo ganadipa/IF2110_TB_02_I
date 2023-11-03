@@ -1,11 +1,13 @@
+include Makefile.que #unit test for queue
+include Makefile.sta #unit test for stack
+include Makefile.word #unit test for wordmachine
+include Makefile.din #unit test for list dinamik
 
-# ************************Architecture Programme Setup*************************************
-# ************************Architecture Programme Setup*************************************
-# ************************Architecture Programme Setup*************************************
+
 BINARY = .bin
 BINDIR = .bin
-CODEDIRS = app lib/ADT/* lib/Types
-INCDIRS = app lib/ADT lib/ADT/* lib/Types
+CODEDIRS = app lib/ADT/* lib/Types Function lib/Types/Application/* lib/Types/Application
+INCDIRS = app lib/ADT lib/ADT/* lib/Types Function lib/Types/Application/* lib/Types/Application
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -std=c11 $(DEPFLAGS) $(foreach D, $(INCDIRS), -I$(D)) -Wno-unused-variable -Wno-unused-parameter -Wno-unused-value -Wno-unused-but-set-variable
@@ -30,12 +32,25 @@ $(PROGRAM): $(OBJECTS)
 
 clean: 
 	@rm -rf $(BINDIR)
-	@echo "Cleaning upp files..."
+	@echo "Cleaning up files..."
 
 # Target to run the application
 run: $(PROGRAM)
-	@echo "Starting the app..."
-	@./$(PROGRAM)
+	./$(PROGRAM)
+
+word: 
+	$(MAKE) -f Makefile.word test_word
+
+que: 
+	$(MAKE) -f Makefile.que test_queue
+
+sta:
+	$(MAKE) -f Makefile.sta test_stack
+
+din:
+	$(MAKE) -f Makefile.din test_listdin
+
+
 
 
 -include $(DEPFILES)
@@ -44,8 +59,6 @@ run: $(PROGRAM)
 #************************************************************************************************
 #************************************************************************************************
 #************************************************************************************************
-
-
 
 
 
@@ -80,16 +93,4 @@ $(LINKEDLIST_TEST_RESULTS): $(LINKEDLIST_TESTS_DIR)/%.result: $(LINKEDLIST_TESTS
 #************************************************************************************
 #************************************************************************************
 #************************************************************************************
-
-
-que: #command for testing queue unit test` 
-	$(MAKE) -f  Makefile.que test_queue 
-
-sta: #command for testing stack unit test
-	$(MAKE) -f Makefile.sta test_stack
-
-din:
-	$(MAKE) -f Makefile.din test_listdin
-
-
 
