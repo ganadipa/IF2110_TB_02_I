@@ -52,7 +52,7 @@ void STARTWORDFILE(String filename){
 
 void ADVWORDFILE(){
     if (currentCharFile == MARK_LAST_FILE){
-        EndFile = true;
+        currentWordFile.buffer[0] = '\0';
     } else{
         CopyWordFILE();
         ADVCHARFILE();
@@ -61,12 +61,8 @@ void ADVWORDFILE(){
 }
 
 void ADVFILEPHOTO(){
-    if (currentCharFile == MARK_LAST_FILE){
-        EndFile = true;
-    } else{
-        CopyFILEPhoto();
-        IgnoreNewLinesFile();
-    }
+    CopyFILEPhoto();
+    IgnoreNewLinesFile();
 }
 /* I.S. : currentChar adalah karakter pertama kata yang akan diakuisisi
    F.S. : currentWord adalah kata terakhir yang sudah diakuisisi,
