@@ -6,6 +6,11 @@
 #include "../lib/ADT/PColor/pcolor.h"
 #include "../lib/Types/Photo.h"
 #include "../lib/ADT/Matriks/charMatriks.h"
+#include "../lib/Types/Kicauan.h"
+#include "../lib/Types/listKicauan.h"
+#include "../lib/ADT/DateTime/datetime.h"
+#include "../lib/Types/ListUser.h"
+#include "../lib/Types/RequestQueue.h"
 // #include "../lib/ADT/WordMachine/charmachinefile.c"
 // #include "../lib/ADT/WordMachine/wordmachinefile.c"
 // #include "../lib/ADT/WordMachine/wordmachine.c"
@@ -14,11 +19,11 @@
 // #include "../lib/ADT/PColor/pcolor.c"
 // #include "../lib/Types/Photo.c"
 // #include "../lib/ADT/Matriks/charMatriks.c"
-#include "../lib/Types/Kicauan.h"
-#include "../lib/Types/listKicauan.h"
-#include "../lib/ADT/DateTime/datetime.h"
-#include "../lib/Types/ListUser.h"
-#include "../lib/Types/RequestQueue.h"
+// #include "../lib/Types/Kicauan.c"
+// #include "../lib/Types/listKicauan.c"
+// #include "../lib/ADT/DateTime/datetime.c"
+// #include "../lib/Types/ListUser.c"
+// #include "../lib/Types/RequestQueue.c"
 #include <stdio.h>
 
 
@@ -32,16 +37,15 @@ void LoadPengguna(Application *app){
     addChartoChar(filename.buffer, temp);
     filename.maxLength = STRCAP;
     STARTWORDFILE(filename);
-    if (retvalfile != -1){
+    while (retvalfile != -1){
         app->users.length = stringToInt(currentWordFile);
-        
-    }
-    if(app->users.length > 0){
+        if(app->users.length > 0){
         for (i=0; i < app->users.length; i++){
             ADVWORDFILE();
             app->users.contents[i].ID = i;
             app->users.contents[i].name.maxLength = 20;
-            addString(&app->users.contents[i].name, currentWordFile);
+            // displayString(currentWordFile);
+            addString(&(app->users.contents[i].name), currentWordFile);
             ADVWORDFILE();
             app->users.contents[i].password.maxLength = 20;
             addString(&app->users.contents[i].password, currentWordFile);
@@ -69,8 +73,12 @@ void LoadPengguna(Application *app){
         ADVWORDFILE();
         ADVWORDFILE();
         ADVWORDFILE();
+        ADVWORDFILE();
+        ADVWORDFILE();
+        }
     }
-        
+    
+    CLOSEFILE();
 }
 void LoadKicauan(Application *app){
     String filename;
@@ -80,43 +88,61 @@ void LoadKicauan(Application *app){
     addChartoChar(filename.buffer, temp);
     filename.maxLength = STRCAP;
     STARTWORDFILE(filename);
-    if (retvalfile != -1){
+    while (retvalfile != -1){
         app->listKicauan.nEff = stringToInt(currentWordFile);
+        // printf("%d", app->listKicauan.nEff);
         for(i=0;i<app->listKicauan.nEff;i++){
             ADVWORDFILE();
             app->listKicauan.buffer[i].IDKicau = stringToInt(currentWordFile);
             ADVWORDFILE();
-            displayString(currentWordFile);
-            addString(&app->listKicauan.buffer[i].text, currentWordFile);
-            displayString(app->listKicauan.buffer[i].text);
+            app->listKicauan.buffer[i].text = currentWordFile;
             ADVWORDFILE();
             app->listKicauan.buffer[i].like = stringToInt(currentWordFile);
             ADVWORDFILE();
             app->listKicauan.buffer[i].IDuser = searchByName(app->users, currentWordFile);
             ADVWORDFILE();
-            addString(&app->listKicauan.buffer[i].dateTime, currentWordFile); 
+            app->listKicauan.buffer[i].dateTime = currentWordFile;
         }
+    }
+    CLOSEFILE();
+}
+void LoadUtas(Application *app){
+    String filename;
+    int i,j;
+    char temp[20] = "utas.config";
+    addChartoChar(filename.buffer, temp);
+    filename.maxLength = STRCAP;
+    STARTWORDFILE(filename);
+    if (retvalfile != -1){
+
     }
 }
 int main(){
     Application app;
+    String nama = {"john", 100};
+    LoadPengguna(&app);
     LoadKicauan(&app);
-    // printf("%d", app.listKicauan.buffer[1].IDKicau);
-    // displayString(app.listKicauan.buffer[0].text);
-    // printKicauan(app.listKicauan.buffer[0], nama);
-    // printf("%d", app.listKicauan.buffer[0].IDuser);
-    // displayString(app.listKicauan.buffer[0].dateTime);
-    // displayString(app.users.contents[2].name);
-    // printf("\n");
-    // displayString(app.users.contents[2].password);
-    // displayString(app.users.contents[2].profile.bio);
-    // displayString(app.users.contents[2].profile.phoneNumber);
-    // displayString(app.users.contents[2].profile.weton);
-    // displayPhoto(app->users.contents[1].profile.photo);
-    // printf("%u", app->users.contents[2].profile.isPrivate);
-    // displayString(photoString);
-    // printf("%d", photoString.maxLength);
+    // printf("%d", app.listKicauan.nEff);
+    displayString(app.users.contents[0].name);
+    printf("\n");
+    displayString(app.users.contents[0].password);
+    displayString(app.users.contents[0].profile.bio);
+    displayString(app.users.contents[0].profile.phoneNumber);
+    printf("\n");
+    displayString(app.users.contents[0].profile.weton);
+    // // displayPhoto(app->users.contents[1].profile.photo);
+    // // printf("%u", app->users.contents[2].profile.isPrivate);
+    // // displayString(photoString);
+    // // printf("%d", photoString.maxLength);
     
+    printf("%d", app.listKicauan.buffer[0].IDKicau);
+    printf("\n");
+    displayString(app.listKicauan.buffer[0].text);
+    printf("\n");
+    // // printKicauan(app.listKicauan.buffer[0], nama);
+    printf("%d", app.listKicauan.buffer[0].IDuser);
+    printf("\n");
+    displayString(app.listKicauan.buffer[0].dateTime);
 }
 
 // 

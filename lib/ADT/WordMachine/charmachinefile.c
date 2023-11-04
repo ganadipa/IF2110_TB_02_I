@@ -4,7 +4,7 @@
 #include "charmachinefile.h"
 #include "../../lib.h"
 
-static FILE *pitafile;
+FILE *pitafile;
 int retvalfile;
 char currentCharFile;
 boolean EOP_FILE;
@@ -13,6 +13,8 @@ const char source[50] = "../config/folder1/";
 void OPENFILE(String filename)
 {   
     String s;
+    retvalfile = 0;
+    currentCharFile = '\0';
     addChartoChar(s.buffer, source);
     s.maxLength = STRCAP;
     addString(&s, filename);
@@ -26,9 +28,7 @@ void OPENFILE(String filename)
 }
 
 void CLOSEFILE() {
-    for (int i = 0; i < 5 ; i++){
-        fclose(pitafile);
-    }
+    fclose(pitafile);
 }
 
 void ADVCHARFILE()

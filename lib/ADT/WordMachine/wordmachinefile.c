@@ -71,7 +71,7 @@ void CopyWordFILE(){
         currentWordFile.maxLength = 1;
     } else{
         int i = 0;
-        while (currentCharFile != MARK_LAST_FILE && currentCharFile != '\n'){
+        while (currentCharFile != MARK_LAST_FILE && retvalfile != -1){
             currentWordFile.buffer[i] = currentCharFile;
             currentWordFile.maxLength = i + 1;
             i++;
