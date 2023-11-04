@@ -23,6 +23,7 @@
     "types.h": "c",
     "typeinfo": "c",
     "datetime.h": "c",
+<<<<<<< HEAD
     "__config": "c",
     "__locale": "c",
     "bitset": "c",
@@ -32,5 +33,14 @@
     "string_view": "c",
     "tuple": "c",
     "__string": "c"
+=======
+    "permintaan-pertemanan.h": "c",
+    "perintah.h": "c",
+    "pengguna.h": "c",
+    "kicauan.h": "c",
+    "listlinier.h": "c",
+    "balasan.h": "c",
+    "devtools.h": "c"
+>>>>>>> develop
   }
 }

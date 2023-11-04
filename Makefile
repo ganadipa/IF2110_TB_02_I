@@ -6,8 +6,8 @@ include Makefile.din #unit test for list dinamik
 
 BINARY = .bin
 BINDIR = .bin
-CODEDIRS = app lib/ADT/* lib/Types Function
-INCDIRS = app lib/ADT lib/ADT/* lib/Types Function
+CODEDIRS = app lib/ADT/* lib/Types Function lib/Types/Application/* lib/Types/Application
+INCDIRS = app lib/ADT lib/ADT/* lib/Types Function lib/Types/Application/* lib/Types/Application
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -std=c11 $(DEPFLAGS) $(foreach D, $(INCDIRS), -I$(D)) -Wno-unused-variable -Wno-unused-parameter -Wno-unused-value -Wno-unused-but-set-variable

@@ -32,7 +32,8 @@ int stringToInt(String s){
     int i;
     int j = 1;
     int k = 0;
-    for (i = stringLength(s); i > 0; i++){
+    int length = stringLength(s);
+    for (i = length-1; i >= 0; i--){
         k += (s.buffer[i] - '0') * j;
         j *= 10;
     }
@@ -116,6 +117,13 @@ void addString(String *s, String s2){
     int i = 0; 
     for(i = 0; i < length; i++){
         addChar(s, s2.buffer[i]);
+    }
+}
+void emptyString(String *s){
+    int length = stringLength (*s);
+    int i = 0;
+    for(i = 0; i < length; i++){
+        s->buffer[i] = '\0';
     }
 }
 char *addChartoChar(char *destination, const char *source){

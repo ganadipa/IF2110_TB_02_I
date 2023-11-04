@@ -48,12 +48,12 @@ int lengthRequestQueue(RequestQueue Q);
 /* Mengirimkan banyaknya elemen queue. Mengirimkan 0 jika q kosong. */
 
 /* *** Primitif Add/Delete *** */
-void enqueueRequestQueue(RequestQueue *Q, Friend F);
+void enqueueRequestQueue(RequestQueue *Q, Friend u);
 /* Proses: Menambahkan val pada q dengan aturan FIFO */
 /* I.S. q mungkin kosong, tabel penampung elemen q TIDAK penuh */
 /* F.S. val menjadi TAIL yang baru, IDX_TAIL "mundur" dalam buffer melingkar. */
 
-void dequeueRequestQueue(RequestQueue *Q, Friend *F);
+void dequeueRequestQueue(RequestQueue *Q, Friend *u);
 /* Proses: Menghapus val pada q dengan aturan FIFO */
 /* I.S. q tidak mungkin kosong */
 /* F.S. val = nilai elemen HEAD pd I.S., IDX_HEAD "mundur";
@@ -62,5 +62,8 @@ void dequeueRequestQueue(RequestQueue *Q, Friend *F);
 void removeElmt_RequestQueue(RequestQueue *Q, int idx);
 
 int getIndex_RequestQueue(RequestQueue Q, int ID);
+
+
+
 
 #endif
