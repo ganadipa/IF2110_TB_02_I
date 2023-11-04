@@ -57,7 +57,7 @@ void ADVWORDFILE(){
 
 void ADVFILEPHOTO(){
     CopyFILEPhoto();
-    IgnoreNewLinesFile();
+    ADVCHARFILE();
 }
 /* I.S. : currentChar adalah karakter pertama kata yang akan diakuisisi
    F.S. : currentWord adalah kata terakhir yang sudah diakuisisi,
@@ -95,4 +95,7 @@ void CopyFILEPhoto(){
         i++;
         ADVCHARFILE();
     }
+    // currentWordFile.buffer[10] = '\n';
+    // currentWordFile.maxLength += 1;
+    // printf("%c", currentWordFile.buffer[10]);
 }

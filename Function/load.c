@@ -6,6 +6,14 @@
 #include "../lib/ADT/PColor/pcolor.h"
 #include "../lib/Types/Photo.h"
 #include "../lib/ADT/Matriks/charMatriks.h"
+// #include "../lib/ADT/WordMachine/charmachinefile.c"
+// #include "../lib/ADT/WordMachine/wordmachinefile.c"
+// #include "../lib/ADT/WordMachine/wordmachine.c"
+// #include "../lib/ADT/WordMachine/charmachine.c"
+// #include "../lib/ADT/String/string.c"
+// #include "../lib/ADT/PColor/pcolor.c"
+// #include "../lib/Types/Photo.c"
+// #include "../lib/ADT/Matriks/charMatriks.c"
 #include <stdio.h>
 // int main(){
 //     String s;
@@ -39,7 +47,7 @@ void LoadPengguna(){
         
     }
     if(app.users.length > 0){
-        for (i=0; i < 2; i++){
+        for (i=0; i < app.users.length; i++){
             ADVWORDFILE();
             app.users.contents[i].ID = i;
             app.users.contents[i].name.maxLength = 20;
@@ -62,12 +70,8 @@ void LoadPengguna(){
             for (j=0; j<5; j++){
                 ADVFILEPHOTO();
                 addString(&photoString, currentWordFile);
-                // displayString(currentWordFile);
-                // printf("\n");
             }
-            displayString(photoString);
             readPhotoFile(&(app.users.contents[i].profile.photo), photoString);
-            printf("\n");
             
         }
         ADVWORDFILE();
@@ -82,17 +86,14 @@ void LoadPengguna(){
 int main(){
     LoadPengguna();
     
-    // displayString(app.users.contents[0].name);
+    // displayString(app.users.contents[2].name);
     // printf("\n");
-    // displayString(app.users.contents[0].password);
-    // printf("\n");
-    // displayString(app.users.contents[0].profile.bio);
-    // displayString(app.users.contents[0].profile.phoneNumber);
-    // printf("\n");
-    // displayString(app.users.contents[0].profile.weton);
-    // printf("\n");
-    displayPhoto(app.users.contents[1].profile.photo);
-    // printf("%u", app.users.contents[0].profile.isPrivate);
+    // displayString(app.users.contents[2].password);
+    displayString(app.users.contents[2].profile.bio);
+    displayString(app.users.contents[2].profile.phoneNumber);
+    displayString(app.users.contents[2].profile.weton);
+    // displayPhoto(app.users.contents[1].profile.photo);
+    printf("%u", app.users.contents[2].profile.isPrivate);
     // displayString(photoString);
     // printf("%d", photoString.maxLength);
 }
