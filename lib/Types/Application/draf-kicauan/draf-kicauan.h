@@ -6,17 +6,17 @@
 #include "../ADT/String/string.h"
 #include "../../DrafKicauan.h"
 
-void SimpanDraf(Application *app, Kicauan kicau);
+void SimpanDraf(User *app, Kicauan kicau);
 
-void UbahDraf(Application *app, Kicauan tempKicau);
+void UbahDraf(Application *app, User *user, Kicauan tempKicau);
 
-void HapusDraf(Application *app, Kicauan *sampahKicau);
+void HapusDraf(User *app, Kicauan *sampahKicau);
 
-void TerbitkanDraf(Application *app, Kicauan kicau, int IDUSER);
+void TerbitkanDraf(Application *app, User *user, Kicauan kicau, int IDUSER);
 
-void LihatDraf(Application *app);
+void LihatDraf(Application *app, User *user);
 
-void BuatDraf(Application *app);
+void BuatDraf(Application *app, User *user);
 
 
 #endif

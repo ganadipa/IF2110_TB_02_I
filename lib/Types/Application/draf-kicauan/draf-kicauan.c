@@ -3,11 +3,11 @@
 #include "draf-kicauan.h"
 
 
-void SimpanDraf(Application *app, Kicauan kicau){
-    PushDraf(&DRAFKICAU(*app), kicau);
+void SimpanDraf(User *user, Kicauan kicau){
+    PushDraf(&DRAFKICAU(*user), kicau);
 }
 
-void UbahDraf(Application *app, Kicauan tempKicau){
+void UbahDraf(Application *app, User *user, Kicauan tempKicau){
     String teks;
     printf("Masukkan Perubahan: ");
     readString(&teks, 280);
@@ -15,27 +15,27 @@ void UbahDraf(Application *app, Kicauan tempKicau){
     setKicauID(&tempKicau, NEFF(KICAUAN(*app))+1);
     setKicauDateTime(&tempKicau);
     
-    SimpanDraf(app, tempKicau);
+    SimpanDraf(user, tempKicau);
 }
 
-void HapusDraf(Application *app, Kicauan *sampahKicau){
+void HapusDraf(User *app, Kicauan *sampahKicau){
     PopDraf(&DRAFKICAU(*app), sampahKicau);
     printf("\nDraf berhasil diubah");
 }
 
-void TerbitkanDraf(Application *app, Kicauan kicau, int IDUSER){
+void TerbitkanDraf(Application *app, User *user, Kicauan kicau, int IDUSER){
     printKicauan(kicau, ELMT_LISTUSER(LISTUSER(*app), IDUSER).name);
     insertLastListKicau( &KICAUAN(*app), kicau);
     printf("\n Selamat! Draf telah berhasil diterbitkan");
 }
 
-void LihatDraf(Application *app){
-    // if (!LOGGEDIN(*app)) {
-    //     printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
-    //     return;
-    // }
+void LihatDraf(Application *app, User *user){
+    if (!LOGGEDIN(*app)) {
+        printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
+        return;
+    }
     Kicauan temp;
-    if(isDrafEmpty(DRAFKICAU(*app))){
+    if(isDrafEmpty(DRAFKICAU(*user))){
         printf("Yah, anda belum memiliki draf apapun! Buat dulu dong");
     }
     else{
@@ -55,13 +55,13 @@ void LihatDraf(Application *app){
         readString(&choose, 20);
 
         if(compareString(choose, "UBAH")){
-            UbahDraf(app, temp);
+            UbahDraf(app, user, temp);
         } else if(compareString(choose, "HAPUS")){
             printf("Draf berhasil dihapus\n");
         } else if(compareString(choose, "TERBIT")){
-            TerbitkanDraf(app, temp, IDUSER);
+            TerbitkanDraf(app, user, temp, IDUSER);
         } else if(compareString(choose, "KEMBALI")){
-            SimpanDraf(app, temp);
+            SimpanDraf(user, temp);
         } else{
             printf("\nInput tidak valid");
         }
@@ -69,11 +69,11 @@ void LihatDraf(Application *app){
 }
 
 
-void BuatDraf(Application *app){
-    // if (!LOGGEDIN(*app)) {
-    //     printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
-    //     return;
-    // }
+void BuatDraf(Application *app, User *user){
+    if (!LOGGEDIN(*app)) {
+        printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
+        return;
+    }
     String teks;
     createEmptyString(&teks, 280);
     printf("Masukkan Draf: ");
@@ -90,13 +90,13 @@ void BuatDraf(Application *app){
     String choose;
     readString(&choose, 20);
     if(compareString(choose, "SIMPAN")){
-        SimpanDraf(app, value);
+        SimpanDraf(user, value);
         printf("Draft berhasil disimpan\n");
     } else if(compareString(choose, "HAPUS")){
         if(!isDrafEmpty(DRAFKICAU(*app))){
             printf("Draft berhasil dihapus\n");
         }
     } else if(compareString(choose, "TERBIT")){
-        TerbitkanDraf(app, value, IDUSER);
+        TerbitkanDraf(app, user, value, IDUSER);
     }
 }

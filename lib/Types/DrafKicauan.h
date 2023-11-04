@@ -6,7 +6,6 @@
 #include "../boolean.h"
 #include "../ADT/String/string.h"
 #include "Kicauan.h"
-#include "listKicauan.h"
 
 #define Nil -1
 #define MaxEl 100
@@ -22,6 +21,7 @@ typedef struct {
   address TOP;  /* alamat TOP: elemen puncak */
 } DrafKicau;
 
+//macro stack
 #define TopDraf(S) (S).TOP
 #define InfoTopDraf(S) (S).T[(S).TOP]
 

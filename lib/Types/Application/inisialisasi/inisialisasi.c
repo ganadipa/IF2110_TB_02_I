@@ -41,7 +41,6 @@ void Setup(Application *app)
     CreateListUser(&LISTUSER(*app)); 
     CreateGraph(&FRIENDSHIPS(*app));
     CreateListKicau(&KICAUAN(*app), 1000); //Inisialisasi awal untuk ListKicauan 1000
-    CreateDraf(&DRAFKICAU(*app)); //membuat draf kicau
 }
 
 void ReadConfig(Application *app, boolean *found) {

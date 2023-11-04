@@ -7,7 +7,6 @@
 #include "../ADT/Graf/graf.h"
 #include "listKicauan.h"
 #include "RequestQueue.h"
-#include "DrafKicauan.h"
 
 
 
@@ -25,7 +24,6 @@ typedef struct application {
 #define LOGINID(a) (a).loginID
 #define FRIENDSHIPS(a) (a).friendships
 #define KICAUAN(a)  (a).listKicauan
-#define DRAFKICAU(a) (a).drafKicau
 
 
 void DevTools(Application app);
