@@ -112,5 +112,6 @@ String getWordAt(String s, int i) ;
 
 int countWord(String s);
 
+int stringToInt(String s);
 
 #endif
