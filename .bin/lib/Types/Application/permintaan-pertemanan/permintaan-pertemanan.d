@@ -45,6 +45,7 @@
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  lib/Types/../ADT/String/string.h lib/Types/Kicauan.h \
+ lib/Types/listKicauan.h \
  lib/Types/Application/permintaan-pertemanan/../../../ADT/String/string.h
 /usr/include/stdc-predef.h:
 lib/Types/Application/permintaan-pertemanan/permintaan-pertemanan.h:
@@ -104,4 +105,5 @@ lib/Types/DrafKicauan.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 lib/Types/../ADT/String/string.h:
 lib/Types/Kicauan.h:
+lib/Types/listKicauan.h:
 lib/Types/Application/permintaan-pertemanan/../../../ADT/String/string.h:

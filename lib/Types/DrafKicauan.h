@@ -6,6 +6,7 @@
 #include "../boolean.h"
 #include "../ADT/String/string.h"
 #include "Kicauan.h"
+#include "listKicauan.h"
 
 #define Nil -1
 #define MaxEl 100

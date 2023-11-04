@@ -45,6 +45,7 @@
  lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ListUser.h \
  lib/Types/RequestQueue.h lib/Types/DrafKicauan.h \
  lib/Types/../ADT/String/string.h lib/Types/Kicauan.h \
+ lib/Types/listKicauan.h \
  lib/Types/Application/perintah/../balasan/balasan.h \
  lib/Types/Application/perintah/../draf-kicauan/draf-kicauan.h \
  lib/Types/Application/Application.h lib/ADT/../ADT/String/string.h \
@@ -165,6 +166,7 @@ lib/Types/RequestQueue.h:
 lib/Types/DrafKicauan.h:
 lib/Types/../ADT/String/string.h:
 lib/Types/Kicauan.h:
+lib/Types/listKicauan.h:
 lib/Types/Application/perintah/../balasan/balasan.h:
 lib/Types/Application/perintah/../draf-kicauan/draf-kicauan.h:
 lib/Types/Application/Application.h:

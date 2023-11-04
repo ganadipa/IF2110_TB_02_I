@@ -32,7 +32,9 @@
  lib/Types/../ADT/Matriks/../../boolean.h lib/Types/RequestQueue.h \
  lib/Types/../ADT/DateTime/datetime.h \
  lib/Types/../ADT/DateTime/../../boolean.h \
- lib/Types/../ADT/DateTime/../String/string.h
+ lib/Types/../ADT/DateTime/../String/string.h lib/Types/listKicauan.h \
+ lib/Types/./Kicauan.h lib/Types/./ListUser.h lib/Types/./../boolean.h \
+ lib/Types/./User.h
 /usr/include/stdc-predef.h:
 lib/Types/DrafKicauan.h:
 /usr/include/stdio.h:
@@ -75,3 +77,8 @@ lib/Types/RequestQueue.h:
 lib/Types/../ADT/DateTime/datetime.h:
 lib/Types/../ADT/DateTime/../../boolean.h:
 lib/Types/../ADT/DateTime/../String/string.h:
+lib/Types/listKicauan.h:
+lib/Types/./Kicauan.h:
+lib/Types/./ListUser.h:
+lib/Types/./../boolean.h:
+lib/Types/./User.h:

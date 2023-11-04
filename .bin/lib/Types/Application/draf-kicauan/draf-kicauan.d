@@ -45,7 +45,7 @@
  lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ListUser.h \
  lib/Types/RequestQueue.h lib/Types/DrafKicauan.h \
  lib/Types/../ADT/String/string.h lib/Types/Kicauan.h \
- lib/ADT/../ADT/String/string.h \
+ lib/Types/listKicauan.h lib/ADT/../ADT/String/string.h \
  lib/Types/Application/draf-kicauan/../../DrafKicauan.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
@@ -105,5 +105,6 @@ lib/Types/RequestQueue.h:
 lib/Types/DrafKicauan.h:
 lib/Types/../ADT/String/string.h:
 lib/Types/Kicauan.h:
+lib/Types/listKicauan.h:
 lib/ADT/../ADT/String/string.h:
 lib/Types/Application/draf-kicauan/../../DrafKicauan.h:

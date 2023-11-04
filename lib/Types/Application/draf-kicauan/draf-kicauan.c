@@ -34,7 +34,7 @@ void LihatDraf(Application *app){
     //     printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
     //     return;
     // }
-    Kicauan temp; 
+    Kicauan temp;
     if(isDrafEmpty(DRAFKICAU(*app))){
         printf("Yah, anda belum memiliki draf apapun! Buat dulu dong");
     }

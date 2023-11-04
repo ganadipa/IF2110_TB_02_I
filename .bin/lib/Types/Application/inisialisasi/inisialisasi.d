@@ -44,7 +44,8 @@
  lib/Types/./../ADT/DateTime/../../boolean.h \
  lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ListUser.h \
  lib/Types/RequestQueue.h lib/Types/DrafKicauan.h \
- lib/Types/../ADT/String/string.h lib/Types/Kicauan.h
+ lib/Types/../ADT/String/string.h lib/Types/Kicauan.h \
+ lib/Types/listKicauan.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -103,3 +104,4 @@ lib/Types/RequestQueue.h:
 lib/Types/DrafKicauan.h:
 lib/Types/../ADT/String/string.h:
 lib/Types/Kicauan.h:
+lib/Types/listKicauan.h:

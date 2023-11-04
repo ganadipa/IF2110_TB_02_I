@@ -65,6 +65,7 @@
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  lib/Types/../ADT/String/string.h lib/Types/Kicauan.h \
+ lib/Types/listKicauan.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/balasan/balasan.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/draf-kicauan.h \
  lib/Types/Application/Application.h lib/ADT/../ADT/String/string.h \
@@ -199,6 +200,7 @@ lib/Types/DrafKicauan.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 lib/Types/../ADT/String/string.h:
 lib/Types/Kicauan.h:
+lib/Types/listKicauan.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/balasan/balasan.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/draf-kicauan.h:
 lib/Types/Application/Application.h:

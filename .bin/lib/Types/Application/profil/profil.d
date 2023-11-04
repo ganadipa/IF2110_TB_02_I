@@ -43,7 +43,8 @@
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- lib/Types/../ADT/String/string.h lib/Types/Kicauan.h
+ lib/Types/../ADT/String/string.h lib/Types/Kicauan.h \
+ lib/Types/listKicauan.h
 /usr/include/stdc-predef.h:
 lib/Types/Application/profil/profil.h:
 lib/Types/Application/profil/../Application.h:
@@ -102,3 +103,4 @@ lib/Types/DrafKicauan.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 lib/Types/../ADT/String/string.h:
 lib/Types/Kicauan.h:
+lib/Types/listKicauan.h:
