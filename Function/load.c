@@ -24,11 +24,12 @@
 
 // }
 Application app;
+String photoString;
 void LoadPengguna(){
     String filename;
     int i,j;
     char temp[20] = "pengguna.config";
-    String photoString;
+    
     createEmptyString(&photoString, 100);
     addChartoChar(filename.buffer, temp);
     filename.maxLength = STRCAP;
@@ -38,7 +39,7 @@ void LoadPengguna(){
         
     }
     if(app.users.length > 0){
-        for (i=0; i < 1; i++){
+        for (i=0; i < 2; i++){
             ADVWORDFILE();
             app.users.contents[i].ID = i;
             app.users.contents[i].name.maxLength = 20;
@@ -57,15 +58,17 @@ void LoadPengguna(){
             addString(&app.users.contents[i].profile.weton, currentWordFile);
             ADVWORDFILE();
             app.users.contents[i].profile.isPrivate = (currentWordFile.buffer[1] == 'r');
+            emptyString(&photoString);
             for (j=0; j<5; j++){
                 ADVFILEPHOTO();
                 addString(&photoString, currentWordFile);
                 // displayString(currentWordFile);
                 // printf("\n");
             }
-            // displayString(photoString);/
-            // printf("\n");
-            // createEmptyString(&photoString, 100);
+            displayString(photoString);
+            readPhotoFile(&(app.users.contents[i].profile.photo), photoString);
+            printf("\n");
+            
         }
         ADVWORDFILE();
         ADVWORDFILE();
@@ -76,19 +79,20 @@ void LoadPengguna(){
         
 }
 
-// int main(){
-//     LoadPengguna();
+int main(){
+    LoadPengguna();
     
-//     // displayString(app.users.contents[0].name);
-//     // printf("\n");
-//     // displayString(app.users.contents[1].password);
-//     // printf("\n");
-//     // displayString(app.users.contents[1].profile.bio);
-//     // printf("\n");
-//     // displayString(app.users.contents[1].profile.phoneNumber);
-//     // printf("\n");
-//     // displayString(app.users.contents[1].profile.weton);
-//     // printf("\n");
-//     // displayPhoto(app.users.contents[0].profile.photo);
-//     // printf("%u", app.users.contents[0].profile.isPrivate);
-// }
+    // displayString(app.users.contents[0].name);
+    // printf("\n");
+    // displayString(app.users.contents[0].password);
+    // printf("\n");
+    // displayString(app.users.contents[0].profile.bio);
+    // displayString(app.users.contents[0].profile.phoneNumber);
+    // printf("\n");
+    // displayString(app.users.contents[0].profile.weton);
+    // printf("\n");
+    displayPhoto(app.users.contents[1].profile.photo);
+    // printf("%u", app.users.contents[0].profile.isPrivate);
+    // displayString(photoString);
+    // printf("%d", photoString.maxLength);
+}

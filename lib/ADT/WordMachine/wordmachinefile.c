@@ -51,13 +51,8 @@ void STARTWORDFILE(String filename){
           currentChar karakter pertama sesudah karakter terakhir kata */
 
 void ADVWORDFILE(){
-    if (currentCharFile == MARK_LAST_FILE){
-        currentWordFile.buffer[0] = '\0';
-    } else{
-        CopyWordFILE();
-        ADVCHARFILE();
-        IgnoreNullFile();
-    }
+    CopyWordFILE();
+    ADVCHARFILE();
 }
 
 void ADVFILEPHOTO(){
@@ -71,12 +66,17 @@ void ADVFILEPHOTO(){
    Proses : Akuisisi kata menggunakan procedure SalinWord */
 
 void CopyWordFILE(){
-    int i = 0;
-    while (currentCharFile != MARK_LAST_FILE && currentCharFile != '\n'){
-        currentWordFile.buffer[i] = currentCharFile;
-        currentWordFile.maxLength = i + 1;
-        i++;
-        ADVCHARFILE();
+     if (currentCharFile == '\n'){
+        currentWordFile.buffer[0] = '\n';
+        currentWordFile.maxLength = 1;
+    } else{
+        int i = 0;
+        while (currentCharFile != MARK_LAST_FILE && currentCharFile != '\n'){
+            currentWordFile.buffer[i] = currentCharFile;
+            currentWordFile.maxLength = i + 1;
+            i++;
+            ADVCHARFILE();
+        }
     }
 }
 /* Mengakuisisi kata, menyimpan dalam currentWord

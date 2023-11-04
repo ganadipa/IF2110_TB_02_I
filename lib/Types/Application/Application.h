@@ -2,11 +2,11 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
-#include "../boolean.h"
-#include "./ListUser.h"
-#include "../ADT/Graf/graf.h"
-#include "listKicauan.h"
-#include "RequestQueue.h"
+#include "../../boolean.h"
+#include "../ListUser.h"
+#include "../../ADT/Graf/graf.h"
+#include "../listKicauan.h"
+#include "../RequestQueue.h"
 
 
 
