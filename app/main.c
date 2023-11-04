@@ -1,8 +1,5 @@
 #include <stdio.h>
 #include "../lib/lib.h"
-#include "../Function/simpan.h"
-
-
 
 int main()
 {
@@ -11,7 +8,6 @@ int main()
 
     Application app;
     START();
-
 
     // 1. Inisialisasi
     AppInitialization(&app);

@@ -51,7 +51,11 @@ void handleCommand(Application* app, String command, boolean *finish)
     } else if (compareString(firstWord, "SUKA_KICAUAN")) {
         int ID = stringToInt(secondWord);
         SukaKicauan(app,ID);
-    } else if (compareString(firstWord, "UBAH_KICAUAN")) {
+    } else if(compareString(firstWord, "BUAT_DRAF")){
+        BuatDraf(app);
+    } else if(compareString(firstWord, "LIHAT_DRAF")){
+        LihatDraf(app);
+    }else if (compareString(firstWord, "UBAH_KICAUAN")) {
         int ID = stringToInt(secondWord);
         UbahKicauan(app,ID);
     } else if (compareString(firstWord, "TAMBAH_TEMAN")) {
@@ -62,6 +66,8 @@ void handleCommand(Application* app, String command, boolean *finish)
         DaftarPermintaanPertemanan(*app);
     } else if (compareString(firstWord, "SETUJUI_PERTEMANAN")) {
         SetujuiPertemanan(app);
+    } else if(compareString(firstWord, "SIMPAN")){
+        SaveFolder(app);
     }
 
 
