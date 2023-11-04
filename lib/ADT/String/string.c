@@ -119,6 +119,13 @@ void addString(String *s, String s2){
         addChar(s, s2.buffer[i]);
     }
 }
+void emptyString(String *s){
+    int length = stringLength (*s);
+    int i = 0;
+    for(i = 0; i < length; i++){
+        s->buffer[i] = '\0';
+    }
+}
 char *addChartoChar(char *destination, const char *source){
     if (destination == NULL){
         return NULL;

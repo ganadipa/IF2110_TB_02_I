@@ -65,6 +65,10 @@ void addString(String *s, String s2);
 /**
  * 
 */
+void emptyString(String *s);
+/**
+ * 
+*/
 char *addChartoChar(char *destination, const char *source);
 /**
  * 
