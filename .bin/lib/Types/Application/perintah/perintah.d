@@ -34,22 +34,22 @@
  lib/Types/./Profile.h lib/Types/./Photo.h \
  lib/Types/./../ADT/Matriks/charMatriks.h \
  lib/Types/./../ADT/Matriks/../../boolean.h lib/Types/./RequestQueue.h \
+ lib/Types/./DrafKicauan.h lib/Types/./Kicauan.h \
+ lib/Types/./../ADT/DateTime/datetime.h \
+ lib/Types/./../ADT/DateTime/../../boolean.h \
+ lib/Types/./../ADT/DateTime/../String/string.h \
  lib/ADT/../ADT/Graf/graf.h lib/ADT/../ADT/Graf/../../boolean.h \
  lib/ADT/../ADT/Graf/../ListStatik/liststatik.h \
  lib/ADT/../ADT/Graf/../ListStatik/../../boolean.h \
  lib/ADT/../ADT/Graf/../Matriks/boolMatriks.h \
  lib/ADT/../ADT/Graf/../Matriks/../../boolean.h lib/Types/listKicauan.h \
- lib/Types/../boolean.h lib/Types/./Kicauan.h \
- lib/Types/./../ADT/DateTime/datetime.h \
- lib/Types/./../ADT/DateTime/../../boolean.h \
- lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ListUser.h \
- lib/Types/RequestQueue.h lib/Types/DrafKicauan.h \
- lib/Types/../ADT/String/string.h lib/Types/Kicauan.h \
- lib/Types/listKicauan.h \
+ lib/Types/../boolean.h lib/Types/./Kicauan.h lib/Types/./ListUser.h \
+ lib/Types/RequestQueue.h \
  lib/Types/Application/perintah/../balasan/balasan.h \
  lib/Types/Application/perintah/../draf-kicauan/draf-kicauan.h \
  lib/Types/Application/Application.h lib/ADT/../ADT/String/string.h \
  lib/Types/Application/perintah/../draf-kicauan/../../DrafKicauan.h \
+ lib/Types/Application/perintah/../draf-kicauan/../../User.h \
  lib/Types/Application/perintah/../inisialisasi/inisialisasi.h \
  lib/Types/Application/perintah/../inisialisasi/../Application.h \
  lib/Types/Application/perintah/../kicauan/kicauan.h \
@@ -149,6 +149,11 @@ lib/Types/./Photo.h:
 lib/Types/./../ADT/Matriks/charMatriks.h:
 lib/Types/./../ADT/Matriks/../../boolean.h:
 lib/Types/./RequestQueue.h:
+lib/Types/./DrafKicauan.h:
+lib/Types/./Kicauan.h:
+lib/Types/./../ADT/DateTime/datetime.h:
+lib/Types/./../ADT/DateTime/../../boolean.h:
+lib/Types/./../ADT/DateTime/../String/string.h:
 lib/ADT/../ADT/Graf/graf.h:
 lib/ADT/../ADT/Graf/../../boolean.h:
 lib/ADT/../ADT/Graf/../ListStatik/liststatik.h:
@@ -158,20 +163,14 @@ lib/ADT/../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/listKicauan.h:
 lib/Types/../boolean.h:
 lib/Types/./Kicauan.h:
-lib/Types/./../ADT/DateTime/datetime.h:
-lib/Types/./../ADT/DateTime/../../boolean.h:
-lib/Types/./../ADT/DateTime/../String/string.h:
 lib/Types/./ListUser.h:
 lib/Types/RequestQueue.h:
-lib/Types/DrafKicauan.h:
-lib/Types/../ADT/String/string.h:
-lib/Types/Kicauan.h:
-lib/Types/listKicauan.h:
 lib/Types/Application/perintah/../balasan/balasan.h:
 lib/Types/Application/perintah/../draf-kicauan/draf-kicauan.h:
 lib/Types/Application/Application.h:
 lib/ADT/../ADT/String/string.h:
 lib/Types/Application/perintah/../draf-kicauan/../../DrafKicauan.h:
+lib/Types/Application/perintah/../draf-kicauan/../../User.h:
 lib/Types/Application/perintah/../inisialisasi/inisialisasi.h:
 lib/Types/Application/perintah/../inisialisasi/../Application.h:
 lib/Types/Application/perintah/../kicauan/kicauan.h:

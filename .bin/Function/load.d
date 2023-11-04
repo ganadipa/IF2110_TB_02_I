@@ -36,12 +36,7 @@
  lib/Types/./Profile.h lib/Types/./Photo.h \
  lib/Types/./../ADT/Matriks/charMatriks.h \
  lib/Types/./../ADT/Matriks/../../boolean.h lib/Types/./RequestQueue.h \
- lib/ADT/../ADT/Graf/graf.h lib/Types/listKicauan.h \
- lib/Types/../boolean.h lib/Types/./Kicauan.h \
- lib/Types/./../ADT/DateTime/datetime.h \
- lib/Types/./../ADT/DateTime/../../boolean.h \
- lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ListUser.h \
- lib/Types/RequestQueue.h lib/Types/DrafKicauan.h /usr/include/stdio.h \
+ lib/Types/./DrafKicauan.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -63,13 +58,18 @@
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- lib/Types/../ADT/String/string.h lib/Types/Kicauan.h \
- lib/Types/listKicauan.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h lib/Types/./Kicauan.h \
+ lib/Types/./../ADT/DateTime/datetime.h \
+ lib/Types/./../ADT/DateTime/../../boolean.h \
+ lib/Types/./../ADT/DateTime/../String/string.h \
+ lib/ADT/../ADT/Graf/graf.h lib/Types/listKicauan.h \
+ lib/Types/../boolean.h lib/Types/./Kicauan.h lib/Types/./ListUser.h \
+ lib/Types/RequestQueue.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/balasan/balasan.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/draf-kicauan.h \
  lib/Types/Application/Application.h lib/ADT/../ADT/String/string.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../DrafKicauan.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../User.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/inisialisasi/inisialisasi.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/inisialisasi/../Application.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/kicauan/kicauan.h \
@@ -164,16 +164,7 @@ lib/Types/./Photo.h:
 lib/Types/./../ADT/Matriks/charMatriks.h:
 lib/Types/./../ADT/Matriks/../../boolean.h:
 lib/Types/./RequestQueue.h:
-lib/ADT/../ADT/Graf/graf.h:
-lib/Types/listKicauan.h:
-lib/Types/../boolean.h:
-lib/Types/./Kicauan.h:
-lib/Types/./../ADT/DateTime/datetime.h:
-lib/Types/./../ADT/DateTime/../../boolean.h:
-lib/Types/./../ADT/DateTime/../String/string.h:
-lib/Types/./ListUser.h:
-lib/Types/RequestQueue.h:
-lib/Types/DrafKicauan.h:
+lib/Types/./DrafKicauan.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 /usr/include/features.h:
@@ -198,14 +189,22 @@ lib/Types/DrafKicauan.h:
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-lib/Types/../ADT/String/string.h:
-lib/Types/Kicauan.h:
+lib/Types/./Kicauan.h:
+lib/Types/./../ADT/DateTime/datetime.h:
+lib/Types/./../ADT/DateTime/../../boolean.h:
+lib/Types/./../ADT/DateTime/../String/string.h:
+lib/ADT/../ADT/Graf/graf.h:
 lib/Types/listKicauan.h:
+lib/Types/../boolean.h:
+lib/Types/./Kicauan.h:
+lib/Types/./ListUser.h:
+lib/Types/RequestQueue.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/balasan/balasan.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/draf-kicauan.h:
 lib/Types/Application/Application.h:
 lib/ADT/../ADT/String/string.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../DrafKicauan.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../User.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/inisialisasi/inisialisasi.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/inisialisasi/../Application.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/kicauan/kicauan.h:

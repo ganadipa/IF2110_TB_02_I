@@ -12,16 +12,7 @@
  lib/Types/./Profile.h lib/Types/./Photo.h \
  lib/Types/./../ADT/Matriks/charMatriks.h \
  lib/Types/./../ADT/Matriks/../../boolean.h lib/Types/./RequestQueue.h \
- lib/ADT/../ADT/Graf/graf.h lib/ADT/../ADT/Graf/../../boolean.h \
- lib/ADT/../ADT/Graf/../ListStatik/liststatik.h \
- lib/ADT/../ADT/Graf/../ListStatik/../../boolean.h \
- lib/ADT/../ADT/Graf/../Matriks/boolMatriks.h \
- lib/ADT/../ADT/Graf/../Matriks/../../boolean.h lib/Types/listKicauan.h \
- lib/Types/../boolean.h lib/Types/./Kicauan.h \
- lib/Types/./../ADT/DateTime/datetime.h \
- lib/Types/./../ADT/DateTime/../../boolean.h \
- lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ListUser.h \
- lib/Types/RequestQueue.h lib/Types/DrafKicauan.h /usr/include/stdio.h \
+ lib/Types/./DrafKicauan.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -43,9 +34,17 @@
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- lib/Types/../ADT/String/string.h lib/Types/Kicauan.h \
- lib/Types/listKicauan.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h lib/Types/./Kicauan.h \
+ lib/Types/./../ADT/DateTime/datetime.h \
+ lib/Types/./../ADT/DateTime/../../boolean.h \
+ lib/Types/./../ADT/DateTime/../String/string.h \
+ lib/ADT/../ADT/Graf/graf.h lib/ADT/../ADT/Graf/../../boolean.h \
+ lib/ADT/../ADT/Graf/../ListStatik/liststatik.h \
+ lib/ADT/../ADT/Graf/../ListStatik/../../boolean.h \
+ lib/ADT/../ADT/Graf/../Matriks/boolMatriks.h \
+ lib/ADT/../ADT/Graf/../Matriks/../../boolean.h lib/Types/listKicauan.h \
+ lib/Types/../boolean.h lib/Types/./Kicauan.h lib/Types/./ListUser.h \
+ lib/Types/RequestQueue.h \
  lib/Types/Application/permintaan-pertemanan/../../../ADT/String/string.h
 /usr/include/stdc-predef.h:
 lib/Types/Application/permintaan-pertemanan/permintaan-pertemanan.h:
@@ -64,21 +63,7 @@ lib/Types/./Photo.h:
 lib/Types/./../ADT/Matriks/charMatriks.h:
 lib/Types/./../ADT/Matriks/../../boolean.h:
 lib/Types/./RequestQueue.h:
-lib/ADT/../ADT/Graf/graf.h:
-lib/ADT/../ADT/Graf/../../boolean.h:
-lib/ADT/../ADT/Graf/../ListStatik/liststatik.h:
-lib/ADT/../ADT/Graf/../ListStatik/../../boolean.h:
-lib/ADT/../ADT/Graf/../Matriks/boolMatriks.h:
-lib/ADT/../ADT/Graf/../Matriks/../../boolean.h:
-lib/Types/listKicauan.h:
-lib/Types/../boolean.h:
-lib/Types/./Kicauan.h:
-lib/Types/./../ADT/DateTime/datetime.h:
-lib/Types/./../ADT/DateTime/../../boolean.h:
-lib/Types/./../ADT/DateTime/../String/string.h:
-lib/Types/./ListUser.h:
-lib/Types/RequestQueue.h:
-lib/Types/DrafKicauan.h:
+lib/Types/./DrafKicauan.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 /usr/include/features.h:
@@ -103,7 +88,19 @@ lib/Types/DrafKicauan.h:
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-lib/Types/../ADT/String/string.h:
-lib/Types/Kicauan.h:
+lib/Types/./Kicauan.h:
+lib/Types/./../ADT/DateTime/datetime.h:
+lib/Types/./../ADT/DateTime/../../boolean.h:
+lib/Types/./../ADT/DateTime/../String/string.h:
+lib/ADT/../ADT/Graf/graf.h:
+lib/ADT/../ADT/Graf/../../boolean.h:
+lib/ADT/../ADT/Graf/../ListStatik/liststatik.h:
+lib/ADT/../ADT/Graf/../ListStatik/../../boolean.h:
+lib/ADT/../ADT/Graf/../Matriks/boolMatriks.h:
+lib/ADT/../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/listKicauan.h:
+lib/Types/../boolean.h:
+lib/Types/./Kicauan.h:
+lib/Types/./ListUser.h:
+lib/Types/RequestQueue.h:
 lib/Types/Application/permintaan-pertemanan/../../../ADT/String/string.h:

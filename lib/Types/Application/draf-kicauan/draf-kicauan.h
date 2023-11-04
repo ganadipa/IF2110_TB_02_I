@@ -5,18 +5,19 @@
 #include "Application.h"
 #include "../ADT/String/string.h"
 #include "../../DrafKicauan.h"
+#include "../../User.h"
 
-void SimpanDraf(User *app, Kicauan kicau);
+void SimpanDraf(User* user, Kicauan kicau);
 
-void UbahDraf(Application *app, User *user, Kicauan tempKicau);
+// void UbahDraf(Application *app, User user, Kicauan tempKicau);
 
-void HapusDraf(User *app, Kicauan *sampahKicau);
+// void HapusDraf(User* user, Kicauan *sampahKicau);
 
-void TerbitkanDraf(Application *app, User *user, Kicauan kicau, int IDUSER);
+// void TerbitkanDraf(Application *app, Kicauan kicau, int IDUSER);
 
-void LihatDraf(Application *app, User *user);
+void LihatDraf(Application *app);
 
-void BuatDraf(Application *app, User *user);
+void BuatDraf(Application *app);
 
 
 #endif

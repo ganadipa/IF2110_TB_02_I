@@ -50,16 +50,18 @@
  lib/Types/./../ADT/String/string.h lib/Types/./Profile.h \
  lib/Types/./Photo.h lib/Types/./../ADT/Matriks/charMatriks.h \
  lib/Types/./../ADT/Matriks/../../boolean.h lib/Types/./RequestQueue.h \
- lib/Types/./DrafKicauan.h lib/ADT/../ADT/Graf/graf.h \
- lib/Types/listKicauan.h lib/Types/../boolean.h lib/Types/./Kicauan.h \
+ lib/Types/./DrafKicauan.h lib/Types/./Kicauan.h \
  lib/Types/./../ADT/DateTime/datetime.h \
  lib/Types/./../ADT/DateTime/../../boolean.h \
- lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ListUser.h \
+ lib/Types/./../ADT/DateTime/../String/string.h \
+ lib/ADT/../ADT/Graf/graf.h lib/Types/listKicauan.h \
+ lib/Types/../boolean.h lib/Types/./Kicauan.h lib/Types/./ListUser.h \
  lib/Types/RequestQueue.h \
  app/../lib/./Types/Application/balasan/balasan.h \
  app/../lib/./Types/Application/draf-kicauan/draf-kicauan.h \
  lib/Types/Application/Application.h lib/ADT/../ADT/String/string.h \
  app/../lib/./Types/Application/draf-kicauan/../../DrafKicauan.h \
+ app/../lib/./Types/Application/draf-kicauan/../../User.h \
  app/../lib/./Types/Application/inisialisasi/inisialisasi.h \
  app/../lib/./Types/Application/inisialisasi/../Application.h \
  app/../lib/./Types/Application/kicauan/kicauan.h \
@@ -170,13 +172,14 @@ lib/Types/./../ADT/Matriks/charMatriks.h:
 lib/Types/./../ADT/Matriks/../../boolean.h:
 lib/Types/./RequestQueue.h:
 lib/Types/./DrafKicauan.h:
-lib/ADT/../ADT/Graf/graf.h:
-lib/Types/listKicauan.h:
-lib/Types/../boolean.h:
 lib/Types/./Kicauan.h:
 lib/Types/./../ADT/DateTime/datetime.h:
 lib/Types/./../ADT/DateTime/../../boolean.h:
 lib/Types/./../ADT/DateTime/../String/string.h:
+lib/ADT/../ADT/Graf/graf.h:
+lib/Types/listKicauan.h:
+lib/Types/../boolean.h:
+lib/Types/./Kicauan.h:
 lib/Types/./ListUser.h:
 lib/Types/RequestQueue.h:
 app/../lib/./Types/Application/balasan/balasan.h:
@@ -184,6 +187,7 @@ app/../lib/./Types/Application/draf-kicauan/draf-kicauan.h:
 lib/Types/Application/Application.h:
 lib/ADT/../ADT/String/string.h:
 app/../lib/./Types/Application/draf-kicauan/../../DrafKicauan.h:
+app/../lib/./Types/Application/draf-kicauan/../../User.h:
 app/../lib/./Types/Application/inisialisasi/inisialisasi.h:
 app/../lib/./Types/Application/inisialisasi/../Application.h:
 app/../lib/./Types/Application/kicauan/kicauan.h:

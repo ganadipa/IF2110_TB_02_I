@@ -72,6 +72,7 @@
  lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/draf-kicauan.h \
  lib/Types/Application/Application.h lib/ADT/../ADT/String/string.h \
  lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../DrafKicauan.h \
+ lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../User.h \
  lib/ADT/WordMachine/../.././Types/Application/inisialisasi/inisialisasi.h \
  lib/ADT/WordMachine/../.././Types/Application/inisialisasi/../Application.h \
  lib/ADT/WordMachine/../.././Types/Application/kicauan/kicauan.h \
@@ -201,6 +202,7 @@ lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/draf-kicauan.h:
 lib/Types/Application/Application.h:
 lib/ADT/../ADT/String/string.h:
 lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../DrafKicauan.h:
+lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../User.h:
 lib/ADT/WordMachine/../.././Types/Application/inisialisasi/inisialisasi.h:
 lib/ADT/WordMachine/../.././Types/Application/inisialisasi/../Application.h:
 lib/ADT/WordMachine/../.././Types/Application/kicauan/kicauan.h:

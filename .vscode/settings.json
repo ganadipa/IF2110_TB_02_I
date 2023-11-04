@@ -32,6 +32,7 @@
     "devtools.h": "c",
     "draf-kicauan.h": "c",
     "requestqueue.h": "c",
-    "drafkicauan.h": "c"
+    "drafkicauan.h": "c",
+    "inisialisasi.h": "c"
   }
 }

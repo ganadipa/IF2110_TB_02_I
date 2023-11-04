@@ -21,7 +21,6 @@ typedef struct user {
     DrafKicau drafKicau;
 } User;
 
-
 #define ID(u) (u).ID
 #define NAME(u) (u).name
 #define PW(u) (u).password

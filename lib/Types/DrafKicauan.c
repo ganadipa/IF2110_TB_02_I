@@ -37,3 +37,9 @@ void PopDraf(DrafKicau *S, Kicauan *k){
         TopDraf(*S) -= 1;
     }
 }
+
+void PrintDraf(DrafKicau S){
+    Kicauan temp; 
+    PopDraf(&S, &temp);
+    displayString(temp.dateTime);
+}
