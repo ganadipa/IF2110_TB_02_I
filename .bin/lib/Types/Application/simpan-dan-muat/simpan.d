@@ -57,26 +57,37 @@
  app/../lib/./ADT/Tree/tree.h app/../lib/./ADT/Tree/../../boolean.h \
  app/../lib/./ADT/Tree/../ListDinamik/listdinamik.h \
  app/../lib/./ADT/PColor/pcolor.h app/../lib/./boolean.h \
- app/../lib/./Types/Application/Application.h lib/ADT/../boolean.h \
- lib/Types/./ListUser.h lib/Types/./../boolean.h lib/Types/./User.h \
- lib/Types/./../ADT/String/string.h lib/Types/./Profile.h \
- lib/Types/./Photo.h lib/Types/./../ADT/Matriks/charMatriks.h \
- lib/Types/./../ADT/Matriks/../../boolean.h lib/Types/./RequestQueue.h \
- lib/Types/./DrafKicauan.h lib/Types/./Kicauan.h \
- lib/Types/./../ADT/DateTime/datetime.h \
- lib/Types/./../ADT/DateTime/../../boolean.h \
- lib/Types/./../ADT/DateTime/../String/string.h \
- lib/ADT/../ADT/Graf/graf.h lib/Types/listKicauan.h \
- lib/Types/../boolean.h lib/Types/./Kicauan.h lib/Types/./ListUser.h \
- lib/Types/RequestQueue.h \
+ app/../lib/./Types/Application/Application.h \
+ app/../lib/./Types/Application/../../boolean.h \
+ app/../lib/./Types/Application/../ListUser.h \
+ app/../lib/./Types/Application/../../boolean.h \
+ app/../lib/./Types/Application/../User.h \
+ app/../lib/./Types/Application/../../ADT/String/string.h \
+ app/../lib/./Types/Application/../Profile.h \
+ app/../lib/./Types/Application/../Photo.h \
+ app/../lib/./Types/Application/../../ADT/Matriks/charMatriks.h \
+ app/../lib/./Types/Application/../../ADT/Matriks/../../boolean.h \
+ app/../lib/./Types/Application/../RequestQueue.h \
+ app/../lib/./Types/Application/../DrafKicauan.h \
+ app/../lib/./Types/Application/../Kicauan.h \
+ app/../lib/./Types/Application/../../ADT/DateTime/datetime.h \
+ app/../lib/./Types/Application/../../ADT/DateTime/../../boolean.h \
+ app/../lib/./Types/Application/../../ADT/DateTime/../String/string.h \
+ app/../lib/./Types/Application/../listUtas.h \
+ app/../lib/./Types/Application/../../ADT/Graf/graf.h \
+ app/../lib/./Types/Application/../listKicauan.h \
+ app/../lib/./Types/Application/.././Kicauan.h \
+ app/../lib/./Types/Application/.././ListUser.h \
+ app/../lib/./Types/Application/../RequestQueue.h \
  app/../lib/./Types/Application/balasan/balasan.h \
  app/../lib/./Types/Application/draf-kicauan/draf-kicauan.h \
- lib/Types/Application/Application.h lib/ADT/../ADT/String/string.h \
+ lib/Types/Application.h lib/ADT/../ADT/String/string.h \
  app/../lib/./Types/Application/draf-kicauan/../../DrafKicauan.h \
  app/../lib/./Types/Application/draf-kicauan/../../User.h \
  app/../lib/./Types/Application/inisialisasi/inisialisasi.h \
  app/../lib/./Types/Application/inisialisasi/../Application.h \
  app/../lib/./Types/Application/kicauan/kicauan.h \
+ app/../lib/./Types/Application/kicauan/../../../ADT/String/string.h \
  app/../lib/./Types/Application/kicauan/../Application.h \
  app/../lib/./Types/Application/kicauan/../../Kicauan.h \
  app/../lib/./Types/Application/pengguna/pengguna.h \
@@ -90,6 +101,8 @@
  app/../lib/./Types/Application/teman/teman.h \
  app/../lib/./Types/Application/teman/../Application.h \
  app/../lib/./Types/Application/utas/utas.h \
+ app/../lib/./Types/Application/utas/../Application.h \
+ app/../lib/./Types/Application/utas/../../listUtas.h \
  app/../lib/./Types/Application/perintah/perintah.h \
  app/../lib/./Types/Application/perintah/../Application.h \
  app/../lib/./Types/Application/perintah/../balasan/balasan.h \
@@ -175,36 +188,37 @@ app/../lib/./ADT/Tree/../ListDinamik/listdinamik.h:
 app/../lib/./ADT/PColor/pcolor.h:
 app/../lib/./boolean.h:
 app/../lib/./Types/Application/Application.h:
-lib/ADT/../boolean.h:
-lib/Types/./ListUser.h:
-lib/Types/./../boolean.h:
-lib/Types/./User.h:
-lib/Types/./../ADT/String/string.h:
-lib/Types/./Profile.h:
-lib/Types/./Photo.h:
-lib/Types/./../ADT/Matriks/charMatriks.h:
-lib/Types/./../ADT/Matriks/../../boolean.h:
-lib/Types/./RequestQueue.h:
-lib/Types/./DrafKicauan.h:
-lib/Types/./Kicauan.h:
-lib/Types/./../ADT/DateTime/datetime.h:
-lib/Types/./../ADT/DateTime/../../boolean.h:
-lib/Types/./../ADT/DateTime/../String/string.h:
-lib/ADT/../ADT/Graf/graf.h:
-lib/Types/listKicauan.h:
-lib/Types/../boolean.h:
-lib/Types/./Kicauan.h:
-lib/Types/./ListUser.h:
-lib/Types/RequestQueue.h:
+app/../lib/./Types/Application/../../boolean.h:
+app/../lib/./Types/Application/../ListUser.h:
+app/../lib/./Types/Application/../../boolean.h:
+app/../lib/./Types/Application/../User.h:
+app/../lib/./Types/Application/../../ADT/String/string.h:
+app/../lib/./Types/Application/../Profile.h:
+app/../lib/./Types/Application/../Photo.h:
+app/../lib/./Types/Application/../../ADT/Matriks/charMatriks.h:
+app/../lib/./Types/Application/../../ADT/Matriks/../../boolean.h:
+app/../lib/./Types/Application/../RequestQueue.h:
+app/../lib/./Types/Application/../DrafKicauan.h:
+app/../lib/./Types/Application/../Kicauan.h:
+app/../lib/./Types/Application/../../ADT/DateTime/datetime.h:
+app/../lib/./Types/Application/../../ADT/DateTime/../../boolean.h:
+app/../lib/./Types/Application/../../ADT/DateTime/../String/string.h:
+app/../lib/./Types/Application/../listUtas.h:
+app/../lib/./Types/Application/../../ADT/Graf/graf.h:
+app/../lib/./Types/Application/../listKicauan.h:
+app/../lib/./Types/Application/.././Kicauan.h:
+app/../lib/./Types/Application/.././ListUser.h:
+app/../lib/./Types/Application/../RequestQueue.h:
 app/../lib/./Types/Application/balasan/balasan.h:
 app/../lib/./Types/Application/draf-kicauan/draf-kicauan.h:
-lib/Types/Application/Application.h:
+lib/Types/Application.h:
 lib/ADT/../ADT/String/string.h:
 app/../lib/./Types/Application/draf-kicauan/../../DrafKicauan.h:
 app/../lib/./Types/Application/draf-kicauan/../../User.h:
 app/../lib/./Types/Application/inisialisasi/inisialisasi.h:
 app/../lib/./Types/Application/inisialisasi/../Application.h:
 app/../lib/./Types/Application/kicauan/kicauan.h:
+app/../lib/./Types/Application/kicauan/../../../ADT/String/string.h:
 app/../lib/./Types/Application/kicauan/../Application.h:
 app/../lib/./Types/Application/kicauan/../../Kicauan.h:
 app/../lib/./Types/Application/pengguna/pengguna.h:
@@ -218,6 +232,8 @@ app/../lib/./Types/Application/permintaan-pertemanan/../../../ADT/String/string.
 app/../lib/./Types/Application/teman/teman.h:
 app/../lib/./Types/Application/teman/../Application.h:
 app/../lib/./Types/Application/utas/utas.h:
+app/../lib/./Types/Application/utas/../Application.h:
+app/../lib/./Types/Application/utas/../../listUtas.h:
 app/../lib/./Types/Application/perintah/perintah.h:
 app/../lib/./Types/Application/perintah/../Application.h:
 app/../lib/./Types/Application/perintah/../balasan/balasan.h:

@@ -65,6 +65,10 @@ void addString(String *s, String s2);
 /**
  * 
 */
+void replaceString(String *s, int idx, int idx2, String s2);
+/**
+ * 
+*/
 char *addChartoChar(char *destination, const char *source);
 /**
  * 
@@ -108,5 +112,6 @@ String getWordAt(String s, int i) ;
 
 int countWord(String s);
 
+int stringToInt(String s);
 
 #endif

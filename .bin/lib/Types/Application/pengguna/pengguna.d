@@ -1,17 +1,22 @@
 .bin/lib/Types/Application/pengguna/pengguna.o: \
  lib/Types/Application/pengguna/pengguna.c /usr/include/stdc-predef.h \
  lib/Types/Application/pengguna/pengguna.h \
- lib/Types/Application/pengguna/../Application.h lib/ADT/../boolean.h \
- lib/Types/./ListUser.h lib/Types/./../boolean.h lib/Types/./User.h \
- lib/Types/./../ADT/String/string.h \
- lib/Types/./../ADT/String/../../boolean.h \
- lib/Types/./../ADT/String/../WordMachine/wordmachine.h \
- lib/Types/./../ADT/String/../WordMachine/../../boolean.h \
- lib/Types/./../ADT/String/../WordMachine/charmachine.h \
- lib/Types/./Profile.h lib/Types/./Photo.h \
- lib/Types/./../ADT/Matriks/charMatriks.h \
- lib/Types/./../ADT/Matriks/../../boolean.h lib/Types/./RequestQueue.h \
- lib/Types/./DrafKicauan.h /usr/include/stdio.h \
+ lib/Types/Application/pengguna/../Application.h \
+ lib/Types/Application/pengguna/../../../boolean.h \
+ lib/Types/Application/pengguna/../../ListUser.h \
+ lib/Types/Application/pengguna/../../../boolean.h \
+ lib/Types/Application/pengguna/../../User.h \
+ lib/Types/Application/pengguna/../../../ADT/String/string.h \
+ lib/Types/Application/pengguna/../../../ADT/String/../../boolean.h \
+ lib/Types/Application/pengguna/../../../ADT/String/../WordMachine/wordmachine.h \
+ lib/Types/Application/pengguna/../../../ADT/String/../WordMachine/../../boolean.h \
+ lib/Types/Application/pengguna/../../../ADT/String/../WordMachine/charmachine.h \
+ lib/Types/Application/pengguna/../../Profile.h \
+ lib/Types/Application/pengguna/../../Photo.h \
+ lib/Types/Application/pengguna/../../../ADT/Matriks/charMatriks.h \
+ lib/Types/Application/pengguna/../../../ADT/Matriks/../../boolean.h \
+ lib/Types/Application/pengguna/../../RequestQueue.h \
+ lib/Types/Application/pengguna/../../DrafKicauan.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -33,35 +38,40 @@
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h lib/Types/./Kicauan.h \
- lib/Types/./../ADT/DateTime/datetime.h \
- lib/Types/./../ADT/DateTime/../../boolean.h \
- lib/Types/./../ADT/DateTime/../String/string.h \
- lib/ADT/../ADT/Graf/graf.h lib/ADT/../ADT/Graf/../../boolean.h \
- lib/ADT/../ADT/Graf/../ListStatik/liststatik.h \
- lib/ADT/../ADT/Graf/../ListStatik/../../boolean.h \
- lib/ADT/../ADT/Graf/../Matriks/boolMatriks.h \
- lib/ADT/../ADT/Graf/../Matriks/../../boolean.h lib/Types/listKicauan.h \
- lib/Types/../boolean.h lib/Types/./Kicauan.h lib/Types/./ListUser.h \
- lib/Types/RequestQueue.h
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ lib/Types/Application/pengguna/../../Kicauan.h \
+ lib/Types/Application/pengguna/../../../ADT/DateTime/datetime.h \
+ lib/Types/Application/pengguna/../../../ADT/DateTime/../../boolean.h \
+ lib/Types/Application/pengguna/../../../ADT/DateTime/../String/string.h \
+ lib/Types/Application/pengguna/../../listUtas.h \
+ lib/Types/Application/pengguna/../../../ADT/Graf/graf.h \
+ lib/Types/Application/pengguna/../../../ADT/Graf/../../boolean.h \
+ lib/Types/Application/pengguna/../../../ADT/Graf/../ListStatik/liststatik.h \
+ lib/Types/Application/pengguna/../../../ADT/Graf/../ListStatik/../../boolean.h \
+ lib/Types/Application/pengguna/../../../ADT/Graf/../Matriks/boolMatriks.h \
+ lib/Types/Application/pengguna/../../../ADT/Graf/../Matriks/../../boolean.h \
+ lib/Types/Application/pengguna/../../listKicauan.h \
+ lib/Types/Application/pengguna/../.././Kicauan.h \
+ lib/Types/Application/pengguna/../.././ListUser.h \
+ lib/Types/Application/pengguna/../../RequestQueue.h
 /usr/include/stdc-predef.h:
 lib/Types/Application/pengguna/pengguna.h:
 lib/Types/Application/pengguna/../Application.h:
-lib/ADT/../boolean.h:
-lib/Types/./ListUser.h:
-lib/Types/./../boolean.h:
-lib/Types/./User.h:
-lib/Types/./../ADT/String/string.h:
-lib/Types/./../ADT/String/../../boolean.h:
-lib/Types/./../ADT/String/../WordMachine/wordmachine.h:
-lib/Types/./../ADT/String/../WordMachine/../../boolean.h:
-lib/Types/./../ADT/String/../WordMachine/charmachine.h:
-lib/Types/./Profile.h:
-lib/Types/./Photo.h:
-lib/Types/./../ADT/Matriks/charMatriks.h:
-lib/Types/./../ADT/Matriks/../../boolean.h:
-lib/Types/./RequestQueue.h:
-lib/Types/./DrafKicauan.h:
+lib/Types/Application/pengguna/../../../boolean.h:
+lib/Types/Application/pengguna/../../ListUser.h:
+lib/Types/Application/pengguna/../../../boolean.h:
+lib/Types/Application/pengguna/../../User.h:
+lib/Types/Application/pengguna/../../../ADT/String/string.h:
+lib/Types/Application/pengguna/../../../ADT/String/../../boolean.h:
+lib/Types/Application/pengguna/../../../ADT/String/../WordMachine/wordmachine.h:
+lib/Types/Application/pengguna/../../../ADT/String/../WordMachine/../../boolean.h:
+lib/Types/Application/pengguna/../../../ADT/String/../WordMachine/charmachine.h:
+lib/Types/Application/pengguna/../../Profile.h:
+lib/Types/Application/pengguna/../../Photo.h:
+lib/Types/Application/pengguna/../../../ADT/Matriks/charMatriks.h:
+lib/Types/Application/pengguna/../../../ADT/Matriks/../../boolean.h:
+lib/Types/Application/pengguna/../../RequestQueue.h:
+lib/Types/Application/pengguna/../../DrafKicauan.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 /usr/include/features.h:
@@ -86,18 +96,18 @@ lib/Types/./DrafKicauan.h:
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-lib/Types/./Kicauan.h:
-lib/Types/./../ADT/DateTime/datetime.h:
-lib/Types/./../ADT/DateTime/../../boolean.h:
-lib/Types/./../ADT/DateTime/../String/string.h:
-lib/ADT/../ADT/Graf/graf.h:
-lib/ADT/../ADT/Graf/../../boolean.h:
-lib/ADT/../ADT/Graf/../ListStatik/liststatik.h:
-lib/ADT/../ADT/Graf/../ListStatik/../../boolean.h:
-lib/ADT/../ADT/Graf/../Matriks/boolMatriks.h:
-lib/ADT/../ADT/Graf/../Matriks/../../boolean.h:
-lib/Types/listKicauan.h:
-lib/Types/../boolean.h:
-lib/Types/./Kicauan.h:
-lib/Types/./ListUser.h:
-lib/Types/RequestQueue.h:
+lib/Types/Application/pengguna/../../Kicauan.h:
+lib/Types/Application/pengguna/../../../ADT/DateTime/datetime.h:
+lib/Types/Application/pengguna/../../../ADT/DateTime/../../boolean.h:
+lib/Types/Application/pengguna/../../../ADT/DateTime/../String/string.h:
+lib/Types/Application/pengguna/../../listUtas.h:
+lib/Types/Application/pengguna/../../../ADT/Graf/graf.h:
+lib/Types/Application/pengguna/../../../ADT/Graf/../../boolean.h:
+lib/Types/Application/pengguna/../../../ADT/Graf/../ListStatik/liststatik.h:
+lib/Types/Application/pengguna/../../../ADT/Graf/../ListStatik/../../boolean.h:
+lib/Types/Application/pengguna/../../../ADT/Graf/../Matriks/boolMatriks.h:
+lib/Types/Application/pengguna/../../../ADT/Graf/../Matriks/../../boolean.h:
+lib/Types/Application/pengguna/../../listKicauan.h:
+lib/Types/Application/pengguna/../.././Kicauan.h:
+lib/Types/Application/pengguna/../.././ListUser.h:
+lib/Types/Application/pengguna/../../RequestQueue.h:

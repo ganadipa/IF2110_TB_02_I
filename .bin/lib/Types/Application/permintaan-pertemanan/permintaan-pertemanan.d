@@ -3,16 +3,22 @@
  /usr/include/stdc-predef.h \
  lib/Types/Application/permintaan-pertemanan/permintaan-pertemanan.h \
  lib/Types/Application/permintaan-pertemanan/../Application.h \
- lib/ADT/../boolean.h lib/Types/./ListUser.h lib/Types/./../boolean.h \
- lib/Types/./User.h lib/Types/./../ADT/String/string.h \
- lib/Types/./../ADT/String/../../boolean.h \
- lib/Types/./../ADT/String/../WordMachine/wordmachine.h \
- lib/Types/./../ADT/String/../WordMachine/../../boolean.h \
- lib/Types/./../ADT/String/../WordMachine/charmachine.h \
- lib/Types/./Profile.h lib/Types/./Photo.h \
- lib/Types/./../ADT/Matriks/charMatriks.h \
- lib/Types/./../ADT/Matriks/../../boolean.h lib/Types/./RequestQueue.h \
- lib/Types/./DrafKicauan.h /usr/include/stdio.h \
+ lib/Types/Application/permintaan-pertemanan/../../../boolean.h \
+ lib/Types/Application/permintaan-pertemanan/../../ListUser.h \
+ lib/Types/Application/permintaan-pertemanan/../../../boolean.h \
+ lib/Types/Application/permintaan-pertemanan/../../User.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/String/string.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/String/../../boolean.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/String/../WordMachine/wordmachine.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/String/../WordMachine/../../boolean.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/String/../WordMachine/charmachine.h \
+ lib/Types/Application/permintaan-pertemanan/../../Profile.h \
+ lib/Types/Application/permintaan-pertemanan/../../Photo.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/Matriks/charMatriks.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/Matriks/../../boolean.h \
+ lib/Types/Application/permintaan-pertemanan/../../RequestQueue.h \
+ lib/Types/Application/permintaan-pertemanan/../../DrafKicauan.h \
+ /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -34,36 +40,41 @@
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h lib/Types/./Kicauan.h \
- lib/Types/./../ADT/DateTime/datetime.h \
- lib/Types/./../ADT/DateTime/../../boolean.h \
- lib/Types/./../ADT/DateTime/../String/string.h \
- lib/ADT/../ADT/Graf/graf.h lib/ADT/../ADT/Graf/../../boolean.h \
- lib/ADT/../ADT/Graf/../ListStatik/liststatik.h \
- lib/ADT/../ADT/Graf/../ListStatik/../../boolean.h \
- lib/ADT/../ADT/Graf/../Matriks/boolMatriks.h \
- lib/ADT/../ADT/Graf/../Matriks/../../boolean.h lib/Types/listKicauan.h \
- lib/Types/../boolean.h lib/Types/./Kicauan.h lib/Types/./ListUser.h \
- lib/Types/RequestQueue.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ lib/Types/Application/permintaan-pertemanan/../../Kicauan.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/DateTime/datetime.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/DateTime/../../boolean.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/DateTime/../String/string.h \
+ lib/Types/Application/permintaan-pertemanan/../../listUtas.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/graf.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../../boolean.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../ListStatik/liststatik.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../ListStatik/../../boolean.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../Matriks/boolMatriks.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../Matriks/../../boolean.h \
+ lib/Types/Application/permintaan-pertemanan/../../listKicauan.h \
+ lib/Types/Application/permintaan-pertemanan/../.././Kicauan.h \
+ lib/Types/Application/permintaan-pertemanan/../.././ListUser.h \
+ lib/Types/Application/permintaan-pertemanan/../../RequestQueue.h \
  lib/Types/Application/permintaan-pertemanan/../../../ADT/String/string.h
 /usr/include/stdc-predef.h:
 lib/Types/Application/permintaan-pertemanan/permintaan-pertemanan.h:
 lib/Types/Application/permintaan-pertemanan/../Application.h:
-lib/ADT/../boolean.h:
-lib/Types/./ListUser.h:
-lib/Types/./../boolean.h:
-lib/Types/./User.h:
-lib/Types/./../ADT/String/string.h:
-lib/Types/./../ADT/String/../../boolean.h:
-lib/Types/./../ADT/String/../WordMachine/wordmachine.h:
-lib/Types/./../ADT/String/../WordMachine/../../boolean.h:
-lib/Types/./../ADT/String/../WordMachine/charmachine.h:
-lib/Types/./Profile.h:
-lib/Types/./Photo.h:
-lib/Types/./../ADT/Matriks/charMatriks.h:
-lib/Types/./../ADT/Matriks/../../boolean.h:
-lib/Types/./RequestQueue.h:
-lib/Types/./DrafKicauan.h:
+lib/Types/Application/permintaan-pertemanan/../../../boolean.h:
+lib/Types/Application/permintaan-pertemanan/../../ListUser.h:
+lib/Types/Application/permintaan-pertemanan/../../../boolean.h:
+lib/Types/Application/permintaan-pertemanan/../../User.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/String/string.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/String/../../boolean.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/String/../WordMachine/wordmachine.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/String/../WordMachine/../../boolean.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/String/../WordMachine/charmachine.h:
+lib/Types/Application/permintaan-pertemanan/../../Profile.h:
+lib/Types/Application/permintaan-pertemanan/../../Photo.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/Matriks/charMatriks.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/Matriks/../../boolean.h:
+lib/Types/Application/permintaan-pertemanan/../../RequestQueue.h:
+lib/Types/Application/permintaan-pertemanan/../../DrafKicauan.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 /usr/include/features.h:
@@ -88,19 +99,19 @@ lib/Types/./DrafKicauan.h:
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-lib/Types/./Kicauan.h:
-lib/Types/./../ADT/DateTime/datetime.h:
-lib/Types/./../ADT/DateTime/../../boolean.h:
-lib/Types/./../ADT/DateTime/../String/string.h:
-lib/ADT/../ADT/Graf/graf.h:
-lib/ADT/../ADT/Graf/../../boolean.h:
-lib/ADT/../ADT/Graf/../ListStatik/liststatik.h:
-lib/ADT/../ADT/Graf/../ListStatik/../../boolean.h:
-lib/ADT/../ADT/Graf/../Matriks/boolMatriks.h:
-lib/ADT/../ADT/Graf/../Matriks/../../boolean.h:
-lib/Types/listKicauan.h:
-lib/Types/../boolean.h:
-lib/Types/./Kicauan.h:
-lib/Types/./ListUser.h:
-lib/Types/RequestQueue.h:
+lib/Types/Application/permintaan-pertemanan/../../Kicauan.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/DateTime/datetime.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/DateTime/../../boolean.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/DateTime/../String/string.h:
+lib/Types/Application/permintaan-pertemanan/../../listUtas.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/graf.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../../boolean.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../ListStatik/liststatik.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../ListStatik/../../boolean.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../Matriks/boolMatriks.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../Matriks/../../boolean.h:
+lib/Types/Application/permintaan-pertemanan/../../listKicauan.h:
+lib/Types/Application/permintaan-pertemanan/../.././Kicauan.h:
+lib/Types/Application/permintaan-pertemanan/../.././ListUser.h:
+lib/Types/Application/permintaan-pertemanan/../../RequestQueue.h:
 lib/Types/Application/permintaan-pertemanan/../../../ADT/String/string.h:

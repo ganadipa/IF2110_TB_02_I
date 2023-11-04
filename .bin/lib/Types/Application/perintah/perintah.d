@@ -24,35 +24,46 @@
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  lib/Types/Application/perintah/perintah.h \
- lib/Types/Application/perintah/../Application.h lib/ADT/../boolean.h \
- lib/Types/./ListUser.h lib/Types/./../boolean.h lib/Types/./User.h \
- lib/Types/./../ADT/String/string.h \
- lib/Types/./../ADT/String/../../boolean.h \
- lib/Types/./../ADT/String/../WordMachine/wordmachine.h \
- lib/Types/./../ADT/String/../WordMachine/../../boolean.h \
- lib/Types/./../ADT/String/../WordMachine/charmachine.h \
- lib/Types/./Profile.h lib/Types/./Photo.h \
- lib/Types/./../ADT/Matriks/charMatriks.h \
- lib/Types/./../ADT/Matriks/../../boolean.h lib/Types/./RequestQueue.h \
- lib/Types/./DrafKicauan.h lib/Types/./Kicauan.h \
- lib/Types/./../ADT/DateTime/datetime.h \
- lib/Types/./../ADT/DateTime/../../boolean.h \
- lib/Types/./../ADT/DateTime/../String/string.h \
- lib/ADT/../ADT/Graf/graf.h lib/ADT/../ADT/Graf/../../boolean.h \
- lib/ADT/../ADT/Graf/../ListStatik/liststatik.h \
- lib/ADT/../ADT/Graf/../ListStatik/../../boolean.h \
- lib/ADT/../ADT/Graf/../Matriks/boolMatriks.h \
- lib/ADT/../ADT/Graf/../Matriks/../../boolean.h lib/Types/listKicauan.h \
- lib/Types/../boolean.h lib/Types/./Kicauan.h lib/Types/./ListUser.h \
- lib/Types/RequestQueue.h \
+ lib/Types/Application/perintah/../Application.h \
+ lib/Types/Application/perintah/../../../boolean.h \
+ lib/Types/Application/perintah/../../ListUser.h \
+ lib/Types/Application/perintah/../../../boolean.h \
+ lib/Types/Application/perintah/../../User.h \
+ lib/Types/Application/perintah/../../../ADT/String/string.h \
+ lib/Types/Application/perintah/../../../ADT/String/../../boolean.h \
+ lib/Types/Application/perintah/../../../ADT/String/../WordMachine/wordmachine.h \
+ lib/Types/Application/perintah/../../../ADT/String/../WordMachine/../../boolean.h \
+ lib/Types/Application/perintah/../../../ADT/String/../WordMachine/charmachine.h \
+ lib/Types/Application/perintah/../../Profile.h \
+ lib/Types/Application/perintah/../../Photo.h \
+ lib/Types/Application/perintah/../../../ADT/Matriks/charMatriks.h \
+ lib/Types/Application/perintah/../../../ADT/Matriks/../../boolean.h \
+ lib/Types/Application/perintah/../../RequestQueue.h \
+ lib/Types/Application/perintah/../../DrafKicauan.h \
+ lib/Types/Application/perintah/../../Kicauan.h \
+ lib/Types/Application/perintah/../../../ADT/DateTime/datetime.h \
+ lib/Types/Application/perintah/../../../ADT/DateTime/../../boolean.h \
+ lib/Types/Application/perintah/../../../ADT/DateTime/../String/string.h \
+ lib/Types/Application/perintah/../../listUtas.h \
+ lib/Types/Application/perintah/../../../ADT/Graf/graf.h \
+ lib/Types/Application/perintah/../../../ADT/Graf/../../boolean.h \
+ lib/Types/Application/perintah/../../../ADT/Graf/../ListStatik/liststatik.h \
+ lib/Types/Application/perintah/../../../ADT/Graf/../ListStatik/../../boolean.h \
+ lib/Types/Application/perintah/../../../ADT/Graf/../Matriks/boolMatriks.h \
+ lib/Types/Application/perintah/../../../ADT/Graf/../Matriks/../../boolean.h \
+ lib/Types/Application/perintah/../../listKicauan.h \
+ lib/Types/Application/perintah/../.././Kicauan.h \
+ lib/Types/Application/perintah/../.././ListUser.h \
+ lib/Types/Application/perintah/../../RequestQueue.h \
  lib/Types/Application/perintah/../balasan/balasan.h \
  lib/Types/Application/perintah/../draf-kicauan/draf-kicauan.h \
- lib/Types/Application/Application.h lib/ADT/../ADT/String/string.h \
+ lib/Types/Application.h lib/ADT/../ADT/String/string.h \
  lib/Types/Application/perintah/../draf-kicauan/../../DrafKicauan.h \
  lib/Types/Application/perintah/../draf-kicauan/../../User.h \
  lib/Types/Application/perintah/../inisialisasi/inisialisasi.h \
  lib/Types/Application/perintah/../inisialisasi/../Application.h \
  lib/Types/Application/perintah/../kicauan/kicauan.h \
+ lib/Types/Application/perintah/../kicauan/../../../ADT/String/string.h \
  lib/Types/Application/perintah/../kicauan/../Application.h \
  lib/Types/Application/perintah/../kicauan/../../Kicauan.h \
  lib/Types/Application/perintah/../pengguna/pengguna.h \
@@ -99,6 +110,8 @@
  app/../lib/./Types/Application/teman/teman.h \
  app/../lib/./Types/Application/teman/../Application.h \
  app/../lib/./Types/Application/utas/utas.h \
+ app/../lib/./Types/Application/utas/../Application.h \
+ app/../lib/./Types/Application/utas/../../listUtas.h \
  app/../lib/./Types/Application/perintah/perintah.h \
  app/../lib/./Types/Application/Devtools.h \
  app/../lib/./Types/Application/Application.h \
@@ -135,45 +148,46 @@
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 lib/Types/Application/perintah/perintah.h:
 lib/Types/Application/perintah/../Application.h:
-lib/ADT/../boolean.h:
-lib/Types/./ListUser.h:
-lib/Types/./../boolean.h:
-lib/Types/./User.h:
-lib/Types/./../ADT/String/string.h:
-lib/Types/./../ADT/String/../../boolean.h:
-lib/Types/./../ADT/String/../WordMachine/wordmachine.h:
-lib/Types/./../ADT/String/../WordMachine/../../boolean.h:
-lib/Types/./../ADT/String/../WordMachine/charmachine.h:
-lib/Types/./Profile.h:
-lib/Types/./Photo.h:
-lib/Types/./../ADT/Matriks/charMatriks.h:
-lib/Types/./../ADT/Matriks/../../boolean.h:
-lib/Types/./RequestQueue.h:
-lib/Types/./DrafKicauan.h:
-lib/Types/./Kicauan.h:
-lib/Types/./../ADT/DateTime/datetime.h:
-lib/Types/./../ADT/DateTime/../../boolean.h:
-lib/Types/./../ADT/DateTime/../String/string.h:
-lib/ADT/../ADT/Graf/graf.h:
-lib/ADT/../ADT/Graf/../../boolean.h:
-lib/ADT/../ADT/Graf/../ListStatik/liststatik.h:
-lib/ADT/../ADT/Graf/../ListStatik/../../boolean.h:
-lib/ADT/../ADT/Graf/../Matriks/boolMatriks.h:
-lib/ADT/../ADT/Graf/../Matriks/../../boolean.h:
-lib/Types/listKicauan.h:
-lib/Types/../boolean.h:
-lib/Types/./Kicauan.h:
-lib/Types/./ListUser.h:
-lib/Types/RequestQueue.h:
+lib/Types/Application/perintah/../../../boolean.h:
+lib/Types/Application/perintah/../../ListUser.h:
+lib/Types/Application/perintah/../../../boolean.h:
+lib/Types/Application/perintah/../../User.h:
+lib/Types/Application/perintah/../../../ADT/String/string.h:
+lib/Types/Application/perintah/../../../ADT/String/../../boolean.h:
+lib/Types/Application/perintah/../../../ADT/String/../WordMachine/wordmachine.h:
+lib/Types/Application/perintah/../../../ADT/String/../WordMachine/../../boolean.h:
+lib/Types/Application/perintah/../../../ADT/String/../WordMachine/charmachine.h:
+lib/Types/Application/perintah/../../Profile.h:
+lib/Types/Application/perintah/../../Photo.h:
+lib/Types/Application/perintah/../../../ADT/Matriks/charMatriks.h:
+lib/Types/Application/perintah/../../../ADT/Matriks/../../boolean.h:
+lib/Types/Application/perintah/../../RequestQueue.h:
+lib/Types/Application/perintah/../../DrafKicauan.h:
+lib/Types/Application/perintah/../../Kicauan.h:
+lib/Types/Application/perintah/../../../ADT/DateTime/datetime.h:
+lib/Types/Application/perintah/../../../ADT/DateTime/../../boolean.h:
+lib/Types/Application/perintah/../../../ADT/DateTime/../String/string.h:
+lib/Types/Application/perintah/../../listUtas.h:
+lib/Types/Application/perintah/../../../ADT/Graf/graf.h:
+lib/Types/Application/perintah/../../../ADT/Graf/../../boolean.h:
+lib/Types/Application/perintah/../../../ADT/Graf/../ListStatik/liststatik.h:
+lib/Types/Application/perintah/../../../ADT/Graf/../ListStatik/../../boolean.h:
+lib/Types/Application/perintah/../../../ADT/Graf/../Matriks/boolMatriks.h:
+lib/Types/Application/perintah/../../../ADT/Graf/../Matriks/../../boolean.h:
+lib/Types/Application/perintah/../../listKicauan.h:
+lib/Types/Application/perintah/../.././Kicauan.h:
+lib/Types/Application/perintah/../.././ListUser.h:
+lib/Types/Application/perintah/../../RequestQueue.h:
 lib/Types/Application/perintah/../balasan/balasan.h:
 lib/Types/Application/perintah/../draf-kicauan/draf-kicauan.h:
-lib/Types/Application/Application.h:
+lib/Types/Application.h:
 lib/ADT/../ADT/String/string.h:
 lib/Types/Application/perintah/../draf-kicauan/../../DrafKicauan.h:
 lib/Types/Application/perintah/../draf-kicauan/../../User.h:
 lib/Types/Application/perintah/../inisialisasi/inisialisasi.h:
 lib/Types/Application/perintah/../inisialisasi/../Application.h:
 lib/Types/Application/perintah/../kicauan/kicauan.h:
+lib/Types/Application/perintah/../kicauan/../../../ADT/String/string.h:
 lib/Types/Application/perintah/../kicauan/../Application.h:
 lib/Types/Application/perintah/../kicauan/../../Kicauan.h:
 lib/Types/Application/perintah/../pengguna/pengguna.h:
@@ -227,6 +241,8 @@ app/../lib/./Types/Application/permintaan-pertemanan/../../../ADT/String/string.
 app/../lib/./Types/Application/teman/teman.h:
 app/../lib/./Types/Application/teman/../Application.h:
 app/../lib/./Types/Application/utas/utas.h:
+app/../lib/./Types/Application/utas/../Application.h:
+app/../lib/./Types/Application/utas/../../listUtas.h:
 app/../lib/./Types/Application/perintah/perintah.h:
 app/../lib/./Types/Application/Devtools.h:
 app/../lib/./Types/Application/Application.h:

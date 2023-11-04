@@ -29,7 +29,7 @@
  lib/Types/../ADT/String/../WordMachine/charmachine.h lib/Types/Kicauan.h \
  lib/Types/../ADT/DateTime/datetime.h \
  lib/Types/../ADT/DateTime/../../boolean.h \
- lib/Types/../ADT/DateTime/../String/string.h
+ lib/Types/../ADT/DateTime/../String/string.h lib/Types/listUtas.h
 /usr/include/stdc-predef.h:
 lib/Types/DrafKicauan.h:
 /usr/include/stdio.h:
@@ -66,3 +66,4 @@ lib/Types/Kicauan.h:
 lib/Types/../ADT/DateTime/datetime.h:
 lib/Types/../ADT/DateTime/../../boolean.h:
 lib/Types/../ADT/DateTime/../String/string.h:
+lib/Types/listUtas.h:

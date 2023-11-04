@@ -33,7 +33,8 @@
  lib/Types/./DrafKicauan.h lib/Types/./Kicauan.h \
  lib/Types/./../ADT/DateTime/datetime.h \
  lib/Types/./../ADT/DateTime/../../boolean.h \
- lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./Profile.h
+ lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./listUtas.h \
+ lib/Types/./Profile.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -76,4 +77,5 @@ lib/Types/./Kicauan.h:
 lib/Types/./../ADT/DateTime/datetime.h:
 lib/Types/./../ADT/DateTime/../../boolean.h:
 lib/Types/./../ADT/DateTime/../String/string.h:
+lib/Types/./listUtas.h:
 lib/Types/./Profile.h:

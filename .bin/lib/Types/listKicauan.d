@@ -31,9 +31,9 @@
  lib/Types/./../ADT/String/../WordMachine/charmachine.h \
  lib/Types/./../ADT/DateTime/datetime.h \
  lib/Types/./../ADT/DateTime/../../boolean.h \
- lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ListUser.h \
- lib/Types/./User.h lib/Types/./Profile.h lib/Types/./Photo.h \
- lib/Types/./../ADT/Matriks/charMatriks.h \
+ lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./listUtas.h \
+ lib/Types/./ListUser.h lib/Types/./User.h lib/Types/./Profile.h \
+ lib/Types/./Photo.h lib/Types/./../ADT/Matriks/charMatriks.h \
  lib/Types/./../ADT/Matriks/../../boolean.h lib/Types/./RequestQueue.h \
  lib/Types/./DrafKicauan.h lib/Types/./Kicauan.h
 /usr/include/stdc-predef.h:
@@ -75,6 +75,7 @@ lib/Types/./../ADT/String/../WordMachine/charmachine.h:
 lib/Types/./../ADT/DateTime/datetime.h:
 lib/Types/./../ADT/DateTime/../../boolean.h:
 lib/Types/./../ADT/DateTime/../String/string.h:
+lib/Types/./listUtas.h:
 lib/Types/./ListUser.h:
 lib/Types/./User.h:
 lib/Types/./Profile.h:

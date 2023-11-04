@@ -20,7 +20,10 @@ void DaftarTeman(Application app) {
         displayName(l, LOGINID(app));
         printf(" memiliki %d teman:\n", numFriends);
         for (k = 0; k < length; k++) {
-            if(LOGINID(app) == k) continue;
+            if(LOGINID(app) == k){
+                continue;
+            }
+            
             if (CONNECTED(FRIENDSHIPS(app), k, LOGINID(app)) == true) {
                 printf(" | ");
                 displayName(l, k);
