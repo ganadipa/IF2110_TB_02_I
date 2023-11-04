@@ -89,13 +89,12 @@ void CopyWordFILE(){
 void CopyFILEPhoto(){
     int i = 0;
     while (currentCharFile != MARK_LAST_FILE && currentCharFile != '\n'){
-        IgnoreBlanksFile();
         currentWordFile.buffer[i] = currentCharFile;
         currentWordFile.maxLength = i + 1;
         i++;
         ADVCHARFILE();
     }
-    // currentWordFile.buffer[10] = '\n';
-    // currentWordFile.maxLength += 1;
+    currentWordFile.buffer[i] = '\n';
+    currentWordFile.maxLength += 1;
     // printf("%c", currentWordFile.buffer[10]);
 }

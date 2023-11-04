@@ -119,11 +119,12 @@ void addString(String *s, String s2){
         addChar(s, s2.buffer[i]);
     }
 }
-void emptyString(String *s){
-    int length = stringLength (*s);
-    int i = 0;
-    for(i = 0; i < length; i++){
-        s->buffer[i] = '\0';
+void replaceString(String *s, int idx, int idx2, String s2){
+    int i = idx;
+    int j = 0;
+    for(i= idx; i < idx2; i++){
+        s->buffer[i] = s2.buffer[j];
+        j++;
     }
 }
 char *addChartoChar(char *destination, const char *source){

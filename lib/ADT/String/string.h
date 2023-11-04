@@ -65,7 +65,7 @@ void addString(String *s, String s2);
 /**
  * 
 */
-void emptyString(String *s);
+void replaceString(String *s, int idx, int idx2, String s2);
 /**
  * 
 */

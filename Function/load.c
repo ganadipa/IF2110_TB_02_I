@@ -1,29 +1,29 @@
-#include "../lib/ADT/WordMachine/charmachinefile.h"
-#include "../lib/ADT/WordMachine/wordmachinefile.h"
-#include "../lib/ADT/WordMachine/wordmachine.h"
-#include "../lib/ADT/WordMachine/charmachine.h"
-#include "../lib/ADT/String/string.h"
-#include "../lib/ADT/PColor/pcolor.h"
-#include "../lib/Types/Photo.h"
-#include "../lib/ADT/Matriks/charMatriks.h"
-#include "../lib/Types/Kicauan.h"
-#include "../lib/Types/listKicauan.h"
-#include "../lib/ADT/DateTime/datetime.h"
-#include "../lib/Types/ListUser.h"
-#include "../lib/Types/RequestQueue.h"
-// #include "../lib/ADT/WordMachine/charmachinefile.c"
-// #include "../lib/ADT/WordMachine/wordmachinefile.c"
-// #include "../lib/ADT/WordMachine/wordmachine.c"
-// #include "../lib/ADT/WordMachine/charmachine.c"
-// #include "../lib/ADT/String/string.c"
-// #include "../lib/ADT/PColor/pcolor.c"
-// #include "../lib/Types/Photo.c"
-// #include "../lib/ADT/Matriks/charMatriks.c"
-// #include "../lib/Types/Kicauan.c"
-// #include "../lib/Types/listKicauan.c"
-// #include "../lib/ADT/DateTime/datetime.c"
-// #include "../lib/Types/ListUser.c"
-// #include "../lib/Types/RequestQueue.c"
+// #include "../lib/ADT/WordMachine/charmachinefile.h"
+// #include "../lib/ADT/WordMachine/wordmachinefile.h"
+// #include "../lib/ADT/WordMachine/wordmachine.h"
+// #include "../lib/ADT/WordMachine/charmachine.h"
+// #include "../lib/ADT/String/string.h"
+// #include "../lib/ADT/PColor/pcolor.h"
+// #include "../lib/Types/Photo.h"
+// #include "../lib/ADT/Matriks/charMatriks.h"
+// #include "../lib/Types/Kicauan.h"
+// #include "../lib/Types/listKicauan.h"
+// #include "../lib/ADT/DateTime/datetime.h"
+// #include "../lib/Types/ListUser.h"
+// #include "../lib/Types/RequestQueue.h"
+#include "../lib/ADT/WordMachine/charmachinefile.c"
+#include "../lib/ADT/WordMachine/wordmachinefile.c"
+#include "../lib/ADT/WordMachine/wordmachine.c"
+#include "../lib/ADT/WordMachine/charmachine.c"
+#include "../lib/ADT/String/string.c"
+#include "../lib/ADT/PColor/pcolor.c"
+#include "../lib/Types/Photo.c"
+#include "../lib/ADT/Matriks/charMatriks.c"
+#include "../lib/Types/Kicauan.c"
+#include "../lib/Types/listKicauan.c"
+#include "../lib/ADT/DateTime/datetime.c"
+#include "../lib/Types/ListUser.c"
+#include "../lib/Types/RequestQueue.c"
 #include <stdio.h>
 
 
@@ -33,7 +33,7 @@ void LoadPengguna(Application *app){
     int i,j;
     char temp[20] = "pengguna.config";
     String photoString;
-    createEmptyString(&photoString, 100);
+    createEmptyString(&photoString, 225);
     addChartoChar(filename.buffer, temp);
     filename.maxLength = STRCAP;
     STARTWORDFILE(filename);
@@ -60,11 +60,16 @@ void LoadPengguna(Application *app){
             addString(&app->users.contents[i].profile.weton, currentWordFile);
             ADVWORDFILE();
             app->users.contents[i].profile.isPrivate = (currentWordFile.buffer[1] == 'r');
-            emptyString(&photoString);
+            // displayString(photoString);
             for (j=0; j<5; j++){
                 ADVFILEPHOTO();
-                addString(&photoString, currentWordFile);
+                // displayString(currentWordFile);
+                // printf("\n");
+                replaceString(&photoString, j*20, (j*20)+21, currentWordFile);
             }
+            displayString(photoString);
+            printf("\n");
+            printf("\n");
             readPhotoFile(&(app->users.contents[i].profile.photo), photoString);
             
         }
@@ -123,26 +128,27 @@ int main(){
     LoadPengguna(&app);
     LoadKicauan(&app);
     // printf("%d", app.listKicauan.nEff);
-    displayString(app.users.contents[0].name);
-    printf("\n");
-    displayString(app.users.contents[0].password);
-    displayString(app.users.contents[0].profile.bio);
-    displayString(app.users.contents[0].profile.phoneNumber);
-    printf("\n");
-    displayString(app.users.contents[0].profile.weton);
-    // // displayPhoto(app->users.contents[1].profile.photo);
+    // displayString(app.users.contents[0].name);
+    // printf("\n");
+    // displayString(app.users.contents[0].password);
+    // displayString(app.users.contents[0].profile.bio);
+    // displayString(app.users.contents[0].profile.phoneNumber);
+    // printf("\n");
+    // displayString(app.users.contents[0].profile.weton);
+    // readPhoto(&app.users.contents[0].profile.photo);
+    displayPhoto(app.users.contents[0].profile.photo);
     // // printf("%u", app->users.contents[2].profile.isPrivate);
     // // displayString(photoString);
     // // printf("%d", photoString.maxLength);
     
-    printf("%d", app.listKicauan.buffer[0].IDKicau);
-    printf("\n");
-    displayString(app.listKicauan.buffer[0].text);
-    printf("\n");
-    // // printKicauan(app.listKicauan.buffer[0], nama);
-    printf("%d", app.listKicauan.buffer[0].IDuser);
-    printf("\n");
-    displayString(app.listKicauan.buffer[0].dateTime);
+    // printf("%d", app.listKicauan.buffer[0].IDKicau);
+    // printf("\n");
+    // displayString(app.listKicauan.buffer[0].text);
+    // printf("\n");
+    // // // printKicauan(app.listKicauan.buffer[0], nama);
+    // printf("%d", app.listKicauan.buffer[0].IDuser);
+    // printf("\n");
+    // displayString(app.listKicauan.buffer[0].dateTime);
 }
 
 // 

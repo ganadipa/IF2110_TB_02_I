@@ -23,6 +23,8 @@ void initializePhoto(Photo *p)
 void readPhoto(Photo *p) {
     String photoString;
     readString(&photoString, 100);
+    // displayString(photoString);
+    // printf("%d", stringLength(photoString));
     int i = 0;
     int j = 0;
     int ptr = 0;
