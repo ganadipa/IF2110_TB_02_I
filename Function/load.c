@@ -1,19 +1,24 @@
-#include "../lib/ADT/WordMachine/charmachinefile.h"
-#include "../lib/ADT/WordMachine/wordmachinefile.h"
-#include "../lib/ADT/WordMachine/wordmachine.h"
-#include "../lib/ADT/WordMachine/charmachine.h"
-#include "../lib/ADT/String/string.h"
-#include "../lib/ADT/PColor/pcolor.h"
-#include "../lib/Types/Photo.h"
-#include "../lib/ADT/Matriks/charMatriks.h"
-// #include "../lib/ADT/WordMachine/charmachinefile.c"
-// #include "../lib/ADT/WordMachine/wordmachinefile.c"
-// #include "../lib/ADT/WordMachine/wordmachine.c"
-// #include "../lib/ADT/WordMachine/charmachine.c"
-// #include "../lib/ADT/String/string.c"
-// #include "../lib/ADT/PColor/pcolor.c"
-// #include "../lib/Types/Photo.c"
-// #include "../lib/ADT/Matriks/charMatriks.c"
+// #include "../lib/ADT/WordMachine/charmachinefile.h"
+// #include "../lib/ADT/WordMachine/wordmachinefile.h"
+// #include "../lib/ADT/WordMachine/wordmachine.h"
+// #include "../lib/ADT/WordMachine/charmachine.h"
+// #include "../lib/ADT/String/string.h"
+// #include "../lib/ADT/PColor/pcolor.h"
+// #include "../lib/Types/Photo.h"
+// #include "../lib/ADT/Matriks/charMatriks.h"
+#include "../lib/ADT/WordMachine/charmachinefile.c"
+#include "../lib/ADT/WordMachine/wordmachinefile.c"
+#include "../lib/ADT/WordMachine/wordmachine.c"
+#include "../lib/ADT/WordMachine/charmachine.c"
+#include "../lib/ADT/String/string.c"
+#include "../lib/ADT/PColor/pcolor.c"
+#include "../lib/Types/Photo.c"
+#include "../lib/ADT/Matriks/charMatriks.c"
+#include "../lib/Types/Kicauan.c"
+#include "../lib/Types/listKicauan.c"
+#include "../lib/ADT/DateTime/datetime.c"
+#include "../lib/Types/ListUser.c"
+#include "../lib/Types/RequestQueue.c"
 #include <stdio.h>
 
 
@@ -28,7 +33,7 @@ void LoadPengguna(Application *app){
     filename.maxLength = STRCAP;
     STARTWORDFILE(filename);
     if (retvalfile != -1){
-        app->users.length = currentWordFile.buffer[0] - '0';
+        app->users.length = stringToInt(currentWordFile);
         
     }
     if(app->users.length > 0){
@@ -67,19 +72,51 @@ void LoadPengguna(Application *app){
     }
         
 }
-
+void LoadKicauan(Application *app){
+    String filename;
+    int i;
+    CreateListKicau(&app->listKicauan, 1000);
+    char temp[20] = "kicauan.config";
+    addChartoChar(filename.buffer, temp);
+    filename.maxLength = STRCAP;
+    STARTWORDFILE(filename);
+    if (retvalfile != -1){
+        app->listKicauan.nEff = stringToInt(currentWordFile);
+        for(i=0;i<app->listKicauan.nEff;i++){
+            ADVWORDFILE();
+            app->listKicauan.buffer[i].IDKicau = stringToInt(currentWordFile);
+            ADVWORDFILE();
+            displayString(currentWordFile);
+            addString(&app->listKicauan.buffer[i].text, currentWordFile);
+            displayString(app->listKicauan.buffer[i].text);
+            ADVWORDFILE();
+            app->listKicauan.buffer[i].like = stringToInt(currentWordFile);
+            ADVWORDFILE();
+            app->listKicauan.buffer[i].IDuser = searchByName(app->users, currentWordFile);
+            ADVWORDFILE();
+            addString(&app->listKicauan.buffer[i].dateTime, currentWordFile); 
+        }
+    }
+}
 int main(){
     Application app;
-    LoadPengguna(&app);
-    
-    // displayString(app->users.contents[2].name);
+    LoadKicauan(&app);
+    // printf("%d", app.listKicauan.buffer[1].IDKicau);
+    // displayString(app.listKicauan.buffer[0].text);
+    // printKicauan(app.listKicauan.buffer[0], nama);
+    // printf("%d", app.listKicauan.buffer[0].IDuser);
+    // displayString(app.listKicauan.buffer[0].dateTime);
+    // displayString(app.users.contents[2].name);
     // printf("\n");
-    // displayString(app->users.contents[2].password);
-    // displayString(app->users.contents[2].profile.bio);
-    // displayString(app->users.contents[2].profile.phoneNumber);
-    // displayString(app->users.contents[2].profile.weton);
-    // // displayPhoto(app->users.contents[1].profile.photo);
+    // displayString(app.users.contents[2].password);
+    // displayString(app.users.contents[2].profile.bio);
+    // displayString(app.users.contents[2].profile.phoneNumber);
+    // displayString(app.users.contents[2].profile.weton);
+    // displayPhoto(app->users.contents[1].profile.photo);
     // printf("%u", app->users.contents[2].profile.isPrivate);
     // displayString(photoString);
     // printf("%d", photoString.maxLength);
+    
 }
+
+// 
