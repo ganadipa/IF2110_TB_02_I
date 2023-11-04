@@ -94,12 +94,11 @@ void BuatDraf(Application *app){
     if(compareString(choose, "SIMPAN")){
         SimpanDraf(user, value);
         printf("Draft berhasil disimpan\n");
-    } else if(compareString(choose, "HAPUS")){
+    }else if(compareString(choose, "HAPUS")){
         if(!isDrafEmpty(DRAFKICAU(*user))){
             printf("Draft berhasil dihapus\n");
             }
-        }
-    // } else if(compareString(choose, "TERBIT")){
-    //     TerbitkanDraf(app, value, IDUSER);
-    // }
+    }else if(compareString(choose, "TERBIT")){
+        TerbitkanDraf(app, value, IDUSER);
+    }
 }
