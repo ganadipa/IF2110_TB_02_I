@@ -180,4 +180,6 @@ void compressListDin(ListDin *l);
 /* I.S. List tidak kosong */
 /* F.S. Ukuran capacity = nEff */
 
+void removeElmt(ListDin *l, int val);
+
 #endif

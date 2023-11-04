@@ -5,11 +5,27 @@
 void InisialisasiKicau(Kicauan *k,int IDuser){
     userKicau(*k) = IDuser;
     likeKicau(*k) = 0;
+    createReplyTree(&BALASAN(*k), 100);
+    isUtas(*k) = false;
+    LinkUtas(*k) = NULL;
+    lenUtas(*k) = 0;
 }
 /**
  * I.S. u sembarang
  * F.S. user memiliki name "user" dan ID "ID", dan properti sisanya default.
 */
+
+void  nambahlenUtas(Kicauan *k){
+    lenUtas(*k)++;
+}
+
+void  kuranglenUtas(Kicauan *k){
+    lenUtas(*k)--;
+}
+
+void setIsUtasTrue ( Kicauan *k){
+    isUtas(*k) = true;
+}
 
 void setKicauID (Kicauan *k, int IDKicau){
     IDKicau(*k) = IDKicau;
@@ -42,16 +58,17 @@ void addLike(Kicauan *k){
 
 
 void printKicauan(Kicauan k, String nama ){
+    printf("\n");
     printf(" Detail Kicauan :");
     printf("\n| ID = %d", IDKicau(k));
     printf("\n| ");
-//  ELMT_LISTUSER(LISTUSER(*app), IDUSER).name
-    displayString( nama);
+    displayString(nama);
     printf("\n| ");
     displayString(dateTimeKicau(k));
     printf("\n| ");
     displayString(teksKicau(k));
     printf("\n| Disukai : %d\n", likeKicau(k));
+    printf("\n");
 }
 
  

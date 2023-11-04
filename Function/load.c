@@ -6,25 +6,24 @@
 #include "../lib/ADT/PColor/pcolor.h"
 #include "../lib/Types/Photo.h"
 #include "../lib/ADT/Matriks/charMatriks.h"
+// #include "../lib/ADT/WordMachine/charmachinefile.c"
+// #include "../lib/ADT/WordMachine/wordmachinefile.c"
+// #include "../lib/ADT/WordMachine/wordmachine.c"
+// #include "../lib/ADT/WordMachine/charmachine.c"
+// #include "../lib/ADT/String/string.c"
+// #include "../lib/ADT/PColor/pcolor.c"
+// #include "../lib/Types/Photo.c"
+// #include "../lib/ADT/Matriks/charMatriks.c"
+#include "../lib/Types/Kicauan.h"
+#include "../lib/Types/listKicauan.h"
+#include "../lib/ADT/DateTime/datetime.h"
+#include "../lib/Types/ListUser.h"
+#include "../lib/Types/RequestQueue.h"
 #include <stdio.h>
-// int main(){
-//     String s;
-//     readString(&s, 351);
-//     STARTWORDFILE(s);
-//     printf("tanda");
-//     // printf("%c", currentWordFile.buffer[1]);
-//     while (!EndFile){ /* Mark = \n */
-            
-//             for (int i = 0 ; i < currentWordFile.maxLength; i++){
-//                 printf("%c", currentWordFile.buffer[i]);
-//             }
-//             printf("\n");
-//             ADVWORDFILE();
-//     }
 
-// }
-Application app;
-void LoadPengguna(){
+
+
+void LoadPengguna(Application *app){
     String filename;
     int i,j;
     char temp[20] = "pengguna.config";
@@ -34,38 +33,36 @@ void LoadPengguna(){
     filename.maxLength = STRCAP;
     STARTWORDFILE(filename);
     if (retvalfile != -1){
-        app.users.length = currentWordFile.buffer[0] - '0';
+        app->users.length = stringToInt(currentWordFile);
         
     }
-    if(app.users.length > 0){
-        for (i=0; i < 1; i++){
+    if(app->users.length > 0){
+        for (i=0; i < app->users.length; i++){
             ADVWORDFILE();
-            app.users.contents[i].ID = i;
-            app.users.contents[i].name.maxLength = 20;
-            addString(&app.users.contents[i].name, currentWordFile);
+            app->users.contents[i].ID = i;
+            app->users.contents[i].name.maxLength = 20;
+            addString(&app->users.contents[i].name, currentWordFile);
             ADVWORDFILE();
-            app.users.contents[i].password.maxLength = 20;
-            addString(&app.users.contents[i].password, currentWordFile);
+            app->users.contents[i].password.maxLength = 20;
+            addString(&app->users.contents[i].password, currentWordFile);
             ADVWORDFILE();
-            app.users.contents[i].profile.bio.maxLength = 135;
-            addString(&app.users.contents[i].profile.bio, currentWordFile);
+            app->users.contents[i].profile.bio.maxLength = 135;
+            addString(&app->users.contents[i].profile.bio, currentWordFile);
             ADVWORDFILE();
-            app.users.contents[i].profile.phoneNumber.maxLength = stringLength(currentWordFile);
-            addString(&app.users.contents[i].profile.phoneNumber, currentWordFile);
+            app->users.contents[i].profile.phoneNumber.maxLength = stringLength(currentWordFile);
+            addString(&app->users.contents[i].profile.phoneNumber, currentWordFile);
             ADVWORDFILE();
-            app.users.contents[i].profile.weton.maxLength = stringLength(currentWordFile);
-            addString(&app.users.contents[i].profile.weton, currentWordFile);
+            app->users.contents[i].profile.weton.maxLength = stringLength(currentWordFile);
+            addString(&app->users.contents[i].profile.weton, currentWordFile);
             ADVWORDFILE();
-            app.users.contents[i].profile.isPrivate = (currentWordFile.buffer[1] == 'r');
+            app->users.contents[i].profile.isPrivate = (currentWordFile.buffer[1] == 'r');
+            emptyString(&photoString);
             for (j=0; j<5; j++){
                 ADVFILEPHOTO();
                 addString(&photoString, currentWordFile);
-                // displayString(currentWordFile);
-                // printf("\n");
             }
-            // displayString(photoString);/
-            // printf("\n");
-            // createEmptyString(&photoString, 100);
+            readPhotoFile(&(app->users.contents[i].profile.photo), photoString);
+            
         }
         ADVWORDFILE();
         ADVWORDFILE();
@@ -75,20 +72,51 @@ void LoadPengguna(){
     }
         
 }
-
+void LoadKicauan(Application *app){
+    String filename;
+    int i;
+    CreateListKicau(&app->listKicauan, 1000);
+    char temp[20] = "kicauan.config";
+    addChartoChar(filename.buffer, temp);
+    filename.maxLength = STRCAP;
+    STARTWORDFILE(filename);
+    if (retvalfile != -1){
+        app->listKicauan.nEff = stringToInt(currentWordFile);
+        for(i=0;i<app->listKicauan.nEff;i++){
+            ADVWORDFILE();
+            app->listKicauan.buffer[i].IDKicau = stringToInt(currentWordFile);
+            ADVWORDFILE();
+            displayString(currentWordFile);
+            addString(&app->listKicauan.buffer[i].text, currentWordFile);
+            displayString(app->listKicauan.buffer[i].text);
+            ADVWORDFILE();
+            app->listKicauan.buffer[i].like = stringToInt(currentWordFile);
+            ADVWORDFILE();
+            app->listKicauan.buffer[i].IDuser = searchByName(app->users, currentWordFile);
+            ADVWORDFILE();
+            addString(&app->listKicauan.buffer[i].dateTime, currentWordFile); 
+        }
+    }
+}
 // int main(){
-//     LoadPengguna();
+//     Application app;
+//     LoadKicauan(&app);
+//     // printf("%d", app.listKicauan.buffer[1].IDKicau);
+//     // displayString(app.listKicauan.buffer[0].text);
+//     // printKicauan(app.listKicauan.buffer[0], nama);
+//     // printf("%d", app.listKicauan.buffer[0].IDuser);
+//     // displayString(app.listKicauan.buffer[0].dateTime);
+//     // displayString(app.users.contents[2].name);
+//     // printf("\n");
+//     // displayString(app.users.contents[2].password);
+//     // displayString(app.users.contents[2].profile.bio);
+//     // displayString(app.users.contents[2].profile.phoneNumber);
+//     // displayString(app.users.contents[2].profile.weton);
+//     // displayPhoto(app->users.contents[1].profile.photo);
+//     // printf("%u", app->users.contents[2].profile.isPrivate);
+//     // displayString(photoString);
+//     // printf("%d", photoString.maxLength);
     
-//     // displayString(app.users.contents[0].name);
-//     // printf("\n");
-//     // displayString(app.users.contents[1].password);
-//     // printf("\n");
-//     // displayString(app.users.contents[1].profile.bio);
-//     // printf("\n");
-//     // displayString(app.users.contents[1].profile.phoneNumber);
-//     // printf("\n");
-//     // displayString(app.users.contents[1].profile.weton);
-//     // printf("\n");
-//     // displayPhoto(app.users.contents[0].profile.photo);
-//     // printf("%u", app.users.contents[0].profile.isPrivate);
 // }
+
+// // 

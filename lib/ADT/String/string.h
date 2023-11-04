@@ -65,6 +65,10 @@ void addString(String *s, String s2);
 /**
  * 
 */
+void emptyString(String *s);
+/**
+ * 
+*/
 char *addChartoChar(char *destination, const char *source);
 /**
  * 
@@ -74,6 +78,10 @@ String concatString(String *sOut, String s1, String s2);
  * 
 */
 
+int stringToInt(String s);
+/**
+ * 
+*/
 
 boolean compareString(String s, char* cptr);
 /**
@@ -104,5 +112,6 @@ String getWordAt(String s, int i) ;
 
 int countWord(String s);
 
+int stringToInt(String s);
 
 #endif
