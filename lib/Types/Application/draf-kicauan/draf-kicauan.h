@@ -9,11 +9,11 @@
 
 void SimpanDraf(User* user, Kicauan kicau);
 
-// void UbahDraf(Application *app, User user, Kicauan tempKicau);
+void UbahDraf(Application* app, User* user, Kicauan tempKicau);
 
-// void HapusDraf(User* user, Kicauan *sampahKicau);
+void HapusDraf(User* user, Kicauan *sampahKicau);
 
-// void TerbitkanDraf(Application *app, Kicauan kicau, int IDUSER);
+void TerbitkanDraf(Application *app, Kicauan kicau, int IDUSER);
 
 void LihatDraf(Application *app);
 

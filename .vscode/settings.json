@@ -1,6 +1,6 @@
 {
   "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
-  "C_Cpp.default.compilerPath": "C:\\msys64\\mingw64\\bin\\gcc.exe",
+  "C_Cpp.default.compilerPath": "C:\\msys64\\mingw64\\bin\\g++.exe",
   "files.associations": {
     "liststatik.h": "c",
     "graf.h": "c",
@@ -33,6 +33,7 @@
     "draf-kicauan.h": "c",
     "requestqueue.h": "c",
     "drafkicauan.h": "c",
-    "inisialisasi.h": "c"
+    "inisialisasi.h": "c",
+    "random": "c"
   }
 }

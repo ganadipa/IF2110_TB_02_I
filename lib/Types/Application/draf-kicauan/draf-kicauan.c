@@ -2,8 +2,30 @@
 #include <stdio.h>
 #include "draf-kicauan.h"
 
-void SimpanDraf(User* user, Kicauan kicau){
+
+void SimpanDraf(User *user, Kicauan kicau){
     PushDraf(&DRAFKICAU(*user), kicau);
+}
+
+void UbahDraf(Application *app, User *user, Kicauan tempKicau){
+    String teks;
+    printf("Masukkan Perubahan: ");
+    readString(&teks, 280);
+    setText(&tempKicau, teks); 
+    setKicauID(&tempKicau, NEFF(KICAUAN(*app))+1);
+    setKicauDateTime(&tempKicau);
+    
+    SimpanDraf(user, tempKicau);
+}
+
+void HapusDraf(User *user, Kicauan *sampahKicau){
+    PopDraf(&DRAFKICAU(*user), sampahKicau);
+}
+
+void TerbitkanDraf(Application *app, Kicauan kicau, int IDUSER){
+    printKicauan(kicau, ELMT_LISTUSER(LISTUSER(*app), IDUSER).name);
+    insertLastListKicau( &KICAUAN(*app), kicau);
+    printf("\n Selamat! Draf telah berhasil diterbitkan");
 }
 
 void LihatDraf(Application *app){
@@ -32,55 +54,29 @@ void LihatDraf(Application *app){
 
         readString(&choose, 20);
 
-        // if(compareString(choose, "UBAH")){
-        //     UbahDraf(app, user, temp);
-        // } else if(compareString(choose, "HAPUS")){
-        //     printf("Draf berhasil dihapus\n");
-        // } 
-        // else if(compareString(choose, "TERBIT")){
-        //     TerbitkanDraf(app, temp, IDUSER);
-        // } 
-        // else if(compareString(choose, "KEMBALI")){
-        //     SimpanDraf(&user, temp);
-        // } else{
-        //     printf("\nInput tidak valid");
-        // }
+        if(compareString(choose, "UBAH")){
+            UbahDraf(app, user, temp);
+            printf("Draf berhasil diubah\n");
+        } else if(compareString(choose, "HAPUS")){
+            printf("Draf berhasil dihapus\n");
+        } else if(compareString(choose, "TERBIT")){
+            TerbitkanDraf(app, temp, IDUSER);
+        } else if(compareString(choose, "KEMBALI")){
+            SimpanDraf(user, temp);
+        } else{
+            printf("\nInput tidak valid");
+        }
     }
 }
 
-// void UbahDraf(Application *app, User user, Kicauan tempKicau){
-//     String teks;
-//     printf("Masukkan Perubahan: ");
-//     readString(&teks, 280);
-//     setText(&tempKicau, teks); 
-//     setKicauID(&tempKicau, NEFF(KICAUAN(*app))+1);
-//     setKicauDateTime(&tempKicau);
-    
-//     SimpanDraf(*user, tempKicau);
-// }
-
-// void HapusDraf(User* user, Kicauan *sampahKicau){
-//     PopDraf(&DRAFKICAU(*user), sampahKicau);
-//     printf("\nDraf berhasil diubah");
-// }
-
-// void TerbitkanDraf(Application *app, Kicauan kicau, int IDUSER){
-//     User user = ELMT_LISTUSER(LISTUSER(*app), LOGINID(*app));
-//     printKicauan(kicau, ELMT_LISTUSER(LISTUSER(*app), IDUSER).name);
-//     insertLastListKicau(&KICAUAN(*app), kicau);
-//     printf("\n Selamat! Draf telah berhasil diterbitkan");
-// }
-
-
 
 void BuatDraf(Application *app){
-    User user = ELMT_LISTUSER(LISTUSER(*app), LOGINID(*app));
-    displayProfile(user);
     if (!LOGGEDIN(*app)) {
         printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
         return;
     }
     String teks;
+    User *user = &ELMT_LISTUSER(LISTUSER(*app), LOGINID(*app));
     createEmptyString(&teks, 280);
     printf("Masukkan Draf: ");
     readString(&teks, 280);
@@ -96,16 +92,14 @@ void BuatDraf(Application *app){
     String choose;
     readString(&choose, 20);
     if(compareString(choose, "SIMPAN")){
-        SimpanDraf(&user, value);
-        displayString(value.dateTime);
+        SimpanDraf(user, value);
         printf("Draft berhasil disimpan\n");
+    } else if(compareString(choose, "HAPUS")){
+        if(!isDrafEmpty(DRAFKICAU(*user))){
+            printf("Draft berhasil dihapus\n");
+            }
         }
-    // } else if(compareString(choose, "HAPUS")){
-    //     if(!isDrafEmpty(DRAFKICAU(user))){
-    //         printf("Draft berhasil dihapus\n");
-    //     }
-    // } 
-    // else if(compareString(choose, "TERBIT")){
-    //     TerbitkanDraf(&user, value, IDUSER);
+    // } else if(compareString(choose, "TERBIT")){
+    //     TerbitkanDraf(app, value, IDUSER);
     // }
 }

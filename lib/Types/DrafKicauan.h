@@ -35,5 +35,7 @@ void PushDraf(DrafKicau *S, Kicauan k);
 
 void PopDraf(DrafKicau *S, Kicauan *k);
 
+void PrintDraf(DrafKicau S);
+
 #endif
 
