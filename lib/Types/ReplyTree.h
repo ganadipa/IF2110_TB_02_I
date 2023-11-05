@@ -87,6 +87,8 @@ ReplyAddress newReply(String body, boolean isMain);
 
 void deleteReply(ReplyTree *rt, int replyID);
 
+void printAllReplyTree(ReplyTree rt);
+
 
 
 #endif

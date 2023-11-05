@@ -19,7 +19,7 @@ void Balas(Application *app, int IDKicau, int IDBalasan) {
 
     // while (IDBalasan != -1) printf("hello");
     int idx = getIdxFromReplyId(*balasan, IDBalasan);
-    if (idx == -1 && IDBalasan != -1 && ISUSED(*balasan, IDBalasan)) {
+    if ((idx == -1 && IDBalasan != -1) || ISUSED(*balasan, IDBalasan)) {
         printf("\nWah, tidak terdapat balasan yang ingin Anda balas! Mungkin typo IDBalasan ?\n");
         return;
     }
@@ -51,7 +51,6 @@ void Balas(Application *app, int IDKicau, int IDBalasan) {
 
 
     addReply(balasan);
-    printListDin(balasan->parent);
 
     if (mainReply) addMainReply(balasan, ra);
     else {

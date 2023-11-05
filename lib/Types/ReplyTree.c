@@ -144,7 +144,7 @@ void addChildToReply(ReplyTree *rt, ReplyAddress parent, ReplyAddress child)
 
 
     lr -> buffer[child->id] = child;
-    ISUSED(*rt, child->id) = 1;
+    insertLastListDin(&USED(*rt), 1);
     insertLastListDin(&(rt->parent), idxParent);
     
 }
@@ -152,7 +152,7 @@ void addChildToReply(ReplyTree *rt, ReplyAddress parent, ReplyAddress child)
 void addMainReply(ReplyTree *rt, ReplyAddress addr) {
     ListReply *lr = &LISTREP(*rt);
     lr -> buffer[addr->id] = addr;
-    ISUSED(*rt, addr->id) = 1;
+    insertLastListDin(&USED(*rt), 1);
     insertLastListDin(&(rt->parent), -1);
 }
 
@@ -271,4 +271,33 @@ void deleteReply(ReplyTree *rt, int replyID)
         deleteReply(rt, LISTDIN(*rt, replyID).buffer[i]);
     }
     
+}
+
+void printAllReplyTree(ReplyTree rt) {
+    printf("======== BALASAN ==========");
+    printf("Adj lists:\n");
+    int i;
+    for (i =0; i<rt.availableID; i++) {
+        printListDin(LISTDIN(rt, i));
+        printf("\n");
+    }
+
+
+    printf("List rep neff: %d\n",LISTREP(rt).neff);
+    printf("List rep cap: %d\n",LISTREP(rt).capacity);
+    printf("\nused list:");
+    printListDin(USED(rt));
+    printf("\nparent list:");
+    printListDin(rt.parent);
+
+    printf("\nnumrep: %d", NUMREP(rt));
+    printf("\nmaxrep: %d", MAXREP(rt));
+    printf("\navailable id: %d", rt.availableID);
+    printf("\navailable idx: %d", rt.availableIDX);
+
+
+
+
+
+
 }

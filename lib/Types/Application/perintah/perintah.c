@@ -49,9 +49,17 @@ void handleCommand(Application* app, String command, boolean *finish)
     } else if (compareString(firstWord, "KICAUAN")) {
         TampilinKicauan(app);
     } else if (compareString(firstWord, "SUKA_KICAUAN")) {
+        if (numword != 2) {
+            printf("\nPerintah yang valid: \"SUKA_KICAUAN <IDKicau>;\".\n");
+            return;
+        }
         int ID = stringToInt(secondWord);
         SukaKicauan(app,ID);
     } else if (compareString(firstWord, "UBAH_KICAUAN")) {
+        if (numword != 2) {
+            printf("\nPerintah yang valid: \"UBAH_KICAUAN <IDKicau>;\".\n");
+            return;
+        }
         int ID = stringToInt(secondWord);
         UbahKicauan(app,ID);
     } else if (compareString(firstWord, "TAMBAH_TEMAN")) {
@@ -63,13 +71,25 @@ void handleCommand(Application* app, String command, boolean *finish)
     } else if (compareString(firstWord, "SETUJUI_PERTEMANAN")) {
         SetujuiPertemanan(app);
     } else if (compareString(firstWord, "BALAS")) {
+        if (numword != 3) {
+            printf("\nPerintah yang valid: BALAS \"<IDKicau> <IDBalasan>;\".\n");
+            return;
+        }
         int IDKicau = stringToInt(secondWord);
         int IDBalasan = stringToInt(thirdWord);
         Balas(app, IDKicau, IDBalasan);
     } else if (compareString(firstWord, "BALASAN")) {
+        if (numword != 2) {
+            printf("\nPerintah yang valid: \"BALASAN <IDKicau>;\".\n");
+            return;
+        }
         int IDKicau = stringToInt(secondWord);
         Balasan(app, IDKicau);
     } else if (compareString(firstWord, "HAPUS_BALASAN")) {
+        if (numword != 3) {
+            printf("\nPerintah yang valid: \"HAPUS_BALASAN <IDKicau> <IDBalasan>;\".\n");
+            return;
+        }
         int IDKicau = stringToInt(secondWord);
         int IDBalasan = stringToInt(thirdWord);
         HapusBalasan(app, IDKicau, IDBalasan);

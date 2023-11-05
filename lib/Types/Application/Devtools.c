@@ -26,4 +26,11 @@ void DevTools(Application app)
         displayPhoto(FOTO(PROFILE(ELMT_LISTUSER(LISTUSER(app), i))));
         printf("\n\n");
     }
+
+    for (int i = 0; i < KICAUAN(app).nEff; i++) {
+
+        printAllReplyTree(BALASAN(KICAUAN(app).buffer[0]));
+    }
+
+    
 }

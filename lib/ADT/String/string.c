@@ -166,6 +166,9 @@ void readString(String *s, int maxLength)
 
     ADV();
     // now current char is '\n'
+    if (currentChar_WordMachine != '\n') {
+        printf("\nSetiap input harus memiliki mark berupa ';'. dan Anda baru saja melanggarnya.\n");
+    }
 }
 
 
