@@ -3,7 +3,6 @@
 #include "../boolean.h"
 
 #define IDX_UNDEF -1
-#define infotype User
 #define CAPACITY_REQQUEUE 20
 /* Konstanta untuk mendefinisikan address tak terdefinisi */
 
