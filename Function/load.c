@@ -11,6 +11,7 @@
 // #include "../lib/ADT/DateTime/datetime.h"
 // #include "../lib/Types/ListUser.h"
 // #include "../lib/Types/RequestQueue.h"
+#include "../lib/Types/ReplyTree.h"
 #include "../lib/ADT/WordMachine/charmachinefile.c"
 #include "../lib/ADT/WordMachine/wordmachinefile.c"
 #include "../lib/ADT/WordMachine/wordmachine.c"
@@ -24,6 +25,7 @@
 #include "../lib/ADT/DateTime/datetime.c"
 #include "../lib/Types/ListUser.c"
 #include "../lib/Types/RequestQueue.c"
+#include "../lib/Types/ReplyTree.c"
 #include <stdio.h>
 
 
@@ -60,16 +62,10 @@ void LoadPengguna(Application *app){
             addString(&app->users.contents[i].profile.weton, currentWordFile);
             ADVWORDFILE();
             app->users.contents[i].profile.isPrivate = (currentWordFile.buffer[1] == 'r');
-            // displayString(photoString);
             for (j=0; j<5; j++){
                 ADVFILEPHOTO();
-                // displayString(currentWordFile);
-                // printf("\n");
                 replaceString(&photoString, j*20, (j*20)+21, currentWordFile);
             }
-            displayString(photoString);
-            printf("\n");
-            printf("\n");
             readPhotoFile(&(app->users.contents[i].profile.photo), photoString);
             
         }
