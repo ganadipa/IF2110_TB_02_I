@@ -4,6 +4,7 @@
 #include "User.h"
 #include "../ADT/String/string.h" 
 #include "../ADT/DateTime/datetime.h"  
+#include "ReplyTree.h"
 #include "listUtas.h"
 
 typedef struct {
@@ -12,6 +13,7 @@ typedef struct {
     String dateTime;
     String text;
     int like;
+    ReplyTree balasan;
     boolean isUtas;
     AddressUtas link;
     int lenUtas;
@@ -22,6 +24,7 @@ typedef struct {
 #define dateTimeKicau(u) (u).dateTime
 #define teksKicau(u) (u).text
 #define likeKicau(u) (u).like
+#define BALASAN(u) (u).balasan
 #define isUtas(u) (u).isUtas
 #define LinkUtas(u) (u).link
 #define lenUtas(u) (u).lenUtas

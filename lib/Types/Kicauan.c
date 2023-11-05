@@ -5,6 +5,7 @@
 void InisialisasiKicau(Kicauan *k,int IDuser){
     userKicau(*k) = IDuser;
     likeKicau(*k) = 0;
+    createReplyTree(&BALASAN(*k), 100);
     isUtas(*k) = false;
     LinkUtas(*k) = NULL;
     lenUtas(*k) = 0;
@@ -60,9 +61,8 @@ void printKicauan(Kicauan k, String nama ){
     printf("\n");
     printf(" Detail Kicauan :");
     printf("\n| ID = %d", IDKicau(k));
-    printf("\n| ID = %d", userKicau(k));
     printf("\n| ");
-    displayString( nama);
+    displayString(nama);
     printf("\n| ");
     displayString(dateTimeKicau(k));
     printf("\n| ");
