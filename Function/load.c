@@ -30,8 +30,8 @@
 // #include "../lib/Types/ReplyTree.c"
 #include <stdio.h>
 
-
-
+/* Load pengguna tinggal baris akhir */
+/* LoadKicauan harusnya udh beres */
 void LoadPengguna(Application *app){
     String filename;
     int i,j;
