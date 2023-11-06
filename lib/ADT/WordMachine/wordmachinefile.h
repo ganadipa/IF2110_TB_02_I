@@ -35,6 +35,7 @@ void ADVWORDFILE();
           currentChar adalah karakter pertama dari kata berikutnya, mungkin MARK
           Jika currentChar = MARK, EndWord = true.
    Proses : Akuisisi kata menggunakan procedure SalinWord */
+void ADVWORDFILE2();
 void ADVFILEPHOTO();
 void CopyWordFILE();
 /* Mengakuisisi kata, menyimpan dalam currentWord
@@ -43,5 +44,6 @@ void CopyWordFILE();
           currentChar = BLANK atau currentChar = MARK;
           currentChar adalah karakter sesudah karakter terakhir yang diakuisisi.
           Jika panjang kata melebihi NMax, maka sisa kata "dipotong" */
+void CopyWordFILE2();
 void CopyFILEPhoto();
 #endif
