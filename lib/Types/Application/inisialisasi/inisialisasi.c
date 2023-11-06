@@ -38,6 +38,7 @@ void Setup(Application *app)
 {
     LOGGEDIN(*app) = false;
     LOGINID(*app) = ID_UNDEF;
+    JUMLAHUTAS(*app) = 0;
     CreateListUser(&LISTUSER(*app)); 
     CreateGraph(&FRIENDSHIPS(*app));
     CreateListKicau(&KICAUAN(*app), 1000); //Inisialisasi awal untuk ListKicauan 1000
