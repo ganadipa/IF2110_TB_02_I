@@ -14,7 +14,7 @@ typedef struct {
     String text;
     int like;
     ReplyTree balasan;
-    boolean isUtas;
+    int IDUtas;
     AddressUtas link;
     int lenUtas;
 } Kicauan;
@@ -25,9 +25,9 @@ typedef struct {
 #define teksKicau(u) (u).text
 #define likeKicau(u) (u).like
 #define BALASAN(u) (u).balasan
-#define isUtas(u) (u).isUtas
-#define LinkUtas(u) (u).link
-#define lenUtas(u) (u).lenUtas
+#define IDUTAS(u) (u).IDUtas
+#define FIRST(u) (u).link //ke Utas dengan index pertama 1
+#define LEN_ANAKUTAS(u) (u).lenUtas
 
 void InisialisasiKicau(Kicauan *k, int IDuser);
 /**
@@ -39,7 +39,11 @@ void  nambahlenUtas(Kicauan *k);
 
 void  kuranglenUtas(Kicauan *k);
 
-void setIsUtasTrue(Kicauan *k);
+void insertAtAnakUtas(Kicauan *k  ,int indeksUtas,String teks,String namaUser);
+
+void deleteAtAnakUtas(Kicauan *k ,int indeksUtas);
+
+
 
 void setKicauID(Kicauan *k, int ID);
 /**

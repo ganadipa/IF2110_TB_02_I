@@ -6,9 +6,9 @@ void InisialisasiKicau(Kicauan *k,int IDuser){
     userKicau(*k) = IDuser;
     likeKicau(*k) = 0;
     createReplyTree(&BALASAN(*k), 100);
-    isUtas(*k) = false;
-    LinkUtas(*k) = NULL;
-    lenUtas(*k) = 0;
+    IDUTAS(*k) = 0; //klo idUtas 0 maka tidak ada Utas
+    FIRST(*k) = NULL;
+    LEN_ANAKUTAS(*k) = 0;
 }
 /**
  * I.S. u sembarang
@@ -16,15 +16,19 @@ void InisialisasiKicau(Kicauan *k,int IDuser){
 */
 
 void  nambahlenUtas(Kicauan *k){
-    lenUtas(*k)++;
+    LEN_ANAKUTAS(*k)++;
 }
 
 void  kuranglenUtas(Kicauan *k){
-    lenUtas(*k)--;
+    LEN_ANAKUTAS(*k)--;
 }
 
-void setIsUtasTrue ( Kicauan *k){
-    isUtas(*k) = true;
+void insertAtAnakUtas(Kicauan *k, int indeksUtas, String teks, String namaUser){
+    printf("hi"); //WEGE
+}
+
+void deleteAtAnakUtas(Kicauan *k ,int indeksUtas){
+    printf("hi"); //WEGE
 }
 
 void setKicauID (Kicauan *k, int IDKicau){
