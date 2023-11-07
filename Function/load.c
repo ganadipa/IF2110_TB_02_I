@@ -47,6 +47,7 @@ void LoadPengguna(Application *app){
         app->users.length = stringToInt(currentWordFile);
         if(app->users.length > 0){
             for (i=0; i < app->users.length; i++){
+                createRequestQueue(&app->users.contents[i].friendRequest);
                 ADVWORDFILE();
                 app->users.contents[i].ID = i;
                 app->users.contents[i].name.maxLength = 20;
@@ -88,14 +89,24 @@ void LoadPengguna(Application *app){
                 }
                 addVertices(&friendships);
             }
-                printGraph(friendships);
             ADVWORDFILE();
             int permintaan = currentWordFile.buffer[0] - '0';
+            Friend f;
+            int idyangminta, idyangdiminta, friendcountfile;
             for (i = 0; i < permintaan; i++){
                 ADVWORDFILE2();
-                int iduserpermintaan;
-                // app->users.contents[iduserpermintaan].
+                idyangminta = currentWordFile.buffer[0] - '0';
+                ADVWORDFILE2();
+                idyangdiminta = currentWordFile.buffer[0] - '0';
+                ADVWORDFILE();
+                // printf("%c\n", currentCharFile);
+                friendcountfile = currentWordFile.buffer[0] - '0';
+                f.friendCount = friendcountfile;
+                app->users.contents[idyangminta].friendCount = friendcountfile;
+                f.userID = idyangminta;
+                enqueueRequestQueue(&app->users.contents[idyangdiminta].friendRequest, f);
             }
+            displayRequestQueue(app->users.contents[0].friendRequest, app->users);
         }
     }
     
@@ -143,7 +154,7 @@ void LoadUtas(Application *app){
 //     String nama = {"john", 100};
 //     LoadPengguna(&app);
 //     LoadKicauan(&app);
-//     // printf("%d", app.listKicauan.nEff);
+// //     // printf("%d", app.listKicauan.nEff);
 //     // displayString(app.users.contents[0].name);
 //     // printf("\n");
 //     // displayString(app.users.contents[0].password);
@@ -152,7 +163,7 @@ void LoadUtas(Application *app){
 //     // printf("\n");
 //     // displayString(app.users.contents[0].profile.weton);
 //     // readPhoto(&app.users.contents[0].profile.photo);
-//     // displayPhoto(app.users.contents[0].profile.photo);
+    // displayPhoto(app.users.contents[2].profile.photo);
 //     // // printf("%u", app->users.contents[2].profile.isPrivate);
 //     // // displayString(photoString);
 //     // // printf("%d", photoString.maxLength);
