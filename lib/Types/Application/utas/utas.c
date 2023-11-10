@@ -87,19 +87,119 @@ void deleteAt_Utas(Application *app, int IDUtas, int indeksUtas){
         return;
     }                                        
 
-    // deleteAtAnakUtas( ELMT(KICAUAN(*app), i), indeksUtas);    INI TINGGAL TUNGGU ADT deleteAtAnakUtas
+    String teks, nama, datetime;
+    deleteAtAnakUtas(&ELMT(KICAUAN(*app), i), indeksUtas, &teks, &nama, &datetime);
     
     printf("Utas berhasil dihapus!");
 }
 //MEnghapus anak Utas berdasarkan ID UTAS, TIDAK BISA MENGHAPUS UTAS PERTAMA
 
-void NyambungUtas(Application *app, int IDUtas, int IndeksUtas); //WEGEE
+void NyambungAnakUtas(Application *app, int IDUtas, int indeksUtas){
+    if (!LOGGEDIN(*app)) {
+        printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
+        return;
+    }
+
+    int length = KICAUAN(*app).nEff;
+    int i = 0;
+    boolean found = false;
+    while (!found && i<length ){
+        if (ELMT( KICAUAN(*app),i ).IDUtas == IDUtas)
+        {
+            found = true;
+        }
+        i++;
+    }
+
+    if (!found){
+        printf("Tidak ditemukan Utas dengan ID Utas %d\n", IDUtas);
+        return;
+    }
+    i--;
+    if (LOGINID(*app) != ELMT(KICAUAN(*app), i ).IDuser ){
+        printf("Kamu hanya bisa menambahkan utas milikmu sendiri\n");
+        return;
+    }
+    if (indeksUtas == 0){
+        printf("Kamu tidak bisa menambah kicauan utama");
+        return;}
+    
+    if (ELMT( KICAUAN(*app), i).lenUtas < indeksUtas){
+        printf("Tidak ditemukan indeks Utas dengan indeks %d\n ", indeksUtas);
+        return;
+    }                                        
+
+    String teks, nama, datetime;
+    insertAtAnakUtas(&ELMT(KICAUAN(*app), i), indeksUtas, teks, nama, datetime);
+    
+    printf("Utas berhasil ditambahkan!");
+}
+
 
 /****************** PROSES SEMUA ELEMEN LIST ******************/
-void display_listUtas(Application *app,int IDUtas);  //WEGEE
-// void printInfo(List l);
-/* I.S. List mungkin kosong */
-/* F.S. Jika list tidak kosong, iai list dicetak ke kanan: [e1,e2,...,en] */
-/* Contoh : jika ada tiga elemen bernilai 1, 20, 30 akan dicetak: [1,20,30] */
-/* Jika list kosong : menulis [] */
-/* Tidak ada tambahan karakter apa pun di awal, akhir, atau di tengah */
+void display_listUtas(Application *app,int IDUtas){
+    if (!LOGGEDIN(*app)) {
+        printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
+        return;
+    }
+    int length = KICAUAN(*app).nEff;
+    int i = 0;
+    boolean found = false;
+
+    while (!found && i<length ){
+        if (ELMT( KICAUAN(*app),i ).IDUtas == IDUtas)
+        {
+            found = true;
+        }
+        i++;
+    }
+
+    if (!found){
+        printf("Tidak ditemukan Utas dengan ID Utas %d\n", IDUtas);
+        return;
+    }
+    i--;
+
+    if(LOGINID(*app) != ELMT(KICAUAN(*app), i).IDuser){
+        User u = ELMT_LISTUSER(LISTUSER(*app), ELMT(KICAUAN(*app), i).IDuser);
+        if (ISPRIVATE(PROFILE(u))){
+            if (isFriend (app, LOGINID(*app), ELMT(KICAUAN(*app), i).IDuser)){ 
+                printKicauan(ELMT(KICAUAN(*app), i), returnUsername(*app, ELMT(KICAUAN(*app), i).IDuser));
+                int j = 0;
+                AddressUtas p = FIRST(ELMT(KICAUAN(*app), i));
+                while (p != NULL){
+                    j ++;
+                    printf("\n| INDEX = %d", j);
+                    printf("\n| ");
+                    displayString(NAMADIUTAS(p));
+                    printf("\n| ");
+                    displayString(DATETIMEUTAS(p));
+                    printf("\n| ");
+                    displayString(TEKSDIUTAS(p));
+                    printf("\n");
+                    p = NEXT_Linked(p);
+                }
+            } else {
+                printf("Akun yang membuat utas ini adalah akun privat! Ikuti dahulu akun ini untuk melihat utasnya!");
+            }
+        }
+    } else {
+        printKicauan(ELMT(KICAUAN(*app), i), returnUsername(*app, ELMT(KICAUAN(*app), i).IDuser));
+        int j = 0;
+        AddressUtas p = FIRST(ELMT(KICAUAN(*app), i));
+        while (p != NULL){
+            j ++;
+            printf("\n| INDEX = %d", j);
+            printf("\n| ");
+            displayString(NAMADIUTAS(p));
+            printf("\n| ");
+            displayString(DATETIMEUTAS(p));
+            printf("\n| ");
+            displayString(TEKSDIUTAS(p));
+            printf("\n");
+            p = NEXT_Linked(p);
+        }
+
+    }
+}
+
