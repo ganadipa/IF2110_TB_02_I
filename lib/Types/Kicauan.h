@@ -39,9 +39,9 @@ void  nambahlenUtas(Kicauan *k);
 
 void  kuranglenUtas(Kicauan *k);
 
-void insertAtAnakUtas(Kicauan *k  ,int indeksUtas,String teks,String namaUser);
+void insertAtAnakUtas(Kicauan *k  ,int indeksUtas,String teks,String namaUser, String time);
 
-void deleteAtAnakUtas(Kicauan *k ,int indeksUtas);
+void deleteAtAnakUtas (Kicauan *k ,int indeksUtas, String *teks, String *namaUser, String *time);
 
 
 
