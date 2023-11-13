@@ -33,11 +33,16 @@ int stringToInt(String s){
     int j = 1;
     int k = 0;
     int length = stringLength(s);
-    for (i = length-1; i >= 0; i--){
+
+    boolean isneg = false;
+    if (s.buffer[0] == '-') isneg = true;
+
+
+    for (i = length-1; i >= (0 + isneg); i--){
         k += (s.buffer[i] - '0') * j;
         j *= 10;
     }
-    return k;
+    return isneg? -k:k;
 }
 
 String intToString(int i, int numlength)
@@ -161,6 +166,9 @@ void readString(String *s, int maxLength)
 
     ADV();
     // now current char is '\n'
+    if (currentChar_WordMachine != '\n') {
+        printf("\nSetiap input harus memiliki mark berupa ';'. dan Anda baru saja melanggarnya.\n");
+    }
 }
 
 

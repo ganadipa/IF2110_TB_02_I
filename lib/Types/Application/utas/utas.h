@@ -3,23 +3,21 @@
 
 
 #include "../Application.h"
-#include "../../listUtas.h"
 
-void insertLast_Utas(Application *app, listutas *l, String utas, int indexUtas, int IDuser, String nama, String waktu);
+#include "../kicauan/kicauan.h"
+void insertUtas_withIDKicau(Application *app, int IDKicau);
 /* I.S. l mungkin kosong */
 /* F.S. Melakukan alokasi sebuah elemen dan */
 /* menambahkan elemen list di akhir: elemen terakhir yang baru */
 /* bernilai val jika alokasi berhasil. Jika alokasi gagal: I.S.= F.S. */
 
+void deleteAt_Utas(Application *app, int IDUtas, int indeksUtas);
+//MEnghapus anak Utas berdasarkan ID UTAS, TIDAK BISA MENGHAPUS UTAS PERTAMA
 
-void deleteAt_Utas(Application *app,listutas *l, int index);
-/* I.S. list tidak kosong, idx indeks yang valid dalam l, yaitu 0..length(l) */
-/* F.S. val diset dengan elemen l pada indeks ke-idx. */
-/*      Elemen l pada indeks ke-idx dihapus dari l */
-
+void NyambungUtas(Application *app, int IDUtas, int IndeksUtas);
 
 /****************** PROSES SEMUA ELEMEN LIST ******************/
-void display_listUtas(Application *app, listutas l);
+void display_listUtas(Application *app,int IDUtas);
 // void printInfo(List l);
 /* I.S. List mungkin kosong */
 /* F.S. Jika list tidak kosong, iai list dicetak ke kanan: [e1,e2,...,en] */

@@ -3,15 +3,13 @@
 #include <stdlib.h>
 
 
-AddressUtas newNodeUtas(String teks, int IDuser, int indexUtas, String nama, String waktu) {
+AddressUtas newNodeUtas(String teks, String nama, String waktu) {
     AddressUtas ptr = (AddressUtas) malloc(sizeof(NodeUtas));
     if (ptr != NULL) {
-        IDUSERDIUTAS(ptr) = IDuser;
         NAMADIUTAS(ptr) = nama;
         DATETIMEUTAS(ptr) = waktu;
         TEKSDIUTAS(ptr) = teks;
         NEXT_Linked(ptr) = NULL;
-        INDEXUTAS(ptr) = indexUtas;
     }
     return ptr;
 }

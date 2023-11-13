@@ -40,8 +40,8 @@ void STARTWORDFILE(String filename){
         } else{
             EndFile = false;
             CopyWordFILE();
-            IgnoreNewLinesFile();
-
+            // IgnoreNewLinesFile();
+            ADVCHARFILE();
         }
     }
 }
@@ -54,7 +54,10 @@ void ADVWORDFILE(){
     CopyWordFILE();
     ADVCHARFILE();
 }
-
+void ADVWORDFILE2(){
+    CopyWordFILE2();
+    ADVCHARFILE();
+}
 void ADVFILEPHOTO(){
     CopyFILEPhoto();
     ADVCHARFILE();
@@ -86,6 +89,16 @@ void CopyWordFILE(){
           currentChar adalah karakter sesudah karakter terakhir yang diakuisisi.
           Jika panjang kata melebihi NMax, maka sisa kata "dipotong" */
 
+void CopyWordFILE2(){
+    int i = 0;
+    while (currentCharFile != BLANK && currentCharFile != MARK_LAST_FILE){
+        currentWordFile.buffer[i] = currentCharFile;
+        currentWordFile.maxLength = i + 1;
+        i++;
+        ADVCHARFILE();
+    }
+    // printf("%c ", currentWordFile.buffer[0]);
+}
 void CopyFILEPhoto(){
     int i = 0;
     while (currentCharFile != MARK_LAST_FILE && currentCharFile != '\n'){

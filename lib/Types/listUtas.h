@@ -13,8 +13,6 @@
 /* Definisi Node : */
 typedef struct nodeUtas* AddressUtas;
 typedef struct  nodeUtas{
-    int indexUtas; //MASUK CONFIG
-    int IDUser;
     String namaUser; //MASUK CONFIG
     String dateTime; //MASUK CONFIG
     String teks;    //MASUK CONFIG
@@ -24,13 +22,11 @@ typedef AddressUtas listutas;
 
 
 #define NEXT_Linked(p) (p)->next
-#define INDEXUTAS(p) (p)->indexUtas
-#define IDUSERDIUTAS(p) (p)->IDUser
 #define NAMADIUTAS(p) (p)->namaUser
 #define TEKSDIUTAS(p) (p)->teks
 #define DATETIMEUTAS(p) (p)->dateTime
 
-AddressUtas newNodeUtas(String teks, int IDuser, int indexUtas, String nama, String waktu);
+AddressUtas newNodeUtas(String teks, String nama, String waktu);
 
 /* Definisi List : */
 /* List kosong : FIRST(l) = NULL */
