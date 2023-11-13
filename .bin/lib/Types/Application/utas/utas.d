@@ -59,6 +59,10 @@
  lib/Types/Application/utas/../.././listUtas.h \
  lib/Types/Application/utas/../.././ListUser.h \
  lib/Types/Application/utas/../../RequestQueue.h \
+ lib/Types/Application/utas/../kicauan/kicauan.h \
+ lib/Types/Application/utas/../kicauan/../../../ADT/String/string.h \
+ lib/Types/Application/utas/../kicauan/../Application.h \
+ lib/Types/Application/utas/../kicauan/../../Kicauan.h \
  lib/Types/Application/utas/../../listUtas.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
@@ -122,4 +126,8 @@ lib/Types/Application/utas/../.././ListUser.h:
 lib/Types/Application/utas/../.././listUtas.h:
 lib/Types/Application/utas/../.././ListUser.h:
 lib/Types/Application/utas/../../RequestQueue.h:
+lib/Types/Application/utas/../kicauan/kicauan.h:
+lib/Types/Application/utas/../kicauan/../../../ADT/String/string.h:
+lib/Types/Application/utas/../kicauan/../Application.h:
+lib/Types/Application/utas/../kicauan/../../Kicauan.h:
 lib/Types/Application/utas/../../listUtas.h:

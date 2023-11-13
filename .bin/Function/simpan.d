@@ -107,7 +107,7 @@
  Function/../lib/./Types/Application/teman/../Application.h \
  Function/../lib/./Types/Application/utas/utas.h \
  Function/../lib/./Types/Application/utas/../Application.h \
- Function/../lib/./Types/Application/utas/../../listUtas.h \
+ Function/../lib/./Types/Application/utas/../kicauan/kicauan.h \
  Function/../lib/./Types/Application/perintah/perintah.h \
  Function/../lib/./Types/Application/perintah/../Application.h \
  Function/../lib/./Types/Application/perintah/../balasan/balasan.h \
@@ -238,7 +238,7 @@ Function/../lib/./Types/Application/teman/teman.h:
 Function/../lib/./Types/Application/teman/../Application.h:
 Function/../lib/./Types/Application/utas/utas.h:
 Function/../lib/./Types/Application/utas/../Application.h:
-Function/../lib/./Types/Application/utas/../../listUtas.h:
+Function/../lib/./Types/Application/utas/../kicauan/kicauan.h:
 Function/../lib/./Types/Application/perintah/perintah.h:
 Function/../lib/./Types/Application/perintah/../Application.h:
 Function/../lib/./Types/Application/perintah/../balasan/balasan.h:

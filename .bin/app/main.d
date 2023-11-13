@@ -92,7 +92,7 @@
  app/../lib/./Types/Application/teman/../Application.h \
  app/../lib/./Types/Application/utas/utas.h \
  app/../lib/./Types/Application/utas/../Application.h \
- app/../lib/./Types/Application/utas/../../listUtas.h \
+ app/../lib/./Types/Application/utas/../kicauan/kicauan.h \
  app/../lib/./Types/Application/perintah/perintah.h \
  app/../lib/./Types/Application/perintah/../Application.h \
  app/../lib/./Types/Application/perintah/../balasan/balasan.h \
@@ -222,7 +222,7 @@ app/../lib/./Types/Application/teman/teman.h:
 app/../lib/./Types/Application/teman/../Application.h:
 app/../lib/./Types/Application/utas/utas.h:
 app/../lib/./Types/Application/utas/../Application.h:
-app/../lib/./Types/Application/utas/../../listUtas.h:
+app/../lib/./Types/Application/utas/../kicauan/kicauan.h:
 app/../lib/./Types/Application/perintah/perintah.h:
 app/../lib/./Types/Application/perintah/../Application.h:
 app/../lib/./Types/Application/perintah/../balasan/balasan.h:

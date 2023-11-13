@@ -100,7 +100,7 @@
  lib/ADT/WordMachine/../.././Types/Application/teman/../Application.h \
  lib/ADT/WordMachine/../.././Types/Application/utas/utas.h \
  lib/ADT/WordMachine/../.././Types/Application/utas/../Application.h \
- lib/ADT/WordMachine/../.././Types/Application/utas/../../listUtas.h \
+ lib/ADT/WordMachine/../.././Types/Application/utas/../kicauan/kicauan.h \
  lib/ADT/WordMachine/../.././Types/Application/perintah/perintah.h \
  lib/ADT/WordMachine/../.././Types/Application/perintah/../Application.h \
  lib/ADT/WordMachine/../.././Types/Application/perintah/../balasan/balasan.h \
@@ -221,7 +221,7 @@ lib/ADT/WordMachine/../.././Types/Application/teman/teman.h:
 lib/ADT/WordMachine/../.././Types/Application/teman/../Application.h:
 lib/ADT/WordMachine/../.././Types/Application/utas/utas.h:
 lib/ADT/WordMachine/../.././Types/Application/utas/../Application.h:
-lib/ADT/WordMachine/../.././Types/Application/utas/../../listUtas.h:
+lib/ADT/WordMachine/../.././Types/Application/utas/../kicauan/kicauan.h:
 lib/ADT/WordMachine/../.././Types/Application/perintah/perintah.h:
 lib/ADT/WordMachine/../.././Types/Application/perintah/../Application.h:
 lib/ADT/WordMachine/../.././Types/Application/perintah/../balasan/balasan.h:

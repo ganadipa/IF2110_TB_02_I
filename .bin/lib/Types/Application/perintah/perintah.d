@@ -81,7 +81,7 @@
  lib/Types/Application/perintah/../teman/../Application.h \
  lib/Types/Application/perintah/../utas/utas.h \
  lib/Types/Application/perintah/../utas/../Application.h \
- lib/Types/Application/perintah/../utas/../../listUtas.h \
+ lib/Types/Application/perintah/../utas/../kicauan/kicauan.h \
  lib/Types/Application/perintah/../Devtools.h \
  lib/Types/Application/perintah/../Application.h \
  lib/Types/Application/perintah/../../ReplyTree.h
@@ -168,7 +168,7 @@ lib/Types/Application/perintah/../teman/teman.h:
 lib/Types/Application/perintah/../teman/../Application.h:
 lib/Types/Application/perintah/../utas/utas.h:
 lib/Types/Application/perintah/../utas/../Application.h:
-lib/Types/Application/perintah/../utas/../../listUtas.h:
+lib/Types/Application/perintah/../utas/../kicauan/kicauan.h:
 lib/Types/Application/perintah/../Devtools.h:
 lib/Types/Application/perintah/../Application.h:
 lib/Types/Application/perintah/../../ReplyTree.h:
