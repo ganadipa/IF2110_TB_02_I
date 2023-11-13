@@ -124,11 +124,7 @@
  lib/Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h \
  lib/Types/Application/perintah/../teman/teman.h \
  lib/Types/Application/perintah/../utas/utas.h \
- lib/Types/Application/perintah/../utas/../Application.h \
- lib/Types/Application/perintah/../utas/../../listUtas.h \
- lib/Types/Application/perintah/../Devtools.h \
- lib/Types/Application/perintah/../Application.h \
- lib/Types/Application/perintah/../../ReplyTree.h
+ lib/Types/Application/perintah/../Devtools.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -263,6 +259,4 @@ lib/Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h:
 lib/Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h:
 lib/Types/Application/perintah/../teman/teman.h:
 lib/Types/Application/perintah/../utas/utas.h:
-lib/Types/Application/perintah/../utas/../Application.h:
-lib/Types/Application/perintah/../utas/../../listUtas.h:
 lib/Types/Application/perintah/../Devtools.h:
