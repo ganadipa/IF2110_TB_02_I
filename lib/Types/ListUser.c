@@ -90,15 +90,14 @@ void insertLast_ListUser(ListUser *l, User val)
 
 /* ********** MENGHAPUS ELEMEN ********** */
 /* *** Menghapus elemen pertama *** */
-void deleteFirst_Listuser(ListUser *l, User *val)
+void deleteFirst_ListUser(ListUser *l, User *val){
+    deleteAt_ListUser(l, val, 0);
+}
 /* Proses : Menghapus elemen pertama List */
 /* I.S. List tidak kosong */
 /* F.S. val adalah nilai elemen pertama l sebelum penghapusan, */
 /*      Banyaknya elemen List berkurang satu */
 /*      List l mungkin menjadi kosong */
-{
-    deleteAt_ListUser(l, val, 0);
-}
 /* *** Menghapus elemen pada index tertentu *** */
 void deleteAt_ListUser(ListUser *l, User *val, IdxType idx)
 /* Proses : Menghapus elemen pada index idx List */

@@ -1,5 +1,6 @@
 #ifndef REQQUEUE_H
 #define REQQUEUE_H
+
 #include "../boolean.h"
 
 #define IDX_UNDEF -1
@@ -16,6 +17,7 @@ typedef struct {
     int Head;
     int Tail;     /* Max elemen queue */
 } RequestQueue;
+
 /* Definisi RequestQueue kosong: HEAD=Nil; TAIL=Nil. */
 /* Catatan implementasi: T[0] tidak pernah dipakai */
 
