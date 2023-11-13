@@ -40,6 +40,15 @@
  lib/Types/Application/kicauan/../../../ADT/Matriks/charMatriks.h \
  lib/Types/Application/kicauan/../../../ADT/Matriks/../../boolean.h \
  lib/Types/Application/kicauan/../../RequestQueue.h \
+ lib/Types/Application/kicauan/../../DrafKicauan.h \
+ lib/Types/Application/kicauan/../../Kicauan.h \
+ lib/Types/Application/kicauan/../../../ADT/DateTime/datetime.h \
+ lib/Types/Application/kicauan/../../../ADT/DateTime/../../boolean.h \
+ lib/Types/Application/kicauan/../../../ADT/DateTime/../String/string.h \
+ lib/Types/Application/kicauan/../../ReplyTree.h \
+ lib/Types/Application/kicauan/../../../ADT/ListDinamik/listdinamik.h \
+ lib/Types/Application/kicauan/../../../ADT/ListDinamik/../../boolean.h \
+ lib/Types/Application/kicauan/../../listUtas.h \
  lib/Types/Application/kicauan/../../../ADT/Graf/graf.h \
  lib/Types/Application/kicauan/../../../ADT/Graf/../../boolean.h \
  lib/Types/Application/kicauan/../../../ADT/Graf/../ListStatik/liststatik.h \
@@ -48,17 +57,6 @@
  lib/Types/Application/kicauan/../../../ADT/Graf/../Matriks/../../boolean.h \
  lib/Types/Application/kicauan/../../listKicauan.h \
  lib/Types/Application/kicauan/../.././Kicauan.h \
- lib/Types/Application/kicauan/../.././../boolean.h \
- lib/Types/Application/kicauan/../.././User.h \
- lib/Types/Application/kicauan/../.././../ADT/String/string.h \
- lib/Types/Application/kicauan/../.././../ADT/DateTime/datetime.h \
- lib/Types/Application/kicauan/../.././../ADT/DateTime/../../boolean.h \
- lib/Types/Application/kicauan/../.././../ADT/DateTime/../String/string.h \
- lib/Types/Application/kicauan/../.././ReplyTree.h \
- lib/Types/Application/kicauan/../.././../ADT/ListDinamik/listdinamik.h \
- lib/Types/Application/kicauan/../.././../ADT/ListDinamik/../../boolean.h \
- lib/Types/Application/kicauan/../.././ListUser.h \
- lib/Types/Application/kicauan/../.././listUtas.h \
  lib/Types/Application/kicauan/../.././ListUser.h \
  lib/Types/Application/kicauan/../../RequestQueue.h \
  lib/Types/Application/kicauan/../../Kicauan.h
@@ -104,6 +102,15 @@ lib/Types/Application/kicauan/../../Photo.h:
 lib/Types/Application/kicauan/../../../ADT/Matriks/charMatriks.h:
 lib/Types/Application/kicauan/../../../ADT/Matriks/../../boolean.h:
 lib/Types/Application/kicauan/../../RequestQueue.h:
+lib/Types/Application/kicauan/../../DrafKicauan.h:
+lib/Types/Application/kicauan/../../Kicauan.h:
+lib/Types/Application/kicauan/../../../ADT/DateTime/datetime.h:
+lib/Types/Application/kicauan/../../../ADT/DateTime/../../boolean.h:
+lib/Types/Application/kicauan/../../../ADT/DateTime/../String/string.h:
+lib/Types/Application/kicauan/../../ReplyTree.h:
+lib/Types/Application/kicauan/../../../ADT/ListDinamik/listdinamik.h:
+lib/Types/Application/kicauan/../../../ADT/ListDinamik/../../boolean.h:
+lib/Types/Application/kicauan/../../listUtas.h:
 lib/Types/Application/kicauan/../../../ADT/Graf/graf.h:
 lib/Types/Application/kicauan/../../../ADT/Graf/../../boolean.h:
 lib/Types/Application/kicauan/../../../ADT/Graf/../ListStatik/liststatik.h:
@@ -112,17 +119,6 @@ lib/Types/Application/kicauan/../../../ADT/Graf/../Matriks/boolMatriks.h:
 lib/Types/Application/kicauan/../../../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/Application/kicauan/../../listKicauan.h:
 lib/Types/Application/kicauan/../.././Kicauan.h:
-lib/Types/Application/kicauan/../.././../boolean.h:
-lib/Types/Application/kicauan/../.././User.h:
-lib/Types/Application/kicauan/../.././../ADT/String/string.h:
-lib/Types/Application/kicauan/../.././../ADT/DateTime/datetime.h:
-lib/Types/Application/kicauan/../.././../ADT/DateTime/../../boolean.h:
-lib/Types/Application/kicauan/../.././../ADT/DateTime/../String/string.h:
-lib/Types/Application/kicauan/../.././ReplyTree.h:
-lib/Types/Application/kicauan/../.././../ADT/ListDinamik/listdinamik.h:
-lib/Types/Application/kicauan/../.././../ADT/ListDinamik/../../boolean.h:
-lib/Types/Application/kicauan/../.././ListUser.h:
-lib/Types/Application/kicauan/../.././listUtas.h:
 lib/Types/Application/kicauan/../.././ListUser.h:
 lib/Types/Application/kicauan/../../RequestQueue.h:
 lib/Types/Application/kicauan/../../Kicauan.h:

@@ -39,6 +39,15 @@
  lib/Types/Application/inisialisasi/../../../ADT/Matriks/charMatriks.h \
  lib/Types/Application/inisialisasi/../../../ADT/Matriks/../../boolean.h \
  lib/Types/Application/inisialisasi/../../RequestQueue.h \
+ lib/Types/Application/inisialisasi/../../DrafKicauan.h \
+ lib/Types/Application/inisialisasi/../../Kicauan.h \
+ lib/Types/Application/inisialisasi/../../../ADT/DateTime/datetime.h \
+ lib/Types/Application/inisialisasi/../../../ADT/DateTime/../../boolean.h \
+ lib/Types/Application/inisialisasi/../../../ADT/DateTime/../String/string.h \
+ lib/Types/Application/inisialisasi/../../ReplyTree.h \
+ lib/Types/Application/inisialisasi/../../../ADT/ListDinamik/listdinamik.h \
+ lib/Types/Application/inisialisasi/../../../ADT/ListDinamik/../../boolean.h \
+ lib/Types/Application/inisialisasi/../../listUtas.h \
  lib/Types/Application/inisialisasi/../../../ADT/Graf/graf.h \
  lib/Types/Application/inisialisasi/../../../ADT/Graf/../../boolean.h \
  lib/Types/Application/inisialisasi/../../../ADT/Graf/../ListStatik/liststatik.h \
@@ -47,17 +56,6 @@
  lib/Types/Application/inisialisasi/../../../ADT/Graf/../Matriks/../../boolean.h \
  lib/Types/Application/inisialisasi/../../listKicauan.h \
  lib/Types/Application/inisialisasi/../.././Kicauan.h \
- lib/Types/Application/inisialisasi/../.././../boolean.h \
- lib/Types/Application/inisialisasi/../.././User.h \
- lib/Types/Application/inisialisasi/../.././../ADT/String/string.h \
- lib/Types/Application/inisialisasi/../.././../ADT/DateTime/datetime.h \
- lib/Types/Application/inisialisasi/../.././../ADT/DateTime/../../boolean.h \
- lib/Types/Application/inisialisasi/../.././../ADT/DateTime/../String/string.h \
- lib/Types/Application/inisialisasi/../.././ReplyTree.h \
- lib/Types/Application/inisialisasi/../.././../ADT/ListDinamik/listdinamik.h \
- lib/Types/Application/inisialisasi/../.././../ADT/ListDinamik/../../boolean.h \
- lib/Types/Application/inisialisasi/../.././ListUser.h \
- lib/Types/Application/inisialisasi/../.././listUtas.h \
  lib/Types/Application/inisialisasi/../.././ListUser.h \
  lib/Types/Application/inisialisasi/../../RequestQueue.h
 /usr/include/stdc-predef.h:
@@ -101,6 +99,15 @@ lib/Types/Application/inisialisasi/../../Photo.h:
 lib/Types/Application/inisialisasi/../../../ADT/Matriks/charMatriks.h:
 lib/Types/Application/inisialisasi/../../../ADT/Matriks/../../boolean.h:
 lib/Types/Application/inisialisasi/../../RequestQueue.h:
+lib/Types/Application/inisialisasi/../../DrafKicauan.h:
+lib/Types/Application/inisialisasi/../../Kicauan.h:
+lib/Types/Application/inisialisasi/../../../ADT/DateTime/datetime.h:
+lib/Types/Application/inisialisasi/../../../ADT/DateTime/../../boolean.h:
+lib/Types/Application/inisialisasi/../../../ADT/DateTime/../String/string.h:
+lib/Types/Application/inisialisasi/../../ReplyTree.h:
+lib/Types/Application/inisialisasi/../../../ADT/ListDinamik/listdinamik.h:
+lib/Types/Application/inisialisasi/../../../ADT/ListDinamik/../../boolean.h:
+lib/Types/Application/inisialisasi/../../listUtas.h:
 lib/Types/Application/inisialisasi/../../../ADT/Graf/graf.h:
 lib/Types/Application/inisialisasi/../../../ADT/Graf/../../boolean.h:
 lib/Types/Application/inisialisasi/../../../ADT/Graf/../ListStatik/liststatik.h:
@@ -109,16 +116,5 @@ lib/Types/Application/inisialisasi/../../../ADT/Graf/../Matriks/boolMatriks.h:
 lib/Types/Application/inisialisasi/../../../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/Application/inisialisasi/../../listKicauan.h:
 lib/Types/Application/inisialisasi/../.././Kicauan.h:
-lib/Types/Application/inisialisasi/../.././../boolean.h:
-lib/Types/Application/inisialisasi/../.././User.h:
-lib/Types/Application/inisialisasi/../.././../ADT/String/string.h:
-lib/Types/Application/inisialisasi/../.././../ADT/DateTime/datetime.h:
-lib/Types/Application/inisialisasi/../.././../ADT/DateTime/../../boolean.h:
-lib/Types/Application/inisialisasi/../.././../ADT/DateTime/../String/string.h:
-lib/Types/Application/inisialisasi/../.././ReplyTree.h:
-lib/Types/Application/inisialisasi/../.././../ADT/ListDinamik/listdinamik.h:
-lib/Types/Application/inisialisasi/../.././../ADT/ListDinamik/../../boolean.h:
-lib/Types/Application/inisialisasi/../.././ListUser.h:
-lib/Types/Application/inisialisasi/../.././listUtas.h:
 lib/Types/Application/inisialisasi/../.././ListUser.h:
 lib/Types/Application/inisialisasi/../../RequestQueue.h:

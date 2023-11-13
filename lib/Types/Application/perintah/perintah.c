@@ -55,7 +55,11 @@ void handleCommand(Application* app, String command, boolean *finish)
         }
         int ID = stringToInt(secondWord);
         SukaKicauan(app,ID);
-    } else if (compareString(firstWord, "UBAH_KICAUAN")) {
+    } else if(compareString(firstWord, "BUAT_DRAF")){
+        BuatDraf(app);
+    } else if(compareString(firstWord, "LIHAT_DRAF")){
+        LihatDraf(app);
+    }else if (compareString(firstWord, "UBAH_KICAUAN")) {
         if (numword != 2) {
             printf("\nPerintah yang valid: \"UBAH_KICAUAN <IDKicau>;\".\n");
             return;
@@ -93,6 +97,8 @@ void handleCommand(Application* app, String command, boolean *finish)
         int IDKicau = stringToInt(secondWord);
         int IDBalasan = stringToInt(thirdWord);
         HapusBalasan(app, IDKicau, IDBalasan);
+    } else if(compareString(firstWord, "SIMPAN")){
+        SaveFolder(app);
     }
 
 

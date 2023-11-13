@@ -58,14 +58,13 @@ void Balas(Application *app, int IDKicau, int IDBalasan) {
         addChildToReply(balasan, parent, ra);
     }
 
-    
 
 
 
 
     // penutup
     printf("\nSelamat! balasan telah diterbitkan!\nDetil balasan:\n");
-    displayReply(*balasan, ra, *lu, 0);
+    displayReply(*balasan, ra, lu, 0, LOGINID(*app));
     printf("\n");
 
 
@@ -91,7 +90,7 @@ void Balasan(Application *app, int IDKicau){
         printf("\nWah, kicauan tersebut dibuat oleh pengguna dengan akun privat!\n");
     }
 
-    displayAllReply(*balasan, *lu);
+    displayAllReply(*balasan, *lu, LOGINID(*app));
 }
 
 void HapusBalasan(Application *app, int IDKicau, int IDBalasan){

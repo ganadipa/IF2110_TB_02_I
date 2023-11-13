@@ -39,6 +39,15 @@
  lib/Types/Application/balasan/../../../ADT/Matriks/charMatriks.h \
  lib/Types/Application/balasan/../../../ADT/Matriks/../../boolean.h \
  lib/Types/Application/balasan/../../RequestQueue.h \
+ lib/Types/Application/balasan/../../DrafKicauan.h \
+ lib/Types/Application/balasan/../../Kicauan.h \
+ lib/Types/Application/balasan/../../../ADT/DateTime/datetime.h \
+ lib/Types/Application/balasan/../../../ADT/DateTime/../../boolean.h \
+ lib/Types/Application/balasan/../../../ADT/DateTime/../String/string.h \
+ lib/Types/Application/balasan/../../ReplyTree.h \
+ lib/Types/Application/balasan/../../../ADT/ListDinamik/listdinamik.h \
+ lib/Types/Application/balasan/../../../ADT/ListDinamik/../../boolean.h \
+ lib/Types/Application/balasan/../../listUtas.h \
  lib/Types/Application/balasan/../../../ADT/Graf/graf.h \
  lib/Types/Application/balasan/../../../ADT/Graf/../../boolean.h \
  lib/Types/Application/balasan/../../../ADT/Graf/../ListStatik/liststatik.h \
@@ -47,17 +56,6 @@
  lib/Types/Application/balasan/../../../ADT/Graf/../Matriks/../../boolean.h \
  lib/Types/Application/balasan/../../listKicauan.h \
  lib/Types/Application/balasan/../.././Kicauan.h \
- lib/Types/Application/balasan/../.././../boolean.h \
- lib/Types/Application/balasan/../.././User.h \
- lib/Types/Application/balasan/../.././../ADT/String/string.h \
- lib/Types/Application/balasan/../.././../ADT/DateTime/datetime.h \
- lib/Types/Application/balasan/../.././../ADT/DateTime/../../boolean.h \
- lib/Types/Application/balasan/../.././../ADT/DateTime/../String/string.h \
- lib/Types/Application/balasan/../.././ReplyTree.h \
- lib/Types/Application/balasan/../.././../ADT/ListDinamik/listdinamik.h \
- lib/Types/Application/balasan/../.././../ADT/ListDinamik/../../boolean.h \
- lib/Types/Application/balasan/../.././ListUser.h \
- lib/Types/Application/balasan/../.././listUtas.h \
  lib/Types/Application/balasan/../.././ListUser.h \
  lib/Types/Application/balasan/../../RequestQueue.h
 /usr/include/stdc-predef.h:
@@ -101,6 +99,15 @@ lib/Types/Application/balasan/../../Photo.h:
 lib/Types/Application/balasan/../../../ADT/Matriks/charMatriks.h:
 lib/Types/Application/balasan/../../../ADT/Matriks/../../boolean.h:
 lib/Types/Application/balasan/../../RequestQueue.h:
+lib/Types/Application/balasan/../../DrafKicauan.h:
+lib/Types/Application/balasan/../../Kicauan.h:
+lib/Types/Application/balasan/../../../ADT/DateTime/datetime.h:
+lib/Types/Application/balasan/../../../ADT/DateTime/../../boolean.h:
+lib/Types/Application/balasan/../../../ADT/DateTime/../String/string.h:
+lib/Types/Application/balasan/../../ReplyTree.h:
+lib/Types/Application/balasan/../../../ADT/ListDinamik/listdinamik.h:
+lib/Types/Application/balasan/../../../ADT/ListDinamik/../../boolean.h:
+lib/Types/Application/balasan/../../listUtas.h:
 lib/Types/Application/balasan/../../../ADT/Graf/graf.h:
 lib/Types/Application/balasan/../../../ADT/Graf/../../boolean.h:
 lib/Types/Application/balasan/../../../ADT/Graf/../ListStatik/liststatik.h:
@@ -109,16 +116,5 @@ lib/Types/Application/balasan/../../../ADT/Graf/../Matriks/boolMatriks.h:
 lib/Types/Application/balasan/../../../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/Application/balasan/../../listKicauan.h:
 lib/Types/Application/balasan/../.././Kicauan.h:
-lib/Types/Application/balasan/../.././../boolean.h:
-lib/Types/Application/balasan/../.././User.h:
-lib/Types/Application/balasan/../.././../ADT/String/string.h:
-lib/Types/Application/balasan/../.././../ADT/DateTime/datetime.h:
-lib/Types/Application/balasan/../.././../ADT/DateTime/../../boolean.h:
-lib/Types/Application/balasan/../.././../ADT/DateTime/../String/string.h:
-lib/Types/Application/balasan/../.././ReplyTree.h:
-lib/Types/Application/balasan/../.././../ADT/ListDinamik/listdinamik.h:
-lib/Types/Application/balasan/../.././../ADT/ListDinamik/../../boolean.h:
-lib/Types/Application/balasan/../.././ListUser.h:
-lib/Types/Application/balasan/../.././listUtas.h:
 lib/Types/Application/balasan/../.././ListUser.h:
 lib/Types/Application/balasan/../../RequestQueue.h:
