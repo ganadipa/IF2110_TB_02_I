@@ -41,7 +41,9 @@ void CreateListUser(ListUser *l);
 /* Proses: Inisialisasi semua elemen List l dengan MARK */
 
 
+int getIdxInReplyTree(ReplyTree rt, ReplyAddress ra);
 
+void printSpace(int depth);
 /* ********** Test Indeks yang valid ********** */
 boolean isIdxValid_ListUser(ListUser l, IdxType i);
 /* Mengirimkan true jika i adalah indeks yang valid utk kapasitas List l */
@@ -57,6 +59,12 @@ boolean isEmpty_ListUser(ListUser l);
 /* *** Test List penuh *** */
 boolean isFull_ListUser(ListUser l);
 /* Mengirimkan true jika List l penuh, mengirimkan false jika tidak */
+
+void displayReply(ReplyTree rt, ReplyAddress addr, ListUser l, int depth);
+
+void displayAllReply(ReplyTree rt, ListUser l);
+
+void displayAllReply_helper(ReplyTree rt, ListUser l, int currDepth, int idx);
 
 /* ********** OPERATOR RELASIONAL ********** */
 /* ********** SEARCHING ********** */

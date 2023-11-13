@@ -6,9 +6,9 @@ ReplyAddress newReply(String body, boolean isMain)
 /*Membuat balasan dengan id null, authorid null, body terset, dan datetime juga terset*/
 {
     ReplyAddress ra = (ReplyAddress) malloc(sizeof(Reply));
-    REPLYID(*ra) = ID_UNDEF;
+    REPLYID(*ra) = -1;
     BODY(*ra) = body;
-    AUTHORID(*ra) = ID_UNDEF;
+    AUTHORID(*ra) = -1;
     DTIME(*ra) = currentDateTime();
     ISMAIN(*ra) = isMain;
 
@@ -164,78 +164,7 @@ void printSpace(int num) {
     }
 }
 
-void displayReply(ReplyTree rt, ReplyAddress addr, ListUser l, int depth)
-{
-    int i = getIdxInReplyTree(rt, addr);
-    if (!ISUSED(rt, i)) return;
 
-
-    Reply rep = *addr;
-
-    printSpace(depth);
-    printf(" | ID = %d\n", REPLYID(rep));
-
-    User u = ELMT_LISTUSER(l, AUTHORID(rep));
-    boolean public = !ISPRIVATE(PROFILE(u));
-
-    if (!public) {
-        printSpace(depth);
-        printf(" | PRIVAT\n");
-
-        printSpace(depth);
-        printf(" | PRIVAT\n");
-        
-        printSpace(depth);
-        printf(" | PRIVAT\n");
-
-    } else {
-        String authorName = NAME(u);
-
-        printSpace(depth);
-        printf(" | ");
-        displayString(authorName);
-        printf("\n");
-
-        printSpace(depth);
-        printf(" | ");
-        displayString(DateTimeToString(DTIME(rep)));
-        printf("\n");
-
-        printSpace(depth);
-        printf(" | ");
-        displayString(BODY(rep));
-        printf("\n");
-    }
-    printf("\n");
-}
-
-void displayAllReply(ReplyTree rt, ListUser l)
-// I.S. compressed rt
-{
-    int length = LISTREP(rt).neff;
-    int i;
-    for (i = 0; i < length; i++) {
-        Reply r = (*ADDR(LISTREP(rt), i));
-        if (ISMAIN(r) && ISUSED(rt, i)) {
-            displayAllReply_helper(rt, l, 0, i);
-        }
-    }
-
-}
-
-void displayAllReply_helper(ReplyTree rt, ListUser l, int currDepth, int idx)
-{
-    ListDin adjlist = LISTDIN(rt, idx);
-    ReplyAddress ra = ADDR(LISTREP(rt), idx);
-    int neff = NEFF(adjlist);
-    int i;
-
-    displayReply(rt, ra, l, currDepth);
-
-    for (i = 0; i < neff; i++) {
-        displayAllReply_helper(rt, l, currDepth+1, adjlist.buffer[i]);
-    }
-}
 
 int getIdxFromReplyId(ReplyTree rt, int replyID)
 // compressed rt
