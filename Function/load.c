@@ -30,6 +30,7 @@
 // #include "../lib/Types/RequestQueue.c"
 // #include "../lib/Types/ReplyTree.c"
 // #include "../lib/ADT/Graf/graf.c"
+// #include "../lib/Types/listUtas.c"
 #include <stdio.h>
 
 /* Load pengguna tinggal baris akhir */
@@ -106,7 +107,7 @@ void LoadPengguna(Application *app){
                 f.userID = idyangminta;
                 enqueueRequestQueue(&app->users.contents[idyangdiminta].friendRequest, f);
             }
-            displayRequestQueue(app->users.contents[0].friendRequest, app->users);
+            // displayRequestQueue(app->users.contents[0].friendRequest, app->users);
         }
     }
     
@@ -122,21 +123,57 @@ void LoadKicauan(Application *app){
     STARTWORDFILE(filename);
     while (retvalfile != -1){
         app->listKicauan.nEff = stringToInt(currentWordFile);
-        // printf("%d", app->listKicauan.nEff);
         for(i=0;i<app->listKicauan.nEff;i++){
             ADVWORDFILE();
-            app->listKicauan.buffer[i].IDKicau = stringToInt(currentWordFile);
+            int IdKicau = stringToInt(currentWordFile);
             ADVWORDFILE();
-            app->listKicauan.buffer[i].text = currentWordFile;
+            String text = currentWordFile;
             ADVWORDFILE();
-            app->listKicauan.buffer[i].like = stringToInt(currentWordFile);
+            int like = stringToInt(currentWordFile);
             ADVWORDFILE();
             app->listKicauan.buffer[i].IDuser = searchByName(app->users, currentWordFile);
+            InisialisasiKicau(&app->listKicauan.buffer[i], app->listKicauan.buffer[i].IDuser);
+            app->listKicauan.buffer[i].IDKicau = IdKicau;
+            app->listKicauan.buffer[i].like = like;
+            app->listKicauan.buffer[i].text = text;
             ADVWORDFILE();
             app->listKicauan.buffer[i].dateTime = currentWordFile;
+        
         }
     }
     CLOSEFILE();
+}
+void LoadBalasan(Application *app){
+    String filename;
+    int i,j;
+    char temp[20] = "balasan.config";
+    addChartoChar(filename.buffer, temp);
+    filename.maxLength = STRCAP;
+    STARTWORDFILE(filename);
+    if (retvalfile != -1){
+        int banyakkicauan = stringToInt(currentWordFile); /* banyak kicauan yang memiliki balasan*/
+        for (i=0;i<banyakkicauan;i++){
+            ADVWORDFILE();
+            int idkicau = stringToInt(currentWordFile); /* id kicauan */
+            app->listKicauan.buffer[idkicau-1].IDKicau = idkicau;
+            createReplyTree(&app->listKicauan.buffer[idkicau-1].balasan, 100);
+            ADVWORDFILE();
+            int balasan = stringToInt(currentWordFile); /* banyak balasan */
+            app->listKicauan.buffer[idkicau-1].balasan.numReplyEff = balasan;
+
+            for (i=0;i<balasan;i++){
+                Reply rep;
+                // newReply();
+                ADVWORDFILE2(); /* currenwordfile berisi parent id*/
+                ADVWORDFILE(); /* currentwordfile berisi id balasan */
+                ADVWORDFILE(); /* currentwordfile berisi isi balasannya */
+                ADVWORDFILE(); /* currentwordfile berisi author balasan */
+                ADVWORDFILE(); /* currentwordfile berisi datetime */
+            }
+            
+
+        }
+    }
 }
 void LoadUtas(Application *app){
     String filename;
@@ -145,8 +182,36 @@ void LoadUtas(Application *app){
     addChartoChar(filename.buffer, temp);
     filename.maxLength = STRCAP;
     STARTWORDFILE(filename);
-    if (retvalfile != -1){
-
+    while (retvalfile != -1){
+        int kicaudenganutas= stringToInt(currentWordFile); /* banyak kicauan yang memiliki utas */
+        app->JumlahUtas = kicaudenganutas;
+        for (i=0;i<kicaudenganutas;i++){
+            ADVWORDFILE(); /* currentwordfile berisi id kicauan yang memiliki utas */
+            int IDKicau = stringToInt(currentWordFile);
+            ADVWORDFILE(); /* currentwordfile berisi banyak utas */
+            int banyakutas = stringToInt(currentWordFile);
+            app->listKicauan.buffer[IDKicau-1].lenUtas = banyakutas; 
+            ADVWORDFILE();
+            String teks = currentWordFile;
+            ADVWORDFILE();
+            String nama = currentWordFile;
+            ADVWORDFILE();
+            String waktu = currentWordFile;
+            app->listKicauan.buffer[IDKicau-1].link =  newNodeUtas(teks, nama, waktu);
+            AddressUtas p = app->listKicauan.buffer[IDKicau-1].link;
+            app->listKicauan.buffer[IDKicau-1].IDUtas = i+1;
+            for (j=1;j<banyakutas;j++){
+                ADVWORDFILE();
+                String teks = currentWordFile;
+                ADVWORDFILE();
+                String nama = currentWordFile;
+                ADVWORDFILE();
+                String waktu = currentWordFile;
+                AddressUtas node =  newNodeUtas(teks, nama, waktu);
+                p->next = node;
+                p = node;
+            }
+        }
     }
 }
 // int main(){
@@ -154,6 +219,7 @@ void LoadUtas(Application *app){
 //     String nama = {"john", 100};
 //     LoadPengguna(&app);
 //     LoadKicauan(&app);
+//     LoadUtas(&app);
 // //     // printf("%d", app.listKicauan.nEff);
 //     // displayString(app.users.contents[0].name);
 //     // printf("\n");
@@ -163,19 +229,25 @@ void LoadUtas(Application *app){
 //     // printf("\n");
 //     // displayString(app.users.contents[0].profile.weton);
 //     // readPhoto(&app.users.contents[0].profile.photo);
-    // displayPhoto(app.users.contents[2].profile.photo);
+//     // displayPhoto(app.users.contents[2].profile.photo);
+//     // display_listUtas(&app, 1)
 //     // // printf("%u", app->users.contents[2].profile.isPrivate);
 //     // // displayString(photoString);
 //     // // printf("%d", photoString.maxLength);
     
 //     // printf("%d", app.listKicauan.buffer[0].IDKicau);
 //     // printf("\n");
-//     // displayString(app.listKicauan.buffer[0].text);
+//     // // displayString(app.listKicauan.buffer[0].text);
 //     // printf("\n");
-//     // // // printKicauan(app.listKicauan.buffer[0], nama);
-//     // printf("%d", app.listKicauan.buffer[0].IDuser);
+//     // printKicauan(app.listKicauan.buffer[1], nama);
+//     // // printf("%d", app.listKicauan.buffer[0].IDuser);
 //     // printf("\n");
 //     // displayString(app.listKicauan.buffer[0].dateTime);
+
+
+//     // printf("%d", )
+//     // printf("%u", app.listKicauan.buffer[1].link->next->next->next);
+//     // displayString(app.listKicauan.buffer[1].link->next->next->teks);
 // }
 
-// // // 
+// // 
