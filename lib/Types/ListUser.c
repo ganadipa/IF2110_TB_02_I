@@ -251,3 +251,23 @@ void displayAllReply_helper(ReplyTree rt, ListUser *l, int currDepth, int idx, i
         displayAllReply_helper(rt, l, currDepth+1, adjlist.buffer[i], LOGINID);
     }
 }
+
+void AddReplyDariConfig(ReplyTree *rt, ListUser lu,int IDKicau, int IDBalasan, String body, String name, String DATETIME)
+// JANGAN LUPA REPLY TREE DI CREATE DULU, capacity 100 aja.
+{
+    addReply(rt);
+
+    ReplyAddress ra = newReply(body, IDKicau == -1);
+    REPLYID(*ra) = generateReplyID(*rt);
+    AUTHORID(*ra) = searchByName(lu, name);
+    // DTIME() /// BIKIN DULU STRING TO DATETIME ABIS ITU MASUKIN KE SINI, JANGN LUPA!
+
+    
+
+    if (IDKicau == -1) {
+        addMainReply(rt, ra);
+    } else {
+        addChildToReply(rt, ADDR(LISTREP(*rt),IDBalasan), ra);
+    }
+
+}
