@@ -16,7 +16,7 @@ typedef struct application {
     ListUser users; // User list dengan array statik
     Graf friendships;
     ListKicau listKicauan;
-    int JumlahKicauTOTAL;
+    int JumlahUtas;
 } Application;
 
 #define LOGGEDIN(a) (a).isLoggedIn
@@ -24,7 +24,7 @@ typedef struct application {
 #define LOGINID(a) (a).loginID
 #define FRIENDSHIPS(a) (a).friendships
 #define KICAUAN(a)  (a).listKicauan
-#define JUMLAHTOTALKICAU(a) (a).JumlahKicauTOTAL;
+#define JUMLAHUTAS(a) (a).JumlahUtas
 
 void DevTools(Application app);
 /**

@@ -40,8 +40,8 @@ void STARTWORDFILE(String filename){
         } else{
             EndFile = false;
             CopyWordFILE();
-            IgnoreNewLinesFile();
-
+            // IgnoreNewLinesFile();
+            ADVCHARFILE();
         }
     }
 }
@@ -54,7 +54,10 @@ void ADVWORDFILE(){
     CopyWordFILE();
     ADVCHARFILE();
 }
-
+void ADVWORDFILE2(){
+    CopyWordFILE2();
+    ADVCHARFILE();
+}
 void ADVFILEPHOTO(){
     CopyFILEPhoto();
     ADVCHARFILE();
@@ -71,7 +74,7 @@ void CopyWordFILE(){
         currentWordFile.maxLength = 1;
     } else{
         int i = 0;
-        while (currentCharFile != MARK_LAST_FILE && currentCharFile != '\n'){
+        while (currentCharFile != MARK_LAST_FILE && retvalfile != -1){
             currentWordFile.buffer[i] = currentCharFile;
             currentWordFile.maxLength = i + 1;
             i++;
@@ -86,16 +89,25 @@ void CopyWordFILE(){
           currentChar adalah karakter sesudah karakter terakhir yang diakuisisi.
           Jika panjang kata melebihi NMax, maka sisa kata "dipotong" */
 
-void CopyFILEPhoto(){
+void CopyWordFILE2(){
     int i = 0;
-    while (currentCharFile != MARK_LAST_FILE && currentCharFile != '\n'){
-        IgnoreBlanksFile();
+    while (currentCharFile != BLANK && currentCharFile != MARK_LAST_FILE){
         currentWordFile.buffer[i] = currentCharFile;
         currentWordFile.maxLength = i + 1;
         i++;
         ADVCHARFILE();
     }
-    // currentWordFile.buffer[10] = '\n';
-    // currentWordFile.maxLength += 1;
+    // printf("%c ", currentWordFile.buffer[0]);
+}
+void CopyFILEPhoto(){
+    int i = 0;
+    while (currentCharFile != MARK_LAST_FILE && currentCharFile != '\n'){
+        currentWordFile.buffer[i] = currentCharFile;
+        currentWordFile.maxLength = i + 1;
+        i++;
+        ADVCHARFILE();
+    }
+    currentWordFile.buffer[i] = '\n';
+    currentWordFile.maxLength += 1;
     // printf("%c", currentWordFile.buffer[10]);
 }

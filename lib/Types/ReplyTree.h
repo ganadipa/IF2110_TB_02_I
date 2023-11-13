@@ -3,7 +3,6 @@
 
 #include "../ADT/ListDinamik/listdinamik.h"
 #include "../ADT/DateTime/datetime.h"
-#include "ListUser.h"
 
 
 
@@ -73,11 +72,7 @@ void swapIndexTree(ReplyTree *rt, int i, int j);
 
 int getIdxFromReplyId(ReplyTree rt, int replyID);
 
-void displayReply(ReplyTree rt, ReplyAddress addr, ListUser l, int depth);
 
-void displayAllReply(ReplyTree rt, ListUser l);
-
-void displayAllReply_helper(ReplyTree rt, ListUser l, int currDepth, int idx);
 
 ReplyAddress getReplyAddress(ReplyTree rt, int replyID);
 
@@ -86,6 +81,8 @@ void addMainReply(ReplyTree *rt, ReplyAddress addr);
 ReplyAddress newReply(String body, boolean isMain);
 
 void deleteReply(ReplyTree *rt, int replyID);
+
+void printAllReplyTree(ReplyTree rt);
 
 
 

@@ -8,6 +8,7 @@
 #include "../kicauan/kicauan.h"
 #include "../pengguna/pengguna.h"
 #include "../profil/profil.h"
+#include "../simpan-dan-muat/simpan.h"
 #include "../simpan-dan-muat/simpan-dan-muat.h"
 #include "../permintaan-pertemanan/permintaan-pertemanan.h"
 #include "../teman/teman.h"
