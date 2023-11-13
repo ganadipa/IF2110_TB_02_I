@@ -60,11 +60,11 @@ boolean isEmpty_ListUser(ListUser l);
 boolean isFull_ListUser(ListUser l);
 /* Mengirimkan true jika List l penuh, mengirimkan false jika tidak */
 
-void displayReply(ReplyTree rt, ReplyAddress addr, ListUser l, int depth);
+void displayReply(ReplyTree rt, ReplyAddress addr, ListUser *l, int depth, int LOGINID);
 
-void displayAllReply(ReplyTree rt, ListUser l);
+void displayAllReply(ReplyTree rt, ListUser l, int LOGINID);
 
-void displayAllReply_helper(ReplyTree rt, ListUser l, int currDepth, int idx);
+void displayAllReply_helper(ReplyTree rt, ListUser *l, int currDepth, int idx, int LOGINID);
 
 /* ********** OPERATOR RELASIONAL ********** */
 /* ********** SEARCHING ********** */

@@ -168,7 +168,7 @@ void displayRequestQueue(RequestQueue Q, ListUser l)
     }
 }
 
-void displayReply(ReplyTree rt, ReplyAddress addr, ListUser l, int depth)
+void displayReply(ReplyTree rt, ReplyAddress addr, ListUser *l, int depth, int LOGINID)
 {
     int i = getIdxInReplyTree(rt, addr);
     if (!ISUSED(rt, i)) return;
@@ -179,10 +179,12 @@ void displayReply(ReplyTree rt, ReplyAddress addr, ListUser l, int depth)
     printSpace(depth);
     printf(" | ID = %d\n", REPLYID(rep));
 
-    User u = ELMT_LISTUSER(l, AUTHORID(rep));
+
+
+    User u = ELMT_LISTUSER(*l, AUTHORID(rep));
     boolean public = !ISPRIVATE(PROFILE(u));
 
-    if (!public) {
+    if (!public && AUTHORID(rep) != LOGINID) {
         printSpace(depth);
         printf(" | PRIVAT\n");
 
@@ -213,34 +215,39 @@ void displayReply(ReplyTree rt, ReplyAddress addr, ListUser l, int depth)
     printf("\n");
 }
 
-void displayAllReply(ReplyTree rt, ListUser l)
+void displayAllReply(ReplyTree rt, ListUser l, int LOGINID)
 // I.S. compressed rt
 {
+    
     int length = LISTREP(rt).neff;
     int i;
     for (i = 0; i < length; i++) {
         Reply r = (*ADDR(LISTREP(rt), i));
         
         if (ISMAIN(r) && ISUSED(rt, i)) {
-            displayAllReply_helper(rt, l, 0, i);
+            displayAllReply_helper(rt, &l, 0, i, LOGINID);
         }
         
     }
 
 }
+    
 
-void displayAllReply_helper(ReplyTree rt, ListUser l, int currDepth, int idx)
+
+void displayAllReply_helper(ReplyTree rt, ListUser *l, int currDepth, int idx, int LOGINID)
 {
     ListDin adjlist = LISTDIN(rt, idx);
     ReplyAddress ra = ADDR(LISTREP(rt), idx);
     int neff = NEFF(adjlist);
     int i;
 
-    
-    displayReply(rt, ra, l, currDepth);
+
+
+
+    displayReply(rt, ra, l, currDepth, LOGINID);
 
     
     for (i = 0; i < neff; i++) {
-        displayAllReply_helper(rt, l, currDepth+1, adjlist.buffer[i]);
+        displayAllReply_helper(rt, l, currDepth+1, adjlist.buffer[i], LOGINID);
     }
 }

@@ -32,7 +32,6 @@ void createReplyTree(ReplyTree *rt, int capacity)
     int i;
     for (i = 0; i < capacity; i++) {
         CreateListDin(&LISTDIN(*rt, i), capacity);
-
     }
     
     NUMREP(*rt) = 0;
