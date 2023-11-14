@@ -125,4 +125,6 @@ void displayName(ListUser l, int i);
 
 void displayRequestQueue(RequestQueue Q, ListUser l);
 
+void AddReplyDariConfig(ReplyTree *rt, ListUser lu,int IDKicau, int IDBalasan, String body, String name, String DATETIME);
+
 #endif

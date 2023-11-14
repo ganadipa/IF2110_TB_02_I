@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "./ListUser.h"
 
+
 /* ********** KONSTRUKTOR ********** */
 /* Konstruktor : create List kosong  */
 void CreateListUser(ListUser *l)
@@ -260,7 +261,7 @@ void AddReplyDariConfig(ReplyTree *rt, ListUser lu,int IDKicau, int IDBalasan, i
     ReplyAddress ra = newReply(body, IDKicau == -1);
     REPLYID(*ra) = generateReplyID(*rt);
     AUTHORID(*ra) = searchByName(lu, name);
-    // DTIME() /// BIKIN DULU STRING TO DATETIME ABIS ITU MASUKIN KE SINI, JANGN LUPA!
+    DTIME(*ra) = StringToDateTime(DATETIME); /// BIKIN DULU STRING TO DATETIME ABIS ITU MASUKIN KE SINI, JANGN LUPA!
 
     
 
