@@ -10,6 +10,10 @@ void AppInitialization(Application *app)
     // print opening
     Opening();
     boolean found = false;
+
+
+
+
     ReadConfig(app, &found);
     // Inisialisasi app
     Setup(app); // Hapus kali udah ada database dari config.
@@ -51,13 +55,12 @@ void ReadConfig(Application *app, boolean *found) {
     //     // if folder is found
     //     *found = true;
     // } while (!*found);
-    // LoadPengguna(app);
+    LoadPengguna(app);
     LoadKicauan(app);
     LoadBalasan(app);
     LoadUtas(app);
+    
     printf("File konfigurasi berhasil dimuat! Selamat berkicau!\n\n");
-
-
 }
 
 void LoadPengguna(Application *app){
@@ -66,7 +69,7 @@ void LoadPengguna(Application *app){
     String photoString;
     createEmptyString(&photoString, 225);
     STARTWORDFILE(filename);
-    while (retvalfile != -1){
+    if (retvalfile != -1){
         app->users.length = stringToInt(currentWordFile);
         if(app->users.length > 0){
             for (i=0; i < app->users.length; i++){
@@ -209,8 +212,9 @@ void LoadUtas(Application *app){
     char temp[20] = "utas.config";
     addChartoChar(filename.buffer, temp);
     filename.maxLength = STRCAP;
+    
     STARTWORDFILE(filename);
-    while (retvalfile != -1){
+    if (retvalfile != -1){
         int kicaudenganutas= stringToInt(currentWordFile); /* banyak kicauan yang memiliki utas */
         app->JumlahUtas = kicaudenganutas;
         for (i=0;i<kicaudenganutas;i++){

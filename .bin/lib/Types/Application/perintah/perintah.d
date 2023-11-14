@@ -28,6 +28,12 @@
  lib/Types/Application/perintah/../../../boolean.h \
  lib/Types/Application/perintah/../../ListUser.h \
  lib/Types/Application/perintah/../../../boolean.h \
+ lib/Types/Application/perintah/../../../ADT/Graf/graf.h \
+ lib/Types/Application/perintah/../../../ADT/Graf/../../boolean.h \
+ lib/Types/Application/perintah/../../../ADT/Graf/../ListStatik/liststatik.h \
+ lib/Types/Application/perintah/../../../ADT/Graf/../ListStatik/../../boolean.h \
+ lib/Types/Application/perintah/../../../ADT/Graf/../Matriks/boolMatriks.h \
+ lib/Types/Application/perintah/../../../ADT/Graf/../Matriks/../../boolean.h \
  lib/Types/Application/perintah/../../User.h \
  lib/Types/Application/perintah/../../../ADT/String/string.h \
  lib/Types/Application/perintah/../../../ADT/String/../../boolean.h \
@@ -49,11 +55,6 @@
  lib/Types/Application/perintah/../../../ADT/ListDinamik/../../boolean.h \
  lib/Types/Application/perintah/../../listUtas.h \
  lib/Types/Application/perintah/../../../ADT/Graf/graf.h \
- lib/Types/Application/perintah/../../../ADT/Graf/../../boolean.h \
- lib/Types/Application/perintah/../../../ADT/Graf/../ListStatik/liststatik.h \
- lib/Types/Application/perintah/../../../ADT/Graf/../ListStatik/../../boolean.h \
- lib/Types/Application/perintah/../../../ADT/Graf/../Matriks/boolMatriks.h \
- lib/Types/Application/perintah/../../../ADT/Graf/../Matriks/../../boolean.h \
  lib/Types/Application/perintah/../../listKicauan.h \
  lib/Types/Application/perintah/../.././Kicauan.h \
  lib/Types/Application/perintah/../.././ListUser.h \
@@ -167,6 +168,12 @@ lib/Types/Application/perintah/../Application.h:
 lib/Types/Application/perintah/../../../boolean.h:
 lib/Types/Application/perintah/../../ListUser.h:
 lib/Types/Application/perintah/../../../boolean.h:
+lib/Types/Application/perintah/../../../ADT/Graf/graf.h:
+lib/Types/Application/perintah/../../../ADT/Graf/../../boolean.h:
+lib/Types/Application/perintah/../../../ADT/Graf/../ListStatik/liststatik.h:
+lib/Types/Application/perintah/../../../ADT/Graf/../ListStatik/../../boolean.h:
+lib/Types/Application/perintah/../../../ADT/Graf/../Matriks/boolMatriks.h:
+lib/Types/Application/perintah/../../../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/Application/perintah/../../User.h:
 lib/Types/Application/perintah/../../../ADT/String/string.h:
 lib/Types/Application/perintah/../../../ADT/String/../../boolean.h:
@@ -188,11 +195,6 @@ lib/Types/Application/perintah/../../../ADT/ListDinamik/listdinamik.h:
 lib/Types/Application/perintah/../../../ADT/ListDinamik/../../boolean.h:
 lib/Types/Application/perintah/../../listUtas.h:
 lib/Types/Application/perintah/../../../ADT/Graf/graf.h:
-lib/Types/Application/perintah/../../../ADT/Graf/../../boolean.h:
-lib/Types/Application/perintah/../../../ADT/Graf/../ListStatik/liststatik.h:
-lib/Types/Application/perintah/../../../ADT/Graf/../ListStatik/../../boolean.h:
-lib/Types/Application/perintah/../../../ADT/Graf/../Matriks/boolMatriks.h:
-lib/Types/Application/perintah/../../../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/Application/perintah/../../listKicauan.h:
 lib/Types/Application/perintah/../.././Kicauan.h:
 lib/Types/Application/perintah/../.././ListUser.h:

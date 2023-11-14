@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "./ListUser.h"
+#include "../ADT/Graf/graf.h"
 
 
 /* ********** KONSTRUKTOR ********** */
@@ -275,10 +276,15 @@ void AddReplyDariConfig(ReplyTree *rt, ListUser lu,int IDKicau, int IDChild, int
     if (rt->availableID <= IDChild) rt->availableID = IDChild+1;
     if (rt->availableIDX <= IDChild) rt->availableIDX = IDChild + 1;
 
-    
+}
 
+boolean CanSee(ListUser* l, int IDOrang, int LoginID, Graf* pertemanan)
+{
+    if (ISPRIVATE(PROFILE(ELMT_LISTUSER(*l, IDOrang)))) {
+        if (LoginID == IDOrang) return true;
+        if (CONNECTED(*pertemanan, IDOrang, LoginID)) return true;
 
-
-
-
+        return false;
+    }
+    return true;
 }

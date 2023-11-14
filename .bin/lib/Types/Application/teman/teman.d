@@ -5,6 +5,12 @@
  lib/Types/Application/teman/../../../boolean.h \
  lib/Types/Application/teman/../../ListUser.h \
  lib/Types/Application/teman/../../../boolean.h \
+ lib/Types/Application/teman/../../../ADT/Graf/graf.h \
+ lib/Types/Application/teman/../../../ADT/Graf/../../boolean.h \
+ lib/Types/Application/teman/../../../ADT/Graf/../ListStatik/liststatik.h \
+ lib/Types/Application/teman/../../../ADT/Graf/../ListStatik/../../boolean.h \
+ lib/Types/Application/teman/../../../ADT/Graf/../Matriks/boolMatriks.h \
+ lib/Types/Application/teman/../../../ADT/Graf/../Matriks/../../boolean.h \
  lib/Types/Application/teman/../../User.h \
  lib/Types/Application/teman/../../../ADT/String/string.h \
  lib/Types/Application/teman/../../../ADT/String/../../boolean.h \
@@ -48,11 +54,6 @@
  lib/Types/Application/teman/../../../ADT/ListDinamik/../../boolean.h \
  lib/Types/Application/teman/../../listUtas.h \
  lib/Types/Application/teman/../../../ADT/Graf/graf.h \
- lib/Types/Application/teman/../../../ADT/Graf/../../boolean.h \
- lib/Types/Application/teman/../../../ADT/Graf/../ListStatik/liststatik.h \
- lib/Types/Application/teman/../../../ADT/Graf/../ListStatik/../../boolean.h \
- lib/Types/Application/teman/../../../ADT/Graf/../Matriks/boolMatriks.h \
- lib/Types/Application/teman/../../../ADT/Graf/../Matriks/../../boolean.h \
  lib/Types/Application/teman/../../listKicauan.h \
  lib/Types/Application/teman/../.././Kicauan.h \
  lib/Types/Application/teman/../.././ListUser.h \
@@ -63,6 +64,12 @@ lib/Types/Application/teman/../Application.h:
 lib/Types/Application/teman/../../../boolean.h:
 lib/Types/Application/teman/../../ListUser.h:
 lib/Types/Application/teman/../../../boolean.h:
+lib/Types/Application/teman/../../../ADT/Graf/graf.h:
+lib/Types/Application/teman/../../../ADT/Graf/../../boolean.h:
+lib/Types/Application/teman/../../../ADT/Graf/../ListStatik/liststatik.h:
+lib/Types/Application/teman/../../../ADT/Graf/../ListStatik/../../boolean.h:
+lib/Types/Application/teman/../../../ADT/Graf/../Matriks/boolMatriks.h:
+lib/Types/Application/teman/../../../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/Application/teman/../../User.h:
 lib/Types/Application/teman/../../../ADT/String/string.h:
 lib/Types/Application/teman/../../../ADT/String/../../boolean.h:
@@ -108,11 +115,6 @@ lib/Types/Application/teman/../../../ADT/ListDinamik/listdinamik.h:
 lib/Types/Application/teman/../../../ADT/ListDinamik/../../boolean.h:
 lib/Types/Application/teman/../../listUtas.h:
 lib/Types/Application/teman/../../../ADT/Graf/graf.h:
-lib/Types/Application/teman/../../../ADT/Graf/../../boolean.h:
-lib/Types/Application/teman/../../../ADT/Graf/../ListStatik/liststatik.h:
-lib/Types/Application/teman/../../../ADT/Graf/../ListStatik/../../boolean.h:
-lib/Types/Application/teman/../../../ADT/Graf/../Matriks/boolMatriks.h:
-lib/Types/Application/teman/../../../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/Application/teman/../../listKicauan.h:
 lib/Types/Application/teman/../.././Kicauan.h:
 lib/Types/Application/teman/../.././ListUser.h:

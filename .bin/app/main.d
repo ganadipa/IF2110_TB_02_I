@@ -55,6 +55,7 @@
  app/../lib/./Types/Application/../../boolean.h \
  app/../lib/./Types/Application/../ListUser.h \
  app/../lib/./Types/Application/../../boolean.h \
+ app/../lib/./Types/Application/../../ADT/Graf/graf.h \
  app/../lib/./Types/Application/../User.h \
  app/../lib/./Types/Application/../../ADT/String/string.h \
  app/../lib/./Types/Application/../Profile.h \
@@ -194,6 +195,7 @@ app/../lib/./Types/Application/Application.h:
 app/../lib/./Types/Application/../../boolean.h:
 app/../lib/./Types/Application/../ListUser.h:
 app/../lib/./Types/Application/../../boolean.h:
+app/../lib/./Types/Application/../../ADT/Graf/graf.h:
 app/../lib/./Types/Application/../User.h:
 app/../lib/./Types/Application/../../ADT/String/string.h:
 app/../lib/./Types/Application/../Profile.h:

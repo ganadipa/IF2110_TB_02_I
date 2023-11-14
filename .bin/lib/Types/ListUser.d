@@ -22,7 +22,12 @@
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- lib/Types/./ListUser.h lib/Types/./../boolean.h lib/Types/./User.h \
+ lib/Types/./ListUser.h lib/Types/./../boolean.h \
+ lib/Types/./../ADT/Graf/graf.h lib/Types/./../ADT/Graf/../../boolean.h \
+ lib/Types/./../ADT/Graf/../ListStatik/liststatik.h \
+ lib/Types/./../ADT/Graf/../ListStatik/../../boolean.h \
+ lib/Types/./../ADT/Graf/../Matriks/boolMatriks.h \
+ lib/Types/./../ADT/Graf/../Matriks/../../boolean.h lib/Types/./User.h \
  lib/Types/./../ADT/String/string.h \
  lib/Types/./../ADT/String/../../boolean.h \
  lib/Types/./../ADT/String/../WordMachine/wordmachine.h \
@@ -36,7 +41,8 @@
  lib/Types/./../ADT/DateTime/../../boolean.h \
  lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ReplyTree.h \
  lib/Types/./../ADT/ListDinamik/listdinamik.h \
- lib/Types/./../ADT/ListDinamik/../../boolean.h lib/Types/./listUtas.h
+ lib/Types/./../ADT/ListDinamik/../../boolean.h lib/Types/./listUtas.h \
+ lib/Types/../ADT/Graf/graf.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -64,6 +70,12 @@
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 lib/Types/./ListUser.h:
 lib/Types/./../boolean.h:
+lib/Types/./../ADT/Graf/graf.h:
+lib/Types/./../ADT/Graf/../../boolean.h:
+lib/Types/./../ADT/Graf/../ListStatik/liststatik.h:
+lib/Types/./../ADT/Graf/../ListStatik/../../boolean.h:
+lib/Types/./../ADT/Graf/../Matriks/boolMatriks.h:
+lib/Types/./../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/./User.h:
 lib/Types/./../ADT/String/string.h:
 lib/Types/./../ADT/String/../../boolean.h:
@@ -84,3 +96,4 @@ lib/Types/./ReplyTree.h:
 lib/Types/./../ADT/ListDinamik/listdinamik.h:
 lib/Types/./../ADT/ListDinamik/../../boolean.h:
 lib/Types/./listUtas.h:
+lib/Types/../ADT/Graf/graf.h:

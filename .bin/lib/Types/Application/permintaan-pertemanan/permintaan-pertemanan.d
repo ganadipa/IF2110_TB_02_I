@@ -6,6 +6,12 @@
  lib/Types/Application/permintaan-pertemanan/../../../boolean.h \
  lib/Types/Application/permintaan-pertemanan/../../ListUser.h \
  lib/Types/Application/permintaan-pertemanan/../../../boolean.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/graf.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../../boolean.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../ListStatik/liststatik.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../ListStatik/../../boolean.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../Matriks/boolMatriks.h \
+ lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../Matriks/../../boolean.h \
  lib/Types/Application/permintaan-pertemanan/../../User.h \
  lib/Types/Application/permintaan-pertemanan/../../../ADT/String/string.h \
  lib/Types/Application/permintaan-pertemanan/../../../ADT/String/../../boolean.h \
@@ -50,11 +56,6 @@
  lib/Types/Application/permintaan-pertemanan/../../../ADT/ListDinamik/../../boolean.h \
  lib/Types/Application/permintaan-pertemanan/../../listUtas.h \
  lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/graf.h \
- lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../../boolean.h \
- lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../ListStatik/liststatik.h \
- lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../ListStatik/../../boolean.h \
- lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../Matriks/boolMatriks.h \
- lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../Matriks/../../boolean.h \
  lib/Types/Application/permintaan-pertemanan/../../listKicauan.h \
  lib/Types/Application/permintaan-pertemanan/../.././Kicauan.h \
  lib/Types/Application/permintaan-pertemanan/../.././ListUser.h \
@@ -66,6 +67,12 @@ lib/Types/Application/permintaan-pertemanan/../Application.h:
 lib/Types/Application/permintaan-pertemanan/../../../boolean.h:
 lib/Types/Application/permintaan-pertemanan/../../ListUser.h:
 lib/Types/Application/permintaan-pertemanan/../../../boolean.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/graf.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../../boolean.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../ListStatik/liststatik.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../ListStatik/../../boolean.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../Matriks/boolMatriks.h:
+lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/Application/permintaan-pertemanan/../../User.h:
 lib/Types/Application/permintaan-pertemanan/../../../ADT/String/string.h:
 lib/Types/Application/permintaan-pertemanan/../../../ADT/String/../../boolean.h:
@@ -111,11 +118,6 @@ lib/Types/Application/permintaan-pertemanan/../../../ADT/ListDinamik/listdinamik
 lib/Types/Application/permintaan-pertemanan/../../../ADT/ListDinamik/../../boolean.h:
 lib/Types/Application/permintaan-pertemanan/../../listUtas.h:
 lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/graf.h:
-lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../../boolean.h:
-lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../ListStatik/liststatik.h:
-lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../ListStatik/../../boolean.h:
-lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../Matriks/boolMatriks.h:
-lib/Types/Application/permintaan-pertemanan/../../../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/Application/permintaan-pertemanan/../../listKicauan.h:
 lib/Types/Application/permintaan-pertemanan/../.././Kicauan.h:
 lib/Types/Application/permintaan-pertemanan/../.././ListUser.h:

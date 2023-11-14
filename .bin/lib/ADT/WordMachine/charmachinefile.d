@@ -62,6 +62,7 @@
  lib/ADT/WordMachine/../.././Types/Application/../../boolean.h \
  lib/ADT/WordMachine/../.././Types/Application/../ListUser.h \
  lib/ADT/WordMachine/../.././Types/Application/../../boolean.h \
+ lib/ADT/WordMachine/../.././Types/Application/../../ADT/Graf/graf.h \
  lib/ADT/WordMachine/../.././Types/Application/../User.h \
  lib/ADT/WordMachine/../.././Types/Application/../../ADT/String/string.h \
  lib/ADT/WordMachine/../.././Types/Application/../Profile.h \
@@ -202,6 +203,7 @@ lib/ADT/WordMachine/../.././Types/Application/Application.h:
 lib/ADT/WordMachine/../.././Types/Application/../../boolean.h:
 lib/ADT/WordMachine/../.././Types/Application/../ListUser.h:
 lib/ADT/WordMachine/../.././Types/Application/../../boolean.h:
+lib/ADT/WordMachine/../.././Types/Application/../../ADT/Graf/graf.h:
 lib/ADT/WordMachine/../.././Types/Application/../User.h:
 lib/ADT/WordMachine/../.././Types/Application/../../ADT/String/string.h:
 lib/ADT/WordMachine/../.././Types/Application/../Profile.h:

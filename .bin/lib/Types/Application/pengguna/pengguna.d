@@ -5,6 +5,12 @@
  lib/Types/Application/pengguna/../../../boolean.h \
  lib/Types/Application/pengguna/../../ListUser.h \
  lib/Types/Application/pengguna/../../../boolean.h \
+ lib/Types/Application/pengguna/../../../ADT/Graf/graf.h \
+ lib/Types/Application/pengguna/../../../ADT/Graf/../../boolean.h \
+ lib/Types/Application/pengguna/../../../ADT/Graf/../ListStatik/liststatik.h \
+ lib/Types/Application/pengguna/../../../ADT/Graf/../ListStatik/../../boolean.h \
+ lib/Types/Application/pengguna/../../../ADT/Graf/../Matriks/boolMatriks.h \
+ lib/Types/Application/pengguna/../../../ADT/Graf/../Matriks/../../boolean.h \
  lib/Types/Application/pengguna/../../User.h \
  lib/Types/Application/pengguna/../../../ADT/String/string.h \
  lib/Types/Application/pengguna/../../../ADT/String/../../boolean.h \
@@ -48,11 +54,6 @@
  lib/Types/Application/pengguna/../../../ADT/ListDinamik/../../boolean.h \
  lib/Types/Application/pengguna/../../listUtas.h \
  lib/Types/Application/pengguna/../../../ADT/Graf/graf.h \
- lib/Types/Application/pengguna/../../../ADT/Graf/../../boolean.h \
- lib/Types/Application/pengguna/../../../ADT/Graf/../ListStatik/liststatik.h \
- lib/Types/Application/pengguna/../../../ADT/Graf/../ListStatik/../../boolean.h \
- lib/Types/Application/pengguna/../../../ADT/Graf/../Matriks/boolMatriks.h \
- lib/Types/Application/pengguna/../../../ADT/Graf/../Matriks/../../boolean.h \
  lib/Types/Application/pengguna/../../listKicauan.h \
  lib/Types/Application/pengguna/../.././Kicauan.h \
  lib/Types/Application/pengguna/../.././ListUser.h \
@@ -63,6 +64,12 @@ lib/Types/Application/pengguna/../Application.h:
 lib/Types/Application/pengguna/../../../boolean.h:
 lib/Types/Application/pengguna/../../ListUser.h:
 lib/Types/Application/pengguna/../../../boolean.h:
+lib/Types/Application/pengguna/../../../ADT/Graf/graf.h:
+lib/Types/Application/pengguna/../../../ADT/Graf/../../boolean.h:
+lib/Types/Application/pengguna/../../../ADT/Graf/../ListStatik/liststatik.h:
+lib/Types/Application/pengguna/../../../ADT/Graf/../ListStatik/../../boolean.h:
+lib/Types/Application/pengguna/../../../ADT/Graf/../Matriks/boolMatriks.h:
+lib/Types/Application/pengguna/../../../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/Application/pengguna/../../User.h:
 lib/Types/Application/pengguna/../../../ADT/String/string.h:
 lib/Types/Application/pengguna/../../../ADT/String/../../boolean.h:
@@ -108,11 +115,6 @@ lib/Types/Application/pengguna/../../../ADT/ListDinamik/listdinamik.h:
 lib/Types/Application/pengguna/../../../ADT/ListDinamik/../../boolean.h:
 lib/Types/Application/pengguna/../../listUtas.h:
 lib/Types/Application/pengguna/../../../ADT/Graf/graf.h:
-lib/Types/Application/pengguna/../../../ADT/Graf/../../boolean.h:
-lib/Types/Application/pengguna/../../../ADT/Graf/../ListStatik/liststatik.h:
-lib/Types/Application/pengguna/../../../ADT/Graf/../ListStatik/../../boolean.h:
-lib/Types/Application/pengguna/../../../ADT/Graf/../Matriks/boolMatriks.h:
-lib/Types/Application/pengguna/../../../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/Application/pengguna/../../listKicauan.h:
 lib/Types/Application/pengguna/../.././Kicauan.h:
 lib/Types/Application/pengguna/../.././ListUser.h:
