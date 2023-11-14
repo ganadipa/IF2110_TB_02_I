@@ -35,10 +35,10 @@ int lengthRequestQueue(RequestQueue Q)
     } else {
         if (Tail_ReqQue(Q) >= Head_ReqQue(Q)){ 
             return Tail_ReqQue(Q) - Head_ReqQue(Q) +1;
-        }else{
-            return Tail_ReqQue(Q) - Head_ReqQue(Q) + 1 + CAPACITY_REQQUEUE;
         }
     }
+    return Tail_ReqQue(Q) - Head_ReqQue(Q) + 1 + CAPACITY_REQQUEUE;
+    
 }
 
 /* *** Primitif Add/Delete *** */
