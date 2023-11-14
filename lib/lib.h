@@ -8,6 +8,8 @@
 #include "./ADT/Matriks/matriks.h"
 #include "./ADT/String/string.h"
 #include "./ADT/WordMachine/wordmachine.h"
+#include "./ADT/WordMachine/charmachinefile.h"
+#include "./ADT/WordMachine/wordmachinefile.h"
 #include "./ADT/Queue/queue.h"
 #include "./ADT/Stack/stack.h"
 #include "./ADT/Tree/tree.h"
