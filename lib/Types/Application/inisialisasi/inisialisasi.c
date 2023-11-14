@@ -52,9 +52,9 @@ void ReadConfig(Application *app, boolean *found) {
     //     *found = true;
     // } while (!*found);
     LoadPengguna(app);
-    // LoadKicauan(app);
+    LoadKicauan(app);
     // LoadBalasan(app);
-    // LoadUtas(app);
+    LoadUtas(app);
     printf("File konfigurasi berhasil dimuat! Selamat berkicau!\n\n");
 
 
@@ -140,7 +140,7 @@ void LoadPengguna(Application *app){
 void LoadKicauan(Application *app){
     String filename;
     int i;
-    // CreateListKicau(&app->listKicauan, 1000);
+    CreateListKicau(&app->listKicauan, 1000);
     char temp[20] = "kicauan.config";
     addChartoChar(filename.buffer, temp);
     filename.maxLength = STRCAP;

@@ -32,27 +32,31 @@ void DevTools(Application app)
     //     printAllReplyTree(BALASAN(KICAUAN(app).buffer[0]));
     // }
 
-    // printf("%d", app.listKicauan.buffer[0].IDKicau);
+    // printf("%d", app.listKicauan.buffer[1].IDKicau);
     // printf("\n");
-    // displayString(app.listKicauan.buffer[0].text);
+    // displayString(app.listKicauan.buffer[1].text);
     // printf("\n");
-    // // printKicauan(app.listKicauan.buffer[0], nama);
-    // printf("%d", app.listKicauan.buffer[0].IDuser);
+    // printf("%d\n", app.listKicauan.buffer[1].like);
+    // // printKicauan(app.listKicauan.buffer[0], app.listKicauan.buffer);
+    // printf("%d", app.listKicauan.buffer[1].IDuser);
     // printf("\n");
-    // displayString(app.listKicauan.buffer[0].dateTime);
+    // displayString(app.listKicauan.buffer[1].dateTime);
 
-    displayString(app.users.contents[0].name);
-    printf("\n");
-    displayString(app.users.contents[0].password);
-    printf("\n");
-    displayString(app.users.contents[0].profile.bio);
-    printf("\n");
-    displayString(app.users.contents[0].profile.phoneNumber);
-    printf("\n");
-    displayString(app.users.contents[0].profile.weton);
-    printf("\n");
-    readPhoto(&app.users.contents[0].profile.photo);
-    printf("\n");
-    displayPhoto(app.users.contents[0].profile.photo);
+    // displayString(app.users.contents[0].name);
+    // printf("\n");
+    // displayString(app.users.contents[0].password);
+    // printf("\n");
+    // displayString(app.users.contents[0].profile.bio);
+    // printf("\n");
+    // displayString(app.users.contents[0].profile.phoneNumber);
+    // printf("\n");
+    // displayString(app.users.contents[0].profile.weton);
+    // printf("\n");
+    // readPhoto(&app.users.contents[0].profile.photo);
+    // printf("\n");
+    // displayPhoto(app.users.contents[0].profile.photo);
+
+    // printf("%x", app.listKicauan.buffer[1].link->next->next->next);
+    displayString(app.listKicauan.buffer[1].link->next->next->teks);
     
 }
