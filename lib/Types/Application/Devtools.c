@@ -32,5 +32,13 @@ void DevTools(Application app)
         printAllReplyTree(BALASAN(KICAUAN(app).buffer[0]));
     }
 
+    // printf("%d", app.listKicauan.buffer[0].IDKicau);
+    // printf("\n");
+    // displayString(app.listKicauan.buffer[0].text);
+    // printf("\n");
+    // // printKicauan(app.listKicauan.buffer[0], nama);
+    // printf("%d", app.listKicauan.buffer[0].IDuser);
+    // printf("\n");
+    // displayString(app.listKicauan.buffer[0].dateTime);
     
 }

@@ -53,6 +53,12 @@
  lib/Types/Application/simpan-dan-muat/../../.././ADT/String/../WordMachine/../../boolean.h \
  lib/Types/Application/simpan-dan-muat/../../.././ADT/String/../WordMachine/charmachine.h \
  lib/Types/Application/simpan-dan-muat/../../.././ADT/WordMachine/wordmachine.h \
+ lib/Types/Application/simpan-dan-muat/../../.././ADT/WordMachine/charmachinefile.h \
+ lib/Types/Application/simpan-dan-muat/../../.././ADT/WordMachine/../../lib.h \
+ lib/Types/Application/simpan-dan-muat/../../.././ADT/WordMachine/../../boolean.h \
+ lib/Types/Application/simpan-dan-muat/../../.././ADT/WordMachine/wordmachinefile.h \
+ lib/Types/Application/simpan-dan-muat/../../.././ADT/WordMachine/charmachinefile.h \
+ lib/Types/Application/simpan-dan-muat/../../.././ADT/WordMachine/../String/string.h \
  lib/Types/Application/simpan-dan-muat/../../.././ADT/Queue/queue.h \
  lib/Types/Application/simpan-dan-muat/../../.././ADT/Queue/../../boolean.h \
  lib/Types/Application/simpan-dan-muat/../../.././ADT/Stack/stack.h \
@@ -95,6 +101,7 @@
  lib/Types/Application/simpan-dan-muat/../../.././Types/Application/draf-kicauan/../../User.h \
  lib/Types/Application/simpan-dan-muat/../../.././Types/Application/inisialisasi/inisialisasi.h \
  lib/Types/Application/simpan-dan-muat/../../.././Types/Application/inisialisasi/../Application.h \
+ lib/Types/Application/simpan-dan-muat/../../.././Types/Application/inisialisasi/../../../lib.h \
  lib/Types/Application/simpan-dan-muat/../../.././Types/Application/kicauan/kicauan.h \
  lib/Types/Application/simpan-dan-muat/../../.././Types/Application/kicauan/../../../ADT/String/string.h \
  lib/Types/Application/simpan-dan-muat/../../.././Types/Application/kicauan/../Application.h \
@@ -185,6 +192,12 @@ lib/Types/Application/simpan-dan-muat/../../.././ADT/String/../WordMachine/wordm
 lib/Types/Application/simpan-dan-muat/../../.././ADT/String/../WordMachine/../../boolean.h:
 lib/Types/Application/simpan-dan-muat/../../.././ADT/String/../WordMachine/charmachine.h:
 lib/Types/Application/simpan-dan-muat/../../.././ADT/WordMachine/wordmachine.h:
+lib/Types/Application/simpan-dan-muat/../../.././ADT/WordMachine/charmachinefile.h:
+lib/Types/Application/simpan-dan-muat/../../.././ADT/WordMachine/../../lib.h:
+lib/Types/Application/simpan-dan-muat/../../.././ADT/WordMachine/../../boolean.h:
+lib/Types/Application/simpan-dan-muat/../../.././ADT/WordMachine/wordmachinefile.h:
+lib/Types/Application/simpan-dan-muat/../../.././ADT/WordMachine/charmachinefile.h:
+lib/Types/Application/simpan-dan-muat/../../.././ADT/WordMachine/../String/string.h:
 lib/Types/Application/simpan-dan-muat/../../.././ADT/Queue/queue.h:
 lib/Types/Application/simpan-dan-muat/../../.././ADT/Queue/../../boolean.h:
 lib/Types/Application/simpan-dan-muat/../../.././ADT/Stack/stack.h:
@@ -227,6 +240,7 @@ lib/Types/Application/simpan-dan-muat/../../.././Types/Application/draf-kicauan/
 lib/Types/Application/simpan-dan-muat/../../.././Types/Application/draf-kicauan/../../User.h:
 lib/Types/Application/simpan-dan-muat/../../.././Types/Application/inisialisasi/inisialisasi.h:
 lib/Types/Application/simpan-dan-muat/../../.././Types/Application/inisialisasi/../Application.h:
+lib/Types/Application/simpan-dan-muat/../../.././Types/Application/inisialisasi/../../../lib.h:
 lib/Types/Application/simpan-dan-muat/../../.././Types/Application/kicauan/kicauan.h:
 lib/Types/Application/simpan-dan-muat/../../.././Types/Application/kicauan/../../../ADT/String/string.h:
 lib/Types/Application/simpan-dan-muat/../../.././Types/Application/kicauan/../Application.h:

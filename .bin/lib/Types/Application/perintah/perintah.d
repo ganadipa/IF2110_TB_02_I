@@ -67,14 +67,60 @@
  lib/Types/Application/perintah/../draf-kicauan/../../User.h \
  lib/Types/Application/perintah/../inisialisasi/inisialisasi.h \
  lib/Types/Application/perintah/../inisialisasi/../Application.h \
+ lib/Types/Application/perintah/../inisialisasi/../../../lib.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Graf/graf.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/LinkedList/listlinier.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/LinkedList/../../boolean.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/ListDinamik/listdinamik.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/ListStatik/liststatik.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/ListStatik/../../boolean.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Matriks/matriks.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Matriks/../../boolean.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/String/string.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/WordMachine/wordmachine.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/WordMachine/charmachinefile.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/WordMachine/../../lib.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/WordMachine/../../boolean.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/WordMachine/wordmachinefile.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/WordMachine/charmachinefile.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/WordMachine/../String/string.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Queue/queue.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Queue/../../boolean.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Stack/stack.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Stack/../../boolean.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Tree/tree.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Tree/../../boolean.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Tree/../ListDinamik/listdinamik.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././ADT/PColor/pcolor.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././boolean.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/Application.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/balasan/balasan.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/draf-kicauan/draf-kicauan.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/inisialisasi/inisialisasi.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/kicauan/kicauan.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/kicauan/../../../ADT/String/string.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/kicauan/../Application.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/kicauan/../../Kicauan.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/pengguna/pengguna.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/pengguna/../Application.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/profil/profil.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/profil/../Application.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/simpan-dan-muat/simpan-dan-muat.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/permintaan-pertemanan/permintaan-pertemanan.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/permintaan-pertemanan/../Application.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/permintaan-pertemanan/../../../ADT/String/string.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/teman/teman.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/teman/../Application.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/utas/utas.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/utas/../Application.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/utas/../kicauan/kicauan.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/perintah/perintah.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/Devtools.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/Application.h \
+ lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/../ReplyTree.h \
  lib/Types/Application/perintah/../kicauan/kicauan.h \
- lib/Types/Application/perintah/../kicauan/../../../ADT/String/string.h \
- lib/Types/Application/perintah/../kicauan/../Application.h \
- lib/Types/Application/perintah/../kicauan/../../Kicauan.h \
  lib/Types/Application/perintah/../pengguna/pengguna.h \
- lib/Types/Application/perintah/../pengguna/../Application.h \
  lib/Types/Application/perintah/../profil/profil.h \
- lib/Types/Application/perintah/../profil/../Application.h \
  lib/Types/Application/perintah/../simpan-dan-muat/simpan.h \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
  /usr/include/x86_64-linux-gnu/bits/stat.h \
@@ -85,45 +131,6 @@
  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  lib/Types/Application/perintah/../simpan-dan-muat/../../../lib.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Graf/graf.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/LinkedList/listlinier.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/LinkedList/../../boolean.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/ListDinamik/listdinamik.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/ListStatik/liststatik.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/ListStatik/../../boolean.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Matriks/matriks.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Matriks/../../boolean.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/String/string.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/WordMachine/wordmachine.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Queue/queue.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Queue/../../boolean.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Stack/stack.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Stack/../../boolean.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Tree/tree.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Tree/../../boolean.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Tree/../ListDinamik/listdinamik.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/PColor/pcolor.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././boolean.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/Application.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/balasan/balasan.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/draf-kicauan/draf-kicauan.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/inisialisasi/inisialisasi.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/kicauan/kicauan.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/pengguna/pengguna.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/profil/profil.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/simpan-dan-muat/simpan-dan-muat.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/permintaan-pertemanan/permintaan-pertemanan.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/permintaan-pertemanan/../Application.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/permintaan-pertemanan/../../../ADT/String/string.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/teman/teman.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/teman/../Application.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/utas/utas.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/utas/../Application.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/utas/../kicauan/kicauan.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/perintah/perintah.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/Devtools.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/Application.h \
- lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/../ReplyTree.h \
  lib/Types/Application/perintah/../simpan-dan-muat/../Application.h \
  lib/Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h \
  lib/Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h \
@@ -199,14 +206,60 @@ lib/Types/Application/perintah/../draf-kicauan/../../DrafKicauan.h:
 lib/Types/Application/perintah/../draf-kicauan/../../User.h:
 lib/Types/Application/perintah/../inisialisasi/inisialisasi.h:
 lib/Types/Application/perintah/../inisialisasi/../Application.h:
+lib/Types/Application/perintah/../inisialisasi/../../../lib.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Graf/graf.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/LinkedList/listlinier.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/LinkedList/../../boolean.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/ListDinamik/listdinamik.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/ListStatik/liststatik.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/ListStatik/../../boolean.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Matriks/matriks.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Matriks/../../boolean.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/String/string.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/WordMachine/wordmachine.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/WordMachine/charmachinefile.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/WordMachine/../../lib.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/WordMachine/../../boolean.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/WordMachine/wordmachinefile.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/WordMachine/charmachinefile.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/WordMachine/../String/string.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Queue/queue.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Queue/../../boolean.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Stack/stack.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Stack/../../boolean.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Tree/tree.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Tree/../../boolean.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/Tree/../ListDinamik/listdinamik.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././ADT/PColor/pcolor.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././boolean.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/Application.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/balasan/balasan.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/draf-kicauan/draf-kicauan.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/inisialisasi/inisialisasi.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/kicauan/kicauan.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/kicauan/../../../ADT/String/string.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/kicauan/../Application.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/kicauan/../../Kicauan.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/pengguna/pengguna.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/pengguna/../Application.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/profil/profil.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/profil/../Application.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/simpan-dan-muat/simpan-dan-muat.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/permintaan-pertemanan/permintaan-pertemanan.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/permintaan-pertemanan/../Application.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/permintaan-pertemanan/../../../ADT/String/string.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/teman/teman.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/teman/../Application.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/utas/utas.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/utas/../Application.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/utas/../kicauan/kicauan.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/perintah/perintah.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/Devtools.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/Application.h:
+lib/Types/Application/perintah/../inisialisasi/../../.././Types/Application/../ReplyTree.h:
 lib/Types/Application/perintah/../kicauan/kicauan.h:
-lib/Types/Application/perintah/../kicauan/../../../ADT/String/string.h:
-lib/Types/Application/perintah/../kicauan/../Application.h:
-lib/Types/Application/perintah/../kicauan/../../Kicauan.h:
 lib/Types/Application/perintah/../pengguna/pengguna.h:
-lib/Types/Application/perintah/../pengguna/../Application.h:
 lib/Types/Application/perintah/../profil/profil.h:
-lib/Types/Application/perintah/../profil/../Application.h:
 lib/Types/Application/perintah/../simpan-dan-muat/simpan.h:
 /usr/include/x86_64-linux-gnu/sys/stat.h:
 /usr/include/x86_64-linux-gnu/bits/stat.h:
@@ -217,45 +270,6 @@ lib/Types/Application/perintah/../simpan-dan-muat/simpan.h:
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 lib/Types/Application/perintah/../simpan-dan-muat/../../../lib.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Graf/graf.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/LinkedList/listlinier.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/LinkedList/../../boolean.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/ListDinamik/listdinamik.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/ListStatik/liststatik.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/ListStatik/../../boolean.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Matriks/matriks.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Matriks/../../boolean.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/String/string.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/WordMachine/wordmachine.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Queue/queue.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Queue/../../boolean.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Stack/stack.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Stack/../../boolean.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Tree/tree.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Tree/../../boolean.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/Tree/../ListDinamik/listdinamik.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././ADT/PColor/pcolor.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././boolean.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/Application.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/balasan/balasan.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/draf-kicauan/draf-kicauan.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/inisialisasi/inisialisasi.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/kicauan/kicauan.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/pengguna/pengguna.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/profil/profil.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/simpan-dan-muat/simpan-dan-muat.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/permintaan-pertemanan/permintaan-pertemanan.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/permintaan-pertemanan/../Application.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/permintaan-pertemanan/../../../ADT/String/string.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/teman/teman.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/teman/../Application.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/utas/utas.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/utas/../Application.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/utas/../kicauan/kicauan.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/perintah/perintah.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/Devtools.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/Application.h:
-lib/Types/Application/perintah/../simpan-dan-muat/../../.././Types/Application/../ReplyTree.h:
 lib/Types/Application/perintah/../simpan-dan-muat/../Application.h:
 lib/Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h:
 lib/Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h:

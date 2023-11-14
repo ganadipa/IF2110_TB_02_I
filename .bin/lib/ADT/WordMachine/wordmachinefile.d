@@ -46,6 +46,8 @@
  lib/ADT/WordMachine/../.././ADT/String/../WordMachine/../../boolean.h \
  lib/ADT/WordMachine/../.././ADT/String/../WordMachine/charmachine.h \
  lib/ADT/WordMachine/../.././ADT/WordMachine/wordmachine.h \
+ lib/ADT/WordMachine/../.././ADT/WordMachine/charmachinefile.h \
+ lib/ADT/WordMachine/../.././ADT/WordMachine/wordmachinefile.h \
  lib/ADT/WordMachine/../.././ADT/Queue/queue.h \
  lib/ADT/WordMachine/../.././ADT/Queue/../../boolean.h \
  lib/ADT/WordMachine/../.././ADT/Stack/stack.h \
@@ -88,6 +90,7 @@
  lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../User.h \
  lib/ADT/WordMachine/../.././Types/Application/inisialisasi/inisialisasi.h \
  lib/ADT/WordMachine/../.././Types/Application/inisialisasi/../Application.h \
+ lib/ADT/WordMachine/../.././Types/Application/inisialisasi/../../../lib.h \
  lib/ADT/WordMachine/../.././Types/Application/kicauan/kicauan.h \
  lib/ADT/WordMachine/../.././Types/Application/kicauan/../../../ADT/String/string.h \
  lib/ADT/WordMachine/../.././Types/Application/kicauan/../Application.h \
@@ -182,6 +185,8 @@ lib/ADT/WordMachine/../.././ADT/String/../WordMachine/wordmachine.h:
 lib/ADT/WordMachine/../.././ADT/String/../WordMachine/../../boolean.h:
 lib/ADT/WordMachine/../.././ADT/String/../WordMachine/charmachine.h:
 lib/ADT/WordMachine/../.././ADT/WordMachine/wordmachine.h:
+lib/ADT/WordMachine/../.././ADT/WordMachine/charmachinefile.h:
+lib/ADT/WordMachine/../.././ADT/WordMachine/wordmachinefile.h:
 lib/ADT/WordMachine/../.././ADT/Queue/queue.h:
 lib/ADT/WordMachine/../.././ADT/Queue/../../boolean.h:
 lib/ADT/WordMachine/../.././ADT/Stack/stack.h:
@@ -224,6 +229,7 @@ lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../DrafKicauan.h:
 lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../User.h:
 lib/ADT/WordMachine/../.././Types/Application/inisialisasi/inisialisasi.h:
 lib/ADT/WordMachine/../.././Types/Application/inisialisasi/../Application.h:
+lib/ADT/WordMachine/../.././Types/Application/inisialisasi/../../../lib.h:
 lib/ADT/WordMachine/../.././Types/Application/kicauan/kicauan.h:
 lib/ADT/WordMachine/../.././Types/Application/kicauan/../../../ADT/String/string.h:
 lib/ADT/WordMachine/../.././Types/Application/kicauan/../Application.h:
