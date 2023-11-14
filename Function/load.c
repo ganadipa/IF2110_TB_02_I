@@ -172,7 +172,7 @@ void LoadBalasan(Application *app){
                 String name = currentWordFile;
                 ADVWORDFILE(); /* currentwordfile berisi datetime */
                 String DATETIME = currentWordFile;
-                AddReplyDariConfig(&app->listKicauan.buffer[idkicau-1].balasan, app->users, idkicau, IDBalasan, body, name, DATETIME); 
+                // AddReplyDariConfig(&app->listKicauan.buffer[idkicau-1].balasan, app->users, idkicau, IDBalasan, body, name, DATETIME); 
             }
         }
     }

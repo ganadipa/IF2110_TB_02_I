@@ -26,6 +26,10 @@ void createReplyTree(ReplyTree *rt, int capacity)
 
     
     CreateListDin(&(rt->used), capacity);
+    int j;
+    for (j = 0; j < capacity; j++) {
+        insertLastListDin(&rt->used, 0);
+    }
 
     CreateListDin(&(rt->parent), capacity);
 

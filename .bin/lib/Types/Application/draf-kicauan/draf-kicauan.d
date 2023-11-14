@@ -24,29 +24,41 @@
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  lib/Types/Application/draf-kicauan/draf-kicauan.h \
- lib/Types/Application.h lib/Types/../boolean.h lib/Types/./ListUser.h \
- lib/Types/./../boolean.h lib/Types/./User.h \
- lib/Types/./../ADT/String/string.h \
- lib/Types/./../ADT/String/../../boolean.h \
- lib/Types/./../ADT/String/../WordMachine/wordmachine.h \
- lib/Types/./../ADT/String/../WordMachine/../../boolean.h \
- lib/Types/./../ADT/String/../WordMachine/charmachine.h \
- lib/Types/./Profile.h lib/Types/./Photo.h \
- lib/Types/./../ADT/Matriks/charMatriks.h \
- lib/Types/./../ADT/Matriks/../../boolean.h lib/Types/./RequestQueue.h \
- lib/Types/./DrafKicauan.h lib/Types/./Kicauan.h \
- lib/Types/./../ADT/DateTime/datetime.h \
- lib/Types/./../ADT/DateTime/../../boolean.h \
- lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ReplyTree.h \
- lib/Types/./../ADT/ListDinamik/listdinamik.h \
- lib/Types/./../ADT/ListDinamik/../../boolean.h lib/Types/./listUtas.h \
- lib/Types/../ADT/Graf/graf.h lib/Types/../ADT/Graf/../../boolean.h \
- lib/Types/../ADT/Graf/../ListStatik/liststatik.h \
- lib/Types/../ADT/Graf/../ListStatik/../../boolean.h \
- lib/Types/../ADT/Graf/../Matriks/boolMatriks.h \
- lib/Types/../ADT/Graf/../Matriks/../../boolean.h lib/Types/listKicauan.h \
- lib/Types/./Kicauan.h lib/Types/RequestQueue.h \
- lib/ADT/../ADT/String/string.h \
+ lib/Types/Application/draf-kicauan/../Application.h \
+ lib/Types/Application/draf-kicauan/../../../boolean.h \
+ lib/Types/Application/draf-kicauan/../../ListUser.h \
+ lib/Types/Application/draf-kicauan/../../../boolean.h \
+ lib/Types/Application/draf-kicauan/../../User.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/String/string.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/String/../../boolean.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/String/../WordMachine/wordmachine.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/String/../WordMachine/../../boolean.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/String/../WordMachine/charmachine.h \
+ lib/Types/Application/draf-kicauan/../../Profile.h \
+ lib/Types/Application/draf-kicauan/../../Photo.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/Matriks/charMatriks.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/Matriks/../../boolean.h \
+ lib/Types/Application/draf-kicauan/../../RequestQueue.h \
+ lib/Types/Application/draf-kicauan/../../DrafKicauan.h \
+ lib/Types/Application/draf-kicauan/../../Kicauan.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/DateTime/datetime.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/DateTime/../../boolean.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/DateTime/../String/string.h \
+ lib/Types/Application/draf-kicauan/../../ReplyTree.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/ListDinamik/listdinamik.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/ListDinamik/../../boolean.h \
+ lib/Types/Application/draf-kicauan/../../listUtas.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/Graf/graf.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/Graf/../../boolean.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/Graf/../ListStatik/liststatik.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/Graf/../ListStatik/../../boolean.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/Graf/../Matriks/boolMatriks.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/Graf/../Matriks/../../boolean.h \
+ lib/Types/Application/draf-kicauan/../../listKicauan.h \
+ lib/Types/Application/draf-kicauan/../.././Kicauan.h \
+ lib/Types/Application/draf-kicauan/../.././ListUser.h \
+ lib/Types/Application/draf-kicauan/../../RequestQueue.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/String/string.h \
  lib/Types/Application/draf-kicauan/../../DrafKicauan.h \
  lib/Types/Application/draf-kicauan/../../User.h
 /usr/include/stdc-predef.h:
@@ -75,39 +87,40 @@
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 lib/Types/Application/draf-kicauan/draf-kicauan.h:
-lib/Types/Application.h:
-lib/Types/../boolean.h:
-lib/Types/./ListUser.h:
-lib/Types/./../boolean.h:
-lib/Types/./User.h:
-lib/Types/./../ADT/String/string.h:
-lib/Types/./../ADT/String/../../boolean.h:
-lib/Types/./../ADT/String/../WordMachine/wordmachine.h:
-lib/Types/./../ADT/String/../WordMachine/../../boolean.h:
-lib/Types/./../ADT/String/../WordMachine/charmachine.h:
-lib/Types/./Profile.h:
-lib/Types/./Photo.h:
-lib/Types/./../ADT/Matriks/charMatriks.h:
-lib/Types/./../ADT/Matriks/../../boolean.h:
-lib/Types/./RequestQueue.h:
-lib/Types/./DrafKicauan.h:
-lib/Types/./Kicauan.h:
-lib/Types/./../ADT/DateTime/datetime.h:
-lib/Types/./../ADT/DateTime/../../boolean.h:
-lib/Types/./../ADT/DateTime/../String/string.h:
-lib/Types/./ReplyTree.h:
-lib/Types/./../ADT/ListDinamik/listdinamik.h:
-lib/Types/./../ADT/ListDinamik/../../boolean.h:
-lib/Types/./listUtas.h:
-lib/Types/../ADT/Graf/graf.h:
-lib/Types/../ADT/Graf/../../boolean.h:
-lib/Types/../ADT/Graf/../ListStatik/liststatik.h:
-lib/Types/../ADT/Graf/../ListStatik/../../boolean.h:
-lib/Types/../ADT/Graf/../Matriks/boolMatriks.h:
-lib/Types/../ADT/Graf/../Matriks/../../boolean.h:
-lib/Types/listKicauan.h:
-lib/Types/./Kicauan.h:
-lib/Types/RequestQueue.h:
-lib/ADT/../ADT/String/string.h:
+lib/Types/Application/draf-kicauan/../Application.h:
+lib/Types/Application/draf-kicauan/../../../boolean.h:
+lib/Types/Application/draf-kicauan/../../ListUser.h:
+lib/Types/Application/draf-kicauan/../../../boolean.h:
+lib/Types/Application/draf-kicauan/../../User.h:
+lib/Types/Application/draf-kicauan/../../../ADT/String/string.h:
+lib/Types/Application/draf-kicauan/../../../ADT/String/../../boolean.h:
+lib/Types/Application/draf-kicauan/../../../ADT/String/../WordMachine/wordmachine.h:
+lib/Types/Application/draf-kicauan/../../../ADT/String/../WordMachine/../../boolean.h:
+lib/Types/Application/draf-kicauan/../../../ADT/String/../WordMachine/charmachine.h:
+lib/Types/Application/draf-kicauan/../../Profile.h:
+lib/Types/Application/draf-kicauan/../../Photo.h:
+lib/Types/Application/draf-kicauan/../../../ADT/Matriks/charMatriks.h:
+lib/Types/Application/draf-kicauan/../../../ADT/Matriks/../../boolean.h:
+lib/Types/Application/draf-kicauan/../../RequestQueue.h:
+lib/Types/Application/draf-kicauan/../../DrafKicauan.h:
+lib/Types/Application/draf-kicauan/../../Kicauan.h:
+lib/Types/Application/draf-kicauan/../../../ADT/DateTime/datetime.h:
+lib/Types/Application/draf-kicauan/../../../ADT/DateTime/../../boolean.h:
+lib/Types/Application/draf-kicauan/../../../ADT/DateTime/../String/string.h:
+lib/Types/Application/draf-kicauan/../../ReplyTree.h:
+lib/Types/Application/draf-kicauan/../../../ADT/ListDinamik/listdinamik.h:
+lib/Types/Application/draf-kicauan/../../../ADT/ListDinamik/../../boolean.h:
+lib/Types/Application/draf-kicauan/../../listUtas.h:
+lib/Types/Application/draf-kicauan/../../../ADT/Graf/graf.h:
+lib/Types/Application/draf-kicauan/../../../ADT/Graf/../../boolean.h:
+lib/Types/Application/draf-kicauan/../../../ADT/Graf/../ListStatik/liststatik.h:
+lib/Types/Application/draf-kicauan/../../../ADT/Graf/../ListStatik/../../boolean.h:
+lib/Types/Application/draf-kicauan/../../../ADT/Graf/../Matriks/boolMatriks.h:
+lib/Types/Application/draf-kicauan/../../../ADT/Graf/../Matriks/../../boolean.h:
+lib/Types/Application/draf-kicauan/../../listKicauan.h:
+lib/Types/Application/draf-kicauan/../.././Kicauan.h:
+lib/Types/Application/draf-kicauan/../.././ListUser.h:
+lib/Types/Application/draf-kicauan/../../RequestQueue.h:
+lib/Types/Application/draf-kicauan/../../../ADT/String/string.h:
 lib/Types/Application/draf-kicauan/../../DrafKicauan.h:
 lib/Types/Application/draf-kicauan/../../User.h:

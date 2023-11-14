@@ -80,7 +80,8 @@
  lib/ADT/WordMachine/../.././Types/Application/balasan/balasan.h \
  lib/ADT/WordMachine/../.././Types/Application/balasan/../Application.h \
  lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/draf-kicauan.h \
- lib/Types/Application.h lib/ADT/../ADT/String/string.h \
+ lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../Application.h \
+ lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../../ADT/String/string.h \
  lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../DrafKicauan.h \
  lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../User.h \
  lib/ADT/WordMachine/../.././Types/Application/inisialisasi/inisialisasi.h \
@@ -111,8 +112,6 @@
  lib/ADT/WordMachine/../.././Types/Application/perintah/../pengguna/pengguna.h \
  lib/ADT/WordMachine/../.././Types/Application/perintah/../profil/profil.h \
  lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/simpan.h \
- /usr/include/dirent.h /usr/include/x86_64-linux-gnu/bits/dirent.h \
- /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
  /usr/include/x86_64-linux-gnu/bits/stat.h \
  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
@@ -120,7 +119,8 @@
  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-intn.h app/../lib/lib.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+ lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/../../../lib.h \
  lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/../Application.h \
  lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h \
  lib/ADT/WordMachine/../.././Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h \
@@ -214,8 +214,8 @@ lib/ADT/WordMachine/../.././Types/Application/../RequestQueue.h:
 lib/ADT/WordMachine/../.././Types/Application/balasan/balasan.h:
 lib/ADT/WordMachine/../.././Types/Application/balasan/../Application.h:
 lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/draf-kicauan.h:
-lib/Types/Application.h:
-lib/ADT/../ADT/String/string.h:
+lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../Application.h:
+lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../../ADT/String/string.h:
 lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../DrafKicauan.h:
 lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../User.h:
 lib/ADT/WordMachine/../.././Types/Application/inisialisasi/inisialisasi.h:
@@ -246,9 +246,6 @@ lib/ADT/WordMachine/../.././Types/Application/perintah/../kicauan/kicauan.h:
 lib/ADT/WordMachine/../.././Types/Application/perintah/../pengguna/pengguna.h:
 lib/ADT/WordMachine/../.././Types/Application/perintah/../profil/profil.h:
 lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/simpan.h:
-/usr/include/dirent.h:
-/usr/include/x86_64-linux-gnu/bits/dirent.h:
-/usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
 /usr/include/x86_64-linux-gnu/sys/stat.h:
 /usr/include/x86_64-linux-gnu/bits/stat.h:
 /usr/include/x86_64-linux-gnu/bits/struct_stat.h:
@@ -257,7 +254,7 @@ lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/simpan
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-app/../lib/lib.h:
+lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/../../../lib.h:
 lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/../Application.h:
 lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h:
 lib/ADT/WordMachine/../.././Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h:
