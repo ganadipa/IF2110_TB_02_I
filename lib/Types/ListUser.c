@@ -252,7 +252,7 @@ void displayAllReply_helper(ReplyTree rt, ListUser *l, int currDepth, int idx, i
     }
 }
 
-void AddReplyDariConfig(ReplyTree *rt, ListUser lu,int IDKicau, int IDBalasan, String body, String name, String DATETIME)
+void AddReplyDariConfig(ReplyTree *rt, ListUser lu,int IDKicau, int IDBalasan, int IDParent, String body, String name, String DATETIME)
 // JANGAN LUPA REPLY TREE DI CREATE DULU, capacity 100 aja.
 {
     addReply(rt);
