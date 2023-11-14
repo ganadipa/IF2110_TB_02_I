@@ -4,6 +4,8 @@
 // #include "../lib/Types/User.h"
 
 // int main(){
-//     User l;
+//     ListUser l;
+//     User u;
+//     DrafKicau d;
 //     printf("1\n");
 // }

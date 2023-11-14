@@ -13,8 +13,8 @@ extern boolean EOP_FILE;
 extern boolean EndFile;
 extern int retvalfile;
 
-void OPENFILE();
+void OPENFILE(String filename);
 void CLOSEFILE();
-void READFILE();
+// void READFILE();
 void ADVCHARFILE();
 #endif

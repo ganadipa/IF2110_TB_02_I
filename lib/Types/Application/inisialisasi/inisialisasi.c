@@ -16,7 +16,7 @@ void AppInitialization(Application *app)
 
     ReadConfig(app, &found);
     // Inisialisasi app
-    Setup(app); // Hapus kali udah ada database dari config.
+    // Setup(app); // Hapus kali udah ada database dari config.
      
 }
 
@@ -57,7 +57,7 @@ void ReadConfig(Application *app, boolean *found) {
     // } while (!*found);
     LoadPengguna(app);
     LoadKicauan(app);
-    LoadBalasan(app);
+    // LoadBalasan(app);
     LoadUtas(app);
     
     printf("File konfigurasi berhasil dimuat! Selamat berkicau!\n\n");
@@ -77,7 +77,6 @@ void LoadPengguna(Application *app){
                 ADVWORDFILE();
                 app->users.contents[i].ID = i;
                 app->users.contents[i].name.maxLength = 20;
-                // displayString(currentWordFile);
                 addString(&(app->users.contents[i].name), currentWordFile);
                 ADVWORDFILE();
                 app->users.contents[i].password.maxLength = 20;
@@ -116,6 +115,7 @@ void LoadPengguna(Application *app){
                 addVertices(&friendships);
             }
             app->friendships = friendships;
+            // printGraph(app->friendships);
             ADVWORDFILE();
             int permintaan = currentWordFile.buffer[0] - '0';
             Friend f;
@@ -133,7 +133,7 @@ void LoadPengguna(Application *app){
                 f.userID = idyangminta;
                 enqueueRequestQueue(&app->users.contents[idyangdiminta].friendRequest, f);
             }
-            // displayRequestQueue(app->users.contents[0].friendRequest, app->users);
+            // displayRequestQueue(app->users.contents[1].friendRequest, app->users);
         }
     }
     
@@ -143,7 +143,7 @@ void LoadPengguna(Application *app){
 void LoadKicauan(Application *app){
     String filename;
     int i;
-    // CreateListKicau(&app->listKicauan, 1000);
+    CreateListKicau(&app->listKicauan, 1000);
     char temp[20] = "kicauan.config";
     addChartoChar(filename.buffer, temp);
     filename.maxLength = STRCAP;
