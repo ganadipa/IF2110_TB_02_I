@@ -39,8 +39,27 @@ void SavingFilePengguna(String* path, ListUser user){
     fclose(filePengguna);
 }
 
+void SavingFileKicauan(String* path, ListKicau kicauan, ListUser user){
+    const char* kicau = "kicauan.config";
+    String Dir; 
+    createEmptyString(&Dir, 100); 
+    snprintf(Dir.buffer, 1000, "%s/%s", path->buffer, kicau);
+    FILE *fileKicauan = fopen(Dir.buffer, "w"); 
+    int i = 0; 
+    fprintf(fileKicauan, "%d\n", kicauan.nEff);
+    for(i = 0; i < kicauan.nEff; ++i){
+        fprintf(fileKicauan, "%d\n", kicauan.buffer[i].IDKicau);
+        fprintf(fileKicauan, "%s\n", kicauan.buffer[i].text.buffer); 
+        fprintf(fileKicauan, "%d\n", kicauan.buffer[i].like); 
+        fprintf(fileKicauan, "%s\n", user.contents[kicauan.buffer[i].IDuser].name.buffer); 
+        fprintf(fileKicauan, "%s\n", kicauan.buffer[i].dateTime.buffer);
+    }
+    fclose(fileKicauan);
+}
+
 void SavingFile(String* path, Application *app){
     SavingFilePengguna(path, app->users);
+    SavingFileKicauan(path, app->listKicauan, app->users);
 }
 
 
