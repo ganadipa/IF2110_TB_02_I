@@ -27,10 +27,10 @@ void DevTools(Application app)
         printf("\n\n");
     }
 
-    for (int i = 0; i < KICAUAN(app).nEff; i++) {
+    // for (int i = 0; i < KICAUAN(app).nEff; i++) {
 
-        printAllReplyTree(BALASAN(KICAUAN(app).buffer[0]));
-    }
+    //     printAllReplyTree(BALASAN(KICAUAN(app).buffer[0]));
+    // }
 
     // printf("%d", app.listKicauan.buffer[0].IDKicau);
     // printf("\n");
@@ -40,5 +40,19 @@ void DevTools(Application app)
     // printf("%d", app.listKicauan.buffer[0].IDuser);
     // printf("\n");
     // displayString(app.listKicauan.buffer[0].dateTime);
+
+    displayString(app.users.contents[0].name);
+    printf("\n");
+    displayString(app.users.contents[0].password);
+    printf("\n");
+    displayString(app.users.contents[0].profile.bio);
+    printf("\n");
+    displayString(app.users.contents[0].profile.phoneNumber);
+    printf("\n");
+    displayString(app.users.contents[0].profile.weton);
+    printf("\n");
+    readPhoto(&app.users.contents[0].profile.photo);
+    printf("\n");
+    displayPhoto(app.users.contents[0].profile.photo);
     
 }

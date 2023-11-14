@@ -23,11 +23,13 @@ void IgnoreBlanksFile();
    I.S. : currentChar sembarang
    F.S. : currentChar ≠ BLANK atau currentChar = MARK */
 
-void STARTWORDFILE();
+void STARTWORDFILE(String filename);
 /* I.S. : currentChar sembarang
    F.S. : EndWord = true, dan currentChar = MARK;
           atau EndWord = false, currentWord adalah kata yang sudah diakuisisi,
           currentChar karakter pertama sesudah karakter terakhir kata */
+
+void IgnoreOnes();
 
 void ADVWORDFILE();
 /* I.S. : currentChar adalah karakter pertama kata yang akan diakuisisi
