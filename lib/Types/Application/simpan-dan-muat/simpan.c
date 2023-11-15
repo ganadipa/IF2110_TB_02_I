@@ -57,6 +57,16 @@ void SavingFileKicauan(String* path, ListKicau kicauan, ListUser user){
     fclose(fileKicauan);
 }
 
+void SavingFileBalasan(String *path, ListKicau kicauan){
+    const char* reply = "balasan.config"; 
+    String Dir; 
+    createEmptyString(&Dir, 100); 
+    snprintf(Dir.buffer, 1000, "%s/%s", path->buffer, reply); 
+    FILE *fileBalasan = fopen(Dir.buffer, "w"); 
+    
+}
+
+
 void SavingFile(String* path, Application *app){
     SavingFilePengguna(path, app->users);
     SavingFileKicauan(path, app->listKicauan, app->users);
