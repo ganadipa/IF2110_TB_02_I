@@ -99,9 +99,39 @@ void handleCommand(Application* app, String command, boolean *finish)
         HapusBalasan(app, IDKicau, IDBalasan);
     } else if(compareString(firstWord, "SIMPAN")){
         SaveFolder(app);
+    } else if ( compareString(firstWord , "UTAS")){
+        if (numword != 2) {
+            printf("\nPerintah yang valid: \"UTAS <IDKICAU>;\".\n");
+            return;
+        }
+        int IDKicau = stringToInt(secondWord);
+        insertUtas_withIDKicau(app, IDKicau);
+    } else if ( compareString(firstWord , "SAMBUNG_UTAS")){
+        if (numword != 3) {
+            printf("\nPerintah yang valid: \"SAMBUNG_UTAS <IDUTAS> <INDEKSUTAS>;\".\n");
+            return;
+        }
+        int IDutas = stringToInt(secondWord);
+        int index = stringToInt(thirdWord);
+        NyambungAnakUtas(app, IDutas, index);  
+    } else if ( compareString(firstWord , "HAPUS_UTAS")){
+        if (numword != 3) {
+            printf("\nPerintah yang valid: \"SAMBUNG_UTAS <IDUTAS> <INDEKSUTAS>;\".\n");
+            return;
+        }
+        int IDutas = stringToInt(secondWord);
+        int index = stringToInt(thirdWord);
+        deleteAt_Utas(app, IDutas, index);
+    }else if ( compareString(firstWord , "CETAK_UTAS")){
+        if (numword != 2) {
+            printf("\nPerintah yang valid: \"CETAK_UTAS <IDUTAS>;\".\n");
+            return;
+        }
+        int IDutas = stringToInt(secondWord);
+        display_listUtas(app, IDutas);
     }
 
-
+    
     else {
         printf("\nTidak ada perintah ");
         displayString(command);
