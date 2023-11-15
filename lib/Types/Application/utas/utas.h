@@ -14,7 +14,7 @@ void insertUtas_withIDKicau(Application *app, int IDKicau);
 void deleteAt_Utas(Application *app, int IDUtas, int indeksUtas);
 //MEnghapus anak Utas berdasarkan ID UTAS, TIDAK BISA MENGHAPUS UTAS PERTAMA
 
-void NyambungUtas(Application *app, int IDUtas, int IndeksUtas);
+void NyambungAnakUtas(Application *app, int IDUtas, int IndeksUtas);
 
 /****************** PROSES SEMUA ELEMEN LIST ******************/
 void display_listUtas(Application *app,int IDUtas);

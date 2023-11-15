@@ -27,6 +27,12 @@ void  kuranglenUtas(Kicauan *k){
 void insertAtAnakUtas(Kicauan *k, int indeksUtas, String teks, String namaUser, String time){
     AddressUtas temp = FIRST(*k);
     AddressUtas p = newNodeUtas(teks, namaUser, time);
+    if (indeksUtas == 1){
+        NEXT_Linked(p) = temp;
+        FIRST(*k) = p;
+        LEN_ANAKUTAS(*k) ++;
+        return;
+    }
     while(indeksUtas > 2){
         temp = NEXT_Linked(temp);
         indeksUtas--;
@@ -36,7 +42,7 @@ void insertAtAnakUtas(Kicauan *k, int indeksUtas, String teks, String namaUser, 
         NEXT_Linked(temp) = p;
     } else {
         NEXT_Linked(p) = NEXT_Linked(temp);
-        NEXT_Linked(temp) = NULL;
+        NEXT_Linked(temp) = p;
     }
     LEN_ANAKUTAS(*k) ++;
 }
