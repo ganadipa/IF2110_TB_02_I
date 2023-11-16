@@ -14,6 +14,7 @@
 #include "../lib/ADT/ListDinamik/listdinamik.h"
 #include "../lib/Types/ReplyTree.h"
 #include "../lib/ADT/Graf/graf.h"
+#include "../lib/Types/Application/Application.h"
 // #include "../lib/ADT/WordMachine/charmachinefile.c"
 // #include "../lib/ADT/WordMachine/wordmachinefile.c"
 // #include "../lib/ADT/WordMachine/wordmachine.c"
@@ -121,7 +122,7 @@ void LoadKicauan(Application *app){
     addChartoChar(filename.buffer, temp);
     filename.maxLength = STRCAP;
     STARTWORDFILE(filename);
-    while (retvalfile != -1){
+    if (retvalfile != -1){
         app->listKicauan.nEff = stringToInt(currentWordFile);
         for(i=0;i<app->listKicauan.nEff;i++){
             ADVWORDFILE();
@@ -160,20 +161,22 @@ void LoadBalasan(Application *app){
             ADVWORDFILE();
             int balasan = stringToInt(currentWordFile); /* banyak balasan */
             app->listKicauan.buffer[idkicau-1].balasan.numReplyEff = balasan;
-
             for (i=0;i<balasan;i++){
-                Reply rep;
-                // newReply();
                 ADVWORDFILE2(); /* currenwordfile berisi parent id*/
+                int parentid = stringToInt(currentWordFile);
                 ADVWORDFILE(); /* currentwordfile berisi id balasan */
+                int IDBalasan = stringToInt(currentWordFile);
                 ADVWORDFILE(); /* currentwordfile berisi isi balasannya */
+                String body = currentWordFile;
                 ADVWORDFILE(); /* currentwordfile berisi author balasan */
+                String name = currentWordFile;
                 ADVWORDFILE(); /* currentwordfile berisi datetime */
+                String DATETIME = currentWordFile;
+                AddReplyDariConfig(&app->listKicauan.buffer[idkicau-1].balasan, app->users, idkicau, IDBalasan, body, name, DATETIME); 
             }
-            
-
         }
     }
+    CLOSEFILE();
 }
 void LoadUtas(Application *app){
     String filename;
@@ -213,14 +216,17 @@ void LoadUtas(Application *app){
             }
         }
     }
+    CLOSEFILE();
 }
 // int main(){
+//     printf("1");
 //     Application app;
 //     String nama = {"john", 100};
-//     LoadPengguna(&app);
-//     LoadKicauan(&app);
-//     LoadUtas(&app);
-// //     // printf("%d", app.listKicauan.nEff);
+//     // LoadPengguna(&app);
+//     // LoadKicauan(&app);
+//     // LoadUtas(&app);
+//     // LoadBalasan(&app);
+//     // printf("%d", app.listKicauan.nEff);
 //     // displayString(app.users.contents[0].name);
 //     // printf("\n");
 //     // displayString(app.users.contents[0].password);
@@ -243,11 +249,31 @@ void LoadUtas(Application *app){
 //     // // printf("%d", app.listKicauan.buffer[0].IDuser);
 //     // printf("\n");
 //     // displayString(app.listKicauan.buffer[0].dateTime);
-
+//     printAllReplyTree(app.listKicauan.buffer[4].balasan);
 
 //     // printf("%d", )
 //     // printf("%u", app.listKicauan.buffer[1].link->next->next->next);
 //     // displayString(app.listKicauan.buffer[1].link->next->next->teks);
 // }
+// int main(){
+//     DATETIME D; 
+//     String S;
+//     D = currentDateTime();
+//     S = DateTimeToString(D);
+//     D = StringToDateTime(S);
+//     printf("%d", D.Day);
+//     printf("%d", D.Month);
+//     printf("%d", D.Year);
+//     printf("%d", D.Hour);
+//     printf("%d", D.Minute);
+//     printf("%d", D.Second);
+
+// }
 
 // // 
+// int main(){
+//     Application app;
+//     printf("1");
+//     String nama = {"john", 100};
+//     return 0;
+// }

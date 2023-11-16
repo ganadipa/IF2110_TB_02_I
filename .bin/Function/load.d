@@ -41,7 +41,7 @@
  Function/../lib/ADT/WordMachine/../.././Types/Application/../../ADT/Matriks/charMatriks.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/../../ADT/Matriks/../../boolean.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/../RequestQueue.h \
- Function/../lib/ADT/WordMachine/../.././Types/Application/../DrafKicauan.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/../DrafDinKicauan.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -64,7 +64,8 @@
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/../Kicauan.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/../../ADT/DateTime/datetime.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/../../ADT/DateTime/../../boolean.h \
@@ -79,10 +80,9 @@
  Function/../lib/ADT/WordMachine/../.././Types/Application/../RequestQueue.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/balasan/balasan.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/balasan/../Application.h \
- Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/draf-kicauan.h \
- Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../Application.h \
- Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../../ADT/String/string.h \
- Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../DrafKicauan.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/draf-kicauan-din.h \
+ lib/Types/Application.h lib/ADT/../ADT/String/string.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../DrafDinKicauan.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../User.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/inisialisasi/inisialisasi.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/inisialisasi/../Application.h \
@@ -106,7 +106,7 @@
  Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/perintah.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../Application.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../balasan/balasan.h \
- Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../draf-kicauan/draf-kicauan.h \
+ Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../draf-kicauan/draf-kicauan-din.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../inisialisasi/inisialisasi.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../kicauan/kicauan.h \
  Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../pengguna/pengguna.h \
@@ -187,7 +187,7 @@ Function/../lib/ADT/WordMachine/../.././Types/Application/../Photo.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/../../ADT/Matriks/charMatriks.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/../../ADT/Matriks/../../boolean.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/../RequestQueue.h:
-Function/../lib/ADT/WordMachine/../.././Types/Application/../DrafKicauan.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/../DrafDinKicauan.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 /usr/include/features.h:
@@ -212,6 +212,8 @@ Function/../lib/ADT/WordMachine/../.././Types/Application/../DrafKicauan.h:
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+/usr/include/stdlib.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/../Kicauan.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/../../ADT/DateTime/datetime.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/../../ADT/DateTime/../../boolean.h:
@@ -226,10 +228,10 @@ Function/../lib/ADT/WordMachine/../.././Types/Application/.././ListUser.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/../RequestQueue.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/balasan/balasan.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/balasan/../Application.h:
-Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/draf-kicauan.h:
-Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../Application.h:
-Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../../ADT/String/string.h:
-Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../DrafKicauan.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/draf-kicauan-din.h:
+lib/Types/Application.h:
+lib/ADT/../ADT/String/string.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../DrafDinKicauan.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/draf-kicauan/../../User.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/inisialisasi/inisialisasi.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/inisialisasi/../Application.h:
@@ -253,7 +255,7 @@ Function/../lib/ADT/WordMachine/../.././Types/Application/utas/../kicauan/kicaua
 Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/perintah.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../Application.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../balasan/balasan.h:
-Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../draf-kicauan/draf-kicauan.h:
+Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../draf-kicauan/draf-kicauan-din.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../inisialisasi/inisialisasi.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../kicauan/kicauan.h:
 Function/../lib/ADT/WordMachine/../.././Types/Application/perintah/../pengguna/pengguna.h:

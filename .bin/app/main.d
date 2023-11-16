@@ -104,8 +104,6 @@
  app/../lib/./Types/Application/perintah/../pengguna/pengguna.h \
  app/../lib/./Types/Application/perintah/../profil/profil.h \
  app/../lib/./Types/Application/perintah/../simpan-dan-muat/simpan.h \
- /usr/include/dirent.h /usr/include/x86_64-linux-gnu/bits/dirent.h \
- /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
  /usr/include/x86_64-linux-gnu/bits/stat.h \
  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
@@ -113,7 +111,8 @@
  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-intn.h app/../lib/lib.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+ app/../lib/./Types/Application/perintah/../simpan-dan-muat/../../../lib.h \
  app/../lib/./Types/Application/perintah/../simpan-dan-muat/../Application.h \
  app/../lib/./Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h \
  app/../lib/./Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h \
@@ -239,9 +238,6 @@ app/../lib/./Types/Application/perintah/../kicauan/kicauan.h:
 app/../lib/./Types/Application/perintah/../pengguna/pengguna.h:
 app/../lib/./Types/Application/perintah/../profil/profil.h:
 app/../lib/./Types/Application/perintah/../simpan-dan-muat/simpan.h:
-/usr/include/dirent.h:
-/usr/include/x86_64-linux-gnu/bits/dirent.h:
-/usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
 /usr/include/x86_64-linux-gnu/sys/stat.h:
 /usr/include/x86_64-linux-gnu/bits/stat.h:
 /usr/include/x86_64-linux-gnu/bits/struct_stat.h:
@@ -250,7 +246,7 @@ app/../lib/./Types/Application/perintah/../simpan-dan-muat/simpan.h:
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-app/../lib/lib.h:
+app/../lib/./Types/Application/perintah/../simpan-dan-muat/../../../lib.h:
 app/../lib/./Types/Application/perintah/../simpan-dan-muat/../Application.h:
 app/../lib/./Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h:
 app/../lib/./Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h:

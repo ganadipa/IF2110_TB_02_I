@@ -38,7 +38,10 @@ void SukaKicauan(Application *app, int ID){
         printf("Tidak ditemukan kicauan dengan ID = %d\n", ID);
         return;
     }
-
+    if (ID <1){
+        printf("Kamu tidak bisa menyukai Kicauan dengan id kicau %d", ID);
+        return;
+    }
 
     if (LOGINID(*app) == ELMT(KICAUAN(*app), ID - 1).IDuser){
         addLike( &ELMT(KICAUAN(*app) , ID - 1) );
@@ -69,19 +72,21 @@ void UbahKicauan(Application *app, int ID){
         printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
         return;
     }
+    if (ID <1){
+        printf("Kamu tidak bisa mengubah Kicauan dengan id kicau %d", ID);
+        return;
+    }
     // printf("%d %d\n", KICAUAN(*app).nEff,ID); //DEBUGGING
     if ( (KICAUAN(*app).nEff) < ID ){
         printf("Tidak ditemukan kicauan dengan ID = %d\n", ID);
         return;
     }
-    String teksBaru;
-    createEmptyString(&teksBaru, 280);
-    printf("Kicauan yang dimasukkan terpotong secara otomatis apabila jumlah karakter lebih dari 280.\n");
-    printf("Masukkan Kicauan : ");
-    readString(&teksBaru, 280);
-
-
     if (LOGINID(*app) ==ELMT( KICAUAN(*app), ID - 1).IDuser  ){
+        String teksBaru;
+        createEmptyString(&teksBaru, 280);
+        printf("Kicauan yang dimasukkan terpotong secara otomatis apabila jumlah karakter lebih dari 280.\n");
+        printf("Masukkan Kicauan : ");
+        readString(&teksBaru, 280);
         setText(&ELMT(KICAUAN(*app), ID - 1), teksBaru);
     }else{
         printf("Kamu hanya bisa mengubah kicauan milikmu sendiri\n");

@@ -24,6 +24,8 @@ typedef struct{
 #define Minute(u) (u).Minute
 #define Second(u) (u).Second
 
+void CreateDateTime(DATETIME *D);
+
 DATETIME currentDateTime ();
 /* I.S. Mendapatkan Time Local */
 /* F.S. Terbentuk Time Local */
@@ -31,5 +33,9 @@ DATETIME currentDateTime ();
 String DateTimeToString(DATETIME D);
 /* I.S. Terdapat Time Local */
 /* F.S. Mengubah Time Local dari integer ke string */
+
+DATETIME StringToDateTime(String datetime);
+
+
 
 #endif
