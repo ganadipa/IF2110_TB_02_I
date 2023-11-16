@@ -27,6 +27,12 @@
  lib/Types/Application/utas/../../../boolean.h \
  lib/Types/Application/utas/../../ListUser.h \
  lib/Types/Application/utas/../../../boolean.h \
+ lib/Types/Application/utas/../../../ADT/Graf/graf.h \
+ lib/Types/Application/utas/../../../ADT/Graf/../../boolean.h \
+ lib/Types/Application/utas/../../../ADT/Graf/../ListStatik/liststatik.h \
+ lib/Types/Application/utas/../../../ADT/Graf/../ListStatik/../../boolean.h \
+ lib/Types/Application/utas/../../../ADT/Graf/../Matriks/boolMatriks.h \
+ lib/Types/Application/utas/../../../ADT/Graf/../Matriks/../../boolean.h \
  lib/Types/Application/utas/../../User.h \
  lib/Types/Application/utas/../../../ADT/String/string.h \
  lib/Types/Application/utas/../../../ADT/String/../../boolean.h \
@@ -49,11 +55,6 @@
  lib/Types/Application/utas/../../../ADT/ListDinamik/../../boolean.h \
  lib/Types/Application/utas/../../listUtas.h \
  lib/Types/Application/utas/../../../ADT/Graf/graf.h \
- lib/Types/Application/utas/../../../ADT/Graf/../../boolean.h \
- lib/Types/Application/utas/../../../ADT/Graf/../ListStatik/liststatik.h \
- lib/Types/Application/utas/../../../ADT/Graf/../ListStatik/../../boolean.h \
- lib/Types/Application/utas/../../../ADT/Graf/../Matriks/boolMatriks.h \
- lib/Types/Application/utas/../../../ADT/Graf/../Matriks/../../boolean.h \
  lib/Types/Application/utas/../../listKicauan.h \
  lib/Types/Application/utas/../.././Kicauan.h \
  lib/Types/Application/utas/../.././ListUser.h \
@@ -93,6 +94,12 @@ lib/Types/Application/utas/../Application.h:
 lib/Types/Application/utas/../../../boolean.h:
 lib/Types/Application/utas/../../ListUser.h:
 lib/Types/Application/utas/../../../boolean.h:
+lib/Types/Application/utas/../../../ADT/Graf/graf.h:
+lib/Types/Application/utas/../../../ADT/Graf/../../boolean.h:
+lib/Types/Application/utas/../../../ADT/Graf/../ListStatik/liststatik.h:
+lib/Types/Application/utas/../../../ADT/Graf/../ListStatik/../../boolean.h:
+lib/Types/Application/utas/../../../ADT/Graf/../Matriks/boolMatriks.h:
+lib/Types/Application/utas/../../../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/Application/utas/../../User.h:
 lib/Types/Application/utas/../../../ADT/String/string.h:
 lib/Types/Application/utas/../../../ADT/String/../../boolean.h:
@@ -116,11 +123,6 @@ lib/Types/Application/utas/../../../ADT/ListDinamik/listdinamik.h:
 lib/Types/Application/utas/../../../ADT/ListDinamik/../../boolean.h:
 lib/Types/Application/utas/../../listUtas.h:
 lib/Types/Application/utas/../../../ADT/Graf/graf.h:
-lib/Types/Application/utas/../../../ADT/Graf/../../boolean.h:
-lib/Types/Application/utas/../../../ADT/Graf/../ListStatik/liststatik.h:
-lib/Types/Application/utas/../../../ADT/Graf/../ListStatik/../../boolean.h:
-lib/Types/Application/utas/../../../ADT/Graf/../Matriks/boolMatriks.h:
-lib/Types/Application/utas/../../../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/Application/utas/../../listKicauan.h:
 lib/Types/Application/utas/../.././Kicauan.h:
 lib/Types/Application/utas/../.././ListUser.h:

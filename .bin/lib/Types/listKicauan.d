@@ -34,8 +34,14 @@
  lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ReplyTree.h \
  lib/Types/./../ADT/ListDinamik/listdinamik.h \
  lib/Types/./../ADT/ListDinamik/../../boolean.h lib/Types/./listUtas.h \
- lib/Types/./ListUser.h lib/Types/./User.h lib/Types/./Profile.h \
- lib/Types/./Photo.h lib/Types/./../ADT/Matriks/charMatriks.h \
+ lib/Types/./ListUser.h lib/Types/./../ADT/Graf/graf.h \
+ lib/Types/./../ADT/Graf/../../boolean.h \
+ lib/Types/./../ADT/Graf/../ListStatik/liststatik.h \
+ lib/Types/./../ADT/Graf/../ListStatik/../../boolean.h \
+ lib/Types/./../ADT/Graf/../Matriks/boolMatriks.h \
+ lib/Types/./../ADT/Graf/../Matriks/../../boolean.h lib/Types/./User.h \
+ lib/Types/./Profile.h lib/Types/./Photo.h \
+ lib/Types/./../ADT/Matriks/charMatriks.h \
  lib/Types/./../ADT/Matriks/../../boolean.h lib/Types/./RequestQueue.h \
  lib/Types/./DrafDinKicauan.h lib/Types/./Kicauan.h
 /usr/include/stdc-predef.h:
@@ -82,6 +88,12 @@ lib/Types/./../ADT/ListDinamik/listdinamik.h:
 lib/Types/./../ADT/ListDinamik/../../boolean.h:
 lib/Types/./listUtas.h:
 lib/Types/./ListUser.h:
+lib/Types/./../ADT/Graf/graf.h:
+lib/Types/./../ADT/Graf/../../boolean.h:
+lib/Types/./../ADT/Graf/../ListStatik/liststatik.h:
+lib/Types/./../ADT/Graf/../ListStatik/../../boolean.h:
+lib/Types/./../ADT/Graf/../Matriks/boolMatriks.h:
+lib/Types/./../ADT/Graf/../Matriks/../../boolean.h:
 lib/Types/./User.h:
 lib/Types/./Profile.h:
 lib/Types/./Photo.h:

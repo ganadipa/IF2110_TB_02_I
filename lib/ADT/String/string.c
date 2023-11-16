@@ -395,3 +395,4 @@ void SplitIntoTwo(String s, String* s1, String* s2) {
         ptr++;
         k++;
     }
+}

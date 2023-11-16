@@ -40,6 +40,11 @@
  app/../lib/./ADT/String/../WordMachine/../../boolean.h \
  app/../lib/./ADT/String/../WordMachine/charmachine.h \
  app/../lib/./ADT/WordMachine/wordmachine.h \
+ app/../lib/./ADT/WordMachine/wordmachinefile.h \
+ app/../lib/./ADT/WordMachine/../../boolean.h \
+ app/../lib/./ADT/WordMachine/charmachinefile.h \
+ app/../lib/./ADT/WordMachine/../../lib.h \
+ app/../lib/./ADT/WordMachine/../String/string.h \
  app/../lib/./ADT/Queue/queue.h app/../lib/./ADT/Queue/../../boolean.h \
  app/../lib/./ADT/Stack/stack.h app/../lib/./ADT/Stack/../../boolean.h \
  app/../lib/./ADT/Tree/tree.h app/../lib/./ADT/Tree/../../boolean.h \
@@ -49,6 +54,7 @@
  app/../lib/./Types/Application/../../boolean.h \
  app/../lib/./Types/Application/../ListUser.h \
  app/../lib/./Types/Application/../../boolean.h \
+ app/../lib/./Types/Application/../../ADT/Graf/graf.h \
  app/../lib/./Types/Application/../User.h \
  app/../lib/./Types/Application/../../ADT/String/string.h \
  app/../lib/./Types/Application/../Profile.h \
@@ -78,6 +84,7 @@
  app/../lib/./Types/Application/draf-kicauan/../../User.h \
  app/../lib/./Types/Application/inisialisasi/inisialisasi.h \
  app/../lib/./Types/Application/inisialisasi/../Application.h \
+ app/../lib/./Types/Application/inisialisasi/../../../lib.h \
  app/../lib/./Types/Application/kicauan/kicauan.h \
  app/../lib/./Types/Application/kicauan/../../../ADT/String/string.h \
  app/../lib/./Types/Application/kicauan/../Application.h \
@@ -168,6 +175,11 @@ app/../lib/./ADT/String/../WordMachine/wordmachine.h:
 app/../lib/./ADT/String/../WordMachine/../../boolean.h:
 app/../lib/./ADT/String/../WordMachine/charmachine.h:
 app/../lib/./ADT/WordMachine/wordmachine.h:
+app/../lib/./ADT/WordMachine/wordmachinefile.h:
+app/../lib/./ADT/WordMachine/../../boolean.h:
+app/../lib/./ADT/WordMachine/charmachinefile.h:
+app/../lib/./ADT/WordMachine/../../lib.h:
+app/../lib/./ADT/WordMachine/../String/string.h:
 app/../lib/./ADT/Queue/queue.h:
 app/../lib/./ADT/Queue/../../boolean.h:
 app/../lib/./ADT/Stack/stack.h:
@@ -181,6 +193,7 @@ app/../lib/./Types/Application/Application.h:
 app/../lib/./Types/Application/../../boolean.h:
 app/../lib/./Types/Application/../ListUser.h:
 app/../lib/./Types/Application/../../boolean.h:
+app/../lib/./Types/Application/../../ADT/Graf/graf.h:
 app/../lib/./Types/Application/../User.h:
 app/../lib/./Types/Application/../../ADT/String/string.h:
 app/../lib/./Types/Application/../Profile.h:
@@ -212,6 +225,7 @@ app/../lib/./Types/Application/draf-kicauan/../../DrafDinKicauan.h:
 app/../lib/./Types/Application/draf-kicauan/../../User.h:
 app/../lib/./Types/Application/inisialisasi/inisialisasi.h:
 app/../lib/./Types/Application/inisialisasi/../Application.h:
+app/../lib/./Types/Application/inisialisasi/../../../lib.h:
 app/../lib/./Types/Application/kicauan/kicauan.h:
 app/../lib/./Types/Application/kicauan/../../../ADT/String/string.h:
 app/../lib/./Types/Application/kicauan/../Application.h:

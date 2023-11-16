@@ -10,7 +10,7 @@ void AppInitialization(Application *app)
     // print opening
     Opening();
     boolean found = false;
-    Setup(app); // Hapus kali udah ada database dari config.
+    // Setup(app); // Hapus kali udah ada database dari config.
     ReadConfig(app, &found);
     // Inisialisasi app
      
@@ -44,13 +44,6 @@ void Setup(Application *app)
 }
 
 void ReadConfig(Application *app, boolean *found) {
-    // do {
-    //     // use library
-
-
-    //     // if folder is found
-    //     *found = true;
-    // } while (!*found);
     LoadPengguna(app);
     LoadKicauan(app);
     LoadBalasan(app);
