@@ -38,7 +38,8 @@
  lib/Types/Application/utas/../../../ADT/Matriks/charMatriks.h \
  lib/Types/Application/utas/../../../ADT/Matriks/../../boolean.h \
  lib/Types/Application/utas/../../RequestQueue.h \
- lib/Types/Application/utas/../../DrafKicauan.h \
+ lib/Types/Application/utas/../../DrafDinKicauan.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  lib/Types/Application/utas/../../Kicauan.h \
  lib/Types/Application/utas/../../../ADT/DateTime/datetime.h \
  lib/Types/Application/utas/../../../ADT/DateTime/../../boolean.h \
@@ -103,7 +104,9 @@ lib/Types/Application/utas/../../Photo.h:
 lib/Types/Application/utas/../../../ADT/Matriks/charMatriks.h:
 lib/Types/Application/utas/../../../ADT/Matriks/../../boolean.h:
 lib/Types/Application/utas/../../RequestQueue.h:
-lib/Types/Application/utas/../../DrafKicauan.h:
+lib/Types/Application/utas/../../DrafDinKicauan.h:
+/usr/include/stdlib.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 lib/Types/Application/utas/../../Kicauan.h:
 lib/Types/Application/utas/../../../ADT/DateTime/datetime.h:
 lib/Types/Application/utas/../../../ADT/DateTime/../../boolean.h:

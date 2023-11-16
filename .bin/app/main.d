@@ -56,7 +56,8 @@
  app/../lib/./Types/Application/../../ADT/Matriks/charMatriks.h \
  app/../lib/./Types/Application/../../ADT/Matriks/../../boolean.h \
  app/../lib/./Types/Application/../RequestQueue.h \
- app/../lib/./Types/Application/../DrafKicauan.h \
+ app/../lib/./Types/Application/../DrafDinKicauan.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  app/../lib/./Types/Application/../Kicauan.h \
  app/../lib/./Types/Application/../../ADT/DateTime/datetime.h \
  app/../lib/./Types/Application/../../ADT/DateTime/../../boolean.h \
@@ -71,9 +72,9 @@
  app/../lib/./Types/Application/../RequestQueue.h \
  app/../lib/./Types/Application/balasan/balasan.h \
  app/../lib/./Types/Application/balasan/../Application.h \
- app/../lib/./Types/Application/draf-kicauan/draf-kicauan.h \
+ app/../lib/./Types/Application/draf-kicauan/draf-kicauan-din.h \
  lib/Types/Application.h lib/ADT/../ADT/String/string.h \
- app/../lib/./Types/Application/draf-kicauan/../../DrafKicauan.h \
+ app/../lib/./Types/Application/draf-kicauan/../../DrafDinKicauan.h \
  app/../lib/./Types/Application/draf-kicauan/../../User.h \
  app/../lib/./Types/Application/inisialisasi/inisialisasi.h \
  app/../lib/./Types/Application/inisialisasi/../Application.h \
@@ -97,14 +98,12 @@
  app/../lib/./Types/Application/perintah/perintah.h \
  app/../lib/./Types/Application/perintah/../Application.h \
  app/../lib/./Types/Application/perintah/../balasan/balasan.h \
- app/../lib/./Types/Application/perintah/../draf-kicauan/draf-kicauan.h \
+ app/../lib/./Types/Application/perintah/../draf-kicauan/draf-kicauan-din.h \
  app/../lib/./Types/Application/perintah/../inisialisasi/inisialisasi.h \
  app/../lib/./Types/Application/perintah/../kicauan/kicauan.h \
  app/../lib/./Types/Application/perintah/../pengguna/pengguna.h \
  app/../lib/./Types/Application/perintah/../profil/profil.h \
  app/../lib/./Types/Application/perintah/../simpan-dan-muat/simpan.h \
- /usr/include/dirent.h /usr/include/x86_64-linux-gnu/bits/dirent.h \
- /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
  /usr/include/x86_64-linux-gnu/bits/stat.h \
  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
@@ -112,7 +111,8 @@
  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-intn.h app/../lib/lib.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+ app/../lib/./Types/Application/perintah/../simpan-dan-muat/../../../lib.h \
  app/../lib/./Types/Application/perintah/../simpan-dan-muat/../Application.h \
  app/../lib/./Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h \
  app/../lib/./Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h \
@@ -188,7 +188,9 @@ app/../lib/./Types/Application/../Photo.h:
 app/../lib/./Types/Application/../../ADT/Matriks/charMatriks.h:
 app/../lib/./Types/Application/../../ADT/Matriks/../../boolean.h:
 app/../lib/./Types/Application/../RequestQueue.h:
-app/../lib/./Types/Application/../DrafKicauan.h:
+app/../lib/./Types/Application/../DrafDinKicauan.h:
+/usr/include/stdlib.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 app/../lib/./Types/Application/../Kicauan.h:
 app/../lib/./Types/Application/../../ADT/DateTime/datetime.h:
 app/../lib/./Types/Application/../../ADT/DateTime/../../boolean.h:
@@ -203,10 +205,10 @@ app/../lib/./Types/Application/.././ListUser.h:
 app/../lib/./Types/Application/../RequestQueue.h:
 app/../lib/./Types/Application/balasan/balasan.h:
 app/../lib/./Types/Application/balasan/../Application.h:
-app/../lib/./Types/Application/draf-kicauan/draf-kicauan.h:
+app/../lib/./Types/Application/draf-kicauan/draf-kicauan-din.h:
 lib/Types/Application.h:
 lib/ADT/../ADT/String/string.h:
-app/../lib/./Types/Application/draf-kicauan/../../DrafKicauan.h:
+app/../lib/./Types/Application/draf-kicauan/../../DrafDinKicauan.h:
 app/../lib/./Types/Application/draf-kicauan/../../User.h:
 app/../lib/./Types/Application/inisialisasi/inisialisasi.h:
 app/../lib/./Types/Application/inisialisasi/../Application.h:
@@ -230,15 +232,12 @@ app/../lib/./Types/Application/utas/../kicauan/kicauan.h:
 app/../lib/./Types/Application/perintah/perintah.h:
 app/../lib/./Types/Application/perintah/../Application.h:
 app/../lib/./Types/Application/perintah/../balasan/balasan.h:
-app/../lib/./Types/Application/perintah/../draf-kicauan/draf-kicauan.h:
+app/../lib/./Types/Application/perintah/../draf-kicauan/draf-kicauan-din.h:
 app/../lib/./Types/Application/perintah/../inisialisasi/inisialisasi.h:
 app/../lib/./Types/Application/perintah/../kicauan/kicauan.h:
 app/../lib/./Types/Application/perintah/../pengguna/pengguna.h:
 app/../lib/./Types/Application/perintah/../profil/profil.h:
 app/../lib/./Types/Application/perintah/../simpan-dan-muat/simpan.h:
-/usr/include/dirent.h:
-/usr/include/x86_64-linux-gnu/bits/dirent.h:
-/usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
 /usr/include/x86_64-linux-gnu/sys/stat.h:
 /usr/include/x86_64-linux-gnu/bits/stat.h:
 /usr/include/x86_64-linux-gnu/bits/struct_stat.h:
@@ -247,7 +246,7 @@ app/../lib/./Types/Application/perintah/../simpan-dan-muat/simpan.h:
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-app/../lib/lib.h:
+app/../lib/./Types/Application/perintah/../simpan-dan-muat/../../../lib.h:
 app/../lib/./Types/Application/perintah/../simpan-dan-muat/../Application.h:
 app/../lib/./Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h:
 app/../lib/./Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h:

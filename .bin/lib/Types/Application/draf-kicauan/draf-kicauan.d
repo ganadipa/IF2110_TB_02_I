@@ -34,7 +34,8 @@
  lib/Types/./Profile.h lib/Types/./Photo.h \
  lib/Types/./../ADT/Matriks/charMatriks.h \
  lib/Types/./../ADT/Matriks/../../boolean.h lib/Types/./RequestQueue.h \
- lib/Types/./DrafKicauan.h lib/Types/./Kicauan.h \
+ lib/Types/./DrafDinKicauan.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h lib/Types/./Kicauan.h \
  lib/Types/./../ADT/DateTime/datetime.h \
  lib/Types/./../ADT/DateTime/../../boolean.h \
  lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ReplyTree.h \
@@ -48,6 +49,9 @@
  lib/Types/./Kicauan.h lib/Types/RequestQueue.h \
  lib/ADT/../ADT/String/string.h \
  lib/Types/Application/draf-kicauan/../../DrafKicauan.h \
+ lib/Types/Application/draf-kicauan/../../../boolean.h \
+ lib/Types/Application/draf-kicauan/../../../ADT/String/string.h \
+ lib/Types/Application/draf-kicauan/../../Kicauan.h \
  lib/Types/Application/draf-kicauan/../../User.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
@@ -90,7 +94,9 @@ lib/Types/./Photo.h:
 lib/Types/./../ADT/Matriks/charMatriks.h:
 lib/Types/./../ADT/Matriks/../../boolean.h:
 lib/Types/./RequestQueue.h:
-lib/Types/./DrafKicauan.h:
+lib/Types/./DrafDinKicauan.h:
+/usr/include/stdlib.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 lib/Types/./Kicauan.h:
 lib/Types/./../ADT/DateTime/datetime.h:
 lib/Types/./../ADT/DateTime/../../boolean.h:
@@ -110,4 +116,7 @@ lib/Types/./Kicauan.h:
 lib/Types/RequestQueue.h:
 lib/ADT/../ADT/String/string.h:
 lib/Types/Application/draf-kicauan/../../DrafKicauan.h:
+lib/Types/Application/draf-kicauan/../../../boolean.h:
+lib/Types/Application/draf-kicauan/../../../ADT/String/string.h:
+lib/Types/Application/draf-kicauan/../../Kicauan.h:
 lib/Types/Application/draf-kicauan/../../User.h:

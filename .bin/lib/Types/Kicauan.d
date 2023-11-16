@@ -23,7 +23,7 @@
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h lib/Types/Kicauan.h \
- lib/Types/../boolean.h lib/Types/User.h lib/Types/../ADT/String/string.h \
+ lib/Types/../boolean.h lib/Types/../ADT/String/string.h \
  lib/Types/../ADT/String/../../boolean.h \
  lib/Types/../ADT/String/../WordMachine/wordmachine.h \
  lib/Types/../ADT/String/../WordMachine/../../boolean.h \

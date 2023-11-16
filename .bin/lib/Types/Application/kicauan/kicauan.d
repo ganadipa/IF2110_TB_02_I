@@ -40,7 +40,8 @@
  lib/Types/Application/kicauan/../../../ADT/Matriks/charMatriks.h \
  lib/Types/Application/kicauan/../../../ADT/Matriks/../../boolean.h \
  lib/Types/Application/kicauan/../../RequestQueue.h \
- lib/Types/Application/kicauan/../../DrafKicauan.h \
+ lib/Types/Application/kicauan/../../DrafDinKicauan.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  lib/Types/Application/kicauan/../../Kicauan.h \
  lib/Types/Application/kicauan/../../../ADT/DateTime/datetime.h \
  lib/Types/Application/kicauan/../../../ADT/DateTime/../../boolean.h \
@@ -102,7 +103,9 @@ lib/Types/Application/kicauan/../../Photo.h:
 lib/Types/Application/kicauan/../../../ADT/Matriks/charMatriks.h:
 lib/Types/Application/kicauan/../../../ADT/Matriks/../../boolean.h:
 lib/Types/Application/kicauan/../../RequestQueue.h:
-lib/Types/Application/kicauan/../../DrafKicauan.h:
+lib/Types/Application/kicauan/../../DrafDinKicauan.h:
+/usr/include/stdlib.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 lib/Types/Application/kicauan/../../Kicauan.h:
 lib/Types/Application/kicauan/../../../ADT/DateTime/datetime.h:
 lib/Types/Application/kicauan/../../../ADT/DateTime/../../boolean.h:

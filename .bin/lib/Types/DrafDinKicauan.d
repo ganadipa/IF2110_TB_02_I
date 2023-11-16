@@ -1,5 +1,6 @@
-.bin/lib/Types/DrafKicauan.o: lib/Types/DrafKicauan.c \
- /usr/include/stdc-predef.h lib/Types/DrafKicauan.h /usr/include/stdio.h \
+.bin/lib/Types/DrafDinKicauan.o: lib/Types/DrafDinKicauan.c \
+ /usr/include/stdc-predef.h lib/Types/DrafDinKicauan.h \
+ /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -21,9 +22,9 @@
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- lib/Types/../boolean.h lib/Types/../ADT/String/string.h \
- lib/Types/../ADT/String/../../boolean.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h lib/Types/../boolean.h \
+ lib/Types/../ADT/String/string.h lib/Types/../ADT/String/../../boolean.h \
  lib/Types/../ADT/String/../WordMachine/wordmachine.h \
  lib/Types/../ADT/String/../WordMachine/../../boolean.h \
  lib/Types/../ADT/String/../WordMachine/charmachine.h lib/Types/Kicauan.h \
@@ -33,7 +34,7 @@
  lib/Types/../ADT/ListDinamik/listdinamik.h \
  lib/Types/../ADT/ListDinamik/../../boolean.h lib/Types/listUtas.h
 /usr/include/stdc-predef.h:
-lib/Types/DrafKicauan.h:
+lib/Types/DrafDinKicauan.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 /usr/include/features.h:
@@ -58,6 +59,8 @@ lib/Types/DrafKicauan.h:
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+/usr/include/stdlib.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 lib/Types/../boolean.h:
 lib/Types/../ADT/String/string.h:
 lib/Types/../ADT/String/../../boolean.h:

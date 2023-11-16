@@ -16,7 +16,8 @@
  lib/Types/Application/pengguna/../../../ADT/Matriks/charMatriks.h \
  lib/Types/Application/pengguna/../../../ADT/Matriks/../../boolean.h \
  lib/Types/Application/pengguna/../../RequestQueue.h \
- lib/Types/Application/pengguna/../../DrafKicauan.h /usr/include/stdio.h \
+ lib/Types/Application/pengguna/../../DrafDinKicauan.h \
+ /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -38,7 +39,8 @@
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  lib/Types/Application/pengguna/../../Kicauan.h \
  lib/Types/Application/pengguna/../../../ADT/DateTime/datetime.h \
  lib/Types/Application/pengguna/../../../ADT/DateTime/../../boolean.h \
@@ -74,7 +76,7 @@ lib/Types/Application/pengguna/../../Photo.h:
 lib/Types/Application/pengguna/../../../ADT/Matriks/charMatriks.h:
 lib/Types/Application/pengguna/../../../ADT/Matriks/../../boolean.h:
 lib/Types/Application/pengguna/../../RequestQueue.h:
-lib/Types/Application/pengguna/../../DrafKicauan.h:
+lib/Types/Application/pengguna/../../DrafDinKicauan.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 /usr/include/features.h:
@@ -99,6 +101,8 @@ lib/Types/Application/pengguna/../../DrafKicauan.h:
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+/usr/include/stdlib.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 lib/Types/Application/pengguna/../../Kicauan.h:
 lib/Types/Application/pengguna/../../../ADT/DateTime/datetime.h:
 lib/Types/Application/pengguna/../../../ADT/DateTime/../../boolean.h:

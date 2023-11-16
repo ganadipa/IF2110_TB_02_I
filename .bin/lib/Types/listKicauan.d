@@ -37,7 +37,7 @@
  lib/Types/./ListUser.h lib/Types/./User.h lib/Types/./Profile.h \
  lib/Types/./Photo.h lib/Types/./../ADT/Matriks/charMatriks.h \
  lib/Types/./../ADT/Matriks/../../boolean.h lib/Types/./RequestQueue.h \
- lib/Types/./DrafKicauan.h lib/Types/./Kicauan.h
+ lib/Types/./DrafDinKicauan.h lib/Types/./Kicauan.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -88,5 +88,5 @@ lib/Types/./Photo.h:
 lib/Types/./../ADT/Matriks/charMatriks.h:
 lib/Types/./../ADT/Matriks/../../boolean.h:
 lib/Types/./RequestQueue.h:
-lib/Types/./DrafKicauan.h:
+lib/Types/./DrafDinKicauan.h:
 lib/Types/./Kicauan.h:

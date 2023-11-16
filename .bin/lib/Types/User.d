@@ -30,7 +30,8 @@
  lib/Types/./Profile.h lib/Types/./Photo.h \
  lib/Types/./../ADT/Matriks/charMatriks.h \
  lib/Types/./../ADT/Matriks/../../boolean.h lib/Types/./RequestQueue.h \
- lib/Types/./DrafKicauan.h lib/Types/./Kicauan.h \
+ lib/Types/./DrafDinKicauan.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h lib/Types/./Kicauan.h \
  lib/Types/./../ADT/DateTime/datetime.h \
  lib/Types/./../ADT/DateTime/../../boolean.h \
  lib/Types/./../ADT/DateTime/../String/string.h lib/Types/./ReplyTree.h \
@@ -74,7 +75,9 @@ lib/Types/./Photo.h:
 lib/Types/./../ADT/Matriks/charMatriks.h:
 lib/Types/./../ADT/Matriks/../../boolean.h:
 lib/Types/./RequestQueue.h:
-lib/Types/./DrafKicauan.h:
+lib/Types/./DrafDinKicauan.h:
+/usr/include/stdlib.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 lib/Types/./Kicauan.h:
 lib/Types/./../ADT/DateTime/datetime.h:
 lib/Types/./../ADT/DateTime/../../boolean.h:
