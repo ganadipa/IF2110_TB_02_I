@@ -1,6 +1,7 @@
 #ifndef INISIALISASI_H
 #define INISIALISASI_H
 #include "../Application.h"
+#include "../../../lib.h"
 
 void AppInitialization(Application *app);
 /**
