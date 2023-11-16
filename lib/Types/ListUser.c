@@ -255,15 +255,19 @@ void displayAllReply_helper(ReplyTree rt, ListUser *l, int currDepth, int idx, i
     }
 }
 
-void AddReplyDariConfig(ReplyTree *rt, ListUser lu,int IDKicau, int IDChild, int IDParent, String body, String name, String datetime)
+void AddReplyDariConfig(ReplyTree *rt, ListUser *lu,int IDKicau, int IDChild, int IDParent, String body, String name, String datetime)
 // JANGAN LUPA REPLY TREE DI CREATE DULU, capacity 100 aja.
 {
     // Setting up reply
+
+
     rt->numReplyEff++;
     ReplyAddress ra = newReply(body, IDParent == -1);
     REPLYID(*ra) = IDChild;
-    AUTHORID(*ra) = searchByName(lu, name);
+    AUTHORID(*ra) = searchByName(*lu, name);
     DTIME(*ra) = StringToDateTime(datetime);
+    ISMAIN(*ra) = true;
+
 
     // Setting up listreply
     ListReply *lr = &LISTREP(*rt);
@@ -271,7 +275,13 @@ void AddReplyDariConfig(ReplyTree *rt, ListUser lu,int IDKicau, int IDChild, int
     ADDR(*lr, IDChild) = ra;
 
     // Setting up reply tree
-    insertLastListDin(&LISTDIN(*rt, IDParent), IDChild);
+    if (!ISMAIN(*ra)) {
+        printListDin(LISTDIN(*rt, IDParent));
+        printf("\n");
+        insertLastListDin(&LISTDIN(*rt, IDParent), IDChild);
+        printf("im here\n");
+    }
+    
     ISUSED(*rt, IDChild) = 1;
     PARENT(*rt, IDChild) = IDParent;
     if (rt->availableID <= IDChild) rt->availableID = IDChild+1;

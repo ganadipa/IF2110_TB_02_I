@@ -126,7 +126,7 @@ void displayName(ListUser l, int i);
 
 void displayRequestQueue(RequestQueue *Q, ListUser *l);
 
-void AddReplyDariConfig(ReplyTree *rt, ListUser lu,int IDKicau, int IDBalasan, int IDParent, String body, String name, String DATETIME);
+void AddReplyDariConfig(ReplyTree *rt, ListUser *lu,int IDKicau, int IDBalasan, int IDParent, String body, String name, String DATETIME);
 
 boolean CanSee(ListUser *l, int IDOrang, int LoginID, Graf *pertemanan);
 

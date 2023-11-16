@@ -114,4 +114,6 @@ int countWord(String s);
 
 int stringToInt(String s);
 
+void SplitIntoTwo(String s, String *s1, String *s2);
+
 #endif

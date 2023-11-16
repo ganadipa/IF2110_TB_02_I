@@ -375,3 +375,24 @@ int countWord(String s)
     return k+1;
 
 }
+
+void SplitIntoTwo(String s, String* s1, String* s2) {
+    createEmptyString(s1, 350);
+    createEmptyString(s2, 350);
+    *s1 = getWordAt(s, 0);
+    int k = 0, ptr = 0, i = stringLength(s);
+    while (k < i) {
+        if (s.buffer[ptr] == ' ') {
+            ptr++;
+            break;
+        }
+        k++;
+        ptr++;
+    }
+
+    while (k < i) {
+        addChar(s2, s.buffer[ptr]);
+        ptr++;
+        k++;
+    }
+}

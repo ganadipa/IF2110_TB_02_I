@@ -10,13 +10,9 @@ void AppInitialization(Application *app)
     // print opening
     Opening();
     boolean found = false;
-
-
-
-
+    Setup(app); // Hapus kali udah ada database dari config.
     ReadConfig(app, &found);
     // Inisialisasi app
-    // Setup(app); // Hapus kali udah ada database dari config.
      
 }
 
@@ -57,7 +53,7 @@ void ReadConfig(Application *app, boolean *found) {
     // } while (!*found);
     LoadPengguna(app);
     LoadKicauan(app);
-    // LoadBalasan(app);
+    LoadBalasan(app);
     LoadUtas(app);
     
     printf("File konfigurasi berhasil dimuat! Selamat berkicau!\n\n");
@@ -195,11 +191,23 @@ void LoadBalasan(Application *app){
                 int IDBalasan = stringToInt(currentWordFile);
                 ADVWORDFILE(); /* currentwordfile berisi isi balasannya */
                 String body = currentWordFile;
+                printf("\n");
+                displayString(currentWordFile);
+                printf("\n");
                 ADVWORDFILE(); /* currentwordfile berisi author balasan */
                 String name = currentWordFile;
                 ADVWORDFILE(); /* currentwordfile berisi datetime */
                 String DATETIME = currentWordFile;
-                // AddReplyDariConfig(&app->listKicauan.buffer[idkicau-1].balasan, app->users, idkicau, IDBalasan, body, name, DATETIME); 
+                printf("%d\n", parentid);
+                printf("%d\n", IDBalasan);
+                displayString(body);
+                printf("\n");
+                displayString(name);
+                printf("\n");
+                displayString(DATETIME);
+                printf("\n");
+
+                AddReplyDariConfig(&app->listKicauan.buffer[idkicau-1].balasan, &app->users, idkicau, IDBalasan, parentid, body, name, DATETIME); 
             }
         }
     }

@@ -85,7 +85,7 @@ void Balasan(Application *app, int IDKicau){
         return;
     }
 
-    if (NUMREP(*balasan) == 0 || NUMREP(*balasan) == 0) {
+    if (NUMREP(*balasan) == 0) {
         printf("\nBelum terdapat balasan apapun pada kicauan tersebut. Be the first one to break the silence!\n");
     }
 
