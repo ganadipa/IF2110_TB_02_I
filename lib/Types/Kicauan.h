@@ -42,6 +42,7 @@ void insertAtAnakUtas(Kicauan *k  ,int indeksUtas,String teks,String namaUser, S
 
 void deleteAtAnakUtas (Kicauan *k ,int indeksUtas, String *teks, String *namaUser, String *time);
 
+
 void setKicauID(Kicauan *k, int ID);
 /**
  * I.S. k sudah diinisilisasi

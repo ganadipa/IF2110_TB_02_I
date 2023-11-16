@@ -39,7 +39,8 @@
  lib/Types/Application/balasan/../../../ADT/Matriks/charMatriks.h \
  lib/Types/Application/balasan/../../../ADT/Matriks/../../boolean.h \
  lib/Types/Application/balasan/../../RequestQueue.h \
- lib/Types/Application/balasan/../../DrafKicauan.h \
+ lib/Types/Application/balasan/../../DrafDinKicauan.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  lib/Types/Application/balasan/../../Kicauan.h \
  lib/Types/Application/balasan/../../../ADT/DateTime/datetime.h \
  lib/Types/Application/balasan/../../../ADT/DateTime/../../boolean.h \
@@ -99,7 +100,9 @@ lib/Types/Application/balasan/../../Photo.h:
 lib/Types/Application/balasan/../../../ADT/Matriks/charMatriks.h:
 lib/Types/Application/balasan/../../../ADT/Matriks/../../boolean.h:
 lib/Types/Application/balasan/../../RequestQueue.h:
-lib/Types/Application/balasan/../../DrafKicauan.h:
+lib/Types/Application/balasan/../../DrafDinKicauan.h:
+/usr/include/stdlib.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 lib/Types/Application/balasan/../../Kicauan.h:
 lib/Types/Application/balasan/../../../ADT/DateTime/datetime.h:
 lib/Types/Application/balasan/../../../ADT/DateTime/../../boolean.h:

@@ -6,7 +6,8 @@
 #include "../ADT/String/string.h"
 #include "Profile.h"
 #include "RequestQueue.h"
-#include "DrafKicauan.h"
+#include "DrafDinKicauan.h"
+// #include "DrafKicauan.h"
 
 #define USERCAP 20;
 #define ID_UNDEF -1;
@@ -18,7 +19,8 @@ typedef struct user {
     String password;
     Profile profile;
     RequestQueue friendRequest;
-    DrafKicau drafKicau;
+    // DrafKicau drafKicau;
+    DrafKicauDin drafKicau;
 } User;
 
 #define ID(u) (u).ID

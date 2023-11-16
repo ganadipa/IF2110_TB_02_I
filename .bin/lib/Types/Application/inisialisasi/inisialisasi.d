@@ -39,7 +39,8 @@
  lib/Types/Application/inisialisasi/../../../ADT/Matriks/charMatriks.h \
  lib/Types/Application/inisialisasi/../../../ADT/Matriks/../../boolean.h \
  lib/Types/Application/inisialisasi/../../RequestQueue.h \
- lib/Types/Application/inisialisasi/../../DrafKicauan.h \
+ lib/Types/Application/inisialisasi/../../DrafDinKicauan.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  lib/Types/Application/inisialisasi/../../Kicauan.h \
  lib/Types/Application/inisialisasi/../../../ADT/DateTime/datetime.h \
  lib/Types/Application/inisialisasi/../../../ADT/DateTime/../../boolean.h \
@@ -99,7 +100,9 @@ lib/Types/Application/inisialisasi/../../Photo.h:
 lib/Types/Application/inisialisasi/../../../ADT/Matriks/charMatriks.h:
 lib/Types/Application/inisialisasi/../../../ADT/Matriks/../../boolean.h:
 lib/Types/Application/inisialisasi/../../RequestQueue.h:
-lib/Types/Application/inisialisasi/../../DrafKicauan.h:
+lib/Types/Application/inisialisasi/../../DrafDinKicauan.h:
+/usr/include/stdlib.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 lib/Types/Application/inisialisasi/../../Kicauan.h:
 lib/Types/Application/inisialisasi/../../../ADT/DateTime/datetime.h:
 lib/Types/Application/inisialisasi/../../../ADT/DateTime/../../boolean.h:

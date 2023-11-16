@@ -39,7 +39,8 @@
  lib/Types/Application/perintah/../../../ADT/Matriks/charMatriks.h \
  lib/Types/Application/perintah/../../../ADT/Matriks/../../boolean.h \
  lib/Types/Application/perintah/../../RequestQueue.h \
- lib/Types/Application/perintah/../../DrafKicauan.h \
+ lib/Types/Application/perintah/../../DrafDinKicauan.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  lib/Types/Application/perintah/../../Kicauan.h \
  lib/Types/Application/perintah/../../../ADT/DateTime/datetime.h \
  lib/Types/Application/perintah/../../../ADT/DateTime/../../boolean.h \
@@ -60,9 +61,9 @@
  lib/Types/Application/perintah/../../RequestQueue.h \
  lib/Types/Application/perintah/../balasan/balasan.h \
  lib/Types/Application/perintah/../balasan/../Application.h \
- lib/Types/Application/perintah/../draf-kicauan/draf-kicauan.h \
+ lib/Types/Application/perintah/../draf-kicauan/draf-kicauan-din.h \
  lib/Types/Application.h lib/ADT/../ADT/String/string.h \
- lib/Types/Application/perintah/../draf-kicauan/../../DrafKicauan.h \
+ lib/Types/Application/perintah/../draf-kicauan/../../DrafDinKicauan.h \
  lib/Types/Application/perintah/../draf-kicauan/../../User.h \
  lib/Types/Application/perintah/../inisialisasi/inisialisasi.h \
  lib/Types/Application/perintah/../inisialisasi/../Application.h \
@@ -101,7 +102,7 @@
  app/../lib/./ADT/PColor/pcolor.h app/../lib/./boolean.h \
  app/../lib/./Types/Application/Application.h \
  app/../lib/./Types/Application/balasan/balasan.h \
- app/../lib/./Types/Application/draf-kicauan/draf-kicauan.h \
+ app/../lib/./Types/Application/draf-kicauan/draf-kicauan-din.h \
  app/../lib/./Types/Application/inisialisasi/inisialisasi.h \
  app/../lib/./Types/Application/kicauan/kicauan.h \
  app/../lib/./Types/Application/pengguna/pengguna.h \
@@ -166,7 +167,9 @@ lib/Types/Application/perintah/../../Photo.h:
 lib/Types/Application/perintah/../../../ADT/Matriks/charMatriks.h:
 lib/Types/Application/perintah/../../../ADT/Matriks/../../boolean.h:
 lib/Types/Application/perintah/../../RequestQueue.h:
-lib/Types/Application/perintah/../../DrafKicauan.h:
+lib/Types/Application/perintah/../../DrafDinKicauan.h:
+/usr/include/stdlib.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 lib/Types/Application/perintah/../../Kicauan.h:
 lib/Types/Application/perintah/../../../ADT/DateTime/datetime.h:
 lib/Types/Application/perintah/../../../ADT/DateTime/../../boolean.h:
@@ -187,10 +190,10 @@ lib/Types/Application/perintah/../.././ListUser.h:
 lib/Types/Application/perintah/../../RequestQueue.h:
 lib/Types/Application/perintah/../balasan/balasan.h:
 lib/Types/Application/perintah/../balasan/../Application.h:
-lib/Types/Application/perintah/../draf-kicauan/draf-kicauan.h:
+lib/Types/Application/perintah/../draf-kicauan/draf-kicauan-din.h:
 lib/Types/Application.h:
 lib/ADT/../ADT/String/string.h:
-lib/Types/Application/perintah/../draf-kicauan/../../DrafKicauan.h:
+lib/Types/Application/perintah/../draf-kicauan/../../DrafDinKicauan.h:
 lib/Types/Application/perintah/../draf-kicauan/../../User.h:
 lib/Types/Application/perintah/../inisialisasi/inisialisasi.h:
 lib/Types/Application/perintah/../inisialisasi/../Application.h:
@@ -236,7 +239,7 @@ app/../lib/./ADT/PColor/pcolor.h:
 app/../lib/./boolean.h:
 app/../lib/./Types/Application/Application.h:
 app/../lib/./Types/Application/balasan/balasan.h:
-app/../lib/./Types/Application/draf-kicauan/draf-kicauan.h:
+app/../lib/./Types/Application/draf-kicauan/draf-kicauan-din.h:
 app/../lib/./Types/Application/inisialisasi/inisialisasi.h:
 app/../lib/./Types/Application/kicauan/kicauan.h:
 app/../lib/./Types/Application/pengguna/pengguna.h:
