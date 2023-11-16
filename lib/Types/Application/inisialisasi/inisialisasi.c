@@ -184,22 +184,18 @@ void LoadBalasan(Application *app){
                 int IDBalasan = stringToInt(currentWordFile);
                 ADVWORDFILE(); /* currentwordfile berisi isi balasannya */
                 String body = currentWordFile;
-                printf("\n");
-                displayString(currentWordFile);
-                printf("\n");
                 ADVWORDFILE(); /* currentwordfile berisi author balasan */
                 String name = currentWordFile;
                 ADVWORDFILE(); /* currentwordfile berisi datetime */
                 String DATETIME = currentWordFile;
-                printf("%d\n", parentid);
-                printf("%d\n", IDBalasan);
-                displayString(body);
-                printf("\n");
-                displayString(name);
-                printf("\n");
-                displayString(DATETIME);
-                printf("\n");
-
+                // printf("%d\n", parentid);
+                // printf("%d\n", IDBalasan);
+                // displayString(body);
+                // printf("\n");
+                // displayString(name);
+                // printf("\n");
+                // displayString(DATETIME);
+                // printf("\n");
                 AddReplyDariConfig(&app->listKicauan.buffer[idkicau-1].balasan, &app->users, idkicau, IDBalasan, parentid, body, name, DATETIME); 
             }
         }
@@ -247,4 +243,8 @@ void LoadUtas(Application *app){
         }
     }
     CLOSEFILE();
+}
+
+void LoadDraft(){
+    
 }
