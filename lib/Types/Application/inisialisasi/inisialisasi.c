@@ -245,6 +245,28 @@ void LoadUtas(Application *app){
     CLOSEFILE();
 }
 
-void LoadDraft(){
-    
+void LoadDraft(Application *app){
+    String filename = {"draf.config", 20};
+    int i,j;
+    STARTWORDFILE(filename);
+    if(retvalfile != -1){
+        int banyakpengguna = stringToInt(currentWordFile);
+        for(i=0;i<banyakpengguna;i++){
+            ADVWORDFILE();
+            String username = currentWordFile;
+            username.maxLength -= 2;
+            int userid = searchByName(app->users, username);
+            CreateDraftDin(&app->users.contents[userid].drafKicau);
+            int banyakdraft = currentWordFile.buffer[currentWordFile.maxLength-1];
+            Kicauan kicau;
+            for(j=0;j<banyakdraft;j++){
+                ADVWORDFILE();
+                kicau.text = currentWordFile;
+                ADVWORDFILE();
+                kicau.dateTime = currentWordFile;
+                PushDrafDin(&app->users.contents[userid].drafKicau, kicau);
+            }
+            
+        }
+    }
 }
