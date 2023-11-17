@@ -4,7 +4,9 @@
 void Balas(Application *app, int IDKicau, int IDBalasan) {
     Kicauan *k = &KICAUAN(*app).buffer[IDKicau-1];
     ReplyTree *balasan = &BALASAN(*k);
-
+    int userID = userKicau(*k);
+    Graf *pertemanan = &FRIENDSHIPS(*app);
+    ListUser *lu = &LISTUSER(*app);
     if (!LOGGEDIN(*app)) {
         printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
         return;
@@ -29,7 +31,7 @@ void Balas(Application *app, int IDKicau, int IDBalasan) {
     ListUser *lu = &LISTUSER(*app);
 
 
-    if (ISPRIVATE(PROFILE(ELMT_LISTUSER(*lu, userId)))) {
+    if (CanSee(lu, userID, LOGINID(*app), pertemanan)){
         printf("\nWah akun tersebut merupakan akun privat dan Anda belum berteman dengan akun tersebut! \n");
         return;
     }
@@ -76,7 +78,7 @@ void Balasan(Application *app, int IDKicau){
     ReplyTree *balasan = &BALASAN(*k);
     int userID = userKicau(*k);
     ListUser *lu = &LISTUSER(*app);
-
+    Graf *pertemanan = &FRIENDSHIPS(*app);
     if (IDKicau > KICAUAN(*app).nEff) {
         printf("\nWah tidak terdapat kicauan dengan ID tersebut! Mungkin typo IDKicau ?\n");
         return;
@@ -86,8 +88,8 @@ void Balasan(Application *app, int IDKicau){
         printf("\nBelum terdapat balasan apapun pada kicauan tersebut. Be the first one to break the silence!\n");
     }
 
-    if (ISPRIVATE(PROFILE(ELMT_LISTUSER(*lu, userID)))){
-        printf("\nWah, kicauan tersebut dibuat oleh pengguna dengan akun privat!\n");
+    if (CanSee(lu, userID, LOGINID(*app), pertemanan)){
+        printf("\nWah, kicauan tersebut dibuat oleh pengguna dengan akun privat!\nSilakan berteman terlebih dahulu.");
     }
 
     displayAllReply(*balasan, *lu, LOGINID(*app));

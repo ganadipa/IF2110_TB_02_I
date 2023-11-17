@@ -153,17 +153,17 @@ void displayName(ListUser l, int i)
     displayString(NAME(ELMT_LISTUSER(l, i)));
 }
 
-void displayRequestQueue(RequestQueue Q, ListUser l)
+void displayRequestQueue(RequestQueue *Q, ListUser *l)
 
 {
-    int nb = lengthRequestQueue(Q);
+    int nb = lengthRequestQueue(*Q);
     printf("\nTerdapat %d permintaan pertemanan untuk Anda.\n", nb);
-
-    while (!isEmptyRequestQueue(Q))
+    int nb = lengthRequestQueue(*Q);
+    while (!isEmptyRequestQueue(*Q))
     {
         Friend F;
-        dequeueRequestQueue(&Q, &F);
-        User u = ELMT_LISTUSER(l, ID_REQQUEUE(F));
+        dequeueRequestQueue(Q, &F);
+        User u = ELMT_LISTUSER(*l, ID_REQQUEUE(F));
         printf("\n | Nama: ");
         displayString(NAME(u));
         printf("\n | Jumlah teman: %d\n", FRIEND_COUNT(u));
