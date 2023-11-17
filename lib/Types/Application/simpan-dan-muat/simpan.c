@@ -72,7 +72,9 @@ void SavingFileDraf(String* path, ListUser user){
     }
     fprintf(fileDraf, "%d\n", count); //print berapa banyak yang punya draf;
     for(i = 0; i < user.length; ++i){
-        fprintf(fileDraf, "%s %d\n", user.contents[i].name.buffer, LengthDraf(DRAFKICAU(user.contents[i])));
+        if(!isDrafDinEmpty(DRAFKICAU(user.contents[i]))){
+            fprintf(fileDraf, "%s %d\n", user.contents[i].name.buffer, LengthDraf(DRAFKICAU(user.contents[i])));
+        }
         for(j = 0; j < LengthDraf(DRAFKICAU(user.contents[i])); ++j){
             AddressDraf temp = ADDR_TOPDRAF(DRAFKICAU(user.contents[i]));
             fprintf(fileDraf, "%s\n", teksKicau(INFODRAF(temp)).buffer); 
@@ -92,13 +94,11 @@ void SavingFileBalasan(String *path, ListKicau kicauan){
     
 }
 
-
 void SavingFile(String* path, Application *app){
     SavingFilePengguna(path, app->users);
     SavingFileKicauan(path, app->listKicauan, app->users);
     SavingFileDraf(path, app->users);
 }
-
 
 void SavingFolder(String *path, Application *app) {
 
