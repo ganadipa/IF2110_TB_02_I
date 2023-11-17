@@ -57,6 +57,34 @@ void SavingFileKicauan(String* path, ListKicau kicauan, ListUser user){
     fclose(fileKicauan);
 }
 
+void SavingFileDraf(String* path, ListUser user){
+    const char* draf ="draf.config"; 
+    String Dir; 
+    createEmptyString(&Dir, 100); 
+    snprintf(Dir.buffer, 1000, "%s/%s", path->buffer, draf);
+    FILE* fileDraf = fopen(Dir.buffer, "w"); 
+    int i, j; 
+    int count = 0;
+    for(i = 0; i < user.length; ++i){
+        if(!isDrafDinEmpty(DRAFKICAU(user.contents[i]))){
+            count++;
+        }
+    }
+    fprintf(fileDraf, "%d\n", count); //print berapa banyak yang punya draf;
+    for(i = 0; i < user.length; ++i){
+        if(!isDrafDinEmpty(DRAFKICAU(user.contents[i]))){
+            fprintf(fileDraf, "%s %d\n", user.contents[i].name.buffer, LengthDraf(DRAFKICAU(user.contents[i])));
+        }
+        for(j = 0; j < LengthDraf(DRAFKICAU(user.contents[i])); ++j){
+            AddressDraf temp = ADDR_TOPDRAF(DRAFKICAU(user.contents[i]));
+            fprintf(fileDraf, "%s\n", teksKicau(INFODRAF(temp)).buffer); 
+            fprintf(fileDraf, "%s\n", dateTimeKicau(INFODRAF(temp)).buffer);
+        }
+    }
+
+    fclose(fileDraf);
+}
+
 void SavingFileBalasan(String *path, ListKicau kicauan){
     const char* reply = "balasan.config"; 
     String Dir; 
@@ -66,12 +94,11 @@ void SavingFileBalasan(String *path, ListKicau kicauan){
     
 }
 
-
 void SavingFile(String* path, Application *app){
     SavingFilePengguna(path, app->users);
     SavingFileKicauan(path, app->listKicauan, app->users);
+    SavingFileDraf(path, app->users);
 }
-
 
 void SavingFolder(String *path, Application *app) {
 
