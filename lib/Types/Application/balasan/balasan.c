@@ -28,7 +28,6 @@ void Balas(Application *app, int IDKicau, int IDBalasan) {
 
 
     int userId = userKicau(KICAUAN(*app).buffer[IDKicau]);
-    ListUser *lu = &LISTUSER(*app);
 
 
     if (CanSee(lu, userID, LOGINID(*app), pertemanan)){

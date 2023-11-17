@@ -158,7 +158,6 @@ void displayRequestQueue(RequestQueue *Q, ListUser *l)
 {
     int nb = lengthRequestQueue(*Q);
     printf("\nTerdapat %d permintaan pertemanan untuk Anda.\n", nb);
-    int nb = lengthRequestQueue(*Q);
     while (!isEmptyRequestQueue(*Q))
     {
         Friend F;
