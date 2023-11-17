@@ -37,4 +37,6 @@ void PushDrafDin(DrafKicauDin *s, Kicauan kicau);
 
 void PopDrafDin(DrafKicauDin *s, Kicauan* kicau); 
 
+int LengthDraf(DrafKicauDin s); 
+
 #endif 

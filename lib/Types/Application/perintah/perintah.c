@@ -21,9 +21,9 @@ void handleCommand(Application* app, String command, boolean *finish)
 
     if (compareString(firstWord, "DAFTAR")){
         Daftar(app);
-    } else if (compareString(firstWord, "MASUK")) {
+    } else if (compareString(firstWord, "MASUK")){
         Masuk(app);
-    } else if (compareString(firstWord, "KELUAR")) {
+    } else if (compareString(firstWord, "KELUAR")){
         Keluar(app);
     } else if (compareString(firstWord, "DEVTOOLS")) {
         /**
@@ -129,14 +129,10 @@ void handleCommand(Application* app, String command, boolean *finish)
         }
         int IDutas = stringToInt(secondWord);
         display_listUtas(app, IDutas);
-    }
-
-    
-    else {
+    }else {
         printf("\nTidak ada perintah ");
         displayString(command);
         printf(". Baca dokumentasi (Spesifikasi) untuk melihat seluruh perintah.\n");  
     }
-
 }
 

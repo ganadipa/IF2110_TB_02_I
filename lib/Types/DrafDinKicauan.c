@@ -52,3 +52,15 @@ void PopDrafDin(DrafKicauDin *s, Kicauan* kicau){
     }
     free(draf);
 }
+
+
+int LengthDraf(DrafKicauDin s){
+    int count = 0; 
+    AddressDraf temp = ADDR_TOPDRAF(s); 
+    while(temp != NULL){
+        ++count; 
+        temp = NEXTDRAF(temp);
+    }
+    return count;
+    
+}
