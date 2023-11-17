@@ -18,12 +18,14 @@ void IgnoreNewLinesFile();
 
 void IgnoreNullFile();
 
+void IgnoreOnes();
+
 void IgnoreBlanksFile();
 /* Mengabaikan satu atau beberapa BLANK
    I.S. : currentChar sembarang
    F.S. : currentChar ≠ BLANK atau currentChar = MARK */
 
-void STARTWORDFILE();
+void STARTWORDFILE(String filename);
 /* I.S. : currentChar sembarang
    F.S. : EndWord = true, dan currentChar = MARK;
           atau EndWord = false, currentWord adalah kata yang sudah diakuisisi,

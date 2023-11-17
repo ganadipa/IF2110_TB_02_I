@@ -9,8 +9,11 @@ void handleCommand(Application* app, String command, boolean *finish)
     int numword = countWord(command);
     if (numword == 0) return;
 
+    String firstWord;
+    String rest;
+    SplitIntoTwo(command, &firstWord, &rest);
 
-    String firstWord = getWordAt(command, 0);
+
     String secondWord;
     String thirdWord;
 
@@ -35,7 +38,8 @@ void handleCommand(Application* app, String command, boolean *finish)
     } else if (compareString(firstWord, "GANTI_PROFIL")) {
         GantiProfil(app);
     } else if (compareString(firstWord, "LIHAT_PROFIL")) {
-        LihatProfil(app, secondWord);
+        displayString(rest);
+        LihatProfil(app, rest);
     } else if (compareString(firstWord, "ATUR_JENIS_AKUN")) {
         AturJenisAkun(app);
     } else if (compareString(firstWord, "UBAH_FOTO_PROFIL")) {

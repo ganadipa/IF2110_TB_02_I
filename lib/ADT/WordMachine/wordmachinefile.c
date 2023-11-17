@@ -13,7 +13,11 @@ void IgnoreNewLinesFile()
 /* Mengabaikan satu atau beberapa BLANK
    I.S. : currentChar sembarang
    F.S. : currentChar ≠ '\n'*/
-
+void IgnoreOnes(){
+    while(currentCharFile == '\x01' && retvalfile != -1){
+        ADVCHARFILE();
+    }
+}
 void IgnoreNullFile(){
     while (currentCharFile == '\0' && retvalfile != -1){
         ADVCHARFILE();
@@ -42,6 +46,7 @@ void STARTWORDFILE(String filename){
             CopyWordFILE();
             // IgnoreNewLinesFile();
             ADVCHARFILE();
+            ADVCHARFILE();
         }
     }
 }
@@ -51,15 +56,22 @@ void STARTWORDFILE(String filename){
           currentChar karakter pertama sesudah karakter terakhir kata */
 
 void ADVWORDFILE(){
+    IgnoreOnes();
     CopyWordFILE();
+    ADVCHARFILE();
     ADVCHARFILE();
 }
 void ADVWORDFILE2(){
+    IgnoreOnes();
     CopyWordFILE2();
     ADVCHARFILE();
+    if(currentCharFile == '\n'){
+        ADVCHARFILE();
+    }
 }
 void ADVFILEPHOTO(){
     CopyFILEPhoto();
+    ADVCHARFILE();
     ADVCHARFILE();
 }
 /* I.S. : currentChar adalah karakter pertama kata yang akan diakuisisi
@@ -69,12 +81,12 @@ void ADVFILEPHOTO(){
    Proses : Akuisisi kata menggunakan procedure SalinWord */
 
 void CopyWordFILE(){
-     if (currentCharFile == '\n'){
+     if (currentCharFile == '\n' || currentCharFile == '\r'){
         currentWordFile.buffer[0] = '\n';
         currentWordFile.maxLength = 1;
     } else{
         int i = 0;
-        while (currentCharFile != MARK_LAST_FILE && retvalfile != -1){
+        while (currentCharFile != MARK_LAST_FILE && retvalfile != -1 && currentCharFile != '\r'){
             currentWordFile.buffer[i] = currentCharFile;
             currentWordFile.maxLength = i + 1;
             i++;
@@ -91,7 +103,7 @@ void CopyWordFILE(){
 
 void CopyWordFILE2(){
     int i = 0;
-    while (currentCharFile != BLANK && currentCharFile != MARK_LAST_FILE){
+    while (currentCharFile != BLANK && currentCharFile != MARK_LAST_FILE && currentCharFile != '\r'){
         currentWordFile.buffer[i] = currentCharFile;
         currentWordFile.maxLength = i + 1;
         i++;
@@ -101,7 +113,7 @@ void CopyWordFILE2(){
 }
 void CopyFILEPhoto(){
     int i = 0;
-    while (currentCharFile != MARK_LAST_FILE && currentCharFile != '\n'){
+    while (currentCharFile != MARK_LAST_FILE && currentCharFile != '\n' && currentCharFile != '\r'){
         currentWordFile.buffer[i] = currentCharFile;
         currentWordFile.maxLength = i + 1;
         i++;

@@ -3,6 +3,7 @@
 
 void TambahTeman(Application *app)
 {
+    Graf *friendships = &FRIENDSHIPS(*app);
     if (!LOGGEDIN(*app)) {
         printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
         return;
@@ -28,6 +29,11 @@ void TambahTeman(Application *app)
         return;
     } else if (idTeman == LOGINID(*app))  {
         printf("\nTidak bisa meminta pertemanan kepada diri sendiri.\n");
+        return;
+    }
+    if (CONNECTED(*friendships, idTeman, LOGINID(*app)))
+    {
+        printf("Anda sudah berteman kepada dia.");
         return;
     }
 
@@ -94,7 +100,7 @@ void DaftarPermintaanPertemanan(Application app)
 {
     ListUser l = LISTUSER(app);
     RequestQueue q = FRIEND_REQUEST(ELMT_LISTUSER(l, LOGINID(app)));
-    displayRequestQueue(q, LISTUSER(app));
+    displayRequestQueue(&q, &LISTUSER(app));
 }
 
 void SetujuiPertemanan(Application *app)
@@ -135,6 +141,7 @@ void SetujuiPertemanan(Application *app)
 
     if (compareString(ans, "TIDAK")) {
         printf("\nPermintaan pertemanan dari ");
+        displayName(*l, idTeman);
         printf(" telah ditolak.\n");
     } else if (compareString(ans, "YA")) {
         addEdge(&FRIENDSHIPS(*app), idTeman, LOGINID(*app));

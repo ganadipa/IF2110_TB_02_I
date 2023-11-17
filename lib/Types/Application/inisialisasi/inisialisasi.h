@@ -1,6 +1,7 @@
 #ifndef INISIALISASI_H
 #define INISIALISASI_H
 #include "../Application.h"
+#include "../../../lib.h"
 
 void AppInitialization(Application *app);
 /**
@@ -14,4 +15,11 @@ void Setup(Application *app);
 
 void ReadConfig(Application *app, boolean *found);
 
+void LoadPengguna(Application *app);
+
+void LoadKicauan(Application *app);
+
+void LoadBalasan(Application *app);
+
+void LoadUtas(Application *app);
 #endif
