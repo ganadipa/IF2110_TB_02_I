@@ -132,11 +132,6 @@ void CopyFILEPhoto(){
     // printf("%c", currentWordFile.buffer[10]);
 }
 
-void TulisFile(FILE* filename, String kata){
-    int i;
-    int len = kata.maxLength;
-    for(i=0;i<len;i++){
-        fprintf(filename, kata.buffer[i]);
-    }
-    fprintf(filename, "\n");
+void deleteRest(String *string){
+    string->buffer[string->maxLength] = '\0';
 }

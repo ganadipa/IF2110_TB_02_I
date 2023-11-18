@@ -261,6 +261,9 @@ void LoadUtas(Application *app){
                 p = node;
             }
         }
+        // printf("%s\n", currentWordFile.buffer);
+        // deleteRest(&currentWordFile);
+        // printf("%s\n", currentWordFile.buffer);
     }
     CLOSEFILE();
 }

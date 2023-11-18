@@ -49,6 +49,5 @@ void CopyWordFILE();
 void CopyWordFILE2();
 void CopyFILEPhoto();
 
-void TulisFile(FILE* filename, String kata);
-
+void deleteRest(String *string);
 #endif
