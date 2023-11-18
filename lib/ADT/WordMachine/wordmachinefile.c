@@ -45,8 +45,11 @@ void STARTWORDFILE(String filename){
             EndFile = false;
             CopyWordFILE();
             // IgnoreNewLinesFile();
-            if (currentCharFile == '\r') ADVCHARFILE();
+            if (currentCharFile == '\r'){
+                ADVCHARFILE();
+            }
             ADVCHARFILE();
+
         }
     }
 }
@@ -58,21 +61,26 @@ void STARTWORDFILE(String filename){
 void ADVWORDFILE(){
     IgnoreOnes();
     CopyWordFILE();
-    displayString(currentWordFile);
-    if (currentCharFile == '\r') ADVCHARFILE();
+    if (currentCharFile == '\r'){
+        ADVCHARFILE();
+    }
     ADVCHARFILE();
 }
 void ADVWORDFILE2(){
     IgnoreOnes();
     CopyWordFILE2();
-    if (currentCharFile == '\r') ADVCHARFILE();
-    if(currentCharFile == '\n'){
+    ADVCHARFILE();
+    if (currentCharFile == '\r'){
         ADVCHARFILE();
     }
+    ADVCHARFILE();
+
 }
 void ADVFILEPHOTO(){
     CopyFILEPhoto();
-    if (currentCharFile == '\r') ADVCHARFILE();
+    if (currentCharFile == '\r'){
+        ADVCHARFILE();
+    }
     ADVCHARFILE();
 }
 /* I.S. : currentChar adalah karakter pertama kata yang akan diakuisisi
@@ -123,4 +131,13 @@ void CopyFILEPhoto(){
     currentWordFile.buffer[i] = '\n';
     currentWordFile.maxLength += 1;
     // printf("%c", currentWordFile.buffer[10]);
+}
+
+void TulisFile(FILE* filename, String kata){
+    int i;
+    int len = kata.maxLength;
+    for(i=0;i<len;i++){
+        fprintf(filename, kata.buffer[i]);
+    }
+    fprintf(filename, "\n");
 }
