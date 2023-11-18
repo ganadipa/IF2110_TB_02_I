@@ -64,33 +64,50 @@ void LoadPengguna(Application *app){
         if(app->users.length > 0){
             for (i=0; i < app->users.length; i++){
                 createRequestQueue(&app->users.contents[i].friendRequest);
+                displayString(currentWordFile);
                 ADVWORDFILE();
+                printf("\n");
                 app->users.contents[i].ID = i;
                 app->users.contents[i].name.maxLength = 20;
                 addString(&(app->users.contents[i].name), currentWordFile);
+                displayString(currentWordFile);
+                printf("\n");
                 ADVWORDFILE();
                 app->users.contents[i].password.maxLength = 20;
                 addString(&app->users.contents[i].password, currentWordFile);
+                displayString(currentWordFile);
                 ADVWORDFILE();
+                printf("\n");
                 app->users.contents[i].profile.bio.maxLength = 135;
                 addString(&app->users.contents[i].profile.bio, currentWordFile);
+                displayString(currentWordFile);
                 ADVWORDFILE();
+                printf("\n");
                 app->users.contents[i].profile.phoneNumber.maxLength = stringLength(currentWordFile);
                 addString(&app->users.contents[i].profile.phoneNumber, currentWordFile);
+                displayString(currentWordFile);
                 ADVWORDFILE();
+                printf("\n");
                 app->users.contents[i].profile.weton.maxLength = stringLength(currentWordFile);
                 addString(&app->users.contents[i].profile.weton, currentWordFile);
+                displayString(currentWordFile);
                 ADVWORDFILE();
+                printf("\n");
                 app->users.contents[i].profile.isPrivate = (currentWordFile.buffer[1] == 'r');
+                printf("now accessing photo! %c\n", currentCharFile);
                 for (j=0; j<5; j++){
                     ADVFILEPHOTO();
                     replaceString(&photoString, j*20, (j*20)+21, currentWordFile);
                 }
                 readPhotoFile(&(app->users.contents[i].profile.photo), photoString);
-                
+                printf("done readphotofile...");
             }
+            printf("%d", currentCharFile);
+
+
             /* disini currentwordfile masih baris terakhir dari 
             foto profile */
+            printf("start initiating friendships...\n");
             Graf friendships;
             CreateGraph(&friendships);
             friendships.adjacencyMatrix.colEff = app->users.length;

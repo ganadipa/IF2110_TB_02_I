@@ -159,7 +159,7 @@ boolean isListStatikEqual(ListStatik l1, ListStatik l2){
 /* ***  Perhatian : List boleh kosong!! *** */
 int indexOfListStatik(ListStatik l, ElType val){
     int i = IDX_MIN;
-    for (i; i < listStatikLength(l); i++){
+    for (i = IDX_MIN; i < listStatikLength(l); i++){
         if (ELMT_STATIK(l,i)==val){
             return i;
         }
@@ -177,7 +177,7 @@ void extremeValuesStatik(ListStatik l, ElType *max, ElType *min){
     int i = IDX_MIN;
     terbesar = ELMT_STATIK(l,0);
     terkecil = ELMT_STATIK(l,0);
-    for (i; i < listStatikLength(l);i++){
+    for (i = IDX_MIN; i < listStatikLength(l);i++){
         if (ELMT_STATIK(l,i)>terbesar){
             terbesar = ELMT_STATIK(l, i);
         }
@@ -195,8 +195,9 @@ void extremeValuesStatik(ListStatik l, ElType *max, ElType *min){
 /* ********** MENAMBAH ELEMEN ********** */
 /* *** Menambahkan elemen terakhir *** */
 void insertFirstStatik(ListStatik *l, ElType val){
-    int i = listStatikLength(*l) - 1;
-    for (i; i >= IDX_MIN;i--){
+    int len = listStatikLength(*l) - 1;
+    int i;
+    for (i = len; i >= IDX_MIN;i--){
         ELMT_STATIK(*l, i + 1) = ELMT_STATIK(*l, i);
     }
     ELMT_STATIK(*l, 0) = val;
@@ -206,8 +207,9 @@ void insertFirstStatik(ListStatik *l, ElType val){
 /* F.S. val adalah elemen pertama l yang baru */
 /* *** Menambahkan elemen pada index tertentu *** */
 void insertAtStatik(ListStatik *l, ElType val, IdxType idx){
-    int i = listStatikLength(*l) - 1;
-    for (i; i >= idx;i--){
+    int len = listStatikLength(*l) - 1;
+    int i;
+    for (i = len; i >= idx;i--){
         ELMT_STATIK(*l, i + 1) = ELMT_STATIK(*l, i);
     }
     ELMT_STATIK(*l, idx) = val;
@@ -229,7 +231,7 @@ void insertLastStatik(ListStatik *l, ElType val){
 void deleteFirstStatik(ListStatik *l, ElType *val){
     *val = ELMT_STATIK(*l, IDX_MIN);
     int i = IDX_MIN;
-    for (i; i < getLastIdxStatik(*l);i++){
+    for (i = IDX_MIN; i < getLastIdxStatik(*l);i++){
         ELMT_STATIK(*l, i) = ELMT_STATIK(*l, i + 1);
     }
     ELMT_STATIK(*l, getLastIdxStatik(*l)) = MARK;
@@ -243,7 +245,7 @@ void deleteFirstStatik(ListStatik *l, ElType *val){
 void deleteAtStatik(ListStatik *l, ElType *val, IdxType idx){
     *val = ELMT_STATIK(*l, idx);
     int i = idx;
-    for (i; i < getLastIdxStatik(*l);i++){
+    for (i = idx; i < getLastIdxStatik(*l);i++){
         ELMT_STATIK(*l, i) = ELMT_STATIK(*l, i + 1);
     }
     ELMT_STATIK(*l, getLastIdxStatik(*l)) = MARK;

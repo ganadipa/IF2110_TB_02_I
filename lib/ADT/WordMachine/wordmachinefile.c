@@ -45,7 +45,7 @@ void STARTWORDFILE(String filename){
             EndFile = false;
             CopyWordFILE();
             // IgnoreNewLinesFile();
-            ADVCHARFILE();
+            if (currentCharFile == '\r') ADVCHARFILE();
             ADVCHARFILE();
         }
     }
@@ -56,15 +56,23 @@ void STARTWORDFILE(String filename){
           currentChar karakter pertama sesudah karakter terakhir kata */
 
 void ADVWORDFILE(){
+    printf("here: %c", currentCharFile);
     IgnoreOnes();
+    printf("here: %c", currentCharFile);
     CopyWordFILE();
-    ADVCHARFILE();
+    printf("here: ");
+    displayString(currentWordFile);
+    if (currentCharFile == '\r') ADVCHARFILE();
     ADVCHARFILE();
 }
 void ADVWORDFILE2(){
+    printf("hello\n");
     IgnoreOnes();
+    printf("hello1\n");
     CopyWordFILE2();
-    ADVCHARFILE();
+    printf("hello2\n");
+    if (currentCharFile == '\r') ADVCHARFILE();
+    printf("hello3\n");
     if(currentCharFile == '\n'){
         ADVCHARFILE();
     }
@@ -103,12 +111,14 @@ void CopyWordFILE(){
 
 void CopyWordFILE2(){
     int i = 0;
+    printf("before: %c\n", currentCharFile);
     while (currentCharFile != BLANK && currentCharFile != MARK_LAST_FILE && currentCharFile != '\r'){
         currentWordFile.buffer[i] = currentCharFile;
         currentWordFile.maxLength = i + 1;
         i++;
         ADVCHARFILE();
     }
+    printf("copywordfile2 done\n");
     // printf("%c ", currentWordFile.buffer[0]);
 }
 void CopyFILEPhoto(){
