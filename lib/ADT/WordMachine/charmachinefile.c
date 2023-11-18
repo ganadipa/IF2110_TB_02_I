@@ -35,7 +35,6 @@ void ADVCHARFILE()
 {
 
     retvalfile = fscanf(pitafile, "%c", &currentCharFile);
-    printf("curr: %d %c\n", currentCharFile, currentCharFile);
 
     EOP_FILE = (currentCharFile == MARK_LAST_FILE);
 }

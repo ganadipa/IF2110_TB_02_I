@@ -39,6 +39,8 @@ int stringToInt(String s){
 
 
     for (i = length-1; i >= (0 + isneg); i--){
+        if (s.buffer[i] - '0' < 0 || s.buffer[i]- '0' >= 9) break;
+
         k += (s.buffer[i] - '0') * j;
         j *= 10;
     }

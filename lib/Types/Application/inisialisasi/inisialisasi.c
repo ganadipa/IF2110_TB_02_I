@@ -17,14 +17,13 @@ void AppInitialization(Application *app)
 
     boolean found = false;
     // Setup(app); // Hapus kali udah ada database dari config.
-    printf("\n%d\n", LOGGEDIN(*app));
+
     ReadConfig(app, &found);
 
     LOGGEDIN(*app) = false;
     LOGINID(*app) = ID_UNDEF;
     JUMLAHUTAS(*app) = 0;
     // Inisialisasi app
-    printf("\n%d\n", LOGGEDIN(*app));
      
 }
 
@@ -76,43 +75,29 @@ void LoadPengguna(Application *app){
         if(app->users.length > 0){
             for (i=0; i < app->users.length; i++){
                 createRequestQueue(&app->users.contents[i].friendRequest);
-                displayString(currentWordFile);
                 ADVWORDFILE();
-                printf("\n");
                 app->users.contents[i].ID = i;
                 app->users.contents[i].name.maxLength = 20;
                 addString(&(app->users.contents[i].name), currentWordFile);
-                displayString(currentWordFile);
-                printf("\n");
                 ADVWORDFILE();
                 app->users.contents[i].password.maxLength = 20;
                 addString(&app->users.contents[i].password, currentWordFile);
-                displayString(currentWordFile);
                 ADVWORDFILE();
-                printf("\n");
                 app->users.contents[i].profile.bio.maxLength = 135;
                 addString(&app->users.contents[i].profile.bio, currentWordFile);
-                displayString(currentWordFile);
                 ADVWORDFILE();
-                printf("\n");
                 app->users.contents[i].profile.phoneNumber.maxLength = stringLength(currentWordFile);
                 addString(&app->users.contents[i].profile.phoneNumber, currentWordFile);
-                displayString(currentWordFile);
                 ADVWORDFILE();
-                printf("\n");
                 app->users.contents[i].profile.weton.maxLength = stringLength(currentWordFile);
                 addString(&app->users.contents[i].profile.weton, currentWordFile);
-                displayString(currentWordFile);
                 ADVWORDFILE();
-                printf("\n");
                 app->users.contents[i].profile.isPrivate = (currentWordFile.buffer[1] == 'r');
-                printf("now accessing photo! %c\n", currentCharFile);
                 for (j=0; j<5; j++){
                     ADVFILEPHOTO();
                     replaceString(&photoString, j*20, (j*20)+21, currentWordFile);
                 }
                 readPhotoFile(&(app->users.contents[i].profile.photo), photoString);
-                printf("done readphotofile...");
             }
             printf("%d", currentCharFile);
 
@@ -211,15 +196,19 @@ void LoadBalasan(Application *app){
                 ADVWORDFILE2(); /* currenwordfile berisi parent id*/
                 int parentid = stringToInt(currentWordFile);
                 ADVWORDFILE(); /* currentwordfile berisi id balasan */
+                printf("\npsuhing to idbalasan... \n");
+                displayString(currentWordFile);
+                printf("then converting...");
                 int IDBalasan = stringToInt(currentWordFile);
+                printf("%d\n", IDBalasan);
                 ADVWORDFILE(); /* currentwordfile berisi isi balasannya */
                 String body = currentWordFile;
                 ADVWORDFILE(); /* currentwordfile berisi author balasan */
                 String name = currentWordFile;
                 ADVWORDFILE(); /* currentwordfile berisi datetime */
                 String DATETIME = currentWordFile;
-                printf("%d\n", parentid);
-                printf("%d\n", IDBalasan);
+                printf("\nparent id: %d", parentid);
+                printf("\nidbalasan: %d\n", IDBalasan);
                 displayString(body);
                 printf("\n");
                 displayString(name);

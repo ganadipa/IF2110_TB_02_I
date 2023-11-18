@@ -173,6 +173,7 @@ void displayRequestQueue(RequestQueue *Q, ListUser *l)
 void displayReply(ReplyTree rt, ReplyAddress addr, ListUser *l, int depth, int LOGINID)
 {
     int i = getIdxInReplyTree(rt, addr);
+    printf("%d\n", i);
     if (!ISUSED(rt, i)) return;
 
 
@@ -224,9 +225,10 @@ void displayAllReply(ReplyTree rt, ListUser l, int LOGINID)
     int length = LISTREP(rt).neff;
     int i;
     for (i = 0; i < length; i++) {
+        if (!ISUSED(rt, i) ) continue;
         Reply r = (*ADDR(LISTREP(rt), i));
         
-        if (ISMAIN(r) && ISUSED(rt, i)) {
+        if (ISMAIN(r) ) {
             displayAllReply_helper(rt, &l, 0, i, LOGINID);
         }
         
@@ -258,14 +260,12 @@ void AddReplyDariConfig(ReplyTree *rt, ListUser *lu,int IDKicau, int IDChild, in
 // JANGAN LUPA REPLY TREE DI CREATE DULU, capacity 100 aja.
 {
     // Setting up reply
-
-
-    rt->numReplyEff++;
     ReplyAddress ra = newReply(body, IDParent == -1);
     REPLYID(*ra) = IDChild;
     AUTHORID(*ra) = searchByName(*lu, name);
     DTIME(*ra) = StringToDateTime(datetime);
-    ISMAIN(*ra) = true;
+
+    printf("curr: %d", rt-> numReplyEff);
 
 
     // Setting up listreply
@@ -274,6 +274,7 @@ void AddReplyDariConfig(ReplyTree *rt, ListUser *lu,int IDKicau, int IDChild, in
     ADDR(*lr, IDChild) = ra;
 
     // Setting up reply tree
+
     if (!ISMAIN(*ra)) {
         printListDin(LISTDIN(*rt, IDParent));
         printf("\n");
@@ -290,11 +291,14 @@ void AddReplyDariConfig(ReplyTree *rt, ListUser *lu,int IDKicau, int IDChild, in
 
 boolean CanSee(ListUser* l, int IDOrang, int LoginID, Graf* pertemanan)
 {
-    if (ISPRIVATE(PROFILE(ELMT_LISTUSER(*l, IDOrang)))) {
-        if (LoginID == IDOrang) return true;
-        if (CONNECTED(*pertemanan, IDOrang, LoginID)) return true;
+    boolean check = true;
+    printf("%d %d %d %d", LoginID , IDOrang,CONNECTED(*pertemanan, IDOrang, LoginID ), ISPRIVATE(PROFILE(ELMT_LISTUSER(*l, IDOrang))));
 
-        return false;
+    if (ISPRIVATE(PROFILE(ELMT_LISTUSER(*l, IDOrang)))) {
+        if (LoginID == IDOrang || CONNECTED(*pertemanan, IDOrang, LoginID)) check = true;
+
+        else check = false;
     }
-    return true;
+    
+    return check;
 }
