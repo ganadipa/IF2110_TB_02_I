@@ -10,7 +10,7 @@ CODEDIRS = app lib/ADT/* lib/Types Function lib/Types/Application/* lib/Types/Ap
 INCDIRS = app lib/ADT lib/ADT/* lib/Types Function lib/Types/Application/* lib/Types/Application
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -std=c11 $(DEPFLAGS) $(foreach D, $(INCDIRS), -I$(D)) -Wno-unused-variable -Wno-unused-parameter -Wno-unused-value -Wno-unused-but-set-variable
+CFLAGS = -Wall -std=c11 $(DEPFLAGS) $(foreach D, $(INCDIRS), -I$(D))
 DEPFLAGS = -MP -MD
 
 CFILES = $(foreach D, $(CODEDIRS), $(wildcard $(D)/*.c))
