@@ -85,6 +85,30 @@ void SavingFileDraf(String* path, ListUser user){
     fclose(fileDraf);
 }
 
+void SavingFileUtas(String *path, ListKicau listKicau, Application *Utas){
+    const char* utas ="utas.config"; 
+    String Dir; 
+    createEmptyString(&Dir, 100); 
+    snprintf(Dir.buffer, 1000, "%s/%s", path->buffer, utas);
+    FILE* fileUtas = fopen(Dir.buffer, "w"); 
+    int i, j; 
+    fprintf(fileUtas, "%d\n", JUMLAHUTAS(*Utas));
+    for(i = 0; i < NEFF(listKicau); i++){
+        if(LEN_ANAKUTAS(ELMT(listKicau, i)) != 0){
+            AddressUtas utas = FIRST(ELMT(listKicau, i));
+            fprintf(fileUtas, "%d\n", IDKicau(ELMT(listKicau, i)));
+            fprintf(fileUtas, "%d\n", LEN_ANAKUTAS(ELMT(listKicau, i)));
+            for(j = 0; j < LEN_ANAKUTAS(ELMT(listKicau, i)); j++){
+                fprintf(fileUtas, "%s\n", TEKSDIUTAS(utas).buffer); 
+                fprintf(fileUtas, "%s\n", NAMADIUTAS(utas).buffer); 
+                fprintf(fileUtas, "%s\n", DATETIMEUTAS(utas).buffer);
+                utas = NEXT_Linked(utas);
+            }
+        }
+    }
+    fclose(fileUtas);
+}
+
 void SavingFileBalasan(String *path, ListKicau kicauan){
     const char* reply = "balasan.config"; 
     String Dir; 
@@ -98,6 +122,7 @@ void SavingFile(String* path, Application *app){
     SavingFilePengguna(path, app->users);
     SavingFileKicauan(path, app->listKicauan, app->users);
     SavingFileDraf(path, app->users);
+    SavingFileUtas(path, app->listKicauan, app);
 }
 
 void SavingFolder(String *path, Application *app) {
