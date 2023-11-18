@@ -285,7 +285,7 @@ void AddReplyDariConfig(ReplyTree *rt, ListUser *lu,int IDKicau, int IDChild, in
     ISUSED(*rt, IDChild) = 1;
     PARENT(*rt, IDChild) = IDParent;
     if (rt->availableID <= IDChild) rt->availableID = IDChild+1;
-    if (rt->availableIDX <= IDChild) rt->availableIDX = IDChild + 1;
+    if (rt->availableIDX <= IDChild) rt->availableIDX = IDChild+1;
 
 }
 

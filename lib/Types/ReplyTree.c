@@ -176,6 +176,7 @@ int getIdxFromReplyId(ReplyTree rt, int replyID)
     int i;
     
     for (i =0; i < rt.numReplyEff; i++) {
+        if (!ISUSED(rt, i)) continue;
         if (REPLYID(*ADDR(LISTREP(rt), i)) == replyID) return i;
     }
 
