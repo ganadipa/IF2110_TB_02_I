@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "./listdinamik.h"
+#include "listdinamik.h"
 
 /* ********** KONSTRUKTOR ********** */
 /* Konstruktor : create list kosong  */
@@ -8,7 +8,7 @@ void CreateListDin(ListDin *l, int capacity)
 /* I.S. l sembarang, capacity > 0 */
 /* F.S. Terbentuk list dinamis l kosong dengan kapasitas capacity */
 {
-    BUFFER(*l) = (int*)malloc((capacity) * sizeof(int));
+    BUFFER(*l) = (int*) malloc((capacity) * sizeof(int));
     NEFF(*l) = 0;
     CAPACITY (*l) = capacity;
 }
@@ -355,11 +355,9 @@ void insertLastListDin(ListDin *l, ElType val)
 /* I.S. List l boleh kosong, tetapi tidak penuh */
 /* F.S. val adalah elemen terakhir l yang baru */
 {
-    if (!isFullListDin(*l))
-    {
-        ELMT(*l, NEFF(*l)) = val;
-        NEFF(*l) = NEFF(*l) + 1;
-    }
+    ELMT(*l, NEFF(*l)) = val;
+    
+    NEFF(*l) = NEFF(*l) + 1;
 }
 
 void deleteLastListDin(ListDin *l, ElType *val)
@@ -403,4 +401,19 @@ void compressListDin(ListDin *l)
 {
     CAPACITY(*l) = NEFF(*l);
     BUFFER(*l) = realloc(BUFFER(*l), (CAPACITY(*l)) * sizeof(ElType));
+}
+
+void removeElmt(ListDin *l, int val){
+    int len = l -> nEff;
+    int i;
+    for(i = 0; i< len; i++) {
+        if (ELMT(*l, i) == val) break;
+    }
+
+    int j;
+    for (j = i + 1; j < len; j++) {
+        ELMT(*l, j-1) = ELMT(*l, j);
+    }
+
+    l -> nEff -=1;
 }

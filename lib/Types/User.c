@@ -13,9 +13,9 @@ void initializeUser(User *u, String name, String password, int ID)
     PW(*u) = password;
     ID(*u) = ID;
     initProfile(&PROFILE(*u));
-    FRIEND_COUNT(*u) = 0;
     createRequestQueue(&FRIEND_REQUEST(*u));
-
+    // CreateDraf(&DRAFKICAU(*u)); 
+    CreateDraftDin(&DRAFKICAU(*u));
 }
 
 boolean isUserEqual(User u1, User u2)

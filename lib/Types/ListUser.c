@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "./ListUser.h"
 
+
+
 /* ********** KONSTRUKTOR ********** */
 /* Konstruktor : create List kosong  */
 void CreateListUser(ListUser *l)
@@ -90,15 +92,14 @@ void insertLast_ListUser(ListUser *l, User val)
 
 /* ********** MENGHAPUS ELEMEN ********** */
 /* *** Menghapus elemen pertama *** */
-void deleteFirst_Listuser(ListUser *l, User *val)
+void deleteFirst_ListUser(ListUser *l, User *val){
+    deleteAt_ListUser(l, val, 0);
+}
 /* Proses : Menghapus elemen pertama List */
 /* I.S. List tidak kosong */
 /* F.S. val adalah nilai elemen pertama l sebelum penghapusan, */
 /*      Banyaknya elemen List berkurang satu */
 /*      List l mungkin menjadi kosong */
-{
-    deleteAt_ListUser(l, val, 0);
-}
 /* *** Menghapus elemen pada index tertentu *** */
 void deleteAt_ListUser(ListUser *l, User *val, IdxType idx)
 /* Proses : Menghapus elemen pada index idx List */
@@ -153,21 +154,147 @@ void displayName(ListUser l, int i)
     displayString(NAME(ELMT_LISTUSER(l, i)));
 }
 
-void displayRequestQueue(RequestQueue Q, ListUser l)
+void displayRequestQueue(RequestQueue *Q, ListUser *l)
 
 {
-    int nb = nbElmt_RequestQueue(Q);
+    int nb = lengthRequestQueue(*Q);
     printf("\nTerdapat %d permintaan pertemanan untuk Anda.\n", nb);
-
-    while (!isEmpty_RequestQueue(Q))
+    while (!isEmptyRequestQueue(*Q))
     {
-        UserID uid;
-        dequeque_RequestQueue(&Q, &uid);
-        User u = ELMT_LISTUSER(l, ID_REQQUEUE(uid));
-
-
+        Friend F;
+        dequeueRequestQueue(Q, &F);
+        User u = ELMT_LISTUSER(*l, ID_REQQUEUE(F));
         printf("\n | Nama: ");
         displayString(NAME(u));
         printf("\n | Jumlah teman: %d\n", FRIEND_COUNT(u));
     }
+}
+
+void displayReply(ReplyTree rt, ReplyAddress addr, ListUser *l, int depth, int LOGINID)
+{
+    int i = getIdxInReplyTree(rt, addr);
+    if (!ISUSED(rt, i)) return;
+
+
+    Reply rep = *addr;
+
+    printSpace(depth);
+    printf(" | ID = %d\n", REPLYID(rep));
+
+
+
+    User u = ELMT_LISTUSER(*l, AUTHORID(rep));
+    boolean public = !ISPRIVATE(PROFILE(u));
+
+    if (!public && AUTHORID(rep) != LOGINID) {
+        printSpace(depth);
+        printf(" | PRIVAT\n");
+
+        printSpace(depth);
+        printf(" | PRIVAT\n");
+        
+        printSpace(depth);
+        printf(" | PRIVAT\n");
+
+    } else {
+        String authorName = NAME(u);
+
+        printSpace(depth);
+        printf(" | ");
+        displayString(authorName);
+        printf("\n");
+
+        printSpace(depth);
+        printf(" | ");
+        displayString(DateTimeToString(DTIME(rep)));
+        printf("\n");
+
+        printSpace(depth);
+        printf(" | ");
+        displayString(BODY(rep));
+        printf("\n");
+    }
+    printf("\n");
+}
+
+void displayAllReply(ReplyTree rt, ListUser l, int LOGINID)
+// I.S. compressed rt
+{
+    
+    int length = LISTREP(rt).neff;
+    int i;
+    for (i = 0; i < length; i++) {
+        Reply r = (*ADDR(LISTREP(rt), i));
+        
+        if (ISMAIN(r) && ISUSED(rt, i)) {
+            displayAllReply_helper(rt, &l, 0, i, LOGINID);
+        }
+        
+    }
+
+}
+    
+
+
+void displayAllReply_helper(ReplyTree rt, ListUser *l, int currDepth, int idx, int LOGINID)
+{
+    ListDin adjlist = LISTDIN(rt, idx);
+    ReplyAddress ra = ADDR(LISTREP(rt), idx);
+    int neff = NEFF(adjlist);
+    int i;
+
+
+
+
+    displayReply(rt, ra, l, currDepth, LOGINID);
+
+    
+    for (i = 0; i < neff; i++) {
+        displayAllReply_helper(rt, l, currDepth+1, adjlist.buffer[i], LOGINID);
+    }
+}
+
+void AddReplyDariConfig(ReplyTree *rt, ListUser *lu,int IDKicau, int IDChild, int IDParent, String body, String name, String datetime)
+// JANGAN LUPA REPLY TREE DI CREATE DULU, capacity 100 aja.
+{
+    // Setting up reply
+
+
+    rt->numReplyEff++;
+    ReplyAddress ra = newReply(body, IDParent == -1);
+    REPLYID(*ra) = IDChild;
+    AUTHORID(*ra) = searchByName(*lu, name);
+    DTIME(*ra) = StringToDateTime(datetime);
+    ISMAIN(*ra) = true;
+
+
+    // Setting up listreply
+    ListReply *lr = &LISTREP(*rt);
+    if (NEFFLR(*lr) < IDChild) NEFFLR(*lr) = IDChild;
+    ADDR(*lr, IDChild) = ra;
+
+    // Setting up reply tree
+    if (!ISMAIN(*ra)) {
+        printListDin(LISTDIN(*rt, IDParent));
+        printf("\n");
+        insertLastListDin(&LISTDIN(*rt, IDParent), IDChild);
+        printf("im here\n");
+    }
+    
+    ISUSED(*rt, IDChild) = 1;
+    PARENT(*rt, IDChild) = IDParent;
+    if (rt->availableID <= IDChild) rt->availableID = IDChild+1;
+    if (rt->availableIDX <= IDChild) rt->availableIDX = IDChild + 1;
+
+}
+
+boolean CanSee(ListUser* l, int IDOrang, int LoginID, Graf* pertemanan)
+{
+    if (ISPRIVATE(PROFILE(ELMT_LISTUSER(*l, IDOrang)))) {
+        if (LoginID == IDOrang) return true;
+        if (CONNECTED(*pertemanan, IDOrang, LoginID)) return true;
+
+        return false;
+    }
+    return true;
 }

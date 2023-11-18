@@ -28,6 +28,67 @@ int stringLength(String s)
     return i;
 }
 
+int stringToInt(String s){
+    int i;
+    int j = 1;
+    int k = 0;
+    int length = stringLength(s);
+
+    boolean isneg = false;
+    if (s.buffer[0] == '-') isneg = true;
+
+
+    for (i = length-1; i >= (0 + isneg); i--){
+        k += (s.buffer[i] - '0') * j;
+        j *= 10;
+    }
+    return isneg? -k:k;
+}
+
+String intToString(int i, int numlength)
+{
+    String s;
+    createEmptyString(&s, 350);
+
+    int j = i;
+    int length = 0;
+    while (i > 0)
+    {
+        length++;
+        i/= 10;
+    }
+
+    if (numlength < length) {
+        return s;
+    }
+
+    int padZero = numlength - length;
+    while(padZero--) {
+        addChar(&s, '0');
+    }
+
+    int k = 0;
+    for (k =0; k < length; k++) {
+        int l = 1;
+        int div = 1;
+        for (l = 0; l < length -1-k; l++)
+        {
+            div *= 10;
+        }
+
+
+        int mod = div*10;
+        int n = (j % mod)/div;
+         
+
+        addChar(&s, n + '0');
+    }
+
+    return s;
+
+    
+}
+
 boolean isStringFull (String s) {
     return s.maxLength == stringLength(s);
 }
@@ -63,7 +124,26 @@ void addString(String *s, String s2){
         addChar(s, s2.buffer[i]);
     }
 }
-
+void replaceString(String *s, int idx, int idx2, String s2){
+    int i = idx;
+    int j = 0;
+    for(i= idx; i < idx2; i++){
+        s->buffer[i] = s2.buffer[j];
+        j++;
+    }
+}
+char *addChartoChar(char *destination, const char *source){
+    if (destination == NULL){
+        return NULL;
+    }
+    int i = 0;
+    while (source[i] != '\0'){
+        destination[i] = source[i];
+        i++;
+    }
+    destination[i] = '\0';
+    return destination;
+}
 void readString(String *s, int maxLength)
 /**
  * I.S. s sembarang, pita terbuka
@@ -89,6 +169,9 @@ void readString(String *s, int maxLength)
     ADV();
 
     // now current char is '\n'
+    if (currentChar_WordMachine != '\n') {
+        printf("\nSetiap input harus memiliki mark berupa ';'. dan Anda baru saja melanggarnya.\n");
+    }
 }
 
 
@@ -294,4 +377,25 @@ int countWord(String s)
 
     return k+1;
 
+}
+
+void SplitIntoTwo(String s, String* s1, String* s2) {
+    createEmptyString(s1, 350);
+    createEmptyString(s2, 350);
+    *s1 = getWordAt(s, 0);
+    int k = 0, ptr = 0, i = stringLength(s);
+    while (k < i) {
+        if (s.buffer[ptr] == ' ') {
+            ptr++;
+            break;
+        }
+        k++;
+        ptr++;
+    }
+
+    while (k < i) {
+        addChar(s2, s.buffer[ptr]);
+        ptr++;
+        k++;
+    }
 }

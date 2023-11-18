@@ -1,180 +1,146 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "RequestQueue.h"
 
+/* ********* Prototype ********* */
+/* *** Kreator *** */
 void createRequestQueue(RequestQueue *Q)
-
+/* I.S. sembarang */
+/* F.S. Sebuah q kosong terbentuk dengan kondisi sbb: */
+/* - Index head bernilai IDX_UNDEF */
+/* - Index tail bernilai IDX_UNDEF */
+/* Proses : Melakukan alokasi, membuat sebuah q kosong */
 {
-    HEAD_REQQUEUE(*Q) = NIL;
-    TAIL_REQQUEUE(*Q) = NIL;
+    Head_ReqQue(*Q) = IDX_UNDEF;
+    Tail_ReqQue(*Q) = IDX_UNDEF;
 }
 
-boolean isEmpty_RequestQueue(RequestQueue Q)
+/* ********* Prototype ********* */
+boolean isEmptyRequestQueue(RequestQueue Q)
+/* Mengirim true jika q kosong: lihat definisi di atas */
+{
+    return (Head_ReqQue(Q) == IDX_UNDEF && Tail_ReqQue(Q) == IDX_UNDEF);
+}
+boolean isFullRequestQueue(RequestQueue Q)
 
 {
-    return (HEAD_REQQUEUE(Q) == NIL && TAIL_REQQUEUE(Q) == NIL);
+    return (lengthRequestQueue(Q) == CAPACITY_REQQUEUE);
 }
 
-boolean isFull_RequestQueue(RequestQueue Q)
-
+int lengthRequestQueue(RequestQueue Q)
+/* Mengirimkan banyaknya elemen queue. Mengirimkan 0 jika q kosong. */
 {
-    return (TAIL_REQQUEUE(Q) + 1) % CAP_REQQUEUE == HEAD_REQQUEUE(Q);
+    if(isEmptyRequestQueue(Q)){
+        return 0;
+    } else {
+        if (Tail_ReqQue(Q) >= Head_ReqQue(Q)){ 
+            return Tail_ReqQue(Q) - Head_ReqQue(Q) +1;
+        
+        } else{
+
+        return Tail_ReqQue(Q) - Head_ReqQue(Q) + 1 + CAPACITY_REQQUEUE;
+        }
+    
+    }
 }
 
-int nbElmt_RequestQueue(RequestQueue Q)
+/* *** Primitif Add/Delete *** */
+void enqueueRequestQueue(RequestQueue *Q, Friend u)
 
 {
-    if (isEmpty_RequestQueue(Q)) return 0;
-
-
-    if (HEAD_REQQUEUE(Q) <= TAIL_REQQUEUE(Q)) return TAIL_REQQUEUE(Q) - HEAD_REQQUEUE(Q) +1;
-    else return TAIL_REQQUEUE(Q) - HEAD_REQQUEUE(Q) +1 + CAP_REQQUEUE;
-}
-
-void enqueue_RequestQueue(RequestQueue *Q, UserID u)
-
-{
-    if (isEmpty_RequestQueue(*Q)) {
-        HEAD_REQQUEUE(*Q) = 0;
-        TAIL_REQQUEUE(*Q) = 0;
-        ELMT_REQQUEUE(*Q, 0) = u;
+    if (isEmptyRequestQueue(*Q)) {
+        Head_ReqQue(*Q) = 0;
+        Tail_ReqQue(*Q) = 0;
+        ELMT_ReqQue(*Q, 0) = u;
         return;
     }
 
     int ptr;
-    for (ptr = TAIL_REQQUEUE(*Q); ptr != HEAD_REQQUEUE(*Q); ptr = (ptr -1) % CAP_REQQUEUE)
+    for (ptr = Tail_ReqQue(*Q); ptr != Head_ReqQue(*Q); ptr = (ptr -1 +CAPACITY_REQQUEUE) % CAPACITY_REQQUEUE)
     {
-        if (FRIENDCOUNT_REQQUEUE(ELMT_REQQUEUE(*Q, ptr)) < FRIENDCOUNT_REQQUEUE(u))
+        if (FRIENDCOUNT_REQQUEUE(ELMT_ReqQue(*Q, ptr)) < FRIENDCOUNT_REQQUEUE(u))
         {
-            ELMT_REQQUEUE(*Q, (ptr + 1) % CAP_REQQUEUE) = ELMT_REQQUEUE(*Q, ptr); 
+            ELMT_ReqQue(*Q, (ptr + 1) % CAPACITY_REQQUEUE) = ELMT_ReqQue(*Q, ptr); 
         } else 
         {
-            ELMT_REQQUEUE(*Q, (ptr+1) % CAP_REQQUEUE) = u;
+            ELMT_ReqQue(*Q, (ptr+1) % CAPACITY_REQQUEUE) = u;
         }
     }
 
-    if (FRIENDCOUNT_REQQUEUE(ELMT_REQQUEUE(*Q, ptr)) < FRIENDCOUNT_REQQUEUE(u))
+    if (FRIENDCOUNT_REQQUEUE(ELMT_ReqQue(*Q, ptr)) < FRIENDCOUNT_REQQUEUE(u))
     {
-        ELMT_REQQUEUE(*Q, (ptr + 1) % CAP_REQQUEUE) = ELMT_REQQUEUE(*Q, ptr);
-        ELMT_REQQUEUE(*Q, ptr) =  u;
+        ELMT_ReqQue(*Q, (ptr + 1) % CAPACITY_REQQUEUE) = ELMT_ReqQue(*Q, ptr);
+        ELMT_ReqQue(*Q, ptr) =  u;
     } else 
     {
-        ELMT_REQQUEUE(*Q, (ptr+1) % CAP_REQQUEUE) = u;
+        ELMT_ReqQue(*Q, (ptr+1) % CAPACITY_REQQUEUE) = u;
     }
 
-    TAIL_REQQUEUE(*Q) = (TAIL_REQQUEUE(*Q) + 1) % CAP_REQQUEUE;
+    Tail_ReqQue(*Q) = (Tail_ReqQue(*Q) + 1) % CAPACITY_REQQUEUE;
 }
 
-void dequeque_RequestQueue(RequestQueue *Q, UserID *u)
+void dequeueRequestQueue(RequestQueue *Q, Friend *u)
 {
-    *u = ELMT_REQQUEUE(*Q, HEAD_REQQUEUE(*Q));
+    *u = ELMT_ReqQue(*Q, Head_ReqQue(*Q));
 
-    if (HEAD_REQQUEUE(*Q) == TAIL_REQQUEUE(*Q)) {
-        HEAD_REQQUEUE(*Q) = NIL;
-        TAIL_REQQUEUE(*Q) = NIL;
+    if (Head_ReqQue(*Q) == Tail_ReqQue(*Q)) {
+        Head_ReqQue(*Q) = IDX_UNDEF;
+        Tail_ReqQue(*Q) = IDX_UNDEF;
     } else {
-        HEAD_REQQUEUE(*Q) = (HEAD_REQQUEUE(*Q) + 1)% CAP_REQQUEUE;
+        Head_ReqQue(*Q) = (Head_ReqQue(*Q) + 1)% CAPACITY_REQQUEUE;
     }
 }
 
 void removeElmt_RequestQueue(RequestQueue *Q, int idx)
-
 {
-    RequestQueue qtmp;
-    createRequestQueue(&qtmp);
     int i = 0;
+    RequestQueue QTemp;
+    createRequestQueue(&QTemp);
 
-    while (!isEmpty_RequestQueue(*Q))
+    while (!isEmptyRequestQueue(*Q))
     {
-        UserID u;
-        dequeque_RequestQueue(Q, &u);
+        Friend F;
+        dequeueRequestQueue(Q, &F);
 
-        if (i == idx) continue;
-
+        if (i == idx){
+            continue;
+        }
         ++i;
-        enqueue_RequestQueue(&qtmp, u);
+        enqueueRequestQueue(&QTemp, F);
     }
 
-    while (!isEmpty_RequestQueue(qtmp))
+    while (!isEmptyRequestQueue(QTemp))
     {
-        UserID u;
-        dequeque_RequestQueue(&qtmp, &u);
-        enqueue_RequestQueue(Q, u);
+        Friend F;
+        dequeueRequestQueue(&QTemp, &F);
+        enqueueRequestQueue(Q, F);
     }
 }
 
-
-
-int getIndex_RequestQueue(RequestQueue Q, int userID)
-
+int getIndex_RequestQueue(RequestQueue Q, int ID)
 {
-    if (isEmpty_RequestQueue(Q)) return NIL;
+    if (isEmptyRequestQueue(Q)){
+        return IDX_UNDEF;
+    }
 
-    int i = HEAD_REQQUEUE(Q);
+    int i = Head_ReqQue(Q);
     boolean found = false;
-    while (!isEmpty_RequestQueue(Q) && !found) 
+    while (!isEmptyRequestQueue(Q) && !found) 
     {
-        if (ID_REQQUEUE(ELMT_REQQUEUE(Q, i)) == userID)
+        if (ID_REQQUEUE(ELMT_ReqQue(Q, i)) == ID)
         {
             found = true;
             continue;
         } 
-
-
-        i = (i+1) % CAP_REQQUEUE;
-        UserID u;
-        dequeque_RequestQueue(&Q, &u);
+        i = (i+1) % CAPACITY_REQQUEUE;
+        Friend F;
+        dequeueRequestQueue(&Q, &F);
     }
 
-    
-
-
-    if (found) return i;
-    else return NIL;
-}
-
-void printRQ(RequestQueue rq)
-{
-    while (!isEmpty_RequestQueue(rq))
-    {
-        UserID u;
-
-        dequeque_RequestQueue(&rq, &u);
-        printf("%d %d\n", ID_REQQUEUE(u), FRIENDCOUNT_REQQUEUE(u));
+    if (found) {
+        return i;
+    }else{ 
+        return IDX_UNDEF;
     }
 }
-
-
-// int main(){
-//     RequestQueue q;
-//     createRequestQueue(&q);
-
-//     UserID u;
-//     ID_REQQUEUE(u) = 5;
-//     FRIENDCOUNT_REQQUEUE(u) = 10;
-
-//     enqueue_RequestQueue(&q, u);
-
-
-
-//     ID_REQQUEUE(u) = 6;
-//     FRIENDCOUNT_REQQUEUE(u) = 9;
-//     enqueue_RequestQueue(&q, u);
-//     printRQ(q);
-
-//     UserID v;
-//     dequeque_RequestQueue(&q, &v);
-//     printf("head: %d\n", HEAD_REQQUEUE(q));
-//     printf("tail: %d\n", TAIL_REQQUEUE(q));
-//     printRQ(q);
-
-//     printf("get index 5: %d\n", getIndex_RequestQueue(q, 5));
-//     printf("nb elmt: %d\n", nbElmt_RequestQueue(q));
-//     dequeque_RequestQueue(&q, &v);
-//     printf("nb elmt: %d\n", nbElmt_RequestQueue(q));
-//     printf("is empty: %d\n", isEmpty_RequestQueue(q));
-//     printf("get idx 5: %d\n", getIndex_RequestQueue(q, 5));
-
-    
-//     return 0;
-// }
 

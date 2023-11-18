@@ -5,7 +5,8 @@
 #ifndef LISTUSER_H
 #define LISTUSER_H
 #include "../boolean.h"
-#include "./User.h"
+#include "../ADT/Graf/graf.h"
+#include "User.h"
 
 
 
@@ -41,7 +42,9 @@ void CreateListUser(ListUser *l);
 /* Proses: Inisialisasi semua elemen List l dengan MARK */
 
 
+int getIdxInReplyTree(ReplyTree rt, ReplyAddress ra);
 
+void printSpace(int depth);
 /* ********** Test Indeks yang valid ********** */
 boolean isIdxValid_ListUser(ListUser l, IdxType i);
 /* Mengirimkan true jika i adalah indeks yang valid utk kapasitas List l */
@@ -57,6 +60,12 @@ boolean isEmpty_ListUser(ListUser l);
 /* *** Test List penuh *** */
 boolean isFull_ListUser(ListUser l);
 /* Mengirimkan true jika List l penuh, mengirimkan false jika tidak */
+
+void displayReply(ReplyTree rt, ReplyAddress addr, ListUser *l, int depth, int LOGINID);
+
+void displayAllReply(ReplyTree rt, ListUser l, int LOGINID);
+
+void displayAllReply_helper(ReplyTree rt, ListUser *l, int currDepth, int idx, int LOGINID);
 
 /* ********** OPERATOR RELASIONAL ********** */
 /* ********** SEARCHING ********** */
@@ -115,6 +124,10 @@ IdxType searchByName(ListUser l, String name);
 
 void displayName(ListUser l, int i);
 
-void displayRequestQueue(RequestQueue Q, ListUser l);
+void displayRequestQueue(RequestQueue *Q, ListUser *l);
+
+void AddReplyDariConfig(ReplyTree *rt, ListUser *lu,int IDKicau, int IDBalasan, int IDParent, String body, String name, String DATETIME);
+
+boolean CanSee(ListUser *l, int IDOrang, int LoginID, Graf *pertemanan);
 
 #endif

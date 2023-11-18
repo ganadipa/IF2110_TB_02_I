@@ -23,8 +23,7 @@
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- lib/ADT/ListDinamik/./listdinamik.h \
- lib/ADT/ListDinamik/./../../boolean.h
+ lib/ADT/ListDinamik/listdinamik.h lib/ADT/ListDinamik/../../boolean.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -52,5 +51,5 @@
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 /usr/include/stdlib.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-lib/ADT/ListDinamik/./listdinamik.h:
-lib/ADT/ListDinamik/./../../boolean.h:
+lib/ADT/ListDinamik/listdinamik.h:
+lib/ADT/ListDinamik/../../boolean.h:

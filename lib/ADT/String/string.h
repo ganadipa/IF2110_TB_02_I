@@ -61,12 +61,27 @@ void addWord(String *s, Word w);
 /**
  * 
 */
-
+void addString(String *s, String s2);
+/**
+ * 
+*/
+void replaceString(String *s, int idx, int idx2, String s2);
+/**
+ * 
+*/
+char *addChartoChar(char *destination, const char *source);
+/**
+ * 
+*/
 String concatString(String *sOut, String s1, String s2);
 /**
  * 
 */
 
+int stringToInt(String s);
+/**
+ * 
+*/
 
 boolean compareString(String s, char* cptr);
 /**
@@ -85,6 +100,10 @@ void displayString(String s);
 
 boolean isAllNumber(String s);
 
+String intToString(int i, int numlength);
+
+void addString(String *s, String s2);
+
 String getWordAt(String s, int i) ;
 /**
  * Mulanya, string s terdefinisi, i < n di mana n adalah jumlah kata dalam string s.
@@ -93,5 +112,7 @@ String getWordAt(String s, int i) ;
 
 int countWord(String s);
 
+int stringToInt(String s);
 
+void SplitIntoTwo(String s, String *s1, String *s2);
 #endif

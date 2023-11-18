@@ -5,7 +5,8 @@
 #include "../boolean.h"
 #include "./ListUser.h"
 #include "../ADT/Graf/graf.h"
-
+#include "listKicauan.h"
+#include "RequestQueue.h"
 
 
 
@@ -14,12 +15,14 @@ typedef struct application {
     int loginID;
     ListUser users; // Used list dengan array statik
     Graf friendships;
+    ListKicau listKicauan; 
 } Application;
 
 #define LOGGEDIN(a) (a).isLoggedIn
 #define LISTUSER(a) (a).users
 #define LOGINID(a) (a).loginID
 #define FRIENDSHIPS(a) (a).friendships
+#define KICAUAN(a)  (a).listKicauan
 
 void AppInitialization(Application *app);
 /**
@@ -101,6 +104,39 @@ void DaftarPermintaanPertemanan(Application app);
 
 void SetujuiPertemanan(Application *app);
 
+
+boolean isFriend(Application *app, int ID_yang_ingin_dicek, int friendID);
+/**
+ * Untuk Mengecek apakah ID yang ingin dicek berteman dengan id friend satu lagi
+*/
+
+void Kicau(Application *app);
+/**
+ * Untuk Add kicauan
+*/
+
+void TampilinKicauan(Application *app);
+/**
+ * Untuk Menampilkan kicauan berdasarkan Pertemanan dari user
+*/
+
+void SukaKicauan(Application *app, int ID);
+/**
+ * Untuk Menambah jumlah like pada Kicauan dengan id "ID"
+*/
+
+void UbahKicauan(Application *app, int ID);
+/**
+ * Untuk mengUpdate teks kicauan menjadi yang baru pada Kicauan dengan id "ID"
+*/
+
+void TambahTeman(Application *app);
+
+void BatalTambahTeman(Application *app);
+
+void DaftarPermintaanPertemanan(Application app);
+
+void SetujuiPertemanan(Application *app);
 
 
 void DevTools(Application app);
