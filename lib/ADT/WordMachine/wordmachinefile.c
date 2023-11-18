@@ -101,6 +101,7 @@ void CopyWordFILE(){
             ADVCHARFILE();
         }
     }
+    currentWordFile.buffer[currentWordFile.maxLength] = '\0';
 }
 /* Mengakuisisi kata, menyimpan dalam currentWord
    I.S. : currentChar adalah karakter pertama dari kata
@@ -117,6 +118,7 @@ void CopyWordFILE2(){
         i++;
         ADVCHARFILE();
     }
+    currentWordFile.buffer[currentWordFile.maxLength] = '\0';
     // printf("%c ", currentWordFile.buffer[0]);
 }
 void CopyFILEPhoto(){
