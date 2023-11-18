@@ -21,6 +21,7 @@ void TampilinKicauan(Application *app){
             printKicauan( KICAUAN(*app).buffer[i], returnUsername(*app,KICAUAN(*app).buffer[i].IDuser ));
         }
     }
+    // printf("%d\n", CAPACITY(KICAUAN(*app)) );
 }
 /**
  * Untuk Menampilkan kicauan berdasarkan Pertemanan dari user

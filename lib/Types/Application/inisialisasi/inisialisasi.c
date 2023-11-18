@@ -201,6 +201,7 @@ void LoadBalasan(Application *app){
             }
         }
     }
+    printf("\n");
     CLOSEFILE();
 }
 
@@ -275,6 +276,16 @@ void LoadDraft(Application *app){
                 displayString(kicau.dateTime);
                 printf("\n");
                 PushDrafDin(&app->users.contents[userid].drafKicau, kicau);
+            }
+            printf("\n");
+            int len = LengthDraf(app->users.contents[userid].drafKicau);
+            printf("Panjang draftdinkicau: %d", len);
+            printf("\n");
+            AddressDraf p = app->users.contents[userid].drafKicau.drafTop;
+            while(p != NULL){
+                String nama = username;
+                printKicauan(p->kicau, username);
+                p = p->next; 
             }
             
         }

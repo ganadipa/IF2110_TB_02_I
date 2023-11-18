@@ -14,7 +14,7 @@ void insertUtas_withIDKicau(Application *app, int IDKicau){
         printf("Kamu tidak bisa menambah Utas dengan id kicau %d", IDKicau);
         return;
     }
-    printf("%d\n", ELMT(KICAUAN(*app), IDKicau - 1).IDUtas);
+    // printf("%d\n", ELMT(KICAUAN(*app), IDKicau - 1).IDUtas);
     if (ELMT(KICAUAN(*app), IDKicau - 1).IDUtas != 0)
     {
         printf("Kicauan ini sudah menjadi kicauan utama dari utas lain.");
