@@ -264,6 +264,7 @@ void LoadDraft(Application *app){
             int banyakdraft = currentWordFile.buffer[currentWordFile.maxLength-1] - '0';
             printf("Banyak draft: %d\n", banyakdraft);
             Kicauan kicau;
+            InisialisasiDrafDinKicau(&kicau, userid);
             for(j=0;j<banyakdraft;j++){
                 ADVWORDFILE();
                 kicau.text = currentWordFile;
