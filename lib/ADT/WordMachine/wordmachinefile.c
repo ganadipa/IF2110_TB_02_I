@@ -79,7 +79,7 @@ void ADVWORDFILE2(){
 }
 void ADVFILEPHOTO(){
     CopyFILEPhoto();
-    ADVCHARFILE();
+    if (currentCharFile == '\r') ADVCHARFILE();
     ADVCHARFILE();
 }
 /* I.S. : currentChar adalah karakter pertama kata yang akan diakuisisi
