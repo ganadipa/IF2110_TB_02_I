@@ -19,6 +19,8 @@ void LoadPengguna(Application *app);
 
 void LoadKicauan(Application *app);
 
+void LoadDraft(Application *app);
+
 void LoadBalasan(Application *app);
 
 void LoadUtas(Application *app);

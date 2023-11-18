@@ -47,6 +47,7 @@ void ReadConfig(Application *app, boolean *found) {
     LoadPengguna(app);
     LoadKicauan(app);
     LoadBalasan(app);
+    LoadDraft(app);
     LoadUtas(app);
     
     printf("File konfigurasi berhasil dimuat! Selamat berkicau!\n\n");
@@ -188,14 +189,14 @@ void LoadBalasan(Application *app){
                 String name = currentWordFile;
                 ADVWORDFILE(); /* currentwordfile berisi datetime */
                 String DATETIME = currentWordFile;
-                // printf("%d\n", parentid);
-                // printf("%d\n", IDBalasan);
-                // displayString(body);
-                // printf("\n");
-                // displayString(name);
-                // printf("\n");
-                // displayString(DATETIME);
-                // printf("\n");
+                printf("%d\n", parentid);
+                printf("%d\n", IDBalasan);
+                displayString(body);
+                printf("\n");
+                displayString(name);
+                printf("\n");
+                displayString(DATETIME);
+                printf("\n");
                 AddReplyDariConfig(&app->listKicauan.buffer[idkicau-1].balasan, &app->users, idkicau, IDBalasan, parentid, body, name, DATETIME); 
             }
         }
@@ -251,22 +252,31 @@ void LoadDraft(Application *app){
     STARTWORDFILE(filename);
     if(retvalfile != -1){
         int banyakpengguna = stringToInt(currentWordFile);
+        printf("Banyak pengguna yang mempunyai draft: %d\n", banyakpengguna);
         for(i=0;i<banyakpengguna;i++){
             ADVWORDFILE();
             String username = currentWordFile;
             username.maxLength -= 2;
+            displayString(username);
+            printf("\n");
             int userid = searchByName(app->users, username);
             CreateDraftDin(&app->users.contents[userid].drafKicau);
-            int banyakdraft = currentWordFile.buffer[currentWordFile.maxLength-1];
+            int banyakdraft = currentWordFile.buffer[currentWordFile.maxLength-1] - '0';
+            printf("Banyak draft: %d\n", banyakdraft);
             Kicauan kicau;
             for(j=0;j<banyakdraft;j++){
                 ADVWORDFILE();
                 kicau.text = currentWordFile;
+                displayString(kicau.text);
+                printf("\n");
                 ADVWORDFILE();
                 kicau.dateTime = currentWordFile;
+                displayString(kicau.dateTime);
+                printf("\n");
                 PushDrafDin(&app->users.contents[userid].drafKicau, kicau);
             }
             
         }
     }
+    CLOSEFILE();
 }
