@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "Kicauan.h"
 
-/* ********** KONSTRUKTOR ********** */
+
 void InisialisasiKicau(Kicauan *k,int IDuser){
     userKicau(*k) = IDuser;
     likeKicau(*k) = 0;
@@ -24,7 +24,9 @@ void  kuranglenUtas(Kicauan *k){
     LEN_ANAKUTAS(*k)--;
 }
 
-void insertAtAnakUtas(Kicauan *k, int indeksUtas, String teks, String namaUser, String time){
+void insertAtAnakUtas(Kicauan *k, int indeksUtas, String teks, String namaUser, String time)
+// Menambah utas sesuai dengan indeks utas
+{
     AddressUtas temp = FIRST(*k);
     AddressUtas p = newNodeUtas(teks, namaUser, time);
     if (indeksUtas == 1){
@@ -47,18 +49,20 @@ void insertAtAnakUtas(Kicauan *k, int indeksUtas, String teks, String namaUser, 
     LEN_ANAKUTAS(*k) ++;
 }
 
-void deleteAtAnakUtas(Kicauan *k ,int indeksUtas, String *teks, String *namaUser, String *time){
+void deleteAtAnakUtas(Kicauan *k ,int indeksUtas, String *teks, String *namaUser, String *time)
+// Menghapus utas sesuai dengan indeks utas
+{
     AddressUtas temp = FIRST(*k);
     
     if (indeksUtas == 1){
-        AddressUtas test = temp;
+        FIRST(*k) = NEXT_Linked(temp);
+        *teks = TEKSDIUTAS(temp);
+        *namaUser = NAMADIUTAS(temp);
+        *time = DATETIMEUTAS(temp);
+        NEXT_Linked(temp) = NULL;
         temp = NULL;
-        *teks = TEKSDIUTAS(test);
-        *namaUser = NAMADIUTAS(test);
-        *time = DATETIMEUTAS(test);
-        NEXT_Linked(test) = NULL;
-        FIRST(*k) = NULL;
-        free(test);
+        
+        free(temp);
 
     } else if (indeksUtas > 1){
         while(indeksUtas > 2){

@@ -22,8 +22,8 @@ typedef Kicauan KicauanType; /* type elemen list */
 typedef struct
 {
     KicauanType *buffer; /* memori tempat penyimpan elemen (container) */
-    int nEff;       /* >=0, banyaknya elemen efektif */
-    int capacity;   /* ukuran elemen */
+    int nEff;           /* >=0, banyaknya elemen efektif */
+    int capacity;        /* ukuran list */
 } ListKicau ;
 /* Indeks yang digunakan [0..capacity-1] */
 /* Jika l adalah : ListKicau , cara deklarasi dan akses: */
@@ -65,13 +65,8 @@ boolean isFullListKicau (ListKicau  l);
 /* Mengirimkan true jika list l penuh, mengirimkan false jika tidak */
 
 void printListKicau (ListKicau  l , ListUser user);
-/* Proses : Menuliskan isi list dengan traversal, list ditulis di antara kurung siku;
-   antara dua elemen dipisahkan dengan separator "koma", tanpa tambahan karakter di depan,
-   di tengah, atau di belakang, termasuk spasi dan enter */
-/* I.S. l boleh kosong */
-/* F.S. Jika l tidak kosong: [e1,e2,...,en] */
-/* Contoh : jika ada tiga elemen bernilai 1, 20, 30 akan dicetak: [1,20,30] */
-/* Jika list kosong : menulis [] */
+/* Proses : Menuliskan isi list dengan traversal */
+
 
 /* ********** MENAMBAH DAN MENGHAPUS ELEMEN DI AKHIR ********** */
 /* *** Menambahkan elemen terakhir *** */
