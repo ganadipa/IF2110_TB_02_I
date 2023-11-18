@@ -9,10 +9,22 @@ void AppInitialization(Application *app)
 {
     // print opening
     Opening();
+
+    
+    CreateListUser(&LISTUSER(*app)); 
+    CreateGraph(&FRIENDSHIPS(*app));
+    CreateListKicau(&KICAUAN(*app), 1000);
+
     boolean found = false;
     // Setup(app); // Hapus kali udah ada database dari config.
+    printf("\n%d\n", LOGGEDIN(*app));
     ReadConfig(app, &found);
+
+    LOGGEDIN(*app) = false;
+    LOGINID(*app) = ID_UNDEF;
+    JUMLAHUTAS(*app) = 0;
     // Inisialisasi app
+    printf("\n%d\n", LOGGEDIN(*app));
      
 }
 
