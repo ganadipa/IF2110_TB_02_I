@@ -61,6 +61,7 @@ void STARTWORDFILE(String filename){
 void ADVWORDFILE(){
     IgnoreOnes();
     CopyWordFILE();
+    if (compareString(currentWordFile, "\n")) currentWordFile.buffer[0] = '\0';
     if (currentCharFile == '\r'){
         ADVCHARFILE();
     }
