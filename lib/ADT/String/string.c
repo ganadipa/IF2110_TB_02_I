@@ -39,6 +39,8 @@ int stringToInt(String s){
 
 
     for (i = length-1; i >= (0 + isneg); i--){
+        if (s.buffer[i] - '0' < 0 || s.buffer[i]- '0' >= 9) break;
+
         k += (s.buffer[i] - '0') * j;
         j *= 10;
     }
@@ -150,6 +152,8 @@ void readString(String *s, int maxLength)
  * F.S. s terbentuk sebagai hasil input dari stdin, currentChar bernilai '\n'.
 */
 {
+
+
     createEmptyString(s, maxLength);
 
     if (currentChar_WordMachine == '\0' || currentChar_WordMachine == '\n')
@@ -165,6 +169,7 @@ void readString(String *s, int maxLength)
     }
 
     ADV();
+
     // now current char is '\n'
     if (currentChar_WordMachine != '\n') {
         printf("\nSetiap input harus memiliki mark berupa ';'. dan Anda baru saja melanggarnya.\n");

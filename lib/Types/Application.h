@@ -83,6 +83,27 @@ void UbahFotoProfil(Application *app);
 */
 
 void HapusTeman(Application *app);
+/**
+ * 
+*/
+
+void TambahTeman(Application *app);
+/**
+ * 
+*/
+
+void BatalTambahTeman(Application *app);
+/**
+ * 
+*/
+
+void DaftarPermintaanPertemanan(Application app);
+/**
+ * 
+*/
+
+void SetujuiPertemanan(Application *app);
+
 
 boolean isFriend(Application *app, int ID_yang_ingin_dicek, int friendID);
 /**

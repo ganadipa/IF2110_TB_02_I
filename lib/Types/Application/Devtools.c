@@ -21,7 +21,8 @@ void DevTools(Application app)
     int i;
     for (i = 0; i < LENGTH_LISTUSER(LISTUSER(app)); i++) 
     {
-        printf("ID : %d", i);
+        printf("ID : %d\n", i);
+        printf("IS PRIVATE: %d\n", ISPRIVATE(PROFILE(ELMT_LISTUSER(LISTUSER(app), i))));
         displayProfile(ELMT_LISTUSER(LISTUSER(app), i));
         displayPhoto(FOTO(PROFILE(ELMT_LISTUSER(LISTUSER(app), i))));
         printf("\n\n");
