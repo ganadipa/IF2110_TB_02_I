@@ -3,7 +3,6 @@
 #include "listKicauan.h"
 
 
-/* ********** KONSTRUKTOR ********** */
 /* Konstruktor : create list kosong  */
 void CreateListKicau(ListKicau *l, int capacity)
 /* I.S. l sembarang, capacity > 0 */
@@ -14,7 +13,7 @@ void CreateListKicau(ListKicau *l, int capacity)
     CAPACITY (*l) = capacity;
 }
 
-/* ********** SELEKTOR (TAMBAHAN) ********** */
+
 /* *** Banyaknya elemen *** */
 int listLengthListKicau(ListKicau l)
 /* Mengirimkan banyaknya elemen efektif list */
@@ -24,7 +23,7 @@ int listLengthListKicau(ListKicau l)
     return NEFF(l);
 }
 
-/* ********** TEST KOSONG/PENUH ********** */
+
 /* *** Test list kosong *** */
 boolean isEmptyListKicau(ListKicau l)
 /* Mengirimkan true jika list l kosong, mengirimkan false jika tidak */
@@ -39,7 +38,7 @@ boolean isFullListKicau(ListKicau l)
 }
 
 
-// PRINT LINST KICAU INI MASIH SEMENTARA
+// PRINT LIST KICAU 
 void printListKicau(ListKicau l, ListUser user)
 {
     int i;
