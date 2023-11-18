@@ -147,7 +147,7 @@ void LoadPengguna(Application *app){
 void LoadKicauan(Application *app){
     String filename;
     int i;
-    CreateListKicau(&app->listKicauan, 1000);
+    // CreateListKicau(&app->listKicauan, 1000);
     char temp[20] = "kicauan.config";
     addChartoChar(filename.buffer, temp);
     filename.maxLength = STRCAP;
