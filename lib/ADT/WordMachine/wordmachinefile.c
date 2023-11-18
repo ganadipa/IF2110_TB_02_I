@@ -69,7 +69,6 @@ void ADVWORDFILE(){
 void ADVWORDFILE2(){
     IgnoreOnes();
     CopyWordFILE2();
-    ADVCHARFILE();
     if (currentCharFile == '\r'){
         ADVCHARFILE();
     }
