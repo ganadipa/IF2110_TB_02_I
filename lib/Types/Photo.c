@@ -43,6 +43,10 @@ void readPhotoFile(Photo *p, String photoString) {
     int i = 0;
     int j = 0;
     int ptr = 0;
+    p->color.rowEff = 5;
+    p->color.colEff = 5;
+    p->symbols.rowEff = 5;
+    p->symbols.colEff = 5;
     for (i = 0; i< 5; i++) {
         for (j = 0; j < 5; j++) {
             ELMT_CharMatriks(COLORMATRIX(*p), i, j) = photoString.buffer[ptr];

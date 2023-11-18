@@ -33,9 +33,13 @@ void SavingFilePengguna(String* path, ListUser user){
 
         int row = user.contents[i].profile.photo.color.rowEff;
         int col = user.contents[i].profile.photo.color.colEff;
-        int j, k; 
+        int j, k;
+
         for(j = 0; j < row; j++){
             for(k = 0; k < col; k++){
+                printf("%c %c \n", user.contents[i].profile.photo.color.mem[j][k], user.contents[i].profile.photo.symbols.mem[j][k]);
+
+
                 fprintf(filePengguna, "%c %c ", user.contents[i].profile.photo.color.mem[j][k], user.contents[i].profile.photo.symbols.mem[j][k]);
             }
             fprintf(filePengguna, "\n");
@@ -58,9 +62,14 @@ void SavingFileKicauan(String* path, ListKicau kicauan, ListUser user){
         deleteRest(&kicauan.buffer[i].dateTime);
         fprintf(fileKicauan, "%d\n", kicauan.buffer[i].IDKicau);
         fprintf(fileKicauan, "%s\n", kicauan.buffer[i].text.buffer); 
-        fprintf(fileKicauan, "%d\n", kicauan.buffer[i].like); 
+        fprintf(fileKicauan, "%d\n", kicauan.buffer[i].like);
         fprintf(fileKicauan, "%s\n", user.contents[kicauan.buffer[i].IDuser].name.buffer); 
-        fprintf(fileKicauan, "%s\n", kicauan.buffer[i].dateTime.buffer);
+        if (i == kicauan.nEff -1) {
+            fprintf(fileKicauan, "%s", kicauan.buffer[i].dateTime.buffer);   
+        } else {
+            fprintf(fileKicauan, "%s\n", kicauan.buffer[i].dateTime.buffer);
+        }
+        
     }
     fclose(fileKicauan);
 }
@@ -78,18 +87,18 @@ void SavingFileDraf(String* path, ListUser user){
             count++;
         }
     }
-    fprintf(fileDraf, "%d\n", count); //print berapa banyak yang punya draf;
+    fprintf(fileDraf, "%d", count); //print berapa banyak yang punya draf;
     for(i = 0; i < user.length; ++i){
         if(!isDrafDinEmpty(DRAFKICAU(user.contents[i]))){
             deleteRest(&user.contents[i].name);
-            fprintf(fileDraf, "%s %d\n", user.contents[i].name.buffer, LengthDraf(DRAFKICAU(user.contents[i])));
+            fprintf(fileDraf, "\n%s %d", user.contents[i].name.buffer, LengthDraf(DRAFKICAU(user.contents[i])));
         }
         for(j = 0; j < LengthDraf(DRAFKICAU(user.contents[i])); ++j){
             AddressDraf temp = ADDR_TOPDRAF(DRAFKICAU(user.contents[i]));
             deleteRest(&teksKicau(INFODRAF(temp)));
             deleteRest(&dateTimeKicau(INFODRAF(temp)));
-            fprintf(fileDraf, "%s\n", teksKicau(INFODRAF(temp)).buffer); 
-            fprintf(fileDraf, "%s\n", dateTimeKicau(INFODRAF(temp)).buffer);
+            fprintf(fileDraf, "\n%s", teksKicau(INFODRAF(temp)).buffer); 
+            fprintf(fileDraf, "\n%s", dateTimeKicau(INFODRAF(temp)).buffer);
         }
     }
 
@@ -116,7 +125,12 @@ void SavingFileUtas(String *path, ListKicau listKicau, Application *Utas){
                 // fprintf(fileUtas, "Utas ke-%d\n", );
                 fprintf(fileUtas, "%s\n", TEKSDIUTAS(utas).buffer); 
                 fprintf(fileUtas, "%s\n", NAMADIUTAS(utas).buffer); 
-                fprintf(fileUtas, "%s\n", DATETIMEUTAS(utas).buffer);
+
+                if (i == NEFF(listKicau) -1) {
+                    fprintf(fileUtas, "%s", DATETIMEUTAS(utas).buffer);
+                } else {
+                    fprintf(fileUtas, "%s\n", DATETIMEUTAS(utas).buffer);
+                }
                 utas = NEXT_Linked(utas);
             }
         }
@@ -136,21 +150,24 @@ void TulisBalasan(FILE* filepath, ReplyTree rt, ReplyAddress addr, ListUser *l){
     String time = DateTimeToString(DTIME(rep)); 
     String Text = BODY(rep);
 
-    printf("%s\n", Text.buffer);
-    fprintf(filepath, "%d %d\n", parentID, currID); 
-    fprintf(filepath, "%s\n", Text.buffer); 
-    fprintf(filepath, "%s\n", user.name.buffer);
-    fprintf(filepath, "%s\n", time.buffer);
+    printf("\n%s", Text.buffer);
+    fprintf(filepath, "\n%d %d", parentID, currID); 
+    fprintf(filepath, "\n%s", Text.buffer); 
+    fprintf(filepath, "\n%s", user.name.buffer);
+    fprintf(filepath, "\n%s", time.buffer);
 
 }
 
 void TulisAllBalasan(FILE* filepath, ReplyTree rt, ListUser *l, int idx){
     ListDin adjlist = LISTDIN(rt, idx); 
+    printf("idx is %d", idx);
+    printListDin(adjlist);
     ReplyAddress ra = ADDR(LISTREP(rt), idx); 
     int neff = NEFF(adjlist); 
     int i; 
     printf("ini di tulisAllBalasan");
     TulisBalasan(filepath, rt, ra, l); 
+    printf("\nneff is: %d", neff);
     for(i = 0; i < neff; i++){
         TulisAllBalasan(filepath, rt, l, adjlist.buffer[i]);
     }
@@ -170,27 +187,30 @@ void SavingFileBalasan(String *path, ListKicau kicauan, ListUser user){
         }
     }
 
-    fprintf(fileBalasan, "%d\n", totalBalasan);
+    fprintf(fileBalasan, "%d", totalBalasan);
     for(i = 0; i < NEFF(kicauan); i++){
         ReplyTree balasan = BALASAN(ELMT(kicauan, i));
+
         if(NUMREP(balasan) != 0){ ;
             //untuk menulis ID dari kicau yang memiliki balasan 
-            fprintf(fileBalasan, "%d\n", IDKicau(ELMT(kicauan, i)));
+            fprintf(fileBalasan, "\n%d", IDKicau(ELMT(kicauan, i)));
             //untuk menulis banyaknya balasan dalam kicauan tersebut
-            fprintf(fileBalasan, "%d\n", NUMREP(BALASAN(ELMT(kicauan, i))));
+            fprintf(fileBalasan, "\n%d", NUMREP(BALASAN(ELMT(kicauan, i))));
             //untuk menulis tiap balasan (unfinished)
 
             ListReply temp = LISTREP(balasan);
-            for(j = 0; j < NEFFLR(temp); j++){
+            printf("neff is %d", NEFFLR(temp));
+            for(j = 0; j <= NEFFLR(temp); j++){
                 //blm ada untuk menulis 
                 //balas-ke-node-mana  id-dari-balasan
                 if(!ISUSED(balasan, j)){
                     continue; 
                 }
+                printf("j is %d", j);
                 ReplyAddress kicauBalasan = ADDR(temp, j);
                 printf("ini sebelum masuk ALLbalasan\n");
                 if(ISMAIN(*kicauBalasan)){
-                    TulisAllBalasan(fileBalasan, balasan, &user, 0);
+                    TulisAllBalasan(fileBalasan, balasan, &user, j);
                 }
                 
                 // untuk menulis balasan ke dalam file
