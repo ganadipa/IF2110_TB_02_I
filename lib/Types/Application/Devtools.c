@@ -30,7 +30,7 @@ void DevTools(Application app)
 
     for (int i = 0; i < KICAUAN(app).nEff; i++) {
 
-        printAllReplyTree(BALASAN(KICAUAN(app).buffer[0]));
+        printAllReplyTree(BALASAN(KICAUAN(app).buffer[i]));
     }
 
     
