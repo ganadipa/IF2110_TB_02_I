@@ -124,6 +124,39 @@ void SavingFileUtas(String *path, ListKicau listKicau, Application *Utas){
     fclose(fileUtas);
 }
 
+void TulisBalasan(FILE* filepath, ReplyTree rt, ReplyAddress addr, ListUser *l){
+    int i = getIdxInReplyTree(rt, addr); 
+    printf("isused: %d, ini i; %d\n", ISUSED(rt, i), i);
+    if(!ISUSED(rt, i)) return;
+
+    Reply rep = *addr; 
+    int currID = REPLYID(rep);
+    int parentID = PARENT(rt, currID);
+    User user = ELMT_LISTUSER(*l, AUTHORID(rep));
+    String time = DateTimeToString(DTIME(rep)); 
+    String Text = BODY(rep);
+
+    printf("%s\n", Text.buffer);
+    fprintf(filepath, "%d %d\n", parentID, currID); 
+    fprintf(filepath, "%s\n", Text.buffer); 
+    fprintf(filepath, "%s\n", user.name.buffer);
+    fprintf(filepath, "%s\n", time.buffer);
+
+}
+
+void TulisAllBalasan(FILE* filepath, ReplyTree rt, ListUser *l, int idx){
+    ListDin adjlist = LISTDIN(rt, idx); 
+    ReplyAddress ra = ADDR(LISTREP(rt), idx); 
+    int neff = NEFF(adjlist); 
+    int i; 
+    printf("ini di tulisAllBalasan");
+    TulisBalasan(filepath, rt, ra, l); 
+    for(i = 0; i < neff; i++){
+        TulisAllBalasan(filepath, rt, l, adjlist.buffer[i]);
+    }
+
+}
+
 void SavingFileBalasan(String *path, ListKicau kicauan, ListUser user){
     const char* reply = "balasan.config"; 
     String Dir; 
@@ -132,38 +165,46 @@ void SavingFileBalasan(String *path, ListKicau kicauan, ListUser user){
     FILE *fileBalasan = fopen(Dir.buffer, "w");
     int i, j, k, totalBalasan = 0; 
     for(i = 0; i < NEFF(kicauan); i++){
-        if(&BALASAN(ELMT(kicauan, i)) != NULL){
+        if(NUMREP(BALASAN(ELMT(kicauan, i))) != 0){
             totalBalasan++;
         }
     }
 
     fprintf(fileBalasan, "%d\n", totalBalasan);
     for(i = 0; i < NEFF(kicauan); i++){
-        if(NUMREP(BALASAN(ELMT(kicauan, i))) != 0){ ;
+        ReplyTree balasan = BALASAN(ELMT(kicauan, i));
+        if(NUMREP(balasan) != 0){ ;
             //untuk menulis ID dari kicau yang memiliki balasan 
             fprintf(fileBalasan, "%d\n", IDKicau(ELMT(kicauan, i)));
             //untuk menulis banyaknya balasan dalam kicauan tersebut
             fprintf(fileBalasan, "%d\n", NUMREP(BALASAN(ELMT(kicauan, i))));
             //untuk menulis tiap balasan (unfinished)
-            ListReply temp = LISTREP(BALASAN(ELMT(kicauan, i)));
+
+            ListReply temp = LISTREP(balasan);
             for(j = 0; j < NEFFLR(temp); j++){
                 //blm ada untuk menulis 
                 //balas-ke-node-mana  id-dari-balasan
-                ReplyAddress kicauBalasan = &ADDR(temp, j);
+                if(!ISUSED(balasan, j)){
+                    continue; 
+                }
+                ReplyAddress kicauBalasan = ADDR(temp, j);
+                printf("ini sebelum masuk ALLbalasan\n");
+                if(ISMAIN(*kicauBalasan)){
+                    TulisAllBalasan(fileBalasan, balasan, &user, 0);
+                }
                 
                 // untuk menulis balasan ke dalam file
-                String time = DateTimeToString(DTIME(*kicauBalasan));
-                deleteRest(&BODY(*kicauBalasan)); 
-                deleteRest(&ELMT_LISTUSER(user, AUTHORID(*kicauBalasan)).name);
-                deleteRest(&time);
-                fprintf(fileBalasan, "%s\n", BODY(*kicauBalasan).buffer);
-                fprintf(fileBalasan, "%s\n", ELMT_LISTUSER(user, AUTHORID(*kicauBalasan)).name.buffer);
-                fprintf(fileBalasan, "%s\n", time.buffer);
+
+                // fprintf(fileBalasan, "%s\n", BODY(*kicauBalasan).buffer);
+                // fprintf(fileBalasan, "%s\n", ELMT_LISTUSER(user, AUTHORID(*kicauBalasan)).name.buffer);
+                // fprintf(fileBalasan, "%s\n", time.buffer);
             }
         }
     }
     fclose(fileBalasan);
 }
+
+
 
 void SavingFile(String* path, Application *app){
     SavingFilePengguna(path, app->users);
