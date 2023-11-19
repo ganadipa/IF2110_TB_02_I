@@ -136,7 +136,8 @@
  lib/Types/Application/simpan-dan-muat/../../.././Types/Application/perintah/../Application.h \
  lib/Types/Application/simpan-dan-muat/../../.././Types/Application/perintah/../../ReplyTree.h \
  lib/Types/Application/simpan-dan-muat/../../.././Types/Application/Devtools.h \
- lib/Types/Application/simpan-dan-muat/../Application.h
+ lib/Types/Application/simpan-dan-muat/../Application.h \
+ lib/Types/Application/simpan-dan-muat/../../../ADT/WordMachine/wordmachine.h
 /usr/include/stdc-predef.h:
 lib/Types/Application/simpan-dan-muat/simpan.h:
 /usr/include/stdio.h:
@@ -278,3 +279,4 @@ lib/Types/Application/simpan-dan-muat/../../.././Types/Application/perintah/../A
 lib/Types/Application/simpan-dan-muat/../../.././Types/Application/perintah/../../ReplyTree.h:
 lib/Types/Application/simpan-dan-muat/../../.././Types/Application/Devtools.h:
 lib/Types/Application/simpan-dan-muat/../Application.h:
+lib/Types/Application/simpan-dan-muat/../../../ADT/WordMachine/wordmachine.h:

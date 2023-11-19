@@ -128,6 +128,7 @@
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/../../../lib.h \
  lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/../Application.h \
+ lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/../../../ADT/WordMachine/wordmachine.h \
  lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h \
  lib/ADT/WordMachine/../.././Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h \
  lib/ADT/WordMachine/../.././Types/Application/perintah/../teman/teman.h \
@@ -270,6 +271,7 @@ lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/simpan
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/../../../lib.h:
 lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/../Application.h:
+lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/../../../ADT/WordMachine/wordmachine.h:
 lib/ADT/WordMachine/../.././Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h:
 lib/ADT/WordMachine/../.././Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h:
 lib/ADT/WordMachine/../.././Types/Application/perintah/../teman/teman.h:

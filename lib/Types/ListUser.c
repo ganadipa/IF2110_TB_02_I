@@ -224,7 +224,7 @@ void displayAllReply(ReplyTree rt, ListUser l, int LOGINID)
     
     int length = LISTREP(rt).neff;
     int i;
-    for (i = 0; i < length; i++) {
+    for (i = 0; i <= length; i++) {
         if (!ISUSED(rt, i) ) continue;
         Reply r = (*ADDR(LISTREP(rt), i));
         

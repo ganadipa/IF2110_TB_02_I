@@ -7,11 +7,13 @@
 #include <sys/types.h>
 #include "../../../lib.h"
 #include "../Application.h"
+#include "../../../ADT/WordMachine/wordmachine.h"
+
 
 boolean isExist(String* path);
 /*Mengecek apakah folder ada atau tidak*/
 
-void SavingFilePengguna(String* path, ListUser user);
+void SavingFilePengguna(String* path, ListUser user, Application app);
 /*Menyimpan file pengguna.config*/
 
 void SavingFile(String* path, Application*app);

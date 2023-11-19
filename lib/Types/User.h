@@ -7,7 +7,6 @@
 #include "Profile.h"
 #include "RequestQueue.h"
 #include "DrafDinKicauan.h"
-// #include "DrafKicauan.h"
 
 #define USERCAP 20;
 #define ID_UNDEF -1;
@@ -19,7 +18,6 @@ typedef struct user {
     String password;
     Profile profile;
     RequestQueue friendRequest;
-    // DrafKicau drafKicau;
     DrafKicauDin drafKicau;
 } User;
 
