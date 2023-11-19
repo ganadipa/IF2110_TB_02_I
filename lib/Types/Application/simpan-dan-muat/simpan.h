@@ -13,10 +13,7 @@
 boolean isExist(String* path);
 /*Mengecek apakah folder ada atau tidak*/
 
-void TulisFile(FILE* filename, String kata); 
-/*Menulis file*/
-
-void SavingFilePengguna(String* path, ListUser user);
+void SavingFilePengguna(String* path, ListUser user, Application app);
 /*Menyimpan file pengguna.config*/
 
 void SavingFile(String* path, Application*app);
