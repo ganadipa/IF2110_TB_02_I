@@ -22,7 +22,6 @@ void AppInitialization(Application *app)
 
     LOGGEDIN(*app) = false;
     LOGINID(*app) = ID_UNDEF;
-    JUMLAHUTAS(*app) = 0;
     // Inisialisasi app
      
 }
@@ -233,6 +232,7 @@ void LoadUtas(Application *app){
     STARTWORDFILE(filename);
     if (retvalfile != -1){
         int kicaudenganutas= stringToInt(currentWordFile); /* banyak kicauan yang memiliki utas */
+        printf("jumlah utas: %d\n", kicaudenganutas);
         app->JumlahUtas = kicaudenganutas;
         for (i=0;i<kicaudenganutas;i++){
             ADVWORDFILE(); /* currentwordfile berisi id kicauan yang memiliki utas */

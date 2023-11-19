@@ -33,5 +33,5 @@ void DevTools(Application app)
         printAllReplyTree(BALASAN(KICAUAN(app).buffer[i]));
     }
 
-    
+    printf("jumlah utas dev: %d\n", JUMLAHUTAS(app)); 
 }

@@ -146,27 +146,25 @@ void SavingFileUtas(String *path, ListKicau listKicau, Application *Utas){
     snprintf(Dir.buffer, 1000, "%s/%s", path->buffer, utas);
     FILE* fileUtas = fopen(Dir.buffer, "w"); 
     int i, j; 
-    fprintf(fileUtas, "%d\n", JUMLAHUTAS(*Utas));
+    fprintf(fileUtas, "%d", JUMLAHUTAS(*Utas));
     for(i = 0; i < NEFF(listKicau); i++){
         if(LEN_ANAKUTAS(ELMT(listKicau, i)) != 0){
             AddressUtas utas = FIRST(ELMT(listKicau, i));
-            printf("%d\n", IDKicau(ELMT(listKicau, i)));
-            printf("%d\n", LEN_ANAKUTAS(ELMT(listKicau, i)));
-            fprintf(fileUtas, "%d\n", IDKicau(ELMT(listKicau, i)));
-            fprintf(fileUtas, "%d\n", LEN_ANAKUTAS(ELMT(listKicau, i)));
+            printf("\n%d", IDKicau(ELMT(listKicau, i)));
+            printf("\n%d", LEN_ANAKUTAS(ELMT(listKicau, i)));
+            fprintf(fileUtas, "\n%d", IDKicau(ELMT(listKicau, i)));
+            fprintf(fileUtas, "\n%d", LEN_ANAKUTAS(ELMT(listKicau, i)));
             for(j = 0; j < LEN_ANAKUTAS(ELMT(listKicau, i)); j++){
                 deleteRest(&TEKSDIUTAS(utas));
                 deleteRest(&NAMADIUTAS(utas));
                 deleteRest(&DATETIMEUTAS(utas));
                 // fprintf(fileUtas, "Utas ke-%d\n", );
-                fprintf(fileUtas, "%s\n", TEKSDIUTAS(utas).buffer); 
-                fprintf(fileUtas, "%s\n", NAMADIUTAS(utas).buffer); 
+                fprintf(fileUtas, "\n%s", TEKSDIUTAS(utas).buffer); 
+                fprintf(fileUtas, "\n%s", NAMADIUTAS(utas).buffer); 
 
-                if (i == NEFF(listKicau) -1) {
-                    fprintf(fileUtas, "%s", DATETIMEUTAS(utas).buffer);
-                } else {
-                    fprintf(fileUtas, "%s\n", DATETIMEUTAS(utas).buffer);
-                }
+            
+                fprintf(fileUtas, "\n%s", DATETIMEUTAS(utas).buffer);
+            
                 utas = NEXT_Linked(utas);
             }
         }

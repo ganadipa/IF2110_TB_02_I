@@ -9,7 +9,7 @@ int retvalfile;
 char currentCharFile;
 boolean EOP_FILE;
 boolean EndFile = false;
-const char source[50] = "./config/folder1/";
+const char source[50] = "./config/TEST2/";
 void OPENFILE(String filename)
 {   
     String s;
