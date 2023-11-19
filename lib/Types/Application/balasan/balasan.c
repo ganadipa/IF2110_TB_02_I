@@ -21,16 +21,16 @@ void Balas(Application *app, int IDKicau, int IDBalasan) {
 
     // while (IDBalasan != -1) printf("hello");
     int idx = getIdxFromReplyId(*balasan, IDBalasan);
+    printf("here\n");
     if ((idx == -1 && IDBalasan != -1) && !ISUSED(*balasan, IDBalasan)) {
         printf("\nWah, tidak terdapat balasan yang ingin Anda balas! Mungkin typo IDBalasan ?\n");
         return;
     }
 
-
     int userId = userKicau(KICAUAN(*app).buffer[IDKicau]);
 
 
-    if (CanSee(lu, userID, LOGINID(*app), pertemanan)){
+    if (!CanSee(lu, userID, LOGINID(*app), pertemanan)){
         printf("\nWah akun tersebut merupakan akun privat dan Anda belum berteman dengan akun tersebut! \n");
         return;
     }
@@ -78,6 +78,9 @@ void Balasan(Application *app, int IDKicau){
     int userID = userKicau(*k);
     ListUser *lu = &LISTUSER(*app);
     Graf *pertemanan = &FRIENDSHIPS(*app);
+    printf("done here\n");
+
+
     if (IDKicau > KICAUAN(*app).nEff) {
         printf("\nWah tidak terdapat kicauan dengan ID tersebut! Mungkin typo IDKicau ?\n");
         return;
@@ -85,10 +88,12 @@ void Balasan(Application *app, int IDKicau){
 
     if (NUMREP(*balasan) == 0 ) {
         printf("\nBelum terdapat balasan apapun pada kicauan tersebut. Be the first one to break the silence!\n");
+        return;
     }
 
-    if (CanSee(lu, userID, LOGINID(*app), pertemanan)){
+    if (!CanSee(lu, userID, LOGINID(*app), pertemanan)){
         printf("\nWah, kicauan tersebut dibuat oleh pengguna dengan akun privat!\nSilakan berteman terlebih dahulu.");
+        return;
     }
 
     displayAllReply(*balasan, *lu, LOGINID(*app));

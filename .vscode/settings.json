@@ -20,6 +20,10 @@
     "pcolor.h": "c",
     "simpan.h": "c",
     "listdinamik.h": "c",
+<<<<<<< HEAD
+    "prioqueue.h": "c",
+    "requestqueue.h": "c"
+=======
     "types.h": "c",
     "typeinfo": "c",
     "datetime.h": "c",
@@ -42,6 +46,7 @@
     "balasan.h": "c",
     "devtools.h": "c",
     "requestqueue.h": "c"
+>>>>>>> develop
 >>>>>>> develop
   }
 }

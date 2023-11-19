@@ -132,6 +132,7 @@
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  lib/Types/Application/perintah/../simpan-dan-muat/../../../lib.h \
  lib/Types/Application/perintah/../simpan-dan-muat/../Application.h \
+ lib/Types/Application/perintah/../simpan-dan-muat/../../../ADT/WordMachine/wordmachine.h \
  lib/Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h \
  lib/Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h \
  lib/Types/Application/perintah/../teman/teman.h \
@@ -273,6 +274,7 @@ lib/Types/Application/perintah/../simpan-dan-muat/simpan.h:
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 lib/Types/Application/perintah/../simpan-dan-muat/../../../lib.h:
 lib/Types/Application/perintah/../simpan-dan-muat/../Application.h:
+lib/Types/Application/perintah/../simpan-dan-muat/../../../ADT/WordMachine/wordmachine.h:
 lib/Types/Application/perintah/../simpan-dan-muat/simpan-dan-muat.h:
 lib/Types/Application/perintah/../permintaan-pertemanan/permintaan-pertemanan.h:
 lib/Types/Application/perintah/../teman/teman.h:

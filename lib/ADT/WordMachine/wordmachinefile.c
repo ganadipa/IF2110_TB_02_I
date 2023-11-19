@@ -45,8 +45,11 @@ void STARTWORDFILE(String filename){
             EndFile = false;
             CopyWordFILE();
             // IgnoreNewLinesFile();
+            if (currentCharFile == '\r'){
+                ADVCHARFILE();
+            }
             ADVCHARFILE();
-            ADVCHARFILE();
+
         }
     }
 }
@@ -58,20 +61,25 @@ void STARTWORDFILE(String filename){
 void ADVWORDFILE(){
     IgnoreOnes();
     CopyWordFILE();
-    ADVCHARFILE();
+    if (currentCharFile == '\r'){
+        ADVCHARFILE();
+    }
     ADVCHARFILE();
 }
 void ADVWORDFILE2(){
     IgnoreOnes();
     CopyWordFILE2();
-    ADVCHARFILE();
-    if(currentCharFile == '\n'){
+    if (currentCharFile == '\r'){
         ADVCHARFILE();
     }
+    ADVCHARFILE();
+
 }
 void ADVFILEPHOTO(){
     CopyFILEPhoto();
-    ADVCHARFILE();
+    if (currentCharFile == '\r'){
+        ADVCHARFILE();
+    }
     ADVCHARFILE();
 }
 /* I.S. : currentChar adalah karakter pertama kata yang akan diakuisisi
@@ -93,6 +101,7 @@ void CopyWordFILE(){
             ADVCHARFILE();
         }
     }
+    currentWordFile.buffer[currentWordFile.maxLength] = '\0';
 }
 /* Mengakuisisi kata, menyimpan dalam currentWord
    I.S. : currentChar adalah karakter pertama dari kata
@@ -109,6 +118,7 @@ void CopyWordFILE2(){
         i++;
         ADVCHARFILE();
     }
+    currentWordFile.buffer[currentWordFile.maxLength] = '\0';
     // printf("%c ", currentWordFile.buffer[0]);
 }
 void CopyFILEPhoto(){
@@ -122,4 +132,8 @@ void CopyFILEPhoto(){
     currentWordFile.buffer[i] = '\n';
     currentWordFile.maxLength += 1;
     // printf("%c", currentWordFile.buffer[10]);
+}
+
+void deleteRest(String *string){
+    string->buffer[string->maxLength] = '\0';
 }

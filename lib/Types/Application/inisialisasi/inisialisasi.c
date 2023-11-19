@@ -9,9 +9,20 @@ void AppInitialization(Application *app)
 {
     // print opening
     Opening();
+
+    
+    CreateListUser(&LISTUSER(*app)); 
+    CreateGraph(&FRIENDSHIPS(*app));
+    CreateListKicau(&KICAUAN(*app), 1000);
+
     boolean found = false;
     // Setup(app); // Hapus kali udah ada database dari config.
+
     ReadConfig(app, &found);
+
+    LOGGEDIN(*app) = false;
+    LOGINID(*app) = ID_UNDEF;
+    JUMLAHUTAS(*app) = 0;
     // Inisialisasi app
      
 }
@@ -87,10 +98,13 @@ void LoadPengguna(Application *app){
                     replaceString(&photoString, j*20, (j*20)+21, currentWordFile);
                 }
                 readPhotoFile(&(app->users.contents[i].profile.photo), photoString);
-                
             }
+            printf("%d", currentCharFile);
+
+
             /* disini currentwordfile masih baris terakhir dari 
             foto profile */
+            printf("start initiating friendships...\n");
             Graf friendships;
             CreateGraph(&friendships);
             friendships.adjacencyMatrix.colEff = app->users.length;
@@ -133,7 +147,7 @@ void LoadPengguna(Application *app){
 void LoadKicauan(Application *app){
     String filename;
     int i;
-    CreateListKicau(&app->listKicauan, 1000);
+    // CreateListKicau(&app->listKicauan, 1000);
     char temp[20] = "kicauan.config";
     addChartoChar(filename.buffer, temp);
     filename.maxLength = STRCAP;
@@ -182,15 +196,19 @@ void LoadBalasan(Application *app){
                 ADVWORDFILE2(); /* currenwordfile berisi parent id*/
                 int parentid = stringToInt(currentWordFile);
                 ADVWORDFILE(); /* currentwordfile berisi id balasan */
+                printf("\npsuhing to idbalasan... \n");
+                displayString(currentWordFile);
+                printf("then converting...");
                 int IDBalasan = stringToInt(currentWordFile);
+                printf("%d\n", IDBalasan);
                 ADVWORDFILE(); /* currentwordfile berisi isi balasannya */
                 String body = currentWordFile;
                 ADVWORDFILE(); /* currentwordfile berisi author balasan */
                 String name = currentWordFile;
                 ADVWORDFILE(); /* currentwordfile berisi datetime */
                 String DATETIME = currentWordFile;
-                printf("%d\n", parentid);
-                printf("%d\n", IDBalasan);
+                printf("\nparent id: %d", parentid);
+                printf("\nidbalasan: %d\n", IDBalasan);
                 displayString(body);
                 printf("\n");
                 displayString(name);
@@ -243,6 +261,9 @@ void LoadUtas(Application *app){
                 p = node;
             }
         }
+        printf("%s\n", currentWordFile.buffer);
+        deleteRest(&currentWordFile);
+        printf("%s\n", currentWordFile.buffer);
     }
     CLOSEFILE();
 }

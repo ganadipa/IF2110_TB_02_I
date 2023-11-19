@@ -6,18 +6,6 @@ boolean isExist(String *path){
     return (stat(path->buffer, &buffer) == 0);
 }
 
-void TulisFile(FILE* filename, String kata){
-    int i; 
-    int len = kata.maxLength; 
-    for(i = 0; i < len; i++){
-        fprintf(filename, "%c", kata.buffer[i]);
-    }
-}
-
-void deleteRest(String *string){
-    string->buffer[string->maxLength] = '\0';
-}
-
 void SavingFilePengguna(String* path, ListUser user){
     const char *pengguna = "pengguna.config"; 
 
@@ -125,6 +113,7 @@ void SavingFileUtas(String *path, ListKicau listKicau, Application *Utas){
                 deleteRest(&TEKSDIUTAS(utas));
                 deleteRest(&NAMADIUTAS(utas));
                 deleteRest(&DATETIMEUTAS(utas));
+                // fprintf(fileUtas, "Utas ke-%d\n", );
                 fprintf(fileUtas, "%s\n", TEKSDIUTAS(utas).buffer); 
                 fprintf(fileUtas, "%s\n", NAMADIUTAS(utas).buffer); 
                 fprintf(fileUtas, "%s\n", DATETIMEUTAS(utas).buffer);
@@ -150,22 +139,29 @@ void SavingFileBalasan(String *path, ListKicau kicauan, ListUser user){
 
     fprintf(fileBalasan, "%d\n", totalBalasan);
     for(i = 0; i < NEFF(kicauan); i++){
-        if(&BALASAN(ELMT(kicauan, i)) != NULL){
-            fprintf(fileBalasan, "%d\n", kicauan.buffer[i].IDKicau);
+        if(NUMREP(BALASAN(ELMT(kicauan, i))) != 0){ ;
+            //untuk menulis ID dari kicau yang memiliki balasan 
+            fprintf(fileBalasan, "%d\n", IDKicau(ELMT(kicauan, i)));
+            //untuk menulis banyaknya balasan dalam kicauan tersebut
             fprintf(fileBalasan, "%d\n", NUMREP(BALASAN(ELMT(kicauan, i))));
-            for(j = 0; j < NUMREP(BALASAN(ELMT(kicauan, i))); j++){
-                for(k = 0; k < NEFFLR(LISTREP(BALASAN(ELMT(kicauan, i)))); k++){
-                    int IDparent = generateReplyID(BALASAN(ELMT(kicauan, j)));
-                    fprintf(fileBalasan, "%d %d\n", IDparent, k);
-                    ReplyAddress kicauBalasan = ADDR(LISTREP(BALASAN(ELMT(kicauan, j))), k);
-                    String time = DateTimeToString(kicauBalasan->time);
-                    fprintf(fileBalasan, "%s\n", ELMT_LISTUSER(user, kicauBalasan->authorID).name);
-                    fprintf(fileBalasan, "%s\n", time.buffer);
-                }
+            //untuk menulis tiap balasan (unfinished)
+            ListReply temp = LISTREP(BALASAN(ELMT(kicauan, i)));
+            for(j = 0; j < NEFFLR(temp); j++){
+                //blm ada untuk menulis 
+                //balas-ke-node-mana  id-dari-balasan
+                ReplyAddress kicauBalasan = &ADDR(temp, j);
+                
+                // untuk menulis balasan ke dalam file
+                String time = DateTimeToString(DTIME(*kicauBalasan));
+                deleteRest(&BODY(*kicauBalasan)); 
+                deleteRest(&ELMT_LISTUSER(user, AUTHORID(*kicauBalasan)).name);
+                deleteRest(&time);
+                fprintf(fileBalasan, "%s\n", BODY(*kicauBalasan).buffer);
+                fprintf(fileBalasan, "%s\n", ELMT_LISTUSER(user, AUTHORID(*kicauBalasan)).name.buffer);
+                fprintf(fileBalasan, "%s\n", time.buffer);
             }
         }
     }
-
     fclose(fileBalasan);
 }
 
@@ -174,6 +170,7 @@ void SavingFile(String* path, Application *app){
     SavingFileKicauan(path, app->listKicauan, app->users);
     SavingFileDraf(path, app->users);
     SavingFileUtas(path, app->listKicauan, app);
+    SavingFileBalasan(path, app->listKicauan, app->users);
 }
 
 void SavingFolder(String *path, Application *app) {
@@ -184,6 +181,7 @@ void SavingFolder(String *path, Application *app) {
     snprintf(folderPath.buffer, 1000, "%s%s", parentPath, path->buffer);
     if(isExist(&folderPath)){
         printf("Folder sudah ada\n"); 
+        printf("Folder akan diperbarui\n");
         SavingFile(&folderPath, app); 
     }
     else{

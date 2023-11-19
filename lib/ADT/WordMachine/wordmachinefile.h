@@ -48,4 +48,6 @@ void CopyWordFILE();
           Jika panjang kata melebihi NMax, maka sisa kata "dipotong" */
 void CopyWordFILE2();
 void CopyFILEPhoto();
+
+void deleteRest(String *string);
 #endif
