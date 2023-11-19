@@ -11,6 +11,9 @@
 boolean isExist(String* path);
 /*Mengecek apakah folder ada atau tidak*/
 
+void TulisFile(FILE* filename, String kata); 
+/*Menulis file*/
+
 void SavingFilePengguna(String* path, ListUser user);
 /*Menyimpan file pengguna.config*/
 
