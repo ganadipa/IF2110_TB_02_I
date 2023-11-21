@@ -141,7 +141,7 @@ void handleCommand(Application* app, String command, boolean *finish)
         else{
             printf("Masukkan nama folder yang hendak dimuat.\n");
             readString(&pathfilefolder, 351);
-            MuatFolder(app, pathfilefolder);
+            *app = MuatFolder(app, pathfilefolder);
         }
     }
     else {
