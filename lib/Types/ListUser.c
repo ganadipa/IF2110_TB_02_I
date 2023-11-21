@@ -109,8 +109,9 @@ void deleteAt_ListUser(ListUser *l, User *val, IdxType idx)
 /*      List l mungkin menjadi kosong */
 {
     *val = ELMT_LISTUSER(*l, idx);
-    for (idx = idx; idx < LENGTH_LISTUSER(*l); idx++) {
-        ELMT_LISTUSER(*l, idx) = ELMT_LISTUSER(*l, idx+1); 
+    int i;
+    for (i = idx; i < LENGTH_LISTUSER(*l); i++) {
+        ELMT_LISTUSER(*l, i) = ELMT_LISTUSER(*l, i+1); 
     }
     LENGTH_LISTUSER(*l)--;
 }
@@ -123,7 +124,7 @@ void deleteLast_ListUser(ListUser *l, User *val)
 /*      Banyaknya elemen List berkurang satu */
 /*      List l mungkin menjadi kosong */
 {
-    deleteLast_ListUser(l, val);
+    deleteAt_ListUser(l, val, LENGTH_LISTUSER(*l) - 1);
 }
 
 IdxType searchByName(ListUser l, String name)

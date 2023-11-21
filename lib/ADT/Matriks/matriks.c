@@ -282,14 +282,14 @@ float determinantMatrix(Matrix m){
     } else if (ROW_EFF_Matriks(m) == 2 && COL_EFF_Matriks(m) == 2) {
         return (float)(ELMT_Matriks(m, 0, 0) * ELMT_Matriks(m, 1, 1)) - (ELMT_Matriks(m, 0, 1) * ELMT_Matriks(m, 1, 0));
     } else {
-        int i, a,k,baris,kolom;
+        int i, a,k,baris;
         float determinan;   
         determinan = 0;
         for (i = 0; i < ROW_EFF_Matriks(m); i++){
             int new_length = ROW_EFF_Matriks(m) - 1;
             Matrix submatriks;
             createMatrix(new_length, new_length, &submatriks);
-            kolom = 0;
+            
             baris = 0;
             for (a = 0; a < ROW_EFF_Matriks(m); a++) {
                 if (a == i) {

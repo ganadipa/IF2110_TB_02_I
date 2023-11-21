@@ -83,10 +83,6 @@ ReplyAddress getReplyAddress(ReplyTree rt, int replyID)
  * replyID sudah pasti ada.
 */
 {
-    int lo = 0;
-    int hi = rt.maxReply;
-    int mid;
-
     ListReply l = LISTREP(rt);
     return ADDR(l, replyID);
 }
