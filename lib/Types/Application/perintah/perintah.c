@@ -72,9 +72,11 @@ void handleCommand(Application* app, String command, boolean *finish)
         UbahKicauan(app,ID);
     } else if (compareString(firstWord, "TAMBAH_TEMAN")) {
         TambahTeman(app);
-    } else if (compareString(firstWord, "BATAL_TAMBAH_TEMAN")) {
-        BatalTambahTeman(app);
-    } else if (compareString(firstWord, "DAFTAR_PERMINTAAN_PERTEMANAN")) {
+    } 
+    // else if (compareString(firstWord, "BATAL_TAMBAH_TEMAN")) {
+    //     BatalTambahTeman(app);
+    // } 
+    else if (compareString(firstWord, "DAFTAR_PERMINTAAN_PERTEMANAN")) {
         DaftarPermintaanPertemanan(*app);
     } else if (compareString(firstWord, "SETUJUI_PERTEMANAN")) {
         SetujuiPertemanan(app);

@@ -12,7 +12,8 @@ void TambahTeman(Application *app)
     String s;
     ListUser *l = &LISTUSER(*app);
 
-    int friendReq = FRIEND_COUNT(ELMT_LISTUSER(*l, LOGINID(*app)));
+    int friendReq = lengthRequestQueue(FRIEND_REQUEST(ELMT_LISTUSER(*l, LOGINID(*app))));
+    
     if (friendReq > 0) {
         printf("Terdapat permintaan pertemanan yang belum Anda setujui. Silakan kosongkan daftar permintaan pertemanan untuk Anda terlebih dahulu.");
         return;
@@ -63,37 +64,37 @@ void TambahTeman(Application *app)
 }
 
 
-void BatalTambahTeman(Application *app)
+// void BatalTambahTeman(Application *app)
 
-{
-    if (!LOGGEDIN(*app)) {
-        printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
-        return;
-    }
+// {
+//     if (!LOGGEDIN(*app)) {
+//         printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
+//         return;
+//     }
 
 
-    String s;
-    printf("\nMasukkan nama pengguna: \n");
-    readString(&s, 20);
+//     String s;
+//     printf("\nMasukkan nama pengguna: \n");
+//     readString(&s, 20);
 
-    ListUser *l = &LISTUSER(*app);
-    int idTeman = searchByName(*l, s);
-    User *targetUser = &ELMT_LISTUSER(*l, idTeman);
+//     ListUser *l = &LISTUSER(*app);
+//     int idTeman = searchByName(*l, s);
+//     User *targetUser = &ELMT_LISTUSER(*l, idTeman);
 
-    int idx = getIndex_RequestQueue(FRIEND_REQUEST(*targetUser), LOGINID(*app));
-    if (idx == IDX_UNDEF) {
-        printf(
-            "Anda belum mengirimkan permintaan pertemanan kepada "
-        );
-        displayString(s);
-        return;
-    }
+//     int idx = getIndex_RequestQueue(FRIEND_REQUEST(*targetUser), LOGINID(*app));
+//     if (idx == IDX_UNDEF) {
+//         printf(
+//             "Anda belum mengirimkan permintaan pertemanan kepada "
+//         );
+//         displayString(s);
+//         return;
+//     }
 
-    removeElmt_RequestQueue(&FRIEND_REQUEST(*targetUser), idx);
-    printf("Permintaan pertemanan kepada ");
-    displayString(s);
-    printf(" telah dibatalkan.");
-}
+//     removeElmt_RequestQueue(&FRIEND_REQUEST(*targetUser), idx);
+//     printf("Permintaan pertemanan kepada ");
+//     displayString(s);
+//     printf(" telah dibatalkan.");
+// }
 
 void DaftarPermintaanPertemanan(Application app)
 
