@@ -1,5 +1,6 @@
-lib/ADT/WordMachine/wordmachine.o: lib/ADT/WordMachine/wordmachine.c \
- /usr/include/stdc-predef.h /usr/include/stdio.h \
+lib/ADT/WordMachine/tests/mwordmachine.o: \
+ lib/ADT/WordMachine/tests/mwordmachine.c /usr/include/stdc-predef.h \
+ /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -22,8 +23,10 @@ lib/ADT/WordMachine/wordmachine.o: lib/ADT/WordMachine/wordmachine.c \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- lib/ADT/WordMachine/wordmachine.h lib/ADT/WordMachine/../../boolean.h \
- lib/ADT/WordMachine/charmachine.h
+ lib/ADT/WordMachine/tests/../wordmachine.h \
+ lib/ADT/WordMachine/tests/../../../boolean.h \
+ lib/ADT/WordMachine/tests/../charmachine.h \
+ lib/ADT/WordMachine/tests/../../../boolean.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -49,6 +52,7 @@ lib/ADT/WordMachine/wordmachine.o: lib/ADT/WordMachine/wordmachine.c \
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-lib/ADT/WordMachine/wordmachine.h:
-lib/ADT/WordMachine/../../boolean.h:
-lib/ADT/WordMachine/charmachine.h:
+lib/ADT/WordMachine/tests/../wordmachine.h:
+lib/ADT/WordMachine/tests/../../../boolean.h:
+lib/ADT/WordMachine/tests/../charmachine.h:
+lib/ADT/WordMachine/tests/../../../boolean.h:

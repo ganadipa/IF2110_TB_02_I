@@ -39,7 +39,7 @@ run: $(PROGRAM)
 	@./$(PROGRAM)
 
 word: 
-	$(MAKE) -f Makefile.word test_word
+	$(MAKE) -f Makefile.word test_wordmachine
 
 que: 
 	$(MAKE) -f Makefile.que test_queue
@@ -94,3 +94,31 @@ $(LINKEDLIST_TEST_RESULTS): $(LINKEDLIST_TESTS_DIR)/%.result: $(LINKEDLIST_TESTS
 #************************************************************************************
 #************************************************************************************
 
+# ************************WordMachine UNIT TEST*************************************
+# ************************WordMachine UNIT TEST*************************************
+# ************************WordMachine UNIT TEST*************************************
+wordmachine_SRC = lib/ADT/WordMachine/wordmachine.c
+wordmachine_SRC_TEST = lib/ADT/WordMachine/tests/mwordmachine.c
+wordmachine_OBJ = $(BINARY)/$(wordmachine_SRC:.c=.o)
+wordmachine_OBJ_TEST = $(BINARY)/$(wordmachine_SRC_TEST:.c=.o)
+
+wordmachine_TESTS_DIR = lib/ADT/WordMachine/tests
+wordmachine_TEST_CASES = $(wildcard $(wordmachine_TESTS_DIR)/*.in)
+wordmachine_TEST_OUTPUTS = $(wordmachine_TEST_CASES:.in=.out)
+wordmachine_TEST_RESULTS = $(wordmachine_TEST_CASES:.in=.result)
+
+mwordmachine: $(wordmachine_OBJ) $(wordmachine_OBJ_TEST)
+	$(CC) $(CFLAGS) -o $@ $^
+
+test_wordmachine: mwordmachine $(wordmachine_TEST_RESULTS)
+	@cat $(wordmachine_TEST_RESULTS)
+
+$(wordmachine_TEST_RESULTS): $(wordmachine_TESTS_DIR)/%.result: $(wordmachine_TESTS_DIR)/%.in $(wordmachine_TESTS_DIR)/%.out mwordmachine
+	@if ./mwordmachine < $< | diff - $(word 2,$^) > /dev/null; then \
+		echo "$< $(word 2,$^): PASSED!"; \
+	else \
+		echo "$< $(word 2,$^): FAILED!"; \
+	fi > $@
+#************************************************************************************
+#************************************************************************************
+#************************************************************************************
