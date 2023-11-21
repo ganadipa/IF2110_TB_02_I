@@ -89,19 +89,19 @@ void LoadPengguna(Application *app, String pathfilefolder){
                 ADVWORDFILE();
                 app->users.contents[i].ID = i;
                 app->users.contents[i].name.maxLength = 20;
-                addString(&(app->users.contents[i].name), currentWordFile);
+                app->users.contents[i].name = currentWordFile;
                 ADVWORDFILE();
                 app->users.contents[i].password.maxLength = 20;
-                addString(&app->users.contents[i].password, currentWordFile);
+                app->users.contents[i].password = currentWordFile;
                 ADVWORDFILE();
                 app->users.contents[i].profile.bio.maxLength = 135;
-                addString(&app->users.contents[i].profile.bio, currentWordFile);
+                app->users.contents[i].profile.bio = currentWordFile;
                 ADVWORDFILE();
                 app->users.contents[i].profile.phoneNumber.maxLength = stringLength(currentWordFile);
-                addString(&app->users.contents[i].profile.phoneNumber, currentWordFile);
+                app->users.contents[i].profile.phoneNumber = currentWordFile;
                 ADVWORDFILE();
                 app->users.contents[i].profile.weton.maxLength = stringLength(currentWordFile);
-                addString(&app->users.contents[i].profile.weton, currentWordFile);
+                app->users.contents[i].profile.weton = currentWordFile;
                 ADVWORDFILE();
                 app->users.contents[i].profile.isPrivate = (currentWordFile.buffer[1] == 'r');
                 for (j=0; j<5; j++){
