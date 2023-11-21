@@ -3,8 +3,8 @@
 # ************************WordMachine UNIT TEST*************************************
 wordmachine_SRC = lib/ADT/WordMachine/wordmachine.c
 wordmachine_SRC_TEST = lib/ADT/WordMachine/tests/mwordmachine.c
-wordmachine_OBJ = $(BINARY)/$(LINKEDLIST_SRC:.c=.o)
-wordmachine_OBJ_TEST = $(BINARY)/$(LINKEDLIST_SRC_TEST:.c=.o)
+wordmachine_OBJ = $(BINARY)/$(wordmachine_SRC:.c=.o)
+wordmachine_OBJ_TEST = $(BINARY)/$(wordmachine_SRC_TEST:.c=.o)
 
 wordmachine_TESTS_DIR = lib/ADT/WordMachine/tests
 wordmachine_TEST_CASES = $(wildcard $(wordmachine_TESTS_DIR)/*.in)
