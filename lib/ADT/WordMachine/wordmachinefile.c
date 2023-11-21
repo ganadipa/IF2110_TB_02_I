@@ -39,18 +39,15 @@ void STARTWORDFILE(String filename){
     if (!EndFile){
         IgnoreBlanksFile();
         IgnoreNullFile();
-        if(currentCharFile == MARK_LAST_FILE){
-            EndFile = true;
-        } else{
-            EndFile = false;
-            CopyWordFILE();
-            // IgnoreNewLinesFile();
-            if (currentCharFile == '\r'){
-                ADVCHARFILE();
-            }
+        EndFile = false;
+        CopyWordFILE();
+        // IgnoreNewLinesFile();
+        if (currentCharFile == '\r'){
             ADVCHARFILE();
-
         }
+        ADVCHARFILE();
+
+        
     }
 }
 /* I.S. : currentChar sembarang

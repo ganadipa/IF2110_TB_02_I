@@ -43,7 +43,7 @@ void Opening()
     printf("Selamat datang di BurBir. \n\n");
 
     printf("Aplikasi untuk studi kualitatif mengenai perilaku manusia dengan menggunakan metode (pengambilan data berupa) Focused Group Discussion kedua di zamannya.\n");
-    printf("Masukkan folder file config: ");
+    printf("Silahkan masukan folder konfigurasi untuk dimuat: ");
     readString(&pathfilefolder, 351);
 
 }
@@ -61,19 +61,19 @@ void Setup(Application *app)
 }
 
 void ReadConfig(Application *app, boolean *found) {
-    LoadPengguna(app);
+    LoadPengguna(app, pathfilefolder);
     if(EndFile){
         return;
     }
-    LoadKicauan(app);
-    LoadBalasan(app);
-    LoadDraft(app);
-    LoadUtas(app);
+    LoadKicauan(app, pathfilefolder);
+    LoadBalasan(app, pathfilefolder);
+    LoadDraft(app, pathfilefolder);
+    LoadUtas(app, pathfilefolder);
     
     printf("File konfigurasi berhasil dimuat! Selamat berkicau!\n\n");
 }
 
-void LoadPengguna(Application *app){
+void LoadPengguna(Application *app, String pathfilefolder){
     String folder = pathfilefolder;
     String filename = {"/pengguna.config", 20};
     addString(&folder, filename);
@@ -153,7 +153,7 @@ void LoadPengguna(Application *app){
     CLOSEFILE();
 }
 
-void LoadKicauan(Application *app){
+void LoadKicauan(Application *app, String pathfilefolder){
     String folder = pathfilefolder;
     String filename = {"/kicauan.config", 20};
     int i;
@@ -187,7 +187,7 @@ void LoadKicauan(Application *app){
     CLOSEFILE();
 }
 
-void LoadBalasan(Application *app){
+void LoadBalasan(Application *app, String pathfilefolder){
     String folder = pathfilefolder;
     String filename = {"/balasan.config", 20};
     int i,j;
@@ -222,7 +222,7 @@ void LoadBalasan(Application *app){
     CLOSEFILE();
 }
 
-void LoadUtas(Application *app){
+void LoadUtas(Application *app, String pathfilefolder){
     String folder = pathfilefolder;
     String filename = {"/utas.config", 20};
     int i,j;
@@ -264,7 +264,7 @@ void LoadUtas(Application *app){
     CLOSEFILE();
 }
 
-void LoadDraft(Application *app){
+void LoadDraft(Application *app, String pathfilefolder){
     String filename = {"/draf.config", 20};
     String folder = pathfilefolder;
     addString(&folder, filename);

@@ -28,6 +28,8 @@ int main(){
             STARTWORD();
             while(!EndWord){
                 for(i=0;i<currentWord.Length;i++){
+                    // printf("%c", currentWord.TabWord[i]);
+                    // printf("%d", currentWord.Length);
                     printf("%c", ((currentWord.TabWord[i] - 'A' + currentWord.Length) % ('z' - 'A' + 1)) + 'A');
                 }
                 if (currentChar_WordMachine != MARK_WordMachine){
@@ -39,7 +41,8 @@ int main(){
         case 3: 
             printf("%d", test);
             break;
-
+        case 4:
+            break;
     }
 
 }

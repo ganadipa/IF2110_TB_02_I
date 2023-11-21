@@ -37,6 +37,7 @@ void STARTWORD(){
         EndWord = true;
     } else {
         EndWord = false;
+        IgnoreNewLinesAndNull();
         CopyWord();
         IgnoreBlanks();
     }
@@ -51,6 +52,7 @@ void ADVWORD(){
     if (currentChar_WordMachine == MARK_WordMachine){
         EndWord = true;
     } else {
+        IgnoreNewLinesAndNull();
         CopyWord();
         IgnoreBlanks();
     }

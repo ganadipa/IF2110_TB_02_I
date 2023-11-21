@@ -13,6 +13,7 @@ extern boolean EOP_FILE;
 extern boolean EndFile;
 extern int retvalfile;
 extern FILE *pitafile;
+
 void OPENFILE(String filename);
 void CLOSEFILE();
 void ADVCHARFILE();
