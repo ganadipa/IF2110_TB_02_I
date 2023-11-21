@@ -120,7 +120,7 @@ void handleCommand(Application* app, String command, boolean *finish)
         NyambungAnakUtas(app, IDutas, index);  
     } else if ( compareString(firstWord , "HAPUS_UTAS")){
         if (numword != 3) {
-            printf("\nPerintah yang valid: \"SAMBUNG_UTAS <IDUTAS> <INDEKSUTAS>;\".\n");
+            printf("\nPerintah yang valid: \"HAPUS_UTAS <IDUTAS> <INDEKSUTAS>;\".\n");
             return;
         }
         int IDutas = stringToInt(secondWord);
