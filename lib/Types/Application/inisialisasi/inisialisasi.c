@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "inisialisasi.h"
+#include "../../../ADT/WordMachine/charmachinefile.h"
 
+String pathfilefolder;
 void AppInitialization(Application *app)
     /**
      * I.S. Program baru dimulai.
@@ -19,7 +21,9 @@ void AppInitialization(Application *app)
     // Setup(app); // Hapus kali udah ada database dari config.
 
     ReadConfig(app, &found);
-
+    if (pitafile == NULL){
+        printf("Folder tidak berhasil dimuat, jadi bikin baru\n");
+    }
     LOGGEDIN(*app) = false;
     LOGINID(*app) = ID_UNDEF;
     // Inisialisasi app
@@ -39,6 +43,9 @@ void Opening()
     printf("Selamat datang di BurBir. \n\n");
 
     printf("Aplikasi untuk studi kualitatif mengenai perilaku manusia dengan menggunakan metode (pengambilan data berupa) Focused Group Discussion kedua di zamannya.\n");
+    printf("Masukkan folder file config: ");
+    readString(&pathfilefolder, 351);
+
 }
 
 
@@ -55,6 +62,9 @@ void Setup(Application *app)
 
 void ReadConfig(Application *app, boolean *found) {
     LoadPengguna(app);
+    if(EndFile){
+        return;
+    }
     LoadKicauan(app);
     LoadBalasan(app);
     LoadDraft(app);
@@ -64,12 +74,14 @@ void ReadConfig(Application *app, boolean *found) {
 }
 
 void LoadPengguna(Application *app){
-    String filename = {"pengguna.config", 20};
+    String folder = pathfilefolder;
+    String filename = {"/pengguna.config", 20};
+    addString(&folder, filename);
     int i,j;
     String photoString;
     createEmptyString(&photoString, 225);
-    STARTWORDFILE(filename);
-    if (retvalfile != -1){
+    STARTWORDFILE(folder);
+    if (retvalfile != -1 && !EndFile){
         app->users.length = stringToInt(currentWordFile);
         if(app->users.length > 0){
             for (i=0; i < app->users.length; i++){
@@ -144,16 +156,17 @@ void LoadPengguna(Application *app){
 }
 
 void LoadKicauan(Application *app){
-    String filename;
+    String folder = pathfilefolder;
+    String filename = {"/kicauan.config", 20};
     int i;
     // CreateListKicau(&app->listKicauan, 1000);
-    char temp[20] = "kicauan.config";
-    addChartoChar(filename.buffer, temp);
-    filename.maxLength = STRCAP;
-    STARTWORDFILE(filename);
+    addString(&folder, filename);
+    STARTWORDFILE(folder);
+
+    Kicauan kicau;
     if (retvalfile != -1){
-        app->listKicauan.nEff = stringToInt(currentWordFile);
-        for(i=0;i<app->listKicauan.nEff;i++){
+        int jumlahkicau = stringToInt(currentWordFile);
+        for(i=0;i<jumlahkicau;i++){
             ADVWORDFILE();
             int IdKicau = stringToInt(currentWordFile);
             ADVWORDFILE();
@@ -162,27 +175,31 @@ void LoadKicauan(Application *app){
             int like = stringToInt(currentWordFile);
             ADVWORDFILE();
             app->listKicauan.buffer[i].IDuser = searchByName(app->users, currentWordFile);
+            printf("%d\n\n", app->listKicauan.buffer[i].IDuser);
             InisialisasiKicau(&app->listKicauan.buffer[i], app->listKicauan.buffer[i].IDuser);
-            app->listKicauan.buffer[i].IDKicau = IdKicau;
-            app->listKicauan.buffer[i].like = like;
-            app->listKicauan.buffer[i].text = text;
             ADVWORDFILE();
-            app->listKicauan.buffer[i].dateTime = currentWordFile;
+            kicau.dateTime = currentWordFile;
+            kicau.IDKicau = IdKicau;
+            kicau.like = like;
+            kicau.text = text;
+            printKicauan(kicau, NAME(ELMT_LISTUSER(app->users, 3)));
+            insertLastListKicau(&app->listKicauan, kicau);
         
         }
+        printf("%d\n", app->listKicauan.nEff);
     }
     CLOSEFILE();
 }
 
 void LoadBalasan(Application *app){
-    String filename;
+    String folder = pathfilefolder;
+    String filename = {"/balasan.config", 20};
     int i,j;
-    char temp[20] = "balasan.config";
-    addChartoChar(filename.buffer, temp);
-    filename.maxLength = STRCAP;
-    STARTWORDFILE(filename);
+    addString(&folder, filename);
+    STARTWORDFILE(folder);
     if (retvalfile != -1){
         int banyakkicauan = stringToInt(currentWordFile); /* banyak kicauan yang memiliki balasan*/
+        printf("Banyak kicauan: %d\n", banyakkicauan);
         for (i=0;i<banyakkicauan;i++){
             ADVWORDFILE();
             int idkicau = stringToInt(currentWordFile); /* id kicauan */
@@ -191,7 +208,7 @@ void LoadBalasan(Application *app){
             ADVWORDFILE();
             int balasan = stringToInt(currentWordFile); /* banyak balasan */
             app->listKicauan.buffer[idkicau-1].balasan.numReplyEff = balasan;
-            for (i=0;i<balasan;i++){
+            for (j=0;j<balasan;j++){
                 ADVWORDFILE2(); /* currenwordfile berisi parent id*/
                 int parentid = stringToInt(currentWordFile);
                 ADVWORDFILE(); /* currentwordfile berisi id balasan */
@@ -223,13 +240,12 @@ void LoadBalasan(Application *app){
 }
 
 void LoadUtas(Application *app){
-    String filename;
+    String folder = pathfilefolder;
+    String filename = {"/utas.config", 20};
     int i,j;
-    char temp[20] = "utas.config";
-    addChartoChar(filename.buffer, temp);
-    filename.maxLength = STRCAP;
+    addString(&folder, filename);
     
-    STARTWORDFILE(filename);
+    STARTWORDFILE(folder);
     if (retvalfile != -1){
         int kicaudenganutas= stringToInt(currentWordFile); /* banyak kicauan yang memiliki utas */
         printf("jumlah utas: %d\n", kicaudenganutas);
@@ -269,9 +285,11 @@ void LoadUtas(Application *app){
 }
 
 void LoadDraft(Application *app){
-    String filename = {"draf.config", 20};
+    String filename = {"/draf.config", 20};
+    String folder = pathfilefolder;
+    addString(&folder, filename);
     int i,j;
-    STARTWORDFILE(filename);
+    STARTWORDFILE(folder);
     if(retvalfile != -1){
         int banyakpengguna = stringToInt(currentWordFile);
         printf("Banyak pengguna yang mempunyai draft: %d\n", banyakpengguna);
@@ -304,7 +322,6 @@ void LoadDraft(Application *app){
             printf("\n");
             AddressDraf p = app->users.contents[userid].drafKicau.drafTop;
             while(p != NULL){
-                String nama = username;
                 printKicauan(p->kicau, username);
                 p = p->next; 
             }

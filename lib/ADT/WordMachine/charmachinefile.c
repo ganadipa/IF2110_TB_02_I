@@ -9,7 +9,7 @@ int retvalfile;
 char currentCharFile;
 boolean EOP_FILE;
 boolean EndFile = false;
-const char source[50] = "./config/TEST2/";
+const char source[50] = "./config/";
 void OPENFILE(String filename)
 {   
     String s;
@@ -20,7 +20,6 @@ void OPENFILE(String filename)
     addString(&s, filename);
     pitafile = fopen(s.buffer, "r");
     if (pitafile == NULL){
-        printf("File %s gagal dibuka\n", filename.buffer);
         EndFile = true;
     }
     
@@ -28,7 +27,9 @@ void OPENFILE(String filename)
 }
 
 void CLOSEFILE() {
-    fclose(pitafile);
+    if (!EndFile){
+        fclose(pitafile);
+    }
 }
 
 void ADVCHARFILE()

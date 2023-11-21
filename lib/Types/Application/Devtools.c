@@ -34,4 +34,6 @@ void DevTools(Application app)
     }
 
     printf("jumlah utas dev: %d\n", JUMLAHUTAS(app)); 
+
+    printListKicau(app.listKicauan, app.users);
 }
