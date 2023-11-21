@@ -110,12 +110,10 @@ void LoadPengguna(Application *app){
                 }
                 readPhotoFile(&(app->users.contents[i].profile.photo), photoString);
             }
-            printf("%d", currentCharFile);
 
 
             /* disini currentwordfile masih baris terakhir dari 
             foto profile */
-            printf("start initiating friendships...\n");
             Graf friendships;
             CreateGraph(&friendships);
             friendships.adjacencyMatrix.colEff = app->users.length;
@@ -197,7 +195,6 @@ void LoadBalasan(Application *app){
     STARTWORDFILE(folder);
     if (retvalfile != -1){
         int banyakkicauan = stringToInt(currentWordFile); /* banyak kicauan yang memiliki balasan*/
-        printf("Banyak kicauan: %d\n", banyakkicauan);
         for (i=0;i<banyakkicauan;i++){
             ADVWORDFILE();
             int idkicau = stringToInt(currentWordFile); /* id kicauan */
@@ -210,25 +207,13 @@ void LoadBalasan(Application *app){
                 ADVWORDFILE2(); /* currenwordfile berisi parent id*/
                 int parentid = stringToInt(currentWordFile);
                 ADVWORDFILE(); /* currentwordfile berisi id balasan */
-                printf("\npsuhing to idbalasan... \n");
-                displayString(currentWordFile);
-                printf("then converting...");
                 int IDBalasan = stringToInt(currentWordFile);
-                printf("%d\n", IDBalasan);
                 ADVWORDFILE(); /* currentwordfile berisi isi balasannya */
                 String body = currentWordFile;
                 ADVWORDFILE(); /* currentwordfile berisi author balasan */
                 String name = currentWordFile;
                 ADVWORDFILE(); /* currentwordfile berisi datetime */
                 String DATETIME = currentWordFile;
-                printf("\nparent id: %d", parentid);
-                printf("\nidbalasan: %d\n", IDBalasan);
-                displayString(body);
-                printf("\n");
-                displayString(name);
-                printf("\n");
-                displayString(DATETIME);
-                printf("\n");
                 AddReplyDariConfig(&app->listKicauan.buffer[idkicau-1].balasan, &app->users, idkicau, IDBalasan, parentid, body, name, DATETIME); 
             }
         }
@@ -246,7 +231,6 @@ void LoadUtas(Application *app){
     STARTWORDFILE(folder);
     if (retvalfile != -1){
         int kicaudenganutas= stringToInt(currentWordFile); /* banyak kicauan yang memiliki utas */
-        printf("jumlah utas: %d\n", kicaudenganutas);
         app->JumlahUtas = kicaudenganutas;
         for (i=0;i<kicaudenganutas;i++){
             ADVWORDFILE(); /* currentwordfile berisi id kicauan yang memiliki utas */
@@ -275,9 +259,7 @@ void LoadUtas(Application *app){
                 p = node;
             }
         }
-        printf("%s\n", currentWordFile.buffer);
         deleteRest(&currentWordFile);
-        printf("%s\n", currentWordFile.buffer);
     }
     CLOSEFILE();
 }
@@ -290,37 +272,24 @@ void LoadDraft(Application *app){
     STARTWORDFILE(folder);
     if(retvalfile != -1){
         int banyakpengguna = stringToInt(currentWordFile);
-        printf("Banyak pengguna yang mempunyai draft: %d\n", banyakpengguna);
         for(i=0;i<banyakpengguna;i++){
             ADVWORDFILE();
             String username = currentWordFile;
             username.maxLength -= 2;
-            displayString(username);
-            printf("\n");
             int userid = searchByName(app->users, username);
             CreateDraftDin(&app->users.contents[userid].drafKicau);
             int banyakdraft = currentWordFile.buffer[currentWordFile.maxLength-1] - '0';
-            printf("Banyak draft: %d\n", banyakdraft);
             Kicauan kicau;
             InisialisasiDrafDinKicau(&kicau, userid);
             for(j=0;j<banyakdraft;j++){
                 ADVWORDFILE();
                 kicau.text = currentWordFile;
-                displayString(kicau.text);
-                printf("\n");
                 ADVWORDFILE();
                 kicau.dateTime = currentWordFile;
-                displayString(kicau.dateTime);
-                printf("\n");
                 PushDrafDin(&app->users.contents[userid].drafKicau, kicau);
             }
-            printf("\n");
-            int len = LengthDraf(app->users.contents[userid].drafKicau);
-            printf("Panjang draftdinkicau: %d", len);
-            printf("\n");
             AddressDraf p = app->users.contents[userid].drafKicau.drafTop;
             while(p != NULL){
-                printKicauan(p->kicau, username);
                 p = p->next; 
             }
             

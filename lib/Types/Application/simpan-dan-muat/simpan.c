@@ -208,7 +208,7 @@ void SavingFileBalasan(String *path, ListKicau kicauan, ListUser user){
     createEmptyString(&Dir, 100); 
     snprintf(Dir.buffer, 1000, "%s/%s", path->buffer, reply); 
     FILE *fileBalasan = fopen(Dir.buffer, "w");
-    int i, j, k, totalBalasan = 0; 
+    int i, j, totalBalasan = 0; 
     for(i = 0; i < NEFF(kicauan); i++){
         if(NUMREP(BALASAN(ELMT(kicauan, i))) != 0){
             totalBalasan++;

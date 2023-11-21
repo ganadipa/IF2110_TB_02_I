@@ -27,7 +27,7 @@ void Balas(Application *app, int IDKicau, int IDBalasan) {
         return;
     }
 
-    int userId = userKicau(KICAUAN(*app).buffer[IDKicau]);
+
 
 
     if (!CanSee(lu, userID, LOGINID(*app), pertemanan)){
@@ -106,8 +106,6 @@ void HapusBalasan(Application *app, int IDKicau, int IDBalasan){
 
 
 
-    int userID = userKicau(*k);
-    ListUser *lu = &LISTUSER(*app);
 
     int idx = getIdxFromReplyId(*balasan, IDBalasan);
     if (idx == -1) {

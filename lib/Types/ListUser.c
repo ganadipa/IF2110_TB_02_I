@@ -266,7 +266,6 @@ void AddReplyDariConfig(ReplyTree *rt, ListUser *lu,int IDKicau, int IDChild, in
     AUTHORID(*ra) = searchByName(*lu, name);
     DTIME(*ra) = StringToDateTime(datetime);
 
-    printf("curr: %d", rt-> numReplyEff);
 
 
     // Setting up listreply
@@ -277,10 +276,7 @@ void AddReplyDariConfig(ReplyTree *rt, ListUser *lu,int IDKicau, int IDChild, in
     // Setting up reply tree
 
     if (!ISMAIN(*ra)) {
-        printListDin(LISTDIN(*rt, IDParent));
-        printf("\n");
         insertLastListDin(&LISTDIN(*rt, IDParent), IDChild);
-        printf("im here\n");
     }
     
     ISUSED(*rt, IDChild) = 1;
