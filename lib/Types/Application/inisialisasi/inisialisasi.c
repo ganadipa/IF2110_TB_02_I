@@ -174,19 +174,17 @@ void LoadKicauan(Application *app){
             ADVWORDFILE();
             int like = stringToInt(currentWordFile);
             ADVWORDFILE();
-            app->listKicauan.buffer[i].IDuser = searchByName(app->users, currentWordFile);
-            printf("%d\n\n", app->listKicauan.buffer[i].IDuser);
+            int id = searchByName(app->users, currentWordFile);
             InisialisasiKicau(&app->listKicauan.buffer[i], app->listKicauan.buffer[i].IDuser);
             ADVWORDFILE();
             kicau.dateTime = currentWordFile;
             kicau.IDKicau = IdKicau;
             kicau.like = like;
+            kicau.IDuser = id;
             kicau.text = text;
-            printKicauan(kicau, NAME(ELMT_LISTUSER(app->users, 3)));
             insertLastListKicau(&app->listKicauan, kicau);
-        
         }
-        printf("%d\n", app->listKicauan.nEff);
+
     }
     CLOSEFILE();
 }
