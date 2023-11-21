@@ -4,7 +4,7 @@
 int main()
 {
     String command;
-    createEmptyString(&command, 50);
+    createEmptyString(&command, 1000);
 
     Application app;
     START();
@@ -16,7 +16,7 @@ int main()
     while (!finish) {
         // 2. Perintah
         printf("\n>> ");
-        readString(&command, 50);
+        readString(&command, 1000);
 
         handleCommand(&app, command, &finish);
     }

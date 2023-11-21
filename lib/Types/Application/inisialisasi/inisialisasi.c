@@ -163,10 +163,10 @@ void LoadKicauan(Application *app){
     addString(&folder, filename);
     STARTWORDFILE(folder);
 
-    Kicauan kicau;
     if (retvalfile != -1){
         int jumlahkicau = stringToInt(currentWordFile);
         for(i=0;i<jumlahkicau;i++){
+            Kicauan kicau;
             ADVWORDFILE();
             int IdKicau = stringToInt(currentWordFile);
             ADVWORDFILE();
@@ -174,16 +174,23 @@ void LoadKicauan(Application *app){
             ADVWORDFILE();
             int like = stringToInt(currentWordFile);
             ADVWORDFILE();
-            app->listKicauan.buffer[i].IDuser = searchByName(app->users, currentWordFile);
-            printf("%d\n\n", app->listKicauan.buffer[i].IDuser);
-            InisialisasiKicau(&app->listKicauan.buffer[i], app->listKicauan.buffer[i].IDuser);
+            printf("Add this kicauan to: ");
+            displayString(currentWordFile);
+            printf("\n");
+
+            app->listKicauan.buffer[IdKicau-1].IDuser = searchByName(app->users, currentWordFile);
+            printf("%d\n\n", app->listKicauan.buffer[IdKicau-1].IDuser);
+            InisialisasiKicau(&app->listKicauan.buffer[IdKicau-1], app->listKicauan.buffer[IdKicau-1].IDuser);
             ADVWORDFILE();
             kicau.dateTime = currentWordFile;
             kicau.IDKicau = IdKicau;
             kicau.like = like;
             kicau.text = text;
-            printKicauan(kicau, NAME(ELMT_LISTUSER(app->users, 3)));
+            printf("before:\n");
+            printListKicau(app->listKicauan, app->users);
             insertLastListKicau(&app->listKicauan, kicau);
+            printf("after:\n");
+            printListKicau(app->listKicauan, app->users);
         
         }
         printf("%d\n", app->listKicauan.nEff);
