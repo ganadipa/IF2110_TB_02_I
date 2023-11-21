@@ -11,9 +11,9 @@ void TambahTeman(Application *app)
 
     String s;
     ListUser *l = &LISTUSER(*app);
+    
 
     int friendReq = lengthRequestQueue(FRIEND_REQUEST(ELMT_LISTUSER(*l, LOGINID(*app))));
-    
     if (friendReq > 0) {
         printf("Terdapat permintaan pertemanan yang belum Anda setujui. Silakan kosongkan daftar permintaan pertemanan untuk Anda terlebih dahulu.");
         return;

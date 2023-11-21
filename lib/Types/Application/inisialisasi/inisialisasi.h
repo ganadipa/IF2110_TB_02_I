@@ -15,13 +15,13 @@ void Setup(Application *app);
 
 void ReadConfig(Application *app, boolean *found);
 
-void LoadPengguna(Application *app);
+void LoadPengguna(Application *app, String pathfilefolder);
 
-void LoadKicauan(Application *app);
+void LoadKicauan(Application *app, String pathfilefolder);
 
-void LoadDraft(Application *app);
+void LoadDraft(Application *app, String pathfilefolder);
 
-void LoadBalasan(Application *app);
+void LoadBalasan(Application *app, String pathfilefolder);
 
-void LoadUtas(Application *app);
+void LoadUtas(Application *app, String pathfilefolder);
 #endif

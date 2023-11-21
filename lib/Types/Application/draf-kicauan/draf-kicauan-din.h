@@ -1,8 +1,8 @@
 #ifndef DRAFKICAUDIN_H 
 #define DRAFKICAUDIN_H 
 
-#include "Application.h"
-#include "../ADT/String/string.h" 
+#include "../../Application.h"
+#include "../../../ADT/String/string.h" 
 #include "../../DrafDinKicauan.h"
 #include "../../User.h"
 

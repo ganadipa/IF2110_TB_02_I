@@ -122,7 +122,7 @@ void handleCommand(Application* app, String command, boolean *finish)
         NyambungAnakUtas(app, IDutas, index);  
     } else if ( compareString(firstWord , "HAPUS_UTAS")){
         if (numword != 3) {
-            printf("\nPerintah yang valid: \"SAMBUNG_UTAS <IDUTAS> <INDEKSUTAS>;\".\n");
+            printf("\nPerintah yang valid: \"HAPUS_UTAS <IDUTAS> <INDEKSUTAS>;\".\n");
             return;
         }
         int IDutas = stringToInt(secondWord);
@@ -135,7 +135,18 @@ void handleCommand(Application* app, String command, boolean *finish)
         }
         int IDutas = stringToInt(secondWord);
         display_listUtas(app, IDutas);
-    }else {
+    } else if(compareString(firstWord , "MUAT")){
+        String pathfilefolder;
+        if(app->isLoggedIn){
+            printf("Anda harus keluar terlebih dahulu untuk melakukan pemuatan.\n");
+        }
+        else{
+            printf("Masukkan nama folder yang hendak dimuat.\n");
+            readString(&pathfilefolder, 351);
+            *app = MuatFolder(app, pathfilefolder);
+        }
+    }
+    else {
         printf("\nTidak ada perintah ");
         displayString(command);
         printf(". Baca dokumentasi (Spesifikasi) untuk melihat seluruh perintah.\n");  

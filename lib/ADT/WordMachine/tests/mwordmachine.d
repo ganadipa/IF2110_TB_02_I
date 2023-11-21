@@ -1,4 +1,5 @@
-llist: lib/ADT/LinkedList/listlinier.c /usr/include/stdc-predef.h \
+lib/ADT/WordMachine/tests/mwordmachine.o: \
+ lib/ADT/WordMachine/tests/mwordmachine.c /usr/include/stdc-predef.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -21,9 +22,11 @@ llist: lib/ADT/LinkedList/listlinier.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/stdlib.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- lib/ADT/LinkedList/./listlinier.h lib/ADT/LinkedList/./../../boolean.h
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ lib/ADT/WordMachine/tests/../wordmachine.h \
+ lib/ADT/WordMachine/tests/../../../boolean.h \
+ lib/ADT/WordMachine/tests/../charmachine.h \
+ lib/ADT/WordMachine/tests/../../../boolean.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -49,7 +52,7 @@ llist: lib/ADT/LinkedList/listlinier.c /usr/include/stdc-predef.h \
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-/usr/include/stdlib.h:
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-lib/ADT/LinkedList/./listlinier.h:
-lib/ADT/LinkedList/./../../boolean.h:
+lib/ADT/WordMachine/tests/../wordmachine.h:
+lib/ADT/WordMachine/tests/../../../boolean.h:
+lib/ADT/WordMachine/tests/../charmachine.h:
+lib/ADT/WordMachine/tests/../../../boolean.h:

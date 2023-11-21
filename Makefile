@@ -39,7 +39,7 @@ run: $(PROGRAM)
 	@./$(PROGRAM)
 
 word: 
-	$(MAKE) -f Makefile.word test_word
+	$(MAKE) -f Makefile.word test_wordmachine
 
 que: 
 	$(MAKE) -f Makefile.que test_queue

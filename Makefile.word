@@ -1,26 +1,28 @@
+# ************************WordMachine UNIT TEST*************************************
+# ************************WordMachine UNIT TEST*************************************
+# ************************WordMachine UNIT TEST*************************************
+wordmachine_SRC = lib/ADT/WordMachine/wordmachine.c
+wordmachine_SRC_TEST = lib/ADT/WordMachine/tests/mwordmachine.c
+wordmachine_OBJ = $(BINARY)/$(wordmachine_SRC:.c=.o)
+wordmachine_OBJ_TEST = $(BINARY)/$(wordmachine_SRC_TEST:.c=.o)
 
-SRC_WORD = lib/ADT/WordMachine/wordmachine.c
-SRC_TEST = lib/ADT/WordMachine/tests/mwordmachine.c
-SRC_CHAR = lib/ADT/WordMachine/charmachine.c
+wordmachine_TESTS_DIR = lib/ADT/WordMachine/tests
+wordmachine_TEST_CASES = $(wildcard $(wordmachine_TESTS_DIR)/*.in)
+wordmachine_TEST_OUTPUTS = $(wordmachine_TEST_CASES:.in=.out)
+wordmachine_TEST_RESULTS = $(wordmachine_TEST_CASES:.in=.result)
 
-OBJ_WORD = $(SRC_WORD:.c=.o)
-OBJ_TEST = $(SRC_TEST:.c=.o)
-OBJ_CHAR = $(SRC_CHAR:.c=.o)
-
-TESTS_DIR = lib/ADT/WordMachine/tests
-TEST_CASES = $(wildcard $(TESTS_DIR)/*.in)
-TEST_OUTPUTS = $(TEST_CASES:.in=.out)
-TEST_RESULTS = $(TEST_CASES:.in=.result)
-
-mword: $(OBJ_WORD) $(OBJ_TEST) $(OBJ_CHAR)
+mwordmachine: $(wordmachine_OBJ) $(wordmachine_OBJ_TEST)
 	$(CC) $(CFLAGS) -o $@ $^
 
-test_word: mword $(TEST_RESULTS)
-	@cat $(TEST_RESULTS)
+test_wordmachine: mwordmachine $(wordmachine_TEST_RESULTS)
+	@cat $(wordmachine_TEST_RESULTS)
 
-$(TEST_RESULTS): $(TESTS_DIR)/%.result: $(TESTS_DIR)/%.in $(TESTS_DIR)/%.out mword
-	@if ./mword < $< | diff - $(word 2,$^) > /dev/null; then \
-		echo "$< $(word 2,$^): TRUE"; \
+$(wordmachine_TEST_RESULTS): $(wordmachine_TESTS_DIR)/%.result: $(wordmachine_TESTS_DIR)/%.in $(wordmachine_TESTS_DIR)/%.out mwordmachine
+	@if ./mwordmachine < $< | diff - $(word 2,$^) > /dev/null; then \
+		echo "$< $(word 2,$^): PASSED!"; \
 	else \
-		echo "$< $(word 2,$^): WRONG"; \
+		echo "$< $(word 2,$^): FAILED!"; \
 	fi > $@
+#************************************************************************************
+#************************************************************************************
+#************************************************************************************
