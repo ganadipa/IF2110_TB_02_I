@@ -100,9 +100,9 @@ $(LINKEDLIST_TEST_RESULTS): $(LINKEDLIST_TESTS_DIR)/%.result: $(LINKEDLIST_TESTS
 #************************************************************************************
 #************************************************************************************
 
-# ************************LinkedList UNIT TEST*************************************
-# ************************LinkedList UNIT TEST*************************************
-# ************************LinkedList UNIT TEST*************************************
+# ************************Graf UNIT TEST*************************************
+# ************************Graf UNIT TEST*************************************
+# ************************Graf UNIT TEST*************************************
 Graf_DRIVER = lib/ADT/Graf/tests/driver.c
 Graf_SRC = lib/ADT/Graf/graf.c
 Graf_SRC_TEST = lib/ADT/Graf/tests/mgraf.c
@@ -134,4 +134,78 @@ $(Graf_TEST_RESULTS): $(Graf_TESTS_DIR)/%.result: $(Graf_TESTS_DIR)/%.in $(Graf_
 #************************************************************************************
 #************************************************************************************
 #************************************************************************************
+
+# ************************Tree UNIT TEST*************************************
+# ************************Tree UNIT TEST*************************************
+# ************************Tree UNIT TEST*************************************
+Tree_DRIVER = lib/ADT/Tree/tests/driver.c
+Tree_SRC = lib/ADT/Tree/tree.c
+Tree_SRC2 = lib/ADT/ListDinamik/listdinamik.c
+Tree_SRC_TEST = lib/ADT/Tree/tests/mtree.c
+Tree_OBJ = $(BINARY)/$(Tree_SRC:.c=.o)
+Tree_OBJ_TEST = $(BINARY)/$(Tree_SRC_TEST:.c=.o)
+Tree_DRIVER_OBJ = $(BINARY)/$(Tree_DRIVER:.c=.o)
+
+Tree_TESTS_DIR = lib/ADT/Tree/tests
+Tree_TEST_CASES = $(wildcard $(Tree_TESTS_DIR)/*.in)
+Tree_TEST_OUTPUTS = $(Tree_TEST_CASES:.in=.out)
+Tree_TEST_RESULTS = $(Tree_TEST_CASES:.in=.result)
+
+mtree: $(Tree_OBJ) $(Tree_OBJ_TEST)
+	$(CC) $(CFLAGS) -o $@ $^ $(Tree_SRC2)
+
+test_tree: mtree $(Tree_TEST_RESULTS)
+	@cat $(Tree_TEST_RESULTS)
+
+driver_tree: $(LINKEDLIST_DRIVER_OBJ)
+	$(CC) $(CFLAGS) -o tree $(Tree_DRIVER) $(Tree_SRC) $(Tree_SRC2)
+	./tree
+
+$(Tree_TEST_RESULTS): $(Tree_TESTS_DIR)/%.result: $(Tree_TESTS_DIR)/%.in $(Tree_TESTS_DIR)/%.out mtree
+	@if ./mtree < $< | diff - $(word 2,$^) > /dev/null; then \
+		echo "$< $(word 2,$^): PASSED!"; \
+	else \
+		echo "$< $(word 2,$^): FAILED!"; \
+	fi > $@
+#************************************************************************************
+#************************************************************************************
+#************************************************************************************
+
+# ************************String UNIT TEST*************************************
+# ************************String UNIT TEST*************************************
+# ************************String UNIT TEST*************************************
+String_DRIVER = lib/ADT/String/tests/driver.c
+String_SRC = lib/ADT/String/string.c
+String_SRC2 = lib/ADT/WordMachine/wordmachine.c
+String_SRC3 = lib/ADT/WordMachine/charmachine.c
+String_SRC_TEST = lib/ADT/String/tests/mstring.c
+String_OBJ = $(BINARY)/$(String_SRC:.c=.o)
+String_OBJ_TEST = $(BINARY)/$(String_SRC_TEST:.c=.o)
+String_DRIVER_OBJ = $(BINARY)/$(String_DRIVER:.c=.o)
+
+String_TESTS_DIR = lib/ADT/String/tests
+String_TEST_CASES = $(wildcard $(String_TESTS_DIR)/*.in)
+String_TEST_OUTPUTS = $(String_TEST_CASES:.in=.out)
+String_TEST_RESULTS = $(String_TEST_CASES:.in=.result)
+
+mstring: $(String_OBJ) $(String_OBJ_TEST)
+	$(CC) $(CFLAGS) -o $@ $^ $(String_SRC2) $(String_SRC3)
+
+test_String: mstring $(String_TEST_RESULTS)
+	@cat $(String_TEST_RESULTS)
+
+driver_String: $(LINKEDLIST_DRIVER_OBJ)
+	$(CC) $(CFLAGS) -o string $(String_DRIVER) $(String_SRC) $(String_SRC2) $(String_SRC3)
+	./string
+
+$(String_TEST_RESULTS): $(String_TESTS_DIR)/%.result: $(String_TESTS_DIR)/%.in $(String_TESTS_DIR)/%.out mstring
+	@if ./mstring < $< | diff - $(word 2,$^) > /dev/null; then \
+		echo "$< $(word 2,$^): PASSED!"; \
+	else \
+		echo "$< $(word 2,$^): FAILED!"; \
+	fi > $@
+#************************************************************************************
+#************************************************************************************
+#************************************************************************************
+
 
