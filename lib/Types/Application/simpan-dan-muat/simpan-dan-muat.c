@@ -127,7 +127,7 @@ void LoadKicauan(Application *app, String pathfilefolder){
             int like = stringToInt(currentWordFile);
             ADVWORDFILE();
             int id = searchByName(app->users, currentWordFile);
-            InisialisasiKicau(&app->listKicauan.buffer[i], app->listKicauan.buffer[i].IDuser);
+            InisialisasiKicau(&kicau, id);
             ADVWORDFILE();
             kicau.dateTime = currentWordFile;
             kicau.IDKicau = IdKicau;
