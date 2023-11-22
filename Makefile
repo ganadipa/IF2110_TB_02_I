@@ -208,4 +208,40 @@ $(String_TEST_RESULTS): $(String_TESTS_DIR)/%.result: $(String_TESTS_DIR)/%.in $
 #************************************************************************************
 #************************************************************************************
 
+# ************************liststatik UNIT TEST*************************************
+# ************************liststatik UNIT TEST*************************************
+# ************************liststatik UNIT TEST*************************************
+liststatik_DRIVER = lib/ADT/ListStatik/tests/driver.c
+liststatik_SRC = lib/ADT/ListStatik/liststatik.c
+liststatik_SRC_TEST = lib/ADT/ListStatik/tests/mliststatik.c
+liststatik_OBJ = $(BINARY)/$(liststatik_SRC:.c=.o)
+liststatik_OBJ_TEST = $(BINARY)/$(liststatik_SRC_TEST:.c=.o)
+liststatik_DRIVER_OBJ = $(BINARY)/$(liststatik_DRIVER:.c=.o)
+
+liststatik_TESTS_DIR = lib/ADT/ListStatik/tests
+liststatik_TEST_CASES = $(wildcard $(liststatik_TESTS_DIR)/*.in)
+liststatik_TEST_OUTPUTS = $(liststatik_TEST_CASES:.in=.out)
+liststatik_TEST_RESULTS = $(liststatik_TEST_CASES:.in=.result)
+
+mliststatik: $(liststatik_OBJ) $(liststatik_OBJ_TEST)
+	$(CC) $(CFLAGS) -o $@ $^ $(liststatik_SRC2) $(liststatik_SRC3)
+
+test_liststatik: mliststatik $(liststatik_TEST_RESULTS)
+	@cat $(liststatik_TEST_RESULTS)
+
+driver_liststatik: $(LINKEDLIST_DRIVER_OBJ)
+	$(CC) $(CFLAGS) -o liststatik $(liststatik_DRIVER) $(liststatik_SRC) $(liststatik_SRC2) $(liststatik_SRC3)
+	./liststatik
+
+$(liststatik_TEST_RESULTS): $(liststatik_TESTS_DIR)/%.result: $(liststatik_TESTS_DIR)/%.in $(liststatik_TESTS_DIR)/%.out mliststatik
+	@if ./mliststatik < $< | diff - $(word 2,$^) > /dev/null; then \
+		echo "$< $(word 2,$^): PASSED!"; \
+	else \
+		echo "$< $(word 2,$^): FAILED!"; \
+	fi > $@
+#************************************************************************************
+#************************************************************************************
+#************************************************************************************
+
+
 
