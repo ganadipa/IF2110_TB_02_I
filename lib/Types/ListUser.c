@@ -174,7 +174,6 @@ void displayRequestQueue(RequestQueue *Q, ListUser *l)
 void displayReply(ReplyTree rt, ReplyAddress addr, ListUser *l, int depth, int LOGINID)
 {
     int i = getIdxInReplyTree(rt, addr);
-    printf("%d\n", i);
     if (!ISUSED(rt, i)) return;
 
 
@@ -289,8 +288,6 @@ void AddReplyDariConfig(ReplyTree *rt, ListUser *lu,int IDKicau, int IDChild, in
 boolean CanSee(ListUser* l, int IDOrang, int LoginID, Graf* pertemanan)
 {
     boolean check = true;
-    printf("%d %d %d %d", LoginID , IDOrang,CONNECTED(*pertemanan, IDOrang, LoginID ), ISPRIVATE(PROFILE(ELMT_LISTUSER(*l, IDOrang))));
-
     if (ISPRIVATE(PROFILE(ELMT_LISTUSER(*l, IDOrang)))) {
         if (LoginID == IDOrang || CONNECTED(*pertemanan, IDOrang, LoginID)) check = true;
 

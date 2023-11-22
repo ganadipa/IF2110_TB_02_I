@@ -1,56 +1,52 @@
 #include <stdio.h>
-#include "../prioqueue.h"
+#include "prioqueue.h"
+#include <stdlib.h>
 
-int main(){
+int main() {
     PrioQueueChar Q;
-    MakeEmpty(&Q, 100);
-    printf("Head : %d\n", Head(Q));
-    printf("Tail : %d\n", Tail(Q));
-    printf("MaxEl : %d\n", MaxEl(Q));
-    PrintPrioQueueChar(Q);
-    printf("\n");
-
     infotype X;
-    Prio(X) = 10;
-    Info(X) = 'C';
+    int type, maxEl, prio;
+    char elem;
 
-    Enqueue(&Q, X);
+    scanf("%d", &type);
 
-    printf("Head : %d\n", Head(Q));
-    printf("Tail : %d\n", Tail(Q));
-    printf("MaxEl : %d\n", MaxEl(Q));
-    PrintPrioQueueChar(Q);
-    printf("\n");
+    switch (type) {
+        case 1:
+            // Test creating a priority queue and printing its elements
+            scanf("%d", &maxEl);
+            MakeEmpty_PrioQueue(&Q, maxEl);
+            printf("Created Priority Queue with MaxEl=%d\n", maxEl);
+            PrintPrioQueueChar(Q);
+            break;
 
-    Prio(X) = 3;
-    Info(X) = 'C';
+        case 2:
+            // Test enqueuing elements and printing the queue
+            scanf("%d", &maxEl);
+            MakeEmpty_PrioQueue(&Q, maxEl);
+            while (scanf("%d %c", &prio, &elem) != EOF) {
+                X.prio = prio;
+                X.info = elem;
+                Enqueue_PrioQueue(&Q, X);
+            }
+            PrintPrioQueueChar(Q);
+            break;
 
-    Enqueue(&Q, X);
+        case 3:
+            // Test dequeuing elements and printing the queue
+            scanf("%d", &maxEl);
+            MakeEmpty_PrioQueue(&Q, maxEl);
+            for (int i = 0; i < maxEl; i++) {
+                scanf("%d %c", &prio, &elem);
+                X.prio = prio;
+                X.info = elem;
+                Enqueue_PrioQueue(&Q, X);
+            }
+            Dequeue_PrioQueue(&Q, &X);
+            printf("Dequeued: %d %c\n", X.prio, X.info);
+            PrintPrioQueueChar(Q);
+            break;
+    }
 
-    Prio(X) = 10;
-    Info(X) = 'A';
-
-    Enqueue(&Q, X);
-
-    printf("Head : %d\n", Head(Q));
-    printf("Tail : %d\n", Tail(Q));
-    printf("MaxEl : %d\n", MaxEl(Q));
-    PrintPrioQueueChar(Q);
-    printf("\n");
-
-
-    Dequeue(&Q, &X);
-    printf("Head : %d\n", Head(Q));
-    printf("Tail : %d\n", Tail(Q));
-    printf("MaxEl : %d\n", MaxEl(Q));
-    PrintPrioQueueChar(Q);
-    printf("\n");
-
-    Enqueue(&Q, X);
-    printf("Head : %d\n", Head(Q));
-    printf("Tail : %d\n", Tail(Q));
-    printf("MaxEl : %d\n", MaxEl(Q));
-    PrintPrioQueueChar(Q);
-    printf("\n");
-
+    DeAlokasi_PrioQueue(&Q);
+    return 0;
 }
