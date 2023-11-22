@@ -13,7 +13,11 @@ void IgnoreNewLinesFile()
 /* Mengabaikan satu atau beberapa BLANK
    I.S. : currentChar sembarang
    F.S. : currentChar ≠ '\n'*/
-
+void IgnoreOnes(){
+    while(currentCharFile == '\x01' && retvalfile != -1){
+        ADVCHARFILE();
+    }
+}
 void IgnoreNullFile(){
     while (currentCharFile == '\0' && retvalfile != -1){
         ADVCHARFILE();
@@ -35,14 +39,15 @@ void STARTWORDFILE(String filename){
     if (!EndFile){
         IgnoreBlanksFile();
         IgnoreNullFile();
-        if(currentCharFile == MARK_LAST_FILE){
-            EndFile = true;
-        } else{
-            EndFile = false;
-            CopyWordFILE();
-            // IgnoreNewLinesFile();
+        EndFile = false;
+        CopyWordFILE();
+        // IgnoreNewLinesFile();
+        if (currentCharFile == '\r'){
             ADVCHARFILE();
         }
+        ADVCHARFILE();
+
+        
     }
 }
 /* I.S. : currentChar sembarang
@@ -51,15 +56,28 @@ void STARTWORDFILE(String filename){
           currentChar karakter pertama sesudah karakter terakhir kata */
 
 void ADVWORDFILE(){
+    IgnoreOnes();
     CopyWordFILE();
+    if (compareString(currentWordFile, "\n")) currentWordFile.buffer[0] = '\0';
+    if (currentCharFile == '\r'){
+        ADVCHARFILE();
+    }
     ADVCHARFILE();
 }
 void ADVWORDFILE2(){
+    IgnoreOnes();
     CopyWordFILE2();
+    if (currentCharFile == '\r'){
+        ADVCHARFILE();
+    }
     ADVCHARFILE();
+
 }
 void ADVFILEPHOTO(){
     CopyFILEPhoto();
+    if (currentCharFile == '\r'){
+        ADVCHARFILE();
+    }
     ADVCHARFILE();
 }
 /* I.S. : currentChar adalah karakter pertama kata yang akan diakuisisi
@@ -69,18 +87,19 @@ void ADVFILEPHOTO(){
    Proses : Akuisisi kata menggunakan procedure SalinWord */
 
 void CopyWordFILE(){
-     if (currentCharFile == '\n'){
+     if (currentCharFile == '\n' || currentCharFile == '\r'){
         currentWordFile.buffer[0] = '\n';
         currentWordFile.maxLength = 1;
     } else{
         int i = 0;
-        while (currentCharFile != MARK_LAST_FILE && retvalfile != -1){
+        while (currentCharFile != MARK_LAST_FILE && retvalfile != -1 && currentCharFile != '\r'){
             currentWordFile.buffer[i] = currentCharFile;
             currentWordFile.maxLength = i + 1;
             i++;
             ADVCHARFILE();
         }
     }
+    currentWordFile.buffer[currentWordFile.maxLength] = '\0';
 }
 /* Mengakuisisi kata, menyimpan dalam currentWord
    I.S. : currentChar adalah karakter pertama dari kata
@@ -91,17 +110,18 @@ void CopyWordFILE(){
 
 void CopyWordFILE2(){
     int i = 0;
-    while (currentCharFile != BLANK && currentCharFile != MARK_LAST_FILE){
+    while (currentCharFile != BLANK && currentCharFile != MARK_LAST_FILE && currentCharFile != '\r'){
         currentWordFile.buffer[i] = currentCharFile;
         currentWordFile.maxLength = i + 1;
         i++;
         ADVCHARFILE();
     }
+    currentWordFile.buffer[currentWordFile.maxLength] = '\0';
     // printf("%c ", currentWordFile.buffer[0]);
 }
 void CopyFILEPhoto(){
     int i = 0;
-    while (currentCharFile != MARK_LAST_FILE && currentCharFile != '\n'){
+    while (currentCharFile != MARK_LAST_FILE && currentCharFile != '\n' && currentCharFile != '\r'){
         currentWordFile.buffer[i] = currentCharFile;
         currentWordFile.maxLength = i + 1;
         i++;
@@ -110,4 +130,8 @@ void CopyFILEPhoto(){
     currentWordFile.buffer[i] = '\n';
     currentWordFile.maxLength += 1;
     // printf("%c", currentWordFile.buffer[10]);
+}
+
+void deleteRest(String *string){
+    string->buffer[string->maxLength] = '\0';
 }

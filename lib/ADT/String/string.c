@@ -39,6 +39,8 @@ int stringToInt(String s){
 
 
     for (i = length-1; i >= (0 + isneg); i--){
+        if (s.buffer[i] - '0' < 0 || s.buffer[i]- '0' >= 9) break;
+
         k += (s.buffer[i] - '0') * j;
         j *= 10;
     }
@@ -150,6 +152,8 @@ void readString(String *s, int maxLength)
  * F.S. s terbentuk sebagai hasil input dari stdin, currentChar bernilai '\n'.
 */
 {
+
+
     createEmptyString(s, maxLength);
 
     if (currentChar_WordMachine == '\0' || currentChar_WordMachine == '\n')
@@ -165,6 +169,7 @@ void readString(String *s, int maxLength)
     }
 
     ADV();
+
     // now current char is '\n'
     if (currentChar_WordMachine != '\n') {
         printf("\nSetiap input harus memiliki mark berupa ';'. dan Anda baru saja melanggarnya.\n");
@@ -374,4 +379,25 @@ int countWord(String s)
 
     return k+1;
 
+}
+
+void SplitIntoTwo(String s, String* s1, String* s2) {
+    createEmptyString(s1, 350);
+    createEmptyString(s2, 350);
+    *s1 = getWordAt(s, 0);
+    int k = 0, ptr = 0, i = stringLength(s);
+    while (k < i) {
+        if (s.buffer[ptr] == ' ') {
+            ptr++;
+            break;
+        }
+        k++;
+        ptr++;
+    }
+
+    while (k < i) {
+        addChar(s2, s.buffer[ptr]);
+        ptr++;
+        k++;
+    }
 }

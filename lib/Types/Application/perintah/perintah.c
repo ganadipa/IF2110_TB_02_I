@@ -9,8 +9,11 @@ void handleCommand(Application* app, String command, boolean *finish)
     int numword = countWord(command);
     if (numword == 0) return;
 
+    String firstWord;
+    String rest;
+    SplitIntoTwo(command, &firstWord, &rest);
 
-    String firstWord = getWordAt(command, 0);
+
     String secondWord;
     String thirdWord;
 
@@ -21,9 +24,9 @@ void handleCommand(Application* app, String command, boolean *finish)
 
     if (compareString(firstWord, "DAFTAR")){
         Daftar(app);
-    } else if (compareString(firstWord, "MASUK")) {
+    } else if (compareString(firstWord, "MASUK")){
         Masuk(app);
-    } else if (compareString(firstWord, "KELUAR")) {
+    } else if (compareString(firstWord, "KELUAR")){
         Keluar(app);
     } else if (compareString(firstWord, "DEVTOOLS")) {
         /**
@@ -35,7 +38,8 @@ void handleCommand(Application* app, String command, boolean *finish)
     } else if (compareString(firstWord, "GANTI_PROFIL")) {
         GantiProfil(app);
     } else if (compareString(firstWord, "LIHAT_PROFIL")) {
-        LihatProfil(app, secondWord);
+        displayString(rest);
+        LihatProfil(app, rest);
     } else if (compareString(firstWord, "ATUR_JENIS_AKUN")) {
         AturJenisAkun(app);
     } else if (compareString(firstWord, "UBAH_FOTO_PROFIL")) {
@@ -56,9 +60,9 @@ void handleCommand(Application* app, String command, boolean *finish)
         int ID = stringToInt(secondWord);
         SukaKicauan(app,ID);
     } else if(compareString(firstWord, "BUAT_DRAF")){
-        BuatDraf(app);
+        CreateDraf(app);
     } else if(compareString(firstWord, "LIHAT_DRAF")){
-        LihatDraf(app);
+        DisplayDraf(app);
     }else if (compareString(firstWord, "UBAH_KICAUAN")) {
         if (numword != 2) {
             printf("\nPerintah yang valid: \"UBAH_KICAUAN <IDKicau>;\".\n");
@@ -68,9 +72,11 @@ void handleCommand(Application* app, String command, boolean *finish)
         UbahKicauan(app,ID);
     } else if (compareString(firstWord, "TAMBAH_TEMAN")) {
         TambahTeman(app);
-    } else if (compareString(firstWord, "BATAL_TAMBAH_TEMAN")) {
-        BatalTambahTeman(app);
-    } else if (compareString(firstWord, "DAFTAR_PERMINTAAN_PERTEMANAN")) {
+    } 
+    // else if (compareString(firstWord, "BATAL_TAMBAH_TEMAN")) {
+    //     BatalTambahTeman(app);
+    // } 
+    else if (compareString(firstWord, "DAFTAR_PERMINTAAN_PERTEMANAN")) {
         DaftarPermintaanPertemanan(*app);
     } else if (compareString(firstWord, "SETUJUI_PERTEMANAN")) {
         SetujuiPertemanan(app);
@@ -99,14 +105,51 @@ void handleCommand(Application* app, String command, boolean *finish)
         HapusBalasan(app, IDKicau, IDBalasan);
     } else if(compareString(firstWord, "SIMPAN")){
         SaveFolder(app);
+    } else if ( compareString(firstWord , "UTAS")){
+        if (numword != 2) {
+            printf("\nPerintah yang valid: \"UTAS <IDKICAU>;\".\n");
+            return;
+        }
+        int IDKicau = stringToInt(secondWord);
+        insertUtas_withIDKicau(app, IDKicau);
+    } else if ( compareString(firstWord , "SAMBUNG_UTAS")){
+        if (numword != 3) {
+            printf("\nPerintah yang valid: \"SAMBUNG_UTAS <IDUTAS> <INDEKSUTAS>;\".\n");
+            return;
+        }
+        int IDutas = stringToInt(secondWord);
+        int index = stringToInt(thirdWord);
+        NyambungAnakUtas(app, IDutas, index);  
+    } else if ( compareString(firstWord , "HAPUS_UTAS")){
+        if (numword != 3) {
+            printf("\nPerintah yang valid: \"HAPUS_UTAS <IDUTAS> <INDEKSUTAS>;\".\n");
+            return;
+        }
+        int IDutas = stringToInt(secondWord);
+        int index = stringToInt(thirdWord);
+        deleteAt_Utas(app, IDutas, index);
+    }else if ( compareString(firstWord , "CETAK_UTAS")){
+        if (numword != 2) {
+            printf("\nPerintah yang valid: \"CETAK_UTAS <IDUTAS>;\".\n");
+            return;
+        }
+        int IDutas = stringToInt(secondWord);
+        display_listUtas(app, IDutas);
+    } else if(compareString(firstWord , "MUAT")){
+        String pathfilefolder;
+        if(app->isLoggedIn){
+            printf("Anda harus keluar terlebih dahulu untuk melakukan pemuatan.\n");
+        }
+        else{
+            printf("Masukkan nama folder yang hendak dimuat.\n");
+            readString(&pathfilefolder, 351);
+            *app = MuatFolder(app, pathfilefolder);
+        }
     }
-
-
     else {
         printf("\nTidak ada perintah ");
         displayString(command);
         printf(". Baca dokumentasi (Spesifikasi) untuk melihat seluruh perintah.\n");  
     }
-
 }
 

@@ -10,24 +10,26 @@ int main(){
     switch (test){
         case 1:
             /* print ulang kata yang dimasukkan tanpa spasi*/
-            scanf("%u", &temp);
+            // scanf("%u", &temp);
             STARTWORD();
             while(!EndWord){
                 for(i=0;i<currentWord.Length;i++){
-                    printf("%c", currentWord.TabWord[i]);
+                    printf("%c\n", currentWord.TabWord[i]);
                 }
-                if (currentChar_WordMachine != MARK_WordMachine){
-                    printf(" ");
-                }
+                // if (currentChar_WordMachine != MARK_WordMachine){
+                //     printf(" ");
+                // }
                 ADVWORD();
             }
             break;
         case 2:
             /* caesar cipher digeser sebanyak jumlah kata*/
-            scanf("%u", &temp);
+            // scanf("%u", &temp);
             STARTWORD();
             while(!EndWord){
                 for(i=0;i<currentWord.Length;i++){
+                    // printf("%c", currentWord.TabWord[i]);
+                    // printf("%d", currentWord.Length);
                     printf("%c", ((currentWord.TabWord[i] - 'A' + currentWord.Length) % ('z' - 'A' + 1)) + 'A');
                 }
                 if (currentChar_WordMachine != MARK_WordMachine){
@@ -37,9 +39,11 @@ int main(){
             }
             break;
         case 3: 
-            printf("%d", test);
+            printf("3");
+            printf("\r\n%d", test);
             break;
-
+        case 4:
+            break;
     }
 
 }

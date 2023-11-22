@@ -26,7 +26,10 @@ void createReplyTree(ReplyTree *rt, int capacity)
 
     
     CreateListDin(&(rt->used), capacity);
-
+    int j;
+    for (j = 0; j < capacity; j++) {
+        insertLastListDin(&rt->used, 0);
+    }
     CreateListDin(&(rt->parent), capacity);
 
     int i;
@@ -80,10 +83,6 @@ ReplyAddress getReplyAddress(ReplyTree rt, int replyID)
  * replyID sudah pasti ada.
 */
 {
-    int lo = 0;
-    int hi = rt.maxReply;
-    int mid;
-
     ListReply l = LISTREP(rt);
     return ADDR(l, replyID);
 }
@@ -139,6 +138,7 @@ void addChildToReply(ReplyTree *rt, ReplyAddress parent, ReplyAddress child)
 
 
     insertLastListDin(&LISTDIN(*rt, idxParent), child->id);
+    USED(*rt).buffer[child->id] = true;
 
 
 
@@ -151,6 +151,7 @@ void addChildToReply(ReplyTree *rt, ReplyAddress parent, ReplyAddress child)
 void addMainReply(ReplyTree *rt, ReplyAddress addr) {
     ListReply *lr = &LISTREP(*rt);
     lr -> buffer[addr->id] = addr;
+    USED(*rt).buffer[addr->id] = true;
     insertLastListDin(&USED(*rt), 1);
     insertLastListDin(&(rt->parent), -1);
 }
@@ -171,6 +172,7 @@ int getIdxFromReplyId(ReplyTree rt, int replyID)
     int i;
     
     for (i =0; i < rt.numReplyEff; i++) {
+        if (!ISUSED(rt, i)) continue;
         if (REPLYID(*ADDR(LISTREP(rt), i)) == replyID) return i;
     }
 

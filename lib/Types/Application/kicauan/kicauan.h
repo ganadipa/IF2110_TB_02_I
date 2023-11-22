@@ -21,8 +21,6 @@ void TampilinKicauan(Application *app);
 
 
 void SukaKicauan(Application *app, int ID);
-
-
 /**
  * Untuk Menambah jumlah like pada Kicauan dengan id "ID"
 */

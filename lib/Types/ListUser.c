@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "./ListUser.h"
 
+
+
 /* ********** KONSTRUKTOR ********** */
 /* Konstruktor : create List kosong  */
 void CreateListUser(ListUser *l)
@@ -107,8 +109,9 @@ void deleteAt_ListUser(ListUser *l, User *val, IdxType idx)
 /*      List l mungkin menjadi kosong */
 {
     *val = ELMT_LISTUSER(*l, idx);
-    for (idx = idx; idx < LENGTH_LISTUSER(*l); idx++) {
-        ELMT_LISTUSER(*l, idx) = ELMT_LISTUSER(*l, idx+1); 
+    int i;
+    for (i = idx; i < LENGTH_LISTUSER(*l); i++) {
+        ELMT_LISTUSER(*l, i) = ELMT_LISTUSER(*l, i+1); 
     }
     LENGTH_LISTUSER(*l)--;
 }
@@ -121,7 +124,7 @@ void deleteLast_ListUser(ListUser *l, User *val)
 /*      Banyaknya elemen List berkurang satu */
 /*      List l mungkin menjadi kosong */
 {
-    deleteLast_ListUser(l, val);
+    deleteAt_ListUser(l, val, LENGTH_LISTUSER(*l) - 1);
 }
 
 IdxType searchByName(ListUser l, String name)
@@ -139,6 +142,7 @@ IdxType searchByName(ListUser l, String name)
         }
     }
 
+
     if (found) return i;
     else return IDX_UNDEF;
 }
@@ -151,17 +155,16 @@ void displayName(ListUser l, int i)
     displayString(NAME(ELMT_LISTUSER(l, i)));
 }
 
-void displayRequestQueue(RequestQueue Q, ListUser l)
+void displayRequestQueue(RequestQueue *Q, ListUser *l)
 
 {
-    int nb = lengthRequestQueue(Q);
+    int nb = lengthRequestQueue(*Q);
     printf("\nTerdapat %d permintaan pertemanan untuk Anda.\n", nb);
-
-    while (!isEmptyRequestQueue(Q))
+    while (!isEmptyRequestQueue(*Q))
     {
         Friend F;
-        dequeueRequestQueue(&Q, &F);
-        User u = ELMT_LISTUSER(l, ID_REQQUEUE(F));
+        dequeueRequestQueue(Q, &F);
+        User u = ELMT_LISTUSER(*l, ID_REQQUEUE(F));
         printf("\n | Nama: ");
         displayString(NAME(u));
         printf("\n | Jumlah teman: %d\n", FRIEND_COUNT(u));
@@ -221,10 +224,11 @@ void displayAllReply(ReplyTree rt, ListUser l, int LOGINID)
     
     int length = LISTREP(rt).neff;
     int i;
-    for (i = 0; i < length; i++) {
+    for (i = 0; i <= length; i++) {
+        if (!ISUSED(rt, i) ) continue;
         Reply r = (*ADDR(LISTREP(rt), i));
         
-        if (ISMAIN(r) && ISUSED(rt, i)) {
+        if (ISMAIN(r) ) {
             displayAllReply_helper(rt, &l, 0, i, LOGINID);
         }
         
@@ -252,22 +256,43 @@ void displayAllReply_helper(ReplyTree rt, ListUser *l, int currDepth, int idx, i
     }
 }
 
-void AddReplyDariConfig(ReplyTree *rt, ListUser lu,int IDKicau, int IDBalasan, String body, String name, String DATETIME)
+void AddReplyDariConfig(ReplyTree *rt, ListUser *lu,int IDKicau, int IDChild, int IDParent, String body, String name, String datetime)
 // JANGAN LUPA REPLY TREE DI CREATE DULU, capacity 100 aja.
 {
-    addReply(rt);
+    // Setting up reply
+    ReplyAddress ra = newReply(body, IDParent == -1);
+    REPLYID(*ra) = IDChild;
+    AUTHORID(*ra) = searchByName(*lu, name);
+    DTIME(*ra) = StringToDateTime(datetime);
 
-    ReplyAddress ra = newReply(body, IDKicau == -1);
-    REPLYID(*ra) = generateReplyID(*rt);
-    AUTHORID(*ra) = searchByName(lu, name);
-    // DTIME() /// BIKIN DULU STRING TO DATETIME ABIS ITU MASUKIN KE SINI, JANGN LUPA!
 
-    
 
-    if (IDKicau == -1) {
-        addMainReply(rt, ra);
-    } else {
-        addChildToReply(rt, ADDR(LISTREP(*rt),IDBalasan), ra);
+    // Setting up listreply
+    ListReply *lr = &LISTREP(*rt);
+    if (NEFFLR(*lr) < IDChild) NEFFLR(*lr) = IDChild;
+    ADDR(*lr, IDChild) = ra;
+
+    // Setting up reply tree
+
+    if (!ISMAIN(*ra)) {
+        insertLastListDin(&LISTDIN(*rt, IDParent), IDChild);
     }
+    
+    ISUSED(*rt, IDChild) = 1;
+    PARENT(*rt, IDChild) = IDParent;
+    if (rt->availableID <= IDChild) rt->availableID = IDChild+1;
+    if (rt->availableIDX <= IDChild) rt->availableIDX = IDChild+1;
 
+}
+
+boolean CanSee(ListUser* l, int IDOrang, int LoginID, Graf* pertemanan)
+{
+    boolean check = true;
+    if (ISPRIVATE(PROFILE(ELMT_LISTUSER(*l, IDOrang)))) {
+        if (LoginID == IDOrang || CONNECTED(*pertemanan, IDOrang, LoginID)) check = true;
+
+        else check = false;
+    }
+    
+    return check;
 }

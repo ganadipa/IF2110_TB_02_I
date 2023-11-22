@@ -6,7 +6,20 @@ boolean isExist(String *path){
     return (stat(path->buffer, &buffer) == 0);
 }
 
-void SavingFilePengguna(String* path, ListUser user){
+void tulisGrafPertemanan(FILE* filepath, Graf graf){
+    int i, j;
+    for (i = 0; i < NUMVERTICES(graf); i++) {
+        for (j = 0; j < NUMVERTICES(graf); j++) {
+            fprintf(filepath, "%d", CONNECTED(graf, i , j));
+            if(j != NUMVERTICES(graf) - 1) {
+                fprintf(filepath, " ");
+            }
+        }
+        fprintf(filepath, "\n");
+    }
+}
+
+void SavingFilePengguna(String* path, ListUser user, Application app){
     const char *pengguna = "pengguna.config"; 
 
     String parentDir; 
@@ -15,8 +28,14 @@ void SavingFilePengguna(String* path, ListUser user){
     snprintf(parentDir.buffer, 1000, "%s/%s", path->buffer, pengguna);
     FILE *filePengguna = fopen(parentDir.buffer, "w");
     int i = 0; 
+    int totalPermintaan = 0;
     fprintf(filePengguna, "%d\n", user.length);
     for(i = 0; i < user.length; i++){
+        deleteRest(&user.contents[i].name);
+        deleteRest(&user.contents[i].password);
+        deleteRest(&user.contents[i].profile.bio);
+        deleteRest(&user.contents[i].profile.phoneNumber);
+        deleteRest(&user.contents[i].profile.weton);
         fprintf(filePengguna, "%s\n", user.contents[i].name.buffer);
         fprintf(filePengguna, "%s\n", user.contents[i].password.buffer);
         fprintf(filePengguna, "%s\n", user.contents[i].profile.bio.buffer);
@@ -28,21 +47,203 @@ void SavingFilePengguna(String* path, ListUser user){
 
         int row = user.contents[i].profile.photo.color.rowEff;
         int col = user.contents[i].profile.photo.color.colEff;
-        int j, k; 
+        int j, k;
+
         for(j = 0; j < row; j++){
             for(k = 0; k < col; k++){
                 fprintf(filePengguna, "%c %c ", user.contents[i].profile.photo.color.mem[j][k], user.contents[i].profile.photo.symbols.mem[j][k]);
             }
             fprintf(filePengguna, "\n");
+
+        }
+        totalPermintaan += lengthRequestQueue(user.contents[i].friendRequest);
+        //tulis matrix jumlah permintaan teman 
+    }
+    tulisGrafPertemanan(filePengguna, FRIENDSHIPS(app));
+    fprintf(filePengguna, "%d\n", totalPermintaan);
+    int count = 0; 
+    for(i = 0; i < user.length; i++){
+        if(lengthRequestQueue(user.contents[i].friendRequest) != 0){
+            int j;
+            User u = user.contents[i];
+            RequestQueue rq = FRIEND_REQUEST(u);
+            int IDaccept = u.ID;
+            for(j = 0; j < lengthRequestQueue(rq); j++){
+                count++;
+                int IDrequest = ELMT_ReqQue(rq, j).userID;
+                if(totalPermintaan != count){
+                    fprintf(filePengguna, "%d %d %d\n", IDrequest, IDaccept, user.contents[IDrequest].friendCount);
+                } else{
+                    fprintf(filePengguna, "%d %d %d", IDrequest, IDaccept, user.contents[IDrequest].friendCount);
+                }
+            }
         }
     }
     fclose(filePengguna);
 }
 
-void SavingFile(String* path, Application *app){
-    SavingFilePengguna(path, app->users);
+void SavingFileKicauan(String* path, ListKicau kicauan, ListUser user){
+    const char* kicau = "kicauan.config";
+    String Dir; 
+    createEmptyString(&Dir, 100); 
+    snprintf(Dir.buffer, 1000, "%s/%s", path->buffer, kicau);
+    FILE *fileKicauan = fopen(Dir.buffer, "w"); 
+    int i = 0; 
+    fprintf(fileKicauan, "%d\n", kicauan.nEff);
+    for(i = 0; i < kicauan.nEff; ++i){
+        deleteRest(&kicauan.buffer[i].text);
+        deleteRest(&user.contents[kicauan.buffer[i].IDuser].name);
+        deleteRest(&kicauan.buffer[i].dateTime);
+        fprintf(fileKicauan, "%d\n", kicauan.buffer[i].IDKicau);
+        fprintf(fileKicauan, "%s\n", kicauan.buffer[i].text.buffer); 
+        fprintf(fileKicauan, "%d\n", kicauan.buffer[i].like);
+        fprintf(fileKicauan, "%s\n", user.contents[kicauan.buffer[i].IDuser].name.buffer); 
+        if (i == kicauan.nEff -1) {
+            fprintf(fileKicauan, "%s", kicauan.buffer[i].dateTime.buffer);   
+        } else {
+            fprintf(fileKicauan, "%s\n", kicauan.buffer[i].dateTime.buffer);
+        }
+        
+    }
+    fclose(fileKicauan);
 }
 
+void SavingFileDraf(String* path, ListUser user){
+    const char* draf ="draf.config"; 
+    String Dir; 
+    createEmptyString(&Dir, 100); 
+    snprintf(Dir.buffer, 1000, "%s/%s", path->buffer, draf);
+    FILE* fileDraf = fopen(Dir.buffer, "w"); 
+    int i, j; 
+    int count = 0;
+    for(i = 0; i < user.length; ++i){
+        if(!isDrafDinEmpty(DRAFKICAU(user.contents[i]))){
+            count++;
+        }
+    }
+    fprintf(fileDraf, "%d", count); //print berapa banyak yang punya draf;
+    for(i = 0; i < user.length; ++i){
+        if(!isDrafDinEmpty(DRAFKICAU(user.contents[i]))){
+            deleteRest(&user.contents[i].name);
+            fprintf(fileDraf, "\n%s %d", user.contents[i].name.buffer, LengthDraf(DRAFKICAU(user.contents[i])));
+        }
+        for(j = 0; j < LengthDraf(DRAFKICAU(user.contents[i])); ++j){
+            AddressDraf temp = ADDR_TOPDRAF(DRAFKICAU(user.contents[i]));
+            deleteRest(&teksKicau(INFODRAF(temp)));
+            deleteRest(&dateTimeKicau(INFODRAF(temp)));
+            fprintf(fileDraf, "\n%s", teksKicau(INFODRAF(temp)).buffer); 
+            fprintf(fileDraf, "\n%s", dateTimeKicau(INFODRAF(temp)).buffer);
+        }
+    }
+
+    fclose(fileDraf);
+}
+
+void SavingFileUtas(String *path, ListKicau listKicau, Application *Utas){
+    const char* utas ="utas.config"; 
+    String Dir; 
+    createEmptyString(&Dir, 100); 
+    snprintf(Dir.buffer, 1000, "%s/%s", path->buffer, utas);
+    FILE* fileUtas = fopen(Dir.buffer, "w"); 
+    int i, j; 
+    fprintf(fileUtas, "%d", JUMLAHUTAS(*Utas));
+    for(i = 0; i < NEFF(listKicau); i++){
+        if(IDUTAS(ELMT(listKicau, i)) != 0){
+            AddressUtas utas = FIRST(ELMT(listKicau, i));
+            fprintf(fileUtas, "\n%d", IDKicau(ELMT(listKicau, i)));
+            fprintf(fileUtas, "\n%d", LEN_ANAKUTAS(ELMT(listKicau, i)));
+            for(j = 0; j < LEN_ANAKUTAS(ELMT(listKicau, i)); j++){
+                deleteRest(&TEKSDIUTAS(utas));
+                deleteRest(&NAMADIUTAS(utas));
+                deleteRest(&DATETIMEUTAS(utas));
+                fprintf(fileUtas, "\n%s", TEKSDIUTAS(utas).buffer); 
+                fprintf(fileUtas, "\n%s", NAMADIUTAS(utas).buffer); 
+                fprintf(fileUtas, "\n%s", DATETIMEUTAS(utas).buffer);
+            
+                utas = NEXT_Linked(utas);
+            }
+        }
+    }
+    fclose(fileUtas);
+}
+
+void TulisBalasan(FILE* filepath, ReplyTree rt, ReplyAddress addr, ListUser *l){
+    int i = getIdxInReplyTree(rt, addr); 
+    if(!ISUSED(rt, i)) return;
+
+    Reply rep = *addr; 
+    int currID = REPLYID(rep);
+    int parentID = PARENT(rt, currID);
+    User user = ELMT_LISTUSER(*l, AUTHORID(rep));
+    String time = DateTimeToString(DTIME(rep)); 
+    String Text = BODY(rep);
+
+    fprintf(filepath, "\n%d %d", parentID, currID); 
+    fprintf(filepath, "\n%s", Text.buffer); 
+    fprintf(filepath, "\n%s", user.name.buffer);
+    fprintf(filepath, "\n%s", time.buffer);
+}
+
+void TulisAllBalasan(FILE* filepath, ReplyTree rt, ListUser *l, int idx){
+    ListDin adjlist = LISTDIN(rt, idx); 
+    ReplyAddress ra = ADDR(LISTREP(rt), idx); 
+    int neff = NEFF(adjlist); 
+    int i; 
+    TulisBalasan(filepath, rt, ra, l); 
+    for(i = 0; i < neff; i++){
+        TulisAllBalasan(filepath, rt, l, adjlist.buffer[i]);
+    }
+
+}
+
+void SavingFileBalasan(String *path, ListKicau kicauan, ListUser user){
+    const char* reply = "balasan.config"; 
+    String Dir; 
+    createEmptyString(&Dir, 100); 
+    snprintf(Dir.buffer, 1000, "%s/%s", path->buffer, reply); 
+    FILE *fileBalasan = fopen(Dir.buffer, "w");
+    int i, j, totalBalasan = 0; 
+    for(i = 0; i < NEFF(kicauan); i++){
+        if(NUMREP(BALASAN(ELMT(kicauan, i))) != 0){
+            totalBalasan++;
+        }
+    }
+
+    fprintf(fileBalasan, "%d", totalBalasan);
+    for(i = 0; i < NEFF(kicauan); i++){
+        ReplyTree balasan = BALASAN(ELMT(kicauan, i));
+
+        if(NUMREP(balasan) != 0){ ;
+            //untuk menulis ID dari kicau yang memiliki balasan 
+            fprintf(fileBalasan, "\n%d", IDKicau(ELMT(kicauan, i)));
+            //untuk menulis banyaknya balasan dalam kicauan tersebut
+            fprintf(fileBalasan, "\n%d", NUMREP(BALASAN(ELMT(kicauan, i))));
+            //untuk menulis tiap balasan (unfinished)
+
+            ListReply temp = LISTREP(balasan);
+            for(j = 0; j <= NEFFLR(temp); j++){
+                //blm ada untuk menulis 
+                //balas-ke-node-mana  id-dari-balasan
+                if(!ISUSED(balasan, j)){
+                    continue; 
+                }
+                ReplyAddress kicauBalasan = ADDR(temp, j);
+                if(ISMAIN(*kicauBalasan)){
+                    TulisAllBalasan(fileBalasan, balasan, &user, j);
+                }
+            }
+        }
+    }
+    fclose(fileBalasan);
+}
+
+void SavingFile(String* path, Application *app){
+    SavingFilePengguna(path, app->users, *app);
+    SavingFileKicauan(path, app->listKicauan, app->users);
+    SavingFileDraf(path, app->users);
+    SavingFileUtas(path, app->listKicauan, app);
+    SavingFileBalasan(path, app->listKicauan, app->users);
+}
 
 void SavingFolder(String *path, Application *app) {
 
@@ -52,6 +253,7 @@ void SavingFolder(String *path, Application *app) {
     snprintf(folderPath.buffer, 1000, "%s%s", parentPath, path->buffer);
     if(isExist(&folderPath)){
         printf("Folder sudah ada\n"); 
+        printf("Folder akan diperbarui\n");
         SavingFile(&folderPath, app); 
     }
     else{
@@ -75,50 +277,3 @@ void SaveFolder(Application *app){
     SavingFolder(&path, app);
 }
 
-
-// void SavingFile(String* path, Application *app){
-//     const char *pengguna = "pengguna.config";
-//     const char *kicauan = "kicauan.config";
-//     const char *balasan = "balasan.config";
-//     const char *draf = "draf.config";
-//     const char *utas = "utas.config";
-
-//     String parentDir; 
-//     createEmptyString(&parentDir, 100);
-
-//     snprintf(parentDir.buffer, 1000, "%s/%s", path->buffer, kicauan);
-//     FILE *fileKicauan = fopen(parentDir.buffer, "w");
-//     // Write to the file
-//     if (fileKicauan != NULL) {
-//         fprintf(fileKicauan, "kicauan.config.\n");
-//         fclose(fileKicauan);
-//     }
-
-//     snprintf(parentDir.buffer, 1000, "%s/%s", path->buffer, draf);
-//     FILE *fileDraf = fopen(parentDir.buffer, "w");
-//     if (fileDraf != NULL) {
-//         fprintf(fileDraf, "draf.config.\n");
-//         fclose(fileDraf);
-//     }
-
-//     snprintf(parentDir.buffer, 1000, "%s/%s", path->buffer, pengguna);
-//     FILE *filePengguna = fopen(parentDir.buffer, "w");
-//     if (filePengguna != NULL) {
-//         fprintf(filePengguna, "pengguna.config.\n");
-//         fclose(filePengguna);
-//     }
-
-//     snprintf(parentDir.buffer, 1000, "%s/%s", path->buffer, utas);
-//     FILE *fileUtas = fopen(parentDir.buffer, "w");
-//     if (fileUtas != NULL) {
-//         fprintf(fileUtas, "utas.config.\n");
-//         fclose(fileUtas);
-//     }
-
-//     snprintf(parentDir.buffer, 1000, "%s/%s", path->buffer, balasan);
-//     FILE *fileBalasan = fopen(parentDir.buffer, "w");
-//     if (fileBalasan != NULL) {
-//         fprintf(fileBalasan, "balasan.config.\n");
-//         fclose(fileBalasan);
-//     }
-// }

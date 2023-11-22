@@ -4,7 +4,9 @@
 void Balas(Application *app, int IDKicau, int IDBalasan) {
     Kicauan *k = &KICAUAN(*app).buffer[IDKicau-1];
     ReplyTree *balasan = &BALASAN(*k);
-
+    int userID = userKicau(*k);
+    Graf *pertemanan = &FRIENDSHIPS(*app);
+    ListUser *lu = &LISTUSER(*app);
     if (!LOGGEDIN(*app)) {
         printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
         return;
@@ -19,17 +21,16 @@ void Balas(Application *app, int IDKicau, int IDBalasan) {
 
     // while (IDBalasan != -1) printf("hello");
     int idx = getIdxFromReplyId(*balasan, IDBalasan);
+    printf("here\n");
     if ((idx == -1 && IDBalasan != -1) && !ISUSED(*balasan, IDBalasan)) {
         printf("\nWah, tidak terdapat balasan yang ingin Anda balas! Mungkin typo IDBalasan ?\n");
         return;
     }
 
 
-    int userId = userKicau(KICAUAN(*app).buffer[IDKicau]);
-    ListUser *lu = &LISTUSER(*app);
 
 
-    if (ISPRIVATE(PROFILE(ELMT_LISTUSER(*lu, userId)))) {
+    if (!CanSee(lu, userID, LOGINID(*app), pertemanan)){
         printf("\nWah akun tersebut merupakan akun privat dan Anda belum berteman dengan akun tersebut! \n");
         return;
     }
@@ -76,18 +77,22 @@ void Balasan(Application *app, int IDKicau){
     ReplyTree *balasan = &BALASAN(*k);
     int userID = userKicau(*k);
     ListUser *lu = &LISTUSER(*app);
+    Graf *pertemanan = &FRIENDSHIPS(*app);
+
 
     if (IDKicau > KICAUAN(*app).nEff) {
         printf("\nWah tidak terdapat kicauan dengan ID tersebut! Mungkin typo IDKicau ?\n");
         return;
     }
 
-    if (NUMREP(*balasan) == 0 || NUMREP(*balasan) == 0) {
+    if (NUMREP(*balasan) == 0 ) {
         printf("\nBelum terdapat balasan apapun pada kicauan tersebut. Be the first one to break the silence!\n");
+        return;
     }
 
-    if (ISPRIVATE(PROFILE(ELMT_LISTUSER(*lu, userID)))){
-        printf("\nWah, kicauan tersebut dibuat oleh pengguna dengan akun privat!\n");
+    if (!CanSee(lu, userID, LOGINID(*app), pertemanan)){
+        printf("\nWah, kicauan tersebut dibuat oleh pengguna dengan akun privat!\nSilakan berteman terlebih dahulu.");
+        return;
     }
 
     displayAllReply(*balasan, *lu, LOGINID(*app));
@@ -100,8 +105,6 @@ void HapusBalasan(Application *app, int IDKicau, int IDBalasan){
 
 
 
-    int userID = userKicau(*k);
-    ListUser *lu = &LISTUSER(*app);
 
     int idx = getIdxFromReplyId(*balasan, IDBalasan);
     if (idx == -1) {

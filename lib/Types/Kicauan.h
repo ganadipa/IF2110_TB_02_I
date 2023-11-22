@@ -7,15 +7,15 @@
 #include "listUtas.h"
 
 typedef struct {
-    int IDKicau;
-    int IDuser;
-    String dateTime;
-    String text;
-    int like;
-    ReplyTree balasan;
-    int IDUtas;
-    AddressUtas link;
-    int lenUtas;
+    int IDKicau;        // ID Kicau
+    int IDuser;         // ID User yang melakukan kicau ini
+    String dateTime;    // Menyimpan dateTime Kicauan
+    String text;        // Menyimpan teks Kicauan
+    int like;           // Menyimpan jumlah like 
+    ReplyTree balasan;  // Graph Balasan
+    int IDUtas;         // Menyimpan ID Utas untuk tiap kicauan 
+    AddressUtas link;   // Menyimpan link untuk pergi ke linked list utas
+    int lenUtas;        // Menyimpan jumlah utas dari tiap kicau
 } Kicauan;
 
 #define IDKicau(u) (u).IDKicau
@@ -39,10 +39,10 @@ void  nambahlenUtas(Kicauan *k);
 void  kuranglenUtas(Kicauan *k);
 
 void insertAtAnakUtas(Kicauan *k  ,int indeksUtas,String teks,String namaUser, String time);
+// Menambah utas sesuai dengan indeks utas
 
 void deleteAtAnakUtas (Kicauan *k ,int indeksUtas, String *teks, String *namaUser, String *time);
-
-
+// Menghapus utas sesuai dengan indeks utas
 
 void setKicauID(Kicauan *k, int ID);
 /**

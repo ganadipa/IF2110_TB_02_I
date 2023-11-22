@@ -13,10 +13,10 @@
 /* Definisi Node : */
 typedef struct nodeUtas* AddressUtas;
 typedef struct  nodeUtas{
-    String namaUser; //MASUK CONFIG
-    String dateTime; //MASUK CONFIG
-    String teks;    //MASUK CONFIG
-    AddressUtas next; 
+    String namaUser;    // Nama dari user yang melakukan utas 
+    String dateTime;    // dateTime Utas
+    String teks;        // teks dari utas
+    AddressUtas next;   // link untuk ke next dari linked list
 } NodeUtas;
 typedef AddressUtas listutas;
 

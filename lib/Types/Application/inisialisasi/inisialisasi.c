@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "inisialisasi.h"
+#include "../../../ADT/WordMachine/charmachinefile.h"
 
+String pathfilefolder;
 void AppInitialization(Application *app)
     /**
      * I.S. Program baru dimulai.
@@ -9,10 +11,23 @@ void AppInitialization(Application *app)
 {
     // print opening
     Opening();
+
+    
+    CreateListUser(&LISTUSER(*app)); 
+    CreateGraph(&FRIENDSHIPS(*app));
+    CreateListKicau(&KICAUAN(*app), 500);
+
     boolean found = false;
+    // Setup(app); // Hapus kali udah ada database dari config.
+
     ReadConfig(app, &found);
+    if (pitafile == NULL){
+        printf("Folder tidak berhasil dimuat, jadi bikin baru\n");
+    }
+    JUMLAHUTAS(*app) = 0;
+    LOGGEDIN(*app) = false;
+    LOGINID(*app) = ID_UNDEF;
     // Inisialisasi app
-    Setup(app); // Hapus kali udah ada database dari config.
      
 }
 
@@ -29,6 +44,8 @@ void Opening()
     printf("Selamat datang di BurBir. \n\n");
 
     printf("Aplikasi untuk studi kualitatif mengenai perilaku manusia dengan menggunakan metode (pengambilan data berupa) Focused Group Discussion kedua di zamannya.\n");
+    printf("Silahkan masukan folder konfigurasi untuk dimuat: ");
+    readString(&pathfilefolder, 351);
 
 }
 
@@ -45,14 +62,15 @@ void Setup(Application *app)
 }
 
 void ReadConfig(Application *app, boolean *found) {
-    do {
-        // use library
-
-
-        // if folder is found
-        *found = true;
-    } while (!*found);
+    LoadPengguna(app, pathfilefolder);
+    if(EndFile){
+        return;
+    }
+    LoadKicauan(app, pathfilefolder);
+    LoadBalasan(app, pathfilefolder);
+    LoadDraft(app, pathfilefolder);
+    LoadUtas(app, pathfilefolder);
+    
     printf("File konfigurasi berhasil dimuat! Selamat berkicau!\n\n");
-
-
 }
+
