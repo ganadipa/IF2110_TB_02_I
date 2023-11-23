@@ -143,6 +143,7 @@ IdxType searchByName(ListUser l, String name)
     }
 
 
+
     if (found) return i;
     else return IDX_UNDEF;
 }
