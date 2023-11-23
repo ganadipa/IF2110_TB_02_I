@@ -78,7 +78,6 @@ void Balasan(Application *app, int IDKicau){
     int userID = userKicau(*k);
     ListUser *lu = &LISTUSER(*app);
     Graf *pertemanan = &FRIENDSHIPS(*app);
-    printf("done here\n");
 
 
     if (IDKicau > KICAUAN(*app).nEff) {

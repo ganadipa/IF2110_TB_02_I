@@ -24,13 +24,15 @@ typedef struct tree {
 #define MAXV(t) (t).maxVertices
 #define NUMV(t) (t).numVertices
 
+boolean isFull_Tree(Tree t);
+
 void createTree(Tree *t, int numNodes);
 
 void addVertices_Tree(Tree *t);
 
 void dfs_Tree(Tree t, int i, int depth);
 
-void addChild_Trees(Tree *t, int parent, int child);
+void addChild_Tree(Tree *t, int parent, int child);
 
 
 #endif
