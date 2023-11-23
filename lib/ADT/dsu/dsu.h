@@ -8,6 +8,7 @@ typedef struct {
     int arr [20];
     int count;    
 } DisjointSet;
+
 #define ELMT_SET(ds, i) (ds).arr[(i)]
 
 void addUser(DisjointSet *ds, int id);
