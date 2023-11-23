@@ -42,7 +42,6 @@ void handleCommand(Application* app, String command, boolean *finish)
             printf("Perintah tidak valid.");
             return;
         }
-        displayString(rest);
         LihatProfil(app, rest);
     } else if (compareString(firstWord, "ATUR_JENIS_AKUN")) {
         AturJenisAkun(app);

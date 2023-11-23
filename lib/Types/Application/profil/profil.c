@@ -32,10 +32,19 @@ void LihatProfil(Application *app, String name) {
     int ID = searchByName(LISTUSER(*app), name);
     User u = ELMT_LISTUSER(LISTUSER(*app), ID);
 
-    if (!CanSee(&LISTUSER(*app),ID, LOGGEDIN(*app), &FRIENDSHIPS(*app))) {
+    if (ID == -1) {
+        printf("Tidak ditemukan akun tersebut\n");
+        return;
+    }
+
+
+    if (!CanSee(&LISTUSER(*app), ID, LOGINID(*app), &FRIENDSHIPS(*app))) {
         printf("\nWah, akun ");
         displayString(name);
-        printf(" diprivat nih. Ikuti dulu yuk untuk bisa melihat profil Tuan Prim!\n");
+        printf(" diprivat nih. Ikuti dulu yuk untuk bisa melihat profil ");
+        displayString(name);
+        printf(" !\n");
+
         return;
     } else {
         displayProfile(u);
