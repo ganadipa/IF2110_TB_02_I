@@ -82,6 +82,11 @@ void Masuk(Application *app)
         return;
     }
 
+    if (LENGTH_LISTUSER(LISTUSER(*app)) == 0){
+        printf("\nAnda belum mendaftarkan akun.\n");
+        return;
+    }
+
     String name;
     createEmptyString(&name, 350);
 
