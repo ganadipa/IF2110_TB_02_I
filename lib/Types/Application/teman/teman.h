@@ -8,4 +8,6 @@ void DaftarTeman(Application app);
 
 void HapusTeman(Application *app);
 
+void KelompokTeman(Application *app);
+
 #endif

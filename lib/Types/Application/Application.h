@@ -7,6 +7,8 @@
 #include "../../ADT/Graf/graf.h"
 #include "../listKicauan.h"
 #include "../RequestQueue.h"
+#include "../../ADT/dsu/dsu.h"
+
 
 
 
@@ -18,6 +20,7 @@ typedef struct application {
     ListKicau listKicauan;
     int JumlahUtas;
     HashTable hashMap;
+    DisjointSet kelompokteman;
 } Application;
 
 #define LOGGEDIN(a) (a).isLoggedIn
@@ -26,6 +29,7 @@ typedef struct application {
 #define FRIENDSHIPS(a) (a).friendships
 #define KICAUAN(a)  (a).listKicauan
 #define JUMLAHUTAS(a) (a).JumlahUtas
+#define DSU(a) (a).kelompokteman
 
 void DevTools(Application app);
 /**

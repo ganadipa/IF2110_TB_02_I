@@ -13,6 +13,7 @@
 #include "./ADT/Stack/stack.h"
 #include "./ADT/Tree/tree.h"
 #include "./ADT/PColor/pcolor.h"
+#include "./ADT/dsu/dsu.h"
 #include "./boolean.h"
 #include "./Types/Application/Application.h"
 #include "./Types/Application/balasan/balasan.h"

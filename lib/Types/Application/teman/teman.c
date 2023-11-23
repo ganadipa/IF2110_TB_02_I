@@ -79,3 +79,32 @@ void HapusTeman(Application *app) {
     
     
 }
+
+void KelompokTeman(Application *app) {
+    DisjointSet* dsu = &DSU(*app);
+    int i, count = 0;
+    for (i = 0; i < dsu->count; i++) {
+        if (i == LOGINID(*app)) {
+            continue;
+        }
+
+        if (check(dsu, i , LOGINID(*app))){
+            count++;
+        }
+    }
+
+    printf("Terdapat %d orang dalam kelompok teman ", count);
+    displayName(LISTUSER(*app), LOGINID(*app));
+    printf(" :\n");
+    for (i = 0; i < dsu->count; i++) {
+        if (i == LOGINID(*app)) {
+            continue;
+        }
+
+        if (check(dsu, i , LOGINID(*app))){
+            printf(" | ");
+            displayName(LISTUSER(*app), i);
+            printf("\n");
+        }
+    }
+}

@@ -45,6 +45,7 @@ void LoadPengguna(Application *app, String pathfilefolder){
                 createRequestQueue(&app->users.contents[i].friendRequest);
                 ADVWORDFILE();
                 app->users.contents[i].ID = i;
+                addUser(&DSU(*app), i);
                 app->users.contents[i].name.maxLength = 20;
                 app->users.contents[i].name = currentWordFile;
                 ADVWORDFILE();
@@ -80,6 +81,7 @@ void LoadPengguna(Application *app, String pathfilefolder){
                     ADVWORDFILE2();
                     if (currentWordFile.buffer[0] - '0' == 1){
                         addEdge(&friendships, i, j);
+                        Union(&DSU(*app), i, j);
                     }
                 }
                 addVertices(&friendships);

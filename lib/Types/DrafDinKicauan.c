@@ -1,4 +1,7 @@
 #include "DrafDinKicauan.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 
 void InitDrafKicau(Kicauan* k, int IDUser){
     userKicau(*k) = IDUser; 

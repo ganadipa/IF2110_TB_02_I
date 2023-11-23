@@ -157,6 +157,8 @@ void handleCommand(Application* app, String command, boolean *finish)
             *app = MuatFolder(app, pathfilefolder);
             EndFile = false;
         }
+    } else if (compareString(firstWord, "KELOMPOK_TEMAN")){
+        KelompokTeman(app);
     }
     else {
         printf("\nTidak ada perintah ");

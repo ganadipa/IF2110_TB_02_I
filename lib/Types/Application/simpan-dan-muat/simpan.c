@@ -1,4 +1,7 @@
 #include "simpan.h"
+#include <stdio.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
 
 boolean isExist(String *path){
@@ -82,7 +85,6 @@ void SavingFileKicauan(String* path, ListKicau kicauan, ListUser user){
     // const char* kicau = "kicauan.config";
     String pathFolder = *path;
     String kicau = {"/kicauan.config", 15};
-    String Dir; 
     addString(&pathFolder, kicau);
     FILE *fileKicauan = fopen(pathFolder.buffer, "w"); 
     int i = 0; 

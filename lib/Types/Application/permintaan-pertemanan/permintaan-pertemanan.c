@@ -148,6 +148,7 @@ void SetujuiPertemanan(Application *app)
         addEdge(&FRIENDSHIPS(*app), idTeman, LOGINID(*app));
         int id = LOGINID(*app);
         User* a = &ELMT_LISTUSER(LISTUSER(*app), id);
+        Union(&DSU(*app), idTeman, id);
         FRIEND_COUNT(*a)++; 
         FRIEND_COUNT(*u)++; 
         printf("\nPermintaan pertemanan dari ");
