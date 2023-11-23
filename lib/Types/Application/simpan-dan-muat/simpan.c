@@ -77,6 +77,7 @@ void SavingFilePengguna(String* path, ListUser user, Application app){
             }
         }
     }
+    fprintf(filePengguna, "\n");
     fclose(filePengguna);
 }
 
@@ -99,6 +100,7 @@ void SavingFileKicauan(String* path, ListKicau kicauan, ListUser user){
         fprintf(fileKicauan, "\n%s", kicauan.buffer[i].dateTime.buffer);   
         
     }
+    fprintf(fileKicauan, "\n");
     fclose(fileKicauan);
 }
 
@@ -120,16 +122,18 @@ void SavingFileDraf(String* path, ListUser user){
         if(!isDrafDinEmpty(DRAFKICAU(user.contents[i]))){
             deleteRest(&user.contents[i].name);
             fprintf(fileDraf, "\n%s %d", user.contents[i].name.buffer, LengthDraf(DRAFKICAU(user.contents[i])));
-        }
-        for(j = 0; j < LengthDraf(DRAFKICAU(user.contents[i])); ++j){
             AddressDraf temp = ADDR_TOPDRAF(DRAFKICAU(user.contents[i]));
-            deleteRest(&teksKicau(INFODRAF(temp)));
-            deleteRest(&dateTimeKicau(INFODRAF(temp)));
-            fprintf(fileDraf, "\n%s", teksKicau(INFODRAF(temp)).buffer); 
-            fprintf(fileDraf, "\n%s", dateTimeKicau(INFODRAF(temp)).buffer);
+            do
+            {
+                deleteRest(&teksKicau(INFODRAF(temp)));
+                deleteRest(&dateTimeKicau(INFODRAF(temp)));
+                fprintf(fileDraf, "\n%s", teksKicau(INFODRAF(temp)).buffer); 
+                fprintf(fileDraf, "\n%s", dateTimeKicau(INFODRAF(temp)).buffer);
+                temp = NEXTDRAF(temp);
+            } while (temp != NULL);
         }
     }
-
+    fprintf(fileDraf, "\n");
     fclose(fileDraf);
 }
 
@@ -158,6 +162,7 @@ void SavingFileUtas(String *path, ListKicau listKicau, Application *Utas){
             }
         }
     }
+    fprintf(fileUtas, "\n");
     fclose(fileUtas);
 }
 
@@ -228,6 +233,7 @@ void SavingFileBalasan(String *path, ListKicau kicauan, ListUser user){
             }
         }
     }
+    fprintf(fileBalasan, "\n");
     fclose(fileBalasan);
 }
 
