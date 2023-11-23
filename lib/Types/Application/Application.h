@@ -17,6 +17,7 @@ typedef struct application {
     Graf friendships;
     ListKicau listKicauan;
     int JumlahUtas;
+    HashTable hashMap;
 } Application;
 
 #define LOGGEDIN(a) (a).isLoggedIn
