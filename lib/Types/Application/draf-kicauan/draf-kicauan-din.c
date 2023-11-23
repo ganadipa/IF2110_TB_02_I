@@ -104,6 +104,7 @@ void CreateDraf(Application *app){
             printf("Draft berhasil dihapus\n");
             break;
         }else if(compareString(choose, "TERBIT")){
+            setKicauDateTime(&value);
             ReleaseDraf(app, value, IDUSER);
             break;
         }else{
