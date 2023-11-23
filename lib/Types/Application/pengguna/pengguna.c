@@ -67,7 +67,6 @@ void Daftar(Application *app)
     addVertices(&FRIENDSHIPS(*app));
 
     printf("\nPengguna telah berhasil terdaftar. Masuk untuk menikmati fitur-fitur BurBir.\n\n");
-    printf("%d\n", ISPRIVATE(PROFILE(u)));
 }
 
 void Masuk(Application *app)
