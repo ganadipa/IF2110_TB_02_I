@@ -38,7 +38,6 @@ void handleCommand(Application* app, String command, boolean *finish)
     } else if (compareString(firstWord, "GANTI_PROFIL")) {
         GantiProfil(app);
     } else if (compareString(firstWord, "LIHAT_PROFIL")) {
-        displayString(rest);
         LihatProfil(app, rest);
     } else if (compareString(firstWord, "ATUR_JENIS_AKUN")) {
         AturJenisAkun(app);
