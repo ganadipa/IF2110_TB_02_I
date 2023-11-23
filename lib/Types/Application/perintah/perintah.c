@@ -39,7 +39,7 @@ void handleCommand(Application* app, String command, boolean *finish)
         GantiProfil(app);
     } else if (compareString(firstWord, "LIHAT_PROFIL")) {
         if (numword < 2) {
-            printf("Perintah tidak valid.");
+            printf("\nPerintah yang valid: \"LIHAT_PROFIL <nama> ;\".\n");
             return;
         }
         LihatProfil(app, rest);
