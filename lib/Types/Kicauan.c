@@ -135,3 +135,39 @@ void printKicauan(Kicauan k, String nama ){
 }
 
  
+unsigned long long int hashFunction(String tagar){
+    unsigned long long int hash = 0;
+    for (int i = 0; i < stringLength(tagar); i++) {
+        hash = (hash + tagar.buffer[i])*97 % TABLE_SIZE;
+    }
+    return hash;
+}
+
+void inisialisasiHashTable(HashTable *table) {
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        createEmptyString(&(*table)[i].tagar, 280);
+        (*table)[i].kicauan = NULL;
+        (*table)[i].isOccupied = 0;
+    }
+}
+
+void insertKicauankeTable(HashTable *table, String tagar, Kicauan *kicauan) {
+    unsigned long long int index = hashFunction(tagar);
+    // printf("%d\n", index);
+    while ((*table)[index].isOccupied) {
+        if (isStringInsensitivelyEqual((*table)[index].tagar, tagar)) {
+            printf("Tagar ini milik kicauan lain\n");
+            return;
+        }
+        index = (index + 1) % TABLE_SIZE; // Linear probing
+    }
+    (*table)[index].tagar = tagar; // Sesuaikan ini jika perlu melakukan duplikasi string
+    (*table)[index].kicauan = kicauan;
+    (*table)[index].isOccupied = 1;
+    // displayString((*table)[index].tagar);
+    // String name = {"GANA", 20};
+    // printKicauan(*(*table)[index].kicauan, name);
+    // printf("  Tagar MASUK");
+}
+
+
