@@ -10,6 +10,10 @@ void AppInitialization(Application *app)
     */
 {
     // print opening
+    JUMLAHUTAS(*app) = 0; 
+    LOGGEDIN(*app) = false;
+    LOGINID(*app) = ID_UNDEF;
+    
     Opening();
 
     
@@ -24,9 +28,6 @@ void AppInitialization(Application *app)
     if (pitafile == NULL){
         printf("Folder tidak berhasil dimuat, jadi bikin baru\n");
     }
-    JUMLAHUTAS(*app) = 0;
-    LOGGEDIN(*app) = false;
-    LOGINID(*app) = ID_UNDEF;
     // Inisialisasi app
      
 }
