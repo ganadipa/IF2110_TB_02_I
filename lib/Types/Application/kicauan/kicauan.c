@@ -88,6 +88,13 @@ void UbahKicauan(Application *app, int ID){
         printf("Kicauan yang dimasukkan terpotong secara otomatis apabila jumlah karakter lebih dari 280.\n");
         printf("Masukkan Kicauan : ");
         readString(&teksBaru, 280);
+        boolean allSpace = isAllSpace(teksBaru);
+        while (allSpace)
+        {
+            printf("Kicauan tidak boleh hanya spasi\n");
+            printf("Ulang masukkan kicauan : ");
+            readString(&teksBaru, 280);
+        }
         setText(&ELMT(KICAUAN(*app), ID - 1), teksBaru);
     }else{
         printf("Kamu hanya bisa mengubah kicauan milikmu sendiri\n");
@@ -105,6 +112,15 @@ void Kicau(Application *app) {
     readString(&teks, 280);
 
     int IDUSER = LOGINID(*app);
+
+    boolean allSpace = isAllSpace(teks);
+    while (allSpace)
+    {
+        printf("Kicauan tidak boleh hanya spasi\n");
+        printf("Ulang masukkan kicauan : ");
+        readString(&teks, 280);
+    }
+    
 
 
     KicauanType value;
