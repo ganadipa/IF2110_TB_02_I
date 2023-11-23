@@ -22,6 +22,6 @@ void SavingFile(String* path, Application*app);
 void SavingFolder(String* path, Application* app);
 /*Membuat folder untuk menyimpan .config*/
 
-void SaveFolder();
+void SaveFolder(Application *app);
 
 #endif
