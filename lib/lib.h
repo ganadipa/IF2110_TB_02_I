@@ -22,7 +22,7 @@
 #include "./Types/Application/kicauan/kicauan.h"
 #include "./Types/Application/pengguna/pengguna.h"
 #include "./Types/Application/profil/profil.h"
-#include "./Types/Application/simpan-dan-muat/simpan-dan-muat.h"
+#include "./Types/Application/simpan-dan-muat/muat.h"
 #include "./Types/Application/permintaan-pertemanan/permintaan-pertemanan.h"
 #include "./Types/Application/teman/teman.h"
 #include "./Types/Application/utas/utas.h"
