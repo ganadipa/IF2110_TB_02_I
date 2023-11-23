@@ -116,19 +116,21 @@ void SavingFileDraf(String* path, ListUser user){
         }
     }
     fprintf(fileDraf, "%d", count); //print berapa banyak yang punya draf;
-    for(i = 0; i < user.length; ++i){
-        if(!isDrafDinEmpty(DRAFKICAU(user.contents[i]))){
-            deleteRest(&user.contents[i].name);
-            fprintf(fileDraf, "\n%s %d", user.contents[i].name.buffer, LengthDraf(DRAFKICAU(user.contents[i])));
-            AddressDraf temp = ADDR_TOPDRAF(DRAFKICAU(user.contents[i]));
-            do
-            {
-                deleteRest(&teksKicau(INFODRAF(temp)));
-                deleteRest(&dateTimeKicau(INFODRAF(temp)));
-                fprintf(fileDraf, "\n%s", teksKicau(INFODRAF(temp)).buffer); 
-                fprintf(fileDraf, "\n%s", dateTimeKicau(INFODRAF(temp)).buffer);
-                temp = NEXTDRAF(temp);
-            } while (temp != NULL);
+    if(count < 1){
+        for(i = 0; i < user.length; ++i){
+            if(!isDrafDinEmpty(DRAFKICAU(user.contents[i]))){
+                deleteRest(&user.contents[i].name);
+                fprintf(fileDraf, "\n%s %d", user.contents[i].name.buffer, LengthDraf(DRAFKICAU(user.contents[i])));
+                AddressDraf temp = ADDR_TOPDRAF(DRAFKICAU(user.contents[i]));
+                do
+                {
+                    deleteRest(&teksKicau(INFODRAF(temp)));
+                    deleteRest(&dateTimeKicau(INFODRAF(temp)));
+                    fprintf(fileDraf, "\n%s", teksKicau(INFODRAF(temp)).buffer); 
+                    fprintf(fileDraf, "\n%s", dateTimeKicau(INFODRAF(temp)).buffer);
+                    temp = NEXTDRAF(temp);
+                } while (temp != NULL);
+            }
         }
     }
     fprintf(fileDraf, "\n");
@@ -143,22 +145,25 @@ void SavingFileUtas(String *path, ListKicau listKicau, Application *Utas){
     FILE* fileUtas = fopen(Dir.buffer, "w"); 
     int i, j; 
     fprintf(fileUtas, "%d", JUMLAHUTAS(*Utas));
-    for(i = 0; i < NEFF(listKicau); i++){
-        if(IDUTAS(ELMT(listKicau, i)) != 0){
-            AddressUtas utas = FIRST(ELMT(listKicau, i));
-            fprintf(fileUtas, "\n%d", IDKicau(ELMT(listKicau, i)));
-            fprintf(fileUtas, "\n%d", LEN_ANAKUTAS(ELMT(listKicau, i)));
-            for(j = 0; j < LEN_ANAKUTAS(ELMT(listKicau, i)); j++){
-                deleteRest(&TEKSDIUTAS(utas));
-                deleteRest(&NAMADIUTAS(utas));
-                deleteRest(&DATETIMEUTAS(utas));
-                fprintf(fileUtas, "\n%s", TEKSDIUTAS(utas).buffer); 
-                fprintf(fileUtas, "\n%s", NAMADIUTAS(utas).buffer); 
-                fprintf(fileUtas, "\n%s", DATETIMEUTAS(utas).buffer);
-            
-                utas = NEXT_Linked(utas);
+    if(JUMLAHUTAS(*Utas) != 0){
+        for(i = 0; i < NEFF(listKicau); i++){
+            if(IDUTAS(ELMT(listKicau, i)) != 0){
+                AddressUtas utas = FIRST(ELMT(listKicau, i));
+                fprintf(fileUtas, "\n%d", IDKicau(ELMT(listKicau, i)));
+                fprintf(fileUtas, "\n%d", LEN_ANAKUTAS(ELMT(listKicau, i)));
+                for(j = 0; j < LEN_ANAKUTAS(ELMT(listKicau, i)); j++){
+                    deleteRest(&TEKSDIUTAS(utas));
+                    deleteRest(&NAMADIUTAS(utas));
+                    deleteRest(&DATETIMEUTAS(utas));
+                    fprintf(fileUtas, "\n%s", TEKSDIUTAS(utas).buffer); 
+                    fprintf(fileUtas, "\n%s", NAMADIUTAS(utas).buffer); 
+                    fprintf(fileUtas, "\n%s", DATETIMEUTAS(utas).buffer);
+                
+                    utas = NEXT_Linked(utas);
+                }
             }
         }
+
     }
     fprintf(fileUtas, "\n");
     fclose(fileUtas);
@@ -205,28 +210,30 @@ void SavingFileBalasan(String *path, ListKicau kicauan, ListUser user){
             totalBalasan++;
         }
     }
-
     fprintf(fileBalasan, "%d", totalBalasan);
-    for(i = 0; i < NEFF(kicauan); i++){
-        ReplyTree balasan = BALASAN(ELMT(kicauan, i));
+    if(totalBalasan > 0){
+        printf("total dalam IF: %d\n", totalBalasan);
+        for(i = 0; i < NEFF(kicauan); i++){
+            ReplyTree balasan = BALASAN(ELMT(kicauan, i));
 
-        if(NUMREP(balasan) != 0){ ;
-            //untuk menulis ID dari kicau yang memiliki balasan 
-            fprintf(fileBalasan, "\n%d", IDKicau(ELMT(kicauan, i)));
-            //untuk menulis banyaknya balasan dalam kicauan tersebut
-            fprintf(fileBalasan, "\n%d", NUMREP(BALASAN(ELMT(kicauan, i))));
-            //untuk menulis tiap balasan (unfinished)
+            if(NUMREP(balasan) != 0){ ;
+                //untuk menulis ID dari kicau yang memiliki balasan 
+                fprintf(fileBalasan, "\n%d", IDKicau(ELMT(kicauan, i)));
+                //untuk menulis banyaknya balasan dalam kicauan tersebut
+                fprintf(fileBalasan, "\n%d", NUMREP(BALASAN(ELMT(kicauan, i))));
+                //untuk menulis tiap balasan (unfinished)
 
-            ListReply temp = LISTREP(balasan);
-            for(j = 0; j <= NEFFLR(temp); j++){
-                //blm ada untuk menulis 
-                //balas-ke-node-mana  id-dari-balasan
-                if(!ISUSED(balasan, j)){
-                    continue; 
-                }
-                ReplyAddress kicauBalasan = ADDR(temp, j);
-                if(ISMAIN(*kicauBalasan)){
-                    TulisAllBalasan(fileBalasan, balasan, &user, j);
+                ListReply temp = LISTREP(balasan);
+                for(j = 0; j <= NEFFLR(temp); j++){
+                    //blm ada untuk menulis 
+                    //balas-ke-node-mana  id-dari-balasan
+                    if(!ISUSED(balasan, j)){
+                        continue; 
+                    }
+                    ReplyAddress kicauBalasan = ADDR(temp, j);
+                    if(ISMAIN(*kicauBalasan)){
+                        TulisAllBalasan(fileBalasan, balasan, &user, j);
+                    }
                 }
             }
         }
