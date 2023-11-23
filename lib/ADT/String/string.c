@@ -381,6 +381,17 @@ int countWord(String s)
 
 }
 
+boolean isAllSpace(String s){
+    int length = stringLength(s);
+    int i;
+    for (i = 0; i < length; i++) {
+        if (s.buffer[i] != ' ')
+            return false;
+    }
+
+    return true;
+}
+
 void SplitIntoTwo(String s, String* s1, String* s2) {
     createEmptyString(s1, 350);
     createEmptyString(s2, 350);

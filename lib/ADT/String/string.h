@@ -42,6 +42,8 @@ boolean isStringEqual(String s1, String s2);
 */
 
 int stringLength(String s);
+
+boolean isAllSpace(String s);
 /**
  * 
 */
