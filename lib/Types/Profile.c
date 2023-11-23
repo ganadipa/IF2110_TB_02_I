@@ -39,13 +39,13 @@ void readPhoneNumber(Profile *p)
     readString(&phoneNumber, 350);
 
     if (stringLength(phoneNumber) > 15) {
-        printf("Panjang nomor hape tidak boleh melebihi 15 karakter. Gagal menginput nomor hp.");
+        printf("\nPanjang nomor hape tidak boleh melebihi 15 karakter. Gagal menginput nomor hp.\n");
         return;
     }
 
     while (!isAllNumber(phoneNumber)) {
         printf("\nNo HP tidak valid. Masukkan lagi yuk!\n");
-        printf("\nMasukkan No HP:");
+        printf("\nMasukkan No HP:\n");
         readString(&phoneNumber, 350);
     }
 
