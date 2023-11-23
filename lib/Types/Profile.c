@@ -38,6 +38,11 @@ void readPhoneNumber(Profile *p)
     String phoneNumber;
     readString(&phoneNumber, 350);
 
+    if (stringLength(phoneNumber) > 15) {
+        printf("Panjang nomor hape tidak boleh melebihi 15 karakter. Gagal menginput nomor hp.");
+        return;
+    }
+
     while (!isAllNumber(phoneNumber)) {
         printf("\nNo HP tidak valid. Masukkan lagi yuk!\n");
         printf("\nMasukkan No HP:");

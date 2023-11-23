@@ -27,13 +27,13 @@ void CreateGraph(Graf *g)
 boolean isFull_Graf(Graf g)
 /* Mengirim true jika graf full */
 {
-    return  NUMVERTICES(g) = CAP;
+    return  NUMVERTICES(g) == CAP;
 }
 
 boolean isEmpty_Graf(Graf  g)
 /* Mengirim true jika graf kosong*/
 {
-    return NUMVERTICES(g) = 0;
+    return NUMVERTICES(g) == 0;
 }
 
 
