@@ -122,8 +122,6 @@ void Kicau(Application *app) {
         readString(&teks, 280);
         allSpace = isAllSpace(teks);
     }
-    
-
 
     KicauanType value;
     InisialisasiKicau(&value, IDUSER);
@@ -131,7 +129,72 @@ void Kicau(Application *app) {
     setKicauDateTime(&value);
     setText(&value, teks);
 
-
     insertLastListKicau( &KICAUAN(*app),value);
+    // UNTUK TAGAR;
+    String TAGAR;
+    printf("Masukkan tagar (maks 280 karakter) : ");
+    readString(&TAGAR,280);
     printKicauan(value, ELMT_LISTUSER(LISTUSER(*app), IDUSER).name);
+    insertKicauankeTable( &(*app).hashMap, TAGAR, &ELMT(   KICAUAN(*app),  NEFF(KICAUAN(*app))-1   ));
+    // String namaa = {"GANA", 20};
+    // printKicauan(*(*app).hashMap[63].kicauan, namaa);
+    // displayString((*app).hashMap[63].tagar);
+}
+
+void cariKicauanDenganTagar(Application *app, String Tagar){
+    unsigned long long int index = hashFunction(Tagar);
+    // printf("%d\n", index);
+    unsigned long long int i = index;
+    // displayString((*app).hashMap[i].tagar);
+    // String namaa = {"GANA", 20};
+    // printKicauan(*(*app).hashMap[63].kicauan, namaa);
+    
+    // printf("hello\n");
+    if (isStringInsensitivelyEqual( (*app).hashMap[i].tagar, Tagar)) {
+        // printf("sampai sini 1\n");
+        int iduser = (*app).hashMap[i].kicauan->IDuser;
+        // printf("done here\n");
+        String nama = returnUsername(*app, (*app).hashMap[i].kicauan->IDuser);
+        // printf(" | Tagar : \n");
+        // printKicauan(*(*app).hashMap[i].kicauan, nama);
+        printf("\n");
+        printf(" Detail Kicauan :");
+        printf("\n| ID = %d", IDKicau(*(*app).hashMap[i].kicauan));
+        printf("\n| ");
+        displayString(nama);
+        printf("\n| ");
+        displayString(dateTimeKicau(*(*app).hashMap[i].kicauan));
+        printf("\n| ");
+        displayString((*app).hashMap[i].tagar);
+        printf("\n| ");
+        displayString(teksKicau(*(*app).hashMap[i].kicauan));
+        printf("\n| Disukai : %d\n", likeKicau(*(*app).hashMap[i].kicauan));
+        printf("\n");
+        return;
+        }
+    i++;
+    // printf("sampai sini 2\n");
+    while ((*app).hashMap[index].isOccupied && i != index)
+    {
+        if (isStringEqual((*app).hashMap[i].tagar, Tagar))
+        {
+            String nama = returnUsername(*app, (*app).hashMap[i].kicauan->IDuser);
+            // printf("\n");
+            // printf(" Detail Kicauan :");
+            // printf("\n| ID = %d", IDKicau(*(*app).hashMap[i].kicauan));
+            printf("\n| ");
+            displayString(nama);
+            printf("\n| ");
+            displayString(dateTimeKicau(*(*app).hashMap[i].kicauan));
+            printf("\n| ");
+            displayString((*app).hashMap[i].tagar);
+            printf("\n| ");
+            displayString(teksKicau(*(*app).hashMap[i].kicauan));
+            printf("\n| Disukai : %d\n", likeKicau(*(*app).hashMap[i].kicauan));
+            printf("\n");
+            return;
+        }
+        i = (i + 1) % TABLE_SIZE;
+    }
+    printf("Tidak ditemukan kicauan dengan tagar tersebut!\n");
 }
