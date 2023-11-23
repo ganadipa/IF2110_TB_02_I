@@ -94,6 +94,7 @@ void UbahKicauan(Application *app, int ID){
             printf("Kicauan tidak boleh hanya spasi\n");
             printf("Ulang masukkan kicauan : ");
             readString(&teksBaru, 280);
+            allSpace = isAllSpace(teksBaru);
         }
         setText(&ELMT(KICAUAN(*app), ID - 1), teksBaru);
     }else{
@@ -119,6 +120,7 @@ void Kicau(Application *app) {
         printf("Kicauan tidak boleh hanya spasi\n");
         printf("Ulang masukkan kicauan : ");
         readString(&teks, 280);
+        allSpace = isAllSpace(teks);
     }
     
 
