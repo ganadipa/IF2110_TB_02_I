@@ -102,10 +102,8 @@ void CreateDraf(Application *app){
             printf("Draft berhasil disimpan\n");
             break;
         }else if(compareString(choose, "HAPUS")){
-            if(!isDrafDinEmpty(DRAFKICAU(*user))){
-                printf("Draft berhasil dihapus\n");
-                break;
-                }
+            printf("Draft berhasil dihapus\n");
+            break;
         }else if(compareString(choose, "TERBIT")){
             ReleaseDraf(app, value, IDUSER);
             break;
