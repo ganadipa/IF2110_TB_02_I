@@ -62,7 +62,6 @@ void SavingFilePengguna(String* path, ListUser user, Application app){
         }
         tulisGrafPertemanan(filePengguna, FRIENDSHIPS(app));
         fprintf(filePengguna, "\n%d", totalPermintaan);
-        int count = 0; 
         for(i = 0; i < user.length; i++){
             if(lengthRequestQueue(user.contents[i].friendRequest) != 0){
                 int j;
@@ -70,7 +69,6 @@ void SavingFilePengguna(String* path, ListUser user, Application app){
                 RequestQueue rq = FRIEND_REQUEST(u);
                 int IDaccept = u.ID;
                 for(j = 0; j < lengthRequestQueue(rq); j++){
-                    count++;
                     int IDrequest = ELMT_ReqQue(rq, j).userID;
                     fprintf(filePengguna, "\n%d %d %d", IDrequest, IDaccept, user.contents[IDrequest].friendCount);
                 }

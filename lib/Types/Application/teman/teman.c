@@ -39,9 +39,15 @@ void HapusTeman(Application *app) {
         return;
     }
 
+    User* u = &ELMT_LISTUSER(LISTUSER(*app), LOGINID(*app));
+    if(u->friendCount == 0){
+        printf("\nAnda belum mempunyai teman.\n");
+        return;
+    }
+
     String name;
     createEmptyString(&name, 350);
-    printf("Masukkan nama pengguna: \n");
+    printf("\nMasukkan nama pengguna: \n");
     readString(&name, 350);
 
     int i = searchByName(LISTUSER(*app),name);
@@ -63,6 +69,13 @@ void HapusTeman(Application *app) {
         return;
     } 
     
-    // Pemotongan hubungan pertemanan antara current user dengan "name".
-    removeEdge(&FRIENDSHIPS(*app), LOGINID(*app), i); 
+    if (compareString(ans, "YA")) {
+        removeEdge(&FRIENDSHIPS(*app), LOGINID(*app), i); 
+        u->friendCount --;
+        User *f = &ELMT_LISTUSER(LISTUSER(*app), i);
+        f->friendCount --;
+        return;
+    }
+    
+    
 }

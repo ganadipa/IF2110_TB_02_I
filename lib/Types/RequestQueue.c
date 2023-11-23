@@ -56,6 +56,7 @@ void enqueueRequestQueue(RequestQueue *Q, Friend u)
     }
 
     int ptr;
+    boolean OK = false;
     for (ptr = Tail_ReqQue(*Q); ptr != Head_ReqQue(*Q); ptr = (ptr -1 +CAPACITY_REQQUEUE) % CAPACITY_REQQUEUE)
     {
         if (FRIENDCOUNT_REQQUEUE(ELMT_ReqQue(*Q, ptr)) < FRIENDCOUNT_REQQUEUE(u))
@@ -64,7 +65,13 @@ void enqueueRequestQueue(RequestQueue *Q, Friend u)
         } else 
         {
             ELMT_ReqQue(*Q, (ptr+1) % CAPACITY_REQQUEUE) = u;
+            OK = true;
+            break;
         }
+    }
+    if (OK) {
+        Tail_ReqQue(*Q) = (Tail_ReqQue(*Q) + 1) % CAPACITY_REQQUEUE;
+        return;
     }
 
     if (FRIENDCOUNT_REQQUEUE(ELMT_ReqQue(*Q, ptr)) < FRIENDCOUNT_REQQUEUE(u))
