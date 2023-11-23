@@ -168,7 +168,7 @@ void displayRequestQueue(RequestQueue *Q, ListUser *l)
         User u = ELMT_LISTUSER(*l, ID_REQQUEUE(F));
         printf("\n | Nama: ");
         displayString(NAME(u));
-        printf("\n | Jumlah teman: %d\n", FRIEND_COUNT(u));
+        printf("\n | Jumlah teman: %d\n", FRIENDCOUNT_REQQUEUE(F));
     }
 }
 

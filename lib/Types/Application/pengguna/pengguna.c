@@ -8,7 +8,7 @@ void Daftar(Application *app)
 */
 {
     if (LOGGEDIN(*app)) {
-        printf("Anda sudah punya akun!!! Keluar terlebih dahulu untuk membuat akun yang lain.\n");
+        printf("\nAnda sudah punya akun!!! Keluar terlebih dahulu untuk membuat akun yang lain.\n");
         return;
     }
 
@@ -66,7 +66,7 @@ void Daftar(Application *app)
     insertLast_ListUser(&LISTUSER(*app), u);
     addVertices(&FRIENDSHIPS(*app));
 
-    printf("\nPengguna telah berhasil terdaftar. Masuk untuk menikmati fitur-fitur BurBir.\n\n");
+    printf("\nPengguna telah berhasil terdaftar. Masuk untuk menikmati fitur-fitur BurBir.\n");
 }
 
 void Masuk(Application *app)
