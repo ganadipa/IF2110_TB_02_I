@@ -110,7 +110,7 @@ void SavingFileDraf(String* path, ListUser user){
     createEmptyString(&Dir, 100); 
     snprintf(Dir.buffer, 1000, "%s/%s", path->buffer, draf);
     FILE* fileDraf = fopen(Dir.buffer, "w"); 
-    int i, j; 
+    int i; 
     int count = 0;
     for(i = 0; i < user.length; ++i){
         if(!isDrafDinEmpty(DRAFKICAU(user.contents[i]))){
