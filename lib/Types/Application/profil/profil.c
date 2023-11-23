@@ -32,7 +32,7 @@ void LihatProfil(Application *app, String name) {
     int ID = searchByName(LISTUSER(*app), name);
     User u = ELMT_LISTUSER(LISTUSER(*app), ID);
 
-    if (ISPRIVATE(PROFILE(u))) {
+    if (CanSee(&LISTUSER(*app),ID, LOGGEDIN(*app), &FRIENDSHIPS(*app))) {
         printf("\nWah, akun ");
         displayString(name);
         printf("diprivat nih. Ikuti dulu yuk untuk bisa melihat profil Tuan Prim!\n");
