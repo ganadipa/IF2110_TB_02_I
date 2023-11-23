@@ -11,6 +11,20 @@ void CreateListDin(ListDin *l, int capacity)
     BUFFER(*l) = (int*) malloc((capacity) * sizeof(int));
     NEFF(*l) = 0;
     CAPACITY (*l) = capacity;
+    int i;
+    for (i = 0; i<capacity; i++) {
+        l->buffer[i] = -999;
+    }
+}
+
+void printListDinButAll(ListDin l)
+{
+    int i;
+    printf("[");
+    for (i = 0; i<CAPACITY(l); i++) {
+        printf("%d,");
+    }
+    printf("]");
 }
 
 void dealocateListDin(ListDin *l)

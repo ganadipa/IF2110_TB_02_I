@@ -51,6 +51,8 @@ void dealocateListDin(ListDin *l);
 /* I.S. l terdefinisi; */
 /* F.S. (l) dikembalikan ke system, CAPACITY(l)=0; NEFF(l)=0 */
 
+void printListDinButAll(ListDin l);
+
 /* ********** SELEKTOR (TAMBAHAN) ********** */
 /* *** Banyaknya elemen *** */
 int listLengthListDin(ListDin l);
