@@ -14,7 +14,7 @@ void DaftarTeman(Application app) {
     if (numFriends == 0) {
         printf("\n");
         displayName(l, LOGINID(app));
-        printf("belum memiliki teman.\n");
+        printf(" belum memiliki teman.\n");
     } else {
         printf("\n");
         displayName(l, LOGINID(app));

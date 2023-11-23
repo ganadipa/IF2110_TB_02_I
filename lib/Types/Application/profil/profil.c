@@ -35,7 +35,7 @@ void LihatProfil(Application *app, String name) {
     if (!CanSee(&LISTUSER(*app),ID, LOGGEDIN(*app), &FRIENDSHIPS(*app))) {
         printf("\nWah, akun ");
         displayString(name);
-        printf("diprivat nih. Ikuti dulu yuk untuk bisa melihat profil Tuan Prim!\n");
+        printf(" diprivat nih. Ikuti dulu yuk untuk bisa melihat profil Tuan Prim!\n");
         return;
     } else {
         displayProfile(u);
