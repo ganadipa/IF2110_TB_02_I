@@ -65,7 +65,7 @@ void enqueueRequestQueue(RequestQueue *Q, Friend u)
         } else 
         {
             ELMT_ReqQue(*Q, (ptr+1) % CAPACITY_REQQUEUE) = u;
-            boolean OK = true;
+            OK = true;
             break;
         }
     }
