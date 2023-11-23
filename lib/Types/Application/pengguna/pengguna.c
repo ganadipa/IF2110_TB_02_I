@@ -64,7 +64,6 @@ void Daftar(Application *app)
     User u;
     initializeUser(&u, name, password, LENGTH_LISTUSER(LISTUSER(*app)));
     addUser(&DSU(*app), LENGTH_LISTUSER(LISTUSER(*app)));
-    printf("count in daftar: %d\n", app->kelompokteman.count);
     insertLast_ListUser(&LISTUSER(*app), u);
     addVertices(&FRIENDSHIPS(*app));
 

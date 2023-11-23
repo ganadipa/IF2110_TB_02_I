@@ -20,6 +20,7 @@ void AppInitialization(Application *app)
     CreateListUser(&LISTUSER(*app)); 
     CreateGraph(&FRIENDSHIPS(*app));
     CreateListKicau(&KICAUAN(*app), 500);
+    createSet(&DSU(*app));
     inisialisasiHashTable(&(*app).hashMap);
     boolean found = false;
     // Setup(app); // Hapus kali udah ada database dari config.

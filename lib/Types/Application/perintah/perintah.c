@@ -28,12 +28,8 @@ void handleCommand(Application* app, String command, boolean *finish)
         Masuk(app);
     } else if (compareString(firstWord, "KELUAR")){
         Keluar(app);
-    } else if (compareString(firstWord, "DEVTOOLS")) {
-        /**
-         * Command Developer Tools akan dihilangkan saat pengumpulan, ini hanya alat untuk debugging.
-        */
-        DevTools(*app);
-    } else if (compareString(firstWord, "TUTUP_PROGRAM")) {
+    } 
+    else if (compareString(firstWord, "TUTUP_PROGRAM")) {
         TutupProgram(app, finish);
     } else if (compareString(firstWord, "GANTI_PROFIL")) {
         GantiProfil(app);
@@ -166,4 +162,11 @@ void handleCommand(Application* app, String command, boolean *finish)
         printf(". Baca dokumentasi (Spesifikasi) untuk melihat seluruh perintah.\n");  
     }
 }
+
+    // else if (compareString(firstWord, "DEVTOOLS")) {
+    //     /**
+    //      * Command Developer Tools akan dihilangkan saat pengumpulan, ini hanya alat untuk debugging.
+    //     */
+    //     DevTools(*app);
+    // } 
 
