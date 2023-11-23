@@ -21,7 +21,6 @@ void Balas(Application *app, int IDKicau, int IDBalasan) {
 
     // while (IDBalasan != -1) printf("hello");
     int idx = getIdxFromReplyId(*balasan, IDBalasan);
-    printf("here\n");
     if ((idx == -1 && IDBalasan != -1) && !ISUSED(*balasan, IDBalasan)) {
         printf("\nWah, tidak terdapat balasan yang ingin Anda balas! Mungkin typo IDBalasan ?\n");
         return;

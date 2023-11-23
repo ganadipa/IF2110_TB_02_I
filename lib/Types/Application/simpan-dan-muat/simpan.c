@@ -212,7 +212,6 @@ void SavingFileBalasan(String *path, ListKicau kicauan, ListUser user){
     }
     fprintf(fileBalasan, "%d", totalBalasan);
     if(totalBalasan > 0){
-        printf("total dalam IF: %d\n", totalBalasan);
         for(i = 0; i < NEFF(kicauan); i++){
             ReplyTree balasan = BALASAN(ELMT(kicauan, i));
 
