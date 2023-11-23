@@ -9,7 +9,7 @@
 
 typedef Kicauan infodraf; 
 
-typedef struct nodeDraf *AddressDraf; 
+typedef struct nodeDraf* AddressDraf; 
 typedef struct nodeDraf {
     infodraf kicau; 
     AddressDraf next;
