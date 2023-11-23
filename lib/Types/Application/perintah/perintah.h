@@ -9,7 +9,7 @@
 #include "../pengguna/pengguna.h"
 #include "../profil/profil.h"
 #include "../simpan-dan-muat/simpan.h"
-#include "../simpan-dan-muat/simpan-dan-muat.h"
+#include "../simpan-dan-muat/muat.h"
 #include "../permintaan-pertemanan/permintaan-pertemanan.h"
 #include "../teman/teman.h"
 #include "../utas/utas.h"
