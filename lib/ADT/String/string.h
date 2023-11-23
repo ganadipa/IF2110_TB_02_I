@@ -5,7 +5,7 @@
 #include "../WordMachine/wordmachine.h"
 
 
-#define STRCAP 351
+#define STRCAP 1000
 #define MARK_STRING '\0'
 
 typedef struct string

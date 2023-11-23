@@ -11,13 +11,13 @@ void insertUtas_withIDKicau(Application *app, int IDKicau){
         return;
     }
     if (IDKicau <1){
-        printf("Kamu tidak bisa menambah Utas dengan id kicau %d", IDKicau);
+        printf("Kamu tidak bisa menambah Utas dengan id kicau %d\n", IDKicau);
         return;
     }
     // printf("%d\n", ELMT(KICAUAN(*app), IDKicau - 1).IDUtas);
     if (ELMT(KICAUAN(*app), IDKicau - 1).IDUtas != 0)
     {
-        printf("Kicauan ini sudah menjadi kicauan utama dari utas lain.");
+        printf("Kicauan ini sudah menjadi kicauan utama dari utas lain.\n");
         return;
     }
     if (LOGINID(*app) == ELMT(KICAUAN(*app), IDKicau - 1).IDuser  ){
@@ -70,11 +70,11 @@ void deleteAt_Utas(Application *app, int IDUtas, int indeksUtas){
         return;
     }
     if (IDUtas <1){
-        printf("Kamu tidak bisa menghapus Utas dengan id utas %d", IDUtas);
+        printf("Kamu tidak bisa menghapus Utas dengan id utas %d\n", IDUtas);
         return;
     }
     if (indeksUtas < 1 ){
-        printf("Kamu tidak bisa menghapus Utas dengan indeks %d", indeksUtas);
+        printf("Kamu tidak bisa menghapus Utas dengan indeks %d\n", indeksUtas);
         return;
     }
     int length = KICAUAN(*app).nEff;
@@ -96,7 +96,7 @@ void deleteAt_Utas(Application *app, int IDUtas, int indeksUtas){
         return;
     }
     if (indeksUtas == 0){
-        printf("Kamu tidak bisa menghapus kicauan utama");
+        printf("Kamu tidak bisa menghapus kicauan utama\n");
         return;}
     
     if (ELMT( KICAUAN(*app), i).lenUtas < indeksUtas){
@@ -117,11 +117,11 @@ void NyambungAnakUtas(Application *app, int IDUtas, int indeksUtas){
         return;
     }
     if (IDUtas <1){
-        printf("Kamu tidak bisa menyambung Utas dengan id utas %d", IDUtas);
+        printf("Kamu tidak bisa menyambung Utas dengan id utas %d\n", IDUtas);
         return;
     }
     if (indeksUtas < 1 ){
-        printf("Kamu tidak bisa menyambung Utas dengan indeks %d", indeksUtas);
+        printf("Kamu tidak bisa menyambung Utas dengan indeks %d\n", indeksUtas);
         return;
     }
 
@@ -159,7 +159,7 @@ void NyambungAnakUtas(Application *app, int IDUtas, int indeksUtas){
     DATETIME formatIntTanggal = currentDateTime ();
     String waktu = DateTimeToString(formatIntTanggal);
     insertAtAnakUtas(&ELMT(KICAUAN(*app), i), indeksUtas, teks, namaUser, waktu);
-    printf("Utas berhasil ditambahkan!");
+    printf("Utas berhasil ditambahkan!\n");
 }
 
 
@@ -170,7 +170,7 @@ void display_listUtas(Application *app,int IDUtas){
         return;
     }
     if (IDUtas <1){
-        printf("Kamu tidak bisa menampilkan Utas dengan id utas %d", IDUtas);
+        printf("Kamu tidak bisa menampilkan Utas dengan id utas %d\n", IDUtas);
         return;
     }
     int length = KICAUAN(*app).nEff;
@@ -211,7 +211,7 @@ void display_listUtas(Application *app,int IDUtas){
                     p = NEXT_Linked(p);
                 }
             } else {
-                printf("Akun yang membuat utas ini adalah akun privat! Ikuti dahulu akun ini untuk melihat utasnya!");
+                printf("Akun yang membuat utas ini adalah akun privat! Ikuti dahulu akun ini untuk melihat utasnya!\n");
             }
         }
     } else {
