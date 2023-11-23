@@ -1,6 +1,5 @@
 include Makefile.que #unit test for queue
 include Makefile.sta #unit test for stack
-include Makefile.word #unit test for wordmachine
 include Makefile.din #unit test for list dinamik
 
 
@@ -38,8 +37,8 @@ clean:
 run: $(PROGRAM)
 	@./$(PROGRAM)
 
-word: 
-	$(MAKE) -f Makefile.word test_wordmachine
+# word: 
+# 	$(MAKE) -f Makefile.word test_wordmachine
 
 que: 
 	$(MAKE) -f Makefile.que test_queue
@@ -243,5 +242,33 @@ $(liststatik_TEST_RESULTS): $(liststatik_TESTS_DIR)/%.result: $(liststatik_TESTS
 #************************************************************************************
 #************************************************************************************
 
+# ************************WordMachine UNIT TEST*************************************
+# ************************WordMachine UNIT TEST*************************************
+# ************************WordMachine UNIT TEST*************************************
+wordmachine_SRC = lib/ADT/WordMachine/wordmachine.c
+charmachine_SRC = lib/ADT/WordMachine/charmachine.c
+wordmachine_SRC_TEST = lib/ADT/WordMachine/tests/mwordmachine.c
+wordmachine_OBJ = $(BINARY)/$(wordmachine_SRC:.c=.o)
+charmachine_OBJ = $(BINARY)/$(charmachine_SRC:.c=.o)
+wordmachine_OBJ_TEST = $(BINARY)/$(wordmachine_SRC_TEST:.c=.o)
 
+wordmachine_TESTS_DIR = lib/ADT/WordMachine/tests
+wordmachine_TEST_CASES = $(wildcard $(wordmachine_TESTS_DIR)/*.in)
+wordmachine_TEST_OUTPUTS = $(wordmachine_TEST_CASES:.in=.out)
+wordmachine_TEST_RESULTS = $(wordmachine_TEST_CASES:.in=.result)
 
+mwordmachine: $(wordmachine_OBJ) $(charmachine_OBJ) $(wordmachine_OBJ_TEST)
+	$(CC) $(CFLAGS) -o $@ $^
+
+test_wordmachine: mwordmachine $(wordmachine_TEST_RESULTS)
+	@cat $(wordmachine_TEST_RESULTS)
+
+$(wordmachine_TEST_RESULTS): $(wordmachine_TESTS_DIR)/%.result: $(wordmachine_TESTS_DIR)/%.in $(wordmachine_TESTS_DIR)/%.out mwordmachine
+	@if ./mwordmachine < $< | diff - $(word 2,$^) > /dev/null; then \
+		echo "$< $(word 2,$^): PASSED!"; \
+	else \
+		echo "$< $(word 2,$^): FAILED!"; \
+	fi > $@
+#************************************************************************************
+#************************************************************************************
+#************************************************************************************
