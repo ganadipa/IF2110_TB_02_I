@@ -28,6 +28,21 @@ int stringLength(String s)
     return i;
 }
 
+
+void toTitleCase(String *s){
+    if (97 <= s->buffer[0] && s->buffer[0] <= 122){
+        s->buffer[0] -= 32;
+    }
+
+    int length = stringLength(*s);
+    int i;
+    for (i = 1; i< length; i++){
+        if (65 <= s->buffer[i] && s->buffer[i] <= 90){
+            s->buffer[i] += 32;
+        }
+    }
+}
+
 int stringToInt(String s){
     int i;
     int j = 1;

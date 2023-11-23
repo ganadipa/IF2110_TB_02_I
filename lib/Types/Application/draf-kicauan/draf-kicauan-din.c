@@ -2,6 +2,7 @@
 #include "draf-kicauan-din.h"
 
 void SaveDraf(User* user, Kicauan kicau){
+    setKicauDateTime(&kicau);
     PushDrafDin(&DRAFKICAU(*user), kicau);
 }
 
@@ -11,7 +12,6 @@ void ChangeDraf(Application* app, User* user, Kicauan tempKicau){
     readString(&teks, 280);
     setText(&tempKicau, teks); 
     setKicauID(&tempKicau, NEFF(KICAUAN(*app))+1);
-    setKicauDateTime(&tempKicau);
     
     SaveDraf(user, tempKicau);
 }
@@ -65,7 +65,7 @@ void DisplayDraf(Application *app){
                 ReleaseDraf(app, temp, IDUSER);
                 break;
             } else if(compareString(choose, "KEMBALI")){
-                SaveDraf(user, temp);
+                PushDrafDin(&DRAFKICAU(*user), temp);
                 break;
             } else{
                 printf("\nInput tidak valid");
@@ -90,7 +90,6 @@ void CreateDraf(Application *app){
     Kicauan value;
     InisialisasiDrafDinKicau(&value, IDUSER);
     setKicauID(&value, NEFF(KICAUAN(*app))+1);
-    setKicauDateTime(&value); 
     setText(&value, teks); 
 
     printf("Apakah anda ingin menghapus, menyimpan, atau menerbitkan draf ini? ");

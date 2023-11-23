@@ -73,6 +73,6 @@ void readWeton(Profile *p)
         printf("\nMasukkan Weton: \n");
         readString(&weton, 10);
     }
-
+    toTitleCase(&weton);
     WETON(*p) = weton;
 }

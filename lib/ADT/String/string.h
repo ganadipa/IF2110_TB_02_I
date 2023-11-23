@@ -30,6 +30,8 @@ void readString(String *s, int maxLength);
  * F.S. s terbentuk sebagai hasil input dari stdin.
 */
 
+void toTitleCase(String *s);
+
 boolean isStringInsensitivelyEqual(String s1, String s2);
 
 boolean isAlphabet(char c);
