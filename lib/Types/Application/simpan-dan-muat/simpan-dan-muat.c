@@ -3,6 +3,9 @@
 
 Application MuatFolder(Application *apporiginal, String pathfilefolder){
     Application app;
+    JUMLAHUTAS(app) = 0; 
+    LOGGEDIN(app) = false;
+    LOGINID(app) = ID_UNDEF;
     CreateListUser(&LISTUSER(app)); 
     CreateGraph(&FRIENDSHIPS(app));
     CreateListKicau(&KICAUAN(app), 1000);
