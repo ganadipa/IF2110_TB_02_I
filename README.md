@@ -14,7 +14,7 @@ Program Burung Biru</center> </h1>
 </ol> </h3>
 
 <h2> <b> Penjelasan Singkat Program </b> </h2>
-<p> <center> Program Burung Biru adalah aplikasi berbasis Command Line Interface (CLI) dengan fitur mirip media sosial X. Program ini memakai konsep algoritma dan struktur data dengan pemanfaatan Abstract Data Type.
+<p> <center> Program Burung Biru adalah aplikasi berbasis Command Line Interface (CLI) dengan fitur mirip media sosial X. Program ini memakai konsep algoritma dan struktur data dengan pemanfaatan Abstract Data Type. Program ini menggunakan bahasa C dan bisa dijalankan melalui terminal berbasis UNIX.
 </center> </p> 
 
 <h2> <b> Cara Menjalankan Program </b> </h2>
