@@ -112,7 +112,7 @@ Program Burung Biru</center> </h1>
     </ul>
 </ul>
 
-<h2>Pembagian Tugas Pada Source Code </h2>
+## Pembagian Tugas Pada Source Code 
 | Nama | NIM | Tugas  |
 |-----| ----| ------|
 | Nyoman Ganadipa Narayana | 13522066 | ADT Graf, ADT Tree, , ADT String, Profil, Perintah, Teman, Balasan, Laporan |
@@ -121,7 +121,7 @@ Program Burung Biru</center> </h1>
 | William Glory Henderson | 13522113 | ADT List dengan Struktur Data Array Dinamis, ADT Datetime, Permintaan Pertemanan, Utas, README, Laporan |
 | Indraswara Galih Jayanegara | 13522119 | ADT Stack, ADT Queue, Draf, Simpan, Laporan |
 
-<h2> Daftar Fitur dan Status Pengerjaan </h2>
+## Daftar Fitur dan Status Pengerjaan 
 | Fitur  | Status Pengerjaan | 
 | ------------- | ------------- |
 | Inisialisas | DONE |
