@@ -20,13 +20,12 @@ void tulisGrafPertemanan(FILE* filepath, Graf graf){
 }
 
 void SavingFilePengguna(String* path, ListUser user, Application app){
-    const char *pengguna = "pengguna.config"; 
-
-    String parentDir; 
-    createEmptyString(&parentDir, 100);
-
-    snprintf(parentDir.buffer, 1000, "%s/%s", path->buffer, pengguna);
-    FILE *filePengguna = fopen(parentDir.buffer, "w");
+    // const char *pengguna = "pengguna.config"; 
+    // snprintf(parentDir.buffer, 1000, "%s/%s", path->buffer, pengguna.buffer);
+    String pathFolder = *path;
+    String pengguna = {"/pengguna.config", 16};
+    addString(&pathFolder, pengguna); 
+    FILE *filePengguna = fopen(pathFolder.buffer, "w");
     int i = 0; 
     int totalPermintaan = 0;
     fprintf(filePengguna, "%d", user.length);
@@ -80,11 +79,12 @@ void SavingFilePengguna(String* path, ListUser user, Application app){
 }
 
 void SavingFileKicauan(String* path, ListKicau kicauan, ListUser user){
-    const char* kicau = "kicauan.config";
+    // const char* kicau = "kicauan.config";
+    String pathFolder = *path;
+    String kicau = {"/kicauan.config", 15};
     String Dir; 
-    createEmptyString(&Dir, 100); 
-    snprintf(Dir.buffer, 1000, "%s/%s", path->buffer, kicau);
-    FILE *fileKicauan = fopen(Dir.buffer, "w"); 
+    addString(&pathFolder, kicau);
+    FILE *fileKicauan = fopen(pathFolder.buffer, "w"); 
     int i = 0; 
     fprintf(fileKicauan, "%d", kicauan.nEff);
     for(i = 0; i < kicauan.nEff; ++i){
@@ -103,11 +103,11 @@ void SavingFileKicauan(String* path, ListKicau kicauan, ListUser user){
 }
 
 void SavingFileDraf(String* path, ListUser user){
-    const char* draf ="draf.config"; 
-    String Dir; 
-    createEmptyString(&Dir, 100); 
-    snprintf(Dir.buffer, 1000, "%s/%s", path->buffer, draf);
-    FILE* fileDraf = fopen(Dir.buffer, "w"); 
+    // const char* draf ="draf.config"; 
+    String pathFolder = *path;
+    String draf = {"/draf.config", 12};
+    addString(&pathFolder, draf);
+    FILE* fileDraf = fopen(pathFolder.buffer, "w"); 
     int i; 
     int count = 0;
     for(i = 0; i < user.length; ++i){
@@ -138,11 +138,11 @@ void SavingFileDraf(String* path, ListUser user){
 }
 
 void SavingFileUtas(String *path, ListKicau listKicau, Application *Utas){
-    const char* utas ="utas.config"; 
-    String Dir; 
-    createEmptyString(&Dir, 100); 
-    snprintf(Dir.buffer, 1000, "%s/%s", path->buffer, utas);
-    FILE* fileUtas = fopen(Dir.buffer, "w"); 
+    // const char* utas ="utas.config"; 
+    String pathFolder = *path;
+    String utas = {"/utas.config", 12};
+    addString(&pathFolder, utas);
+    FILE* fileUtas = fopen(pathFolder.buffer, "w"); 
     int i, j; 
     fprintf(fileUtas, "%d", JUMLAHUTAS(*Utas));
     if(JUMLAHUTAS(*Utas) != 0){
@@ -199,11 +199,11 @@ void TulisAllBalasan(FILE* filepath, ReplyTree rt, ListUser *l, int idx){
 }
 
 void SavingFileBalasan(String *path, ListKicau kicauan, ListUser user){
-    const char* reply = "balasan.config"; 
-    String Dir; 
-    createEmptyString(&Dir, 100); 
-    snprintf(Dir.buffer, 1000, "%s/%s", path->buffer, reply); 
-    FILE *fileBalasan = fopen(Dir.buffer, "w");
+    // const char* reply = "balasan.config"; 
+    String pathFolder = *path;
+    String reply = {"/balasan.config", 15};
+    addString(&pathFolder, reply);
+    FILE *fileBalasan = fopen(pathFolder.buffer, "w");
     int i, j, totalBalasan = 0; 
     for(i = 0; i < NEFF(kicauan); i++){
         if(NUMREP(BALASAN(ELMT(kicauan, i))) != 0){

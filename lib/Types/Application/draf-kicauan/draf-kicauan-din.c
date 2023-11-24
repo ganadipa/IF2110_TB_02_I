@@ -88,6 +88,7 @@ void CreateDraf(Application *app){
 
     int IDUSER = LOGINID(*app);
     Kicauan value;
+    
     InisialisasiDrafDinKicau(&value, IDUSER);
     setKicauID(&value, NEFF(KICAUAN(*app))+1);
     setText(&value, teks); 
@@ -104,7 +105,6 @@ void CreateDraf(Application *app){
             printf("Draft berhasil dihapus\n");
             break;
         }else if(compareString(choose, "TERBIT")){
-            setKicauDateTime(&value);
             ReleaseDraf(app, value, IDUSER);
             break;
         }else{

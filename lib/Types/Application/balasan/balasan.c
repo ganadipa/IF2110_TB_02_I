@@ -7,7 +7,7 @@ void Balas(Application *app, int IDKicau, int IDBalasan) {
     int userID = userKicau(*k);
     Graf *pertemanan = &FRIENDSHIPS(*app);
     ListUser *lu = &LISTUSER(*app);
-    if (!LOGGEDIN(*app)) {
+    if (!LOGGEDIN(*app)) {  
         printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
         return;
     }
