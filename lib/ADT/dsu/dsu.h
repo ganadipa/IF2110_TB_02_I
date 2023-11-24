@@ -1,15 +1,16 @@
 #ifndef DSU_H
 #define DSU_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "boolean.h"
+
+#include "../../boolean.h"
 
 typedef struct {
     int arr [20];
     int count;    
 } DisjointSet;
 #define ELMT_SET(ds, i) (ds).arr[(i)]
+
+void addUser(DisjointSet *ds, int id);
 
 void createSet(DisjointSet *ds);
 

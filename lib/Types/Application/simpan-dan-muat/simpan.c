@@ -1,4 +1,7 @@
 #include "simpan.h"
+#include <stdio.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
 
 boolean isExist(String *path){

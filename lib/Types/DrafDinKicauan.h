@@ -1,8 +1,7 @@
 #ifndef DRAFDINKICAUAN 
 #define DRAFDINKICAUAN 
 
-#include <stdio.h> 
-#include <stdlib.h>
+
 #include "../boolean.h"
 #include "../ADT/String/string.h"
 #include "Kicauan.h"

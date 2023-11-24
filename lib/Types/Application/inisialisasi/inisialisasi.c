@@ -59,6 +59,7 @@ void Setup(Application *app)
     JUMLAHUTAS(*app) = 0;
     CreateListUser(&LISTUSER(*app)); 
     CreateGraph(&FRIENDSHIPS(*app));
+    createSet(&DSU(*app));
     CreateListKicau(&KICAUAN(*app), 1000); //Inisialisasi awal untuk ListKicauan 1000
 }
 
