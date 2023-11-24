@@ -68,7 +68,10 @@ void DisplayDraf(Application *app){
                 PushDrafDin(&DRAFKICAU(*user), temp);
                 break;
             } else{
-                printf("\nInput tidak valid");
+                printf("\nInput tidak valid\n Masukkan input berikut:\n");
+                printf("HAPUS: menghapus draf\n"); 
+                printf("KEMBALI: kembali dari lihat draft\n"); 
+                printf("TERBIT: menerbitkan draf menjadi kicauan\n"); 
                 printf("\nMasukkan input kembali: ");
             }
         }
@@ -108,7 +111,10 @@ void CreateDraf(Application *app){
             ReleaseDraf(app, value, IDUSER);
             break;
         }else{
-            printf("\nInput tidak valid"); 
+            printf("\nInput tidak valid\n Masukkan input berikut:\n");
+            printf("HAPUS: menghapus draf\n"); 
+            printf("SIMPAN: menyimpan draft\n"); 
+            printf("TERBIT: menerbitkan draf menjadi kicauan\n"); 
             printf("\nMasukkan input kembali: ");
         }
     }
