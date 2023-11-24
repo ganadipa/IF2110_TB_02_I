@@ -35,9 +35,10 @@ Program Burung Biru</center> </h1>
 </ul>
 <ul>
 <li> lib
-<p> Berisikan 2 folder yaitu ADT dan Types yang berisikan folder yang mengandung file implementasi dari ADT dan fitur program </p>
+<p> Berisikan 2 folder yaitu ADT dan Types dan file-file yang berisikan implementasi dari ADT dan fitur program  </p>
     <ul>
     <li> ADT
+    <p> Berisi semua ADT yang digunakan pada program </p>
         <ul>
         <li> ADT DateTime
         <li> ADT Graf
@@ -55,6 +56,7 @@ Program Burung Biru</center> </h1>
     </ul>
     <ul>
     <li> Types
+    <p> Berisi semua fitur utama dan fitur pembantu program </p>
         <ul>
         <li> Application
             <ul>
@@ -104,6 +106,7 @@ Program Burung Biru</center> </h1>
         <ul>
         <li> User
         </ul>
+   </ul>
     <ul>
     <li> boolean.h
     </ul>
@@ -114,8 +117,8 @@ Program Burung Biru</center> </h1>
 
 ## Pembagian Tugas Pada Source Code 
 | Nama | NIM | Tugas  |
-|-----| ----| ------|
-| Nyoman Ganadipa Narayana | 13522066 | ADT Graf, ADT Tree, , ADT String, Profil, Perintah, Teman, Balasan, Laporan |
+| ----- | ---- | ------ |
+| Nyoman Ganadipa Narayana | 13522066 | ADT Graf, ADT Tree, ADT String, Profil, Perintah, Teman, Balasan, Laporan |
 | Albert | 13522081 | ADT Matrix, ADT List dengan Struktur Data Array Statik, Kicauan, Utas, Laporan |
 | Fedrianz Dharma | 13522090 | ADT Mesin Karakter, ADT Mesin Kata, Inisialisasi, Muat, Laporan |
 | William Glory Henderson | 13522113 | ADT List dengan Struktur Data Array Dinamis, ADT Datetime, Permintaan Pertemanan, Utas, README, Laporan |
