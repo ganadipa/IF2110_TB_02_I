@@ -2,6 +2,7 @@
 #include "draf-kicauan-din.h"
 
 void SaveDraf(User* user, Kicauan kicau){
+    setKicauDateTime(&kicau);
     PushDrafDin(&DRAFKICAU(*user), kicau);
 }
 
@@ -11,7 +12,6 @@ void ChangeDraf(Application* app, User* user, Kicauan tempKicau){
     readString(&teks, 280);
     setText(&tempKicau, teks); 
     setKicauID(&tempKicau, NEFF(KICAUAN(*app))+1);
-    setKicauDateTime(&tempKicau);
     
     SaveDraf(user, tempKicau);
 }
@@ -65,10 +65,13 @@ void DisplayDraf(Application *app){
                 ReleaseDraf(app, temp, IDUSER);
                 break;
             } else if(compareString(choose, "KEMBALI")){
-                SaveDraf(user, temp);
+                PushDrafDin(&DRAFKICAU(*user), temp);
                 break;
             } else{
-                printf("\nInput tidak valid");
+                printf("\nInput tidak valid\n Masukkan input berikut:\n");
+                printf("HAPUS: menghapus draf\n"); 
+                printf("KEMBALI: kembali dari lihat draft\n"); 
+                printf("TERBIT: menerbitkan draf menjadi kicauan\n"); 
                 printf("\nMasukkan input kembali: ");
             }
         }
@@ -88,9 +91,9 @@ void CreateDraf(Application *app){
 
     int IDUSER = LOGINID(*app);
     Kicauan value;
+    
     InisialisasiDrafDinKicau(&value, IDUSER);
     setKicauID(&value, NEFF(KICAUAN(*app))+1);
-    setKicauDateTime(&value); 
     setText(&value, teks); 
 
     printf("Apakah anda ingin menghapus, menyimpan, atau menerbitkan draf ini? ");
@@ -102,15 +105,16 @@ void CreateDraf(Application *app){
             printf("Draft berhasil disimpan\n");
             break;
         }else if(compareString(choose, "HAPUS")){
-            if(!isDrafDinEmpty(DRAFKICAU(*user))){
-                printf("Draft berhasil dihapus\n");
-                break;
-                }
+            printf("Draft berhasil dihapus\n");
+            break;
         }else if(compareString(choose, "TERBIT")){
             ReleaseDraf(app, value, IDUSER);
             break;
         }else{
-            printf("\nInput tidak valid"); 
+            printf("\nInput tidak valid\n Masukkan input berikut:\n");
+            printf("HAPUS: menghapus draf\n"); 
+            printf("SIMPAN: menyimpan draft\n"); 
+            printf("TERBIT: menerbitkan draf menjadi kicauan\n"); 
             printf("\nMasukkan input kembali: ");
         }
     }

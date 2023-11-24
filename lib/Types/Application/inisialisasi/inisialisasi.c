@@ -10,13 +10,18 @@ void AppInitialization(Application *app)
     */
 {
     // print opening
+    JUMLAHUTAS(*app) = 0; 
+    LOGGEDIN(*app) = false;
+    LOGINID(*app) = ID_UNDEF;
+    
     Opening();
 
     
     CreateListUser(&LISTUSER(*app)); 
     CreateGraph(&FRIENDSHIPS(*app));
     CreateListKicau(&KICAUAN(*app), 500);
-
+    createSet(&DSU(*app));
+    inisialisasiHashTable(&(*app).hashMap);
     boolean found = false;
     // Setup(app); // Hapus kali udah ada database dari config.
 
@@ -24,11 +29,8 @@ void AppInitialization(Application *app)
     if (pitafile == NULL){
         printf("Folder tidak berhasil dimuat, jadi bikin baru\n");
     }
-    JUMLAHUTAS(*app) = 0;
-    LOGGEDIN(*app) = false;
-    LOGINID(*app) = ID_UNDEF;
     // Inisialisasi app
-     
+    EndFile = false;
 }
 
 void Opening() 
@@ -58,6 +60,7 @@ void Setup(Application *app)
     JUMLAHUTAS(*app) = 0;
     CreateListUser(&LISTUSER(*app)); 
     CreateGraph(&FRIENDSHIPS(*app));
+    createSet(&DSU(*app));
     CreateListKicau(&KICAUAN(*app), 1000); //Inisialisasi awal untuk ListKicauan 1000
 }
 

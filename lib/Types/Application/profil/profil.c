@@ -32,10 +32,19 @@ void LihatProfil(Application *app, String name) {
     int ID = searchByName(LISTUSER(*app), name);
     User u = ELMT_LISTUSER(LISTUSER(*app), ID);
 
-    if (ISPRIVATE(PROFILE(u))) {
+    if (ID == -1) {
+        printf("\nTidak ditemukan akun tersebut.\n");
+        return;
+    }
+
+
+    if (!CanSee(&LISTUSER(*app), ID, LOGINID(*app), &FRIENDSHIPS(*app))) {
         printf("\nWah, akun ");
         displayString(name);
-        printf("diprivat nih. Ikuti dulu yuk untuk bisa melihat profil Tuan Prim!\n");
+        printf(" diprivat nih. Ikuti dulu yuk untuk bisa melihat profil ");
+        displayString(name);
+        printf(" !\n");
+
         return;
     } else {
         displayProfile(u);
@@ -59,7 +68,7 @@ void AturJenisAkun(Application *app)
     boolean *isPrivate = &ISPRIVATE(PROFILE(*u));
 
 
-    printf("Saat ini, akun Anda adalah akun ");
+    printf("\nSaat ini, akun Anda adalah akun ");
     if (!*isPrivate) printf("publik");
     else printf("privat");
     printf(". Ingin mengubah ke akun ");
@@ -69,13 +78,15 @@ void AturJenisAkun(Application *app)
 
     String ans;
     readString(&ans, 10);
+    printf("\n");
 
     if (compareString(ans, "YA")) {
+        printf("Akun berhasil diganti.\n");
         *isPrivate = !*isPrivate;
     } else if (compareString(ans, "TIDAK")) {
-        // do nothing
+        printf("Akun tidak berhasil diganti.\n");
     } else {
-        printf("Masukkan Anda bukan berupa \"YA\" atau \"TIDAK\". Perintah dibatalkan.");
+        printf("Masukkan Anda bukan berupa \"YA\" atau \"TIDAK\". Perintah dibatalkan.\n");
     }
     
 }

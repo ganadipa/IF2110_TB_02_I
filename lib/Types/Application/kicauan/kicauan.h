@@ -26,4 +26,8 @@ void SukaKicauan(Application *app, int ID);
 */
 
 void UbahKicauan(Application *app, int ID);
+
+
+
+void cariKicauanDenganTagar(Application *app, String secondWord);
 #endif

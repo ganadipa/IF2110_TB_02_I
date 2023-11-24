@@ -8,7 +8,7 @@ void Daftar(Application *app)
 */
 {
     if (LOGGEDIN(*app)) {
-        printf("Anda sudah punya akun!!! Keluar terlebih dahulu untuk membuat akun yang lain.\n");
+        printf("\nAnda sudah punya akun!!! Keluar terlebih dahulu untuk membuat akun yang lain.\n");
         return;
     }
 
@@ -63,11 +63,11 @@ void Daftar(Application *app)
     // Initialize user with the given name and password, insert it to database.
     User u;
     initializeUser(&u, name, password, LENGTH_LISTUSER(LISTUSER(*app)));
+    addUser(&DSU(*app), LENGTH_LISTUSER(LISTUSER(*app)));
     insertLast_ListUser(&LISTUSER(*app), u);
     addVertices(&FRIENDSHIPS(*app));
 
-    printf("\nPengguna telah berhasil terdaftar. Masuk untuk menikmati fitur-fitur BurBir.\n\n");
-    printf("%d\n", ISPRIVATE(PROFILE(u)));
+    printf("\nPengguna telah berhasil terdaftar. Masuk untuk menikmati fitur-fitur BurBir.\n");
 }
 
 void Masuk(Application *app)
@@ -80,6 +80,11 @@ void Masuk(Application *app)
 {
     if (LOGGEDIN(*app)) {
         printf("\nWah Anda sudah masuk. Keluar dulu yuk!\n");
+        return;
+    }
+
+    if (LENGTH_LISTUSER(LISTUSER(*app)) == 0){
+        printf("\nAnda belum mendaftarkan akun.\n");
         return;
     }
 

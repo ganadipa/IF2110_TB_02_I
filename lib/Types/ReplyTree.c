@@ -216,7 +216,7 @@ void printAllReplyTree(ReplyTree rt) {
     printf("List rep neff: %d\n",LISTREP(rt).neff);
     printf("List rep cap: %d\n",LISTREP(rt).capacity);
     printf("\nused list:");
-    printListDin(USED(rt));
+    printListDinButAll(USED(rt));
     printf("\nparent list:");
     printListDin(rt.parent);
 

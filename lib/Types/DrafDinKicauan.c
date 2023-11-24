@@ -1,4 +1,7 @@
 #include "DrafDinKicauan.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 
 void InitDrafKicau(Kicauan* k, int IDUser){
     userKicau(*k) = IDUser; 
@@ -27,6 +30,7 @@ void CreateDraftDin(DrafKicauDin *s){
 }
 
 void InisialisasiDrafDinKicau(Kicauan *k, int IDUser){
+    InisialisasiKicau(k, IDUser);
     userKicau(*k) = IDUser; 
     likeKicau(*k) = 0; 
 }

@@ -24,6 +24,11 @@ void readBio (Profile *p, int maxLength)
     String bio;
     readString(&bio, 350);
 
+    if (stringLength(bio) == 0) {
+        printf("\nBio tidak jadi diubah.\n");
+        return;
+    }
+
     while (stringLength(bio) > maxLength) {
         printf("\nOops, panjang maksimum bio adalah 135 karakter. Gagal menyimpan bio.\n");
         
@@ -38,14 +43,19 @@ void readPhoneNumber(Profile *p)
     String phoneNumber;
     readString(&phoneNumber, 350);
 
+    if (stringLength(phoneNumber) == 0) {
+        printf("\nNomor telefon tidak jadi diubah.\n");
+        return;
+    }
+
     if (stringLength(phoneNumber) > 15) {
-        printf("Panjang nomor hape tidak boleh melebihi 15 karakter. Gagal menginput nomor hp.");
+        printf("\nPanjang nomor hape tidak boleh melebihi 15 karakter. Gagal menginput nomor hp.\n");
         return;
     }
 
     while (!isAllNumber(phoneNumber)) {
         printf("\nNo HP tidak valid. Masukkan lagi yuk!\n");
-        printf("\nMasukkan No HP:");
+        printf("\nMasukkan No HP:\n");
         readString(&phoneNumber, 350);
     }
 
@@ -58,6 +68,11 @@ void readWeton(Profile *p)
 {
     String weton;
     readString(&weton, 10);
+
+    if (stringLength(weton) == 0) {
+        printf("\nWeton tidak jadi diubah.\n");
+        return;
+    }
     
 
     while 
@@ -73,6 +88,6 @@ void readWeton(Profile *p)
         printf("\nMasukkan Weton: \n");
         readString(&weton, 10);
     }
-
+    toTitleCase(&weton);
     WETON(*p) = weton;
 }

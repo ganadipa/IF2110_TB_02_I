@@ -28,6 +28,21 @@ int stringLength(String s)
     return i;
 }
 
+
+void toTitleCase(String *s){
+    if (97 <= s->buffer[0] && s->buffer[0] <= 122){
+        s->buffer[0] -= 32;
+    }
+
+    int length = stringLength(*s);
+    int i;
+    for (i = 1; i< length; i++){
+        if (65 <= s->buffer[i] && s->buffer[i] <= 90){
+            s->buffer[i] += 32;
+        }
+    }
+}
+
 int stringToInt(String s){
     int i;
     int j = 1;
@@ -379,6 +394,17 @@ int countWord(String s)
 
     return k+1;
 
+}
+
+boolean isAllSpace(String s){
+    int length = stringLength(s);
+    int i;
+    for (i = 0; i < length; i++) {
+        if (s.buffer[i] != ' ')
+            return false;
+    }
+
+    return true;
 }
 
 void SplitIntoTwo(String s, String* s1, String* s2) {

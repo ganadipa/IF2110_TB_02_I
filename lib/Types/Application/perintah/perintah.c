@@ -28,17 +28,16 @@ void handleCommand(Application* app, String command, boolean *finish)
         Masuk(app);
     } else if (compareString(firstWord, "KELUAR")){
         Keluar(app);
-    } else if (compareString(firstWord, "DEVTOOLS")) {
-        /**
-         * Command Developer Tools akan dihilangkan saat pengumpulan, ini hanya alat untuk debugging.
-        */
-        DevTools(*app);
-    } else if (compareString(firstWord, "TUTUP_PROGRAM")) {
+    } 
+    else if (compareString(firstWord, "TUTUP_PROGRAM")) {
         TutupProgram(app, finish);
     } else if (compareString(firstWord, "GANTI_PROFIL")) {
         GantiProfil(app);
     } else if (compareString(firstWord, "LIHAT_PROFIL")) {
-        displayString(rest);
+        if (numword < 2) {
+            printf("\nPerintah yang valid: \"LIHAT_PROFIL <nama> ;\".\n");
+            return;
+        }
         LihatProfil(app, rest);
     } else if (compareString(firstWord, "ATUR_JENIS_AKUN")) {
         AturJenisAkun(app);
@@ -50,6 +49,14 @@ void handleCommand(Application* app, String command, boolean *finish)
         HapusTeman(app);
     } else if (compareString(firstWord, "KICAU")) {
         Kicau(app);
+        // displayString((*app).hashMap[63].tagar);
+        // String namaa = {"GANA", 20};
+    // printKicauan(*(*app).hashMap[63].kicauan, namaa);
+    } else if (compareString(firstWord, "CARI_KICAUAN")) {
+    //     displayString((*app).hashMap[63].tagar);
+    //     String namaa = {"GANA", 20};
+    // printKicauan(*(*app).hashMap[63].kicauan, namaa);
+        cariKicauanDenganTagar(app, secondWord);
     } else if (compareString(firstWord, "KICAUAN")) {
         TampilinKicauan(app);
     } else if (compareString(firstWord, "SUKA_KICAUAN")) {
@@ -144,7 +151,10 @@ void handleCommand(Application* app, String command, boolean *finish)
             printf("Masukkan nama folder yang hendak dimuat.\n");
             readString(&pathfilefolder, 351);
             *app = MuatFolder(app, pathfilefolder);
+            EndFile = false;
         }
+    } else if (compareString(firstWord, "KELOMPOK_TEMAN")){
+        KelompokTeman(app);
     }
     else {
         printf("\nTidak ada perintah ");
@@ -152,4 +162,11 @@ void handleCommand(Application* app, String command, boolean *finish)
         printf(". Baca dokumentasi (Spesifikasi) untuk melihat seluruh perintah.\n");  
     }
 }
+
+    // else if (compareString(firstWord, "DEVTOOLS")) {
+    //     /**
+    //      * Command Developer Tools akan dihilangkan saat pengumpulan, ini hanya alat untuk debugging.
+    //     */
+    //     DevTools(*app);
+    // } 
 

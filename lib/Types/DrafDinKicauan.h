@@ -1,15 +1,14 @@
 #ifndef DRAFDINKICAUAN 
 #define DRAFDINKICAUAN 
 
-#include <stdio.h> 
-#include <stdlib.h>
+
 #include "../boolean.h"
 #include "../ADT/String/string.h"
 #include "Kicauan.h"
 
 typedef Kicauan infodraf; 
 
-typedef struct nodeDraf *AddressDraf; 
+typedef struct nodeDraf* AddressDraf; 
 typedef struct nodeDraf {
     infodraf kicau; 
     AddressDraf next;

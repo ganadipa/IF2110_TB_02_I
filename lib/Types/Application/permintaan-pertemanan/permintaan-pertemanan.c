@@ -15,7 +15,7 @@ void TambahTeman(Application *app)
 
     int friendReq = lengthRequestQueue(FRIEND_REQUEST(ELMT_LISTUSER(*l, LOGINID(*app))));
     if (friendReq > 0) {
-        printf("Terdapat permintaan pertemanan yang belum Anda setujui. Silakan kosongkan daftar permintaan pertemanan untuk Anda terlebih dahulu.");
+        printf("\nTerdapat permintaan pertemanan yang belum Anda setujui. Silakan kosongkan daftar permintaan pertemanan untuk Anda terlebih dahulu.\n");
         return;
     }
     
@@ -34,7 +34,7 @@ void TambahTeman(Application *app)
     }
     if (CONNECTED(*friendships, idTeman, LOGINID(*app)))
     {
-        printf("Anda sudah berteman kepada dia.");
+        printf("\nAnda sudah berteman kepada dia.\n");
         return;
     }
 
@@ -45,22 +45,22 @@ void TambahTeman(Application *app)
     
     if (i != -1)
     {
-        printf("Anda sudah mengirimkan permintaan pertemanan kepada ");
+        printf("\nAnda sudah mengirimkan permintaan pertemanan kepada ");
         displayString(s);
-        printf(" Silakan tunggu hingga permintaan Anda disetujui.");
+        printf(" Silakan tunggu hingga permintaan Anda disetujui.\n");
         return;
     }
     
     Friend f;
     f.userID = LOGINID(*app);
-    f.friendCount = FRIEND_COUNT(ELMT_LISTUSER(*l, LOGGEDIN(*app)));
+    f.friendCount = FRIEND_COUNT(ELMT_LISTUSER(*l, LOGINID(*app)));
 
     RequestQueue *q = &FRIEND_REQUEST(*targetUser);
     enqueueRequestQueue(q, f);
 
     printf("\nPermintaan pertemanan kepada ");
     displayString(s);
-    printf(" telah dikirim. Tunggu beberapa saat hingga permintaan Anda disetujui.");
+    printf(" telah dikirim. Tunggu beberapa saat hingga permintaan Anda disetujui.\n");
 }
 
 
@@ -117,7 +117,7 @@ void SetujuiPertemanan(Application *app)
     RequestQueue *q = &FRIEND_REQUEST(ELMT_LISTUSER(*l, LOGINID(*app)));
 
     if (!lengthRequestQueue(*q)) {
-        printf("Belum ada yang mengajak Anda berteman.");
+        printf("\nBelum ada yang mengajak Anda berteman.\n");
         return;
     }
 
@@ -133,9 +133,9 @@ void SetujuiPertemanan(Application *app)
 
     printf("\n | Nama: ");
     displayString(NAME(*u));
-    printf("\n | Jumlah teman: %d\n", FRIEND_COUNT(*u));
+    printf("\n | Jumlah teman: %d\n", FRIENDCOUNT_REQQUEUE(f));
 
-    printf("Apakah Anda ingin menyetujui permintaan pertemanan ini? (YA/TIDAK) ");
+    printf("\nApakah Anda ingin menyetujui permintaan pertemanan ini? (YA/TIDAK) ");
 
     String ans;
     readString(&ans, 10);
@@ -146,14 +146,17 @@ void SetujuiPertemanan(Application *app)
         printf(" telah ditolak.\n");
     } else if (compareString(ans, "YA")) {
         addEdge(&FRIENDSHIPS(*app), idTeman, LOGINID(*app));
-
-
-        printf("Permintaan pertemanan dari ");
+        int id = LOGINID(*app);
+        User* a = &ELMT_LISTUSER(LISTUSER(*app), id);
+        Union(&DSU(*app), idTeman, id);
+        FRIEND_COUNT(*a)++; 
+        FRIEND_COUNT(*u)++; 
+        printf("\nPermintaan pertemanan dari ");
         displayString(NAME(*u));
         printf(" telah disetujui. Selamat! Anda telah berteman dengan ");
         displayString(NAME(*u));
         printf(".\n");
     } else {
-        printf("Input tidak diketahui, gagal menyetujui pertemanan.");
+        printf("\nInput tidak diketahui, gagal menyetujui pertemanan.\n");
     }
 }

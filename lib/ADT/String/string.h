@@ -5,7 +5,7 @@
 #include "../WordMachine/wordmachine.h"
 
 
-#define STRCAP 351
+#define STRCAP 1000
 #define MARK_STRING '\0'
 
 typedef struct string
@@ -30,6 +30,8 @@ void readString(String *s, int maxLength);
  * F.S. s terbentuk sebagai hasil input dari stdin.
 */
 
+void toTitleCase(String *s);
+
 boolean isStringInsensitivelyEqual(String s1, String s2);
 
 boolean isAlphabet(char c);
@@ -42,6 +44,8 @@ boolean isStringEqual(String s1, String s2);
 */
 
 int stringLength(String s);
+
+boolean isAllSpace(String s);
 /**
  * 
 */

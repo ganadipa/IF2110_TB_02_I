@@ -1,5 +1,6 @@
 #include "Devtools.h"
 #include <stdio.h>
+#include "../../ADT/dsu/dsu.h"
 
 
 void DevTools(Application app) 
@@ -36,4 +37,9 @@ void DevTools(Application app)
     printf("jumlah utas dev: %d\n", JUMLAHUTAS(app)); 
 
     printListKicau(app.listKicauan, app.users);
+
+    printf("count: %d\n", app.kelompokteman.count);
+    for (i = 0; i < app.kelompokteman.count; i++){
+        printf("%d\n", ELMT_SET(DSU(app), i));
+    }
 }
