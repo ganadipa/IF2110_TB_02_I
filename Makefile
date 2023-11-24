@@ -1,6 +1,5 @@
 include Makefile.que #unit test for queue
 include Makefile.sta #unit test for stack
-include Makefile.din #unit test for list dinamik
 
 
 BINARY = .bin
@@ -46,8 +45,6 @@ que:
 sta:
 	$(MAKE) -f Makefile.sta test_stack
 
-din:
-	$(MAKE) -f Makefile.din test_listdin
 
 
 
@@ -228,7 +225,7 @@ mliststatik: $(liststatik_OBJ) $(liststatik_OBJ_TEST)
 test_liststatik: mliststatik $(liststatik_TEST_RESULTS)
 	@cat $(liststatik_TEST_RESULTS)
 
-driver_liststatik: $(LINKEDLIST_DRIVER_OBJ)
+driver_liststatik: $(liststatik_DRIVER_OBJ)
 	$(CC) $(CFLAGS) -o liststatik $(liststatik_DRIVER) $(liststatik_SRC) $(liststatik_SRC2) $(liststatik_SRC3)
 	./liststatik
 
@@ -269,6 +266,61 @@ $(wordmachine_TEST_RESULTS): $(wordmachine_TESTS_DIR)/%.result: $(wordmachine_TE
 	else \
 		echo "$< $(word 2,$^): FAILED!"; \
 	fi > $@
+#************************************************************************************
+#************************************************************************************
+#************************************************************************************
+
+
+# ************************listdinamik UNIT TEST*************************************
+# ************************listdinamik UNIT TEST*************************************
+# ************************listdinamik UNIT TEST*************************************
+listdinamik_DRIVER = lib/ADT/ListDinamik/tests/driver.c
+listdinamik_SRC = lib/ADT/ListDinamik/listdinamik.c
+listdinamik_SRC_TEST = lib/ADT/ListDinamik/tests/mlistdinamik.c
+listdinamik_OBJ = $(BINARY)/$(listdinamik_SRC:.c=.o)
+listdinamik_OBJ_TEST = $(BINARY)/$(listdinamik_SRC_TEST:.c=.o)
+
+listdinamik_TESTS_DIR = lib/ADT/ListDinamik/tests
+listdinamik_TEST_CASES = $(wildcard $(listdinamik_TESTS_DIR)/*.in)
+listdinamik_TEST_OUTPUTS = $(listdinamik_TEST_CASES:.in=.out)
+listdinamik_TEST_RESULTS = $(listdinamik_TEST_CASES:.in=.result)
+
+mlistdinamik: $(listdinamik_OBJ) $(charmachine_OBJ) $(listdinamik_OBJ_TEST)
+	$(CC) $(CFLAGS) -o $@ $^
+
+test_listdinamik: mlistdinamik $(listdinamik_TEST_RESULTS)
+	@cat $(listdinamik_TEST_RESULTS)
+
+driver_listdinamik: $(listdinamik_DRIVER_OBJ)
+	$(CC) $(CFLAGS) -o driver $(listdinamik_DRIVER) $(listdinamik_SRC)
+	./driver
+
+$(listdinamik_TEST_RESULTS): $(listdinamik_TESTS_DIR)/%.result: $(listdinamik_TESTS_DIR)/%.in $(listdinamik_TESTS_DIR)/%.out mlistdinamik
+	@if ./mlistdinamik < $< | diff - $(word 2,$^) > /dev/null; then \
+		echo "$< $(word 2,$^): PASSED!"; \
+	else \
+		echo "$< $(word 2,$^): FAILED!"; \
+	fi > $@
+#************************************************************************************
+#************************************************************************************
+#************************************************************************************
+
+
+# ************************matriks UNIT TEST*************************************
+# ************************matriks UNIT TEST*************************************
+# ************************matriks UNIT TEST*************************************
+matriks_DRIVER = lib/ADT/Matriks/tests/driver.c
+matriks_SRC = lib/ADT/Matriks/matriks.c
+matriks_OBJ = $(BINARY)/$(matriks_SRC:.c=.o)
+matriks_OBJ_TEST = $(BINARY)/$(matriks_SRC_TEST:.c=.o)
+
+
+mmatriks: $(matriks_OBJ) $(charmachine_OBJ) $(matriks_OBJ_TEST)
+	$(CC) $(CFLAGS) -o $@ $^
+
+driver_matriks: $(matriks_DRIVER_OBJ)
+	$(CC) $(CFLAGS) -o driver $(matriks_DRIVER) $(matriks_SRC)
+	./driver
 #************************************************************************************
 #************************************************************************************
 #************************************************************************************

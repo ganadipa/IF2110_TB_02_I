@@ -53,6 +53,14 @@ void handleCommand(Application* app, String command, boolean *finish)
         HapusTeman(app);
     } else if (compareString(firstWord, "KICAU")) {
         Kicau(app);
+        // displayString((*app).hashMap[63].tagar);
+        // String namaa = {"GANA", 20};
+    // printKicauan(*(*app).hashMap[63].kicauan, namaa);
+    } else if (compareString(firstWord, "CARI_KICAUAN")) {
+    //     displayString((*app).hashMap[63].tagar);
+    //     String namaa = {"GANA", 20};
+    // printKicauan(*(*app).hashMap[63].kicauan, namaa);
+        cariKicauanDenganTagar(app, secondWord);
     } else if (compareString(firstWord, "KICAUAN")) {
         TampilinKicauan(app);
     } else if (compareString(firstWord, "SUKA_KICAUAN")) {

@@ -51,6 +51,8 @@ void dealocateListDin(ListDin *l);
 /* I.S. l terdefinisi; */
 /* F.S. (l) dikembalikan ke system, CAPACITY(l)=0; NEFF(l)=0 */
 
+void printListDinButAll(ListDin l);
+
 /* ********** SELEKTOR (TAMBAHAN) ********** */
 /* *** Banyaknya elemen *** */
 int listLengthListDin(ListDin l);
@@ -105,7 +107,7 @@ void printListDin(ListDin l);
 
 /* ********** OPERATOR ARITMATIKA ********** */
 /* *** Aritmatika list : Penjumlahan, pengurangan, perkalian, ... *** */
-ListDin plusMinusListListDin(ListDin l1, ListDin l2, boolean plus);
+ListDin plusMinusListDin(ListDin l1, ListDin l2, boolean plus);
 /* Prekondisi : l1 dan l2 memiliki Neff sama dan tidak kosong */
 /* Jika plus = true, mengirimkan  l1+l2, yaitu setiap elemen l1 dan l2 pada indeks yang sama dijumlahkan */
 /* Jika plus = false, mengirimkan l1-l2, yaitu setiap elemen l1 dikurangi elemen l2 pada indeks yang sama */
