@@ -20,8 +20,6 @@ void tulisGrafPertemanan(FILE* filepath, Graf graf){
 }
 
 void SavingFilePengguna(String* path, ListUser user, Application app){
-    // const char *pengguna = "pengguna.config"; 
-    // snprintf(parentDir.buffer, 1000, "%s/%s", path->buffer, pengguna.buffer);
     String pathFolder = *path;
     String pengguna = {"/pengguna.config", 16};
     addString(&pathFolder, pengguna); 
@@ -57,7 +55,6 @@ void SavingFilePengguna(String* path, ListUser user, Application app){
                 
             }
             totalPermintaan += lengthRequestQueue(user.contents[i].friendRequest);
-            //tulis matrix jumlah permintaan teman 
         }
         tulisGrafPertemanan(filePengguna, FRIENDSHIPS(app));
         fprintf(filePengguna, "\n%d", totalPermintaan);
@@ -79,10 +76,8 @@ void SavingFilePengguna(String* path, ListUser user, Application app){
 }
 
 void SavingFileKicauan(String* path, ListKicau kicauan, ListUser user){
-    // const char* kicau = "kicauan.config";
     String pathFolder = *path;
     String kicau = {"/kicauan.config", 15};
-    String Dir; 
     addString(&pathFolder, kicau);
     FILE *fileKicauan = fopen(pathFolder.buffer, "w"); 
     int i = 0; 
@@ -103,7 +98,6 @@ void SavingFileKicauan(String* path, ListKicau kicauan, ListUser user){
 }
 
 void SavingFileDraf(String* path, ListUser user){
-    // const char* draf ="draf.config"; 
     String pathFolder = *path;
     String draf = {"/draf.config", 12};
     addString(&pathFolder, draf);
@@ -115,7 +109,7 @@ void SavingFileDraf(String* path, ListUser user){
             count++;
         }
     }
-    fprintf(fileDraf, "%d", count); //print berapa banyak yang punya draf;
+    fprintf(fileDraf, "%d", count); 
     if(count < 1){
         for(i = 0; i < user.length; ++i){
             if(!isDrafDinEmpty(DRAFKICAU(user.contents[i]))){
@@ -138,7 +132,6 @@ void SavingFileDraf(String* path, ListUser user){
 }
 
 void SavingFileUtas(String *path, ListKicau listKicau, Application *Utas){
-    // const char* utas ="utas.config"; 
     String pathFolder = *path;
     String utas = {"/utas.config", 12};
     addString(&pathFolder, utas);
@@ -195,11 +188,9 @@ void TulisAllBalasan(FILE* filepath, ReplyTree rt, ListUser *l, int idx){
     for(i = 0; i < neff; i++){
         TulisAllBalasan(filepath, rt, l, adjlist.buffer[i]);
     }
-
 }
 
 void SavingFileBalasan(String *path, ListKicau kicauan, ListUser user){
-    // const char* reply = "balasan.config"; 
     String pathFolder = *path;
     String reply = {"/balasan.config", 15};
     addString(&pathFolder, reply);
@@ -216,16 +207,11 @@ void SavingFileBalasan(String *path, ListKicau kicauan, ListUser user){
             ReplyTree balasan = BALASAN(ELMT(kicauan, i));
 
             if(NUMREP(balasan) != 0){ ;
-                //untuk menulis ID dari kicau yang memiliki balasan 
                 fprintf(fileBalasan, "\n%d", IDKicau(ELMT(kicauan, i)));
-                //untuk menulis banyaknya balasan dalam kicauan tersebut
                 fprintf(fileBalasan, "\n%d", NUMREP(BALASAN(ELMT(kicauan, i))));
-                //untuk menulis tiap balasan (unfinished)
 
                 ListReply temp = LISTREP(balasan);
                 for(j = 0; j <= NEFFLR(temp); j++){
-                    //blm ada untuk menulis 
-                    //balas-ke-node-mana  id-dari-balasan
                     if(!ISUSED(balasan, j)){
                         continue; 
                     }
@@ -280,4 +266,3 @@ void SaveFolder(Application *app){
     readString(&path, 100);
     SavingFolder(&path, app);
 }
-
