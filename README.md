@@ -118,10 +118,10 @@ Program Burung Biru</center> </h1>
 ## Pembagian Tugas Pada Source Code 
 | Nama | NIM | Tugas  |
 | ----- | ---- | ------ |
-| Nyoman Ganadipa Narayana | 13522066 | ADT Graf, ADT Tree, ADT String, Profil, Perintah, Teman, Balasan, Laporan |
+| Nyoman Ganadipa Narayana | 13522066 | ADT Graf, ADT Tree, ADT String, Profil, Perintah, Teman, Balasan, Kelompok Teman, Laporan |
 | Albert | 13522081 | ADT Matrix, ADT List dengan Struktur Data Array Statik, Kicauan, Utas, Laporan |
 | Fedrianz Dharma | 13522090 | ADT Mesin Karakter, ADT Mesin Kata, Inisialisasi, Muat, Laporan |
-| William Glory Henderson | 13522113 | ADT List dengan Struktur Data Array Dinamis, ADT Datetime, Permintaan Pertemanan, Utas, README, Laporan |
+| William Glory Henderson | 13522113 | ADT List dengan Struktur Data Array Dinamis, ADT Datetime, Permintaan Pertemanan, Utas, Kelompok Teman, README, Laporan |
 | Indraswara Galih Jayanegara | 13522119 | ADT Stack, ADT Queue, Draf, Simpan, Laporan |
 
 ## Daftar Fitur dan Status Pengerjaan 
@@ -139,6 +139,6 @@ Program Burung Biru</center> </h1>
 | Utas | DONE |
 | Simpan dan Muat | DONE |
 | Bonus 1 (Tagar) | DONE |
-| Bonus 2 (Kelompok Teman) | - |
+| Bonus 2 (Kelompok Teman) | DONE |
 | Bonus 3 (FYB / For Your BurBir) | - |
 | Bonus 4 (Nomor HP) | - |
