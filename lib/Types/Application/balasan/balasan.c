@@ -99,12 +99,19 @@ void Balasan(Application *app, int IDKicau){
 
 void HapusBalasan(Application *app, int IDKicau, int IDBalasan){
     Kicauan *k = &KICAUAN(*app).buffer[IDKicau-1];
+
+    if (!LOGGEDIN(*app)) {  
+        printf("\nAnda belum login! Masuk terlebih dahulu untuk menikmati layanan BurBir.\n");
+        return;
+    }
+
+    if (IDKicau > KICAUAN(*app).nEff) {
+        printf("\nWah tidak terdapat kicauan dengan ID tersebut! Mungkin typo IDKicau ?\n");
+        return;
+    }
+
     ReplyTree *balasan = &BALASAN(*k);
     ReplyAddress rep = ADDR(LISTREP(*balasan), IDBalasan);
-
-
-
-
     int idx = getIdxFromReplyId(*balasan, IDBalasan);
     if (idx == -1) {
         printf("\nBalasan tidak ditemukan.\n");

@@ -17,6 +17,7 @@ typedef struct application {
     ListUser users; // Used list dengan array statik
     Graf friendships;
     ListKicau listKicauan; 
+
 } Application;
 
 #define LOGGEDIN(a) (a).isLoggedIn
@@ -93,10 +94,6 @@ void TambahTeman(Application *app);
  * 
 */
 
-void BatalTambahTeman(Application *app);
-/**
- * 
-*/
 
 void DaftarPermintaanPertemanan(Application app);
 /**
@@ -133,7 +130,6 @@ void UbahKicauan(Application *app, int ID);
 
 void TambahTeman(Application *app);
 
-void BatalTambahTeman(Application *app);
 
 void DaftarPermintaanPertemanan(Application app);
 
