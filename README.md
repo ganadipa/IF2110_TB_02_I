@@ -18,7 +18,7 @@ Program Burung Biru</center> </h1>
 </center> </p> 
 
 <h2> <b> Cara Menjalankan Program </b> </h2>
-<p> Clone repository dan ketik "make run" pada terminal
+<p> Clone repository https://github.com/ganadipa/IF2110_TB_02_I , install wsl, masuk wsl lalu ketik "make run" pada terminal
 
 <h2> List Folder </h2>
 <ul>
