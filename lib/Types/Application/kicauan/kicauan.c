@@ -134,14 +134,30 @@ void Kicau(Application *app) {
     String TAGAR;
     printf("Masukkan tagar (maks 280 karakter) : ");
     readString(&TAGAR,280);
+    allSpace = isAllSpace(TAGAR);
+    int tagarlength = stringLength(TAGAR);
+    
+    
+
     printKicauan(value, ELMT_LISTUSER(LISTUSER(*app), IDUSER).name);
-    insertKicauankeTable( &(*app).hashMap, TAGAR, &ELMT(   KICAUAN(*app),  NEFF(KICAUAN(*app))-1   ));
+    if (!(tagarlength==0 || allSpace)){
+        insertKicauankeTable( &(*app).hashMap, TAGAR, &ELMT(   KICAUAN(*app),  NEFF(KICAUAN(*app))-1   ));
+    }else{
+        printf("Tagar tidak masuk ke dalam kicauan\n");
+    }
     // String namaa = {"GANA", 20};
     // printKicauan(*(*app).hashMap[63].kicauan, namaa);
     // displayString((*app).hashMap[63].tagar);
 }
 
 void cariKicauanDenganTagar(Application *app, String Tagar){
+    boolean allSpace = isAllSpace(Tagar);
+    int tagarlength = stringLength(Tagar);
+    
+    if ((tagarlength==0 || allSpace)){
+        printf("Masukkan tagar yang valid ");
+        return;
+    }
     unsigned long long int index = hashFunction(Tagar);
     // printf("%d\n", index);
     unsigned long long int i = index;
