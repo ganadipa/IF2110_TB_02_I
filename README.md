@@ -14,62 +14,128 @@ Program Burung Biru</center> </h1>
 </ol> </h3>
 
 <h2> <b> Penjelasan Singkat Program </b> </h2>
-<p> <center> Program Burung Biru adalah aplikasi berbasis Command Line Interface (CLI) dengan fitur mirip media sosial X. Program ini memakai konsep algoritma dan struktur data dengan pemanfaatan Abstract Data Type 
+<p> <center> Program Burung Biru adalah aplikasi berbasis Command Line Interface (CLI) dengan fitur mirip media sosial X. Program ini memakai konsep algoritma dan struktur data dengan pemanfaatan Abstract Data Type.
 </center> </p> 
 
 <h2> <b> Cara Menjalankan Program </b> </h2>
 <p> Clone repository dan ketik "make run" pada terminal
 
-<h2> <b> List Tugas </b> </h2>
-<p> <b> Isi Source Code : </b> </p>
+<h2> List Folder </h2>
 <ul>
-<li> Sistem Persamaan Linear (Gauss, Gauss-Jordan, Matriks Balikan, & Kramer)
-<li> Determinan (Metode Kofaktor & Metode OBE)
-<li> Matriks Balikan (Metode Adjoin & Metode OBE dengan Matriks Identitas)
-<li> Interpolasi Polinomial 
-<li> Interpolasi Bikubik
-<li> Regresi Linear Berganda
-<li> Fungsi dan Prosedur Penunjang Lainnya (ADT Matriks)
+<li> app
+<p> Berisikan file main.c </p>
+</ul>
+<ul>
+<li> config
+<p> Berisikan folder untuk diload dan di setiap folder berisi 5 file config </p>
+</ul>
+<ul>
+<li> docs
+<p> Berisikan file laporan </p>
+</ul>
+<ul>
+<li> lib
+<p> Berisikan 2 folder yaitu ADT dan Types yang berisikan folder yang mengandung file implementasi dari ADT dan fitur program </p>
+    <ul>
+    <li> ADT
+        <ul>
+        <li> ADT DateTime
+        <li> ADT Graf
+        <li> ADT LinkedList
+        <li> ADT ListDinamik
+        <li> ADT ListStatik
+        <li> ADT Matriks
+        <li> ADT PColor
+        <li> ADT PriorityQueue
+        <li> ADT Queue
+        <li> ADT Stack
+        <li> ADT String
+        <li> ADT Tree
+        </ul>
+    </ul>
+    <ul>
+    <li> Types
+        <ul>
+        <li> Application
+            <ul>
+            <li> balasan
+            <li> draf-kicauan
+            <li> inisialisasi
+            <li> kicauan
+            <li> pengguna
+            <li> perintah
+            <li> permintaan-pertemanan
+            <li> profil
+            <li> simpan-dan-muat
+            <li> teman
+            <li> utas
+            </ul>
+        </ul>
+        <ul>
+        <li> Application.h
+        </ul>
+        <ul>
+        <li> DrafDinKicauan
+        </ul>
+        <ul>
+        <li> Kicauan
+        </ul>
+        <ul>
+        <li> listKicauan
+        </ul>
+        <ul>
+        <li> ListUser
+        </ul>
+        <ul>
+        <li> listUtas
+        </ul>
+        <ul>
+        <li> Photo
+        </ul>
+        <ul>
+        <li> Profile
+        </ul>
+        <ul>
+        <li> ReplyTree
+        </ul>
+        <ul>
+        <li> RequestQueue
+        </ul>
+        <ul>
+        <li> User
+        </ul>
+    <ul>
+    <li> boolean.h
+    </ul>
+    <ul>
+    <li> lib.h
+    </ul>
 </ul>
 
-<h2> <b> Keterangan Folder </b> </h2>
-<h3> <b> Folder 'bin' </b> </h3>
-<ul> <li> <p> <b> Folder 'Function Class' </b> </p> </li> </ul>
-<p> Berisikan file java bytecode (Folder Function) .class</p>
-<ul> <li> <p> <b> Folder 'Matrix Class' </b> </p> </li> </ul>
-<p> Berisikan file java bytecode (Folder ADTMatrix) .class </b>
-<h3> <b> Folder 'doc' </b> </h3>
-<p> Berisikan file hasil laporan tugas besar Algeo </p>
-<h3> <b> Folder 'src' </b> </h3>
-<p> Berisikan file-file yang mengandung program utama dari pemenuhan Tugas Besar ini. File yang dimaksud adalah file main, file input/output, dan file yang berisi semua prosedur dan fungsi penunjang </p>
-<ul> <li> <p> <b> Folder 'ADTMatrix' </b> </p> </li> </ul>
-<p> Berisikan file-file yang mengandung algoritma semua metode pengolahan matriks </p>
-<ul> <li> <p> <b> Folder 'Function' </b> </p> </li> </ul>
-<p> Berisikan file yang mengandung algoritma untuk menyelesaikan fungsi SPL, determinan, invers, interpolasi polinomial, interpolasi bikubik, dan regresi</b>
-<h3> <b> Folder 'test' </b> </h3>
-<ul> <li> <p> <b> Folder 'Input' </b> </p> </li> </ul>
-<p> Berisikan file-file inputan dari user </p>
-<ul> <li> <p> <b> Folder 'Output' </b> </p> </li> </ul>
-<p> Berisikan file-file hasil output program yang disimpan </b>
+<h2>Pembagian Tugas Pada Source Code </h2>
+| Nama | NIM | Tugas  |
+|-----| ----| ------|
+| Nyoman Ganadipa Narayana | 13522066 | ADT Graf, ADT Tree, , ADT String, Profil, Perintah, Teman, Balasan, Laporan |
+| Albert | 13522081 | ADT Matrix, ADT List dengan Struktur Data Array Statik, Kicauan, Utas, Laporan |
+| Fedrianz Dharma | 13522090 | ADT Mesin Karakter, ADT Mesin Kata, Inisialisasi, Muat, Laporan |
+| William Glory Henderson | 13522113 | ADT List dengan Struktur Data Array Dinamis, ADT Datetime, Permintaan Pertemanan, Utas, README, Laporan |
+| Indraswara Galih Jayanegara | 13522119 | ADT Stack, ADT Queue, Draf, Simpan, Laporan |
 
-<h2> <b> Keterangan File </b> </h2>
-<ul> <li> <p> <b> File Main.java </b> </p> </li> </ul>
-<p> File yang berisikan program utama untuk menjalankan semua pengolahan dalam matriks </p>
-<ul> <li> <p> <b> File Matrix.java </b> </p> </li> </ul>
-<p> File yang berisikan segala algoritma untuk pengolahan matriks </p>
-<ul> <li> <p> <b> File InputMatrix.java </b> </p> </li> </ul>
-<p> File yang berisikan segala algoritma untuk mengatur input dalam terminal maupun pada text (file) </p>
-<ul> <li> <p> <b> File OutputMatrix.java </b> </p> </li> </ul>
-<p> File yang berisikan segala algoritma untuk mengatur output dalam terminal maupun pada text (file) </p>
-<ul> <li> <p> <b> File SPL.java </b> </p> </li> </ul>
-<p> File yang berisikan segala algoritma untuk menemukan solusi dari sistem persamaan linear </p>
-<ul> <li> <p> <b> File Determinan.java </b> </p> </li> </ul>
-<p> File yang berisikan segala algoritma untuk menghitung nilai determinan dari matriks. </p>
-<ul> <li> <p> <b> File Invers.java </b> </p> </li> </ul>
-<p> File yang berisikan segala algoritma untuk mencari bentuk invers dari matriks. </p>
-<ul> <li> <p> <b> File Interpolasi.java </b> </p> </li> </ul>
-<p> File yang berisikan segala algoritma untuk melakukan fungsi interpolasi polinomial. </p>
-<ul> <li> <p> <b> File Bikubic.java </b> </p> </li> </ul>
-<p> File yang berisikan segala algoritma untuk melakukan fungsi interpolasi bikubik. </p>
-<ul> <li> <p> <b> File Regresi.java </b> </p> </li> </ul>
-<p> File yang berisikan segala algoritma untuk melakukan fungsi regresi linear berganda. </p>
+<h2> Daftar Fitur dan Status Pengerjaan </h2>
+| Fitur  | Status Pengerjaan | 
+| ------------- | ------------- |
+| Inisialisas | DONE |
+| Perintah | DONE |
+| Pengguna | DONE |
+| Profil | DONE |
+| Teman | DONE |
+| Permintaan Pertemanan | DONE |
+| Kicauan | DONE |
+| Balasan | DONE |
+| Draf Kicauan | DONE |
+| Utas | DONE |
+| Simpan dan Muat | DONE |
+| Bonus 1 (Tagar) | DONE |
+| Bonus 2 (Kelompok Teman) | - |
+| Bonus 3 (FYB / For Your BurBir) | - |
+| Bonus 4 (Nomor HP) | - |
