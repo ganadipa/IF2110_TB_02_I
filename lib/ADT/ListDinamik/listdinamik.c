@@ -22,7 +22,7 @@ void printListDinButAll(ListDin l)
     int i;
     printf("[");
     for (i = 0; i<CAPACITY(l); i++) {
-        printf("%d,");
+        printf("%d,", ELMT(l, i));
     }
     printf("]");
 }

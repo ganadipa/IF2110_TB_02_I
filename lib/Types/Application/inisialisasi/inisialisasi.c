@@ -29,7 +29,7 @@ void AppInitialization(Application *app)
         printf("Folder tidak berhasil dimuat, jadi bikin baru\n");
     }
     // Inisialisasi app
-     
+    EndFile = false;
 }
 
 void Opening() 

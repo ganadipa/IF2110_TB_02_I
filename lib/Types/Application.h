@@ -17,7 +17,6 @@ typedef struct application {
     ListUser users; // Used list dengan array statik
     Graf friendships;
     ListKicau listKicauan; 
-    Dis
 } Application;
 
 #define LOGGEDIN(a) (a).isLoggedIn
