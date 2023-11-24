@@ -24,7 +24,7 @@ void readBio (Profile *p, int maxLength)
     String bio;
     readString(&bio, 350);
 
-    if (stringLength == 0) {
+    if (stringLength(bio) == 0) {
         printf("\nBio tidak jadi diubah.\n");
         return;
     }

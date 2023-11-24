@@ -168,7 +168,6 @@ void cariKicauanDenganTagar(Application *app, String Tagar){
     // printf("hello\n");
     if (isStringInsensitivelyEqual( (*app).hashMap[i].tagar, Tagar)) {
         // printf("sampai sini 1\n");
-        int iduser = (*app).hashMap[i].kicauan->IDuser;
         // printf("done here\n");
         String nama = returnUsername(*app, (*app).hashMap[i].kicauan->IDuser);
         // printf(" | Tagar : \n");
