@@ -1,0 +1,23 @@
+
+SRC_STA = lib/ADT/Stack/stack.c
+SRC_TEST = lib/ADT/Stack/tests/mstack.c
+OBJ_STA = $(SRC_STA:.c=.o)
+OBJ_TEST = $(SRC_TEST:.c=.o)
+
+TESTS_DIR = lib/ADT/Stack/tests
+TEST_CASES = $(wildcard $(TESTS_DIR)/*.in)
+TEST_OUTPUTS = $(TEST_CASES:.in=.out)
+TEST_RESULTS = $(TEST_CASES:.in=.result)
+
+mstack: $(OBJ_STA) $(OBJ_TEST)
+	$(CC) $(CFLAGS) -o $@ $^
+
+test_stack: mstack $(TEST_RESULTS)
+	@cat $(TEST_RESULTS)
+
+$(TEST_RESULTS): $(TESTS_DIR)/%.result: $(TESTS_DIR)/%.in $(TESTS_DIR)/%.out mstack
+	@if ./mstack < $< | diff - $(word 2,$^) > /dev/null; then \
+		echo "$< $(word 2,$^): TRUE"; \
+	else \
+		echo "$< $(word 2,$^): WRONG"; \
+	fi > $@
